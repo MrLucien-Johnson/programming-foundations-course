@@ -144,7 +144,7 @@ Thank you for helping test **Programming Foundations: From Zero to Portfolio**. 
 
 ### Option 2: Email Feedback
 
-Send feedback to: **<PASTE_SUPPORT_EMAIL_HERE>**
+Send feedback to: **a.lucien-johnson@hotmail.co.uk**
 
 **Include:**
 - What you tested (which modules)
@@ -231,7 +231,7 @@ If you found the course helpful, we'd love a testimonial!
 ## 🆘 Tester Support
 
 **Questions?**
-- Contact: <PASTE_SUPPORT_EMAIL_HERE>
+- Contact: a.lucien-johnson@hotmail.co.uk
 - GitHub Issues (if you have access)
 
 **Stuck?**

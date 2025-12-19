@@ -237,7 +237,7 @@ You'll know you've succeeded when:
 **Technical setup issues?**
 - See Module 1 in your workbook
 - Check GitHub Issues (if public repo)
-- Contact support: <PASTE_SUPPORT_EMAIL_HERE>
+- Contact support: a.lucien-johnson@hotmail.co.uk
 
 **Feeling overwhelmed?**
 - That's normal! Start with Module 1

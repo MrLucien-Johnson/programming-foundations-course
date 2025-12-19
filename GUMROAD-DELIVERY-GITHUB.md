@@ -4,10 +4,10 @@
 
 Copy the appropriate section below and paste it into Gumroad's "Delivery" field for each product variant.
 
-**Remember to:**
-- Replace `https://github.com/MrLucien-Johnson/programming-foundations-course` with your actual GitHub repository URL
-- Replace `[GITHUB_RELEASE_URL]` with your GitHub releases page URL (optional)
-- Replace `<PASTE_SUPPORT_EMAIL_HERE>` with your support email address
+**Note:**
+- GitHub repository URL: `https://github.com/MrLucien-Johnson/programming-foundations-course`
+- Support email: `a.lucien-johnson@hotmail.co.uk`
+- All placeholders have been filled - ready to use!
 
 ---
 
@@ -43,11 +43,6 @@ This course is delivered via GitHub - a free, open platform used by millions of 
    Option B: Clone with Git
    git clone https://github.com/MrLucien-Johnson/programming-foundations-course
    cd BeginnersC#/python-beginner-workbook
-
-3. Optional: GitHub Releases
-   → [GITHUB_RELEASE_URL]
-   
-   Download latest release ZIP if available.
 
 🚀 QUICK START (Your First 30 Minutes)
 
@@ -96,7 +91,7 @@ git pull
 
 - Check the FAQ sections in module README files
 - Review examples and solutions
-- Contact support: <PASTE_SUPPORT_EMAIL_HERE>
+- Contact support: a.lucien-johnson@hotmail.co.uk
 - Most questions are answered in the module content
 
 🎯 YOUR GOAL
@@ -111,7 +106,7 @@ Let's build something amazing together! 🚀
 
 ---
 
-Questions? Contact: <PASTE_SUPPORT_EMAIL_HERE>
+Questions? Contact: a.lucien-johnson@hotmail.co.uk
 ```
 
 ---
@@ -148,11 +143,6 @@ This course is delivered via GitHub - a free, open platform used by millions of 
    Option B: Clone with Git
    git clone https://github.com/MrLucien-Johnson/programming-foundations-course
    cd BeginnersC#
-
-3. Optional: GitHub Releases
-   → [GITHUB_RELEASE_URL]
-   
-   Download latest release ZIP if available.
 
 🚀 QUICK START (Your First 30 Minutes)
 
@@ -203,7 +193,7 @@ git pull
 
 - Check the FAQ sections in module README files
 - Review examples and solutions
-- Contact support: <PASTE_SUPPORT_EMAIL_HERE>
+- Contact support: a.lucien-johnson@hotmail.co.uk
 - Most questions are answered in the module content
 
 🎯 YOUR GOAL
@@ -218,7 +208,7 @@ Let's build something amazing together! 🚀
 
 ---
 
-Questions? Contact: <PASTE_SUPPORT_EMAIL_HERE>
+Questions? Contact: a.lucien-johnson@hotmail.co.uk
 ```
 
 ---
@@ -257,11 +247,6 @@ This course is delivered via GitHub - a free, open platform used by millions of 
    Option B: Clone with Git
    git clone https://github.com/MrLucien-Johnson/programming-foundations-course
    cd BeginnersC#
-
-3. Optional: GitHub Releases
-   → [GITHUB_RELEASE_URL]
-   
-   Download latest release ZIP if available.
 
 🚀 QUICK START (Your First 30 Minutes)
 
@@ -337,7 +322,7 @@ git pull
 
 - Check the FAQ sections in module README files
 - Review examples and solutions
-- Contact support: <PASTE_SUPPORT_EMAIL_HERE>
+- Contact support: a.lucien-johnson@hotmail.co.uk
 - Most questions are answered in the module content
 
 🎯 YOUR GOAL
@@ -354,18 +339,19 @@ Let's build something amazing together! 🚀
 
 ---
 
-Questions? Contact: <PASTE_SUPPORT_EMAIL_HERE>
+Questions? Contact: a.lucien-johnson@hotmail.co.uk
 ```
 
 ---
 
 ## 📝 Placeholder Replacement Checklist
 
-Before using these delivery texts, make sure to replace:
+Before using these delivery texts, verify:
 
-- [ ] `https://github.com/MrLucien-Johnson/programming-foundations-course` - Your GitHub repository URL (e.g., https://github.com/username/repo-name)
-- [ ] `[GITHUB_RELEASE_URL]` - Your GitHub releases page URL (optional, e.g., https://github.com/username/repo-name/releases)
-- [ ] `<PASTE_SUPPORT_EMAIL_HERE>` - Your support email address
+- [x] GitHub repository URL: `https://github.com/MrLucien-Johnson/programming-foundations-course`
+- [x] Support email: `a.lucien-johnson@hotmail.co.uk`
+
+**Note:** All placeholders have been filled. These delivery texts are ready to use!
 
 ---
 

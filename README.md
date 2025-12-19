@@ -197,7 +197,7 @@ Then navigate to:
 **Stuck on something?**
 - Review the module content
 - Check exercise solutions
-- Contact support: <PASTE_SUPPORT_EMAIL_HERE>
+- Contact support: a.lucien-johnson@hotmail.co.uk
 
 **Technical issues?**
 - See Module 1 in your workbook for setup help

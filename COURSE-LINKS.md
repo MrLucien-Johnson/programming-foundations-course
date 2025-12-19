@@ -97,7 +97,7 @@ cd BeginnersC#
 
 ## 🆘 Support & Help
 
-- **Support Email:** <PASTE_SUPPORT_EMAIL_HERE>
+- **Support Email:** a.lucien-johnson@hotmail.co.uk
 - **GitHub Issues:** (If repo is public, use Issues tab)
 - **FAQ:** Check module README files for common questions
 
