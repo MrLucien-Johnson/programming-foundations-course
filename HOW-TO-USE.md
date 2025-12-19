@@ -51,7 +51,7 @@ This course is delivered via **GitHub**. You can read everything directly on Git
 ### Option C: Clone with Git
 
 ```bash
-git clone [GITHUB_REPO_URL]
+git clone https://github.com/MrLucien-Johnson/programming-foundations-course
 cd BeginnersC#
 ```
 
@@ -313,7 +313,7 @@ Before starting Module 7 (Task Tracker):
 - **Read error messages** - They're trying to help you!
 - **Take a break** - Sometimes you need to step away
 - **Keep practicing** - The more you code, the easier it gets
-- **Contact support** - [SUPPORT_EMAIL]
+- **Contact support** - <PASTE_SUPPORT_EMAIL_HERE>
 
 ---
 

@@ -119,7 +119,7 @@ Both projects are **portfolio-ready** and something you can show employers!
 ### Option 2: Clone with Git
 
 ```bash
-git clone [GITHUB_REPO_URL]
+git clone https://github.com/MrLucien-Johnson/programming-foundations-course
 cd BeginnersC#
 ```
 
@@ -197,7 +197,7 @@ Then navigate to:
 **Stuck on something?**
 - Review the module content
 - Check exercise solutions
-- Contact support: [SUPPORT_EMAIL]
+- Contact support: <PASTE_SUPPORT_EMAIL_HERE>
 
 **Technical issues?**
 - See Module 1 in your workbook for setup help

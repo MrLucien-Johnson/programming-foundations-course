@@ -85,7 +85,7 @@
 
 ### Option 2: Clone with Git
 ```bash
-git clone [GITHUB_REPO_URL]
+git clone https://github.com/MrLucien-Johnson/programming-foundations-course
 cd BeginnersC#
 ```
 
@@ -97,7 +97,7 @@ cd BeginnersC#
 
 ## 🆘 Support & Help
 
-- **Support Email:** [SUPPORT_EMAIL]
+- **Support Email:** <PASTE_SUPPORT_EMAIL_HERE>
 - **GitHub Issues:** (If repo is public, use Issues tab)
 - **FAQ:** Check module README files for common questions
 

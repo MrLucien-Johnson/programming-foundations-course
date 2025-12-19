@@ -37,7 +37,7 @@ You're about to learn programming from the ground up. Whether you're looking to 
 
 **Option B: Clone with Git**
 ```bash
-git clone [GITHUB_REPO_URL]
+git clone https://github.com/MrLucien-Johnson/programming-foundations-course
 cd BeginnersC#
 
 # Navigate to your chosen workbook:
@@ -237,7 +237,7 @@ You'll know you've succeeded when:
 **Technical setup issues?**
 - See Module 1 in your workbook
 - Check GitHub Issues (if public repo)
-- Contact support: [SUPPORT_EMAIL]
+- Contact support: <PASTE_SUPPORT_EMAIL_HERE>
 
 **Feeling overwhelmed?**
 - That's normal! Start with Module 1

@@ -5,9 +5,9 @@
 Copy the appropriate section below and paste it into Gumroad's "Delivery" field for each product variant.
 
 **Remember to:**
-- Replace `[GITHUB_REPO_URL]` with your actual GitHub repository URL
+- Replace `https://github.com/MrLucien-Johnson/programming-foundations-course` with your actual GitHub repository URL
 - Replace `[GITHUB_RELEASE_URL]` with your GitHub releases page URL (optional)
-- Replace `[SUPPORT_EMAIL]` with your support email address
+- Replace `<PASTE_SUPPORT_EMAIL_HERE>` with your support email address
 
 ---
 
@@ -23,7 +23,7 @@ Welcome to your programming journey! Here's everything you need to get started:
 This course is delivered via GitHub - a free, open platform used by millions of developers.
 
 1. GitHub Repository (Your Course Home)
-   → [GITHUB_REPO_URL]
+   → https://github.com/MrLucien-Johnson/programming-foundations-course
    
    This is your main course hub. Bookmark it! It contains:
    - All course materials
@@ -41,7 +41,7 @@ This course is delivered via GitHub - a free, open platform used by millions of 
    - Navigate to python-beginner-workbook/
 
    Option B: Clone with Git
-   git clone [GITHUB_REPO_URL]
+   git clone https://github.com/MrLucien-Johnson/programming-foundations-course
    cd BeginnersC#/python-beginner-workbook
 
 3. Optional: GitHub Releases
@@ -96,7 +96,7 @@ git pull
 
 - Check the FAQ sections in module README files
 - Review examples and solutions
-- Contact support: [SUPPORT_EMAIL]
+- Contact support: <PASTE_SUPPORT_EMAIL_HERE>
 - Most questions are answered in the module content
 
 🎯 YOUR GOAL
@@ -111,7 +111,7 @@ Let's build something amazing together! 🚀
 
 ---
 
-Questions? Contact: [SUPPORT_EMAIL]
+Questions? Contact: <PASTE_SUPPORT_EMAIL_HERE>
 ```
 
 ---
@@ -128,7 +128,7 @@ Welcome to your programming journey! Here's everything you need to get started:
 This course is delivered via GitHub - a free, open platform used by millions of developers.
 
 1. GitHub Repository (Your Course Home)
-   → [GITHUB_REPO_URL]
+   → https://github.com/MrLucien-Johnson/programming-foundations-course
    
    This is your main course hub. Bookmark it! It contains:
    - All course materials
@@ -146,7 +146,7 @@ This course is delivered via GitHub - a free, open platform used by millions of 
    - C# modules are in the root directory
 
    Option B: Clone with Git
-   git clone [GITHUB_REPO_URL]
+   git clone https://github.com/MrLucien-Johnson/programming-foundations-course
    cd BeginnersC#
 
 3. Optional: GitHub Releases
@@ -203,7 +203,7 @@ git pull
 
 - Check the FAQ sections in module README files
 - Review examples and solutions
-- Contact support: [SUPPORT_EMAIL]
+- Contact support: <PASTE_SUPPORT_EMAIL_HERE>
 - Most questions are answered in the module content
 
 🎯 YOUR GOAL
@@ -218,7 +218,7 @@ Let's build something amazing together! 🚀
 
 ---
 
-Questions? Contact: [SUPPORT_EMAIL]
+Questions? Contact: <PASTE_SUPPORT_EMAIL_HERE>
 ```
 
 ---
@@ -235,7 +235,7 @@ Welcome to your programming journey! Here's everything you need to get started:
 This course is delivered via GitHub - a free, open platform used by millions of developers.
 
 1. GitHub Repository (Your Course Home)
-   → [GITHUB_REPO_URL]
+   → https://github.com/MrLucien-Johnson/programming-foundations-course
    
    This is your main course hub. Bookmark it! It contains:
    - All course materials
@@ -255,7 +255,7 @@ This course is delivered via GitHub - a free, open platform used by millions of 
    - Navigate to root directory for C# modules
 
    Option B: Clone with Git
-   git clone [GITHUB_REPO_URL]
+   git clone https://github.com/MrLucien-Johnson/programming-foundations-course
    cd BeginnersC#
 
 3. Optional: GitHub Releases
@@ -337,7 +337,7 @@ git pull
 
 - Check the FAQ sections in module README files
 - Review examples and solutions
-- Contact support: [SUPPORT_EMAIL]
+- Contact support: <PASTE_SUPPORT_EMAIL_HERE>
 - Most questions are answered in the module content
 
 🎯 YOUR GOAL
@@ -354,7 +354,7 @@ Let's build something amazing together! 🚀
 
 ---
 
-Questions? Contact: [SUPPORT_EMAIL]
+Questions? Contact: <PASTE_SUPPORT_EMAIL_HERE>
 ```
 
 ---
@@ -363,9 +363,9 @@ Questions? Contact: [SUPPORT_EMAIL]
 
 Before using these delivery texts, make sure to replace:
 
-- [ ] `[GITHUB_REPO_URL]` - Your GitHub repository URL (e.g., https://github.com/username/repo-name)
+- [ ] `https://github.com/MrLucien-Johnson/programming-foundations-course` - Your GitHub repository URL (e.g., https://github.com/username/repo-name)
 - [ ] `[GITHUB_RELEASE_URL]` - Your GitHub releases page URL (optional, e.g., https://github.com/username/repo-name/releases)
-- [ ] `[SUPPORT_EMAIL]` - Your support email address
+- [ ] `<PASTE_SUPPORT_EMAIL_HERE>` - Your support email address
 
 ---
 
