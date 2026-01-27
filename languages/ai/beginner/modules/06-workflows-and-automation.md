@@ -1,0 +1,68 @@
+# AI — Module 06: Workflows and Automation
+
+## Overview
+Combine prompts into a workflow: input → transform → validate → output, with clear handoffs.
+
+**Included examples (tool-agnostic):**
+- Agent workflow for a multi-step task (plan → execute → verify)
+
+## Learning Outcomes
+- Translate a vague request into a clear goal, constraints, and success criteria.
+- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+- Build a small evaluation loop: test cases, metrics, and iteration notes.
+- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+- Document and version changes so improvements are explainable.
+
+## Prerequisites
+- Comfort writing clear, structured English.
+- Basic familiarity with APIs and JSON (helpful but not required in beginner).
+- Willingness to iterate: you’ll run tests, record failures, and improve.
+
+## Lessons
+1) Workflow design: stages, contracts, and error handling (45 min)
+2) Tool-agnostic automation: templates, variables, and logs (40 min)
+3) Human-in-the-loop: where reviewers add the most value (35 min)
+4) Fallback strategies: abstain, ask, or route to human (40 min)
+
+## Exercises
+### Core
+- Design a 3-step workflow for meeting notes: extract actions → verify → produce final.
+- Add a simple fallback policy for uncertain outputs.
+
+### Better
+- Add logging fields: input id, prompt version, result category, time/cost estimate.
+- Add retry rules and a maximum attempt budget.
+
+### Beast Mode
+- Design a multi-step “agentic” workflow with explicit stop conditions and verification.
+- Add an audit log format and a privacy-safe redaction step.
+
+## Mini-Project
+### Brief
+Build a workflow spec for meeting notes → actions that includes validation + fallback.
+
+### Acceptance Criteria
+- Each step has an input/output contract.
+- Includes a fallback strategy and a small evaluation set.
+
+## Testing Requirements
+- Workflow tested end-to-end on at least 10 cases.
+- Includes a simple “retry budget” and “stop if uncertain” rule.
+
+## Rubric
+| Criteria | Meets | Exceeds |
+|---|---|---|
+| Correctness | Output meets the stated goal | Handles edge cases and constraints reliably |
+| Evaluation | Basic checks exist | Repeatable eval harness with clear metrics/targets |
+| Safety | Obvious risks addressed | Explicit safety checklist + red-team prompts + mitigations |
+| Maintainability | Clear structure and docs | Modular prompts, versioning, and change notes |
+| Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
+
+
+## Common Mistakes
+- No boundaries between steps (everything in one giant prompt).
+- No stop conditions—workflow runs forever or amplifies errors.
+- No tracking of versions/results, making regressions invisible.
+
+## Stretch Resources
+- (Placeholder) Add links to workflow design and validation patterns.
