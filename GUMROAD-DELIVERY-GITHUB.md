@@ -6,7 +6,7 @@ Copy the appropriate section below and paste it into Gumroad's "Delivery" field 
 
 **Note:**
 - GitHub repository URL: `https://github.com/MrLucien-Johnson/programming-foundations-course`
-- Support email: `a.lucien-johnson@hotmail.co.uk`
+- Support via Instagram: `@abelsolutionslimited`
 - All placeholders have been filled - ready to use!
 
 ---
@@ -91,7 +91,7 @@ git pull
 
 - Check the FAQ sections in module README files
 - Review examples and solutions
-- Contact support: a.lucien-johnson@hotmail.co.uk
+- Contact support on Instagram: @abelsolutionslimited
 - Most questions are answered in the module content
 
 🎯 YOUR GOAL
@@ -106,7 +106,7 @@ Let's build something amazing together! 🚀
 
 ---
 
-Questions? Contact: a.lucien-johnson@hotmail.co.uk
+Questions? Contact on Instagram: @abelsolutionslimited
 ```
 
 ---
@@ -193,7 +193,7 @@ git pull
 
 - Check the FAQ sections in module README files
 - Review examples and solutions
-- Contact support: a.lucien-johnson@hotmail.co.uk
+- Contact support on Instagram: @abelsolutionslimited
 - Most questions are answered in the module content
 
 🎯 YOUR GOAL
@@ -208,7 +208,7 @@ Let's build something amazing together! 🚀
 
 ---
 
-Questions? Contact: a.lucien-johnson@hotmail.co.uk
+Questions? Contact on Instagram: @abelsolutionslimited
 ```
 
 ---
@@ -322,7 +322,7 @@ git pull
 
 - Check the FAQ sections in module README files
 - Review examples and solutions
-- Contact support: a.lucien-johnson@hotmail.co.uk
+- Contact support on Instagram: @abelsolutionslimited
 - Most questions are answered in the module content
 
 🎯 YOUR GOAL
@@ -339,7 +339,7 @@ Let's build something amazing together! 🚀
 
 ---
 
-Questions? Contact: a.lucien-johnson@hotmail.co.uk
+Questions? Contact on Instagram: @abelsolutionslimited
 ```
 
 ---
@@ -349,7 +349,7 @@ Questions? Contact: a.lucien-johnson@hotmail.co.uk
 Before using these delivery texts, verify:
 
 - [x] GitHub repository URL: `https://github.com/MrLucien-Johnson/programming-foundations-course`
-- [x] Support email: `a.lucien-johnson@hotmail.co.uk`
+- [x] Support via Instagram: `@abelsolutionslimited`
 
 **Note:** All placeholders have been filled. These delivery texts are ready to use!
 
@@ -364,7 +364,7 @@ Before going live:
 3. **Test the links** - Make sure they work
 4. **Preview as buyer** - See how it looks
 5. **Check formatting** - Make sure it's readable
-6. **Verify email** - Test support email works
+6. **Verify support contact** - Instagram handle is correct
 
 ---
 

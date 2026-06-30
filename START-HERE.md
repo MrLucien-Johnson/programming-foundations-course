@@ -237,7 +237,7 @@ You'll know you've succeeded when:
 **Technical setup issues?**
 - See Module 1 in your workbook
 - Check GitHub Issues (if public repo)
-- Contact support: a.lucien-johnson@hotmail.co.uk
+- Contact support through Instagram: @abelsolutionslimited
 
 **Feeling overwhelmed?**
 - That's normal! Start with Module 1

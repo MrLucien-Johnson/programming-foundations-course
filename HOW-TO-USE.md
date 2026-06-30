@@ -313,7 +313,7 @@ Before starting Module 7 (Task Tracker):
 - **Read error messages** - They're trying to help you!
 - **Take a break** - Sometimes you need to step away
 - **Keep practicing** - The more you code, the easier it gets
-- **Contact support** - a.lucien-johnson@hotmail.co.uk
+- **Contact support** - Instagram @abelsolutionslimited
 
 ---
 

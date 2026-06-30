@@ -142,9 +142,9 @@ Thank you for helping test **Programming Foundations: From Zero to Portfolio**. 
 - ✅ Can track fixes
 - ✅ Public record
 
-### Option 2: Email Feedback
+### Option 2: Instagram Feedback
 
-Send feedback to: **a.lucien-johnson@hotmail.co.uk**
+Send feedback through Instagram: **@abelsolutionslimited**
 
 **Include:**
 - What you tested (which modules)
@@ -231,7 +231,7 @@ If you found the course helpful, we'd love a testimonial!
 ## 🆘 Tester Support
 
 **Questions?**
-- Contact: a.lucien-johnson@hotmail.co.uk
+- Contact: Instagram @abelsolutionslimited
 - GitHub Issues (if you have access)
 
 **Stuck?**

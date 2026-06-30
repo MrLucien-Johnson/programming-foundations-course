@@ -13,9 +13,9 @@ All placeholders have been successfully replaced with actual values. The reposit
 - **Replaced with:** `https://github.com/MrLucien-Johnson/programming-foundations-course`
 - **Status:** ✅ Complete
 
-### 2. Support Email
+### 2. Support (Instagram)
 - **Placeholder:** `<PASTE_SUPPORT_EMAIL_HERE>`
-- **Replaced with:** `a.lucien-johnson@hotmail.co.uk`
+- **Replaced with:** `@abelsolutionslimited`
 - **Status:** ✅ Complete
 - **Files updated:** README.md, START-HERE.md, HOW-TO-USE.md, COURSE-LINKS.md, TESTER-ACCESS.md, GUMROAD-DELIVERY-GITHUB.md
 

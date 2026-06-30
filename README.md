@@ -197,7 +197,7 @@ Then navigate to:
 **Stuck on something?**
 - Review the module content
 - Check exercise solutions
-- Contact support: a.lucien-johnson@hotmail.co.uk
+- Contact support through Instagram: @abelsolutionslimited
 
 **Technical issues?**
 - See Module 1 in your workbook for setup help
