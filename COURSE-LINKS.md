@@ -44,6 +44,21 @@
 
 ---
 
+## 🤖 AI Prompt Creation Track
+
+### Track Root
+- **[AI Prompt Creation Track →](ai-prompt-creation-track/README.md)** - AI prompt track overview
+
+### Modules
+- **[Module 1: AI Foundations →](languages/ai/beginner/modules/01-ai-foundations.md)**
+- **[Module 2: Prompting Basics →](languages/ai/beginner/modules/02-prompting-basics.md)**
+- **[Module 3: Prompt Patterns →](languages/ai/beginner/modules/03-prompt-patterns.md)**
+- **[Module 4: Evaluation & Iteration →](languages/ai/beginner/modules/04-evaluation-and-iteration.md)**
+- **[Module 5: Safety & Policy Basics →](languages/ai/beginner/modules/05-safety-and-policy-basics.md)**
+- **[Module 6: Workflows & Automation →](languages/ai/beginner/modules/06-workflows-and-automation.md)**
+
+---
+
 ## 🎓 Portfolio & Career Resources
 
 - **[Portfolio Guide →](Programming-Foundations-Course/PORTFOLIO-GUIDE.md)** - How to showcase your projects
@@ -116,6 +131,9 @@ cd BeginnersC#
 
 ### "I want to start learning C#"
 → [C# Workbook →](csharp-beginner-workbook/README.md) → [Module 1 →](csharp-beginner-workbook/module-01-setup/README.md)
+
+### "I want to learn AI prompt creation"
+→ [AI Prompt Creation Track →](ai-prompt-creation-track/README.md) → [Module 1 →](languages/ai/beginner/modules/01-ai-foundations.md)
 
 ### "I want to see what I'll build"
 → [Python Task Tracker →](python-beginner-workbook/module-07-task-tracker/README.md) or [C# Task Tracker →](csharp-beginner-workbook/module-07-task-tracker/README.md)

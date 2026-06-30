@@ -70,6 +70,24 @@ This course takes you from **zero programming experience** to building **complet
 
 ---
 
+### 🤖 AI Prompt Creation Track
+
+**Best for:** Absolute beginners who want to learn prompt writing step by step
+
+**What you'll build:** A prompt playbook and a tested prompt workflow
+
+**Get started:** [AI Prompt Creation Track →](ai-prompt-creation-track/README.md)
+
+**Modules:**
+1. AI Foundations
+2. Prompting Basics
+3. Prompt Patterns
+4. Evaluation & Iteration
+5. Safety & Policy Basics
+6. Workflows & Automation
+
+---
+
 ## 🎓 What You'll Build
 
 ### Task Tracker Application
