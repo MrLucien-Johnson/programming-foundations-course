@@ -57,6 +57,26 @@
 - **[Module 5: Safety & Policy Basics →](languages/ai/beginner/modules/05-safety-and-policy-basics.md)**
 - **[Module 6: Workflows & Automation →](languages/ai/beginner/modules/06-workflows-and-automation.md)**
 
+### Intermediate Modules
+- **[Module 1: Advanced Prompting & Tool Use →](languages/ai/intermediate/modules/01-advanced-prompting-tool-use.md)**
+- **[Module 2: Structured Outputs & Schemas →](languages/ai/intermediate/modules/02-structured-outputs-and-schemas.md)**
+- **[Module 3: RAG Foundations →](languages/ai/intermediate/modules/03-rag-foundations.md)**
+- **[Module 4: Model Evaluation & Testing →](languages/ai/intermediate/modules/04-model-evaluation-and-testing.md)**
+- **[Module 5: Guardrails & Safety →](languages/ai/intermediate/modules/05-guardrails-and-safety.md)**
+- **[Module 6: Agentic Workflows →](languages/ai/intermediate/modules/06-agentic-workflows.md)**
+- **[Module 7: Cost, Latency & Ops →](languages/ai/intermediate/modules/07-cost-latency-and-ops.md)**
+- **[Module 8: Deployment Basics →](languages/ai/intermediate/modules/08-deployment-basics.md)**
+
+### Advanced Modules
+- **[Module 1: System Design for LLM Apps →](languages/ai/advanced/modules/01-system-design-for-llm-apps.md)**
+- **[Module 2: RAG Advanced Retrieval →](languages/ai/advanced/modules/02-rag-advanced-retrieval.md)**
+- **[Module 3: Evals at Scale →](languages/ai/advanced/modules/03-evals-at-scale.md)**
+- **[Module 4: Security Threat Modeling →](languages/ai/advanced/modules/04-security-threat-modeling-llm.md)**
+- **[Module 5: Observability & Monitoring →](languages/ai/advanced/modules/05-observability-and-monitoring-llm.md)**
+- **[Module 6: Reliability & Fallbacks →](languages/ai/advanced/modules/06-reliability-and-fallbacks.md)**
+- **[Module 7: Data Governance & Privacy →](languages/ai/advanced/modules/07-data-governance-and-privacy.md)**
+- **[Module 8: Production Incident Playbooks →](languages/ai/advanced/modules/08-production-incident-playbooks.md)**
+
 ---
 
 ## 🎓 Portfolio & Career Resources

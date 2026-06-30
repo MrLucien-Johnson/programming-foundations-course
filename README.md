@@ -72,19 +72,16 @@ This course takes you from **zero programming experience** to building **complet
 
 ### 🤖 AI Prompt Creation Track
 
-**Best for:** Absolute beginners who want to learn prompt writing step by step
+**Best for:** Absolute beginners through advanced learners who want structured prompt skills
 
-**What you'll build:** A prompt playbook and a tested prompt workflow
+**What you'll build:** A prompt playbook, tested workflows, and a production-ready prompt system
 
 **Get started:** [AI Prompt Creation Track →](ai-prompt-creation-track/README.md)
 
-**Modules:**
-1. AI Foundations
-2. Prompting Basics
-3. Prompt Patterns
-4. Evaluation & Iteration
-5. Safety & Policy Basics
-6. Workflows & Automation
+**Levels:**
+1. Beginner (Foundations, prompt patterns, evaluation, safety)
+2. Intermediate (structured outputs, RAG, guardrails, ops)
+3. Advanced (system design, security, observability, reliability)
 
 ---
 
