@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interactive Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <h1>Interactive Quiz</h1>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="start-here.html">Start Here</a>
+        <a href="courses.html">Courses</a>
+        <a href="help.html">Help</a>
+      </nav>
+    </header>
+
+    <main id="main" class="container">
+      <section class="hero">
+        <h2 id="quiz-title">Loading quiz…</h2>
+        <p class="note">Answer each question, then click “Check answers”.</p>
+      </section>
+
+      <section id="quiz-container" class="section card" aria-live="polite"></section>
+
+      <section class="section">
+        <div class="button-row">
+          <button class="btn btn-primary" id="check-answers" type="button">Check answers</button>
+          <a class="btn btn-secondary" href="courses.html">Back to courses</a>
+        </div>
+        <p id="quiz-score" class="quiz-score"></p>
+      </section>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const quizPath = params.get("quiz");
+      const quizTitle = document.getElementById("quiz-title");
+      const quizContainer = document.getElementById("quiz-container");
+      const scoreEl = document.getElementById("quiz-score");
+      const checkButton = document.getElementById("check-answers");
+      const rawRoot =
+        "https://raw.githubusercontent.com/MrLucien-Johnson/programming-foundations-course/main/";
+
+      const fetchText = (path) => fetch(new URL(path, rawRoot)).then((response) => {
+        if (!response.ok) {
+          throw new Error("Quiz not available yet.");
+        }
+        return response.text();
+      });
+
+      const buildAnswerPath = (path) => {
+        if (path.endsWith(".quiz.md")) {
+          return path.replace(".quiz.md", ".quiz-answers.md");
+        }
+        return path.replace("quiz.md", "quiz-answers.md");
+      };
+
+      const fallbackAnswerPath = (path) => {
+        if (path.includes("/exercises/quiz.md")) {
+          return path.replace("/exercises/quiz.md", "/solutions/quiz-answers.md");
+        }
+        return null;
+      };
+
+      const parseQuiz = (markdown) => {
+        const lines = markdown.split("\n");
+        const questions = [];
+        let current = null;
+
+        const pushCurrent = () => {
+          if (!current) return;
+          if (current.options.length === 0 && /true or false/i.test(current.prompt)) {
+            current.options = ["True", "False"];
+          }
+          questions.push(current);
+          current = null;
+        };
+
+        lines.forEach((line) => {
+          const questionMatch = line.match(/^###\s+(.*)$/);
+          if (questionMatch) {
+            pushCurrent();
+            current = {
+              prompt: questionMatch[1].trim(),
+              options: [],
+            };
+            return;
+          }
+
+          if (!current) return;
+          const optionMatch = line.match(/^[A-D]\)\s+(.*)$/);
+          if (optionMatch) {
+            current.options.push(optionMatch[1].trim());
+          }
+        });
+
+        pushCurrent();
+        return questions;
+      };
+
+      const parseAnswers = (markdown) => {
+        const lines = markdown.split("\n");
+        const answers = new Map();
+        let currentQuestion = null;
+
+        lines.forEach((line) => {
+          const questionMatch = line.match(/^##\s+Question\s+\d+:\s+(.*)$/);
+          const trueFalseMatch = line.match(/^###\s+True or False:\s+(.*)$/);
+          if (questionMatch) {
+            currentQuestion = questionMatch[1].trim();
+            return;
+          }
+          if (trueFalseMatch) {
+            currentQuestion = trueFalseMatch[1].trim();
+            return;
+          }
+
+          if (!currentQuestion) return;
+          const answerMatch = line.match(/\*\*Answer:\s+([^*]+)\*\*/);
+          if (answerMatch) {
+            answers.set(currentQuestion, answerMatch[1].trim());
+            currentQuestion = null;
+          }
+        });
+
+        return answers;
+      };
+
+      const normalizeAnswer = (answerText, options) => {
+        if (!answerText) return null;
+        const letterMatch = answerText.match(/[A-D]/i);
+        if (letterMatch && options.length > 0) {
+          return letterMatch[0].toUpperCase();
+        }
+        if (/false/i.test(answerText)) {
+          return "False";
+        }
+        if (/true/i.test(answerText)) {
+          return "True";
+        }
+        return answerText;
+      };
+
+      const renderQuiz = (questions, answers) => {
+        quizContainer.innerHTML = "";
+        questions.forEach((question, index) => {
+          const questionEl = document.createElement("div");
+          questionEl.className = "quiz-question";
+          const promptEl = document.createElement("h3");
+          promptEl.textContent = `${index + 1}. ${question.prompt}`;
+          questionEl.appendChild(promptEl);
+
+          const optionsEl = document.createElement("div");
+          optionsEl.className = "quiz-options";
+          const options = question.options.length > 0 ? question.options : ["True", "False"];
+
+          options.forEach((option, optionIndex) => {
+            const label = document.createElement("label");
+            label.className = "quiz-option";
+            const input = document.createElement("input");
+            input.type = "radio";
+            input.name = `question-${index}`;
+            input.value = option;
+            input.setAttribute("aria-label", option);
+            label.appendChild(input);
+            const text = document.createElement("span");
+            text.textContent = `${String.fromCharCode(65 + optionIndex)}) ${option}`;
+            label.appendChild(text);
+            optionsEl.appendChild(label);
+          });
+
+          const answerKey = answers.get(question.prompt) || answers.get(question.prompt.replace(/^[^:]+:\s*/, ""));
+          questionEl.dataset.answer = normalizeAnswer(answerKey, options);
+          questionEl.appendChild(optionsEl);
+          quizContainer.appendChild(questionEl);
+        });
+      };
+
+      const checkAnswers = () => {
+        let correct = 0;
+        const questions = quizContainer.querySelectorAll(".quiz-question");
+        questions.forEach((questionEl) => {
+          const correctAnswer = questionEl.dataset.answer;
+          const optionLabels = questionEl.querySelectorAll(".quiz-option");
+          let selectedValue = null;
+          optionLabels.forEach((label) => {
+            const input = label.querySelector("input");
+            label.classList.remove("correct", "incorrect");
+            if (input.checked) {
+              selectedValue = input.value;
+            }
+          });
+
+          optionLabels.forEach((label) => {
+            const input = label.querySelector("input");
+            const isCorrect = correctAnswer
+              ? input.value.toLowerCase() === correctAnswer.toLowerCase() ||
+                (correctAnswer.length === 1 &&
+                  input.value === input.value &&
+                  label.textContent.trim().startsWith(correctAnswer))
+              : false;
+
+            if (isCorrect) {
+              label.classList.add("correct");
+            }
+          });
+
+          if (selectedValue && correctAnswer) {
+            const selectedLabel = Array.from(optionLabels).find(
+              (label) => label.querySelector("input").value === selectedValue
+            );
+            if (
+              selectedValue.toLowerCase() === correctAnswer.toLowerCase() ||
+              (correctAnswer.length === 1 &&
+                selectedLabel.textContent.trim().startsWith(correctAnswer))
+            ) {
+              correct += 1;
+            } else if (selectedLabel) {
+              selectedLabel.classList.add("incorrect");
+            }
+          }
+        });
+
+        scoreEl.textContent = `Score: ${correct}/${questions.length}`;
+      };
+
+      if (!quizPath) {
+        quizTitle.textContent = "Quiz not found";
+        quizContainer.innerHTML = "<p>Please return to the courses page and select a quiz.</p>";
+        checkButton.disabled = true;
+      } else {
+        const answersPath = buildAnswerPath(quizPath);
+        fetchText(quizPath)
+          .then((quizMarkdown) => {
+            const questions = parseQuiz(quizMarkdown);
+            quizTitle.textContent = quizMarkdown.split("\n")[0].replace(/^#\s+/, "") || "Quiz";
+
+            return fetchText(answersPath)
+              .then((answersMarkdown) => {
+                const answers = parseAnswers(answersMarkdown);
+                renderQuiz(questions, answers);
+              })
+              .catch(() => {
+                const fallback = fallbackAnswerPath(quizPath);
+                if (!fallback) {
+                  renderQuiz(questions, new Map());
+                  return;
+                }
+                return fetchText(fallback)
+                  .then((answersMarkdown) => {
+                    const answers = parseAnswers(answersMarkdown);
+                    renderQuiz(questions, answers);
+                  })
+                  .catch(() => {
+                    renderQuiz(questions, new Map());
+                  });
+              });
+          })
+          .catch((error) => {
+            quizTitle.textContent = "Quiz unavailable";
+            quizContainer.innerHTML = `<p>${error.message}</p>`;
+            checkButton.disabled = true;
+          });
+      }
+
+      checkButton.addEventListener("click", checkAnswers);
+    </script>
+  </body>
+</html>

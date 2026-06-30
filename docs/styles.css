@@ -219,6 +219,41 @@ button:focus {
   border-radius: 8px;
 }
 
+.quiz-question {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.quiz-options {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.quiz-option {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.quiz-option.correct {
+  border-color: #2f7d32;
+  background: #e7f5e8;
+}
+
+.quiz-option.incorrect {
+  border-color: #b71c1c;
+  background: #fdecea;
+}
+
+.quiz-score {
+  font-weight: 700;
+}
+
 .footer {
   margin-top: 48px;
   font-size: 0.95rem;
