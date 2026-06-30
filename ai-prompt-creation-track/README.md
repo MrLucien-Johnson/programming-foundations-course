@@ -1,4 +1,4 @@
-# AI Prompt Creation Track
+# AI Prompt Creation Course
 
 Welcome! This track teaches you how to design prompts clearly and safely. You will learn how to
 turn vague ideas into clear instructions, test your results, and build reliable prompt workflows.
@@ -13,7 +13,7 @@ turn vague ideas into clear instructions, test your results, and build reliable 
 - A prompt workflow that is safe and repeatable
 - An advanced prompt system with measurable reliability
 
-## 🧭 Track levels
+## 🧭 Course levels
 1. **Beginner:** learn clear prompts and safe foundations
 2. **Intermediate:** add structured outputs, evals, and workflow reliability
 3. **Advanced:** design production-grade prompt systems and safety controls
@@ -124,7 +124,7 @@ turn vague ideas into clear instructions, test your results, and build reliable 
 - **Mini Project 2:** [Reliability Runbook](../languages/ai/advanced/projects/mini-project-2.md)
 - **Capstone:** [Production Prompt System](../languages/ai/advanced/projects/capstone.md)
 
-## 🚀 How to use this track
+## 🚀 How to use this course
 1. Start with Beginner and move in order.
 2. After each module, complete the mini-project.
 3. Keep a simple log of what you tried and what improved.

@@ -21,7 +21,7 @@ You're about to learn programming from the ground up. Whether you're looking to 
 - [ ] Learn about pacing options
 - [ ] Know how to practice effectively
 
-### Step 3: Choose Your Track (5 minutes)
+### Step 3: Choose Your Course (5 minutes)
 - [ ] Decide: Python, C#, or both?
 - [ ] Python is recommended for absolute beginners
 - [ ] C# is great for Microsoft ecosystem
@@ -138,7 +138,7 @@ We believe:
 
 ## 🗺️ Course Structure Overview
 
-### Each Track Has 7 Modules:
+### Each Course Has 7 Modules:
 
 1. **Setup & First Program** - Get everything working
 2. **Basics** - Variables, input, calculations
@@ -165,7 +165,7 @@ We believe:
 
 1. ✅ **Read this page** - You're doing it!
 2. 📖 **Read "How to Use This Course"** - [Open it →](HOW-TO-USE.md)
-3. 🎯 **Choose your track** - Python or C# (or both!)
+3. 🎯 **Choose your course** - Python or C# (or both!)
 4. 📁 **Download or clone the course** - Get the files on your computer
 5. 🏁 **Start Module 1** - Open Module 1 folder and begin!
 
@@ -250,7 +250,7 @@ You'll know you've succeeded when:
 
 **Next steps:**
 1. [Read "How to Use This Course" →](HOW-TO-USE.md)
-2. [Choose Your Track →](README.md#-choose-your-track)
+2. [Choose Your Course →](README.md#-choose-your-course)
 3. Download or clone the course
 4. **Start Module 1!**
 

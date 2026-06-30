@@ -8,9 +8,9 @@
 
 This course takes you from **zero programming experience** to building **complete applications** you can add to your portfolio.
 
-**Two complete tracks:**
-- 🐍 **Python Track** - 7 modules + Task Tracker project
-- 💻 **C# Track** - 7 modules + Task Tracker project
+**Two complete courses:**
+- 🐍 **Python Course** - 7 modules + Task Tracker project
+- 💻 **C# Course** - 7 modules + Task Tracker project
 
 **By the end, you'll have:**
 - ✅ Two complete programming languages under your belt
@@ -30,15 +30,15 @@ This course takes you from **zero programming experience** to building **complet
 
 ---
 
-## 📚 Choose Your Track
+## 📚 Choose Your Course
 
-### 🐍 Python Track
+### 🐍 Python Course
 
 **Best for:** Absolute beginners, data science, automation, web development
 
 **What you'll build:** A complete Task Tracker console application
 
-**Get started:** [Python Workbook →](python-beginner-workbook/README.md)
+**Get started:** [Python Course →](python-beginner-workbook/README.md)
 
 **Modules:**
 1. Setup & First Script
@@ -51,13 +51,13 @@ This course takes you from **zero programming experience** to building **complet
 
 ---
 
-### 💻 C# Track
+### 💻 C# Course
 
 **Best for:** Microsoft ecosystem, enterprise software, .NET development
 
 **What you'll build:** A complete Task Tracker console application with .NET
 
-**Get started:** [C# Workbook →](csharp-beginner-workbook/README.md)
+**Get started:** [C# Course →](csharp-beginner-workbook/README.md)
 
 **Modules:**
 1. Setup & First Program
@@ -70,13 +70,13 @@ This course takes you from **zero programming experience** to building **complet
 
 ---
 
-### 🤖 AI Prompt Creation Track
+### 🤖 AI Prompt Creation Course
 
 **Best for:** Absolute beginners through advanced learners who want structured prompt skills
 
 **What you'll build:** A prompt playbook, tested workflows, and a production-ready prompt system
 
-**Get started:** [AI Prompt Creation Track →](ai-prompt-creation-track/README.md)
+**Get started:** [AI Prompt Creation Course →](ai-prompt-creation-track/README.md)
 
 **Levels:**
 1. Beginner (Foundations, prompt patterns, evaluation, safety)
@@ -96,8 +96,8 @@ A complete console application that lets users:
 - Manage their to-do list
 
 **You'll build this twice:**
-- Once in Python (Module 7 of Python Track)
-- Once in C# (Module 7 of C# Track)
+- Once in Python (Module 7 of the Python Course)
+- Once in C# (Module 7 of the C# Course)
 
 Both projects are **portfolio-ready** and something you can show employers!
 
@@ -105,7 +105,7 @@ Both projects are **portfolio-ready** and something you can show employers!
 
 ## 📁 Course Structure
 
-### Each Track Contains:
+### Each Course Contains:
 
 **7 Modules:**
 - Step-by-step lessons (beginner-friendly, no jargon)
@@ -139,16 +139,16 @@ cd BeginnersC#
 ```
 
 Then navigate to:
-- `python-beginner-workbook/` for Python track
-- Root directory for C# track (modules are here)
+- `python-beginner-workbook/` for the Python course
+- Root directory for the C# course (modules are here)
 
 ---
 
 ## 🛠️ What You Need
 
 - **Computer:** Windows, macOS, or Linux
-- **Python:** Version 3.8+ (for Python track)
-- **.NET SDK:** Version 6.0+ (for C# track)
+- **Python:** Version 3.8+ (for Python course)
+- **.NET SDK:** Version 6.0+ (for C# course)
 - **Code Editor:** VS Code or Cursor (both free)
 - **Time:** 4-6 hours per module (self-paced)
 
@@ -166,24 +166,24 @@ Then navigate to:
 ## 🎯 Learning Paths
 
 ### Path 1: Python First (Recommended for Absolute Beginners)
-1. Complete Python Track (Modules 1-7)
-2. Build Python Task Tracker
-3. Then do C# Track (Modules 1-7)
-4. Build C# Task Tracker
+1. Complete the Python Course (Modules 1-7)
+2. Build the Python Task Tracker
+3. Then do the C# Course (Modules 1-7)
+4. Build the C# Task Tracker
 5. Complete Final Assessments
 6. Add to Portfolio
 
 ### Path 2: C# First
-1. Complete C# Track (Modules 1-7)
-2. Build C# Task Tracker
-3. Then do Python Track (Modules 1-7)
-4. Build Python Task Tracker
+1. Complete the C# Course (Modules 1-7)
+2. Build the C# Task Tracker
+3. Then do the Python Course (Modules 1-7)
+4. Build the Python Task Tracker
 5. Complete Final Assessments
 6. Add to Portfolio
 
 ### Path 3: One Language Only
 - Choose Python OR C#
-- Complete that track
+- Complete that course
 - Build the Task Tracker
 - Complete Final Assessment
 - Add to Portfolio
@@ -238,9 +238,9 @@ This course is provided for educational purposes. You may:
 
 **Start here:** [Start Here →](START-HERE.md)
 
-**Or choose your track:**
-- [Python Track →](python-beginner-workbook/README.md)
-- [C# Track →](csharp-beginner-workbook/README.md)
+**Or choose your course:**
+- [Python Course →](python-beginner-workbook/README.md)
+- [C# Course →](csharp-beginner-workbook/README.md)
 
 **Welcome to your programming journey!** 🚀
 

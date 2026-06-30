@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Course Lesson Viewer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <h1>Lesson Viewer</h1>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="start-here.html">Start Here</a>
+        <a href="courses.html">Courses</a>
+        <a href="help.html">Help</a>
+      </nav>
+    </header>
+
+    <main id="main" class="container">
+      <section class="hero">
+        <h2 id="lesson-title">Loading lesson…</h2>
+        <p class="note">
+          This lesson is displayed from the course repository, but you stay on the learning site.
+        </p>
+      </section>
+
+      <section id="lesson-content" class="section card" aria-live="polite"></section>
+
+      <section class="section">
+        <div class="button-row">
+          <a class="btn btn-secondary" href="courses.html">Back to courses</a>
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/MrLucien-Johnson/programming-foundations-course"
+          >
+            View repository
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const repoPath = params.get("path");
+      const contentEl = document.getElementById("lesson-content");
+      const titleEl = document.getElementById("lesson-title");
+
+      if (!repoPath) {
+        titleEl.textContent = "Lesson not found";
+        contentEl.innerHTML = "<p>Please return to the courses page and select a lesson.</p>";
+      } else {
+        const rawRoot =
+          "https://raw.githubusercontent.com/MrLucien-Johnson/programming-foundations-course/main/";
+        const rawUrl = new URL(repoPath, rawRoot).toString();
+        const baseDir = new URL(".", rawUrl);
+
+        fetch(rawUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Lesson not available.");
+            }
+            return response.text();
+          })
+          .then((markdown) => {
+            const html = marked.parse(markdown);
+            contentEl.innerHTML = html;
+            const firstHeading = contentEl.querySelector("h1");
+            if (firstHeading) {
+              titleEl.textContent = firstHeading.textContent;
+            }
+
+            contentEl.querySelectorAll("a[href]").forEach((link) => {
+              const href = link.getAttribute("href");
+              if (!href || href.startsWith("#") || href.startsWith("mailto:")) {
+                return;
+              }
+              if (href.startsWith("http")) {
+                link.setAttribute("target", "_blank");
+                link.setAttribute("rel", "noopener");
+                return;
+              }
+              const resolved = new URL(href, baseDir);
+              const resolvedPath = resolved.toString().replace(rawRoot, "");
+              if (href.endsWith(".md")) {
+                link.setAttribute(
+                  "href",
+                  `course-viewer.html?path=${encodeURIComponent(resolvedPath)}`
+                );
+              } else {
+                link.setAttribute("href", resolved.toString());
+              }
+            });
+
+            contentEl.querySelectorAll("img[src]").forEach((img) => {
+              const src = img.getAttribute("src");
+              if (!src || src.startsWith("http")) {
+                return;
+              }
+              const resolved = new URL(src, baseDir);
+              img.setAttribute("src", resolved.toString());
+            });
+          })
+          .catch((error) => {
+            titleEl.textContent = "Lesson unavailable";
+            contentEl.innerHTML = `<p>${error.message}</p>`;
+          });
+      }
+    </script>
+  </body>
+</html>

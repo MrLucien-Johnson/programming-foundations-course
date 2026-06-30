@@ -7,12 +7,18 @@
 - **[How to Use This Course →](HOW-TO-USE.md)** - Navigation and learning tips
 - **[Main README →](README.md)** - Course homepage
 
+### Web Course Pages (GitHub Pages)
+- **[Courses Home →](docs/courses.html)** - Online course picker
+- **[Python Course Page →](docs/python-course.html)** - Online module list
+- **[C# Course Page →](docs/csharp-course.html)** - Online module list
+- **[AI Prompt Course Page →](docs/ai-course.html)** - Online module list
+
 ---
 
-## 🐍 Python Track
+## 🐍 Python Course
 
-### Workbook Root
-- **[Python Workbook →](python-beginner-workbook/README.md)** - Python track overview
+### Course Root
+- **[Python Course →](python-beginner-workbook/README.md)** - Python course overview
 
 ### Quick Start
 - **[Python Quick Start →](python-beginner-workbook/QUICK_START.md)** - Get Python running fast
@@ -28,10 +34,10 @@
 
 ---
 
-## 💻 C# Track
+## 💻 C# Course
 
-### Workbook Root
-- **[C# Workbook →](csharp-beginner-workbook/README.md)** - C# track overview
+### Course Root
+- **[C# Course →](csharp-beginner-workbook/README.md)** - C# course overview
 
 ### Modules
 - **[Module 1: Setup & First Program →](csharp-beginner-workbook/module-01-setup/README.md)**
@@ -44,11 +50,11 @@
 
 ---
 
-## 🤖 AI Prompt Creation Track
+## 🤖 AI Prompt Creation Course
 
-### Track Root
-- **[AI Prompt Creation Track →](ai-prompt-creation-track/README.md)** - AI prompt track overview
-- **[AI Prompt Track Start Here →](docs/ai-start-here.html)** - Web-friendly start page
+### Course Root
+- **[AI Prompt Creation Course →](ai-prompt-creation-track/README.md)** - AI prompt course overview
+- **[AI Prompt Course Start Here →](docs/ai-start-here.html)** - Web-friendly start page
 
 ### Modules
 - **[Module 1: AI Foundations →](languages/ai/beginner/modules/01-ai-foundations.md)**
@@ -148,13 +154,13 @@ cd BeginnersC#
 ## 🎯 Quick Navigation by Goal
 
 ### "I want to start learning Python"
-→ [Python Workbook →](python-beginner-workbook/README.md) → [Module 1 →](python-beginner-workbook/module-01-setup/README.md)
+→ [Python Course →](python-beginner-workbook/README.md) → [Module 1 →](python-beginner-workbook/module-01-setup/README.md)
 
 ### "I want to start learning C#"
-→ [C# Workbook →](csharp-beginner-workbook/README.md) → [Module 1 →](csharp-beginner-workbook/module-01-setup/README.md)
+→ [C# Course →](csharp-beginner-workbook/README.md) → [Module 1 →](csharp-beginner-workbook/module-01-setup/README.md)
 
 ### "I want to learn AI prompt creation"
-→ [AI Prompt Creation Track →](ai-prompt-creation-track/README.md) → [Module 1 →](languages/ai/beginner/modules/01-ai-foundations.md)
+→ [AI Prompt Creation Course →](ai-prompt-creation-track/README.md) → [Module 1 →](languages/ai/beginner/modules/01-ai-foundations.md)
 
 ### "I want to see what I'll build"
 → [Python Task Tracker →](python-beginner-workbook/module-07-task-tracker/README.md) or [C# Task Tracker →](csharp-beginner-workbook/module-07-task-tracker/README.md)
