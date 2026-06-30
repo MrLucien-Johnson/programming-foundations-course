@@ -48,6 +48,7 @@
 
 ### Track Root
 - **[AI Prompt Creation Track →](ai-prompt-creation-track/README.md)** - AI prompt track overview
+- **[AI Prompt Track Start Here →](docs/ai-start-here.html)** - Web-friendly start page
 
 ### Modules
 - **[Module 1: AI Foundations →](languages/ai/beginner/modules/01-ai-foundations.md)**
