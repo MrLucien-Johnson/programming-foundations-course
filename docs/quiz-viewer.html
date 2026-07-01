@@ -25,6 +25,14 @@
         <p class="note">Answer each question, then click “Check answers”.</p>
       </section>
 
+      <section id="quiz-intro" class="section card">
+        <h3>Quiz overview</h3>
+        <p id="quiz-meta">Loading quiz details…</p>
+        <div class="button-row">
+          <button class="btn btn-primary" id="start-quiz" type="button">Start quiz</button>
+        </div>
+      </section>
+
       <section id="quiz-container" class="section card" aria-live="polite"></section>
 
       <section class="section">
@@ -43,6 +51,9 @@
       const quizContainer = document.getElementById("quiz-container");
       const scoreEl = document.getElementById("quiz-score");
       const checkButton = document.getElementById("check-answers");
+      const startButton = document.getElementById("start-quiz");
+      const introSection = document.getElementById("quiz-intro");
+      const metaEl = document.getElementById("quiz-meta");
       const rawRoot =
         "https://raw.githubusercontent.com/MrLucien-Johnson/programming-foundations-course/main/";
 
@@ -279,16 +290,39 @@
         scoreEl.textContent = `Score: ${correct}/${questions.length}`;
       };
 
+      quizContainer.style.display = "none";
+      checkButton.disabled = true;
+
+      const showQuiz = () => {
+        quizContainer.style.display = "block";
+        if (introSection) {
+          introSection.style.display = "none";
+        }
+        checkButton.disabled = false;
+        scoreEl.textContent = "";
+      };
+
+      if (startButton) {
+        startButton.addEventListener("click", showQuiz);
+      }
+
       if (!quizPath) {
         quizTitle.textContent = "Quiz not found";
         quizContainer.innerHTML = "<p>Please return to the courses page and select a quiz.</p>";
         checkButton.disabled = true;
+        if (introSection) {
+          introSection.style.display = "none";
+        }
       } else {
         const answersPath = buildAnswerPath(quizPath);
         fetchText(quizPath)
           .then((quizMarkdown) => {
             const questions = parseQuiz(quizMarkdown);
             quizTitle.textContent = quizMarkdown.split("\n")[0].replace(/^#\s+/, "") || "Quiz";
+            if (metaEl) {
+              const minutes = Math.max(2, Math.round(questions.length * 1.2));
+              metaEl.textContent = `Questions: ${questions.length} · Passing score: 70% · Estimated time: ${minutes} minutes`;
+            }
 
             return fetchText(answersPath)
               .then((answersMarkdown) => {
@@ -315,6 +349,9 @@
             quizTitle.textContent = "Quiz unavailable";
             quizContainer.innerHTML = `<p>${error.message}</p>`;
             checkButton.disabled = true;
+            if (introSection) {
+              introSection.style.display = "none";
+            }
           });
       }
 

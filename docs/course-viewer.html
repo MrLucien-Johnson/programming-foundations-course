@@ -416,9 +416,12 @@
             if (lessonInfo && lessonInfo.module.quiz) {
               const quizButtonHtml = `
                 <div class="note">
-                  <strong>Interactive quiz available.</strong>
-                  <a href="quiz-viewer.html?quiz=${encodeURIComponent(lessonInfo.module.quiz)}">
-                    Take the quiz
+                  <strong>Lesson quiz</strong>
+                  <p>Short assessment · Passing score: 70% · Estimated time: 5-10 minutes</p>
+                  <a class="btn btn-primary" href="quiz-viewer.html?quiz=${encodeURIComponent(
+                    lessonInfo.module.quiz
+                  )}">
+                    Start quiz
                   </a>
                 </div>
               `;
