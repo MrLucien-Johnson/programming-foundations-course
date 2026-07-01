@@ -61,7 +61,7 @@
       const markCompleteBtn = document.getElementById("mark-complete");
       const completionStatus = document.getElementById("completion-status");
 
-      const COURSES = [
+      let COURSES = [
         {
           id: "python",
           name: "Python Course",
@@ -274,6 +274,22 @@
         },
       ];
 
+      const loadCourses = async () => {
+        try {
+          const response = await fetch("course-index.json");
+          if (!response.ok) {
+            throw new Error("Course index unavailable.");
+          }
+          const data = await response.json();
+          if (data && Array.isArray(data.courses)) {
+            return data.courses;
+          }
+        } catch (error) {
+          return COURSES;
+        }
+        return COURSES;
+      };
+
       const completedKey = "course-completions";
 
       const getCompletions = () => {
@@ -302,7 +318,8 @@
         return null;
       };
 
-      if (!repoPath) {
+      const init = () => {
+        if (!repoPath) {
         titleEl.textContent = "Lesson not found";
         contentEl.innerHTML = "<p>Please return to the courses page and select a lesson.</p>";
         markCompleteBtn.disabled = true;
@@ -470,6 +487,12 @@
         if (!repoPath) return;
         saveCompletion(repoPath);
         completionStatus.textContent = "Marked as complete.";
+      });
+      };
+
+      loadCourses().then((courses) => {
+        COURSES = courses;
+        init();
       });
     </script>
   </body>
