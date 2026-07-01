@@ -423,17 +423,23 @@
                   const wrapper = document.createElement("div");
                   wrapper.innerHTML = quizButtonHtml;
                   const replacement = quizInserted ? null : wrapper.firstElementChild;
+                  const currentLevel = parseInt(heading.tagName.replace("H", ""), 10);
+
                   const nextHeading = (node) => {
                     let current = node;
                     while (current) {
                       current = current.nextSibling;
                       if (!current) return null;
-                      if (current.nodeType === 1 && /H2|H3|H4/.test(current.tagName)) {
-                        return current;
+                      if (current.nodeType === 1 && /^H[1-4]$/.test(current.tagName)) {
+                        const level = parseInt(current.tagName.replace("H", ""), 10);
+                        if (level <= currentLevel) {
+                          return current;
+                        }
                       }
                     }
                     return null;
                   };
+
                   const stopAt = nextHeading(heading);
                   let cursor = heading;
                   while (cursor && cursor !== stopAt) {
@@ -441,6 +447,7 @@
                     cursor.remove();
                     cursor = next;
                   }
+
                   if (replacement) {
                     quizInserted = true;
                     if (stopAt) {
