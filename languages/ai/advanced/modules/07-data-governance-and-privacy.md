@@ -25,6 +25,28 @@ Handle data responsibly: minimization, retention, access control, consent, and a
 3) Access control for RAG and multi-tenant data (50 min)
 4) Privacy-by-design in prompts and evaluations (45 min)
 
+## Guided Walkthrough
+
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will protect sensitive data and compliance.
+3. Classify data types and retention rules.
+4. Add redaction rules and access controls.
+5. Document privacy and compliance steps.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+
+Use the starter pack in `languages/ai/advanced/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Create a data handling policy for your app: what is stored, for how long, and why.
@@ -58,9 +80,21 @@ Produce a governance plan for an LLM app (privacy + access control + audit).
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+
 ## Common Mistakes
 - Logging raw prompts/outputs indefinitely.
 - Ignoring multi-tenant isolation and permissions in retrieval.
 
 ## Stretch Resources
-- (Placeholder) Add links to privacy engineering and governance references.
+
+
+- NIST privacy framework: https://www.nist.gov/privacy-framework
+- Data governance intro: https://www.cio.com/article/220234/what-is-data-governance.html
+

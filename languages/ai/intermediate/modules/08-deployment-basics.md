@@ -25,6 +25,28 @@ Ship an AI feature safely: config, versioning, rollout, and operational readines
 3) Rollouts: canary, feature flags, and rollback criteria (45 min)
 4) CI checks: eval gates, safety tests, and smoke tests (40 min)
 
+## Guided Walkthrough
+
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will prepare prompts for production delivery.
+3. Define release and rollback steps.
+4. Add monitoring for key metrics.
+5. Document environment configuration.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+
+Use the starter pack in `languages/ai/intermediate/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Create a deployment checklist for one AI feature.
@@ -59,10 +81,22 @@ Produce a deploy plan for an AI feature including evaluation + safety gates.
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+
 ## Common Mistakes
 - Deploying prompt changes without a version or rollback strategy.
 - No staging environment or test dataset.
 - No plan for incidents or user-reported failures.
 
 ## Stretch Resources
-- (Placeholder) Add links to release strategies and safe deployment playbooks.
+
+
+- Production practices: https://platform.openai.com/docs/guides/production-best-practices
+- CI/CD overview: https://martinfowler.com/articles/continuousIntegration.html
+

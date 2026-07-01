@@ -24,6 +24,26 @@ This module uses **Rust stable (rustup)**, **Cargo**, and **cargo test**. When a
 3) Supply-chain security + dependency policies (35 min)
 4) Security testing and hardening checklist (40 min)
 
+## Guided Walkthrough
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/rust/advanced/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will harden systems against advanced threats.
+3. Model a threat scenario and document mitigations.
+4. Add security logging or alerting for sensitive actions.
+5. Review dependencies for vulnerabilities.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+Use the starter pack in `languages/rust/advanced/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A minimal project scaffold.
+- A sample entry point you can expand.
+- A place to add tests and notes.
+
 ## Exercises
 ### Core
 - Implement a small feature tied to this module in an existing starter app.
@@ -63,6 +83,17 @@ Build a small, production-leaning feature or service slice that showcases **Secu
 | Code quality | Lint/format clean, clear naming | Clean architecture choices with justified tradeoffs |
 | Documentation | Setup + usage documented | Includes rationale, diagrams, or ADR-style notes |
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+- Run: `cargo test`
+- Run: `cargo clippy`
+- Run: `cargo fmt`
+
 ## Common Mistakes
 - Shipping without an automated test run in CI.
 - Over-mocking (tests assert implementation details instead of outcomes).
@@ -70,5 +101,8 @@ Build a small, production-leaning feature or service slice that showcases **Secu
 - Making performance claims without measurements.
 
 ## Stretch Resources
-- (Add links to official docs, talks, and reference implementations.)
-- (Add 1–2 curated articles that deepen understanding.)
+
+
+- OWASP cheat sheets: https://cheatsheetseries.owasp.org/
+- NIST security overview: https://www.nist.gov/cyberframework
+

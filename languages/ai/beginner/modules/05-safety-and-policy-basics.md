@@ -24,6 +24,25 @@ Build safe defaults: handle sensitive data, refusals, and prompt injection attem
 3) Prompt injection basics: untrusted input boundaries (45 min)
 4) Safer outputs: disclaimers, citations to provided text, and abstention (40 min)
 
+## Guided Walkthrough
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/beginner/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will apply safety rules and refusal handling.
+3. List the top 5 risk scenarios for the prompt.
+4. Add refusal or redirection language for unsafe requests.
+5. Test safety cases and record outcomes.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+Use the starter pack in `languages/ai/beginner/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Write a safety checklist for a summarizer and apply it to 10 test cases.
@@ -59,10 +78,20 @@ Create a safety pack: checklist + red-team test set + response guidelines.
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+Before moving on, confirm the following:
+
+- You can restate the module goal in your own words.
+- You have run at least one evaluation pass.
+- You documented what improved and what did not.
+
 ## Common Mistakes
 - Treating user input as trusted instructions.
 - No plan for unsafe outputs or sensitive data exposure.
 - “Refuse everything” instead of safe redirection where appropriate.
 
 ## Stretch Resources
-- (Placeholder) Add links to general AI safety and secure prompting references.
+
+- Prompting guide: https://www.promptingguide.ai/
+- OpenAI guides: https://platform.openai.com/docs/guides
+

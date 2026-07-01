@@ -25,6 +25,28 @@ Threat model LLM applications: injection, data exfiltration, tool abuse, and sup
 3) Tool security: least privilege, allowlists, and audit logs (45 min)
 4) Secure data handling: redaction, retention, and access control (45 min)
 
+## Guided Walkthrough
+
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will threat model LLM workflows.
+3. Identify threat actors and attack vectors.
+4. Add defenses for prompt injection and data leakage.
+5. Document mitigations and monitoring.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+
+Use the starter pack in `languages/ai/advanced/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Create a threat model for one app: list threats and mitigations.
@@ -58,9 +80,21 @@ Produce a security threat model + red-team plan + mitigations for an LLM app.
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+
 ## Common Mistakes
 - Treating retrieved content as trusted instructions.
 - Over-permissioned tools without audit logs.
 
 ## Stretch Resources
-- (Placeholder) Add links to secure system design and threat modeling references.
+
+
+- OWASP LLM Top 10: https://owasp.org/www-project-top-10-for-large-language-model-applications/
+- Threat modeling: https://learn.microsoft.com/en-us/security/engineering/threat-modeling
+

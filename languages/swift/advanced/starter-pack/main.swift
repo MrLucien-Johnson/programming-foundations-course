@@ -1,0 +1,1 @@
+print("Starter pack ready.")

@@ -24,6 +24,25 @@ Combine prompts into a workflow: input → transform → validate → output, wi
 3) Human-in-the-loop: where reviewers add the most value (35 min)
 4) Fallback strategies: abstain, ask, or route to human (40 min)
 
+## Guided Walkthrough
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/beginner/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will design repeatable prompt workflows.
+3. Map the workflow from input to output with clear steps.
+4. Define handoff points and required context.
+5. Test the workflow with real inputs.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+Use the starter pack in `languages/ai/beginner/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Design a 3-step workflow for meeting notes: extract actions → verify → produce final.
@@ -59,10 +78,20 @@ Build a workflow spec for meeting notes → actions that includes validation + f
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+Before moving on, confirm the following:
+
+- You can restate the module goal in your own words.
+- You have run at least one evaluation pass.
+- You documented what improved and what did not.
+
 ## Common Mistakes
 - No boundaries between steps (everything in one giant prompt).
 - No stop conditions—workflow runs forever or amplifies errors.
 - No tracking of versions/results, making regressions invisible.
 
 ## Stretch Resources
-- (Placeholder) Add links to workflow design and validation patterns.
+
+- Prompting guide: https://www.promptingguide.ai/
+- OpenAI guides: https://platform.openai.com/docs/guides
+

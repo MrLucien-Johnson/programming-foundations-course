@@ -25,6 +25,25 @@ Understand what LLMs are good at, what they’re bad at, and how to frame AI wor
 3) Failure modes: hallucinations, brittleness, prompt injection basics (45 min)
 4) Working with constraints: tone, length, format, policies (40 min)
 
+## Guided Walkthrough
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/beginner/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will translate vague requests into clear goals, constraints, and evaluation.
+3. Write a one-page prompt spec with goal, inputs, outputs, and constraints.
+4. Create a 10-case evaluation set that includes edge cases and failures.
+5. Run the eval set and record what broke and why.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+Use the starter pack in `languages/ai/beginner/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Write a one-page spec for a summarizer: inputs, outputs, constraints, and “do not do” list.
@@ -60,11 +79,20 @@ Build a “Prompt Spec” template and apply it to a summarization use case.
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+Before moving on, confirm the following:
+
+- You can restate the module goal in your own words.
+- You have run at least one evaluation pass.
+- You documented what improved and what did not.
+
 ## Common Mistakes
 - Skipping the spec and jumping straight to prompt tinkering.
 - Measuring success by a single cherry-picked example.
 - Letting the model invent facts rather than constraining it to source text.
 
 ## Stretch Resources
-- (Placeholder) Add an introductory LLM evaluation guide.
-- (Placeholder) Add a primer on hallucinations and mitigation strategies.
+
+- Prompting guide: https://www.promptingguide.ai/
+- OpenAI guides: https://platform.openai.com/docs/guides
+

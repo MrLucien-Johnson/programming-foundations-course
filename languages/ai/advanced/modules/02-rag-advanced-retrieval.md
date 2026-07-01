@@ -24,6 +24,28 @@ Improve retrieval quality: hybrid search, metadata filters, reranking, and fresh
 3) Reranking and query rewriting (45 min)
 4) Freshness and re-indexing strategies (45 min)
 
+## Guided Walkthrough
+
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will improve retrieval quality and ranking.
+3. Experiment with chunking and re-ranking strategies.
+4. Compare retrieval results across 10 queries.
+5. Document the best-performing approach.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+
+Use the starter pack in `languages/ai/advanced/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.
@@ -58,9 +80,21 @@ Upgrade a RAG design with hybrid retrieval + reranking + freshness plan.
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+
 ## Common Mistakes
 - Optimizing retrieval with changing datasets (no stable benchmark).
 - Ignoring permissions/access control in retrieval.
 
 ## Stretch Resources
-- (Placeholder) Add links to hybrid retrieval and reranking techniques.
+
+
+- Advanced retrieval: https://www.pinecone.io/learn/
+- RAG evals: https://github.com/openai/evals
+

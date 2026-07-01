@@ -25,6 +25,28 @@ Treat LLM work like software testing: datasets, baselines, regression tests, and
 3) Regression gates: prevent quality drift (45 min)
 4) Human evaluation: rubrics and inter-rater consistency (40 min)
 
+## Guided Walkthrough
+
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will measure quality, latency, and cost.
+3. Define evaluation metrics and thresholds.
+4. Run a baseline evaluation and record metrics.
+5. Track improvements after prompt changes.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+
+Use the starter pack in `languages/ai/intermediate/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Create an eval harness outline for one task and run it on 50 cases.
@@ -59,10 +81,22 @@ Build a lightweight evaluation harness spec + dataset + reporting template.
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+
 ## Common Mistakes
 - No baseline or thresholds—can't tell if you improved.
 - Only measuring “vibes” instead of repeatable outcomes.
 - Mixing data leakage into eval sets (training-like artifacts).
 
 ## Stretch Resources
-- (Placeholder) Add links to evaluation methodologies and common metrics.
+
+
+- OpenAI evals: https://github.com/openai/evals
+- Evaluation guide: https://www.promptingguide.ai/
+

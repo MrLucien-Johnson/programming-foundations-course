@@ -24,6 +24,26 @@ This module uses **.NET 8**, **dotnet CLI + NuGet**, and **xUnit (or NUnit) + Fl
 3) Injection + validation + encoding (45 min)
 4) AuthZ checks + least privilege (35 min)
 
+## Guided Walkthrough
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/csharp/intermediate/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will handle common risks and input validation.
+3. List the top risks for this module (input validation, secrets, auth).
+4. Add validation and error handling for unsafe inputs.
+5. Write a short threat checklist and review it after changes.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+Use the starter pack in `languages/csharp/intermediate/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A minimal project scaffold.
+- A sample entry point you can expand.
+- A place to add tests and notes.
+
 ## Exercises
 ### Core
 - Implement a small feature tied to this module in an existing starter app.
@@ -63,6 +83,17 @@ Build a small, production-leaning feature or service slice that showcases **Secu
 | Code quality | Lint/format clean, clear naming | Clean architecture choices with justified tradeoffs |
 | Documentation | Setup + usage documented | Includes rationale, diagrams, or ADR-style notes |
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+- Run: `dotnet test`
+- Run: `dotnet format`
+- Run: `dotnet format`
+
 ## Common Mistakes
 - Shipping without an automated test run in CI.
 - Over-mocking (tests assert implementation details instead of outcomes).
@@ -70,5 +101,8 @@ Build a small, production-leaning feature or service slice that showcases **Secu
 - Making performance claims without measurements.
 
 ## Stretch Resources
-- (Add links to official docs, talks, and reference implementations.)
-- (Add 1–2 curated articles that deepen understanding.)
+
+
+- OWASP Top 10: https://owasp.org/www-project-top-ten/
+- Security guidelines: https://cheatsheetseries.owasp.org/
+

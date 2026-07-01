@@ -24,6 +24,28 @@ Build retrieval-augmented generation (RAG) systems: chunking, embeddings, retrie
 3) Retrieval: top-k, filters, and re-ranking basics (45 min)
 4) Grounded answers: cite sources and abstain when missing (45 min)
 
+## Guided Walkthrough
+
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will build a retrieval-augmented generation pipeline.
+3. Collect and chunk a small document set.
+4. Run retrieval for 5 queries and inspect relevance.
+5. Update prompts to cite sources accurately.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+
+Use the starter pack in `languages/ai/intermediate/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Create a doc set (10–30 pages) and define a question set (30 questions).
@@ -58,10 +80,22 @@ Build a small RAG Q&A prototype spec with dataset, grounded answering, and eval 
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+
 ## Common Mistakes
 - No citation requirement, leading to confident hallucinations.
 - Chunking without metadata, making filtering impossible.
 - Not separating retrieval vs generation issues.
 
 ## Stretch Resources
-- (Placeholder) Add links to RAG evaluation and retrieval strategies.
+
+
+- RAG overview: https://www.pinecone.io/learn/retrieval-augmented-generation/
+- Vector search guide: https://www.pinecone.io/learn/vector-search/
+

@@ -25,6 +25,28 @@ Design end-to-end LLM application architectures: data flows, boundaries, scaling
 3) Multi-tenancy and data isolation (45 min)
 4) Versioned prompts/evals as first-class artifacts (45 min)
 
+## Guided Walkthrough
+
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will design a scalable LLM system.
+3. Write a system design doc with components and data flow.
+4. Identify bottlenecks and failure modes.
+5. Propose mitigations and tradeoffs.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+
+Use the starter pack in `languages/ai/advanced/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Create an architecture diagram and data flow for one LLM feature.
@@ -58,9 +80,21 @@ Write a system design doc for a production LLM app with eval/safety/cost plans.
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+
 ## Common Mistakes
 - Treating the model as a single black box without boundaries.
 - No plan for scaling or failure, leading to outages/cost spikes.
 
 ## Stretch Resources
-- (Placeholder) Add links to system design references for AI applications.
+
+
+- System design primer: https://github.com/donnemartin/system-design-primer
+- LLM architecture: https://www.pinecone.io/learn/
+

@@ -24,6 +24,25 @@ Treat prompt work like engineering: define metrics, build test cases, run regres
 3) Regression testing: don't trade one failure for another (40 min)
 4) Iteration discipline: one change at a time + notes (35 min)
 
+## Guided Walkthrough
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/beginner/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will build an evaluation loop and track improvements.
+3. Define success metrics and failure categories.
+4. Run an eval set before and after an improvement.
+5. Summarize the delta and update your prompt spec.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+Use the starter pack in `languages/ai/beginner/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Create a rubric for summaries (factual, complete, actionable, tone).
@@ -58,10 +77,20 @@ Produce a small evaluation harness spec and a 20-case dataset for one task.
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+Before moving on, confirm the following:
+
+- You can restate the module goal in your own words.
+- You have run at least one evaluation pass.
+- You documented what improved and what did not.
+
 ## Common Mistakes
 - Only testing on “happy path” examples.
 - No baseline—can't prove improvement.
 - Changing prompt, temperature, and examples at once.
 
 ## Stretch Resources
-- (Placeholder) Add links to evaluation best practices and datasets.
+
+- Prompting guide: https://www.promptingguide.ai/
+- OpenAI guides: https://platform.openai.com/docs/guides
+

@@ -25,6 +25,25 @@ Learn how to write prompts like specifications: define role, task, constraints, 
 3) Delimiters and quoting: making input boundaries explicit (35 min)
 4) Asking for uncertainty: when to say “I don't know” (35 min)
 
+## Guided Walkthrough
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/beginner/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will create prompts with clarity, structure, and constraints.
+3. Draft an initial prompt with role, task, input, and output format.
+4. Add constraints (tone, length, refusal rules) and test against 5 cases.
+5. Iterate once and document the improvement.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+Use the starter pack in `languages/ai/beginner/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Write prompts that produce consistent bullet summaries for 10 support tickets.
@@ -60,10 +79,20 @@ Create a prompt pack for meeting-notes-to-actions with a repeatable test set.
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+Before moving on, confirm the following:
+
+- You can restate the module goal in your own words.
+- You have run at least one evaluation pass.
+- You documented what improved and what did not.
+
 ## Common Mistakes
 - Vague instructions like “be helpful” without constraints.
 - No delimiter between instructions and user content.
 - Overlong prompts that hide the essential rules.
 
 ## Stretch Resources
-- (Placeholder) Add a short guide on prompt structure patterns.
+
+- Prompting guide: https://www.promptingguide.ai/
+- OpenAI guides: https://platform.openai.com/docs/guides
+
