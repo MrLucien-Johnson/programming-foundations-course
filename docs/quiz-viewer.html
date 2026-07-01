@@ -38,6 +38,7 @@
       <section class="section" id="quiz-actions">
         <div class="button-row">
           <button class="btn btn-primary" id="check-answers" type="button">Check answers</button>
+          <button class="btn btn-secondary" id="reset-quiz" type="button">Try again</button>
           <a class="btn btn-secondary" href="courses.html">Back to courses</a>
         </div>
         <p id="quiz-score" class="quiz-score"></p>
@@ -51,6 +52,7 @@
       const quizContainer = document.getElementById("quiz-container");
       const scoreEl = document.getElementById("quiz-score");
       const checkButton = document.getElementById("check-answers");
+      const resetButton = document.getElementById("reset-quiz");
       const startButton = document.getElementById("start-quiz");
       const actionsSection = document.getElementById("quiz-actions");
       const introSection = document.getElementById("quiz-intro");
@@ -222,7 +224,20 @@
           const explanationEl = document.createElement("div");
           explanationEl.className = "quiz-explanation";
           explanationEl.style.display = "none";
+          const toggleButton = document.createElement("button");
+          toggleButton.type = "button";
+          toggleButton.className = "quiz-explain-toggle";
+          toggleButton.textContent = "Show explanation";
+          toggleButton.disabled = true;
+          toggleButton.setAttribute("aria-expanded", "false");
+          toggleButton.addEventListener("click", () => {
+            const isHidden = explanationEl.style.display === "none";
+            explanationEl.style.display = isHidden ? "block" : "none";
+            toggleButton.textContent = isHidden ? "Hide explanation" : "Show explanation";
+            toggleButton.setAttribute("aria-expanded", isHidden ? "true" : "false");
+          });
           questionEl.appendChild(optionsEl);
+          questionEl.appendChild(toggleButton);
           questionEl.appendChild(explanationEl);
           quizContainer.appendChild(questionEl);
         });
@@ -234,6 +249,7 @@
         questions.forEach((questionEl) => {
           const correctAnswer = questionEl.dataset.answer;
           const explanationEl = questionEl.querySelector(".quiz-explanation");
+          const toggleButton = questionEl.querySelector(".quiz-explain-toggle");
           const optionLabels = questionEl.querySelectorAll(".quiz-option");
           let selectedValue = null;
           optionLabels.forEach((label) => {
@@ -284,11 +300,36 @@
             } else {
               explanationEl.textContent = "";
             }
-            explanationEl.style.display = explanationEl.textContent || explanationEl.innerHTML ? "block" : "none";
+            const hasExplanation =
+              explanationEl.textContent.trim() || explanationEl.innerHTML.trim();
+            explanationEl.style.display = hasExplanation ? "block" : "none";
+            if (toggleButton) {
+              toggleButton.disabled = !hasExplanation;
+              toggleButton.textContent = hasExplanation ? "Hide explanation" : "Show explanation";
+              toggleButton.setAttribute("aria-expanded", hasExplanation ? "true" : "false");
+            }
           }
         });
 
         scoreEl.textContent = `Score: ${correct}/${questions.length}`;
+      };
+
+      const resetQuiz = () => {
+        quizContainer.querySelectorAll("input[type='radio']").forEach((input) => {
+          input.checked = false;
+        });
+        quizContainer.querySelectorAll(".quiz-option").forEach((label) => {
+          label.classList.remove("correct", "incorrect");
+        });
+        quizContainer.querySelectorAll(".quiz-explanation").forEach((explanation) => {
+          explanation.style.display = "none";
+        });
+        quizContainer.querySelectorAll(".quiz-explain-toggle").forEach((button) => {
+          button.textContent = "Show explanation";
+          button.disabled = true;
+          button.setAttribute("aria-expanded", "false");
+        });
+        scoreEl.textContent = "";
       };
 
       quizContainer.style.display = "none";
@@ -306,11 +347,15 @@
         if (actionsSection) {
           actionsSection.style.display = "block";
         }
-        scoreEl.textContent = "";
+        resetQuiz();
       };
 
       if (startButton) {
         startButton.addEventListener("click", showQuiz);
+      }
+
+      if (resetButton) {
+        resetButton.addEventListener("click", resetQuiz);
       }
 
       if (!quizPath) {

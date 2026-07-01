@@ -322,6 +322,104 @@ button:focus {
   color: var(--gray);
 }
 
+.quiz-explain-toggle {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.quiz-explain-toggle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dashboard-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.dashboard-card .muted {
+  margin: 6px 0 0;
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+.checklist {
+  list-style: none;
+  padding-left: 0;
+  margin: 16px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.checklist-item label {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.checklist-item input[type="checkbox"] {
+  margin-top: 4px;
+  accent-color: var(--gold);
+}
+
+.checklist-groups {
+  margin-top: 12px;
+  display: grid;
+  gap: 16px;
+}
+
+.checklist-group h4 {
+  margin: 12px 0 8px;
+}
+
+.step-toggle {
+  margin-left: 12px;
+  border: 1px solid var(--light-gray);
+  background: var(--white);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.step-toggle.is-complete {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.code-block {
+  margin-top: 12px;
+}
+
+.code-toolbar {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-bottom: 6px;
+}
+
+.code-button {
+  border: 1px solid var(--light-gray);
+  background: var(--white);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.code-button:hover,
+.code-button:focus {
+  border-color: var(--gold);
+}
+
 .footer {
   margin-top: 48px;
   font-size: 0.95rem;

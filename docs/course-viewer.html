@@ -28,6 +28,10 @@
         </p>
       </section>
 
+      <section id="module-dashboard" class="section">
+        <div id="dashboard-grid" class="grid cols-2"></div>
+      </section>
+
       <section id="lesson-content" class="section card lesson-content" aria-live="polite"></section>
 
       <section class="section">
@@ -60,8 +64,10 @@
       const lessonNavEl = document.getElementById("lesson-nav");
       const markCompleteBtn = document.getElementById("mark-complete");
       const completionStatus = document.getElementById("completion-status");
+      const dashboardGrid = document.getElementById("dashboard-grid");
+      const dashboardSection = document.getElementById("module-dashboard");
 
-      const COURSES = [
+      const DEFAULT_COURSES = [
         {
           id: "python",
           name: "Python Course",
@@ -292,8 +298,40 @@
 
       const isCompleted = (path) => getCompletions().includes(path);
 
-      const findLesson = (path) => {
-        for (const course of COURSES) {
+      const progressKey = (path) => `module-progress:${path}`;
+
+      const defaultProgressState = () => ({
+        outcomes: {},
+        lessons: {},
+        exercises: {},
+        acceptance: {},
+        sections: {},
+      });
+
+      const readProgress = (path) => {
+        if (!path) return defaultProgressState();
+        try {
+          const stored = JSON.parse(localStorage.getItem(progressKey(path)) || "null");
+          if (!stored) return defaultProgressState();
+          return { ...defaultProgressState(), ...stored };
+        } catch (error) {
+          return defaultProgressState();
+        }
+      };
+
+      const writeProgress = (path, progress) => {
+        if (!path) return;
+        localStorage.setItem(progressKey(path), JSON.stringify(progress));
+      };
+
+      const slugify = (text) =>
+        text
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/(^-|-$)/g, "");
+
+      const findLesson = (courses, path) => {
+        for (const course of courses) {
           const index = course.modules.findIndex((module) => module.path === path);
           if (index !== -1) {
             return { course, index, module: course.modules[index] };
@@ -302,16 +340,468 @@
         return null;
       };
 
-      if (!repoPath) {
-        titleEl.textContent = "Lesson not found";
-        contentEl.innerHTML = "<p>Please return to the courses page and select a lesson.</p>";
-        markCompleteBtn.disabled = true;
-      } else {
+      const loadCourses = async () => {
+        try {
+          const response = await fetch("course-index.json");
+          if (response.ok) {
+            const data = await response.json();
+            if (data.courses) {
+              return data.courses;
+            }
+          }
+        } catch (error) {
+          console.warn("Unable to load course index.", error);
+        }
+        return DEFAULT_COURSES;
+      };
+
+      const getSectionElements = (heading) => {
+        const elements = [];
+        if (!heading) return elements;
+        let node = heading.nextElementSibling;
+        while (node && !/^H[1-4]$/.test(node.tagName)) {
+          elements.push(node);
+          node = node.nextElementSibling;
+        }
+        return elements;
+      };
+
+      const findHeading = (matcher) =>
+        Array.from(contentEl.querySelectorAll("h2, h3, h4")).find((heading) =>
+          matcher.test(heading.textContent.trim())
+        );
+
+      const extractListItems = (heading) => {
+        if (!heading) return [];
+        const sectionElements = getSectionElements(heading);
+        const items = [];
+        sectionElements.forEach((element) => {
+          element.querySelectorAll("li").forEach((li) => {
+            const text = li.textContent.trim();
+            if (text) items.push(text);
+          });
+        });
+        return items;
+      };
+
+      const findListAfterHeading = (heading) => {
+        if (!heading) return null;
+        let node = heading.nextElementSibling;
+        while (node && !/^H[1-4]$/.test(node.tagName)) {
+          if (node.matches("ul, ol")) {
+            return node;
+          }
+          node = node.nextElementSibling;
+        }
+        return null;
+      };
+
+      const extractGroupedExercises = (heading) => {
+        if (!heading) return [];
+        const sectionElements = getSectionElements(heading);
+        const wrapper = document.createElement("div");
+        sectionElements.forEach((element) => wrapper.appendChild(element.cloneNode(true)));
+        const groups = [];
+        const groupHeadings = wrapper.querySelectorAll("h3, h4");
+        if (groupHeadings.length) {
+          groupHeadings.forEach((groupHeading) => {
+            const list = groupHeading.nextElementSibling;
+            if (!list || !list.matches("ul, ol")) return;
+            const items = Array.from(list.querySelectorAll("li"))
+              .map((li) => li.textContent.trim())
+              .filter(Boolean);
+            if (items.length) {
+              groups.push({ name: groupHeading.textContent.trim(), items });
+            }
+          });
+        } else {
+          const list = wrapper.querySelector("ul, ol");
+          if (list) {
+            const items = Array.from(list.querySelectorAll("li"))
+              .map((li) => li.textContent.trim())
+              .filter(Boolean);
+            if (items.length) {
+              groups.push({ name: "Exercises", items });
+            }
+          }
+        }
+        return groups;
+      };
+
+      const buildChecklistCard = ({ title, description, items, progress, groupKey }) => {
+        if (!items || items.length === 0) return null;
+        const card = document.createElement("article");
+        card.className = "card dashboard-card";
+
+        const header = document.createElement("div");
+        header.className = "card-header";
+        const headerText = document.createElement("div");
+        const titleEl = document.createElement("h3");
+        titleEl.textContent = title;
+        headerText.appendChild(titleEl);
+        if (description) {
+          const desc = document.createElement("p");
+          desc.className = "muted";
+          desc.textContent = description;
+          headerText.appendChild(desc);
+        }
+        const pill = document.createElement("span");
+        pill.className = "pill";
+        header.appendChild(headerText);
+        header.appendChild(pill);
+        card.appendChild(header);
+
+        const progressBar = document.createElement("div");
+        progressBar.className = "progress-bar";
+        const progressFill = document.createElement("div");
+        progressFill.className = "progress-fill";
+        progressBar.appendChild(progressFill);
+        card.appendChild(progressBar);
+
+        const list = document.createElement("ul");
+        list.className = "checklist";
+        items.forEach((item, index) => {
+          const key = `${groupKey}-${index}`;
+          const li = document.createElement("li");
+          li.className = "checklist-item";
+          const label = document.createElement("label");
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.checked = Boolean(progress[groupKey]?.[key]);
+          checkbox.addEventListener("change", () => {
+            progress[groupKey] = progress[groupKey] || {};
+            if (checkbox.checked) {
+              progress[groupKey][key] = true;
+            } else {
+              delete progress[groupKey][key];
+            }
+            writeProgress(repoPath, progress);
+            updateCardProgress(list, pill, progressFill, items.length);
+          });
+          const text = document.createElement("span");
+          text.textContent = item;
+          label.appendChild(checkbox);
+          label.appendChild(text);
+          li.appendChild(label);
+          list.appendChild(li);
+        });
+        card.appendChild(list);
+        updateCardProgress(list, pill, progressFill, items.length);
+        return card;
+      };
+
+      const buildGroupedChecklistCard = ({ title, description, groups, progress, groupKey }) => {
+        if (!groups || groups.length === 0) return null;
+        const card = document.createElement("article");
+        card.className = "card dashboard-card";
+
+        const header = document.createElement("div");
+        header.className = "card-header";
+        const headerText = document.createElement("div");
+        const titleEl = document.createElement("h3");
+        titleEl.textContent = title;
+        headerText.appendChild(titleEl);
+        if (description) {
+          const desc = document.createElement("p");
+          desc.className = "muted";
+          desc.textContent = description;
+          headerText.appendChild(desc);
+        }
+        const pill = document.createElement("span");
+        pill.className = "pill";
+        header.appendChild(headerText);
+        header.appendChild(pill);
+        card.appendChild(header);
+
+        const progressBar = document.createElement("div");
+        progressBar.className = "progress-bar";
+        const progressFill = document.createElement("div");
+        progressFill.className = "progress-fill";
+        progressBar.appendChild(progressFill);
+        card.appendChild(progressBar);
+
+        const container = document.createElement("div");
+        container.className = "checklist-groups";
+        groups.forEach((group, groupIndex) => {
+          const groupBlock = document.createElement("div");
+          groupBlock.className = "checklist-group";
+          if (group.name) {
+            const groupTitle = document.createElement("h4");
+            groupTitle.textContent = group.name;
+            groupBlock.appendChild(groupTitle);
+          }
+          const list = document.createElement("ul");
+          list.className = "checklist";
+          group.items.forEach((item, itemIndex) => {
+            const key = `${groupIndex}-${itemIndex}`;
+            const li = document.createElement("li");
+            li.className = "checklist-item";
+            const label = document.createElement("label");
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.checked = Boolean(progress[groupKey]?.[key]);
+            checkbox.addEventListener("change", () => {
+              progress[groupKey] = progress[groupKey] || {};
+              if (checkbox.checked) {
+                progress[groupKey][key] = true;
+              } else {
+                delete progress[groupKey][key];
+              }
+              writeProgress(repoPath, progress);
+              updateGroupedProgress(container, pill, progressFill);
+            });
+            const text = document.createElement("span");
+            text.textContent = item;
+            label.appendChild(checkbox);
+            label.appendChild(text);
+            li.appendChild(label);
+            list.appendChild(li);
+          });
+          groupBlock.appendChild(list);
+          container.appendChild(groupBlock);
+        });
+        card.appendChild(container);
+        updateGroupedProgress(container, pill, progressFill);
+        return card;
+      };
+
+      const updateCardProgress = (list, pill, fill, total) => {
+        const completed = list.querySelectorAll("input:checked").length;
+        const percent = total ? Math.round((completed / total) * 100) : 0;
+        pill.textContent = `${completed}/${total} complete`;
+        fill.style.width = `${percent}%`;
+      };
+
+      const updateGroupedProgress = (container, pill, fill) => {
+        const checkboxes = container.querySelectorAll("input[type='checkbox']");
+        const completed = container.querySelectorAll("input:checked").length;
+        const total = checkboxes.length;
+        const percent = total ? Math.round((completed / total) * 100) : 0;
+        pill.textContent = `${completed}/${total} complete`;
+        fill.style.width = `${percent}%`;
+      };
+
+      const renderDashboard = () => {
+        if (!dashboardGrid || !dashboardSection) return;
+        dashboardGrid.innerHTML = "";
+        const progress = readProgress(repoPath);
+
+        const outcomesHeading = findHeading(/what you'll learn|learning outcomes|learning objectives/i);
+        const outcomes = extractListItems(outcomesHeading);
+        const lessonsHeading = findHeading(/^lessons$/i);
+        const lessons = extractListItems(lessonsHeading);
+        const exercisesHeading = findHeading(/^exercises/i);
+        const exerciseGroups = extractGroupedExercises(exercisesHeading);
+        const acceptanceHeading = findHeading(/acceptance criteria/i);
+        const acceptanceList = [];
+        const acceptanceListEl = findListAfterHeading(acceptanceHeading);
+        if (acceptanceListEl) {
+          acceptanceListEl.querySelectorAll("li").forEach((li) => {
+            const text = li.textContent.trim();
+            if (text) acceptanceList.push(text);
+          });
+        }
+
+        const outcomeCard = buildChecklistCard({
+          title: "Learning outcomes",
+          description: "Track what you can confidently do after this module.",
+          items: outcomes,
+          progress,
+          groupKey: "outcomes",
+        });
+        if (outcomeCard) dashboardGrid.appendChild(outcomeCard);
+
+        const lessonCard = buildChecklistCard({
+          title: "Lesson plan",
+          description: "Complete each lesson and mark it off as you go.",
+          items: lessons,
+          progress,
+          groupKey: "lessons",
+        });
+        if (lessonCard) dashboardGrid.appendChild(lessonCard);
+
+        const exerciseCard = buildGroupedChecklistCard({
+          title: "Practice tracker",
+          description: "Use these exercises to build practical confidence.",
+          groups: exerciseGroups,
+          progress,
+          groupKey: "exercises",
+        });
+        if (exerciseCard) dashboardGrid.appendChild(exerciseCard);
+
+        const acceptanceCard = buildChecklistCard({
+          title: "Mini-project acceptance",
+          description: "Check every requirement before calling the project done.",
+          items: acceptanceList,
+          progress,
+          groupKey: "acceptance",
+        });
+        if (acceptanceCard) dashboardGrid.appendChild(acceptanceCard);
+
+        if (!dashboardGrid.children.length) {
+          dashboardSection.style.display = "none";
+        } else {
+          dashboardSection.style.display = "block";
+        }
+      };
+
+      const enhanceStepHeadings = () => {
+        if (!repoPath) return;
+        const progress = readProgress(repoPath);
+        const headings = Array.from(contentEl.querySelectorAll("h2, h3")).filter((heading) =>
+          /^(step|lesson)\s+\d+/i.test(heading.textContent.trim())
+        );
+        headings.forEach((heading) => {
+          const stepId = slugify(heading.textContent);
+          if (heading.querySelector(".step-toggle")) return;
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "step-toggle";
+          const setState = (completed) => {
+            button.textContent = completed ? "Step complete" : "Mark step complete";
+            button.classList.toggle("is-complete", completed);
+            button.setAttribute("aria-pressed", completed ? "true" : "false");
+          };
+          const completed = Boolean(progress.sections?.[stepId]);
+          setState(completed);
+          button.addEventListener("click", () => {
+            progress.sections = progress.sections || {};
+            const nextState = !Boolean(progress.sections?.[stepId]);
+            if (nextState) {
+              progress.sections[stepId] = true;
+            } else {
+              delete progress.sections[stepId];
+            }
+            writeProgress(repoPath, progress);
+            setState(nextState);
+          });
+          heading.appendChild(button);
+        });
+      };
+
+      const enhanceCodeBlocks = () => {
+        contentEl.querySelectorAll("pre > code").forEach((codeBlock) => {
+          const pre = codeBlock.parentElement;
+          if (!pre || pre.closest(".code-block")) return;
+          const wrapper = document.createElement("div");
+          wrapper.className = "code-block";
+          const toolbar = document.createElement("div");
+          toolbar.className = "code-toolbar";
+          const copyButton = document.createElement("button");
+          copyButton.type = "button";
+          copyButton.className = "code-button";
+          copyButton.textContent = "Copy";
+          copyButton.addEventListener("click", async () => {
+            try {
+              await navigator.clipboard.writeText(codeBlock.textContent);
+              copyButton.textContent = "Copied!";
+              setTimeout(() => {
+                copyButton.textContent = "Copy";
+              }, 1500);
+            } catch (error) {
+              copyButton.textContent = "Copy failed";
+            }
+          });
+          toolbar.appendChild(copyButton);
+
+          const previousText = pre.previousElementSibling
+            ? pre.previousElementSibling.textContent.toLowerCase()
+            : "";
+          const isExpectedOutput =
+            /you should see|expected output|output should|expected result/.test(previousText);
+          if (isExpectedOutput) {
+            pre.style.display = "none";
+            const toggleButton = document.createElement("button");
+            toggleButton.type = "button";
+            toggleButton.className = "code-button";
+            toggleButton.textContent = "Show expected output";
+            toggleButton.addEventListener("click", () => {
+              const isHidden = pre.style.display === "none";
+              pre.style.display = isHidden ? "block" : "none";
+              toggleButton.textContent = isHidden ? "Hide expected output" : "Show expected output";
+            });
+            toolbar.appendChild(toggleButton);
+          }
+
+          pre.parentNode.replaceChild(wrapper, pre);
+          wrapper.appendChild(toolbar);
+          wrapper.appendChild(pre);
+        });
+      };
+
+      const insertQuizCTA = (lessonInfo) => {
+        if (!lessonInfo || !lessonInfo.module.quiz) return;
+        const quizButtonHtml = `
+          <div class="note">
+            <strong>Lesson quiz</strong>
+            <p>Short assessment · Passing score: 70% · Estimated time: 5-10 minutes</p>
+            <a class="btn btn-primary" href="quiz-viewer.html?quiz=${encodeURIComponent(
+              lessonInfo.module.quiz
+            )}">
+              Start quiz
+            </a>
+          </div>
+        `;
+        let quizInserted = false;
+        contentEl.querySelectorAll("h2, h3, h4").forEach((heading) => {
+          if (/quiz/i.test(heading.textContent)) {
+            const wrapper = document.createElement("div");
+            wrapper.innerHTML = quizButtonHtml;
+            const replacement = quizInserted ? null : wrapper.firstElementChild;
+            const currentLevel = parseInt(heading.tagName.replace("H", ""), 10);
+
+            const nextHeading = (node) => {
+              let current = node;
+              while (current) {
+                current = current.nextSibling;
+                if (!current) return null;
+                if (current.nodeType === 1 && /^H[1-4]$/.test(current.tagName)) {
+                  const level = parseInt(current.tagName.replace("H", ""), 10);
+                  if (level <= currentLevel) {
+                    return current;
+                  }
+                }
+              }
+              return null;
+            };
+
+            const stopAt = nextHeading(heading);
+            let cursor = heading;
+            while (cursor && cursor !== stopAt) {
+              const next = cursor.nextSibling;
+              cursor.remove();
+              cursor = next;
+            }
+
+            if (replacement) {
+              quizInserted = true;
+              if (stopAt) {
+                stopAt.before(replacement);
+              } else {
+                contentEl.appendChild(replacement);
+              }
+            }
+          }
+        });
+      };
+
+      const initLesson = async () => {
+        const courses = await loadCourses();
+        if (!repoPath) {
+          titleEl.textContent = "Lesson not found";
+          contentEl.innerHTML = "<p>Please return to the courses page and select a lesson.</p>";
+          markCompleteBtn.disabled = true;
+          if (dashboardSection) {
+            dashboardSection.style.display = "none";
+          }
+          return;
+        }
+
         const rawRoot =
           "https://raw.githubusercontent.com/MrLucien-Johnson/programming-foundations-course/main/";
         const rawUrl = new URL(repoPath, rawRoot).toString();
         const baseDir = new URL(".", rawUrl);
-        const lessonInfo = findLesson(repoPath);
+        const lessonInfo = findLesson(courses, repoPath);
 
         if (lessonInfo) {
           const { course, module, index } = lessonInfo;
@@ -405,66 +895,18 @@
               img.setAttribute("src", resolved.toString());
             });
 
-            if (lessonInfo && lessonInfo.module.quiz) {
-              const quizButtonHtml = `
-                <div class="note">
-                  <strong>Lesson quiz</strong>
-                  <p>Short assessment · Passing score: 70% · Estimated time: 5-10 minutes</p>
-                  <a class="btn btn-primary" href="quiz-viewer.html?quiz=${encodeURIComponent(
-                    lessonInfo.module.quiz
-                  )}">
-                    Start quiz
-                  </a>
-                </div>
-              `;
-              let quizInserted = false;
-              contentEl.querySelectorAll("h2, h3, h4").forEach((heading) => {
-                if (/quiz/i.test(heading.textContent)) {
-                  const wrapper = document.createElement("div");
-                  wrapper.innerHTML = quizButtonHtml;
-                  const replacement = quizInserted ? null : wrapper.firstElementChild;
-                  const currentLevel = parseInt(heading.tagName.replace("H", ""), 10);
-
-                  const nextHeading = (node) => {
-                    let current = node;
-                    while (current) {
-                      current = current.nextSibling;
-                      if (!current) return null;
-                      if (current.nodeType === 1 && /^H[1-4]$/.test(current.tagName)) {
-                        const level = parseInt(current.tagName.replace("H", ""), 10);
-                        if (level <= currentLevel) {
-                          return current;
-                        }
-                      }
-                    }
-                    return null;
-                  };
-
-                  const stopAt = nextHeading(heading);
-                  let cursor = heading;
-                  while (cursor && cursor !== stopAt) {
-                    const next = cursor.nextSibling;
-                    cursor.remove();
-                    cursor = next;
-                  }
-
-                  if (replacement) {
-                    quizInserted = true;
-                    if (stopAt) {
-                      stopAt.before(replacement);
-                    } else {
-                      contentEl.appendChild(replacement);
-                    }
-                  }
-                }
-              });
-            }
+            renderDashboard();
+            enhanceStepHeadings();
+            enhanceCodeBlocks();
+            insertQuizCTA(lessonInfo);
           })
           .catch((error) => {
             titleEl.textContent = "Lesson unavailable";
             contentEl.innerHTML = `<p>${error.message}</p>`;
           });
-      }
+      };
+
+      initLesson();
 
       markCompleteBtn.addEventListener("click", () => {
         if (!repoPath) return;
