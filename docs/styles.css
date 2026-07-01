@@ -322,6 +322,61 @@ button:focus {
   color: var(--gray);
 }
 
+.status-panel {
+  border-left: 6px solid var(--gold);
+  background: var(--white);
+}
+
+.status-panel[data-state="Ready"] {
+  border-left-color: #2f7d32;
+}
+
+.status-panel[data-state="Unavailable"] {
+  border-left-color: #b71c1c;
+}
+
+.status-panel[data-state="Partial"] {
+  border-left-color: var(--gold-dark);
+}
+
+.status-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--light-gray);
+  color: var(--black);
+}
+
+.status-panel[data-state="Ready"] .status-pill {
+  background: #2f7d32;
+  color: var(--white);
+}
+
+.status-panel[data-state="Unavailable"] .status-pill {
+  background: #b71c1c;
+  color: var(--white);
+}
+
+.status-panel[data-state="Partial"] .status-pill {
+  background: var(--gold-dark);
+  color: var(--black);
+}
+
+.status-message {
+  margin: 12px 0 0;
+  color: var(--gray);
+}
+
 .quiz-explain-toggle {
   margin-top: 10px;
   background: transparent;

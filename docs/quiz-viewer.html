@@ -25,6 +25,20 @@
         <p class="note">Answer each question, then click “Check answers”.</p>
       </section>
 
+      <section id="quiz-status-panel" class="section card status-panel" aria-live="polite">
+        <div class="status-header">
+          <span class="status-pill" id="quiz-status-pill">Checking</span>
+          <strong id="quiz-status-title">Checking quiz availability</strong>
+        </div>
+        <p id="quiz-status-message" class="status-message">
+          We are verifying the quiz files for this module.
+        </p>
+        <div class="button-row" id="quiz-status-actions" hidden>
+          <button class="btn btn-secondary" id="quiz-status-back" type="button">Go back</button>
+          <a class="btn btn-secondary" href="courses.html">Back to courses</a>
+        </div>
+      </section>
+
       <section id="quiz-intro" class="section card">
         <h3>Quiz overview</h3>
         <p id="quiz-meta">Loading quiz details…</p>
@@ -57,6 +71,12 @@
       const actionsSection = document.getElementById("quiz-actions");
       const introSection = document.getElementById("quiz-intro");
       const metaEl = document.getElementById("quiz-meta");
+      const statusPanel = document.getElementById("quiz-status-panel");
+      const statusPill = document.getElementById("quiz-status-pill");
+      const statusTitle = document.getElementById("quiz-status-title");
+      const statusMessage = document.getElementById("quiz-status-message");
+      const statusActions = document.getElementById("quiz-status-actions");
+      const statusBackButton = document.getElementById("quiz-status-back");
       const rawRoot =
         "https://raw.githubusercontent.com/MrLucien-Johnson/programming-foundations-course/main/";
 
@@ -80,6 +100,39 @@
         }
         return null;
       };
+
+      const setStatus = ({ state, title, message, showActions }) => {
+        if (!statusPanel) return;
+        statusPanel.dataset.state = state;
+        if (statusPill) statusPill.textContent = state;
+        if (statusTitle) statusTitle.textContent = title;
+        if (statusMessage) statusMessage.textContent = message;
+        if (statusActions) statusActions.hidden = !showActions;
+      };
+
+      const markUnavailable = (message) => {
+        setStatus({
+          state: "Unavailable",
+          title: "Quiz unavailable",
+          message,
+          showActions: true,
+        });
+        if (introSection) {
+          introSection.style.display = "none";
+        }
+        if (actionsSection) {
+          actionsSection.style.display = "none";
+        }
+        if (startButton) {
+          startButton.disabled = true;
+        }
+      };
+
+      if (statusBackButton) {
+        statusBackButton.addEventListener("click", () => {
+          window.history.back();
+        });
+      }
 
       const parseQuiz = (markdown) => {
         const lines = markdown.split("\n");
@@ -337,6 +390,12 @@
       if (actionsSection) {
         actionsSection.style.display = "none";
       }
+      setStatus({
+        state: "Checking",
+        title: "Checking quiz availability",
+        message: "We are verifying the quiz files for this module.",
+        showActions: false,
+      });
 
       const showQuiz = () => {
         quizContainer.style.display = "block";
@@ -360,11 +419,10 @@
 
       if (!quizPath) {
         quizTitle.textContent = "Quiz not found";
-        quizContainer.innerHTML = "<p>Please return to the courses page and select a quiz.</p>";
+        quizContainer.innerHTML =
+          "<p>Please return to the courses page and select a quiz from a module.</p>";
         checkButton.disabled = true;
-        if (introSection) {
-          introSection.style.display = "none";
-        }
+        markUnavailable("No quiz was selected. Please return to the course and try again.");
       } else {
         const answersPath = buildAnswerPath(quizPath);
         fetchText(quizPath)
@@ -380,30 +438,57 @@
               .then((answersMarkdown) => {
                 const answers = parseAnswers(answersMarkdown);
                 renderQuiz(questions, answers);
+                setStatus({
+                  state: "Ready",
+                  title: "Quiz ready",
+                  message: "Everything is loaded. Start when you're ready.",
+                  showActions: false,
+                });
               })
               .catch(() => {
                 const fallback = fallbackAnswerPath(quizPath);
                 if (!fallback) {
                   renderQuiz(questions, new Map());
+                  setStatus({
+                    state: "Partial",
+                    title: "Quiz ready (answers pending)",
+                    message:
+                      "You can take the quiz now, but explanations are not available yet.",
+                    showActions: false,
+                  });
                   return;
                 }
                 return fetchText(fallback)
                   .then((answersMarkdown) => {
                     const answers = parseAnswers(answersMarkdown);
                     renderQuiz(questions, answers);
+                    setStatus({
+                      state: "Ready",
+                      title: "Quiz ready",
+                      message: "Everything is loaded. Start when you're ready.",
+                      showActions: false,
+                    });
                   })
                   .catch(() => {
                     renderQuiz(questions, new Map());
+                    setStatus({
+                      state: "Partial",
+                      title: "Quiz ready (answers pending)",
+                      message:
+                        "You can take the quiz now, but explanations are not available yet.",
+                      showActions: false,
+                    });
                   });
               });
           })
           .catch((error) => {
             quizTitle.textContent = "Quiz unavailable";
-            quizContainer.innerHTML = `<p>${error.message}</p>`;
+            quizContainer.innerHTML =
+              "<p>This quiz is not ready yet. Please try again later.</p>";
             checkButton.disabled = true;
-            if (introSection) {
-              introSection.style.display = "none";
-            }
+            markUnavailable(
+              "We could not load the quiz file. It may still be publishing. Please try again later."
+            );
           });
       }
 
