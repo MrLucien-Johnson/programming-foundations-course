@@ -1,0 +1,1090 @@
+{
+  "courses": [
+    {
+      "id": "python",
+      "name": "Python Course",
+      "page": "python-course.html",
+      "level": "Beginner",
+      "modules": [
+        {
+          "title": "Setup & First Script",
+          "path": "python-beginner-workbook/module-01-setup/README.md",
+          "quiz": "python-beginner-workbook/module-01-setup/exercises/quiz.md"
+        },
+        {
+          "title": "Python Basics",
+          "path": "python-beginner-workbook/module-02-basics/README.md",
+          "quiz": "python-beginner-workbook/module-02-basics/exercises/quiz.md"
+        },
+        {
+          "title": "Control Flow",
+          "path": "python-beginner-workbook/module-03-control-flow/README.md",
+          "quiz": "python-beginner-workbook/module-03-control-flow/exercises/quiz.md"
+        },
+        {
+          "title": "Functions",
+          "path": "python-beginner-workbook/module-04-functions/README.md",
+          "quiz": "python-beginner-workbook/module-04-functions/exercises/quiz.md"
+        },
+        {
+          "title": "Collections",
+          "path": "python-beginner-workbook/module-05-collections/README.md",
+          "quiz": "python-beginner-workbook/module-05-collections/exercises/quiz.md"
+        },
+        {
+          "title": "Object-Oriented Programming",
+          "path": "python-beginner-workbook/module-06-oop/README.md",
+          "quiz": "python-beginner-workbook/module-06-oop/exercises/quiz.md"
+        },
+        {
+          "title": "Task Tracker Project",
+          "path": "python-beginner-workbook/module-07-task-tracker/README.md",
+          "quiz": "python-beginner-workbook/module-07-task-tracker/exercises/quiz.md"
+        }
+      ]
+    },
+    {
+      "id": "csharp",
+      "name": "C# Course",
+      "page": "csharp-course.html",
+      "level": "Beginner",
+      "modules": [
+        {
+          "title": "Setup & First Program",
+          "path": "csharp-beginner-workbook/module-01-setup/README.md",
+          "quiz": "csharp-beginner-workbook/module-01-setup/exercises/quiz.md"
+        },
+        {
+          "title": "C# Basics",
+          "path": "csharp-beginner-workbook/module-02-basics/README.md",
+          "quiz": "csharp-beginner-workbook/module-02-basics/exercises/quiz.md"
+        },
+        {
+          "title": "Control Flow",
+          "path": "csharp-beginner-workbook/module-03-control-flow/README.md",
+          "quiz": "csharp-beginner-workbook/module-03-control-flow/exercises/quiz.md"
+        },
+        {
+          "title": "Methods",
+          "path": "csharp-beginner-workbook/module-04-methods/README.md",
+          "quiz": "csharp-beginner-workbook/module-04-methods/exercises/quiz.md"
+        },
+        {
+          "title": "Collections",
+          "path": "csharp-beginner-workbook/module-05-collections/README.md",
+          "quiz": "csharp-beginner-workbook/module-05-collections/exercises/quiz.md"
+        },
+        {
+          "title": "Object-Oriented Programming",
+          "path": "csharp-beginner-workbook/module-06-oop-intro/README.md",
+          "quiz": "csharp-beginner-workbook/module-06-oop-intro/exercises/quiz.md"
+        },
+        {
+          "title": "Task Tracker Project",
+          "path": "csharp-beginner-workbook/module-07-task-tracker/README.md",
+          "quiz": "csharp-beginner-workbook/module-07-task-tracker/exercises/quiz.md"
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "name": "AI Prompt Creation Course",
+      "page": "ai-course.html",
+      "level": "Beginner \u2192 Advanced",
+      "modules": [
+        {
+          "title": "AI Foundations",
+          "path": "languages/ai/beginner/modules/01-ai-foundations.md",
+          "quiz": "languages/ai/beginner/modules/01-ai-foundations.quiz.md"
+        },
+        {
+          "title": "Prompting Basics",
+          "path": "languages/ai/beginner/modules/02-prompting-basics.md",
+          "quiz": "languages/ai/beginner/modules/02-prompting-basics.quiz.md"
+        },
+        {
+          "title": "Prompt Patterns",
+          "path": "languages/ai/beginner/modules/03-prompt-patterns.md",
+          "quiz": "languages/ai/beginner/modules/03-prompt-patterns.quiz.md"
+        },
+        {
+          "title": "Evaluation & Iteration",
+          "path": "languages/ai/beginner/modules/04-evaluation-and-iteration.md",
+          "quiz": "languages/ai/beginner/modules/04-evaluation-and-iteration.quiz.md"
+        },
+        {
+          "title": "Safety & Policy Basics",
+          "path": "languages/ai/beginner/modules/05-safety-and-policy-basics.md",
+          "quiz": "languages/ai/beginner/modules/05-safety-and-policy-basics.quiz.md"
+        },
+        {
+          "title": "Workflows & Automation",
+          "path": "languages/ai/beginner/modules/06-workflows-and-automation.md",
+          "quiz": "languages/ai/beginner/modules/06-workflows-and-automation.quiz.md"
+        },
+        {
+          "title": "Advanced Prompting & Tool Use",
+          "path": "languages/ai/intermediate/modules/01-advanced-prompting-tool-use.md",
+          "quiz": "languages/ai/intermediate/modules/01-advanced-prompting-tool-use.quiz.md"
+        },
+        {
+          "title": "Structured Outputs & Schemas",
+          "path": "languages/ai/intermediate/modules/02-structured-outputs-and-schemas.md",
+          "quiz": "languages/ai/intermediate/modules/02-structured-outputs-and-schemas.quiz.md"
+        },
+        {
+          "title": "RAG Foundations",
+          "path": "languages/ai/intermediate/modules/03-rag-foundations.md",
+          "quiz": "languages/ai/intermediate/modules/03-rag-foundations.quiz.md"
+        },
+        {
+          "title": "Model Evaluation & Testing",
+          "path": "languages/ai/intermediate/modules/04-model-evaluation-and-testing.md",
+          "quiz": "languages/ai/intermediate/modules/04-model-evaluation-and-testing.quiz.md"
+        },
+        {
+          "title": "Guardrails & Safety",
+          "path": "languages/ai/intermediate/modules/05-guardrails-and-safety.md",
+          "quiz": "languages/ai/intermediate/modules/05-guardrails-and-safety.quiz.md"
+        },
+        {
+          "title": "Agentic Workflows",
+          "path": "languages/ai/intermediate/modules/06-agentic-workflows.md",
+          "quiz": "languages/ai/intermediate/modules/06-agentic-workflows.quiz.md"
+        },
+        {
+          "title": "Cost, Latency & Ops",
+          "path": "languages/ai/intermediate/modules/07-cost-latency-and-ops.md",
+          "quiz": "languages/ai/intermediate/modules/07-cost-latency-and-ops.quiz.md"
+        },
+        {
+          "title": "Deployment Basics",
+          "path": "languages/ai/intermediate/modules/08-deployment-basics.md",
+          "quiz": "languages/ai/intermediate/modules/08-deployment-basics.quiz.md"
+        },
+        {
+          "title": "System Design for LLM Apps",
+          "path": "languages/ai/advanced/modules/01-system-design-for-llm-apps.md",
+          "quiz": "languages/ai/advanced/modules/01-system-design-for-llm-apps.quiz.md"
+        },
+        {
+          "title": "RAG Advanced Retrieval",
+          "path": "languages/ai/advanced/modules/02-rag-advanced-retrieval.md",
+          "quiz": "languages/ai/advanced/modules/02-rag-advanced-retrieval.quiz.md"
+        },
+        {
+          "title": "Evals at Scale",
+          "path": "languages/ai/advanced/modules/03-evals-at-scale.md",
+          "quiz": "languages/ai/advanced/modules/03-evals-at-scale.quiz.md"
+        },
+        {
+          "title": "Security Threat Modeling",
+          "path": "languages/ai/advanced/modules/04-security-threat-modeling-llm.md",
+          "quiz": "languages/ai/advanced/modules/04-security-threat-modeling-llm.quiz.md"
+        },
+        {
+          "title": "Observability & Monitoring",
+          "path": "languages/ai/advanced/modules/05-observability-and-monitoring-llm.md",
+          "quiz": "languages/ai/advanced/modules/05-observability-and-monitoring-llm.quiz.md"
+        },
+        {
+          "title": "Reliability & Fallbacks",
+          "path": "languages/ai/advanced/modules/06-reliability-and-fallbacks.md",
+          "quiz": "languages/ai/advanced/modules/06-reliability-and-fallbacks.quiz.md"
+        },
+        {
+          "title": "Data Governance & Privacy",
+          "path": "languages/ai/advanced/modules/07-data-governance-and-privacy.md",
+          "quiz": "languages/ai/advanced/modules/07-data-governance-and-privacy.quiz.md"
+        },
+        {
+          "title": "Production Incident Playbooks",
+          "path": "languages/ai/advanced/modules/08-production-incident-playbooks.md",
+          "quiz": "languages/ai/advanced/modules/08-production-incident-playbooks.quiz.md"
+        }
+      ]
+    },
+    {
+      "id": "csharp-advanced",
+      "name": "C# Advanced Course",
+      "page": "csharp-advanced-course.html",
+      "level": "Intermediate + Advanced",
+      "modules": [
+        {
+          "title": "CIntermediate \u2014 Module 01: DSA (Practical)",
+          "path": "languages/csharp/intermediate/modules/01-dsa-practical.md",
+          "quiz": "languages/csharp/intermediate/modules/01-dsa-practical.quiz.md"
+        },
+        {
+          "title": "CIntermediate \u2014 Module 02: Testing and Quality",
+          "path": "languages/csharp/intermediate/modules/02-testing-and-quality.md",
+          "quiz": "languages/csharp/intermediate/modules/02-testing-and-quality.quiz.md"
+        },
+        {
+          "title": "CIntermediate \u2014 Module 03: Git and Collaboration",
+          "path": "languages/csharp/intermediate/modules/03-git-and-collaboration.md",
+          "quiz": "languages/csharp/intermediate/modules/03-git-and-collaboration.quiz.md"
+        },
+        {
+          "title": "CIntermediate \u2014 Module 04: APIs and Auth",
+          "path": "languages/csharp/intermediate/modules/04-apis-and-auth.md",
+          "quiz": "languages/csharp/intermediate/modules/04-apis-and-auth.quiz.md"
+        },
+        {
+          "title": "CIntermediate \u2014 Module 05: Databases",
+          "path": "languages/csharp/intermediate/modules/05-databases.md",
+          "quiz": "languages/csharp/intermediate/modules/05-databases.quiz.md"
+        },
+        {
+          "title": "CIntermediate \u2014 Module 06: Security Basics",
+          "path": "languages/csharp/intermediate/modules/06-security-basics.md",
+          "quiz": "languages/csharp/intermediate/modules/06-security-basics.quiz.md"
+        },
+        {
+          "title": "CIntermediate \u2014 Module 07: Debugging and Performance",
+          "path": "languages/csharp/intermediate/modules/07-debugging-and-performance.md",
+          "quiz": "languages/csharp/intermediate/modules/07-debugging-and-performance.quiz.md"
+        },
+        {
+          "title": "CIntermediate \u2014 Module 08: Deployment and CI",
+          "path": "languages/csharp/intermediate/modules/08-deployment-and-ci.md",
+          "quiz": "languages/csharp/intermediate/modules/08-deployment-and-ci.quiz.md"
+        },
+        {
+          "title": "Core Concepts (Intermediate)",
+          "path": "languages/csharp/intermediate/modules/core-concepts.md",
+          "quiz": "languages/csharp/intermediate/modules/core-concepts.quiz.md"
+        },
+        {
+          "title": "CAdvanced \u2014 Module 01: System Design Foundations",
+          "path": "languages/csharp/advanced/modules/01-system-design-foundations.md",
+          "quiz": "languages/csharp/advanced/modules/01-system-design-foundations.quiz.md"
+        },
+        {
+          "title": "CAdvanced \u2014 Module 02: Architecture Patterns",
+          "path": "languages/csharp/advanced/modules/02-architecture-patterns.md",
+          "quiz": "languages/csharp/advanced/modules/02-architecture-patterns.quiz.md"
+        },
+        {
+          "title": "CAdvanced \u2014 Module 03: Concurrency and Async",
+          "path": "languages/csharp/advanced/modules/03-concurrency-and-async.md",
+          "quiz": "languages/csharp/advanced/modules/03-concurrency-and-async.quiz.md"
+        },
+        {
+          "title": "CAdvanced \u2014 Module 04: Performance and Profiling",
+          "path": "languages/csharp/advanced/modules/04-performance-and-profiling.md",
+          "quiz": "languages/csharp/advanced/modules/04-performance-and-profiling.quiz.md"
+        },
+        {
+          "title": "CAdvanced \u2014 Module 05: Reliability and Resilience",
+          "path": "languages/csharp/advanced/modules/05-reliability-and-resilience.md",
+          "quiz": "languages/csharp/advanced/modules/05-reliability-and-resilience.quiz.md"
+        },
+        {
+          "title": "CAdvanced \u2014 Module 06: Security (Advanced)",
+          "path": "languages/csharp/advanced/modules/06-security-advanced.md",
+          "quiz": "languages/csharp/advanced/modules/06-security-advanced.quiz.md"
+        },
+        {
+          "title": "CAdvanced \u2014 Module 07: Observability and SLOs",
+          "path": "languages/csharp/advanced/modules/07-observability-and-slos.md",
+          "quiz": "languages/csharp/advanced/modules/07-observability-and-slos.quiz.md"
+        },
+        {
+          "title": "CAdvanced \u2014 Module 08: CI/CD and Release Strategies",
+          "path": "languages/csharp/advanced/modules/08-ci-cd-and-release-strategies.md",
+          "quiz": "languages/csharp/advanced/modules/08-ci-cd-and-release-strategies.quiz.md"
+        },
+        {
+          "title": "Systems and Design (Advanced)",
+          "path": "languages/csharp/advanced/modules/system-design.md",
+          "quiz": "languages/csharp/advanced/modules/system-design.quiz.md"
+        }
+      ]
+    },
+    {
+      "id": "go-advanced",
+      "name": "Go Advanced Course",
+      "page": "go-advanced-course.html",
+      "level": "Intermediate + Advanced",
+      "modules": [
+        {
+          "title": "Go Intermediate \u2014 Module 01: DSA (Practical)",
+          "path": "languages/go/intermediate/modules/01-dsa-practical.md",
+          "quiz": "languages/go/intermediate/modules/01-dsa-practical.quiz.md"
+        },
+        {
+          "title": "Go Intermediate \u2014 Module 02: Testing and Quality",
+          "path": "languages/go/intermediate/modules/02-testing-and-quality.md",
+          "quiz": "languages/go/intermediate/modules/02-testing-and-quality.quiz.md"
+        },
+        {
+          "title": "Go Intermediate \u2014 Module 03: Git and Collaboration",
+          "path": "languages/go/intermediate/modules/03-git-and-collaboration.md",
+          "quiz": "languages/go/intermediate/modules/03-git-and-collaboration.quiz.md"
+        },
+        {
+          "title": "Go Intermediate \u2014 Module 04: APIs and Auth",
+          "path": "languages/go/intermediate/modules/04-apis-and-auth.md",
+          "quiz": "languages/go/intermediate/modules/04-apis-and-auth.quiz.md"
+        },
+        {
+          "title": "Go Intermediate \u2014 Module 05: Databases",
+          "path": "languages/go/intermediate/modules/05-databases.md",
+          "quiz": "languages/go/intermediate/modules/05-databases.quiz.md"
+        },
+        {
+          "title": "Go Intermediate \u2014 Module 06: Security Basics",
+          "path": "languages/go/intermediate/modules/06-security-basics.md",
+          "quiz": "languages/go/intermediate/modules/06-security-basics.quiz.md"
+        },
+        {
+          "title": "Go Intermediate \u2014 Module 07: Debugging and Performance",
+          "path": "languages/go/intermediate/modules/07-debugging-and-performance.md",
+          "quiz": "languages/go/intermediate/modules/07-debugging-and-performance.quiz.md"
+        },
+        {
+          "title": "Go Intermediate \u2014 Module 08: Deployment and CI",
+          "path": "languages/go/intermediate/modules/08-deployment-and-ci.md",
+          "quiz": "languages/go/intermediate/modules/08-deployment-and-ci.quiz.md"
+        },
+        {
+          "title": "Core Concepts (Intermediate)",
+          "path": "languages/go/intermediate/modules/core-concepts.md",
+          "quiz": "languages/go/intermediate/modules/core-concepts.quiz.md"
+        },
+        {
+          "title": "Go Advanced \u2014 Module 01: System Design Foundations",
+          "path": "languages/go/advanced/modules/01-system-design-foundations.md",
+          "quiz": "languages/go/advanced/modules/01-system-design-foundations.quiz.md"
+        },
+        {
+          "title": "Go Advanced \u2014 Module 02: Architecture Patterns",
+          "path": "languages/go/advanced/modules/02-architecture-patterns.md",
+          "quiz": "languages/go/advanced/modules/02-architecture-patterns.quiz.md"
+        },
+        {
+          "title": "Go Advanced \u2014 Module 03: Concurrency and Async",
+          "path": "languages/go/advanced/modules/03-concurrency-and-async.md",
+          "quiz": "languages/go/advanced/modules/03-concurrency-and-async.quiz.md"
+        },
+        {
+          "title": "Go Advanced \u2014 Module 04: Performance and Profiling",
+          "path": "languages/go/advanced/modules/04-performance-and-profiling.md",
+          "quiz": "languages/go/advanced/modules/04-performance-and-profiling.quiz.md"
+        },
+        {
+          "title": "Go Advanced \u2014 Module 05: Reliability and Resilience",
+          "path": "languages/go/advanced/modules/05-reliability-and-resilience.md",
+          "quiz": "languages/go/advanced/modules/05-reliability-and-resilience.quiz.md"
+        },
+        {
+          "title": "Go Advanced \u2014 Module 06: Security (Advanced)",
+          "path": "languages/go/advanced/modules/06-security-advanced.md",
+          "quiz": "languages/go/advanced/modules/06-security-advanced.quiz.md"
+        },
+        {
+          "title": "Go Advanced \u2014 Module 07: Observability and SLOs",
+          "path": "languages/go/advanced/modules/07-observability-and-slos.md",
+          "quiz": "languages/go/advanced/modules/07-observability-and-slos.quiz.md"
+        },
+        {
+          "title": "Go Advanced \u2014 Module 08: CI/CD and Release Strategies",
+          "path": "languages/go/advanced/modules/08-ci-cd-and-release-strategies.md",
+          "quiz": "languages/go/advanced/modules/08-ci-cd-and-release-strategies.quiz.md"
+        },
+        {
+          "title": "Systems and Design (Advanced)",
+          "path": "languages/go/advanced/modules/system-design.md",
+          "quiz": "languages/go/advanced/modules/system-design.quiz.md"
+        }
+      ]
+    },
+    {
+      "id": "java-advanced",
+      "name": "Java Advanced Course",
+      "page": "java-advanced-course.html",
+      "level": "Intermediate + Advanced",
+      "modules": [
+        {
+          "title": "Java Intermediate \u2014 Module 01: DSA (Practical)",
+          "path": "languages/java/intermediate/modules/01-dsa-practical.md",
+          "quiz": "languages/java/intermediate/modules/01-dsa-practical.quiz.md"
+        },
+        {
+          "title": "Java Intermediate \u2014 Module 02: Testing and Quality",
+          "path": "languages/java/intermediate/modules/02-testing-and-quality.md",
+          "quiz": "languages/java/intermediate/modules/02-testing-and-quality.quiz.md"
+        },
+        {
+          "title": "Java Intermediate \u2014 Module 03: Git and Collaboration",
+          "path": "languages/java/intermediate/modules/03-git-and-collaboration.md",
+          "quiz": "languages/java/intermediate/modules/03-git-and-collaboration.quiz.md"
+        },
+        {
+          "title": "Java Intermediate \u2014 Module 04: APIs and Auth",
+          "path": "languages/java/intermediate/modules/04-apis-and-auth.md",
+          "quiz": "languages/java/intermediate/modules/04-apis-and-auth.quiz.md"
+        },
+        {
+          "title": "Java Intermediate \u2014 Module 05: Databases",
+          "path": "languages/java/intermediate/modules/05-databases.md",
+          "quiz": "languages/java/intermediate/modules/05-databases.quiz.md"
+        },
+        {
+          "title": "Java Intermediate \u2014 Module 06: Security Basics",
+          "path": "languages/java/intermediate/modules/06-security-basics.md",
+          "quiz": "languages/java/intermediate/modules/06-security-basics.quiz.md"
+        },
+        {
+          "title": "Java Intermediate \u2014 Module 07: Debugging and Performance",
+          "path": "languages/java/intermediate/modules/07-debugging-and-performance.md",
+          "quiz": "languages/java/intermediate/modules/07-debugging-and-performance.quiz.md"
+        },
+        {
+          "title": "Java Intermediate \u2014 Module 08: Deployment and CI",
+          "path": "languages/java/intermediate/modules/08-deployment-and-ci.md",
+          "quiz": "languages/java/intermediate/modules/08-deployment-and-ci.quiz.md"
+        },
+        {
+          "title": "Core Concepts (Intermediate)",
+          "path": "languages/java/intermediate/modules/core-concepts.md",
+          "quiz": "languages/java/intermediate/modules/core-concepts.quiz.md"
+        },
+        {
+          "title": "Java Advanced \u2014 Module 01: System Design Foundations",
+          "path": "languages/java/advanced/modules/01-system-design-foundations.md",
+          "quiz": "languages/java/advanced/modules/01-system-design-foundations.quiz.md"
+        },
+        {
+          "title": "Java Advanced \u2014 Module 02: Architecture Patterns",
+          "path": "languages/java/advanced/modules/02-architecture-patterns.md",
+          "quiz": "languages/java/advanced/modules/02-architecture-patterns.quiz.md"
+        },
+        {
+          "title": "Java Advanced \u2014 Module 03: Concurrency and Async",
+          "path": "languages/java/advanced/modules/03-concurrency-and-async.md",
+          "quiz": "languages/java/advanced/modules/03-concurrency-and-async.quiz.md"
+        },
+        {
+          "title": "Java Advanced \u2014 Module 04: Performance and Profiling",
+          "path": "languages/java/advanced/modules/04-performance-and-profiling.md",
+          "quiz": "languages/java/advanced/modules/04-performance-and-profiling.quiz.md"
+        },
+        {
+          "title": "Java Advanced \u2014 Module 05: Reliability and Resilience",
+          "path": "languages/java/advanced/modules/05-reliability-and-resilience.md",
+          "quiz": "languages/java/advanced/modules/05-reliability-and-resilience.quiz.md"
+        },
+        {
+          "title": "Java Advanced \u2014 Module 06: Security (Advanced)",
+          "path": "languages/java/advanced/modules/06-security-advanced.md",
+          "quiz": "languages/java/advanced/modules/06-security-advanced.quiz.md"
+        },
+        {
+          "title": "Java Advanced \u2014 Module 07: Observability and SLOs",
+          "path": "languages/java/advanced/modules/07-observability-and-slos.md",
+          "quiz": "languages/java/advanced/modules/07-observability-and-slos.quiz.md"
+        },
+        {
+          "title": "Java Advanced \u2014 Module 08: CI/CD and Release Strategies",
+          "path": "languages/java/advanced/modules/08-ci-cd-and-release-strategies.md",
+          "quiz": "languages/java/advanced/modules/08-ci-cd-and-release-strategies.quiz.md"
+        },
+        {
+          "title": "Systems and Design (Advanced)",
+          "path": "languages/java/advanced/modules/system-design.md",
+          "quiz": "languages/java/advanced/modules/system-design.quiz.md"
+        }
+      ]
+    },
+    {
+      "id": "kotlin-advanced",
+      "name": "Kotlin Advanced Course",
+      "page": "kotlin-advanced-course.html",
+      "level": "Intermediate + Advanced",
+      "modules": [
+        {
+          "title": "Kotlin Intermediate \u2014 Module 01: DSA (Practical)",
+          "path": "languages/kotlin/intermediate/modules/01-dsa-practical.md",
+          "quiz": "languages/kotlin/intermediate/modules/01-dsa-practical.quiz.md"
+        },
+        {
+          "title": "Kotlin Intermediate \u2014 Module 02: Testing and Quality",
+          "path": "languages/kotlin/intermediate/modules/02-testing-and-quality.md",
+          "quiz": "languages/kotlin/intermediate/modules/02-testing-and-quality.quiz.md"
+        },
+        {
+          "title": "Kotlin Intermediate \u2014 Module 03: Git and Collaboration",
+          "path": "languages/kotlin/intermediate/modules/03-git-and-collaboration.md",
+          "quiz": "languages/kotlin/intermediate/modules/03-git-and-collaboration.quiz.md"
+        },
+        {
+          "title": "Kotlin Intermediate \u2014 Module 04: APIs and Auth",
+          "path": "languages/kotlin/intermediate/modules/04-apis-and-auth.md",
+          "quiz": "languages/kotlin/intermediate/modules/04-apis-and-auth.quiz.md"
+        },
+        {
+          "title": "Kotlin Intermediate \u2014 Module 05: Databases",
+          "path": "languages/kotlin/intermediate/modules/05-databases.md",
+          "quiz": "languages/kotlin/intermediate/modules/05-databases.quiz.md"
+        },
+        {
+          "title": "Kotlin Intermediate \u2014 Module 06: Security Basics",
+          "path": "languages/kotlin/intermediate/modules/06-security-basics.md",
+          "quiz": "languages/kotlin/intermediate/modules/06-security-basics.quiz.md"
+        },
+        {
+          "title": "Kotlin Intermediate \u2014 Module 07: Debugging and Performance",
+          "path": "languages/kotlin/intermediate/modules/07-debugging-and-performance.md",
+          "quiz": "languages/kotlin/intermediate/modules/07-debugging-and-performance.quiz.md"
+        },
+        {
+          "title": "Kotlin Intermediate \u2014 Module 08: Deployment and CI",
+          "path": "languages/kotlin/intermediate/modules/08-deployment-and-ci.md",
+          "quiz": "languages/kotlin/intermediate/modules/08-deployment-and-ci.quiz.md"
+        },
+        {
+          "title": "Core Concepts (Intermediate)",
+          "path": "languages/kotlin/intermediate/modules/core-concepts.md",
+          "quiz": "languages/kotlin/intermediate/modules/core-concepts.quiz.md"
+        },
+        {
+          "title": "Kotlin Advanced \u2014 Module 01: System Design Foundations",
+          "path": "languages/kotlin/advanced/modules/01-system-design-foundations.md",
+          "quiz": "languages/kotlin/advanced/modules/01-system-design-foundations.quiz.md"
+        },
+        {
+          "title": "Kotlin Advanced \u2014 Module 02: Architecture Patterns",
+          "path": "languages/kotlin/advanced/modules/02-architecture-patterns.md",
+          "quiz": "languages/kotlin/advanced/modules/02-architecture-patterns.quiz.md"
+        },
+        {
+          "title": "Kotlin Advanced \u2014 Module 03: Concurrency and Async",
+          "path": "languages/kotlin/advanced/modules/03-concurrency-and-async.md",
+          "quiz": "languages/kotlin/advanced/modules/03-concurrency-and-async.quiz.md"
+        },
+        {
+          "title": "Kotlin Advanced \u2014 Module 04: Performance and Profiling",
+          "path": "languages/kotlin/advanced/modules/04-performance-and-profiling.md",
+          "quiz": "languages/kotlin/advanced/modules/04-performance-and-profiling.quiz.md"
+        },
+        {
+          "title": "Kotlin Advanced \u2014 Module 05: Reliability and Resilience",
+          "path": "languages/kotlin/advanced/modules/05-reliability-and-resilience.md",
+          "quiz": "languages/kotlin/advanced/modules/05-reliability-and-resilience.quiz.md"
+        },
+        {
+          "title": "Kotlin Advanced \u2014 Module 06: Security (Advanced)",
+          "path": "languages/kotlin/advanced/modules/06-security-advanced.md",
+          "quiz": "languages/kotlin/advanced/modules/06-security-advanced.quiz.md"
+        },
+        {
+          "title": "Kotlin Advanced \u2014 Module 07: Observability and SLOs",
+          "path": "languages/kotlin/advanced/modules/07-observability-and-slos.md",
+          "quiz": "languages/kotlin/advanced/modules/07-observability-and-slos.quiz.md"
+        },
+        {
+          "title": "Kotlin Advanced \u2014 Module 08: CI/CD and Release Strategies",
+          "path": "languages/kotlin/advanced/modules/08-ci-cd-and-release-strategies.md",
+          "quiz": "languages/kotlin/advanced/modules/08-ci-cd-and-release-strategies.quiz.md"
+        },
+        {
+          "title": "Systems and Design (Advanced)",
+          "path": "languages/kotlin/advanced/modules/system-design.md",
+          "quiz": "languages/kotlin/advanced/modules/system-design.quiz.md"
+        }
+      ]
+    },
+    {
+      "id": "python-advanced",
+      "name": "Python Advanced Course",
+      "page": "python-advanced-course.html",
+      "level": "Intermediate + Advanced",
+      "modules": [
+        {
+          "title": "Python Intermediate \u2014 Module 01: DSA (Practical)",
+          "path": "languages/python/intermediate/modules/01-dsa-practical.md",
+          "quiz": "languages/python/intermediate/modules/01-dsa-practical.quiz.md"
+        },
+        {
+          "title": "Python Intermediate \u2014 Module 02: Testing and Quality",
+          "path": "languages/python/intermediate/modules/02-testing-and-quality.md",
+          "quiz": "languages/python/intermediate/modules/02-testing-and-quality.quiz.md"
+        },
+        {
+          "title": "Python Intermediate \u2014 Module 03: Git and Collaboration",
+          "path": "languages/python/intermediate/modules/03-git-and-collaboration.md",
+          "quiz": "languages/python/intermediate/modules/03-git-and-collaboration.quiz.md"
+        },
+        {
+          "title": "Python Intermediate \u2014 Module 04: APIs and Auth",
+          "path": "languages/python/intermediate/modules/04-apis-and-auth.md",
+          "quiz": "languages/python/intermediate/modules/04-apis-and-auth.quiz.md"
+        },
+        {
+          "title": "Python Intermediate \u2014 Module 05: Databases",
+          "path": "languages/python/intermediate/modules/05-databases.md",
+          "quiz": "languages/python/intermediate/modules/05-databases.quiz.md"
+        },
+        {
+          "title": "Python Intermediate \u2014 Module 06: Security Basics",
+          "path": "languages/python/intermediate/modules/06-security-basics.md",
+          "quiz": "languages/python/intermediate/modules/06-security-basics.quiz.md"
+        },
+        {
+          "title": "Python Intermediate \u2014 Module 07: Debugging and Performance",
+          "path": "languages/python/intermediate/modules/07-debugging-and-performance.md",
+          "quiz": "languages/python/intermediate/modules/07-debugging-and-performance.quiz.md"
+        },
+        {
+          "title": "Python Intermediate \u2014 Module 08: Deployment and CI",
+          "path": "languages/python/intermediate/modules/08-deployment-and-ci.md",
+          "quiz": "languages/python/intermediate/modules/08-deployment-and-ci.quiz.md"
+        },
+        {
+          "title": "Core Concepts (Intermediate)",
+          "path": "languages/python/intermediate/modules/core-concepts.md",
+          "quiz": "languages/python/intermediate/modules/core-concepts.quiz.md"
+        },
+        {
+          "title": "Python Advanced \u2014 Module 01: System Design Foundations",
+          "path": "languages/python/advanced/modules/01-system-design-foundations.md",
+          "quiz": "languages/python/advanced/modules/01-system-design-foundations.quiz.md"
+        },
+        {
+          "title": "Python Advanced \u2014 Module 02: Architecture Patterns",
+          "path": "languages/python/advanced/modules/02-architecture-patterns.md",
+          "quiz": "languages/python/advanced/modules/02-architecture-patterns.quiz.md"
+        },
+        {
+          "title": "Python Advanced \u2014 Module 03: Concurrency and Async",
+          "path": "languages/python/advanced/modules/03-concurrency-and-async.md",
+          "quiz": "languages/python/advanced/modules/03-concurrency-and-async.quiz.md"
+        },
+        {
+          "title": "Python Advanced \u2014 Module 04: Performance and Profiling",
+          "path": "languages/python/advanced/modules/04-performance-and-profiling.md",
+          "quiz": "languages/python/advanced/modules/04-performance-and-profiling.quiz.md"
+        },
+        {
+          "title": "Python Advanced \u2014 Module 05: Reliability and Resilience",
+          "path": "languages/python/advanced/modules/05-reliability-and-resilience.md",
+          "quiz": "languages/python/advanced/modules/05-reliability-and-resilience.quiz.md"
+        },
+        {
+          "title": "Python Advanced \u2014 Module 06: Security (Advanced)",
+          "path": "languages/python/advanced/modules/06-security-advanced.md",
+          "quiz": "languages/python/advanced/modules/06-security-advanced.quiz.md"
+        },
+        {
+          "title": "Python Advanced \u2014 Module 07: Observability and SLOs",
+          "path": "languages/python/advanced/modules/07-observability-and-slos.md",
+          "quiz": "languages/python/advanced/modules/07-observability-and-slos.quiz.md"
+        },
+        {
+          "title": "Python Advanced \u2014 Module 08: CI/CD and Release Strategies",
+          "path": "languages/python/advanced/modules/08-ci-cd-and-release-strategies.md",
+          "quiz": "languages/python/advanced/modules/08-ci-cd-and-release-strategies.quiz.md"
+        },
+        {
+          "title": "Systems and Design (Advanced)",
+          "path": "languages/python/advanced/modules/system-design.md",
+          "quiz": "languages/python/advanced/modules/system-design.quiz.md"
+        }
+      ]
+    },
+    {
+      "id": "rust-advanced",
+      "name": "Rust Advanced Course",
+      "page": "rust-advanced-course.html",
+      "level": "Intermediate + Advanced",
+      "modules": [
+        {
+          "title": "Rust Intermediate \u2014 Module 01: DSA (Practical)",
+          "path": "languages/rust/intermediate/modules/01-dsa-practical.md",
+          "quiz": "languages/rust/intermediate/modules/01-dsa-practical.quiz.md"
+        },
+        {
+          "title": "Rust Intermediate \u2014 Module 02: Testing and Quality",
+          "path": "languages/rust/intermediate/modules/02-testing-and-quality.md",
+          "quiz": "languages/rust/intermediate/modules/02-testing-and-quality.quiz.md"
+        },
+        {
+          "title": "Rust Intermediate \u2014 Module 03: Git and Collaboration",
+          "path": "languages/rust/intermediate/modules/03-git-and-collaboration.md",
+          "quiz": "languages/rust/intermediate/modules/03-git-and-collaboration.quiz.md"
+        },
+        {
+          "title": "Rust Intermediate \u2014 Module 04: APIs and Auth",
+          "path": "languages/rust/intermediate/modules/04-apis-and-auth.md",
+          "quiz": "languages/rust/intermediate/modules/04-apis-and-auth.quiz.md"
+        },
+        {
+          "title": "Rust Intermediate \u2014 Module 05: Databases",
+          "path": "languages/rust/intermediate/modules/05-databases.md",
+          "quiz": "languages/rust/intermediate/modules/05-databases.quiz.md"
+        },
+        {
+          "title": "Rust Intermediate \u2014 Module 06: Security Basics",
+          "path": "languages/rust/intermediate/modules/06-security-basics.md",
+          "quiz": "languages/rust/intermediate/modules/06-security-basics.quiz.md"
+        },
+        {
+          "title": "Rust Intermediate \u2014 Module 07: Debugging and Performance",
+          "path": "languages/rust/intermediate/modules/07-debugging-and-performance.md",
+          "quiz": "languages/rust/intermediate/modules/07-debugging-and-performance.quiz.md"
+        },
+        {
+          "title": "Rust Intermediate \u2014 Module 08: Deployment and CI",
+          "path": "languages/rust/intermediate/modules/08-deployment-and-ci.md",
+          "quiz": "languages/rust/intermediate/modules/08-deployment-and-ci.quiz.md"
+        },
+        {
+          "title": "Core Concepts (Intermediate)",
+          "path": "languages/rust/intermediate/modules/core-concepts.md",
+          "quiz": "languages/rust/intermediate/modules/core-concepts.quiz.md"
+        },
+        {
+          "title": "Rust Advanced \u2014 Module 01: System Design Foundations",
+          "path": "languages/rust/advanced/modules/01-system-design-foundations.md",
+          "quiz": "languages/rust/advanced/modules/01-system-design-foundations.quiz.md"
+        },
+        {
+          "title": "Rust Advanced \u2014 Module 02: Architecture Patterns",
+          "path": "languages/rust/advanced/modules/02-architecture-patterns.md",
+          "quiz": "languages/rust/advanced/modules/02-architecture-patterns.quiz.md"
+        },
+        {
+          "title": "Rust Advanced \u2014 Module 03: Concurrency and Async",
+          "path": "languages/rust/advanced/modules/03-concurrency-and-async.md",
+          "quiz": "languages/rust/advanced/modules/03-concurrency-and-async.quiz.md"
+        },
+        {
+          "title": "Rust Advanced \u2014 Module 04: Performance and Profiling",
+          "path": "languages/rust/advanced/modules/04-performance-and-profiling.md",
+          "quiz": "languages/rust/advanced/modules/04-performance-and-profiling.quiz.md"
+        },
+        {
+          "title": "Rust Advanced \u2014 Module 05: Reliability and Resilience",
+          "path": "languages/rust/advanced/modules/05-reliability-and-resilience.md",
+          "quiz": "languages/rust/advanced/modules/05-reliability-and-resilience.quiz.md"
+        },
+        {
+          "title": "Rust Advanced \u2014 Module 06: Security (Advanced)",
+          "path": "languages/rust/advanced/modules/06-security-advanced.md",
+          "quiz": "languages/rust/advanced/modules/06-security-advanced.quiz.md"
+        },
+        {
+          "title": "Rust Advanced \u2014 Module 07: Observability and SLOs",
+          "path": "languages/rust/advanced/modules/07-observability-and-slos.md",
+          "quiz": "languages/rust/advanced/modules/07-observability-and-slos.quiz.md"
+        },
+        {
+          "title": "Rust Advanced \u2014 Module 08: CI/CD and Release Strategies",
+          "path": "languages/rust/advanced/modules/08-ci-cd-and-release-strategies.md",
+          "quiz": "languages/rust/advanced/modules/08-ci-cd-and-release-strategies.quiz.md"
+        },
+        {
+          "title": "Systems and Design (Advanced)",
+          "path": "languages/rust/advanced/modules/system-design.md",
+          "quiz": "languages/rust/advanced/modules/system-design.quiz.md"
+        }
+      ]
+    },
+    {
+      "id": "sql-advanced",
+      "name": "SQL Advanced Course",
+      "page": "sql-advanced-course.html",
+      "level": "Intermediate + Advanced",
+      "modules": [
+        {
+          "title": "SQL (PostgreSQL) Intermediate \u2014 Module 01: DSA (Practical)",
+          "path": "languages/sql/intermediate/modules/01-dsa-practical.md",
+          "quiz": "languages/sql/intermediate/modules/01-dsa-practical.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Intermediate \u2014 Module 02: Testing and Quality",
+          "path": "languages/sql/intermediate/modules/02-testing-and-quality.md",
+          "quiz": "languages/sql/intermediate/modules/02-testing-and-quality.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Intermediate \u2014 Module 03: Git and Collaboration",
+          "path": "languages/sql/intermediate/modules/03-git-and-collaboration.md",
+          "quiz": "languages/sql/intermediate/modules/03-git-and-collaboration.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Intermediate \u2014 Module 04: APIs and Auth",
+          "path": "languages/sql/intermediate/modules/04-apis-and-auth.md",
+          "quiz": "languages/sql/intermediate/modules/04-apis-and-auth.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Intermediate \u2014 Module 05: Databases",
+          "path": "languages/sql/intermediate/modules/05-databases.md",
+          "quiz": "languages/sql/intermediate/modules/05-databases.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Intermediate \u2014 Module 06: Security Basics",
+          "path": "languages/sql/intermediate/modules/06-security-basics.md",
+          "quiz": "languages/sql/intermediate/modules/06-security-basics.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Intermediate \u2014 Module 07: Debugging and Performance",
+          "path": "languages/sql/intermediate/modules/07-debugging-and-performance.md",
+          "quiz": "languages/sql/intermediate/modules/07-debugging-and-performance.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Intermediate \u2014 Module 08: Deployment and CI",
+          "path": "languages/sql/intermediate/modules/08-deployment-and-ci.md",
+          "quiz": "languages/sql/intermediate/modules/08-deployment-and-ci.quiz.md"
+        },
+        {
+          "title": "Core Concepts (Intermediate)",
+          "path": "languages/sql/intermediate/modules/core-concepts.md",
+          "quiz": "languages/sql/intermediate/modules/core-concepts.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Advanced \u2014 Module 01: System Design Foundations",
+          "path": "languages/sql/advanced/modules/01-system-design-foundations.md",
+          "quiz": "languages/sql/advanced/modules/01-system-design-foundations.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Advanced \u2014 Module 02: Architecture Patterns",
+          "path": "languages/sql/advanced/modules/02-architecture-patterns.md",
+          "quiz": "languages/sql/advanced/modules/02-architecture-patterns.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Advanced \u2014 Module 03: Concurrency and Async",
+          "path": "languages/sql/advanced/modules/03-concurrency-and-async.md",
+          "quiz": "languages/sql/advanced/modules/03-concurrency-and-async.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Advanced \u2014 Module 04: Performance and Profiling",
+          "path": "languages/sql/advanced/modules/04-performance-and-profiling.md",
+          "quiz": "languages/sql/advanced/modules/04-performance-and-profiling.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Advanced \u2014 Module 05: Reliability and Resilience",
+          "path": "languages/sql/advanced/modules/05-reliability-and-resilience.md",
+          "quiz": "languages/sql/advanced/modules/05-reliability-and-resilience.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Advanced \u2014 Module 06: Security (Advanced)",
+          "path": "languages/sql/advanced/modules/06-security-advanced.md",
+          "quiz": "languages/sql/advanced/modules/06-security-advanced.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Advanced \u2014 Module 07: Observability and SLOs",
+          "path": "languages/sql/advanced/modules/07-observability-and-slos.md",
+          "quiz": "languages/sql/advanced/modules/07-observability-and-slos.quiz.md"
+        },
+        {
+          "title": "SQL (PostgreSQL) Advanced \u2014 Module 08: CI/CD and Release Strategies",
+          "path": "languages/sql/advanced/modules/08-ci-cd-and-release-strategies.md",
+          "quiz": "languages/sql/advanced/modules/08-ci-cd-and-release-strategies.quiz.md"
+        },
+        {
+          "title": "Systems and Design (Advanced)",
+          "path": "languages/sql/advanced/modules/system-design.md",
+          "quiz": "languages/sql/advanced/modules/system-design.quiz.md"
+        }
+      ]
+    },
+    {
+      "id": "swift-advanced",
+      "name": "Swift Advanced Course",
+      "page": "swift-advanced-course.html",
+      "level": "Intermediate + Advanced",
+      "modules": [
+        {
+          "title": "Swift Intermediate \u2014 Module 01: DSA (Practical)",
+          "path": "languages/swift/intermediate/modules/01-dsa-practical.md",
+          "quiz": "languages/swift/intermediate/modules/01-dsa-practical.quiz.md"
+        },
+        {
+          "title": "Swift Intermediate \u2014 Module 02: Testing and Quality",
+          "path": "languages/swift/intermediate/modules/02-testing-and-quality.md",
+          "quiz": "languages/swift/intermediate/modules/02-testing-and-quality.quiz.md"
+        },
+        {
+          "title": "Swift Intermediate \u2014 Module 03: Git and Collaboration",
+          "path": "languages/swift/intermediate/modules/03-git-and-collaboration.md",
+          "quiz": "languages/swift/intermediate/modules/03-git-and-collaboration.quiz.md"
+        },
+        {
+          "title": "Swift Intermediate \u2014 Module 04: APIs and Auth",
+          "path": "languages/swift/intermediate/modules/04-apis-and-auth.md",
+          "quiz": "languages/swift/intermediate/modules/04-apis-and-auth.quiz.md"
+        },
+        {
+          "title": "Swift Intermediate \u2014 Module 05: Databases",
+          "path": "languages/swift/intermediate/modules/05-databases.md",
+          "quiz": "languages/swift/intermediate/modules/05-databases.quiz.md"
+        },
+        {
+          "title": "Swift Intermediate \u2014 Module 06: Security Basics",
+          "path": "languages/swift/intermediate/modules/06-security-basics.md",
+          "quiz": "languages/swift/intermediate/modules/06-security-basics.quiz.md"
+        },
+        {
+          "title": "Swift Intermediate \u2014 Module 07: Debugging and Performance",
+          "path": "languages/swift/intermediate/modules/07-debugging-and-performance.md",
+          "quiz": "languages/swift/intermediate/modules/07-debugging-and-performance.quiz.md"
+        },
+        {
+          "title": "Swift Intermediate \u2014 Module 08: Deployment and CI",
+          "path": "languages/swift/intermediate/modules/08-deployment-and-ci.md",
+          "quiz": "languages/swift/intermediate/modules/08-deployment-and-ci.quiz.md"
+        },
+        {
+          "title": "Core Concepts (Intermediate)",
+          "path": "languages/swift/intermediate/modules/core-concepts.md",
+          "quiz": "languages/swift/intermediate/modules/core-concepts.quiz.md"
+        },
+        {
+          "title": "Swift Advanced \u2014 Module 01: System Design Foundations",
+          "path": "languages/swift/advanced/modules/01-system-design-foundations.md",
+          "quiz": "languages/swift/advanced/modules/01-system-design-foundations.quiz.md"
+        },
+        {
+          "title": "Swift Advanced \u2014 Module 02: Architecture Patterns",
+          "path": "languages/swift/advanced/modules/02-architecture-patterns.md",
+          "quiz": "languages/swift/advanced/modules/02-architecture-patterns.quiz.md"
+        },
+        {
+          "title": "Swift Advanced \u2014 Module 03: Concurrency and Async",
+          "path": "languages/swift/advanced/modules/03-concurrency-and-async.md",
+          "quiz": "languages/swift/advanced/modules/03-concurrency-and-async.quiz.md"
+        },
+        {
+          "title": "Swift Advanced \u2014 Module 04: Performance and Profiling",
+          "path": "languages/swift/advanced/modules/04-performance-and-profiling.md",
+          "quiz": "languages/swift/advanced/modules/04-performance-and-profiling.quiz.md"
+        },
+        {
+          "title": "Swift Advanced \u2014 Module 05: Reliability and Resilience",
+          "path": "languages/swift/advanced/modules/05-reliability-and-resilience.md",
+          "quiz": "languages/swift/advanced/modules/05-reliability-and-resilience.quiz.md"
+        },
+        {
+          "title": "Swift Advanced \u2014 Module 06: Security (Advanced)",
+          "path": "languages/swift/advanced/modules/06-security-advanced.md",
+          "quiz": "languages/swift/advanced/modules/06-security-advanced.quiz.md"
+        },
+        {
+          "title": "Swift Advanced \u2014 Module 07: Observability and SLOs",
+          "path": "languages/swift/advanced/modules/07-observability-and-slos.md",
+          "quiz": "languages/swift/advanced/modules/07-observability-and-slos.quiz.md"
+        },
+        {
+          "title": "Swift Advanced \u2014 Module 08: CI/CD and Release Strategies",
+          "path": "languages/swift/advanced/modules/08-ci-cd-and-release-strategies.md",
+          "quiz": "languages/swift/advanced/modules/08-ci-cd-and-release-strategies.quiz.md"
+        },
+        {
+          "title": "Systems and Design (Advanced)",
+          "path": "languages/swift/advanced/modules/system-design.md",
+          "quiz": "languages/swift/advanced/modules/system-design.quiz.md"
+        }
+      ]
+    },
+    {
+      "id": "typescript-advanced",
+      "name": "TypeScript Advanced Course",
+      "page": "typescript-advanced-course.html",
+      "level": "Intermediate + Advanced",
+      "modules": [
+        {
+          "title": "TypeScript Intermediate \u2014 Module 01: DSA (Practical)",
+          "path": "languages/typescript/intermediate/modules/01-dsa-practical.md",
+          "quiz": "languages/typescript/intermediate/modules/01-dsa-practical.quiz.md"
+        },
+        {
+          "title": "TypeScript Intermediate \u2014 Module 02: Testing and Quality",
+          "path": "languages/typescript/intermediate/modules/02-testing-and-quality.md",
+          "quiz": "languages/typescript/intermediate/modules/02-testing-and-quality.quiz.md"
+        },
+        {
+          "title": "TypeScript Intermediate \u2014 Module 03: Git and Collaboration",
+          "path": "languages/typescript/intermediate/modules/03-git-and-collaboration.md",
+          "quiz": "languages/typescript/intermediate/modules/03-git-and-collaboration.quiz.md"
+        },
+        {
+          "title": "TypeScript Intermediate \u2014 Module 04: APIs and Auth",
+          "path": "languages/typescript/intermediate/modules/04-apis-and-auth.md",
+          "quiz": "languages/typescript/intermediate/modules/04-apis-and-auth.quiz.md"
+        },
+        {
+          "title": "TypeScript Intermediate \u2014 Module 05: Databases",
+          "path": "languages/typescript/intermediate/modules/05-databases.md",
+          "quiz": "languages/typescript/intermediate/modules/05-databases.quiz.md"
+        },
+        {
+          "title": "TypeScript Intermediate \u2014 Module 06: Security Basics",
+          "path": "languages/typescript/intermediate/modules/06-security-basics.md",
+          "quiz": "languages/typescript/intermediate/modules/06-security-basics.quiz.md"
+        },
+        {
+          "title": "TypeScript Intermediate \u2014 Module 07: Debugging and Performance",
+          "path": "languages/typescript/intermediate/modules/07-debugging-and-performance.md",
+          "quiz": "languages/typescript/intermediate/modules/07-debugging-and-performance.quiz.md"
+        },
+        {
+          "title": "TypeScript Intermediate \u2014 Module 08: Deployment and CI",
+          "path": "languages/typescript/intermediate/modules/08-deployment-and-ci.md",
+          "quiz": "languages/typescript/intermediate/modules/08-deployment-and-ci.quiz.md"
+        },
+        {
+          "title": "Core Concepts (Intermediate)",
+          "path": "languages/typescript/intermediate/modules/core-concepts.md",
+          "quiz": "languages/typescript/intermediate/modules/core-concepts.quiz.md"
+        },
+        {
+          "title": "TypeScript Advanced \u2014 Module 01: System Design Foundations",
+          "path": "languages/typescript/advanced/modules/01-system-design-foundations.md",
+          "quiz": "languages/typescript/advanced/modules/01-system-design-foundations.quiz.md"
+        },
+        {
+          "title": "TypeScript Advanced \u2014 Module 02: Architecture Patterns",
+          "path": "languages/typescript/advanced/modules/02-architecture-patterns.md",
+          "quiz": "languages/typescript/advanced/modules/02-architecture-patterns.quiz.md"
+        },
+        {
+          "title": "TypeScript Advanced \u2014 Module 03: Concurrency and Async",
+          "path": "languages/typescript/advanced/modules/03-concurrency-and-async.md",
+          "quiz": "languages/typescript/advanced/modules/03-concurrency-and-async.quiz.md"
+        },
+        {
+          "title": "TypeScript Advanced \u2014 Module 04: Performance and Profiling",
+          "path": "languages/typescript/advanced/modules/04-performance-and-profiling.md",
+          "quiz": "languages/typescript/advanced/modules/04-performance-and-profiling.quiz.md"
+        },
+        {
+          "title": "TypeScript Advanced \u2014 Module 05: Reliability and Resilience",
+          "path": "languages/typescript/advanced/modules/05-reliability-and-resilience.md",
+          "quiz": "languages/typescript/advanced/modules/05-reliability-and-resilience.quiz.md"
+        },
+        {
+          "title": "TypeScript Advanced \u2014 Module 06: Security (Advanced)",
+          "path": "languages/typescript/advanced/modules/06-security-advanced.md",
+          "quiz": "languages/typescript/advanced/modules/06-security-advanced.quiz.md"
+        },
+        {
+          "title": "TypeScript Advanced \u2014 Module 07: Observability and SLOs",
+          "path": "languages/typescript/advanced/modules/07-observability-and-slos.md",
+          "quiz": "languages/typescript/advanced/modules/07-observability-and-slos.quiz.md"
+        },
+        {
+          "title": "TypeScript Advanced \u2014 Module 08: CI/CD and Release Strategies",
+          "path": "languages/typescript/advanced/modules/08-ci-cd-and-release-strategies.md",
+          "quiz": "languages/typescript/advanced/modules/08-ci-cd-and-release-strategies.quiz.md"
+        },
+        {
+          "title": "Systems and Design (Advanced)",
+          "path": "languages/typescript/advanced/modules/system-design.md",
+          "quiz": "languages/typescript/advanced/modules/system-design.quiz.md"
+        }
+      ]
+    }
+  ]
+}

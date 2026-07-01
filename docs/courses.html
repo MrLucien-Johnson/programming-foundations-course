@@ -83,6 +83,18 @@
       </section>
 
       <section class="section">
+        <h3>Intermediate + Advanced Language Courses</h3>
+        <p>
+          These courses are for learners who already know the basics and want to go deeper in a
+          specific language.
+        </p>
+        <div id="advanced-course-grid" class="grid cols-3"></div>
+        <noscript>
+          <p class="note">Enable JavaScript to see the full advanced course list.</p>
+        </noscript>
+      </section>
+
+      <section class="section">
         <h3>Search lessons and quizzes</h3>
         <p>Type a keyword to find a lesson or quiz quickly.</p>
         <input
@@ -96,80 +108,33 @@
     </main>
 
     <script>
-      const entries = [
-        { label: "Python: Setup & First Script (Lesson)", link: "course-viewer.html?path=python-beginner-workbook/module-01-setup/README.md" },
-        { label: "Python: Module 1 Quiz", link: "quiz-viewer.html?quiz=python-beginner-workbook/module-01-setup/exercises/quiz.md" },
-        { label: "Python: Python Basics (Lesson)", link: "course-viewer.html?path=python-beginner-workbook/module-02-basics/README.md" },
-        { label: "Python: Module 2 Quiz", link: "quiz-viewer.html?quiz=python-beginner-workbook/module-02-basics/exercises/quiz.md" },
-        { label: "Python: Control Flow (Lesson)", link: "course-viewer.html?path=python-beginner-workbook/module-03-control-flow/README.md" },
-        { label: "Python: Module 3 Quiz", link: "quiz-viewer.html?quiz=python-beginner-workbook/module-03-control-flow/exercises/quiz.md" },
-        { label: "Python: Functions (Lesson)", link: "course-viewer.html?path=python-beginner-workbook/module-04-functions/README.md" },
-        { label: "Python: Module 4 Quiz", link: "quiz-viewer.html?quiz=python-beginner-workbook/module-04-functions/exercises/quiz.md" },
-        { label: "Python: Collections (Lesson)", link: "course-viewer.html?path=python-beginner-workbook/module-05-collections/README.md" },
-        { label: "Python: Module 5 Quiz", link: "quiz-viewer.html?quiz=python-beginner-workbook/module-05-collections/exercises/quiz.md" },
-        { label: "Python: OOP (Lesson)", link: "course-viewer.html?path=python-beginner-workbook/module-06-oop/README.md" },
-        { label: "Python: Module 6 Quiz", link: "quiz-viewer.html?quiz=python-beginner-workbook/module-06-oop/exercises/quiz.md" },
-        { label: "Python: Task Tracker (Lesson)", link: "course-viewer.html?path=python-beginner-workbook/module-07-task-tracker/README.md" },
-        { label: "Python: Module 7 Quiz", link: "quiz-viewer.html?quiz=python-beginner-workbook/module-07-task-tracker/exercises/quiz.md" },
-        { label: "C#: Setup & First Program (Lesson)", link: "course-viewer.html?path=csharp-beginner-workbook/module-01-setup/README.md" },
-        { label: "C#: Module 1 Quiz", link: "quiz-viewer.html?quiz=csharp-beginner-workbook/module-01-setup/exercises/quiz.md" },
-        { label: "C#: Basics (Lesson)", link: "course-viewer.html?path=csharp-beginner-workbook/module-02-basics/README.md" },
-        { label: "C#: Module 2 Quiz", link: "quiz-viewer.html?quiz=csharp-beginner-workbook/module-02-basics/exercises/quiz.md" },
-        { label: "C#: Control Flow (Lesson)", link: "course-viewer.html?path=csharp-beginner-workbook/module-03-control-flow/README.md" },
-        { label: "C#: Module 3 Quiz", link: "quiz-viewer.html?quiz=csharp-beginner-workbook/module-03-control-flow/exercises/quiz.md" },
-        { label: "C#: Methods (Lesson)", link: "course-viewer.html?path=csharp-beginner-workbook/module-04-methods/README.md" },
-        { label: "C#: Module 4 Quiz", link: "quiz-viewer.html?quiz=csharp-beginner-workbook/module-04-methods/exercises/quiz.md" },
-        { label: "C#: Collections (Lesson)", link: "course-viewer.html?path=csharp-beginner-workbook/module-05-collections/README.md" },
-        { label: "C#: Module 5 Quiz", link: "quiz-viewer.html?quiz=csharp-beginner-workbook/module-05-collections/exercises/quiz.md" },
-        { label: "C#: OOP (Lesson)", link: "course-viewer.html?path=csharp-beginner-workbook/module-06-oop-intro/README.md" },
-        { label: "C#: Module 6 Quiz", link: "quiz-viewer.html?quiz=csharp-beginner-workbook/module-06-oop-intro/exercises/quiz.md" },
-        { label: "C#: Task Tracker (Lesson)", link: "course-viewer.html?path=csharp-beginner-workbook/module-07-task-tracker/README.md" },
-        { label: "C#: Module 7 Quiz", link: "quiz-viewer.html?quiz=csharp-beginner-workbook/module-07-task-tracker/exercises/quiz.md" },
-        { label: "AI: AI Foundations (Lesson)", link: "course-viewer.html?path=languages/ai/beginner/modules/01-ai-foundations.md" },
-        { label: "AI: AI Foundations (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/beginner/modules/01-ai-foundations.quiz.md" },
-        { label: "AI: Prompting Basics (Lesson)", link: "course-viewer.html?path=languages/ai/beginner/modules/02-prompting-basics.md" },
-        { label: "AI: Prompting Basics (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/beginner/modules/02-prompting-basics.quiz.md" },
-        { label: "AI: Prompt Patterns (Lesson)", link: "course-viewer.html?path=languages/ai/beginner/modules/03-prompt-patterns.md" },
-        { label: "AI: Prompt Patterns (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/beginner/modules/03-prompt-patterns.quiz.md" },
-        { label: "AI: Evaluation & Iteration (Lesson)", link: "course-viewer.html?path=languages/ai/beginner/modules/04-evaluation-and-iteration.md" },
-        { label: "AI: Evaluation & Iteration (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/beginner/modules/04-evaluation-and-iteration.quiz.md" },
-        { label: "AI: Safety & Policy Basics (Lesson)", link: "course-viewer.html?path=languages/ai/beginner/modules/05-safety-and-policy-basics.md" },
-        { label: "AI: Safety & Policy Basics (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/beginner/modules/05-safety-and-policy-basics.quiz.md" },
-        { label: "AI: Workflows & Automation (Lesson)", link: "course-viewer.html?path=languages/ai/beginner/modules/06-workflows-and-automation.md" },
-        { label: "AI: Workflows & Automation (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/beginner/modules/06-workflows-and-automation.quiz.md" },
-        { label: "AI: Advanced Prompting (Lesson)", link: "course-viewer.html?path=languages/ai/intermediate/modules/01-advanced-prompting-tool-use.md" },
-        { label: "AI: Advanced Prompting (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/intermediate/modules/01-advanced-prompting-tool-use.quiz.md" },
-        { label: "AI: Structured Outputs (Lesson)", link: "course-viewer.html?path=languages/ai/intermediate/modules/02-structured-outputs-and-schemas.md" },
-        { label: "AI: Structured Outputs (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/intermediate/modules/02-structured-outputs-and-schemas.quiz.md" },
-        { label: "AI: RAG Foundations (Lesson)", link: "course-viewer.html?path=languages/ai/intermediate/modules/03-rag-foundations.md" },
-        { label: "AI: RAG Foundations (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/intermediate/modules/03-rag-foundations.quiz.md" },
-        { label: "AI: Model Evaluation (Lesson)", link: "course-viewer.html?path=languages/ai/intermediate/modules/04-model-evaluation-and-testing.md" },
-        { label: "AI: Model Evaluation (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/intermediate/modules/04-model-evaluation-and-testing.quiz.md" },
-        { label: "AI: Guardrails (Lesson)", link: "course-viewer.html?path=languages/ai/intermediate/modules/05-guardrails-and-safety.md" },
-        { label: "AI: Guardrails (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/intermediate/modules/05-guardrails-and-safety.quiz.md" },
-        { label: "AI: Agentic Workflows (Lesson)", link: "course-viewer.html?path=languages/ai/intermediate/modules/06-agentic-workflows.md" },
-        { label: "AI: Agentic Workflows (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/intermediate/modules/06-agentic-workflows.quiz.md" },
-        { label: "AI: Cost & Latency (Lesson)", link: "course-viewer.html?path=languages/ai/intermediate/modules/07-cost-latency-and-ops.md" },
-        { label: "AI: Cost & Latency (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/intermediate/modules/07-cost-latency-and-ops.quiz.md" },
-        { label: "AI: Deployment Basics (Lesson)", link: "course-viewer.html?path=languages/ai/intermediate/modules/08-deployment-basics.md" },
-        { label: "AI: Deployment Basics (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/intermediate/modules/08-deployment-basics.quiz.md" },
-        { label: "AI: System Design (Lesson)", link: "course-viewer.html?path=languages/ai/advanced/modules/01-system-design-for-llm-apps.md" },
-        { label: "AI: System Design (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/advanced/modules/01-system-design-for-llm-apps.quiz.md" },
-        { label: "AI: Advanced Retrieval (Lesson)", link: "course-viewer.html?path=languages/ai/advanced/modules/02-rag-advanced-retrieval.md" },
-        { label: "AI: Advanced Retrieval (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/advanced/modules/02-rag-advanced-retrieval.quiz.md" },
-        { label: "AI: Evals at Scale (Lesson)", link: "course-viewer.html?path=languages/ai/advanced/modules/03-evals-at-scale.md" },
-        { label: "AI: Evals at Scale (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/advanced/modules/03-evals-at-scale.quiz.md" },
-        { label: "AI: Threat Modeling (Lesson)", link: "course-viewer.html?path=languages/ai/advanced/modules/04-security-threat-modeling-llm.md" },
-        { label: "AI: Threat Modeling (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/advanced/modules/04-security-threat-modeling-llm.quiz.md" },
-        { label: "AI: Observability (Lesson)", link: "course-viewer.html?path=languages/ai/advanced/modules/05-observability-and-monitoring-llm.md" },
-        { label: "AI: Observability (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/advanced/modules/05-observability-and-monitoring-llm.quiz.md" },
-        { label: "AI: Reliability (Lesson)", link: "course-viewer.html?path=languages/ai/advanced/modules/06-reliability-and-fallbacks.md" },
-        { label: "AI: Reliability (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/advanced/modules/06-reliability-and-fallbacks.quiz.md" },
-        { label: "AI: Data Governance (Lesson)", link: "course-viewer.html?path=languages/ai/advanced/modules/07-data-governance-and-privacy.md" },
-        { label: "AI: Data Governance (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/advanced/modules/07-data-governance-and-privacy.quiz.md" },
-        { label: "AI: Incident Playbooks (Lesson)", link: "course-viewer.html?path=languages/ai/advanced/modules/08-production-incident-playbooks.md" },
-        { label: "AI: Incident Playbooks (Quiz)", link: "quiz-viewer.html?quiz=languages/ai/advanced/modules/08-production-incident-playbooks.quiz.md" },
+      const defaultEntries = [
+        {
+          label: "Python: Setup & First Script (Lesson)",
+          link: "course-viewer.html?path=python-beginner-workbook/module-01-setup/README.md",
+        },
+        {
+          label: "Python: Module 1 Quiz",
+          link: "quiz-viewer.html?quiz=python-beginner-workbook/module-01-setup/exercises/quiz.md",
+        },
+        {
+          label: "C#: Setup & First Program (Lesson)",
+          link: "course-viewer.html?path=csharp-beginner-workbook/module-01-setup/README.md",
+        },
+        {
+          label: "C#: Module 1 Quiz",
+          link: "quiz-viewer.html?quiz=csharp-beginner-workbook/module-01-setup/exercises/quiz.md",
+        },
+        {
+          label: "AI: AI Foundations (Lesson)",
+          link: "course-viewer.html?path=languages/ai/beginner/modules/01-ai-foundations.md",
+        },
+        {
+          label: "AI: AI Foundations (Quiz)",
+          link: "quiz-viewer.html?quiz=languages/ai/beginner/modules/01-ai-foundations.quiz.md",
+        },
       ];
+      let entries = [...defaultEntries];
 
       const searchInput = document.getElementById("course-search");
       const resultsEl = document.getElementById("search-results");
@@ -188,7 +153,63 @@
           "</ul>";
       };
 
-      if (searchInput) {
+      const courseGrid = document.getElementById("advanced-course-grid");
+
+      const buildEntries = (courses) =>
+        courses.flatMap((course) =>
+          course.modules.flatMap((module) => {
+            const lessonEntry = {
+              label: `${course.name}: ${module.title} (Lesson)`,
+              link: `course-viewer.html?path=${module.path}`,
+            };
+            const entries = [lessonEntry];
+            if (module.quiz) {
+              entries.push({
+                label: `${course.name}: ${module.title} (Quiz)`,
+                link: `quiz-viewer.html?quiz=${module.quiz}`,
+              });
+            }
+            return entries;
+          })
+        );
+
+      const renderAdvancedCourses = (courses) => {
+        if (!courseGrid) return;
+        const advancedCourses = courses.filter((course) => course.level === "Intermediate + Advanced");
+        if (!advancedCourses.length) {
+          courseGrid.innerHTML = "<p>No advanced courses found yet.</p>";
+          return;
+        }
+        courseGrid.innerHTML = advancedCourses
+          .map(
+            (course) => `
+              <article class="card">
+                <p class="pill">${course.level}</p>
+                <h4>${course.name.replace(" Advanced Course", "")}</h4>
+                <p><strong>Best for:</strong> Learners ready to go deeper after the basics.</p>
+                <div class="button-row">
+                  <a class="btn btn-secondary" href="${course.page}">Open course</a>
+                </div>
+              </article>
+            `
+          )
+          .join("");
+      };
+
+      const loadCourses = async () => {
+        try {
+          const response = await fetch("course-index.json");
+          if (!response.ok) throw new Error("Failed to load course index");
+          const data = await response.json();
+          if (!data.courses) throw new Error("Missing course data");
+          entries = buildEntries(data.courses);
+          renderAdvancedCourses(data.courses);
+        } catch (error) {
+          console.warn("Unable to load course index.", error);
+          renderAdvancedCourses([]);
+        }
+
+        if (!searchInput) return;
         renderResults(entries.slice(0, 8));
         searchInput.addEventListener("input", () => {
           const query = searchInput.value.toLowerCase().trim();
@@ -199,7 +220,9 @@
           const filtered = entries.filter((item) => item.label.toLowerCase().includes(query));
           renderResults(filtered.slice(0, 20));
         });
-      }
+      };
+
+      loadCourses();
     </script>
   </body>
 </html>
