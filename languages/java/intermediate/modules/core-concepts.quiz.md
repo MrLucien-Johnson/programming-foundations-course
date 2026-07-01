@@ -6,31 +6,21 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: What is the main focus of this module?
-A) Apply the core concepts from Core Concepts (Intermediate) in practice  
-B) Skip practice and only read headings  
-C) Ignore the lesson goals and jump ahead  
-D) Avoid testing or verification steps  
+### Question 1: Which of the following is a core learning outcome for this module?
+A) Explain the goals of Core Concepts (Intermediate).  
+B) Build a machine learning model without data.  
+C) Write a sales pitch for a new product.  
+D) Create a brand identity guide.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which approach best matches the course expectations?
-A) Follow the lessons in order and complete the exercises  
-B) Only read without applying concepts  
-C) Skip feedback and avoid revising your work  
-D) Jump to the next module without testing  
-
-**Your answer:** _______________
-
----
-
-### Question 3: What should you do after completing the exercises?
-A) Review mistakes and verify the solution works  
-B) Delete your work immediately  
-C) Ignore failures and move on  
-D) Stop learning until the next course  
+### Question 2: Which of the following is a core learning outcome for this module?
+A) Apply the main concepts from Core Concepts (Intermediate).  
+B) Produce a video editing workflow.  
+C) Create a marketing campaign for the product.  
+D) Set up office networking hardware.  
 
 **Your answer:** _______________
 

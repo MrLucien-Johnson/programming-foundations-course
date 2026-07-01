@@ -1,23 +1,23 @@
 # Go Advanced — Module 07: Observability and SLOs Quiz Answers
 
-## Question 1: What is the main focus of this module?
-**Answer: A** - Apply the core concepts from Go Advanced — Module 07: Observability and SLOs in practice
+## Question 1: Which of the following is a core learning outcome for this module?
+**Answer: A** - Explain the core concepts and tradeoffs for **Observability and SLOs**.
 
-**Explanation:** The module is designed to apply its core concepts in practice.
-
----
-
-## Question 2: Which approach best matches the course expectations?
-**Answer: A** - Follow the lessons in order and complete the exercises
-
-**Explanation:** This course emphasizes structured learning and practice.
+**Explanation:** This module explicitly lists this as a learning outcome.
 
 ---
 
-## Question 3: What should you do after completing the exercises?
-**Answer: A** - Review mistakes and verify the solution works
+## Question 2: Which of the following is a core learning outcome for this module?
+**Answer: A** - Apply the concepts to a realistic codebase (not just toy examples).
 
-**Explanation:** Verification and review reinforce understanding.
+**Explanation:** This module explicitly lists this as a learning outcome.
+
+---
+
+## Question 3: Which of the following is a core learning outcome for this module?
+**Answer: A** - Write tests that prove correctness and prevent regressions.
+
+**Explanation:** This module explicitly lists this as a learning outcome.
 
 ---
 

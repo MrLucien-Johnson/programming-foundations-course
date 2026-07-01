@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: What is the main focus of this module?
-A) Apply the core concepts from TypeScript Intermediate — Module 04: APIs and Auth in practice  
-B) Skip practice and only read headings  
-C) Ignore the lesson goals and jump ahead  
-D) Avoid testing or verification steps  
+### Question 1: Which of the following is a core learning outcome for this module?
+A) Explain the core concepts and tradeoffs for **APIs and Auth**.  
+B) Produce a video editing workflow.  
+C) Create a marketing campaign for the product.  
+D) Set up office networking hardware.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which approach best matches the course expectations?
-A) Follow the lessons in order and complete the exercises  
-B) Only read without applying concepts  
-C) Skip feedback and avoid revising your work  
-D) Jump to the next module without testing  
+### Question 2: Which of the following is a core learning outcome for this module?
+A) Apply the concepts to a realistic codebase (not just toy examples).  
+B) Draft a legal contract for a client.  
+C) Configure a Kubernetes cluster.  
+D) Design a mobile user interface from scratch.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: What should you do after completing the exercises?
-A) Review mistakes and verify the solution works  
-B) Delete your work immediately  
-C) Ignore failures and move on  
-D) Stop learning until the next course  
+### Question 3: Which of the following is a core learning outcome for this module?
+A) Write tests that prove correctness and prevent regressions.  
+B) Design a mobile user interface from scratch.  
+C) Draft a legal contract for a client.  
+D) Configure a Kubernetes cluster.  
 
 **Your answer:** _______________
 
