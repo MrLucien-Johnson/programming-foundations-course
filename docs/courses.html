@@ -39,7 +39,10 @@
       <section class="section grid cols-3">
         <article class="card">
           <h3>Python Course</h3>
-          <p><strong>Best for:</strong> Absolute beginners, automation, data, web basics.</p>
+          <p>
+            <strong>Best for:</strong> Career switchers who want a friendly first language for
+            automation, data, and everyday scripting.
+          </p>
           <p><strong>What you will build:</strong> A Task Tracker application.</p>
           <div class="button-row">
             <a class="btn btn-primary" href="python-course.html">Start Python Course</a>
@@ -48,7 +51,10 @@
 
         <article class="card">
           <h3>C# Course</h3>
-          <p><strong>Best for:</strong> Microsoft ecosystem, enterprise apps, game dev basics.</p>
+          <p>
+            <strong>Best for:</strong> Learners targeting Windows, .NET, enterprise apps, or Unity
+            game development.
+          </p>
           <p><strong>What you will build:</strong> A Task Tracker application.</p>
           <div class="button-row">
             <a class="btn btn-primary" href="csharp-course.html">Start C# Course</a>
@@ -58,8 +64,8 @@
         <article class="card">
           <h3>AI Prompt Creation Course</h3>
           <p>
-            <strong>Best for:</strong> Beginners through advanced learners who want a clear prompt
-            writing path.
+            <strong>Best for:</strong> Builders who want reliable AI workflows, prompt systems, and
+            evaluation skills without guesswork.
           </p>
           <p>
             <strong>What you will build:</strong> A prompt playbook, tested workflows, and a
@@ -154,6 +160,26 @@
       };
 
       const courseGrid = document.getElementById("advanced-course-grid");
+      const advancedBestFor = {
+        "typescript-advanced":
+          "Frontend + backend developers scaling large TypeScript codebases and APIs.",
+        "python-advanced":
+          "Backend/data engineers improving performance, testing, and system design.",
+        "sql-advanced":
+          "Data analysts and engineers optimizing queries, warehouses, and reporting.",
+        "java-advanced":
+          "Enterprise developers building JVM services and distributed systems.",
+        "csharp-advanced":
+          ".NET engineers scaling services, APIs, and performance workloads.",
+        "go-advanced":
+          "Cloud engineers building high-performance services and tooling.",
+        "rust-advanced":
+          "Systems programmers focused on safety, concurrency, and performance.",
+        "kotlin-advanced":
+          "Kotlin developers shipping Android or JVM backend services.",
+        "swift-advanced":
+          "iOS/macOS developers creating production-ready apps and tooling.",
+      };
 
       const buildEntries = (courses) =>
         courses.flatMap((course) =>
@@ -182,16 +208,22 @@
         }
         courseGrid.innerHTML = advancedCourses
           .map(
-            (course) => `
+            (course) => {
+              const displayName = course.name.replace(" Advanced Course", "");
+              const bestFor =
+                advancedBestFor[course.id] ||
+                "Learners ready to go deeper after the basics with real-world scenarios.";
+              return `
               <article class="card">
                 <p class="pill">${course.level}</p>
-                <h4>${course.name.replace(" Advanced Course", "")}</h4>
-                <p><strong>Best for:</strong> Learners ready to go deeper after the basics.</p>
+                <h4>${displayName}</h4>
+                <p><strong>Best for:</strong> ${bestFor}</p>
                 <div class="button-row">
                   <a class="btn btn-secondary" href="${course.page}">Open course</a>
                 </div>
               </article>
-            `
+            `;
+            }
           )
           .join("");
       };
