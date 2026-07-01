@@ -4,6 +4,7 @@
       "id": "python",
       "name": "Python Course",
       "page": "python-course.html",
+      "level": "Beginner",
       "modules": [
         {
           "title": "Setup & First Script",
@@ -46,6 +47,7 @@
       "id": "csharp",
       "name": "C# Course",
       "page": "csharp-course.html",
+      "level": "Beginner",
       "modules": [
         {
           "title": "Setup & First Program",
@@ -88,6 +90,7 @@
       "id": "ai",
       "name": "AI Prompt Creation Course",
       "page": "ai-course.html",
+      "level": "Beginner \u2192 Advanced",
       "modules": [
         {
           "title": "AI Foundations",
@@ -205,6 +208,7 @@
       "id": "csharp-advanced",
       "name": "C# Advanced Course",
       "page": "csharp-advanced-course.html",
+      "level": "Intermediate + Advanced",
       "modules": [
         {
           "title": "CIntermediate \u2014 Module 01: DSA (Practical)",
@@ -302,6 +306,7 @@
       "id": "go-advanced",
       "name": "Go Advanced Course",
       "page": "go-advanced-course.html",
+      "level": "Intermediate + Advanced",
       "modules": [
         {
           "title": "Go Intermediate \u2014 Module 01: DSA (Practical)",
@@ -399,6 +404,7 @@
       "id": "java-advanced",
       "name": "Java Advanced Course",
       "page": "java-advanced-course.html",
+      "level": "Intermediate + Advanced",
       "modules": [
         {
           "title": "Java Intermediate \u2014 Module 01: DSA (Practical)",
@@ -496,6 +502,7 @@
       "id": "kotlin-advanced",
       "name": "Kotlin Advanced Course",
       "page": "kotlin-advanced-course.html",
+      "level": "Intermediate + Advanced",
       "modules": [
         {
           "title": "Kotlin Intermediate \u2014 Module 01: DSA (Practical)",
@@ -593,6 +600,7 @@
       "id": "python-advanced",
       "name": "Python Advanced Course",
       "page": "python-advanced-course.html",
+      "level": "Intermediate + Advanced",
       "modules": [
         {
           "title": "Python Intermediate \u2014 Module 01: DSA (Practical)",
@@ -690,6 +698,7 @@
       "id": "rust-advanced",
       "name": "Rust Advanced Course",
       "page": "rust-advanced-course.html",
+      "level": "Intermediate + Advanced",
       "modules": [
         {
           "title": "Rust Intermediate \u2014 Module 01: DSA (Practical)",
@@ -787,6 +796,7 @@
       "id": "sql-advanced",
       "name": "SQL Advanced Course",
       "page": "sql-advanced-course.html",
+      "level": "Intermediate + Advanced",
       "modules": [
         {
           "title": "SQL (PostgreSQL) Intermediate \u2014 Module 01: DSA (Practical)",
@@ -884,6 +894,7 @@
       "id": "swift-advanced",
       "name": "Swift Advanced Course",
       "page": "swift-advanced-course.html",
+      "level": "Intermediate + Advanced",
       "modules": [
         {
           "title": "Swift Intermediate \u2014 Module 01: DSA (Practical)",
@@ -981,6 +992,7 @@
       "id": "typescript-advanced",
       "name": "TypeScript Advanced Course",
       "page": "typescript-advanced-course.html",
+      "level": "Intermediate + Advanced",
       "modules": [
         {
           "title": "TypeScript Intermediate \u2014 Module 01: DSA (Practical)",
