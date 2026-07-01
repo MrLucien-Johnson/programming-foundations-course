@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Interactive Quiz</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -113,7 +114,7 @@
           if (currentQuestion && currentAnswer) {
             answers.set(currentQuestion, {
               answer: currentAnswer,
-              explanation: currentExplanation.join(" ").trim(),
+              explanation: currentExplanation.join("\n").trim(),
             });
           }
           currentQuestion = null;
@@ -149,7 +150,7 @@
               return;
             }
             if (line.trim()) {
-              currentExplanation.push(line.trim());
+              currentExplanation.push(line);
             }
           }
         });
@@ -206,11 +207,11 @@
           const answerKey = answerEntry ? answerEntry.answer : null;
           questionEl.dataset.answer = normalizeAnswer(answerKey, options);
           questionEl.dataset.explanation = answerEntry ? answerEntry.explanation : "";
-          const explanationEl = document.createElement("p");
+          const explanationEl = document.createElement("div");
           explanationEl.className = "quiz-explanation";
           explanationEl.style.display = "none";
-          questionEl.appendChild(explanationEl);
           questionEl.appendChild(optionsEl);
+          questionEl.appendChild(explanationEl);
           quizContainer.appendChild(questionEl);
         });
       };
@@ -261,12 +262,17 @@
           }
 
           if (explanationEl) {
-            if (questionEl.dataset.explanation) {
-              explanationEl.textContent = questionEl.dataset.explanation;
+            const explanationText = questionEl.dataset.explanation || "";
+            if (explanationText && window.marked) {
+              explanationEl.innerHTML = marked.parse(explanationText);
+            } else if (explanationText) {
+              explanationEl.textContent = explanationText;
+            } else if (correctAnswer) {
+              explanationEl.textContent = `Correct answer: ${correctAnswer}`;
             } else {
               explanationEl.textContent = "";
             }
-            explanationEl.style.display = "block";
+            explanationEl.style.display = explanationEl.textContent || explanationEl.innerHTML ? "block" : "none";
           }
         });
 

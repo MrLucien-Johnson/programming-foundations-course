@@ -380,6 +380,21 @@
               const resolved = new URL(href, baseDir);
               const resolvedPath = resolved.toString().replace(rawRoot, "");
               if (href.endsWith(".md")) {
+                if (
+                  resolvedPath.endsWith("quiz.md") ||
+                  resolvedPath.endsWith("quiz-answers.md") ||
+                  resolvedPath.endsWith(".quiz.md") ||
+                  resolvedPath.endsWith(".quiz-answers.md")
+                ) {
+                  const quizPath = resolvedPath
+                    .replace("quiz-answers.md", "quiz.md")
+                    .replace(".quiz-answers.md", ".quiz.md");
+                  link.setAttribute(
+                    "href",
+                    `quiz-viewer.html?quiz=${encodeURIComponent(quizPath)}`
+                  );
+                  return;
+                }
                 link.setAttribute(
                   "href",
                   `course-viewer.html?path=${encodeURIComponent(resolvedPath)}`
@@ -397,6 +412,49 @@
               const resolved = new URL(src, baseDir);
               img.setAttribute("src", resolved.toString());
             });
+
+            if (lessonInfo && lessonInfo.module.quiz) {
+              const quizButtonHtml = `
+                <div class="note">
+                  <strong>Interactive quiz available.</strong>
+                  <a href="quiz-viewer.html?quiz=${encodeURIComponent(lessonInfo.module.quiz)}">
+                    Take the quiz
+                  </a>
+                </div>
+              `;
+              contentEl.querySelectorAll("h2, h3").forEach((heading) => {
+                if (/quiz/i.test(heading.textContent)) {
+                  const wrapper = document.createElement("div");
+                  wrapper.innerHTML = quizButtonHtml;
+                  const replacement = wrapper.firstElementChild;
+                  const nextHeading = (node) => {
+                    let current = node;
+                    while (current) {
+                      current = current.nextSibling;
+                      if (!current) return null;
+                      if (current.nodeType === 1 && /H2|H3/.test(current.tagName)) {
+                        return current;
+                      }
+                    }
+                    return null;
+                  };
+                  const stopAt = nextHeading(heading);
+                  let cursor = heading;
+                  while (cursor && cursor !== stopAt) {
+                    const next = cursor.nextSibling;
+                    cursor.remove();
+                    cursor = next;
+                  }
+                  if (replacement) {
+                    if (stopAt) {
+                      stopAt.before(replacement);
+                    } else {
+                      contentEl.appendChild(replacement);
+                    }
+                  }
+                }
+              });
+            }
           })
           .catch((error) => {
             titleEl.textContent = "Lesson unavailable";
