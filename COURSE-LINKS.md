@@ -54,7 +54,6 @@
 
 ### Course Root
 - **[AI Prompt Creation Course →](ai-prompt-creation-track/README.md)** - AI prompt course overview
-- **[AI Prompt Course Start Here →](docs/ai-start-here.html)** - Web-friendly start page
 
 ### Modules
 - **[Module 1: AI Foundations →](languages/ai/beginner/modules/01-ai-foundations.md)**
