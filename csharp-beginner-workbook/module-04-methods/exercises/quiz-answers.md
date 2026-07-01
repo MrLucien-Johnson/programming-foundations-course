@@ -128,9 +128,9 @@ static void Greet(string name)
 ---
 
 ## True or False: A method that returns `void` cannot have a `return` statement.
-**Answer: True (mostly)**
+**Answer: False**
 
-**Explanation:** A `void` method typically doesn't have a `return` statement. However, you can use `return;` (without a value) to exit the method early, but you cannot return a value.
+**Explanation:** A `void` method can include `return;` to exit early. It cannot return a value, but it can still use a return statement without a value.
 
 **Example:**
 ```csharp

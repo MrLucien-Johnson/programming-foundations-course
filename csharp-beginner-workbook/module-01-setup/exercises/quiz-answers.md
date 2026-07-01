@@ -43,14 +43,14 @@
 **Explanation:** You can use Cursor, Visual Studio Code, or other code editors. Both Cursor and VS Code work great with C#!
 
 ### True or False: Every line of C# code must end with a semicolon.
-**Answer: Mostly True**
+**Answer: False**
 
-**Explanation:** Most statements in C# end with a semicolon. However, some lines (like comments or blank lines) don't need semicolons. For now, remember: if it's a command that does something, it probably needs a semicolon.
+**Explanation:** Most C# statements end with a semicolon, but not every line does. Lines with `{ }`, comments, and some directives do not use semicolons. For beginners, remember that most statements (like method calls) need a semicolon.
 
 ### True or False: You must create a new project folder for each program you write.
-**Answer: True (for now)**
+**Answer: False**
 
-**Explanation:** Each C# project should be in its own folder. This keeps your code organized and prevents conflicts between different programs.
+**Explanation:** You can create multiple programs in one project, but it is best practice to keep each project in its own folder. This keeps your code organized and avoids conflicts.
 
 ---
 

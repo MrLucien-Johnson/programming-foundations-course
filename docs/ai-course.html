@@ -32,6 +32,10 @@
             Start Beginner Module 1
           </a>
         </div>
+        <p class="pill" id="ai-progress-text">Progress: 0 of 22 complete</p>
+        <div class="progress-bar">
+          <div class="progress-fill" id="ai-progress-fill"></div>
+        </div>
       </section>
 
       <section class="section">
@@ -310,5 +314,42 @@
         </ol>
       </section>
     </main>
+    <script>
+      const aiModules = [
+        "languages/ai/beginner/modules/01-ai-foundations.md",
+        "languages/ai/beginner/modules/02-prompting-basics.md",
+        "languages/ai/beginner/modules/03-prompt-patterns.md",
+        "languages/ai/beginner/modules/04-evaluation-and-iteration.md",
+        "languages/ai/beginner/modules/05-safety-and-policy-basics.md",
+        "languages/ai/beginner/modules/06-workflows-and-automation.md",
+        "languages/ai/intermediate/modules/01-advanced-prompting-tool-use.md",
+        "languages/ai/intermediate/modules/02-structured-outputs-and-schemas.md",
+        "languages/ai/intermediate/modules/03-rag-foundations.md",
+        "languages/ai/intermediate/modules/04-model-evaluation-and-testing.md",
+        "languages/ai/intermediate/modules/05-guardrails-and-safety.md",
+        "languages/ai/intermediate/modules/06-agentic-workflows.md",
+        "languages/ai/intermediate/modules/07-cost-latency-and-ops.md",
+        "languages/ai/intermediate/modules/08-deployment-basics.md",
+        "languages/ai/advanced/modules/01-system-design-for-llm-apps.md",
+        "languages/ai/advanced/modules/02-rag-advanced-retrieval.md",
+        "languages/ai/advanced/modules/03-evals-at-scale.md",
+        "languages/ai/advanced/modules/04-security-threat-modeling-llm.md",
+        "languages/ai/advanced/modules/05-observability-and-monitoring-llm.md",
+        "languages/ai/advanced/modules/06-reliability-and-fallbacks.md",
+        "languages/ai/advanced/modules/07-data-governance-and-privacy.md",
+        "languages/ai/advanced/modules/08-production-incident-playbooks.md",
+      ];
+
+      const completions = JSON.parse(localStorage.getItem("course-completions") || "[]");
+      const completedCount = aiModules.filter((path) => completions.includes(path)).length;
+      const percent = Math.round((completedCount / aiModules.length) * 100);
+
+      const textEl = document.getElementById("ai-progress-text");
+      const fillEl = document.getElementById("ai-progress-fill");
+      if (textEl && fillEl) {
+        textEl.textContent = `Progress: ${completedCount} of ${aiModules.length} complete`;
+        fillEl.style.width = `${percent}%`;
+      }
+    </script>
   </body>
 </html>

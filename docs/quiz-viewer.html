@@ -106,27 +106,55 @@
         const lines = markdown.split("\n");
         const answers = new Map();
         let currentQuestion = null;
+        let currentAnswer = null;
+        let currentExplanation = [];
+
+        const flush = () => {
+          if (currentQuestion && currentAnswer) {
+            answers.set(currentQuestion, {
+              answer: currentAnswer,
+              explanation: currentExplanation.join(" ").trim(),
+            });
+          }
+          currentQuestion = null;
+          currentAnswer = null;
+          currentExplanation = [];
+        };
 
         lines.forEach((line) => {
           const questionMatch = line.match(/^##\s+Question\s+\d+:\s+(.*)$/);
           const trueFalseMatch = line.match(/^###\s+True or False:\s+(.*)$/);
-          if (questionMatch) {
-            currentQuestion = questionMatch[1].trim();
-            return;
-          }
-          if (trueFalseMatch) {
-            currentQuestion = trueFalseMatch[1].trim();
+          if (questionMatch || trueFalseMatch) {
+            flush();
+            currentQuestion = (questionMatch || trueFalseMatch)[1].trim();
             return;
           }
 
           if (!currentQuestion) return;
           const answerMatch = line.match(/\*\*Answer:\s+([^*]+)\*\*/);
           if (answerMatch) {
-            answers.set(currentQuestion, answerMatch[1].trim());
-            currentQuestion = null;
+            currentAnswer = answerMatch[1].trim();
+            return;
+          }
+
+          const explanationMatch = line.match(/\*\*Explanation:\s*(.*)$/);
+          if (explanationMatch) {
+            currentExplanation.push(explanationMatch[1].trim());
+            return;
+          }
+
+          if (currentAnswer && currentExplanation.length > 0) {
+            if (line.startsWith("---") || line.startsWith("## ")) {
+              flush();
+              return;
+            }
+            if (line.trim()) {
+              currentExplanation.push(line.trim());
+            }
           }
         });
 
+        flush();
         return answers;
       };
 
@@ -173,8 +201,15 @@
             optionsEl.appendChild(label);
           });
 
-          const answerKey = answers.get(question.prompt) || answers.get(question.prompt.replace(/^[^:]+:\s*/, ""));
+          const answerEntry =
+            answers.get(question.prompt) || answers.get(question.prompt.replace(/^[^:]+:\s*/, ""));
+          const answerKey = answerEntry ? answerEntry.answer : null;
           questionEl.dataset.answer = normalizeAnswer(answerKey, options);
+          questionEl.dataset.explanation = answerEntry ? answerEntry.explanation : "";
+          const explanationEl = document.createElement("p");
+          explanationEl.className = "quiz-explanation";
+          explanationEl.style.display = "none";
+          questionEl.appendChild(explanationEl);
           questionEl.appendChild(optionsEl);
           quizContainer.appendChild(questionEl);
         });
@@ -185,6 +220,7 @@
         const questions = quizContainer.querySelectorAll(".quiz-question");
         questions.forEach((questionEl) => {
           const correctAnswer = questionEl.dataset.answer;
+          const explanationEl = questionEl.querySelector(".quiz-explanation");
           const optionLabels = questionEl.querySelectorAll(".quiz-option");
           let selectedValue = null;
           optionLabels.forEach((label) => {
@@ -222,6 +258,15 @@
             } else if (selectedLabel) {
               selectedLabel.classList.add("incorrect");
             }
+          }
+
+          if (explanationEl) {
+            if (questionEl.dataset.explanation) {
+              explanationEl.textContent = questionEl.dataset.explanation;
+            } else {
+              explanationEl.textContent = "";
+            }
+            explanationEl.style.display = "block";
           }
         });
 

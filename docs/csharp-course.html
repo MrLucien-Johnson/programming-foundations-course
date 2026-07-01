@@ -32,6 +32,10 @@
             Start Module 1
           </a>
         </div>
+        <p class="pill" id="csharp-progress-text">Progress: 0 of 7 complete</p>
+        <div class="progress-bar">
+          <div class="progress-fill" id="csharp-progress-fill"></div>
+        </div>
       </section>
 
       <section class="section">
@@ -119,5 +123,27 @@
         </ol>
       </section>
     </main>
+    <script>
+      const csharpModules = [
+        "csharp-beginner-workbook/module-01-setup/README.md",
+        "csharp-beginner-workbook/module-02-basics/README.md",
+        "csharp-beginner-workbook/module-03-control-flow/README.md",
+        "csharp-beginner-workbook/module-04-methods/README.md",
+        "csharp-beginner-workbook/module-05-collections/README.md",
+        "csharp-beginner-workbook/module-06-oop-intro/README.md",
+        "csharp-beginner-workbook/module-07-task-tracker/README.md",
+      ];
+
+      const completions = JSON.parse(localStorage.getItem("course-completions") || "[]");
+      const completedCount = csharpModules.filter((path) => completions.includes(path)).length;
+      const percent = Math.round((completedCount / csharpModules.length) * 100);
+
+      const textEl = document.getElementById("csharp-progress-text");
+      const fillEl = document.getElementById("csharp-progress-fill");
+      if (textEl && fillEl) {
+        textEl.textContent = `Progress: ${completedCount} of ${csharpModules.length} complete`;
+        fillEl.style.width = `${percent}%`;
+      }
+    </script>
   </body>
 </html>

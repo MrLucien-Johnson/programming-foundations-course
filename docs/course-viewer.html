@@ -20,6 +20,7 @@
     </header>
 
     <main id="main" class="container">
+      <div id="breadcrumb" class="breadcrumb"></div>
       <section class="hero">
         <h2 id="lesson-title">Loading lesson…</h2>
         <p class="note">
@@ -27,10 +28,17 @@
         </p>
       </section>
 
-      <section id="lesson-content" class="section card" aria-live="polite"></section>
+      <section id="lesson-content" class="section card lesson-content" aria-live="polite"></section>
+
+      <section class="section">
+        <div class="button-row" id="lesson-nav"></div>
+      </section>
 
       <section class="section">
         <div class="button-row">
+          <button class="btn btn-primary" id="mark-complete" type="button">
+            Mark lesson complete
+          </button>
           <a class="btn btn-secondary" href="courses.html">Back to courses</a>
           <a
             class="btn btn-secondary"
@@ -39,6 +47,7 @@
             View repository
           </a>
         </div>
+        <p id="completion-status" class="note"></p>
       </section>
     </main>
 
@@ -47,15 +56,301 @@
       const repoPath = params.get("path");
       const contentEl = document.getElementById("lesson-content");
       const titleEl = document.getElementById("lesson-title");
+      const breadcrumbEl = document.getElementById("breadcrumb");
+      const lessonNavEl = document.getElementById("lesson-nav");
+      const markCompleteBtn = document.getElementById("mark-complete");
+      const completionStatus = document.getElementById("completion-status");
+
+      const COURSES = [
+        {
+          id: "python",
+          name: "Python Course",
+          page: "python-course.html",
+          modules: [
+            {
+              title: "Setup & First Script",
+              path: "python-beginner-workbook/module-01-setup/README.md",
+              quiz: "python-beginner-workbook/module-01-setup/exercises/quiz.md",
+            },
+            {
+              title: "Python Basics",
+              path: "python-beginner-workbook/module-02-basics/README.md",
+              quiz: "python-beginner-workbook/module-02-basics/exercises/quiz.md",
+            },
+            {
+              title: "Control Flow",
+              path: "python-beginner-workbook/module-03-control-flow/README.md",
+              quiz: "python-beginner-workbook/module-03-control-flow/exercises/quiz.md",
+            },
+            {
+              title: "Functions",
+              path: "python-beginner-workbook/module-04-functions/README.md",
+              quiz: "python-beginner-workbook/module-04-functions/exercises/quiz.md",
+            },
+            {
+              title: "Collections",
+              path: "python-beginner-workbook/module-05-collections/README.md",
+              quiz: "python-beginner-workbook/module-05-collections/exercises/quiz.md",
+            },
+            {
+              title: "Object-Oriented Programming",
+              path: "python-beginner-workbook/module-06-oop/README.md",
+              quiz: "python-beginner-workbook/module-06-oop/exercises/quiz.md",
+            },
+            {
+              title: "Task Tracker Project",
+              path: "python-beginner-workbook/module-07-task-tracker/README.md",
+              quiz: "python-beginner-workbook/module-07-task-tracker/exercises/quiz.md",
+            },
+          ],
+        },
+        {
+          id: "csharp",
+          name: "C# Course",
+          page: "csharp-course.html",
+          modules: [
+            {
+              title: "Setup & First Program",
+              path: "csharp-beginner-workbook/module-01-setup/README.md",
+              quiz: "csharp-beginner-workbook/module-01-setup/exercises/quiz.md",
+            },
+            {
+              title: "C# Basics",
+              path: "csharp-beginner-workbook/module-02-basics/README.md",
+              quiz: "csharp-beginner-workbook/module-02-basics/exercises/quiz.md",
+            },
+            {
+              title: "Control Flow",
+              path: "csharp-beginner-workbook/module-03-control-flow/README.md",
+              quiz: "csharp-beginner-workbook/module-03-control-flow/exercises/quiz.md",
+            },
+            {
+              title: "Methods",
+              path: "csharp-beginner-workbook/module-04-methods/README.md",
+              quiz: "csharp-beginner-workbook/module-04-methods/exercises/quiz.md",
+            },
+            {
+              title: "Collections",
+              path: "csharp-beginner-workbook/module-05-collections/README.md",
+              quiz: "csharp-beginner-workbook/module-05-collections/exercises/quiz.md",
+            },
+            {
+              title: "Object-Oriented Programming",
+              path: "csharp-beginner-workbook/module-06-oop-intro/README.md",
+              quiz: "csharp-beginner-workbook/module-06-oop-intro/exercises/quiz.md",
+            },
+            {
+              title: "Task Tracker Project",
+              path: "csharp-beginner-workbook/module-07-task-tracker/README.md",
+              quiz: "csharp-beginner-workbook/module-07-task-tracker/exercises/quiz.md",
+            },
+          ],
+        },
+        {
+          id: "ai",
+          name: "AI Prompt Creation Course",
+          page: "ai-course.html",
+          modules: [
+            {
+              title: "AI Foundations",
+              path: "languages/ai/beginner/modules/01-ai-foundations.md",
+              quiz: "languages/ai/beginner/modules/01-ai-foundations.quiz.md",
+            },
+            {
+              title: "Prompting Basics",
+              path: "languages/ai/beginner/modules/02-prompting-basics.md",
+              quiz: "languages/ai/beginner/modules/02-prompting-basics.quiz.md",
+            },
+            {
+              title: "Prompt Patterns",
+              path: "languages/ai/beginner/modules/03-prompt-patterns.md",
+              quiz: "languages/ai/beginner/modules/03-prompt-patterns.quiz.md",
+            },
+            {
+              title: "Evaluation & Iteration",
+              path: "languages/ai/beginner/modules/04-evaluation-and-iteration.md",
+              quiz: "languages/ai/beginner/modules/04-evaluation-and-iteration.quiz.md",
+            },
+            {
+              title: "Safety & Policy Basics",
+              path: "languages/ai/beginner/modules/05-safety-and-policy-basics.md",
+              quiz: "languages/ai/beginner/modules/05-safety-and-policy-basics.quiz.md",
+            },
+            {
+              title: "Workflows & Automation",
+              path: "languages/ai/beginner/modules/06-workflows-and-automation.md",
+              quiz: "languages/ai/beginner/modules/06-workflows-and-automation.quiz.md",
+            },
+            {
+              title: "Advanced Prompting & Tool Use",
+              path: "languages/ai/intermediate/modules/01-advanced-prompting-tool-use.md",
+              quiz:
+                "languages/ai/intermediate/modules/01-advanced-prompting-tool-use.quiz.md",
+            },
+            {
+              title: "Structured Outputs & Schemas",
+              path: "languages/ai/intermediate/modules/02-structured-outputs-and-schemas.md",
+              quiz:
+                "languages/ai/intermediate/modules/02-structured-outputs-and-schemas.quiz.md",
+            },
+            {
+              title: "RAG Foundations",
+              path: "languages/ai/intermediate/modules/03-rag-foundations.md",
+              quiz: "languages/ai/intermediate/modules/03-rag-foundations.quiz.md",
+            },
+            {
+              title: "Model Evaluation & Testing",
+              path: "languages/ai/intermediate/modules/04-model-evaluation-and-testing.md",
+              quiz:
+                "languages/ai/intermediate/modules/04-model-evaluation-and-testing.quiz.md",
+            },
+            {
+              title: "Guardrails & Safety",
+              path: "languages/ai/intermediate/modules/05-guardrails-and-safety.md",
+              quiz: "languages/ai/intermediate/modules/05-guardrails-and-safety.quiz.md",
+            },
+            {
+              title: "Agentic Workflows",
+              path: "languages/ai/intermediate/modules/06-agentic-workflows.md",
+              quiz: "languages/ai/intermediate/modules/06-agentic-workflows.quiz.md",
+            },
+            {
+              title: "Cost, Latency & Ops",
+              path: "languages/ai/intermediate/modules/07-cost-latency-and-ops.md",
+              quiz: "languages/ai/intermediate/modules/07-cost-latency-and-ops.quiz.md",
+            },
+            {
+              title: "Deployment Basics",
+              path: "languages/ai/intermediate/modules/08-deployment-basics.md",
+              quiz: "languages/ai/intermediate/modules/08-deployment-basics.quiz.md",
+            },
+            {
+              title: "System Design for LLM Apps",
+              path: "languages/ai/advanced/modules/01-system-design-for-llm-apps.md",
+              quiz: "languages/ai/advanced/modules/01-system-design-for-llm-apps.quiz.md",
+            },
+            {
+              title: "RAG Advanced Retrieval",
+              path: "languages/ai/advanced/modules/02-rag-advanced-retrieval.md",
+              quiz:
+                "languages/ai/advanced/modules/02-rag-advanced-retrieval.quiz.md",
+            },
+            {
+              title: "Evals at Scale",
+              path: "languages/ai/advanced/modules/03-evals-at-scale.md",
+              quiz: "languages/ai/advanced/modules/03-evals-at-scale.quiz.md",
+            },
+            {
+              title: "Security Threat Modeling",
+              path: "languages/ai/advanced/modules/04-security-threat-modeling-llm.md",
+              quiz:
+                "languages/ai/advanced/modules/04-security-threat-modeling-llm.quiz.md",
+            },
+            {
+              title: "Observability & Monitoring",
+              path: "languages/ai/advanced/modules/05-observability-and-monitoring-llm.md",
+              quiz:
+                "languages/ai/advanced/modules/05-observability-and-monitoring-llm.quiz.md",
+            },
+            {
+              title: "Reliability & Fallbacks",
+              path: "languages/ai/advanced/modules/06-reliability-and-fallbacks.md",
+              quiz:
+                "languages/ai/advanced/modules/06-reliability-and-fallbacks.quiz.md",
+            },
+            {
+              title: "Data Governance & Privacy",
+              path: "languages/ai/advanced/modules/07-data-governance-and-privacy.md",
+              quiz:
+                "languages/ai/advanced/modules/07-data-governance-and-privacy.quiz.md",
+            },
+            {
+              title: "Production Incident Playbooks",
+              path: "languages/ai/advanced/modules/08-production-incident-playbooks.md",
+              quiz:
+                "languages/ai/advanced/modules/08-production-incident-playbooks.quiz.md",
+            },
+          ],
+        },
+      ];
+
+      const completedKey = "course-completions";
+
+      const getCompletions = () => {
+        try {
+          return JSON.parse(localStorage.getItem(completedKey)) || [];
+        } catch (error) {
+          return [];
+        }
+      };
+
+      const saveCompletion = (path) => {
+        const completions = new Set(getCompletions());
+        completions.add(path);
+        localStorage.setItem(completedKey, JSON.stringify([...completions]));
+      };
+
+      const isCompleted = (path) => getCompletions().includes(path);
+
+      const findLesson = (path) => {
+        for (const course of COURSES) {
+          const index = course.modules.findIndex((module) => module.path === path);
+          if (index !== -1) {
+            return { course, index, module: course.modules[index] };
+          }
+        }
+        return null;
+      };
 
       if (!repoPath) {
         titleEl.textContent = "Lesson not found";
         contentEl.innerHTML = "<p>Please return to the courses page and select a lesson.</p>";
+        markCompleteBtn.disabled = true;
       } else {
         const rawRoot =
           "https://raw.githubusercontent.com/MrLucien-Johnson/programming-foundations-course/main/";
         const rawUrl = new URL(repoPath, rawRoot).toString();
         const baseDir = new URL(".", rawUrl);
+        const lessonInfo = findLesson(repoPath);
+
+        if (lessonInfo) {
+          const { course, module, index } = lessonInfo;
+          breadcrumbEl.innerHTML = `
+            <a href="courses.html">Courses</a> /
+            <a href="${course.page}">${course.name}</a> /
+            <span>${module.title}</span>
+          `;
+
+          const prevModule = course.modules[index - 1];
+          const nextModule = course.modules[index + 1];
+          lessonNavEl.innerHTML = "";
+          if (prevModule) {
+            const prevLink = document.createElement("a");
+            prevLink.className = "btn btn-secondary";
+            prevLink.href = `course-viewer.html?path=${encodeURIComponent(prevModule.path)}`;
+            prevLink.textContent = `Previous: ${prevModule.title}`;
+            lessonNavEl.appendChild(prevLink);
+          }
+          if (nextModule) {
+            const nextLink = document.createElement("a");
+            nextLink.className = "btn btn-primary";
+            nextLink.href = `course-viewer.html?path=${encodeURIComponent(nextModule.path)}`;
+            nextLink.textContent = `Next: ${nextModule.title}`;
+            lessonNavEl.appendChild(nextLink);
+          }
+
+          if (module.quiz) {
+            const quizLink = document.createElement("a");
+            quizLink.className = "btn btn-secondary";
+            quizLink.href = `quiz-viewer.html?quiz=${encodeURIComponent(module.quiz)}`;
+            quizLink.textContent = "Take the quiz";
+            lessonNavEl.appendChild(quizLink);
+          }
+
+          if (isCompleted(repoPath)) {
+            completionStatus.textContent = "Marked as complete.";
+          }
+        }
 
         fetch(rawUrl)
           .then((response) => {
@@ -108,6 +403,12 @@
             contentEl.innerHTML = `<p>${error.message}</p>`;
           });
       }
+
+      markCompleteBtn.addEventListener("click", () => {
+        if (!repoPath) return;
+        saveCompletion(repoPath);
+        completionStatus.textContent = "Marked as complete.";
+      });
     </script>
   </body>
 </html>
