@@ -339,14 +339,6 @@
             lessonNavEl.appendChild(nextLink);
           }
 
-          if (module.quiz) {
-            const quizLink = document.createElement("a");
-            quizLink.className = "btn btn-secondary";
-            quizLink.href = `quiz-viewer.html?quiz=${encodeURIComponent(module.quiz)}`;
-            quizLink.textContent = "Take the quiz";
-            lessonNavEl.appendChild(quizLink);
-          }
-
           if (isCompleted(repoPath)) {
             completionStatus.textContent = "Marked as complete.";
           }
@@ -425,17 +417,18 @@
                   </a>
                 </div>
               `;
-              contentEl.querySelectorAll("h2, h3").forEach((heading) => {
+              let quizInserted = false;
+              contentEl.querySelectorAll("h2, h3, h4").forEach((heading) => {
                 if (/quiz/i.test(heading.textContent)) {
                   const wrapper = document.createElement("div");
                   wrapper.innerHTML = quizButtonHtml;
-                  const replacement = wrapper.firstElementChild;
+                  const replacement = quizInserted ? null : wrapper.firstElementChild;
                   const nextHeading = (node) => {
                     let current = node;
                     while (current) {
                       current = current.nextSibling;
                       if (!current) return null;
-                      if (current.nodeType === 1 && /H2|H3/.test(current.tagName)) {
+                      if (current.nodeType === 1 && /H2|H3|H4/.test(current.tagName)) {
                         return current;
                       }
                     }
@@ -449,6 +442,7 @@
                     cursor = next;
                   }
                   if (replacement) {
+                    quizInserted = true;
                     if (stopAt) {
                       stopAt.before(replacement);
                     } else {

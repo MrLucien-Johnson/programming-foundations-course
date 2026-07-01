@@ -35,7 +35,7 @@
 
       <section id="quiz-container" class="section card" aria-live="polite"></section>
 
-      <section class="section">
+      <section class="section" id="quiz-actions">
         <div class="button-row">
           <button class="btn btn-primary" id="check-answers" type="button">Check answers</button>
           <a class="btn btn-secondary" href="courses.html">Back to courses</a>
@@ -52,6 +52,7 @@
       const scoreEl = document.getElementById("quiz-score");
       const checkButton = document.getElementById("check-answers");
       const startButton = document.getElementById("start-quiz");
+      const actionsSection = document.getElementById("quiz-actions");
       const introSection = document.getElementById("quiz-intro");
       const metaEl = document.getElementById("quiz-meta");
       const rawRoot =
@@ -292,6 +293,9 @@
 
       quizContainer.style.display = "none";
       checkButton.disabled = true;
+      if (actionsSection) {
+        actionsSection.style.display = "none";
+      }
 
       const showQuiz = () => {
         quizContainer.style.display = "block";
@@ -299,6 +303,9 @@
           introSection.style.display = "none";
         }
         checkButton.disabled = false;
+        if (actionsSection) {
+          actionsSection.style.display = "block";
+        }
         scoreEl.textContent = "";
       };
 
