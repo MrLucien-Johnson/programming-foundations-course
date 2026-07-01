@@ -6,21 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
-A) Explain the goals of Core Concepts (Intermediate).  
-B) Build a machine learning model without data.  
-C) Write a sales pitch for a new product.  
-D) Create a brand identity guide.  
+### Question 1: Which item is required in the verification checklist? (Set 1)
+A) Run the module tests and confirm they pass.  
+B) Ship changes without documentation.  
+C) Avoid measuring results or performance.  
+D) Change multiple variables at once so you cannot compare outcomes.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the main concepts from Core Concepts (Intermediate).  
-B) Produce a video editing workflow.  
-C) Create a marketing campaign for the product.  
-D) Set up office networking hardware.  
+### Question 2: Which practice best supports reliable delivery in this module? (Set 2)
+A) Ignore error handling for edge cases.  
+B) Skip testing and trust the first result.  
+C) Ignore error handling for edge cases.  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which practice best supports reliable delivery in this module? (Set 3)
+A) Ship changes without documentation.  
+B) Skip testing and trust the first result.  
+C) Ignore error handling for edge cases.  
+D) Ship changes without documentation.  
 
 **Your answer:** _______________
 

@@ -1,28 +1,28 @@
-# Security Threat Modeling Quiz Answers
+# AI — Module 04: Security Threat Modeling for LLM Apps Quiz Answers
 
-## Question 1: Prompt injection is:
-**Answer: A** - Malicious input that overrides instructions
+## Question 1: Which outcome is part of AI — Module 04: Security Threat Modeling for LLM Apps?
+**Answer: A** - Translate a vague request into a clear goal, constraints, and success criteria.
 
-**Explanation:** Prompt injection can bypass safeguards.
-
----
-
-## Question 2: Least privilege means:
-**Answer: A** - Give tools only the access they need
-
-**Explanation:** Least privilege reduces risk.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 3: Threat modeling is used to:
-**Answer: A** - Identify risks and mitigations
+## Question 2: Which task is part of the core practice for this module?
+**Answer: A** - Create a threat model for one app: list threats and mitigations.
 
-**Explanation:** Threat modeling surfaces risks early.
+**Explanation:** This task appears under the Core exercises section.
 
 ---
 
-## 🎯 How Did You Do?
+## Question 3: Which item is required in the verification checklist?
+**Answer: A** - Run the module tests and confirm they pass.
 
-- **3/3 correct:** Excellent! You're ready to move on.
+**Explanation:** This requirement appears in the verification checklist.
+
+---
+
+## How Did You Do?
+
+- **3/3 correct:** Excellent! You are ready to move on.
 - **2/3 correct:** Good work! Review the missed concept.
 - **0-1/3 correct:** Review the module and try again.

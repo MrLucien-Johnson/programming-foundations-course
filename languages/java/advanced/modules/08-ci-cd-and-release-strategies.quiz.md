@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of Java Advanced — Module 08: CI/CD and Release Strategies?
 A) Explain the core concepts and tradeoffs for **CI/CD and Release Strategies**.  
-B) Configure a Kubernetes cluster.  
-C) Design a mobile user interface from scratch.  
-D) Draft a legal contract for a client.  
+B) Skipping input validation and assuming “happy path”.  
+C) Making performance claims without measurements.  
+D) Run the module tests and confirm they pass.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Set up office networking hardware.  
-C) Produce a video editing workflow.  
-D) Create a marketing campaign for the product.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Making performance claims without measurements.  
+C) Skip testing and trust the first result.  
+D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Set up office networking hardware.  
-C) Produce a video editing workflow.  
-D) Create a marketing campaign for the product.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Skip testing and trust the first result.  
+C) Ignore error handling for edge cases.  
+D) Ship changes without documentation.  
 
 **Your answer:** _______________
 

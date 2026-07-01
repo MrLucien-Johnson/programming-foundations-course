@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of Java Advanced — Module 03: Concurrency and Async?
 A) Explain the core concepts and tradeoffs for **Concurrency and Async**.  
-B) Configure a Kubernetes cluster.  
-C) Design a mobile user interface from scratch.  
-D) Draft a legal contract for a client.  
+B) Jump to the next module without verifying results.  
+C) Treat every request as safe without review.  
+D) Implement a small feature tied to this module in an existing starter app.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Create a marketing campaign for the product.  
-C) Set up office networking hardware.  
-D) Produce a video editing workflow.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Add a performance or reliability improvement and **measure** the impact.  
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+D) Create a short write-up: what changed, why, and how you verified it.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Create a brand identity guide.  
-C) Build a machine learning model without data.  
-D) Write a sales pitch for a new product.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Create a short write-up: what changed, why, and how you verified it.  
+C) Skip testing and trust the first result.  
+D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 

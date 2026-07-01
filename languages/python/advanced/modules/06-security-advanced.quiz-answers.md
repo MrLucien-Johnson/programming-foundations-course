@@ -1,23 +1,23 @@
 # Python Advanced — Module 06: Security (Advanced) Quiz Answers
 
-## Question 1: Which of the following is a core learning outcome for this module?
+## Question 1: Which outcome is part of Python Advanced — Module 06: Security (Advanced)?
 **Answer: A** - Explain the core concepts and tradeoffs for **Security (Advanced)**.
 
-**Explanation:** This module explicitly lists this as a learning outcome.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 2: Which of the following is a core learning outcome for this module?
-**Answer: A** - Apply the concepts to a realistic codebase (not just toy examples).
+## Question 2: Which task is part of the core practice for this module?
+**Answer: A** - Implement a small feature tied to this module in an existing starter app.
 
-**Explanation:** This module explicitly lists this as a learning outcome.
+**Explanation:** This task appears under the Core exercises section.
 
 ---
 
-## Question 3: Which of the following is a core learning outcome for this module?
-**Answer: A** - Write tests that prove correctness and prevent regressions.
+## Question 3: Which item is required in the verification checklist?
+**Answer: A** - Run the module tests and confirm they pass.
 
-**Explanation:** This module explicitly lists this as a learning outcome.
+**Explanation:** This requirement appears in the verification checklist.
 
 ---
 

@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of Kotlin Advanced — Module 05: Reliability and Resilience?
 A) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
-B) Write a sales pitch for a new product.  
-C) Create a brand identity guide.  
-D) Build a machine learning model without data.  
+B) Skipping input validation and assuming “happy path”.  
+C) Making performance claims without measurements.  
+D) Run the module tests and confirm they pass.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Build a machine learning model without data.  
-C) Write a sales pitch for a new product.  
-D) Create a brand identity guide.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Skipping input validation and assuming “happy path”.  
+D) Making performance claims without measurements.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Draft a legal contract for a client.  
-C) Configure a Kubernetes cluster.  
-D) Design a mobile user interface from scratch.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Making performance claims without measurements.  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
 
 **Your answer:** _______________
 

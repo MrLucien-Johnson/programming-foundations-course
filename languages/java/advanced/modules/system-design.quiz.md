@@ -6,21 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
-A) Explain the goals of Systems and Design (Advanced).  
-B) Set up office networking hardware.  
-C) Produce a video editing workflow.  
-D) Create a marketing campaign for the product.  
+### Question 1: Which item is required in the verification checklist? (Set 1)
+A) Run the module tests and confirm they pass.  
+B) Avoid measuring results or performance.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the main concepts from Systems and Design (Advanced).  
-B) Design a mobile user interface from scratch.  
-C) Draft a legal contract for a client.  
-D) Configure a Kubernetes cluster.  
+### Question 2: Which practice best supports reliable delivery in this module? (Set 2)
+A) Ignore error handling for edge cases.  
+B) Jump to the next module without verifying results.  
+C) Treat every request as safe without review.  
+D) Skip testing and trust the first result.  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which practice best supports reliable delivery in this module? (Set 3)
+A) Ship changes without documentation.  
+B) Avoid measuring results or performance.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 

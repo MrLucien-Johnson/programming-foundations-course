@@ -1,51 +1,51 @@
-# Security Threat Modeling Quiz: Test Your Understanding
+# AI — Module 04: Security Threat Modeling for LLM Apps Quiz: Test Your Understanding
 
-## 📝 Instructions
+## Instructions
 
 Answer these questions about what you've learned. Try to answer from memory first!
 
-## 🧪 Questions
+## Questions
 
-### Question 1: Prompt injection is:
-A) Malicious input that overrides instructions  
-B) A normal user question  
-C) A deployment tool  
-D) A performance metric  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Least privilege means:
-A) Give tools only the access they need  
-B) Give all tools admin access  
-C) Disable permissions  
-D) Hide logs  
+### Question 1: Which outcome is part of AI — Module 04: Security Threat Modeling for LLM Apps?
+A) Translate a vague request into a clear goal, constraints, and success criteria.  
+B) Update the README with setup, run, and test commands.  
+C) Skip testing and trust the first result.  
+D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Threat modeling is used to:
-A) Identify risks and mitigations  
-B) Ignore security  
-C) Skip testing  
-D) Hide vulnerabilities  
+### Question 2: Which task is part of the core practice for this module?
+A) Create a threat model for one app: list threats and mitigations.  
+B) Add a least-privilege tool policy and verify via tests.  
+C) Add data minimization and retention rules to the design.  
+D) Design incident response for security events (triage + containment).  
 
 **Your answer:** _______________
 
 ---
 
-## ✅ Check Your Answers
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Treat every request as safe without review.  
+C) Treating retrieved content as trusted instructions.  
+D) Over-permissioned tools without audit logs.  
 
-Once you've answered all the questions, check the answers file to see the correct answers and explanations.
-
-## 🎯 How Did You Do?
-
-- **3/3 correct:** Excellent! You understand the module well. 🎉
-- **2/3 correct:** Good work! Review the question you missed. 👍
-- **0-1/3 correct:** No worries! Review the module and try again. 💪
+**Your answer:** _______________
 
 ---
 
-**Good luck!** Check your answers when you're ready.
+## Check Your Answers
+
+Once you finish, check the answers file for explanations.
+
+## How Did You Do?
+
+- **3/3 correct:** Excellent! You understand the module well.
+- **2/3 correct:** Good work! Review what you missed.
+- **0-1/3 correct:** Review the module and try again.
+
+---
+
+**Good luck!** Check your answers when you are ready.

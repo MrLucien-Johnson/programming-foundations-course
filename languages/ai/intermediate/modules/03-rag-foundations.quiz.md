@@ -1,51 +1,51 @@
-# RAG Foundations Quiz: Test Your Understanding
+# AI — Module 03: RAG Foundations Quiz: Test Your Understanding
 
-## 📝 Instructions
+## Instructions
 
 Answer these questions about what you've learned. Try to answer from memory first!
 
-## 🧪 Questions
+## Questions
 
-### Question 1: RAG stands for:
-A) Retrieval-Augmented Generation  
-B) Random Answer Generator  
-C) Rapid AI Growth  
-D) Result Assembly Graph  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Retrieval helps by:
-A) Grounding responses in sources  
-B) Adding hallucinations  
-C) Skipping context  
-D) Removing evidence  
+### Question 1: Which outcome is part of AI — Module 03: RAG Foundations?
+A) Translate a vague request into a clear goal, constraints, and success criteria.  
+B) Design prompts that answer only using retrieved context and cite excerpts.  
+C) No citation requirement, leading to confident hallucinations.  
+D) Chunking without metadata, making filtering impossible.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Good chunking aims to:
-A) Keep context manageable and relevant  
-B) Make chunks as large as possible  
-C) Remove all metadata  
-D) Hide sources  
+### Question 2: Which task is part of the core practice for this module?
+A) Create a doc set (10–30 pages) and define a question set (30 questions).  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Jump to the next module without verifying results.  
+D) Treat every request as safe without review.  
 
 **Your answer:** _______________
 
 ---
 
-## ✅ Check Your Answers
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Ship changes without documentation.  
+C) Avoid measuring results or performance.  
+D) Change multiple variables at once so you cannot compare outcomes.  
 
-Once you've answered all the questions, check the answers file to see the correct answers and explanations.
-
-## 🎯 How Did You Do?
-
-- **3/3 correct:** Excellent! You understand the module well. 🎉
-- **2/3 correct:** Good work! Review the question you missed. 👍
-- **0-1/3 correct:** No worries! Review the module and try again. 💪
+**Your answer:** _______________
 
 ---
 
-**Good luck!** Check your answers when you're ready.
+## Check Your Answers
+
+Once you finish, check the answers file for explanations.
+
+## How Did You Do?
+
+- **3/3 correct:** Excellent! You understand the module well.
+- **2/3 correct:** Good work! Review what you missed.
+- **0-1/3 correct:** Review the module and try again.
+
+---
+
+**Good luck!** Check your answers when you are ready.

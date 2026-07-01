@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of Go Intermediate — Module 04: APIs and Auth?
 A) Explain the core concepts and tradeoffs for **APIs and Auth**.  
-B) Design a mobile user interface from scratch.  
-C) Draft a legal contract for a client.  
-D) Configure a Kubernetes cluster.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Jump to the next module without verifying results.  
+D) Treat every request as safe without review.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Create a marketing campaign for the product.  
-C) Set up office networking hardware.  
-D) Produce a video editing workflow.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Skip testing and trust the first result.  
+C) Ignore error handling for edge cases.  
+D) Ship changes without documentation.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Design a mobile user interface from scratch.  
-C) Draft a legal contract for a client.  
-D) Configure a Kubernetes cluster.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Skipping input validation and assuming “happy path”.  
+D) Making performance claims without measurements.  
 
 **Your answer:** _______________
 

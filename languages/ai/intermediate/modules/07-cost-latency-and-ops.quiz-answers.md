@@ -1,28 +1,28 @@
-# Cost, Latency & Ops Quiz Answers
+# AI — Module 07: Cost, Latency, and Ops Quiz Answers
 
-## Question 1: A latency budget is:
-**Answer: A** - The maximum acceptable response time
+## Question 1: Which outcome is part of AI — Module 07: Cost, Latency, and Ops?
+**Answer: A** - Translate a vague request into a clear goal, constraints, and success criteria.
 
-**Explanation:** Latency budgets define performance targets.
-
----
-
-## Question 2: Caching helps by:
-**Answer: A** - Reducing cost and latency
-
-**Explanation:** Caching reuses results and saves time.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 3: You should track:
-**Answer: A** - Token usage and cost
+## Question 2: Which task is part of the core practice for this module?
+**Answer: A** - Create a cost/latency plan for one workflow (budgets + how to enforce).
 
-**Explanation:** Tracking usage helps control spending.
+**Explanation:** This task appears under the Core exercises section.
 
 ---
 
-## 🎯 How Did You Do?
+## Question 3: Which item is required in the verification checklist?
+**Answer: A** - Run the module tests and confirm they pass.
 
-- **3/3 correct:** Excellent! You're ready to move on.
+**Explanation:** This requirement appears in the verification checklist.
+
+---
+
+## How Did You Do?
+
+- **3/3 correct:** Excellent! You are ready to move on.
 - **2/3 correct:** Good work! Review the missed concept.
 - **0-1/3 correct:** Review the module and try again.

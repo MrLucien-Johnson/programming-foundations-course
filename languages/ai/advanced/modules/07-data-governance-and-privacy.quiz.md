@@ -1,51 +1,51 @@
-# Data Governance & Privacy Quiz: Test Your Understanding
+# AI — Module 07: Data Governance and Privacy Quiz: Test Your Understanding
 
-## 📝 Instructions
+## Instructions
 
 Answer these questions about what you've learned. Try to answer from memory first!
 
-## 🧪 Questions
+## Questions
 
-### Question 1: PII stands for:
-A) Personally identifiable information  
-B) Private internal interface  
-C) Public input indicator  
-D) Primary index instruction  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Data retention policies define:
-A) How long data is stored  
-B) How to ignore logs  
-C) How to avoid access control  
-D) How to skip audits  
+### Question 1: Which outcome is part of AI — Module 07: Data Governance and Privacy?
+A) Translate a vague request into a clear goal, constraints, and success criteria.  
+B) Ship changes without documentation.  
+C) Avoid measuring results or performance.  
+D) Change multiple variables at once so you cannot compare outcomes.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Access control ensures:
-A) Only authorized users see data  
-B) Everyone sees everything  
-C) No permissions exist  
-D) Logs are hidden  
+### Question 2: Which task is part of the core practice for this module?
+A) Create a data handling policy for your app: what is stored, for how long, and why.  
+B) Add access-control-aware retrieval and test “no leakage” scenarios.  
+C) Define a safe logging schema that avoids storing raw sensitive text.  
+D) Design audit queries/reports (who accessed what, when, and for what purpose).  
 
 **Your answer:** _______________
 
 ---
 
-## ✅ Check Your Answers
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Add access-control-aware retrieval and test “no leakage” scenarios.  
+C) Define a safe logging schema that avoids storing raw sensitive text.  
+D) Design audit queries/reports (who accessed what, when, and for what purpose).  
 
-Once you've answered all the questions, check the answers file to see the correct answers and explanations.
-
-## 🎯 How Did You Do?
-
-- **3/3 correct:** Excellent! You understand the module well. 🎉
-- **2/3 correct:** Good work! Review the question you missed. 👍
-- **0-1/3 correct:** No worries! Review the module and try again. 💪
+**Your answer:** _______________
 
 ---
 
-**Good luck!** Check your answers when you're ready.
+## Check Your Answers
+
+Once you finish, check the answers file for explanations.
+
+## How Did You Do?
+
+- **3/3 correct:** Excellent! You understand the module well.
+- **2/3 correct:** Good work! Review what you missed.
+- **0-1/3 correct:** Review the module and try again.
+
+---
+
+**Good luck!** Check your answers when you are ready.

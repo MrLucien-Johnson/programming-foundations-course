@@ -1,28 +1,28 @@
-# Agentic Workflows Quiz Answers
+# AI — Module 06: Agentic Workflows Quiz Answers
 
-## Question 1: An agentic workflow is:
-**Answer: A** - A multi-step plan with tools
+## Question 1: Which outcome is part of AI — Module 06: Agentic Workflows?
+**Answer: A** - Translate a vague request into a clear goal, constraints, and success criteria.
 
-**Explanation:** Agentic workflows include planning and actions.
-
----
-
-## Question 2: Separating planning and execution helps:
-**Answer: A** - Reduce errors and improve clarity
-
-**Explanation:** Separation improves reliability.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 3: Stop conditions are used to:
-**Answer: A** - Prevent infinite loops
+## Question 2: Which task is part of the core practice for this module?
+**Answer: A** - Design an agent workflow spec for “triage support tickets and draft responses”.
 
-**Explanation:** Stop conditions keep workflows bounded.
+**Explanation:** This task appears under the Core exercises section.
 
 ---
 
-## 🎯 How Did You Do?
+## Question 3: Which item is required in the verification checklist?
+**Answer: A** - Run the module tests and confirm they pass.
 
-- **3/3 correct:** Excellent! You're ready to move on.
+**Explanation:** This requirement appears in the verification checklist.
+
+---
+
+## How Did You Do?
+
+- **3/3 correct:** Excellent! You are ready to move on.
 - **2/3 correct:** Good work! Review the missed concept.
 - **0-1/3 correct:** Review the module and try again.

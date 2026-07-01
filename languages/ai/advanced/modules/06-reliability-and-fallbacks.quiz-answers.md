@@ -1,28 +1,28 @@
-# Reliability & Fallbacks Quiz Answers
+# AI — Module 06: Reliability and Fallbacks Quiz Answers
 
-## Question 1: A fallback is:
-**Answer: A** - An alternate response path
+## Question 1: Which outcome is part of AI — Module 06: Reliability and Fallbacks?
+**Answer: A** - Translate a vague request into a clear goal, constraints, and success criteria.
 
-**Explanation:** Fallbacks keep the system usable when issues happen.
-
----
-
-## Question 2: Retries are useful to:
-**Answer: A** - Handle transient failures
-
-**Explanation:** Retries can recover from temporary failures.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 3: Graceful degradation means:
-**Answer: A** - Simpler output when resources are limited
+## Question 2: Which task is part of the core practice for this module?
+**Answer: A** - Design a fallback strategy for each top failure mode (model down, retrieval empty, tool error).
 
-**Explanation:** Degradation keeps service running under stress.
+**Explanation:** This task appears under the Core exercises section.
 
 ---
 
-## 🎯 How Did You Do?
+## Question 3: Which item is required in the verification checklist?
+**Answer: A** - Run the module tests and confirm they pass.
 
-- **3/3 correct:** Excellent! You're ready to move on.
+**Explanation:** This requirement appears in the verification checklist.
+
+---
+
+## How Did You Do?
+
+- **3/3 correct:** Excellent! You are ready to move on.
 - **2/3 correct:** Good work! Review the missed concept.
 - **0-1/3 correct:** Review the module and try again.

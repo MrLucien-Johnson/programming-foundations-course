@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of CAdvanced — Module 03: Concurrency and Async?
 A) Explain the core concepts and tradeoffs for **Concurrency and Async**.  
-B) Write a sales pitch for a new product.  
-C) Create a brand identity guide.  
-D) Build a machine learning model without data.  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+D) Add or update documentation (README notes or ADR-style notes).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Draft a legal contract for a client.  
-C) Configure a Kubernetes cluster.  
-D) Design a mobile user interface from scratch.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Ship changes without documentation.  
+C) Avoid measuring results or performance.  
+D) Change multiple variables at once so you cannot compare outcomes.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Write a sales pitch for a new product.  
-C) Create a brand identity guide.  
-D) Build a machine learning model without data.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Ship changes without documentation.  
+C) Avoid measuring results or performance.  
+D) Change multiple variables at once so you cannot compare outcomes.  
 
 **Your answer:** _______________
 

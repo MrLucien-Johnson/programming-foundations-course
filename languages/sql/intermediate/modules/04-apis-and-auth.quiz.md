@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of SQL (PostgreSQL) Intermediate — Module 04: APIs and Auth?
 A) Explain the core concepts and tradeoffs for **APIs and Auth**.  
-B) Create a marketing campaign for the product.  
-C) Set up office networking hardware.  
-D) Produce a video editing workflow.  
+B) Avoid measuring results or performance.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Create a brand identity guide.  
-C) Build a machine learning model without data.  
-D) Write a sales pitch for a new product.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Making performance claims without measurements.  
+C) Skip testing and trust the first result.  
+D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Draft a legal contract for a client.  
-C) Configure a Kubernetes cluster.  
-D) Design a mobile user interface from scratch.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Ship changes without documentation.  
+C) Avoid measuring results or performance.  
+D) Change multiple variables at once so you cannot compare outcomes.  
 
 **Your answer:** _______________
 

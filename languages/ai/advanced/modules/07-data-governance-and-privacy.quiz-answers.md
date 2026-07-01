@@ -1,28 +1,28 @@
-# Data Governance & Privacy Quiz Answers
+# AI — Module 07: Data Governance and Privacy Quiz Answers
 
-## Question 1: PII stands for:
-**Answer: A** - Personally identifiable information
+## Question 1: Which outcome is part of AI — Module 07: Data Governance and Privacy?
+**Answer: A** - Translate a vague request into a clear goal, constraints, and success criteria.
 
-**Explanation:** PII is personal data that needs protection.
-
----
-
-## Question 2: Data retention policies define:
-**Answer: A** - How long data is stored
-
-**Explanation:** Retention policies limit how long data is kept.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 3: Access control ensures:
-**Answer: A** - Only authorized users see data
+## Question 2: Which task is part of the core practice for this module?
+**Answer: A** - Create a data handling policy for your app: what is stored, for how long, and why.
 
-**Explanation:** Access control protects sensitive data.
+**Explanation:** This task appears under the Core exercises section.
 
 ---
 
-## 🎯 How Did You Do?
+## Question 3: Which item is required in the verification checklist?
+**Answer: A** - Run the module tests and confirm they pass.
 
-- **3/3 correct:** Excellent! You're ready to move on.
+**Explanation:** This requirement appears in the verification checklist.
+
+---
+
+## How Did You Do?
+
+- **3/3 correct:** Excellent! You are ready to move on.
 - **2/3 correct:** Good work! Review the missed concept.
 - **0-1/3 correct:** Review the module and try again.

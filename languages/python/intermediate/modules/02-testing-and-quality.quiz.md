@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of Python Intermediate — Module 02: Testing and Quality?
 A) Explain the core concepts and tradeoffs for **Testing and Quality**.  
-B) Produce a video editing workflow.  
-C) Create a marketing campaign for the product.  
-D) Set up office networking hardware.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Jump to the next module without verifying results.  
+D) Treat every request as safe without review.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Set up office networking hardware.  
-C) Produce a video editing workflow.  
-D) Create a marketing campaign for the product.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+D) Refactor one area for readability (without changing behavior) and prove it with tests.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Build a machine learning model without data.  
-C) Write a sales pitch for a new product.  
-D) Create a brand identity guide.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Jump to the next module without verifying results.  
+C) Treat every request as safe without review.  
+D) Shipping without an automated test run in CI.  
 
 **Your answer:** _______________
 

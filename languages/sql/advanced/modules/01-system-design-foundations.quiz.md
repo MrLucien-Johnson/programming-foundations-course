@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of SQL (PostgreSQL) Advanced — Module 01: System Design Foundations?
 A) Explain the core concepts and tradeoffs for **System Design Foundations**.  
-B) Design a mobile user interface from scratch.  
-C) Draft a legal contract for a client.  
-D) Configure a Kubernetes cluster.  
+B) Treat every request as safe without review.  
+C) Implement a small feature tied to this module in an existing starter app.  
+D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Set up office networking hardware.  
-C) Produce a video editing workflow.  
-D) Create a marketing campaign for the product.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Shipping without an automated test run in CI.  
+C) Over-mocking (tests assert implementation details instead of outcomes).  
+D) Skipping input validation and assuming “happy path”.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Create a brand identity guide.  
-C) Build a machine learning model without data.  
-D) Write a sales pitch for a new product.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Skip testing and trust the first result.  
+C) Ignore error handling for edge cases.  
+D) Ship changes without documentation.  
 
 **Your answer:** _______________
 

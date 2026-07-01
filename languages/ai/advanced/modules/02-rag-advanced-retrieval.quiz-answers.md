@@ -1,28 +1,28 @@
-# RAG Advanced Retrieval Quiz Answers
+# AI — Module 02: RAG: Advanced Retrieval Quiz Answers
 
-## Question 1: Reranking is used to:
-**Answer: A** - Reorder retrieved results by relevance
+## Question 1: Which outcome is part of AI — Module 02: RAG: Advanced Retrieval?
+**Answer: A** - Translate a vague request into a clear goal, constraints, and success criteria.
 
-**Explanation:** Reranking improves relevance.
-
----
-
-## Question 2: Hybrid retrieval combines:
-**Answer: A** - Keyword and vector search
-
-**Explanation:** Hybrid retrieval uses multiple signals.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 3: Access control in retrieval ensures:
-**Answer: A** - Users only see permitted data
+## Question 2: Which task is part of the core practice for this module?
+**Answer: A** - Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.
 
-**Explanation:** Access control prevents data leakage.
+**Explanation:** This task appears under the Core exercises section.
 
 ---
 
-## 🎯 How Did You Do?
+## Question 3: Which item is required in the verification checklist?
+**Answer: A** - Run the module tests and confirm they pass.
 
-- **3/3 correct:** Excellent! You're ready to move on.
+**Explanation:** This requirement appears in the verification checklist.
+
+---
+
+## How Did You Do?
+
+- **3/3 correct:** Excellent! You are ready to move on.
 - **2/3 correct:** Good work! Review the missed concept.
 - **0-1/3 correct:** Review the module and try again.

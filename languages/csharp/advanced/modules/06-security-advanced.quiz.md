@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of CAdvanced — Module 06: Security (Advanced)?
 A) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-B) Produce a video editing workflow.  
-C) Create a marketing campaign for the product.  
-D) Set up office networking hardware.  
+B) Avoid measuring results or performance.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Design a mobile user interface from scratch.  
-C) Draft a legal contract for a client.  
-D) Configure a Kubernetes cluster.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Avoid measuring results or performance.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Write a sales pitch for a new product.  
-C) Create a brand identity guide.  
-D) Build a machine learning model without data.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Refactor one area for readability (without changing behavior) and prove it with tests.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
 
 **Your answer:** _______________
 

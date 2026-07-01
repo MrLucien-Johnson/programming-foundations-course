@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of TypeScript Intermediate — Module 06: Security Basics?
 A) Explain the core concepts and tradeoffs for **Security Basics**.  
-B) Write a sales pitch for a new product.  
-C) Create a brand identity guide.  
-D) Build a machine learning model without data.  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+D) Add or update documentation (README notes or ADR-style notes).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Set up office networking hardware.  
-C) Produce a video editing workflow.  
-D) Create a marketing campaign for the product.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Jump to the next module without verifying results.  
+D) Treat every request as safe without review.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Configure a Kubernetes cluster.  
-C) Design a mobile user interface from scratch.  
-D) Draft a legal contract for a client.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Refactor one area for readability (without changing behavior) and prove it with tests.  
+D) Add a performance or reliability improvement and **measure** the impact.  
 
 **Your answer:** _______________
 

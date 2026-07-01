@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of TypeScript Intermediate — Module 08: Deployment and CI?
 A) Explain the core concepts and tradeoffs for **Deployment and CI**.  
-B) Produce a video editing workflow.  
-C) Create a marketing campaign for the product.  
-D) Set up office networking hardware.  
+B) Avoid measuring results or performance.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Design a mobile user interface from scratch.  
-C) Draft a legal contract for a client.  
-D) Configure a Kubernetes cluster.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+C) Create a short write-up: what changed, why, and how you verified it.  
+D) Shipping without an automated test run in CI.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Draft a legal contract for a client.  
-C) Configure a Kubernetes cluster.  
-D) Design a mobile user interface from scratch.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Ignore error handling for edge cases.  
+C) Ship changes without documentation.  
+D) Avoid measuring results or performance.  
 
 **Your answer:** _______________
 

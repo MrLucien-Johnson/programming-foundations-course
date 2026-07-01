@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of Python Advanced — Module 08: CI/CD and Release Strategies?
 A) Explain the core concepts and tradeoffs for **CI/CD and Release Strategies**.  
-B) Set up office networking hardware.  
-C) Produce a video editing workflow.  
-D) Create a marketing campaign for the product.  
+B) Ignore error handling for edge cases.  
+C) Ship changes without documentation.  
+D) Avoid measuring results or performance.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Produce a video editing workflow.  
-C) Create a marketing campaign for the product.  
-D) Set up office networking hardware.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Avoid measuring results or performance.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Draft a legal contract for a client.  
-C) Configure a Kubernetes cluster.  
-D) Design a mobile user interface from scratch.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Skipping input validation and assuming “happy path”.  
+C) Making performance claims without measurements.  
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 
 **Your answer:** _______________
 

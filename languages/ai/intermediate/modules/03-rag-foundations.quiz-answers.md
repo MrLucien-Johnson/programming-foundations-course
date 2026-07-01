@@ -1,28 +1,28 @@
-# RAG Foundations Quiz Answers
+# AI — Module 03: RAG Foundations Quiz Answers
 
-## Question 1: RAG stands for:
-**Answer: A** - Retrieval-Augmented Generation
+## Question 1: Which outcome is part of AI — Module 03: RAG Foundations?
+**Answer: A** - Translate a vague request into a clear goal, constraints, and success criteria.
 
-**Explanation:** RAG combines retrieval with generation.
-
----
-
-## Question 2: Retrieval helps by:
-**Answer: A** - Grounding responses in sources
-
-**Explanation:** Retrieved sources reduce hallucinations.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 3: Good chunking aims to:
-**Answer: A** - Keep context manageable and relevant
+## Question 2: Which task is part of the core practice for this module?
+**Answer: A** - Create a doc set (10–30 pages) and define a question set (30 questions).
 
-**Explanation:** Chunking balances context and relevance.
+**Explanation:** This task appears under the Core exercises section.
 
 ---
 
-## 🎯 How Did You Do?
+## Question 3: Which item is required in the verification checklist?
+**Answer: A** - Run the module tests and confirm they pass.
 
-- **3/3 correct:** Excellent! You're ready to move on.
+**Explanation:** This requirement appears in the verification checklist.
+
+---
+
+## How Did You Do?
+
+- **3/3 correct:** Excellent! You are ready to move on.
 - **2/3 correct:** Good work! Review the missed concept.
 - **0-1/3 correct:** Review the module and try again.

@@ -1,28 +1,28 @@
-# Observability & Monitoring Quiz Answers
+# AI — Module 05: Observability and Monitoring for LLM Apps Quiz Answers
 
-## Question 1: Observability includes:
-**Answer: A** - Logs, metrics, and traces
+## Question 1: Which outcome is part of AI — Module 05: Observability and Monitoring for LLM Apps?
+**Answer: A** - Translate a vague request into a clear goal, constraints, and success criteria.
 
-**Explanation:** Observability uses telemetry to understand systems.
-
----
-
-## Question 2: Model drift refers to:
-**Answer: A** - Changes in output quality over time
-
-**Explanation:** Drift means outputs change over time.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 3: Alerting is important because it:
-**Answer: A** - Notifies teams of anomalies
+## Question 2: Which task is part of the core practice for this module?
+**Answer: A** - Define SLIs/SLOs for an AI feature and map them to metrics.
 
-**Explanation:** Alerts allow quick response to issues.
+**Explanation:** This task appears under the Core exercises section.
 
 ---
 
-## 🎯 How Did You Do?
+## Question 3: Which item is required in the verification checklist?
+**Answer: A** - Run the module tests and confirm they pass.
 
-- **3/3 correct:** Excellent! You're ready to move on.
+**Explanation:** This requirement appears in the verification checklist.
+
+---
+
+## How Did You Do?
+
+- **3/3 correct:** Excellent! You are ready to move on.
 - **2/3 correct:** Good work! Review the missed concept.
 - **0-1/3 correct:** Review the module and try again.

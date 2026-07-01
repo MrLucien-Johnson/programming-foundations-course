@@ -1,16 +1,23 @@
 # Core Concepts (Intermediate) Quiz Answers
 
-## Question 1: Which of the following is a core learning outcome for this module?
-**Answer: A** - Explain the goals of Core Concepts (Intermediate).
+## Question 1: Which item is required in the verification checklist? (Set 1)
+**Answer: A** - Run the module tests and confirm they pass.
 
-**Explanation:** This module explicitly lists this as a learning outcome.
+**Explanation:** This requirement appears in the verification checklist.
 
 ---
 
-## Question 2: Which of the following is a core learning outcome for this module?
-**Answer: A** - Apply the main concepts from Core Concepts (Intermediate).
+## Question 2: Which practice best supports reliable delivery in this module? (Set 2)
+**Answer: A** - Ignore error handling for edge cases.
 
-**Explanation:** This module explicitly lists this as a learning outcome.
+**Explanation:** This reinforces the professional workflow expected in the module.
+
+---
+
+## Question 3: Which practice best supports reliable delivery in this module? (Set 3)
+**Answer: A** - Ship changes without documentation.
+
+**Explanation:** This reinforces the professional workflow expected in the module.
 
 ---
 

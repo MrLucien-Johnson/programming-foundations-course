@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of Java Advanced — Module 04: Performance and Profiling?
 A) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
-B) Build a machine learning model without data.  
-C) Write a sales pitch for a new product.  
-D) Create a brand identity guide.  
+B) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Skipping input validation and assuming “happy path”.  
+D) Making performance claims without measurements.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Create a brand identity guide.  
-C) Build a machine learning model without data.  
-D) Write a sales pitch for a new product.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Skip testing and trust the first result.  
+C) Ignore error handling for edge cases.  
+D) Ship changes without documentation.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Build a machine learning model without data.  
-C) Write a sales pitch for a new product.  
-D) Create a brand identity guide.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Refactor one area for readability (without changing behavior) and prove it with tests.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
 
 **Your answer:** _______________
 

@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of Python Intermediate — Module 05: Databases?
 A) Explain the core concepts and tradeoffs for **Databases**.  
-B) Produce a video editing workflow.  
-C) Create a marketing campaign for the product.  
-D) Set up office networking hardware.  
+B) Add or update documentation (README notes or ADR-style notes).  
+C) Shipping without an automated test run in CI.  
+D) Over-mocking (tests assert implementation details instead of outcomes).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Configure a Kubernetes cluster.  
-C) Design a mobile user interface from scratch.  
-D) Draft a legal contract for a client.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Refactor one area for readability (without changing behavior) and prove it with tests.  
+D) Add a performance or reliability improvement and **measure** the impact.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Configure a Kubernetes cluster.  
-C) Design a mobile user interface from scratch.  
-D) Draft a legal contract for a client.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Making performance claims without measurements.  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
 
 **Your answer:** _______________
 

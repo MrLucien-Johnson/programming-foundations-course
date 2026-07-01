@@ -6,31 +6,31 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which of the following is a core learning outcome for this module?
+### Question 1: Which outcome is part of TypeScript Intermediate — Module 07: Debugging and Performance?
 A) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
-B) Set up office networking hardware.  
-C) Produce a video editing workflow.  
-D) Create a marketing campaign for the product.  
+B) Shipping without an automated test run in CI.  
+C) Over-mocking (tests assert implementation details instead of outcomes).  
+D) Skipping input validation and assuming “happy path”.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which of the following is a core learning outcome for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Create a brand identity guide.  
-C) Build a machine learning model without data.  
-D) Write a sales pitch for a new product.  
+### Question 2: Which task is part of the core practice for this module?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Refactor one area for readability (without changing behavior) and prove it with tests.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which of the following is a core learning outcome for this module?
-A) Write tests that prove correctness and prevent regressions.  
-B) Draft a legal contract for a client.  
-C) Configure a Kubernetes cluster.  
-D) Design a mobile user interface from scratch.  
+### Question 3: Which item is required in the verification checklist?
+A) Run the module tests and confirm they pass.  
+B) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Skipping input validation and assuming “happy path”.  
+D) Making performance claims without measurements.  
 
 **Your answer:** _______________
 
