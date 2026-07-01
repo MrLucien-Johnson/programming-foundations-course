@@ -230,7 +230,8 @@
 
       const loadCourses = async () => {
         try {
-          const response = await fetch("course-index.json");
+          const cacheBust = Date.now();
+          const response = await fetch(`course-index.json?cb=${cacheBust}`);
           if (!response.ok) throw new Error("Failed to load course index");
           const data = await response.json();
           if (!data.courses) throw new Error("Missing course data");
