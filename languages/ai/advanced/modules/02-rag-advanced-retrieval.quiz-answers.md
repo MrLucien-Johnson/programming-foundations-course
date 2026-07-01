@@ -1,28 +1,77 @@
 # AI — Module 02: RAG: Advanced Retrieval Quiz Answers
 
-## Question 1: Which outcome is part of AI — Module 02: RAG: Advanced Retrieval?
-**Answer: A** - Translate a vague request into a clear goal, constraints, and success criteria.
+## Question 1: Which learning outcome is part of this module?
+**Answer: C** - Translate a vague request into a clear goal, constraints, and success criteria.
 
 **Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 2: Which task is part of the core practice for this module?
-**Answer: A** - Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.
+## Question 2: Which topic is explicitly covered in the lesson list?
+**Answer: A** - Retrieval quality signals: precision, recall, and failure modes (50 min)
 
-**Explanation:** This task appears under the Core exercises section.
+**Explanation:** This topic appears in the lesson list.
 
 ---
 
-## Question 3: Which item is required in the verification checklist?
+## Question 3: Which task appears in the Core exercises?
+**Answer: A** - Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.
+
+**Explanation:** This task appears under Core exercises.
+
+---
+
+## Question 4: Which task appears in the Better exercises?
+**Answer: A** - Compare two chunking strategies and record tradeoffs.
+
+**Explanation:** This task appears under Better exercises.
+
+---
+
+## Question 5: Which task appears in the Beast Mode exercises?
+**Answer: C** - Add access-control-aware retrieval (no leakage across permissions).
+
+**Explanation:** This task appears under Beast Mode exercises.
+
+---
+
+## Question 6: Which item is required in the verification checklist?
 **Answer: A** - Run the module tests and confirm they pass.
 
-**Explanation:** This requirement appears in the verification checklist.
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 7: Which testing requirement is specified for this module?
+**Answer: A** - Eval harness separates retrieval vs generation metrics.
+
+**Explanation:** This requirement is listed under testing requirements.
+
+---
+
+## Question 8: Which common mistake should you avoid in this module?
+**Answer: C** - Optimizing retrieval with changing datasets (no stable benchmark).
+
+**Explanation:** This mistake is listed under common mistakes.
+
+---
+
+## Question 9: Which statement best summarizes this module's focus?
+**Answer: A** - Improve retrieval quality: hybrid search, metadata filters, reranking, and freshness.
+
+**Explanation:** This statement comes from the module overview.
+
+---
+
+## Question 10: Which outcome appears in the learning outcomes list?
+**Answer: C** - Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
 ## How Did You Do?
 
-- **3/3 correct:** Excellent! You are ready to move on.
-- **2/3 correct:** Good work! Review the missed concept.
-- **0-1/3 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You are ready to move on.
+- **8-9 correct:** Great work! Review the missed concepts.
+- **0-7 correct:** Review the module and try again.
