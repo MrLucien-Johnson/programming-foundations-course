@@ -1,28 +1,63 @@
 # CIntermediate — Module 07: Debugging and Performance Quiz Answers
 
-## Question 1: Which outcome is part of CIntermediate — Module 07: Debugging and Performance?
-**Answer: A** - Explain the core concepts and tradeoffs for **Debugging and Performance**.
+## Question 1: Which learning outcome is part of this module?
+**Answer: B** - Explain the core concepts and tradeoffs for **Debugging and Performance**.
 
 **Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 2: Which task is part of the core practice for this module?
-**Answer: A** - Implement a small feature tied to this module in an existing starter app.
+## Question 2: Which topic is explicitly covered in the lesson list?
+**Answer: A** - Debugging workflow: reproduce → isolate → fix (35 min)
 
-**Explanation:** This task appears under the Core exercises section.
+**Explanation:** This topic appears in the lesson list.
 
 ---
 
-## Question 3: Which item is required in the verification checklist?
-**Answer: A** - Run the module tests and confirm they pass.
+## Question 3: Which task appears in the Core exercises?
+**Answer: B** - Implement a small feature tied to this module in an existing starter app.
 
-**Explanation:** This requirement appears in the verification checklist.
+**Explanation:** This task appears under Core exercises.
+
+---
+
+## Question 4: Which task appears in the Better exercises?
+**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+
+**Explanation:** This task appears under Better exercises.
+
+---
+
+## Question 5: Which task appears in the Beast Mode exercises?
+**Answer: B** - Add a performance or reliability improvement and **measure** the impact.
+
+**Explanation:** This task appears under Beast Mode exercises.
+
+---
+
+## Question 6: Which item is required in the verification checklist?
+**Answer: C** - Run the module tests and confirm they pass.
+
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 7: Which testing requirement is specified for this module?
+**Answer: A** - All work must be covered by **build + tests + analyzers in CI**.
+
+**Explanation:** This requirement is listed under testing requirements.
+
+---
+
+## Question 8: Which common mistake should you avoid in this module?
+**Answer: D** - Shipping without an automated test run in CI.
+
+**Explanation:** This mistake is listed under common mistakes.
 
 ---
 
 ## How Did You Do?
 
-- **3/3 correct:** Excellent! You are ready to move on.
-- **2/3 correct:** Good work! Review the missed concept.
-- **0-1/3 correct:** Review the module and try again.
+- **8/8 correct:** Excellent! You are ready to move on.
+- **6-7 correct:** Great work! Review the missed concepts.
+- **0-5 correct:** Review the module and try again.
