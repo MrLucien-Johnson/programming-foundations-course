@@ -1,50 +1,120 @@
 # SQL (PostgreSQL) Intermediate — Module 02: Testing and Quality Quiz: Test Your Understanding
 
-## 📝 Instructions
+## Instructions
 
-Answer these questions about what you learned. Try to answer from memory first!
+Answer these questions about what you've learned. Try to answer from memory first!
 
-## 🧪 Questions
+## Questions
 
-### Question 1: What is the main focus of this module?
-A) Learn and apply the core concepts from SQL (PostgreSQL) Intermediate — Module 02: Testing and Quality  
-B) Skip practice and only skim headings  
-C) Ignore the lesson goals and jump ahead  
-D) Avoid testing or verification steps  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which approach aligns with this course?
-A) Follow the lessons in order and complete the exercises  
-B) Skip practice work and avoid feedback  
-C) Only read without applying concepts  
-D) Ignore the instructions and improvise  
+### Question 1: Which learning outcome is part of this module?
+A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+B) Explain the core concepts and tradeoffs for **Testing and Quality**.  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: What should you do after finishing this module?
-A) Complete the exercises or mini-project and review mistakes  
-B) Delete your work and move on immediately  
-C) Avoid reflecting on what you learned  
-D) Stop learning until the next course  
+### Question 2: Which topic is explicitly covered in the lesson list?
+A) Write maintainable tests and enforce quality gates in CI.  
+B) Test pyramid and what to mock (40 min)  
+C) Implement a small feature tied to this module in an existing starter app.  
+D) Explain the core concepts and tradeoffs for **Testing and Quality**.  
 
 **Your answer:** _______________
 
 ---
 
-## ✅ Check Your Answers
+### Question 3: Which task appears in the Core exercises?
+A) Shipping without an automated test run in CI.  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) Ship changes without documentation.  
+D) Implement a small feature tied to this module in an existing starter app.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which task appears in the Better exercises?
+A) Write maintainable tests and enforce quality gates in CI.  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) Shipping without an automated test run in CI.  
+D) Explain the core concepts and tradeoffs for **Testing and Quality**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which task appears in the Beast Mode exercises?
+A) Apply the concepts to a realistic codebase (not just toy examples).  
+B) Add or update documentation (README notes or ADR-style notes).  
+C) Explain the core concepts and tradeoffs for **Testing and Quality**.  
+D) Add a performance or reliability improvement and **measure** the impact.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which testing requirement is specified for this module?
+A) Apply the concepts to a realistic codebase (not just toy examples).  
+B) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+D) Add a performance or reliability improvement and **measure** the impact.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which common mistake should you avoid in this module?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+B) Shipping without an automated test run in CI.  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) Implement a small feature tied to this module in an existing starter app.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which statement best summarizes this module's focus?
+A) Write maintainable tests and enforce quality gates in CI.  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+D) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which outcome appears in the learning outcomes list?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Apply the concepts to a realistic codebase (not just toy examples).  
+C) Coverage and meaningful assertions (35 min)  
+D) Unit tests: determinism, fixtures, factories (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement is listed as a learning outcome?
+A) Lint/format/typecheck as quality gates (40 min)  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) Refactor one area for readability (without changing behavior) and prove it with tests.  
+D) Write tests that prove correctness and prevent regressions.  
+
+**Your answer:** _______________
+
+---
+
+## Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## 🎯 How Did You Do?
+## How Did You Do?
 
-- **3/3 correct:** Excellent! You understand the module well. 🎉
-- **2/3 correct:** Good work! Review what you missed. 👍
-- **0-1/3 correct:** Review the module and try again. 💪
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 

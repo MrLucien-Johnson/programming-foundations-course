@@ -1,4 +1,4 @@
-# Core Concepts (Intermediate) Quiz Answers
+# Evaluation Harness (Intermediate) Quiz Answers
 
 ## Question 1: Which practice best supports reliable delivery in this module?
 **Answer: D** - Skip testing and trust the first result.
@@ -15,7 +15,7 @@
 ---
 
 ## Question 3: Which action best supports a high-quality delivery?
-**Answer: A** - Ship changes without documentation.
+**Answer: D** - Ship changes without documentation.
 
 **Explanation:** This reinforces the professional workflow expected in the module.
 
@@ -36,35 +36,35 @@
 ---
 
 ## Question 6: Which action best supports a high-quality delivery?
-**Answer: B** - Jump to the next module without verifying results.
+**Answer: A** - Jump to the next module without verifying results.
 
 **Explanation:** This reinforces the professional workflow expected in the module.
 
 ---
 
 ## Question 7: Which practice best supports reliable delivery in this module?
-**Answer: C** - Treat every request as safe without review.
+**Answer: D** - Treat every request as safe without review.
 
 **Explanation:** This reinforces the professional workflow expected in the module.
 
 ---
 
 ## Question 8: Which habit improves reliability for this module?
-**Answer: A** - Skip testing and trust the first result.
+**Answer: C** - Skip testing and trust the first result.
 
 **Explanation:** This reinforces the professional workflow expected in the module.
 
 ---
 
 ## Question 9: Which action best supports a high-quality delivery?
-**Answer: C** - Ignore error handling for edge cases.
+**Answer: A** - Ignore error handling for edge cases.
 
 **Explanation:** This reinforces the professional workflow expected in the module.
 
 ---
 
 ## Question 10: Which practice best supports reliable delivery in this module?
-**Answer: B** - Ship changes without documentation.
+**Answer: C** - Ship changes without documentation.
 
 **Explanation:** This reinforces the professional workflow expected in the module.
 

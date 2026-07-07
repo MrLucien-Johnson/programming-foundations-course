@@ -1,28 +1,77 @@
 # Core Concepts (Intermediate) Quiz Answers
 
-## Question 1: What is the main focus of this module?
-**Answer: A** - Learn and apply the core concepts from Core Concepts (Intermediate)
+## Question 1: Which practice best supports reliable delivery in this module?
+**Answer: D** - Skip testing and trust the first result.
 
-**Explanation:** The module is designed to teach and apply its core concepts in practice.
-
----
-
-## Question 2: Which approach aligns with this course?
-**Answer: A** - Follow the lessons in order and complete the exercises
-
-**Explanation:** This course emphasizes structured learning and practice.
+**Explanation:** This reinforces the professional workflow expected in the module.
 
 ---
 
-## Question 3: What should you do after finishing this module?
-**Answer: A** - Complete the exercises or mini-project and review mistakes
+## Question 2: Which habit improves reliability for this module?
+**Answer: C** - Ignore error handling for edge cases.
 
-**Explanation:** Practice and review help reinforce the concepts.
+**Explanation:** This reinforces the professional workflow expected in the module.
 
 ---
 
-## 🎯 How Did You Do?
+## Question 3: Which action best supports a high-quality delivery?
+**Answer: D** - Ship changes without documentation.
 
-- **3/3 correct:** Excellent! You are ready to move on.
-- **2/3 correct:** Good work! Review the missed concept.
-- **0-1/3 correct:** Review the module and try again.
+**Explanation:** This reinforces the professional workflow expected in the module.
+
+---
+
+## Question 4: Which practice best supports reliable delivery in this module?
+**Answer: B** - Avoid measuring results or performance.
+
+**Explanation:** This reinforces the professional workflow expected in the module.
+
+---
+
+## Question 5: Which habit improves reliability for this module?
+**Answer: B** - Change multiple variables at once so you cannot compare outcomes.
+
+**Explanation:** This reinforces the professional workflow expected in the module.
+
+---
+
+## Question 6: Which action best supports a high-quality delivery?
+**Answer: C** - Jump to the next module without verifying results.
+
+**Explanation:** This reinforces the professional workflow expected in the module.
+
+---
+
+## Question 7: Which practice best supports reliable delivery in this module?
+**Answer: A** - Treat every request as safe without review.
+
+**Explanation:** This reinforces the professional workflow expected in the module.
+
+---
+
+## Question 8: Which habit improves reliability for this module?
+**Answer: D** - Skip testing and trust the first result.
+
+**Explanation:** This reinforces the professional workflow expected in the module.
+
+---
+
+## Question 9: Which action best supports a high-quality delivery?
+**Answer: B** - Ignore error handling for edge cases.
+
+**Explanation:** This reinforces the professional workflow expected in the module.
+
+---
+
+## Question 10: Which practice best supports reliable delivery in this module?
+**Answer: D** - Ship changes without documentation.
+
+**Explanation:** This reinforces the professional workflow expected in the module.
+
+---
+
+## How Did You Do?
+
+- **10/10 correct:** Excellent! You are ready to move on.
+- **8-9 correct:** Great work! Review the missed concepts.
+- **0-7 correct:** Review the module and try again.

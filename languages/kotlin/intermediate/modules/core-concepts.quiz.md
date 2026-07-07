@@ -1,50 +1,120 @@
 # Core Concepts (Intermediate) Quiz: Test Your Understanding
 
-## 📝 Instructions
+## Instructions
 
-Answer these questions about what you learned. Try to answer from memory first!
+Answer these questions about what you've learned. Try to answer from memory first!
 
-## 🧪 Questions
+## Questions
 
-### Question 1: What is the main focus of this module?
-A) Learn and apply the core concepts from Core Concepts (Intermediate)  
-B) Skip practice and only skim headings  
-C) Ignore the lesson goals and jump ahead  
-D) Avoid testing or verification steps  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which approach aligns with this course?
-A) Follow the lessons in order and complete the exercises  
-B) Skip practice work and avoid feedback  
-C) Only read without applying concepts  
-D) Ignore the instructions and improvise  
+### Question 1: Which practice best supports reliable delivery in this module?
+A) Ignore error handling for edge cases.  
+B) Avoid measuring results or performance.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Skip testing and trust the first result.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: What should you do after finishing this module?
-A) Complete the exercises or mini-project and review mistakes  
-B) Delete your work and move on immediately  
-C) Avoid reflecting on what you learned  
-D) Stop learning until the next course  
+### Question 2: Which habit improves reliability for this module?
+A) Jump to the next module without verifying results.  
+B) Skip testing and trust the first result.  
+C) Ignore error handling for edge cases.  
+D) Ship changes without documentation.  
 
 **Your answer:** _______________
 
 ---
 
-## ✅ Check Your Answers
+### Question 3: Which action best supports a high-quality delivery?
+A) Jump to the next module without verifying results.  
+B) Treat every request as safe without review.  
+C) Skip testing and trust the first result.  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which practice best supports reliable delivery in this module?
+A) Treat every request as safe without review.  
+B) Avoid measuring results or performance.  
+C) Ship changes without documentation.  
+D) Change multiple variables at once so you cannot compare outcomes.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which habit improves reliability for this module?
+A) Treat every request as safe without review.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Jump to the next module without verifying results.  
+D) Ignore error handling for edge cases.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which action best supports a high-quality delivery?
+A) Skip testing and trust the first result.  
+B) Treat every request as safe without review.  
+C) Jump to the next module without verifying results.  
+D) Change multiple variables at once so you cannot compare outcomes.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which practice best supports reliable delivery in this module?
+A) Treat every request as safe without review.  
+B) Jump to the next module without verifying results.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Skip testing and trust the first result.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which habit improves reliability for this module?
+A) Treat every request as safe without review.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Jump to the next module without verifying results.  
+D) Skip testing and trust the first result.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which action best supports a high-quality delivery?
+A) Jump to the next module without verifying results.  
+B) Ignore error handling for edge cases.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which practice best supports reliable delivery in this module?
+A) Skip testing and trust the first result.  
+B) Jump to the next module without verifying results.  
+C) Avoid measuring results or performance.  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+## Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## 🎯 How Did You Do?
+## How Did You Do?
 
-- **3/3 correct:** Excellent! You understand the module well. 🎉
-- **2/3 correct:** Good work! Review what you missed. 👍
-- **0-1/3 correct:** Review the module and try again. 💪
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 

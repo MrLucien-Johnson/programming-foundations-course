@@ -1,28 +1,77 @@
 # Python Intermediate — Module 06: Security Basics Quiz Answers
 
-## Question 1: What is the main focus of this module?
-**Answer: A** - Learn and apply the core concepts from Python Intermediate — Module 06: Security Basics
+## Question 1: Which learning outcome is part of this module?
+**Answer: A** - Explain the core concepts and tradeoffs for **Security Basics**.
 
-**Explanation:** The module is designed to teach and apply its core concepts in practice.
-
----
-
-## Question 2: Which approach aligns with this course?
-**Answer: A** - Follow the lessons in order and complete the exercises
-
-**Explanation:** This course emphasizes structured learning and practice.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 3: What should you do after finishing this module?
-**Answer: A** - Complete the exercises or mini-project and review mistakes
+## Question 2: Which topic is explicitly covered in the lesson list?
+**Answer: D** - OWASP Top 10: practical mapping (40 min)
 
-**Explanation:** Practice and review help reinforce the concepts.
+**Explanation:** This topic appears in the lesson list.
 
 ---
 
-## 🎯 How Did You Do?
+## Question 3: Which task appears in the Core exercises?
+**Answer: A** - Implement a small feature tied to this module in an existing starter app.
 
-- **3/3 correct:** Excellent! You are ready to move on.
-- **2/3 correct:** Good work! Review the missed concept.
-- **0-1/3 correct:** Review the module and try again.
+**Explanation:** This task appears under Core exercises.
+
+---
+
+## Question 4: Which task appears in the Better exercises?
+**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+
+**Explanation:** This task appears under Better exercises.
+
+---
+
+## Question 5: Which task appears in the Beast Mode exercises?
+**Answer: B** - Add a performance or reliability improvement and **measure** the impact.
+
+**Explanation:** This task appears under Beast Mode exercises.
+
+---
+
+## Question 6: Which testing requirement is specified for this module?
+**Answer: A** - All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.
+
+**Explanation:** This requirement is listed under testing requirements.
+
+---
+
+## Question 7: Which common mistake should you avoid in this module?
+**Answer: D** - Shipping without an automated test run in CI.
+
+**Explanation:** This mistake is listed under common mistakes.
+
+---
+
+## Question 8: Which statement best summarizes this module's focus?
+**Answer: A** - Reduce common vulnerabilities with safe defaults.
+
+**Explanation:** This statement comes from the module overview.
+
+---
+
+## Question 9: Which outcome appears in the learning outcomes list?
+**Answer: B** - Apply the concepts to a realistic codebase (not just toy examples).
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
+
+---
+
+## Question 10: Which statement is listed as a learning outcome?
+**Answer: D** - Write tests that prove correctness and prevent regressions.
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
+
+---
+
+## How Did You Do?
+
+- **10/10 correct:** Excellent! You are ready to move on.
+- **8-9 correct:** Great work! Review the missed concepts.
+- **0-7 correct:** Review the module and try again.

@@ -1,28 +1,77 @@
-# Structured Outputs & Schemas Quiz Answers
+# AI — Module 02: Structured Outputs and Schemas Quiz Answers
 
-## Question 1: A schema ensures:
-**Answer: A** - Consistent fields and structure
+## Question 1: Which learning outcome is part of this module?
+**Answer: B** - Translate a vague request into a clear goal, constraints, and success criteria.
 
-**Explanation:** Schemas define the expected structure.
-
----
-
-## Question 2: Valid JSON output should be:
-**Answer: A** - Parseable and well-formed
-
-**Explanation:** Valid JSON makes automation possible.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 3: Structured outputs help by:
-**Answer: A** - Reducing ambiguity
+## Question 2: Which topic is explicitly covered in the lesson list?
+**Answer: D** - Define schemas: required fields, types, and constraints (45 min)
 
-**Explanation:** Structure keeps outputs predictable.
+**Explanation:** This topic appears in the lesson list.
 
 ---
 
-## 🎯 How Did You Do?
+## Question 3: Which task appears in the Core exercises?
+**Answer: A** - Design a schema for customer support tickets (category, summary, urgency, actions).
 
-- **3/3 correct:** Excellent! You're ready to move on.
-- **2/3 correct:** Good work! Review the missed concept.
-- **0-1/3 correct:** Review the module and try again.
+**Explanation:** This task appears under Core exercises.
+
+---
+
+## Question 4: Which task appears in the Better exercises?
+**Answer: D** - Add a repair prompt that fixes invalid JSON without adding new information.
+
+**Explanation:** This task appears under Better exercises.
+
+---
+
+## Question 5: Which task appears in the Beast Mode exercises?
+**Answer: A** - Add a “strict mode” validator and a fallback response when validation fails.
+
+**Explanation:** This task appears under Beast Mode exercises.
+
+---
+
+## Question 6: Which testing requirement is specified for this module?
+**Answer: C** - Automated validation against schema; repair attempts are capped.
+
+**Explanation:** This requirement is listed under testing requirements.
+
+---
+
+## Question 7: Which common mistake should you avoid in this module?
+**Answer: C** - Schemas that don't match real inputs.
+
+**Explanation:** This mistake is listed under common mistakes.
+
+---
+
+## Question 8: Which statement best summarizes this module's focus?
+**Answer: D** - Make outputs machine-consumable: JSON schemas, strict formatting, validation, and repair loops.
+
+**Explanation:** This statement comes from the module overview.
+
+---
+
+## Question 9: Which outcome appears in the learning outcomes list?
+**Answer: D** - Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
+
+---
+
+## Question 10: Which statement is listed as a learning outcome?
+**Answer: D** - Build a small evaluation loop: test cases, metrics, and iteration notes.
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
+
+---
+
+## How Did You Do?
+
+- **10/10 correct:** Excellent! You are ready to move on.
+- **8-9 correct:** Great work! Review the missed concepts.
+- **0-7 correct:** Review the module and try again.
