@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Shipping without an automated test run in CI.  
-D) Branching strategies + commit hygiene (40 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
+### Question 1: Which action best satisfies the Core requirements?
 A) Implement a small feature tied to this module in an existing starter app.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Branching strategies + commit hygiene (40 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Avoid measuring results or performance.  
-B) Document decisions and constraints clearly for reviewers.  
-C) All work must be covered by **build + tests + lint/format in CI**.  
-D) Implement a small feature tied to this module in an existing starter app.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
-A) Working with CI failures (30 min)  
-B) All work must be covered by **build + tests + lint/format in CI**.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Skipping input validation and assuming “happy path”.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Ship changes without documentation.  
 B) Write tests that prove correctness and prevent regressions.  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Run: `swift main.swift`  
+D) Conflicts and rebasing safely (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 2: Which action upgrades the work to the Better level?
+A) Jump to the next module without verifying results.  
+B) Treat every request as safe without review.  
+C) Avoid measuring results or performance.  
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Treat every request as safe without review.  
+B) Working with CI failures (30 min)  
+C) All work must be covered by **build + tests + lint/format in CI**.  
 D) Add a performance or reliability improvement and **measure** the impact.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which testing requirement is specified for this module?
-A) All work must be covered by **build + tests + lint/format in CI**.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Use tooling to keep quality high: SwiftFormat + SwiftLint.  
-D) Skipping input validation and assuming “happy path”.  
+### Question 4: Before submitting, which verification step must you complete?
+A) If the module involves a database, tests must run against an isolated schema/database.  
+B) Working with CI failures (30 min)  
+C) Run the module tests and confirm they pass.  
+D) Create a short write-up: what changed, why, and how you verified it.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which common mistake should you avoid in this module?
-A) Shipping without an automated test run in CI.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Ship changes without documentation.  
-D) Write tests that prove correctness and prevent regressions.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which statement best summarizes this module's focus?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Write a changelog entry that summarises the work.  
 B) Use tooling to keep quality high: SwiftFormat + SwiftLint.  
-C) All work must be covered by **build + tests + lint/format in CI**.  
-D) Collaborate safely using branching, PRs, and reviews.  
+C) Document decisions and constraints clearly for reviewers.  
+D) All work must be covered by **build + tests + lint/format in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Collaborate safely using branching, PRs, and reviews.  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 6: Which option would be a common mistake to avoid?
+A) Shipping without an automated test run in CI.  
+B) If the module involves a database, tests must run against an isolated schema/database.  
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+D) Add a performance or reliability improvement and **measure** the impact.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
+B) Copy the starter pack from `languages/swift/intermediate/starter-pack` into a new working folder.  
+C) Update the README with setup, run, and test commands.  
+D) Skip testing and trust the first result.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Change multiple variables at once so you cannot compare outcomes.  
+B) Create a short write-up: what changed, why, and how you verified it.  
 C) Skip testing and trust the first result.  
-D) Working with CI failures (30 min)  
+D) Branching strategies + commit hygiene (40 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Write tests that prove correctness and prevent regressions.  
+### Question 9: Which step appears in the guided walkthrough?
+A) Run: `swift main.swift`  
+B) Copy the starter pack from `languages/swift/intermediate/starter-pack` into a new working folder.  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) Create a short write-up: what changed, why, and how you verified it.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Review the module goals and plan how you will work in branches, reviews, and clean history.  
+B) Collaborate safely using branching, PRs, and reviews.  
 C) Ship changes without documentation.  
-D) Jump to the next module without verifying results.  
+D) Create a feature branch, commit in small increments, and open a PR description.  
 
 **Your answer:** _______________
 

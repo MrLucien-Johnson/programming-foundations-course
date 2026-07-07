@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Making performance claims without measurements.  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Threat modeling + abuse cases (45 min)  
-B) Making performance claims without measurements.  
-C) Add or update documentation (README notes or ADR-style notes).  
-D) Change multiple variables at once so you cannot compare outcomes.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
+### Question 1: Which action best satisfies the Core requirements?
 A) Implement a small feature tied to this module in an existing starter app.  
-B) Shipping without an automated test run in CI.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Threat modeling + abuse cases (45 min)  
+B) Threat modeling + abuse cases (45 min)  
+C) All work must be covered by **build + tests + static analysis in CI**.  
+D) Skipping input validation and assuming “happy path”.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Treat every request as safe without review.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Skipping input validation and assuming “happy path”.  
-D) Ignore error handling for edge cases.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) Treat every request as safe without review.  
+C) Encryption at rest/in transit + key management (45 min)  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Shipping without an automated test run in CI.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Ignore error handling for edge cases.  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+C) Ship changes without documentation.  
+D) Avoid measuring results or performance.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Run the module tests and confirm they pass.  
-B) Write tests that prove correctness and prevent regressions.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Create a short write-up: what changed, why, and how you verified it.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
-A) All work must be covered by **build + tests + static analysis in CI**.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Write tests that prove correctness and prevent regressions.  
-D) Security testing and hardening checklist (40 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
-A) Shipping without an automated test run in CI.  
-B) Encryption at rest/in transit + key management (45 min)  
-C) Run the module tests and confirm they pass.  
-D) Document decisions and constraints clearly for reviewers.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which statement best summarizes this module's focus?
-A) Ship changes without documentation.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Threat-model, harden, and protect secrets, data, and supply chain.  
+### Question 4: Before submitting, which verification step must you complete?
+A) Add or update documentation (README notes or ADR-style notes).  
+B) Run the module tests and confirm they pass.  
+C) Review dependencies for vulnerabilities.  
 D) Use tooling to keep quality high: ktlint + detekt.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Update the README with setup, run, and test commands.  
+B) Add or update documentation (README notes or ADR-style notes).  
+C) All work must be covered by **build + tests + static analysis in CI**.  
+D) Apply the concepts to a realistic codebase (not just toy examples).  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Shipping without an automated test run in CI.  
 B) Supply-chain security + dependency policies (35 min)  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+C) All work must be covered by **build + tests + static analysis in CI**.  
+D) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
+B) Jump to the next module without verifying results.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Threat modeling + abuse cases (45 min)  
+B) Skip testing and trust the first result.  
+C) Threat-model, harden, and protect secrets, data, and supply chain.  
+D) Verify the primary feature works with normal and edge-case inputs.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Verify the primary feature works with normal and edge-case inputs.  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
+D) If the module involves a database, tests must run against an isolated schema/database.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Threat-model, harden, and protect secrets, data, and supply chain.  
+B) Review the module goals and plan how you will harden systems against advanced threats.  
+C) Skip testing and trust the first result.  
+D) Document decisions and constraints clearly for reviewers.  
 
 **Your answer:** _______________
 

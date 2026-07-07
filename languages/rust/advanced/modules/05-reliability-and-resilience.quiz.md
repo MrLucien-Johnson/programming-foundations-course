@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Design for failure using resilient patterns and operational readiness.  
+### Question 1: You need to run the test suite. Which command should you use?
+A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+B) Write a test for a failure scenario.  
+C) Run: `cargo test`  
+D) `cargo test`  
+
+**Your answer:** _______________
+
+---
+
+### Question 2: You need to run lint checks. Which command should you use?
+A) Ship changes without documentation.  
+B) `cargo clippy`  
+C) Skipping input validation and assuming “happy path”.  
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: You need to format the code. Which command should you use?
+A) Reliability in data: dedupe + idempotency keys (45 min)  
 B) Avoid measuring results or performance.  
+C) List possible failure modes and mitigations.  
+D) `cargo fmt`  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which action best satisfies the Core requirements?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Ignore error handling for edge cases.  
 C) Runbooks and incident response basics (35 min)  
-D) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
+D) Reliability in data: dedupe + idempotency keys (45 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) All work must be covered by **fmt + clippy + tests in CI**.  
-B) Retries, timeouts, budgets, and jitter (45 min)  
-C) Run: `cargo fmt`  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 5: Which action upgrades the work to the Better level?
+A) Runbooks and incident response basics (35 min)  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+D) Add or update documentation (README notes or ADR-style notes).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Shipping without an automated test run in CI.  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Run: `cargo clippy`  
-D) Implement a small feature tied to this module in an existing starter app.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Runbooks and incident response basics (35 min)  
-C) Retries, timeouts, budgets, and jitter (45 min)  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Jump to the next module without verifying results.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Making performance claims without measurements.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Run the module tests and confirm they pass.  
-D) Create a short write-up: what changed, why, and how you verified it.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
+### Question 6: Which action qualifies as a Beast Mode upgrade?
 A) Verify the primary feature works with normal and edge-case inputs.  
-B) Shipping without an automated test run in CI.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
+B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Write a test for a failure scenario.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Before submitting, which verification step must you complete?
+A) `cargo fmt`  
+B) Apply the concepts to a realistic codebase (not just toy examples).  
+C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+D) Run the module tests and confirm they pass.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which testing requirement must be satisfied to pass?
+A) Add or update documentation (README notes or ADR-style notes).  
+B) Run: `cargo clippy`  
+C) Run the module tests and confirm they pass.  
 D) All work must be covered by **fmt + clippy + tests in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Ship changes without documentation.  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Run: `cargo clippy`  
+### Question 9: Which option would be a common mistake to avoid?
+A) Apply the concepts to a realistic codebase (not just toy examples).  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) `cargo fmt`  
 D) Shipping without an automated test run in CI.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
-A) Making performance claims without measurements.  
-B) Circuit breakers, bulkheads, and rate limits (45 min)  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Design for failure using resilient patterns and operational readiness.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Ship changes without documentation.  
-C) Add or update documentation (README notes or ADR-style notes).  
-D) Run: `cargo fmt`  
+### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
+B) Making performance claims without measurements.  
+C) Over-mocking (tests assert implementation details instead of outcomes).  
+D) All work must be covered by **fmt + clippy + tests in CI**.  
 
 **Your answer:** _______________
 

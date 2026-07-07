@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-B) Layered vs hexagonal vs clean architecture (45 min)  
-C) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Document decisions and constraints clearly for reviewers.  
-B) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
-C) Ignore error handling for edge cases.  
-D) Layered vs hexagonal vs clean architecture (45 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Jump to the next module without verifying results.  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Skipping input validation and assuming “happy path”.  
+B) Run: `javac Main.java && java Main`  
 C) Implement a small feature tied to this module in an existing starter app.  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Treat every request as safe without review.  
+B) Making performance claims without measurements.  
+C) Document decisions and constraints clearly for reviewers.  
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Making performance claims without measurements.  
-D) Layered vs hexagonal vs clean architecture (45 min)  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Treat every request as safe without review.  
+B) Layered vs hexagonal vs clean architecture (45 min)  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).  
-B) Run the module tests and confirm they pass.  
+### Question 4: Before submitting, which verification step must you complete?
+A) Ship changes without documentation.  
+B) Add or update documentation (README notes or ADR-style notes).  
+C) Run the module tests and confirm they pass.  
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which testing requirement must be satisfied to pass?
+A) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
+B) Shipping without an automated test run in CI.  
+C) Layered vs hexagonal vs clean architecture (45 min)  
+D) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
+B) Shipping without an automated test run in CI.  
 C) Change multiple variables at once so you cannot compare outcomes.  
-D) Ship changes without documentation.  
+D) Event-driven design + sagas (45 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Event-driven design + sagas (45 min)  
-C) Shipping without an automated test run in CI.  
-D) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Implement the pattern in a small feature slice.  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+D) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).  
-B) Create a short write-up: what changed, why, and how you verified it.  
-C) Shipping without an automated test run in CI.  
-D) Document decisions and constraints clearly for reviewers.  
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Skip testing and trust the first result.  
+B) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Layered vs hexagonal vs clean architecture (45 min)  
+D) Write tests that prove correctness and prevent regressions.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
-A) Run: `javac Main.java && java Main`  
+### Question 9: Which step appears in the guided walkthrough?
+A) If the module involves a database, tests must run against an isolated schema/database.  
 B) Verify the primary feature works with normal and edge-case inputs.  
-C) Apply architectural patterns to keep systems evolvable.  
+C) Copy the starter pack from `languages/java/advanced/starter-pack` into a new working folder.  
 D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Skipping input validation and assuming “happy path”.  
+### Question 10: Which statement best summarizes the module focus?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.  
+B) Run the module tests and confirm they pass.  
+C) Apply architectural patterns to keep systems evolvable.  
+D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 

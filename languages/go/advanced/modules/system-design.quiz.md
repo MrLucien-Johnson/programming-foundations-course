@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which item is required in the verification checklist?
-A) Run the module tests and confirm they pass.  
-B) Skip testing and trust the first result.  
-C) Jump to the next module without verifying results.  
-D) Avoid measuring results or performance.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which check must be completed before moving on?
-A) Avoid measuring results or performance.  
-B) Ignore error handling for edge cases.  
-C) Jump to the next module without verifying results.  
+### Question 1: You need to run the test suite. Which command should you use?
+A) `go test ./...`  
+B) Copy the starter pack from `languages/go/advanced/starter-pack` into a new working folder.  
+C) Avoid measuring results or performance.  
 D) Verify the primary feature works with normal and edge-case inputs.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which verification step is required?
-A) Jump to the next module without verifying results.  
-B) Treat every request as safe without review.  
-C) Update the README with setup, run, and test commands.  
-D) Ship changes without documentation.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which item is required in the verification checklist?
-A) Change multiple variables at once so you cannot compare outcomes.  
+### Question 2: You need to run lint checks. Which command should you use?
+A) Document data flow, dependencies, and risk points.  
 B) Avoid measuring results or performance.  
-C) Run: `go test ./...`  
-D) Jump to the next module without verifying results.  
+C) Run the module tests and confirm they pass.  
+D) `golangci-lint run`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which check must be completed before moving on?
-A) Jump to the next module without verifying results.  
-B) Ship changes without documentation.  
-C) Run: `golangci-lint run`  
-D) Ignore error handling for edge cases.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which verification step is required?
+### Question 3: You need to format the code. Which command should you use?
 A) Ship changes without documentation.  
-B) Treat every request as safe without review.  
-C) Skip testing and trust the first result.  
+B) Ignore error handling for edge cases.  
+C) `gofmt -w .`  
 D) Run: `gofmt -w .`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which practice best supports reliable delivery in this module?
-A) Run: `golangci-lint run`  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Skip testing and trust the first result.  
-D) Treat every request as safe without review.  
+### Question 4: Before submitting, which verification step must you complete?
+A) Change multiple variables at once so you cannot compare outcomes.  
+B) Document data flow, dependencies, and risk points.  
+C) Run the module tests and confirm they pass.  
+D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which habit improves reliability for this module?
-A) Update the README with setup, run, and test commands.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Verify the primary feature works with normal and edge-case inputs.  
+### Question 5: Which step appears in the guided walkthrough?
+A) Run the module tests and confirm they pass.  
+B) Treat every request as safe without review.  
+C) Copy the starter pack from `languages/go/advanced/starter-pack` into a new working folder.  
 D) Skip testing and trust the first result.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which action best supports a high-quality delivery?
-A) Run: `go test ./...`  
-B) Ignore error handling for edge cases.  
-C) Run: `gofmt -w .`  
-D) Avoid measuring results or performance.  
+### Question 6: Which verification step is required before moving on?
+A) Ship changes without documentation.  
+B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+C) Skip testing and trust the first result.  
+D) Verify the primary feature works with normal and edge-case inputs.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which practice best supports reliable delivery in this module?
+### Question 7: Before submitting, which verification step must you complete?
+A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+B) Review the module goals and plan how you will synthesize architecture decisions.  
+C) Treat every request as safe without review.  
+D) Update the README with setup, run, and test commands.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which verification step is required before moving on?
+A) Document data flow, dependencies, and risk points.  
+B) `gofmt -w .`  
+C) Ship changes without documentation.  
+D) Run: `go test ./...`  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Before submitting, which verification step must you complete?
 A) Ship changes without documentation.  
-B) Run: `gofmt -w .`  
-C) Run the module tests and confirm they pass.  
-D) Run: `golangci-lint run`  
+B) Run: `golangci-lint run`  
+C) Copy the starter pack from `languages/go/advanced/starter-pack` into a new working folder.  
+D) Ignore error handling for edge cases.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which verification step is required before moving on?
+A) Run: `gofmt -w .`  
+B) Document data flow, dependencies, and risk points.  
+C) Skip testing and trust the first result.  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
 
 **Your answer:** _______________
 

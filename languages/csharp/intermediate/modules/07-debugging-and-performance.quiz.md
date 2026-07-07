@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Jump to the next module without verifying results.  
-B) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
-C) Skipping input validation and assuming “happy path”.  
-D) Logging and tracing basics (40 min)  
+### Question 1: You need to run the test suite. Which command should you use?
+A) Use tooling to keep quality high: dotnet format + analyzers.  
+B) `dotnet test`  
+C) Debug systematically and improve performance with evidence.  
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Debugging workflow: reproduce → isolate → fix (35 min)  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
-D) Add or update documentation (README notes or ADR-style notes).  
+### Question 2: You need to format the code. Which command should you use?
+A) `dotnet format`  
+B) Ignore error handling for edge cases.  
+C) `dotnet test`  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Debugging workflow: reproduce → isolate → fix (35 min)  
+### Question 3: Which action best satisfies the Core requirements?
+A) Use tooling to keep quality high: dotnet format + analyzers.  
 B) Implement a small feature tied to this module in an existing starter app.  
 C) Change multiple variables at once so you cannot compare outcomes.  
-D) Ignore error handling for edge cases.  
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
-C) Making performance claims without measurements.  
+### Question 4: Which action upgrades the work to the Better level?
+A) Skipping input validation and assuming “happy path”.  
+B) Run: `dotnet format`  
+C) Update the README with setup, run, and test commands.  
 D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Avoid measuring results or performance.  
+### Question 5: Which action qualifies as a Beast Mode upgrade?
+A) `dotnet format`  
 B) Add a performance or reliability improvement and **measure** the impact.  
-C) Write tests that prove correctness and prevent regressions.  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Skipping input validation and assuming “happy path”.  
+D) Avoid measuring results or performance.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which testing requirement is specified for this module?
-A) Logging and tracing basics (40 min)  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) All work must be covered by **build + tests + analyzers in CI**.  
-D) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
+### Question 6: Before submitting, which verification step must you complete?
+A) Change multiple variables at once so you cannot compare outcomes.  
+B) Copy the starter pack from `languages/csharp/intermediate/starter-pack` into a new working folder.  
+C) Run the module tests and confirm they pass.  
+D) Capture a baseline timing or log snapshot.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which common mistake should you avoid in this module?
-A) Shipping without an automated test run in CI.  
-B) Jump to the next module without verifying results.  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Skip testing and trust the first result.  
+### Question 7: Which testing requirement must be satisfied to pass?
+A) All work must be covered by **build + tests + analyzers in CI**.  
+B) Implement one optimization and measure the result.  
+C) Use a profiler or debug tool to identify the bottleneck.  
+D) Use tooling to keep quality high: dotnet format + analyzers.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which statement best summarizes this module's focus?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Ship changes without documentation.  
-C) Ignore error handling for edge cases.  
-D) Debug systematically and improve performance with evidence.  
+### Question 8: Which option would be a common mistake to avoid?
+A) Run the module tests and confirm they pass.  
+B) Use a profiler or debug tool to identify the bottleneck.  
+C) Run: `dotnet format`  
+D) Shipping without an automated test run in CI.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Skip testing and trust the first result.  
-C) Ignore error handling for edge cases.  
-D) Debugging workflow: reproduce → isolate → fix (35 min)  
+### Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
+B) Making performance claims without measurements.  
+C) Refactor one area for readability (without changing behavior) and prove it with tests.  
+D) Run the module tests and confirm they pass.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
-A) Making performance claims without measurements.  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Write tests that prove correctness and prevent regressions.  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 10: Which topic would you revisit to solve this module's core problem?
+A) `dotnet format`  
+B) Use tooling to keep quality high: dotnet format + analyzers.  
+C) Debugging workflow: reproduce → isolate → fix (35 min)  
+D) Update the README with setup, run, and test commands.  
 
 **Your answer:** _______________
 

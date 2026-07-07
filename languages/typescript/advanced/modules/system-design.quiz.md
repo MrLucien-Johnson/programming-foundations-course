@@ -6,68 +6,68 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which item is required in the verification checklist?
-A) Ignore error handling for edge cases.  
-B) Treat every request as safe without review.  
+### Question 1: Before submitting, which verification step must you complete?
+A) Document data flow, dependencies, and risk points.  
+B) Draft a high-level system diagram.  
 C) Run the module tests and confirm they pass.  
-D) Jump to the next module without verifying results.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which check must be completed before moving on?
-A) Ignore error handling for edge cases.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Avoid measuring results or performance.  
-D) Verify the primary feature works with normal and edge-case inputs.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which verification step is required?
-A) Update the README with setup, run, and test commands.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Avoid measuring results or performance.  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which item is required in the verification checklist?
-A) Run: `node index.js`  
-B) Jump to the next module without verifying results.  
-C) Skip testing and trust the first result.  
-D) Ignore error handling for edge cases.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which practice best supports reliable delivery in this module?
-A) Ship changes without documentation.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Jump to the next module without verifying results.  
-D) Ignore error handling for edge cases.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which habit improves reliability for this module?
-A) Jump to the next module without verifying results.  
-B) Ignore error handling for edge cases.  
-C) Skip testing and trust the first result.  
 D) Ship changes without documentation.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which action best supports a high-quality delivery?
-A) Treat every request as safe without review.  
+### Question 2: Which step appears in the guided walkthrough?
+A) Ship changes without documentation.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Verify the primary feature works with normal and edge-case inputs.  
+D) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which verification step is required before moving on?
+A) Verify the primary feature works with normal and edge-case inputs.  
+B) Skip testing and trust the first result.  
+C) Ignore error handling for edge cases.  
+D) Avoid measuring results or performance.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before submitting, which verification step must you complete?
+A) Update the README with setup, run, and test commands.  
+B) Review the module goals and plan how you will synthesize architecture decisions.  
+C) Ship changes without documentation.  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which verification step is required before moving on?
+A) Review the module goals and plan how you will synthesize architecture decisions.  
+B) Run: `node index.js`  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Treat every request as safe without review.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which action is listed as part of the guided walkthrough?
+A) Review the module goals and plan how you will synthesize architecture decisions.  
+B) Ignore error handling for edge cases.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which step appears in the guided walkthrough?
+A) Draft a high-level system diagram.  
 B) Update the README with setup, run, and test commands.  
 C) Verify the primary feature works with normal and edge-case inputs.  
 D) Ignore error handling for edge cases.  
@@ -76,31 +76,31 @@ D) Ignore error handling for edge cases.
 
 ---
 
-### Question 8: Which practice best supports reliable delivery in this module?
+### Question 8: Which action is listed as part of the guided walkthrough?
 A) Run the module tests and confirm they pass.  
+B) Verify the primary feature works with normal and edge-case inputs.  
+C) Document data flow, dependencies, and risk points.  
+D) Ignore error handling for edge cases.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Review tradeoffs and capture in a decision log.  
 B) Ship changes without documentation.  
-C) Skip testing and trust the first result.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Skip testing and trust the first result.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which habit improves reliability for this module?
-A) Ignore error handling for edge cases.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Treat every request as safe without review.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which action best supports a high-quality delivery?
-A) Update the README with setup, run, and test commands.  
-B) Run: `node index.js`  
-C) Run the module tests and confirm they pass.  
-D) Ship changes without documentation.  
+### Question 10: Which action is listed as part of the guided walkthrough?
+A) Run the module tests and confirm they pass.  
+B) Avoid measuring results or performance.  
+C) Jump to the next module without verifying results.  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
 
 **Your answer:** _______________
 

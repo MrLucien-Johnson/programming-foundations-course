@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Explain the core concepts and tradeoffs for **Databases**.  
+### Question 1: You need to run the test suite. Which command should you use?
+A) `dotnet test`  
 B) Migrations: forwards/backwards + safety (45 min)  
-C) Indexes + query plans (45 min)  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+C) Run: `dotnet test`  
+D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Write tests that prove correctness and prevent regressions.  
-B) Schema design + constraints (45 min)  
-C) Ship changes without documentation.  
+### Question 2: You need to format the code. Which command should you use?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) `dotnet format`  
+C) If the module involves a database, tests must run against an isolated schema/database.  
 D) Apply the concepts to a realistic codebase (not just toy examples).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Design schemas, write queries, and ship migrations safely.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Avoid measuring results or performance.  
-D) All work must be covered by **build + tests + analyzers in CI**.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Jump to the next module without verifying results.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Implement a small feature tied to this module in an existing starter app.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
+### Question 3: Which action best satisfies the Core requirements?
 A) Add a performance or reliability improvement and **measure** the impact.  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) `dotnet test`  
+D) Over-mocking (tests assert implementation details instead of outcomes).  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which action upgrades the work to the Better level?
+A) Indexes + query plans (45 min)  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+D) Treat every request as safe without review.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which action qualifies as a Beast Mode upgrade?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Treat every request as safe without review.  
+C) Refactor one area for readability (without changing behavior) and prove it with tests.  
+D) Indexes + query plans (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Before submitting, which verification step must you complete?
+A) Run the module tests and confirm they pass.  
+B) Design schemas, write queries, and ship migrations safely.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) `dotnet test`  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which testing requirement must be satisfied to pass?
+A) Document migrations and rollback steps.  
 B) Document decisions and constraints clearly for reviewers.  
+C) All work must be covered by **build + tests + analyzers in CI**.  
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which option would be a common mistake to avoid?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) Add a performance or reliability improvement and **measure** the impact.  
 C) Shipping without an automated test run in CI.  
-D) Write tests that prove correctness and prevent regressions.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which testing requirement is specified for this module?
-A) All work must be covered by **build + tests + analyzers in CI**.  
-B) Schema design + constraints (45 min)  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Document decisions and constraints clearly for reviewers.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which common mistake should you avoid in this module?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Shipping without an automated test run in CI.  
-D) Use tooling to keep quality high: dotnet format + analyzers.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which statement best summarizes this module's focus?
-A) Add or update documentation (README notes or ADR-style notes).  
-B) Use tooling to keep quality high: dotnet format + analyzers.  
-C) Design schemas, write queries, and ship migrations safely.  
 D) Transactions + isolation basics (45 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Skip testing and trust the first result.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Verify the primary feature works with normal and edge-case inputs.  
+B) Migrations: forwards/backwards + safety (45 min)  
+C) Run: `dotnet format`  
+D) Explain the core concepts and tradeoffs for **Databases**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
-A) Write tests that prove correctness and prevent regressions.  
-B) Avoid measuring results or performance.  
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-D) Jump to the next module without verifying results.  
+### Question 10: Which topic would you revisit to solve this module's core problem?
+A) Schema design + constraints (45 min)  
+B) Shipping without an automated test run in CI.  
+C) Jump to the next module without verifying results.  
+D) Create a short write-up: what changed, why, and how you verified it.  
 
 **Your answer:** _______________
 

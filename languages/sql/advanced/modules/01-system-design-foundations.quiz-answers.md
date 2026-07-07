@@ -1,72 +1,72 @@
 # SQL (PostgreSQL) Advanced — Module 01: System Design Foundations Quiz Answers
 
-## Question 1: Which learning outcome is part of this module?
-**Answer: C** - Explain the core concepts and tradeoffs for **System Design Foundations**.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 2: Which topic is explicitly covered in the lesson list?
-**Answer: B** - Requirements → constraints → estimates (45 min)
-
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 3: Which task appears in the Core exercises?
-**Answer: B** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: Which action best satisfies the Core requirements?
+**Answer: C** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This task appears under Core exercises.
 
 ---
 
-## Question 4: Which task appears in the Better exercises?
-**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 2: Which action upgrades the work to the Better level?
+**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This task appears under Better exercises.
 
 ---
 
-## Question 5: Which task appears in the Beast Mode exercises?
-**Answer: A** - Add a performance or reliability improvement and **measure** the impact.
+## Question 3: Which action qualifies as a Beast Mode upgrade?
+**Answer: B** - Add a performance or reliability improvement and **measure** the impact.
 
 **Explanation:** This task appears under Beast Mode exercises.
 
 ---
 
-## Question 6: Which item is required in the verification checklist?
+## Question 4: Before submitting, which verification step must you complete?
 **Answer: A** - Run the module tests and confirm they pass.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 7: Which testing requirement is specified for this module?
+## Question 5: Which testing requirement must be satisfied to pass?
 **Answer: A** - All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.
 
 **Explanation:** This requirement is listed under testing requirements.
 
 ---
 
-## Question 8: Which common mistake should you avoid in this module?
+## Question 6: Which option would be a common mistake to avoid?
 **Answer: A** - Shipping without an automated test run in CI.
 
 **Explanation:** This mistake is listed under common mistakes.
 
 ---
 
-## Question 9: Which statement best summarizes this module's focus?
-**Answer: C** - Reason about scalability, data, and tradeoffs under constraints.
+## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+**Answer: A** - Explain the core concepts and tradeoffs for **System Design Foundations**.
 
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 10: Which outcome appears in the learning outcomes list?
-**Answer: A** - Apply the concepts to a realistic codebase (not just toy examples).
+## Question 8: Which topic would you revisit to solve this module's core problem?
+**Answer: A** - Requirements → constraints → estimates (45 min)
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Explanation:** This topic appears in the lesson list.
+
+---
+
+## Question 9: Which step appears in the guided walkthrough?
+**Answer: C** - Copy the starter pack from `languages/sql/advanced/starter-pack` into a new working folder.
+
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 10: Which statement best summarizes the module focus?
+**Answer: A** - Reason about scalability, data, and tradeoffs under constraints.
+
+**Explanation:** This statement comes from the module overview.
 
 ---
 

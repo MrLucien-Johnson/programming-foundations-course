@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-D) Run: `swift main.swift`  
+### Question 1: Which action best satisfies the Core requirements?
+A) Skipping input validation and assuming “happy path”.  
+B) Skip testing and trust the first result.  
+C) Implement a small feature tied to this module in an existing starter app.  
+D) Refactor one area for readability (without changing behavior) and prove it with tests.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Threat modeling + abuse cases (45 min)  
+### Question 2: Which action upgrades the work to the Better level?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 B) Change multiple variables at once so you cannot compare outcomes.  
-C) Document decisions and constraints clearly for reviewers.  
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Security testing and hardening checklist (40 min)  
+D) Ship changes without documentation.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Security testing and hardening checklist (40 min)  
-C) Use tooling to keep quality high: SwiftFormat + SwiftLint.  
-D) Treat every request as safe without review.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
-A) Treat every request as safe without review.  
-B) Ship changes without documentation.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Add or update documentation (README notes or ADR-style notes).  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
+### Question 3: Which action qualifies as a Beast Mode upgrade?
 A) Add a performance or reliability improvement and **measure** the impact.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Shipping without an automated test run in CI.  
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+B) Treat every request as safe without review.  
+C) Copy the starter pack from `languages/swift/advanced/starter-pack` into a new working folder.  
+D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Avoid measuring results or performance.  
-B) Shipping without an automated test run in CI.  
-C) Threat modeling + abuse cases (45 min)  
-D) Run the module tests and confirm they pass.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
-A) Supply-chain security + dependency policies (35 min)  
-B) All work must be covered by **build + tests + lint/format in CI**.  
-C) Making performance claims without measurements.  
-D) Avoid measuring results or performance.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
+### Question 4: Before submitting, which verification step must you complete?
 A) Implement a small feature tied to this module in an existing starter app.  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) Shipping without an automated test run in CI.  
+B) Add or update documentation (README notes or ADR-style notes).  
+C) Run the module tests and confirm they pass.  
+D) Supply-chain security + dependency policies (35 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which testing requirement must be satisfied to pass?
+A) All work must be covered by **build + tests + lint/format in CI**.  
+B) Review the module goals and plan how you will harden systems against advanced threats.  
+C) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Copy the starter pack from `languages/swift/advanced/starter-pack` into a new working folder.  
+C) Use tooling to keep quality high: SwiftFormat + SwiftLint.  
+D) Shipping without an automated test run in CI.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Add or update documentation (README notes or ADR-style notes).  
+B) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
+C) Security testing and hardening checklist (40 min)  
 D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
-A) Threat modeling + abuse cases (45 min)  
-B) Threat-model, harden, and protect secrets, data, and supply chain.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Encryption at rest/in transit + key management (45 min)  
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Over-mocking (tests assert implementation details instead of outcomes).  
+B) Use tooling to keep quality high: SwiftFormat + SwiftLint.  
+C) Threat modeling + abuse cases (45 min)  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Security testing and hardening checklist (40 min)  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Treat every request as safe without review.  
+### Question 9: Which step appears in the guided walkthrough?
+A) Over-mocking (tests assert implementation details instead of outcomes).  
+B) Copy the starter pack from `languages/swift/advanced/starter-pack` into a new working folder.  
+C) Encryption at rest/in transit + key management (45 min)  
+D) Ignore error handling for edge cases.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Security testing and hardening checklist (40 min)  
+B) Skipping input validation and assuming “happy path”.  
+C) Threat-model, harden, and protect secrets, data, and supply chain.  
+D) Add a performance or reliability improvement and **measure** the impact.  
 
 **Your answer:** _______________
 

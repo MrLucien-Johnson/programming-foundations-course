@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Skip testing and trust the first result.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
-D) Change multiple variables at once so you cannot compare outcomes.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Instrument systems and run them with SLO-based operations.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) SLIs/SLOs and error budgets (55 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Avoid measuring results or performance.  
-B) Ignore error handling for edge cases.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Review the module goals and plan how you will monitor, alert, and set service objectives.  
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 C) Implement a small feature tied to this module in an existing starter app.  
-D) Skip testing and trust the first result.  
+D) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Jump to the next module without verifying results.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
+### Question 2: Which action upgrades the work to the Better level?
+A) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
+B) Run: `node index.js`  
+C) Shipping without an automated test run in CI.  
 D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-B) Update the README with setup, run, and test commands.  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Verify the primary feature works with normal and edge-case inputs.  
+B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
 C) Add a performance or reliability improvement and **measure** the impact.  
-D) SLIs/SLOs and error budgets (55 min)  
+D) Ship changes without documentation.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Run the module tests and confirm they pass.  
-B) Ignore error handling for edge cases.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
-A) Metrics: RED/USE and cardinality pitfalls (55 min)  
+### Question 4: Before submitting, which verification step must you complete?
+A) If the module involves a database, tests must run against an isolated schema/database.  
 B) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+C) Refactor one area for readability (without changing behavior) and prove it with tests.  
+D) Run the module tests and confirm they pass.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Alerting strategy + on-call hygiene (45 min)  
+B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+C) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
+D) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Shipping without an automated test run in CI.  
+B) Treat every request as safe without review.  
+C) Update the README with setup, run, and test commands.  
+D) Create a short write-up: what changed, why, and how you verified it.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Making performance claims without measurements.  
+B) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
+C) Implement a small feature tied to this module in an existing starter app.  
 D) Run: `node index.js`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Run: `node index.js`  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Shipping without an automated test run in CI.  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+B) Skipping input validation and assuming “happy path”.  
+C) SLIs/SLOs and error budgets (55 min)  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
-A) Instrument systems and run them with SLO-based operations.  
+### Question 9: Which step appears in the guided walkthrough?
+A) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
 B) Skipping input validation and assuming “happy path”.  
-C) Add or update documentation (README notes or ADR-style notes).  
+C) Verify the primary feature works with normal and edge-case inputs.  
 D) SLIs/SLOs and error budgets (55 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Treat every request as safe without review.  
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 10: Which statement best summarizes the module focus?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+B) Add a performance or reliability improvement and **measure** the impact.  
+C) Add or update documentation (README notes or ADR-style notes).  
+D) Instrument systems and run them with SLO-based operations.  
 
 **Your answer:** _______________
 

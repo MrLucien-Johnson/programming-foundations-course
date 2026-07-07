@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Update the README with setup, run, and test commands.  
-C) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-D) Event-driven design + sagas (60 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Avoid measuring results or performance.  
-B) Making performance claims without measurements.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Layered vs hexagonal vs clean architecture (55 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Over-mocking (tests assert implementation details instead of outcomes).  
-B) Document decisions and constraints clearly for reviewers.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Jump to the next module without verifying results.  
+B) Write tests that prove correctness and prevent regressions.  
 C) Implement a small feature tied to this module in an existing starter app.  
-D) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
-A) Over-mocking (tests assert implementation details instead of outcomes).  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Run the module tests and confirm they pass.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Add or update documentation (README notes or ADR-style notes).  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Apply architectural patterns to keep systems evolvable.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Making performance claims without measurements.  
-B) Run the module tests and confirm they pass.  
-C) Shipping without an automated test run in CI.  
-D) Add a performance or reliability improvement and **measure** the impact.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
-A) Ignore error handling for edge cases.  
-B) Use tooling to keep quality high: ESLint + Prettier.  
-C) Document decisions and constraints clearly for reviewers.  
-D) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
-A) Run the module tests and confirm they pass.  
-B) Shipping without an automated test run in CI.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Document decisions and constraints clearly for reviewers.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which statement best summarizes this module's focus?
-A) Making performance claims without measurements.  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Apply architectural patterns to keep systems evolvable.  
 D) Change multiple variables at once so you cannot compare outcomes.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Skipping input validation and assuming “happy path”.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Ignore error handling for edge cases.  
+B) Skip testing and trust the first result.  
+C) CQRS and when *not* to use it (45 min)  
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Update the README with setup, run, and test commands.  
+B) Implement the pattern in a small feature slice.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Over-mocking (tests assert implementation details instead of outcomes).  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before submitting, which verification step must you complete?
+A) Event-driven design + sagas (60 min)  
+B) Run the module tests and confirm they pass.  
+C) Create a short write-up: what changed, why, and how you verified it.  
+D) Treat every request as safe without review.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Ignore error handling for edge cases.  
+B) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Layered vs hexagonal vs clean architecture (55 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Review the module goals and plan how you will choose and apply architecture patterns.  
 B) Shipping without an automated test run in CI.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+D) Use tooling to keep quality high: ESLint + Prettier.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Shipping without an automated test run in CI.  
+B) CQRS and when *not* to use it (45 min)  
+C) Implement the pattern in a small feature slice.  
+D) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) Layered vs hexagonal vs clean architecture (55 min)  
+C) Apply architectural patterns to keep systems evolvable.  
+D) Treat every request as safe without review.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Apply architectural patterns to keep systems evolvable.  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Use tooling to keep quality high: ESLint + Prettier.  
+B) Document decisions and constraints clearly for reviewers.  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+D) Apply architectural patterns to keep systems evolvable.  
 
 **Your answer:** _______________
 

@@ -1,72 +1,72 @@
 # Core Concepts (Intermediate) Quiz Answers
 
-## Question 1: Which practice best supports reliable delivery in this module?
-**Answer: B** - Skip testing and trust the first result.
+## Question 1: You need to run the test suite. Which command should you use?
+**Answer: B** - `dotnet test`
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 2: Which habit improves reliability for this module?
-**Answer: C** - Ignore error handling for edge cases.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This command runs the test suite.
 
 ---
 
-## Question 3: Which action best supports a high-quality delivery?
-**Answer: A** - Ship changes without documentation.
+## Question 2: You need to format the code. Which command should you use?
+**Answer: C** - `dotnet format`
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 4: Which practice best supports reliable delivery in this module?
-**Answer: D** - Avoid measuring results or performance.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This command formats the code.
 
 ---
 
-## Question 5: Which habit improves reliability for this module?
-**Answer: C** - Change multiple variables at once so you cannot compare outcomes.
+## Question 3: Before submitting, which verification step must you complete?
+**Answer: A** - Run the module tests and confirm they pass.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 6: Which action best supports a high-quality delivery?
-**Answer: B** - Jump to the next module without verifying results.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 7: Which practice best supports reliable delivery in this module?
-**Answer: B** - Treat every request as safe without review.
+## Question 4: Which step appears in the guided walkthrough?
+**Answer: D** - Copy the starter pack from `languages/csharp/intermediate/starter-pack` into a new working folder.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 8: Which habit improves reliability for this module?
-**Answer: B** - Skip testing and trust the first result.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This step is listed in the guided walkthrough.
 
 ---
 
-## Question 9: Which action best supports a high-quality delivery?
-**Answer: C** - Ignore error handling for edge cases.
+## Question 5: Which verification step is required before moving on?
+**Answer: C** - Verify the primary feature works with normal and edge-case inputs.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 10: Which practice best supports reliable delivery in this module?
-**Answer: A** - Ship changes without documentation.
+## Question 6: Before submitting, which verification step must you complete?
+**Answer: B** - Update the README with setup, run, and test commands.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 7: Which verification step is required before moving on?
+**Answer: B** - Run: `dotnet test`
+
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 8: Before submitting, which verification step must you complete?
+**Answer: B** - Run: `dotnet format`
+
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 9: Which verification step is required before moving on?
+**Answer: C** - Run: `dotnet format`
+
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 10: Which action is listed as part of the guided walkthrough?
+**Answer: A** - Review the module goals and plan how you will reinforce foundational skills and patterns.
+
+**Explanation:** This step is listed in the guided walkthrough.
 
 ---
 

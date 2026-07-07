@@ -1,72 +1,72 @@
 # AI — Module 02: RAG: Advanced Retrieval Quiz Answers
 
-## Question 1: Which learning outcome is part of this module?
-**Answer: C** - Translate a vague request into a clear goal, constraints, and success criteria.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 2: Which topic is explicitly covered in the lesson list?
-**Answer: A** - Retrieval quality signals: precision, recall, and failure modes (50 min)
-
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 3: Which task appears in the Core exercises?
-**Answer: A** - Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.
+## Question 1: Which action best satisfies the Core requirements?
+**Answer: C** - Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.
 
 **Explanation:** This task appears under Core exercises.
 
 ---
 
-## Question 4: Which task appears in the Better exercises?
+## Question 2: Which action upgrades the work to the Better level?
 **Answer: A** - Compare two chunking strategies and record tradeoffs.
 
 **Explanation:** This task appears under Better exercises.
 
 ---
 
-## Question 5: Which task appears in the Beast Mode exercises?
-**Answer: C** - Add access-control-aware retrieval (no leakage across permissions).
+## Question 3: Which action qualifies as a Beast Mode upgrade?
+**Answer: A** - Add access-control-aware retrieval (no leakage across permissions).
 
 **Explanation:** This task appears under Beast Mode exercises.
 
 ---
 
-## Question 6: Which item is required in the verification checklist?
+## Question 4: Before submitting, which verification step must you complete?
 **Answer: A** - Run the module tests and confirm they pass.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 7: Which testing requirement is specified for this module?
-**Answer: A** - Eval harness separates retrieval vs generation metrics.
+## Question 5: Which testing requirement must be satisfied to pass?
+**Answer: C** - Eval harness separates retrieval vs generation metrics.
 
 **Explanation:** This requirement is listed under testing requirements.
 
 ---
 
-## Question 8: Which common mistake should you avoid in this module?
-**Answer: C** - Optimizing retrieval with changing datasets (no stable benchmark).
+## Question 6: Which option would be a common mistake to avoid?
+**Answer: A** - Optimizing retrieval with changing datasets (no stable benchmark).
 
 **Explanation:** This mistake is listed under common mistakes.
 
 ---
 
-## Question 9: Which statement best summarizes this module's focus?
-**Answer: A** - Improve retrieval quality: hybrid search, metadata filters, reranking, and freshness.
+## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+**Answer: A** - Translate a vague request into a clear goal, constraints, and success criteria.
 
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 10: Which outcome appears in the learning outcomes list?
-**Answer: C** - Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+## Question 8: Which topic would you revisit to solve this module's core problem?
+**Answer: C** - Retrieval quality signals: precision, recall, and failure modes (50 min)
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Explanation:** This topic appears in the lesson list.
+
+---
+
+## Question 9: Which step appears in the guided walkthrough?
+**Answer: A** - Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 10: Which statement best summarizes the module focus?
+**Answer: C** - Improve retrieval quality: hybrid search, metadata filters, reranking, and freshness.
+
+**Explanation:** This statement comes from the module overview.
 
 ---
 

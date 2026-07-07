@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Layered vs hexagonal vs clean architecture (45 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Layered vs hexagonal vs clean architecture (45 min)  
+### Question 1: Which action best satisfies the Core requirements?
+A) Implement a small feature tied to this module in an existing starter app.  
 B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Document decisions and constraints clearly for reviewers.  
-D) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.  
+C) Event-driven design + sagas (45 min)  
+D) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-D) Treat every request as safe without review.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) CQRS and when *not* to use it (35 min)  
+C) Compare two patterns and choose one for the module scenario.  
+D) Implement a small feature tied to this module in an existing starter app.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Document decisions and constraints clearly for reviewers.  
-B) Apply architectural patterns to keep systems evolvable.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Add or update documentation (README notes or ADR-style notes).  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Layered vs hexagonal vs clean architecture (45 min)  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Making performance claims without measurements.  
 B) Add a performance or reliability improvement and **measure** the impact.  
-C) Treat every request as safe without review.  
-D) Avoid measuring results or performance.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Skipping input validation and assuming “happy path”.  
-B) Run the module tests and confirm they pass.  
-C) Ignore error handling for edge cases.  
-D) CQRS and when *not* to use it (35 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
-A) CQRS and when *not* to use it (35 min)  
-B) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
-C) Ship changes without documentation.  
-D) Verify the primary feature works with normal and edge-case inputs.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
-A) DDD building blocks: entities, value objects, aggregates (45 min)  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Shipping without an automated test run in CI.  
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 D) Apply the concepts to a realistic codebase (not just toy examples).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
-A) Apply architectural patterns to keep systems evolvable.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Ship changes without documentation.  
+### Question 4: Before submitting, which verification step must you complete?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+C) Run the module tests and confirm they pass.  
+D) Review the module goals and plan how you will choose and apply architecture patterns.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Update the README with setup, run, and test commands.  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+B) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
+C) Avoid measuring results or performance.  
+D) Ignore error handling for edge cases.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Compare two patterns and choose one for the module scenario.  
+B) Shipping without an automated test run in CI.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Implement a small feature tied to this module in an existing starter app.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Over-mocking (tests assert implementation details instead of outcomes).  
+B) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) Add a performance or reliability improvement and **measure** the impact.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Ignore error handling for edge cases.  
+B) Verify the primary feature works with normal and edge-case inputs.  
+C) Layered vs hexagonal vs clean architecture (45 min)  
+D) Create a short write-up: what changed, why, and how you verified it.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Copy the starter pack from `languages/sql/advanced/starter-pack` into a new working folder.  
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) Ignore error handling for edge cases.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+B) Apply architectural patterns to keep systems evolvable.  
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
 
 **Your answer:** _______________
 

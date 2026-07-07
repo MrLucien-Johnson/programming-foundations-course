@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Skip testing and trust the first result.  
-B) Skipping input validation and assuming “happy path”.  
-C) Ignore error handling for edge cases.  
-D) Explain the core concepts and tradeoffs for **System Design Foundations**.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Requirements → constraints → estimates (45 min)  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Avoid measuring results or performance.  
-B) Use tooling to keep quality high: SwiftFormat + SwiftLint.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Consistency models + CAP in practice (45 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Create a short write-up: what changed, why, and how you verified it.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Consistency models + CAP in practice (45 min)  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Ship changes without documentation.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Run the module tests and confirm they pass.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 B) All work must be covered by **build + tests + lint/format in CI**.  
 C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Skip testing and trust the first result.  
+D) Implement a small feature tied to this module in an existing starter app.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
+### Question 2: Which action upgrades the work to the Better level?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Reason about scalability, data, and tradeoffs under constraints.  
-C) Use tooling to keep quality high: SwiftFormat + SwiftLint.  
+B) Verify the primary feature works with normal and edge-case inputs.  
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 D) All work must be covered by **build + tests + lint/format in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Run: `swift main.swift`  
+B) Requirements → constraints → estimates (45 min)  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Avoid measuring results or performance.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before submitting, which verification step must you complete?
+A) Run the module tests and confirm they pass.  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) Copy the starter pack from `languages/swift/advanced/starter-pack` into a new working folder.  
+D) Write tests that prove correctness and prevent regressions.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which testing requirement must be satisfied to pass?
+A) All work must be covered by **build + tests + lint/format in CI**.  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Jump to the next module without verifying results.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
 A) Shipping without an automated test run in CI.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Update the README with setup, run, and test commands.  
-D) Use tooling to keep quality high: SwiftFormat + SwiftLint.  
+B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+C) Ship changes without documentation.  
+D) Review the module goals and plan how you will translate requirements into scalable design.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-B) Treat every request as safe without review.  
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Create a short write-up: what changed, why, and how you verified it.  
+B) Review the module goals and plan how you will translate requirements into scalable design.  
+C) Queues, streams, and asynchronous workflows (45 min)  
+D) Explain the core concepts and tradeoffs for **System Design Foundations**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Requirements → constraints → estimates (45 min)  
+B) Skip testing and trust the first result.  
+C) Making performance claims without measurements.  
+D) Ignore error handling for edge cases.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Run the module tests and confirm they pass.  
+B) Ship changes without documentation.  
+C) Copy the starter pack from `languages/swift/advanced/starter-pack` into a new working folder.  
+D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+B) Document decisions and constraints clearly for reviewers.  
 C) Reason about scalability, data, and tradeoffs under constraints.  
-D) Ship changes without documentation.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Caching, load balancing, and data partitions (45 min)  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Update the README with setup, run, and test commands.  
+D) Identify one scaling bottleneck and mitigation.  
 
 **Your answer:** _______________
 

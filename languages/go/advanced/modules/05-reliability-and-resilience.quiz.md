@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
-B) Shipping without an automated test run in CI.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) All work must be covered by **gofmt + lint + tests in CI**.  
+### Question 1: You need to run the test suite. Which command should you use?
+A) `go test ./...`  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Ship changes without documentation.  
+D) Add retries, timeouts, or circuit breakers where needed.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Retries, timeouts, budgets, and jitter (45 min)  
-B) Skip testing and trust the first result.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Avoid measuring results or performance.  
+### Question 2: You need to run lint checks. Which command should you use?
+A) `golangci-lint run`  
+B) Making performance claims without measurements.  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
+### Question 3: You need to format the code. Which command should you use?
+A) `gofmt -w .`  
+B) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
+C) Add retries, timeouts, or circuit breakers where needed.  
+D) Retries, timeouts, budgets, and jitter (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which action best satisfies the Core requirements?
 A) Implement a small feature tied to this module in an existing starter app.  
-B) Run: `golangci-lint run`  
-C) Document decisions and constraints clearly for reviewers.  
-D) Shipping without an automated test run in CI.  
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+C) List possible failure modes and mitigations.  
+D) Retries, timeouts, budgets, and jitter (45 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) All work must be covered by **gofmt + lint + tests in CI**.  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Run: `go test ./...`  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) All work must be covered by **gofmt + lint + tests in CI**.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Retries, timeouts, budgets, and jitter (45 min)  
-D) Change multiple variables at once so you cannot compare outcomes.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Design for failure using resilient patterns and operational readiness.  
+### Question 5: Which action upgrades the work to the Better level?
+A) Making performance claims without measurements.  
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
+C) Design for failure using resilient patterns and operational readiness.  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which action qualifies as a Beast Mode upgrade?
+A) Add retries, timeouts, or circuit breakers where needed.  
+B) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
+C) All work must be covered by **gofmt + lint + tests in CI**.  
+D) Add a performance or reliability improvement and **measure** the impact.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Before submitting, which verification step must you complete?
+A) Change multiple variables at once so you cannot compare outcomes.  
+B) If the module involves a database, tests must run against an isolated schema/database.  
+C) Avoid measuring results or performance.  
 D) Run the module tests and confirm they pass.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Design for failure using resilient patterns and operational readiness.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) All work must be covered by **gofmt + lint + tests in CI**.  
+### Question 8: Which testing requirement must be satisfied to pass?
+A) All work must be covered by **gofmt + lint + tests in CI**.  
+B) Write tests that prove correctness and prevent regressions.  
+C) Verify the primary feature works with normal and edge-case inputs.  
+D) Use tooling to keep quality high: gofmt + golangci-lint.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Shipping without an automated test run in CI.  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) Circuit breakers, bulkheads, and rate limits (45 min)  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 9: Which option would be a common mistake to avoid?
+A) Write tests that prove correctness and prevent regressions.  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) All work must be covered by **gofmt + lint + tests in CI**.  
+D) Shipping without an automated test run in CI.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
-A) Circuit breakers, bulkheads, and rate limits (45 min)  
-B) Run: `golangci-lint run`  
-C) Update the README with setup, run, and test commands.  
-D) Design for failure using resilient patterns and operational readiness.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Making performance claims without measurements.  
-C) Reliability in data: dedupe + idempotency keys (45 min)  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Making performance claims without measurements.  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) Skip testing and trust the first result.  
+D) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
 
 **Your answer:** _______________
 

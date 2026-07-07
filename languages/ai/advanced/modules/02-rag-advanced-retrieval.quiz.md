@@ -6,19 +6,69 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Hybrid retrieval: keyword + semantic + filters (55 min)  
-C) Translate a vague request into a clear goal, constraints, and success criteria.  
-D) Avoid measuring results or performance.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Compare retrieval results across 10 queries.  
+B) Document and version changes so improvements are explainable.  
+C) Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.  
+D) Document the best-performing approach.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Retrieval quality signals: precision, recall, and failure modes (50 min)  
-B) Add access-control-aware retrieval (no leakage across permissions).  
+### Question 2: Which action upgrades the work to the Better level?
+A) Compare two chunking strategies and record tradeoffs.  
+B) Ignore error handling for edge cases.  
+C) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
+D) Add a metadata strategy (document type, version, access controls).  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Add access-control-aware retrieval (no leakage across permissions).  
+B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+C) Experiment with chunking and re-ranking strategies.  
+D) Retrieval quality signals: precision, recall, and failure modes (50 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before submitting, which verification step must you complete?
+A) Run the module tests and confirm they pass.  
+B) Compare two chunking strategies and record tradeoffs.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Update the README with setup, run, and test commands.  
+B) Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.  
+C) Eval harness separates retrieval vs generation metrics.  
+D) Skip testing and trust the first result.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Optimizing retrieval with changing datasets (no stable benchmark).  
+B) Reranking and query rewriting (45 min)  
+C) Build a small evaluation loop: test cases, metrics, and iteration notes.  
+D) Review the module goals and plan how you will improve retrieval quality and ranking.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Translate a vague request into a clear goal, constraints, and success criteria.  
+B) Experiment with chunking and re-ranking strategies.  
 C) Eval harness separates retrieval vs generation metrics.  
 D) Verify the primary feature works with normal and edge-case inputs.  
 
@@ -26,81 +76,31 @@ D) Verify the primary feature works with normal and edge-case inputs.
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.  
-B) Improve retrieval quality: hybrid search, metadata filters, reranking, and freshness.  
-C) Add reranking and measure improvement on a fixed question set.  
-D) Retrieval quality signals: precision, recall, and failure modes (50 min)  
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
+B) Compare two chunking strategies and record tradeoffs.  
+C) Retrieval quality signals: precision, recall, and failure modes (50 min)  
+D) Experiment with chunking and re-ranking strategies.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Compare two chunking strategies and record tradeoffs.  
-B) Jump to the next module without verifying results.  
-C) Ignore error handling for edge cases.  
-D) Update the README with setup, run, and test commands.  
+### Question 9: Which step appears in the guided walkthrough?
+A) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
+B) Reranking and query rewriting (45 min)  
+C) Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.  
+D) Document and version changes so improvements are explainable.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Improve retrieval quality: hybrid search, metadata filters, reranking, and freshness.  
-B) Hybrid retrieval: keyword + semantic + filters (55 min)  
-C) Add access-control-aware retrieval (no leakage across permissions).  
-D) Change multiple variables at once so you cannot compare outcomes.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Run the module tests and confirm they pass.  
-B) Optimizing retrieval with changing datasets (no stable benchmark).  
-C) Ship changes without documentation.  
-D) Jump to the next module without verifying results.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
-A) Eval harness separates retrieval vs generation metrics.  
-B) Skip testing and trust the first result.  
-C) Optimizing retrieval with changing datasets (no stable benchmark).  
-D) Change multiple variables at once so you cannot compare outcomes.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
-A) Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.  
-B) Add access-control-aware retrieval (no leakage across permissions).  
-C) Optimizing retrieval with changing datasets (no stable benchmark).  
-D) Reranking and query rewriting (45 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which statement best summarizes this module's focus?
-A) Improve retrieval quality: hybrid search, metadata filters, reranking, and freshness.  
-B) Add access-control-aware retrieval (no leakage across permissions).  
-C) Avoid measuring results or performance.  
-D) Add reranking and measure improvement on a fixed question set.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Ignore error handling for edge cases.  
-B) Retrieval quality signals: precision, recall, and failure modes (50 min)  
-C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
-D) Optimizing retrieval with changing datasets (no stable benchmark).  
+### Question 10: Which statement best summarizes the module focus?
+A) Translate a vague request into a clear goal, constraints, and success criteria.  
+B) Update the README with setup, run, and test commands.  
+C) Improve retrieval quality: hybrid search, metadata filters, reranking, and freshness.  
+D) Treat every request as safe without review.  
 
 **Your answer:** _______________
 

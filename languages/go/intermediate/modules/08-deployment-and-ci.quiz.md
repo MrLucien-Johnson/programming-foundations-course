@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Explain the core concepts and tradeoffs for **Deployment and CI**.  
-B) Jump to the next module without verifying results.  
-C) Ship changes without documentation.  
-D) Skip testing and trust the first result.  
+### Question 1: You need to run the test suite. Which command should you use?
+A) `go test ./...`  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) All work must be covered by **gofmt + lint + tests in CI**.  
+D) Containers for local dev and CI (45 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Use tooling to keep quality high: gofmt + golangci-lint.  
-B) Environments + configuration (35 min)  
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 2: You need to run lint checks. Which command should you use?
+A) Run: `golangci-lint run`  
+B) `golangci-lint run`  
+C) Over-mocking (tests assert implementation details instead of outcomes).  
+D) Document decisions and constraints clearly for reviewers.  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: You need to format the code. Which command should you use?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+B) Over-mocking (tests assert implementation details instead of outcomes).  
+C) `gofmt -w .`  
+D) Copy the starter pack from `languages/go/intermediate/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which action best satisfies the Core requirements?
+A) Review the module goals and plan how you will ship safely with automation.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Implement a small feature tied to this module in an existing starter app.  
+D) If the module involves a database, tests must run against an isolated schema/database.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which action upgrades the work to the Better level?
+A) Deployments: health checks + migrations + rollback plan (45 min)  
+B) Containers for local dev and CI (45 min)  
+C) Treat every request as safe without review.  
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which action qualifies as a Beast Mode upgrade?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Add a CI workflow or script that runs tests automatically.  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) Run: `go test ./...`  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Before submitting, which verification step must you complete?
+A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) Run the module tests and confirm they pass.  
+D) Treat every request as safe without review.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which testing requirement must be satisfied to pass?
+A) `golangci-lint run`  
+B) Run: `gofmt -w .`  
+C) `gofmt -w .`  
 D) All work must be covered by **gofmt + lint + tests in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Use tooling to keep quality high: gofmt + golangci-lint.  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Ignore error handling for edge cases.  
+### Question 9: Which option would be a common mistake to avoid?
+A) Ship changes without documentation.  
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+C) Run: `golangci-lint run`  
+D) Shipping without an automated test run in CI.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Containers for local dev and CI (45 min)  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Treat every request as safe without review.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Write tests that prove correctness and prevent regressions.  
-D) Add a performance or reliability improvement and **measure** the impact.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which testing requirement is specified for this module?
-A) All work must be covered by **gofmt + lint + tests in CI**.  
-B) Skipping input validation and assuming “happy path”.  
-C) Containers for local dev and CI (45 min)  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which common mistake should you avoid in this module?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Create a short write-up: what changed, why, and how you verified it.  
-C) Shipping without an automated test run in CI.  
-D) Add a performance or reliability improvement and **measure** the impact.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which statement best summarizes this module's focus?
-A) Avoid measuring results or performance.  
-B) Jump to the next module without verifying results.  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-D) Containerize, configure, and deploy with automated CI checks.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Jump to the next module without verifying results.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Avoid measuring results or performance.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which statement is listed as a learning outcome?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Write tests that prove correctness and prevent regressions.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Ship changes without documentation.  
+### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Explain the core concepts and tradeoffs for **Deployment and CI**.  
+C) Add a CI workflow or script that runs tests automatically.  
+D) Create a short write-up: what changed, why, and how you verified it.  
 
 **Your answer:** _______________
 

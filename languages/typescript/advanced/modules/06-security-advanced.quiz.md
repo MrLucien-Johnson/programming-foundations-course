@@ -6,88 +6,88 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Avoid measuring results or performance.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Jump to the next module without verifying results.  
-D) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-B) Threat modeling + abuse cases (55 min)  
-C) Run: `node index.js`  
-D) Skipping input validation and assuming “happy path”.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Supply-chain security + dependency policies (45 min)  
-B) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-C) Skip testing and trust the first result.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Skip testing and trust the first result.  
+B) Ignore error handling for edge cases.  
+C) Change multiple variables at once so you cannot compare outcomes.  
 D) Implement a small feature tied to this module in an existing starter app.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Create a short write-up: what changed, why, and how you verified it.  
-C) Use tooling to keep quality high: ESLint + Prettier.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
 D) Run: `node index.js`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Run: `node index.js`  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Making performance claims without measurements.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Run the module tests and confirm they pass.  
-B) Create a short write-up: what changed, why, and how you verified it.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
-A) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
-A) Threat modeling + abuse cases (55 min)  
-B) Use tooling to keep quality high: ESLint + Prettier.  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Making performance claims without measurements.  
+B) Add or update documentation (README notes or ADR-style notes).  
 C) Run the module tests and confirm they pass.  
+D) Add a performance or reliability improvement and **measure** the impact.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before submitting, which verification step must you complete?
+A) Run the module tests and confirm they pass.  
+B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+C) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which testing requirement must be satisfied to pass?
+A) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
+B) Making performance claims without measurements.  
+C) Supply-chain security + dependency policies (45 min)  
 D) Shipping without an automated test run in CI.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
-A) Threat-model, harden, and protect secrets, data, and supply chain.  
+### Question 6: Which option would be a common mistake to avoid?
+A) Shipping without an automated test run in CI.  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Supply-chain security + dependency policies (45 min)  
+D) Write tests that prove correctness and prevent regressions.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
+B) Skip testing and trust the first result.  
+C) Making performance claims without measurements.  
+D) Update the README with setup, run, and test commands.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+B) Update the README with setup, run, and test commands.  
+C) Ship changes without documentation.  
+D) Threat modeling + abuse cases (55 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
 B) Run: `node index.js`  
 C) Run the module tests and confirm they pass.  
 D) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
@@ -96,11 +96,11 @@ D) Explain the core concepts and tradeoffs for **Security (Advanced)**.
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Supply-chain security + dependency policies (45 min)  
-B) Treat every request as safe without review.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 10: Which statement best summarizes the module focus?
+A) Run the module tests and confirm they pass.  
+B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+C) Skipping input validation and assuming “happy path”.  
+D) Threat-model, harden, and protect secrets, data, and supply chain.  
 
 **Your answer:** _______________
 

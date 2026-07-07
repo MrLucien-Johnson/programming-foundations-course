@@ -1,72 +1,72 @@
 # Core Concepts (Intermediate) Quiz Answers
 
-## Question 1: Which practice best supports reliable delivery in this module?
-**Answer: D** - Skip testing and trust the first result.
+## Question 1: You need to run the test suite. Which command should you use?
+**Answer: D** - `go test ./...`
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 2: Which habit improves reliability for this module?
-**Answer: D** - Ignore error handling for edge cases.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This command runs the test suite.
 
 ---
 
-## Question 3: Which action best supports a high-quality delivery?
-**Answer: D** - Ship changes without documentation.
+## Question 2: You need to run lint checks. Which command should you use?
+**Answer: D** - `golangci-lint run`
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 4: Which practice best supports reliable delivery in this module?
-**Answer: C** - Avoid measuring results or performance.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This command runs lint checks.
 
 ---
 
-## Question 5: Which habit improves reliability for this module?
-**Answer: D** - Change multiple variables at once so you cannot compare outcomes.
+## Question 3: You need to format the code. Which command should you use?
+**Answer: D** - `gofmt -w .`
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 6: Which action best supports a high-quality delivery?
-**Answer: D** - Jump to the next module without verifying results.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This command formats the code.
 
 ---
 
-## Question 7: Which practice best supports reliable delivery in this module?
-**Answer: A** - Treat every request as safe without review.
+## Question 4: Before submitting, which verification step must you complete?
+**Answer: C** - Run the module tests and confirm they pass.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 8: Which habit improves reliability for this module?
-**Answer: B** - Skip testing and trust the first result.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 9: Which action best supports a high-quality delivery?
-**Answer: B** - Ignore error handling for edge cases.
+## Question 5: Which step appears in the guided walkthrough?
+**Answer: D** - Copy the starter pack from `languages/go/intermediate/starter-pack` into a new working folder.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This step is listed in the guided walkthrough.
 
 ---
 
-## Question 10: Which practice best supports reliable delivery in this module?
-**Answer: D** - Ship changes without documentation.
+## Question 6: Which verification step is required before moving on?
+**Answer: D** - Verify the primary feature works with normal and edge-case inputs.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 7: Before submitting, which verification step must you complete?
+**Answer: A** - Update the README with setup, run, and test commands.
+
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 8: Which verification step is required before moving on?
+**Answer: B** - Run: `go test ./...`
+
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 9: Before submitting, which verification step must you complete?
+**Answer: B** - Run: `golangci-lint run`
+
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 10: Which verification step is required before moving on?
+**Answer: D** - Run: `gofmt -w .`
+
+**Explanation:** This item appears in the verification checklist.
 
 ---
 

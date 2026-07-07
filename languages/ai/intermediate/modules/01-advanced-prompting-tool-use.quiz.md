@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Write a tool contract for “create_task(title, owner, due_date)” (or equivalent).  
-B) Jump to the next module without verifying results.  
-C) Translate a vague request into a clear goal, constraints, and success criteria.  
-D) Ship changes without documentation.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
-B) Skip testing and trust the first result.  
-C) From instruction to contract: inputs/outputs, allowed actions, and constraints (50 min)  
-D) Treat every request as safe without review.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Treat every request as safe without review.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Jump to the next module without verifying results.  
 B) Build a small evaluation loop: test cases, metrics, and iteration notes.  
 C) Write a tool contract for “create_task(title, owner, due_date)” (or equivalent).  
-D) Avoid measuring results or performance.  
+D) Error handling: retries, timeouts, partial failures (45 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Add a verification step: check that tool output matches the request before replying.  
-B) Skip testing and trust the first result.  
-C) From instruction to contract: inputs/outputs, allowed actions, and constraints (50 min)  
-D) Ship changes without documentation.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Error handling: retries, timeouts, partial failures (45 min)  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Add a verification step: check that tool output matches the request before replying.  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-B) Avoid measuring results or performance.  
-C) Document and version changes so improvements are explainable.  
-D) Add adversarial inputs that attempt to override tool constraints.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which testing requirement is specified for this module?
+### Question 3: Which action qualifies as a Beast Mode upgrade?
 A) Skip testing and trust the first result.  
-B) Error handling: retries, timeouts, partial failures (45 min)  
-C) End-to-end workflow tested with simulated tool failures and timeouts.  
-D) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
+B) Unlimited retries that increase cost and latency.  
+C) Add adversarial inputs that attempt to override tool constraints.  
+D) Verify the primary feature works with normal and edge-case inputs.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which common mistake should you avoid in this module?
-A) Design an audit log schema for tool calls (who/what/when/why).  
-B) Write a tool contract for “create_task(title, owner, due_date)” (or equivalent).  
-C) Letting the model call tools with missing/ambiguous parameters.  
-D) Translate a vague request into a clear goal, constraints, and success criteria.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which statement best summarizes this module's focus?
-A) Add a verification step: check that tool output matches the request before replying.  
-B) Letting the model call tools with missing/ambiguous parameters.  
-C) Error handling: retries, timeouts, partial failures (45 min)  
-D) Design prompts that reliably call tools/functions: explicit contracts, error handling, and verification—without vendor-specific features.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
+### Question 4: Before submitting, which verification step must you complete?
+A) Run the module tests and confirm they pass.  
+B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
 C) Verification: validate tool results before responding (45 min)  
+D) Build a small evaluation loop: test cases, metrics, and iteration notes.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Letting the model call tools with missing/ambiguous parameters.  
+B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+C) Write a tool contract and validation rules.  
 D) End-to-end workflow tested with simulated tool failures and timeouts.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
-A) Verification: validate tool results before responding (45 min)  
-B) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-C) No verification of tool results before presenting them to users.  
-D) Design prompts that choose between: answer, ask clarifying question, or call tool.  
+### Question 6: Which option would be a common mistake to avoid?
+A) Verify the primary feature works with normal and edge-case inputs.  
+B) Verification: validate tool results before responding (45 min)  
+C) Letting the model call tools with missing/ambiguous parameters.  
+D) Design an audit log schema for tool calls (who/what/when/why).  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Avoid measuring results or performance.  
+B) Update the README with setup, run, and test commands.  
+C) Translate a vague request into a clear goal, constraints, and success criteria.  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Write a tool contract and validation rules.  
+B) Add adversarial inputs that attempt to override tool constraints.  
+C) Letting the model call tools with missing/ambiguous parameters.  
+D) From instruction to contract: inputs/outputs, allowed actions, and constraints (50 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Design prompts that reliably call tools/functions: explicit contracts, error handling, and verification—without vendor-specific features.  
+B) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
+C) Treat every request as safe without review.  
+D) End-to-end workflow tested with simulated tool failures and timeouts.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Review the module goals and plan how you will design tool-aware prompts with validation.  
+B) Design prompts that reliably call tools/functions: explicit contracts, error handling, and verification—without vendor-specific features.  
+C) Document and version changes so improvements are explainable.  
+D) Verification: validate tool results before responding (45 min)  
 
 **Your answer:** _______________
 

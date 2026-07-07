@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Create a short write-up: what changed, why, and how you verified it.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Document migrations and rollback steps.  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Refactor one area for readability (without changing behavior) and prove it with tests.  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+
+**Your answer:** _______________
+
+---
+
+### Question 2: Which action upgrades the work to the Better level?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) Treat every request as safe without review.  
+C) Design schemas, write queries, and ship migrations safely.  
+D) Explain the core concepts and tradeoffs for **Databases**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Add a performance or reliability improvement and **measure** the impact.  
 B) Explain the core concepts and tradeoffs for **Databases**.  
-C) ORM/query builder pitfalls (35 min)  
+C) Indexes + query plans (45 min)  
 D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Schema design + constraints (45 min)  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) All work must be covered by **build + tests + lint/format in CI**.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Indexes + query plans (45 min)  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Document decisions and constraints clearly for reviewers.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Change multiple variables at once so you cannot compare outcomes.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which testing requirement is specified for this module?
-A) All work must be covered by **build + tests + lint/format in CI**.  
-B) Indexes + query plans (45 min)  
-C) Migrations: forwards/backwards + safety (45 min)  
-D) ORM/query builder pitfalls (35 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which common mistake should you avoid in this module?
-A) Ship changes without documentation.  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) Shipping without an automated test run in CI.  
-D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which statement best summarizes this module's focus?
-A) Treat every request as safe without review.  
-B) Explain the core concepts and tradeoffs for **Databases**.  
-C) ORM/query builder pitfalls (35 min)  
+### Question 4: Before submitting, which verification step must you complete?
+A) Ignore error handling for edge cases.  
+B) Write tests that prove correctness and prevent regressions.  
+C) Run the module tests and confirm they pass.  
 D) Design schemas, write queries, and ship migrations safely.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Migrations: forwards/backwards + safety (45 min)  
-B) Design schemas, write queries, and ship migrations safely.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Design schemas, write queries, and ship migrations safely.  
+B) All work must be covered by **build + tests + lint/format in CI**.  
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+D) Schema design + constraints (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Shipping without an automated test run in CI.  
+B) Implement CRUD operations and verify with sample data.  
+C) Copy the starter pack from `languages/swift/intermediate/starter-pack` into a new working folder.  
+D) Transactions + isolation basics (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Ship changes without documentation.  
+B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+C) Explain the core concepts and tradeoffs for **Databases**.  
 D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Schema design + constraints (45 min)  
-C) Write tests that prove correctness and prevent regressions.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Skip testing and trust the first result.  
+B) Apply the concepts to a realistic codebase (not just toy examples).  
+C) All work must be covered by **build + tests + lint/format in CI**.  
+D) Schema design + constraints (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Use tooling to keep quality high: SwiftFormat + SwiftLint.  
+B) Ship changes without documentation.  
+C) Copy the starter pack from `languages/swift/intermediate/starter-pack` into a new working folder.  
+D) Write tests that prove correctness and prevent regressions.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Apply the concepts to a realistic codebase (not just toy examples).  
+B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+C) Design schemas, write queries, and ship migrations safely.  
+D) Add or update documentation (README notes or ADR-style notes).  
 
 **Your answer:** _______________
 

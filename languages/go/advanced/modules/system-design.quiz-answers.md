@@ -1,72 +1,72 @@
 # Systems and Design (Advanced) Quiz Answers
 
-## Question 1: Which item is required in the verification checklist?
-**Answer: A** - Run the module tests and confirm they pass.
+## Question 1: You need to run the test suite. Which command should you use?
+**Answer: A** - `go test ./...`
+
+**Explanation:** This command runs the test suite.
+
+---
+
+## Question 2: You need to run lint checks. Which command should you use?
+**Answer: D** - `golangci-lint run`
+
+**Explanation:** This command runs lint checks.
+
+---
+
+## Question 3: You need to format the code. Which command should you use?
+**Answer: C** - `gofmt -w .`
+
+**Explanation:** This command formats the code.
+
+---
+
+## Question 4: Before submitting, which verification step must you complete?
+**Answer: C** - Run the module tests and confirm they pass.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 2: Which check must be completed before moving on?
+## Question 5: Which step appears in the guided walkthrough?
+**Answer: C** - Copy the starter pack from `languages/go/advanced/starter-pack` into a new working folder.
+
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 6: Which verification step is required before moving on?
 **Answer: D** - Verify the primary feature works with normal and edge-case inputs.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 3: Which verification step is required?
-**Answer: C** - Update the README with setup, run, and test commands.
+## Question 7: Before submitting, which verification step must you complete?
+**Answer: D** - Update the README with setup, run, and test commands.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 4: Which item is required in the verification checklist?
-**Answer: C** - Run: `go test ./...`
+## Question 8: Which verification step is required before moving on?
+**Answer: D** - Run: `go test ./...`
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 5: Which check must be completed before moving on?
-**Answer: C** - Run: `golangci-lint run`
+## Question 9: Before submitting, which verification step must you complete?
+**Answer: B** - Run: `golangci-lint run`
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 6: Which verification step is required?
-**Answer: D** - Run: `gofmt -w .`
+## Question 10: Which verification step is required before moving on?
+**Answer: A** - Run: `gofmt -w .`
 
 **Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 7: Which practice best supports reliable delivery in this module?
-**Answer: D** - Treat every request as safe without review.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 8: Which habit improves reliability for this module?
-**Answer: D** - Skip testing and trust the first result.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 9: Which action best supports a high-quality delivery?
-**Answer: B** - Ignore error handling for edge cases.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 10: Which practice best supports reliable delivery in this module?
-**Answer: A** - Ship changes without documentation.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
 
 ---
 

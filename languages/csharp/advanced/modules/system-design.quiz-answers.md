@@ -1,72 +1,72 @@
 # Systems and Design (Advanced) Quiz Answers
 
-## Question 1: Which item is required in the verification checklist?
-**Answer: A** - Run the module tests and confirm they pass.
+## Question 1: You need to run the test suite. Which command should you use?
+**Answer: A** - `dotnet test`
+
+**Explanation:** This command runs the test suite.
+
+---
+
+## Question 2: You need to format the code. Which command should you use?
+**Answer: A** - `dotnet format`
+
+**Explanation:** This command formats the code.
+
+---
+
+## Question 3: Before submitting, which verification step must you complete?
+**Answer: D** - Run the module tests and confirm they pass.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 2: Which check must be completed before moving on?
-**Answer: A** - Verify the primary feature works with normal and edge-case inputs.
+## Question 4: Which step appears in the guided walkthrough?
+**Answer: A** - Copy the starter pack from `languages/csharp/advanced/starter-pack` into a new working folder.
+
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 5: Which verification step is required before moving on?
+**Answer: D** - Verify the primary feature works with normal and edge-case inputs.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 3: Which verification step is required?
-**Answer: D** - Update the README with setup, run, and test commands.
+## Question 6: Before submitting, which verification step must you complete?
+**Answer: C** - Update the README with setup, run, and test commands.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 4: Which item is required in the verification checklist?
-**Answer: A** - Run: `dotnet test`
+## Question 7: Which verification step is required before moving on?
+**Answer: C** - Run: `dotnet test`
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 5: Which check must be completed before moving on?
+## Question 8: Before submitting, which verification step must you complete?
 **Answer: D** - Run: `dotnet format`
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 6: Which verification step is required?
-**Answer: C** - Run: `dotnet format`
+## Question 9: Which verification step is required before moving on?
+**Answer: A** - Run: `dotnet format`
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 7: Which practice best supports reliable delivery in this module?
-**Answer: C** - Treat every request as safe without review.
+## Question 10: Which action is listed as part of the guided walkthrough?
+**Answer: A** - Review the module goals and plan how you will synthesize architecture decisions.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 8: Which habit improves reliability for this module?
-**Answer: D** - Skip testing and trust the first result.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 9: Which action best supports a high-quality delivery?
-**Answer: A** - Ignore error handling for edge cases.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 10: Which practice best supports reliable delivery in this module?
-**Answer: A** - Ship changes without documentation.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This step is listed in the guided walkthrough.
 
 ---
 

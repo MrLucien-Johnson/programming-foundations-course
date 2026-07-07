@@ -1,72 +1,72 @@
 # Core Concepts (Intermediate) Quiz Answers
 
-## Question 1: Which practice best supports reliable delivery in this module?
-**Answer: A** - Skip testing and trust the first result.
+## Question 1: Before submitting, which verification step must you complete?
+**Answer: A** - Run the module tests and confirm they pass.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 2: Which habit improves reliability for this module?
-**Answer: A** - Ignore error handling for edge cases.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 3: Which action best supports a high-quality delivery?
-**Answer: A** - Ship changes without documentation.
+## Question 2: Which step appears in the guided walkthrough?
+**Answer: A** - Copy the starter pack from `languages/java/intermediate/starter-pack` into a new working folder.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 4: Which practice best supports reliable delivery in this module?
-**Answer: B** - Avoid measuring results or performance.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This step is listed in the guided walkthrough.
 
 ---
 
-## Question 5: Which habit improves reliability for this module?
-**Answer: C** - Change multiple variables at once so you cannot compare outcomes.
+## Question 3: Which verification step is required before moving on?
+**Answer: A** - Verify the primary feature works with normal and edge-case inputs.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 6: Which action best supports a high-quality delivery?
-**Answer: D** - Jump to the next module without verifying results.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 7: Which practice best supports reliable delivery in this module?
-**Answer: D** - Treat every request as safe without review.
+## Question 4: Before submitting, which verification step must you complete?
+**Answer: B** - Update the README with setup, run, and test commands.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 8: Which habit improves reliability for this module?
-**Answer: B** - Skip testing and trust the first result.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 9: Which action best supports a high-quality delivery?
-**Answer: B** - Ignore error handling for edge cases.
+## Question 5: Which verification step is required before moving on?
+**Answer: C** - Run: `javac Main.java && java Main`
 
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 10: Which practice best supports reliable delivery in this module?
-**Answer: C** - Ship changes without documentation.
+## Question 6: Which action is listed as part of the guided walkthrough?
+**Answer: D** - Review the module goals and plan how you will reinforce foundational skills and patterns.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 7: Which step appears in the guided walkthrough?
+**Answer: D** - Summarize the core concepts in your own words.
+
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 8: Which action is listed as part of the guided walkthrough?
+**Answer: B** - Implement a small feature that uses at least two core concepts.
+
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 9: Which step appears in the guided walkthrough?
+**Answer: B** - Add tests and document the reasoning.
+
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 10: Which action is listed as part of the guided walkthrough?
+**Answer: C** - Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+**Explanation:** This step is listed in the guided walkthrough.
 
 ---
 

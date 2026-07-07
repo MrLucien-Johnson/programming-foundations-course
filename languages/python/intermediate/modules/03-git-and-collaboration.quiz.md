@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
-D) Shipping without an automated test run in CI.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Skipping input validation and assuming “happy path”.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Branching strategies + commit hygiene (40 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
+### Question 1: You need to run the test suite. Which command should you use?
 A) Implement a small feature tied to this module in an existing starter app.  
 B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) Skip testing and trust the first result.  
-D) Branching strategies + commit hygiene (40 min)  
+C) `python -m pytest`  
+D) PRs: review checklists and feedback loops (40 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
+### Question 2: You need to run lint checks. Which command should you use?
+A) Skipping input validation and assuming “happy path”.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+D) `ruff check .`  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: You need to format the code. Which command should you use?
+A) `ruff format .`  
+B) Skip testing and trust the first result.  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) `python -m pytest`  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which action best satisfies the Core requirements?
 A) Making performance claims without measurements.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+B) If the module involves a database, tests must run against an isolated schema/database.  
+C) Implement a small feature tied to this module in an existing starter app.  
+D) `ruff check .`  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which action upgrades the work to the Better level?
+A) Conflicts and rebasing safely (45 min)  
+B) Copy the starter pack from `languages/python/intermediate/starter-pack` into a new working folder.  
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
+D) If the module involves a database, tests must run against an isolated schema/database.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+### Question 6: Which action qualifies as a Beast Mode upgrade?
+A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+B) Update the README with setup, run, and test commands.  
 C) Add a performance or reliability improvement and **measure** the impact.  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which testing requirement is specified for this module?
-A) Treat every request as safe without review.  
-B) Jump to the next module without verifying results.  
-C) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 7: Before submitting, which verification step must you complete?
+A) Run the module tests and confirm they pass.  
+B) Ignore error handling for edge cases.  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+D) `python -m pytest`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which common mistake should you avoid in this module?
-A) Shipping without an automated test run in CI.  
-B) Avoid measuring results or performance.  
-C) Add or update documentation (README notes or ADR-style notes).  
-D) Working with CI failures (30 min)  
+### Question 8: Which testing requirement must be satisfied to pass?
+A) PRs: review checklists and feedback loops (40 min)  
+B) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
+C) Making performance claims without measurements.  
+D) Review the module goals and plan how you will work in branches, reviews, and clean history.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which statement best summarizes this module's focus?
-A) Document decisions and constraints clearly for reviewers.  
-B) Collaborate safely using branching, PRs, and reviews.  
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-D) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
+### Question 9: Which option would be a common mistake to avoid?
+A) Run: `python -m pytest`  
+B) Shipping without an automated test run in CI.  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) Review the module goals and plan how you will work in branches, reviews, and clean history.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which statement is listed as a learning outcome?
-A) Write tests that prove correctness and prevent regressions.  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
+B) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Refactor one area for readability (without changing behavior) and prove it with tests.  
+D) Update the README with setup, run, and test commands.  
 
 **Your answer:** _______________
 

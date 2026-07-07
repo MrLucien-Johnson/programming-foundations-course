@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Explain the core concepts and tradeoffs for **Databases**.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Add or update documentation (README notes or ADR-style notes).  
-D) Create a short write-up: what changed, why, and how you verified it.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Schema design + constraints (45 min)  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Jump to the next module without verifying results.  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.  
-D) Implement a small feature tied to this module in an existing starter app.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Add a performance or reliability improvement and **measure** the impact.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Change multiple variables at once so you cannot compare outcomes.  
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Migrations: forwards/backwards + safety (45 min)  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Ship changes without documentation.  
-D) Schema design + constraints (45 min)  
+### Question 2: Which action upgrades the work to the Better level?
+A) Indexes + query plans (45 min)  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+D) Over-mocking (tests assert implementation details instead of outcomes).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which testing requirement is specified for this module?
-A) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Over-mocking (tests assert implementation details instead of outcomes).  
+B) Transactions + isolation basics (45 min)  
+C) Migrations: forwards/backwards + safety (45 min)  
 D) Add a performance or reliability improvement and **measure** the impact.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which common mistake should you avoid in this module?
-A) Indexes + query plans (45 min)  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) Treat every request as safe without review.  
-D) Shipping without an automated test run in CI.  
+### Question 4: Before submitting, which verification step must you complete?
+A) Add or update documentation (README notes or ADR-style notes).  
+B) If the module involves a database, tests must run against an isolated schema/database.  
+C) Run the module tests and confirm they pass.  
+D) ORM/query builder pitfalls (35 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which statement best summarizes this module's focus?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Design schemas, write queries, and ship migrations safely.  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Skipping input validation and assuming “happy path”.  
+B) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
+C) Jump to the next module without verifying results.  
+D) Run the module tests and confirm they pass.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Shipping without an automated test run in CI.  
+B) ORM/query builder pitfalls (35 min)  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Copy the starter pack from `languages/sql/intermediate/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Run the module tests and confirm they pass.  
+B) Copy the starter pack from `languages/sql/intermediate/starter-pack` into a new working folder.  
+C) Transactions + isolation basics (45 min)  
 D) Explain the core concepts and tradeoffs for **Databases**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Making performance claims without measurements.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Transactions + isolation basics (45 min)  
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Explain the core concepts and tradeoffs for **Databases**.  
+B) Design schemas, write queries, and ship migrations safely.  
+C) Schema design + constraints (45 min)  
+D) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
-A) Ship changes without documentation.  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Write tests that prove correctness and prevent regressions.  
-D) Add or update documentation (README notes or ADR-style notes).  
+### Question 9: Which step appears in the guided walkthrough?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Document decisions and constraints clearly for reviewers.  
+C) Copy the starter pack from `languages/sql/intermediate/starter-pack` into a new working folder.  
+D) Run the module tests and confirm they pass.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Add or update documentation (README notes or ADR-style notes).  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) Design schemas, write queries, and ship migrations safely.  
+D) Create a short write-up: what changed, why, and how you verified it.  
 
 **Your answer:** _______________
 

@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Avoid measuring results or performance.  
-B) Skipping input validation and assuming “happy path”.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
+### Question 1: You need to run the test suite. Which command should you use?
+A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+B) Making performance claims without measurements.  
+C) Skip testing and trust the first result.  
+D) `cargo test`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Threat modeling + abuse cases (45 min)  
-C) Shipping without an automated test run in CI.  
-D) Skip testing and trust the first result.  
+### Question 2: You need to run lint checks. Which command should you use?
+A) Document decisions and constraints clearly for reviewers.  
+B) `cargo clippy`  
+C) Security testing and hardening checklist (40 min)  
+D) Model a threat scenario and document mitigations.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) All work must be covered by **fmt + clippy + tests in CI**.  
-B) Skip testing and trust the first result.  
-C) Supply-chain security + dependency policies (35 min)  
+### Question 3: You need to format the code. Which command should you use?
+A) Run: `cargo test`  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Create a short write-up: what changed, why, and how you verified it.  
+D) `cargo fmt`  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which action best satisfies the Core requirements?
+A) Run: `cargo fmt`  
+B) Avoid measuring results or performance.  
+C) Ignore error handling for edge cases.  
 D) Implement a small feature tied to this module in an existing starter app.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-B) Use tooling to keep quality high: rustfmt + clippy.  
-C) Run: `cargo test`  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Add or update documentation (README notes or ADR-style notes).  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Supply-chain security + dependency policies (35 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Write tests that prove correctness and prevent regressions.  
-B) Run the module tests and confirm they pass.  
-C) Threat-model, harden, and protect secrets, data, and supply chain.  
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
-A) All work must be covered by **fmt + clippy + tests in CI**.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Making performance claims without measurements.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Security testing and hardening checklist (40 min)  
-C) Shipping without an automated test run in CI.  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which statement best summarizes this module's focus?
-A) Jump to the next module without verifying results.  
-B) Run the module tests and confirm they pass.  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Threat-model, harden, and protect secrets, data, and supply chain.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 5: Which action upgrades the work to the Better level?
+A) `cargo clippy`  
+B) Shipping without an automated test run in CI.  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 D) Run: `cargo clippy`  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which action qualifies as a Beast Mode upgrade?
+A) Run: `cargo clippy`  
+B) Add a performance or reliability improvement and **measure** the impact.  
+C) Over-mocking (tests assert implementation details instead of outcomes).  
+D) Review the module goals and plan how you will harden systems against advanced threats.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Before submitting, which verification step must you complete?
+A) Run the module tests and confirm they pass.  
+B) Review the module goals and plan how you will harden systems against advanced threats.  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+D) Use tooling to keep quality high: rustfmt + clippy.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which testing requirement must be satisfied to pass?
+A) `cargo fmt`  
+B) Copy the starter pack from `languages/rust/advanced/starter-pack` into a new working folder.  
+C) All work must be covered by **fmt + clippy + tests in CI**.  
+D) Review dependencies for vulnerabilities.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which option would be a common mistake to avoid?
+A) Supply-chain security + dependency policies (35 min)  
+B) Treat every request as safe without review.  
+C) Add security logging or alerting for sensitive actions.  
+D) Shipping without an automated test run in CI.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) `cargo clippy`  
+B) Verify the primary feature works with normal and edge-case inputs.  
+C) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
+D) Refactor one area for readability (without changing behavior) and prove it with tests.  
 
 **Your answer:** _______________
 

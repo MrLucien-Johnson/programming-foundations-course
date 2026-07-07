@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Skipping input validation and assuming “happy path”.  
+### Question 1: You need to run the test suite. Which command should you use?
+A) `dotnet test`  
+B) Event-driven design + sagas (45 min)  
+C) Ignore error handling for edge cases.  
 D) Treat every request as safe without review.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Run: `dotnet format`  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Layered vs hexagonal vs clean architecture (45 min)  
+### Question 2: You need to format the code. Which command should you use?
+A) Over-mocking (tests assert implementation details instead of outcomes).  
+B) Document tradeoffs and why you chose it.  
+C) Run the module tests and confirm they pass.  
+D) `dotnet format`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Ignore error handling for edge cases.  
+### Question 3: Which action best satisfies the Core requirements?
+A) Add a performance or reliability improvement and **measure** the impact.  
 B) Implement a small feature tied to this module in an existing starter app.  
 C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Run: `dotnet format`  
+D) Use tooling to keep quality high: dotnet format + analyzers.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Write tests that prove correctness and prevent regressions.  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+### Question 4: Which action upgrades the work to the Better level?
+A) Compare two patterns and choose one for the module scenario.  
+B) Add a performance or reliability improvement and **measure** the impact.  
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Create a short write-up: what changed, why, and how you verified it.  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
+### Question 5: Which action qualifies as a Beast Mode upgrade?
 A) Add a performance or reliability improvement and **measure** the impact.  
-B) Document decisions and constraints clearly for reviewers.  
-C) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-D) Add or update documentation (README notes or ADR-style notes).  
+B) Write tests that prove correctness and prevent regressions.  
+C) `dotnet test`  
+D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Layered vs hexagonal vs clean architecture (45 min)  
-B) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 6: Before submitting, which verification step must you complete?
+A) Review the module goals and plan how you will choose and apply architecture patterns.  
+B) `dotnet format`  
 C) Run the module tests and confirm they pass.  
-D) Shipping without an automated test run in CI.  
+D) Compare two patterns and choose one for the module scenario.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) CQRS and when *not* to use it (35 min)  
-B) Avoid measuring results or performance.  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 7: Which testing requirement must be satisfied to pass?
+A) DDD building blocks: entities, value objects, aggregates (45 min)  
+B) Skipping input validation and assuming “happy path”.  
+C) Use tooling to keep quality high: dotnet format + analyzers.  
 D) All work must be covered by **build + tests + analyzers in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Document decisions and constraints clearly for reviewers.  
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 8: Which option would be a common mistake to avoid?
+A) DDD building blocks: entities, value objects, aggregates (45 min)  
+B) Use tooling to keep quality high: dotnet format + analyzers.  
+C) `dotnet test`  
 D) Shipping without an automated test run in CI.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Update the README with setup, run, and test commands.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Apply architectural patterns to keep systems evolvable.  
+### Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Implement the pattern in a small feature slice.  
+B) Document tradeoffs and why you chose it.  
+C) Run: `dotnet test`  
+D) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) All work must be covered by **build + tests + analyzers in CI**.  
-B) Treat every request as safe without review.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Ignore error handling for edge cases.  
+### Question 10: Which topic would you revisit to solve this module's core problem?
+A) Use tooling to keep quality high: dotnet format + analyzers.  
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+C) Layered vs hexagonal vs clean architecture (45 min)  
+D) Document tradeoffs and why you chose it.  
 
 **Your answer:** _______________
 

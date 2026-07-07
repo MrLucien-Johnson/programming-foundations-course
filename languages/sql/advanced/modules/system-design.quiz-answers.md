@@ -1,72 +1,72 @@
 # Systems and Design (Advanced) Quiz Answers
 
-## Question 1: Which item is required in the verification checklist?
+## Question 1: Before submitting, which verification step must you complete?
 **Answer: C** - Run the module tests and confirm they pass.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 2: Which check must be completed before moving on?
-**Answer: C** - Verify the primary feature works with normal and edge-case inputs.
+## Question 2: Which step appears in the guided walkthrough?
+**Answer: C** - Copy the starter pack from `languages/sql/advanced/starter-pack` into a new working folder.
+
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 3: Which verification step is required before moving on?
+**Answer: A** - Verify the primary feature works with normal and edge-case inputs.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 3: Which verification step is required?
-**Answer: A** - Update the README with setup, run, and test commands.
+## Question 4: Before submitting, which verification step must you complete?
+**Answer: B** - Update the README with setup, run, and test commands.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 4: Which item is required in the verification checklist?
-**Answer: B** - Run: `psql -f queries.sql`
+## Question 5: Which verification step is required before moving on?
+**Answer: D** - Run: `psql -f queries.sql`
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 5: Which practice best supports reliable delivery in this module?
-**Answer: D** - Change multiple variables at once so you cannot compare outcomes.
+## Question 6: Which action is listed as part of the guided walkthrough?
+**Answer: D** - Review the module goals and plan how you will synthesize architecture decisions.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 6: Which habit improves reliability for this module?
-**Answer: D** - Jump to the next module without verifying results.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This step is listed in the guided walkthrough.
 
 ---
 
-## Question 7: Which action best supports a high-quality delivery?
-**Answer: A** - Treat every request as safe without review.
+## Question 7: Which step appears in the guided walkthrough?
+**Answer: A** - Draft a high-level system diagram.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 8: Which practice best supports reliable delivery in this module?
-**Answer: B** - Skip testing and trust the first result.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This step is listed in the guided walkthrough.
 
 ---
 
-## Question 9: Which habit improves reliability for this module?
-**Answer: D** - Ignore error handling for edge cases.
+## Question 8: Which action is listed as part of the guided walkthrough?
+**Answer: B** - Document data flow, dependencies, and risk points.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This step is listed in the guided walkthrough.
 
 ---
 
-## Question 10: Which action best supports a high-quality delivery?
-**Answer: A** - Ship changes without documentation.
+## Question 9: Which step appears in the guided walkthrough?
+**Answer: D** - Review tradeoffs and capture in a decision log.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 10: Which action is listed as part of the guided walkthrough?
+**Answer: A** - Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+**Explanation:** This step is listed in the guided walkthrough.
 
 ---
 

@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Jump to the next module without verifying results.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-D) Explain the core concepts and tradeoffs for **APIs and Auth**.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 1: You need to run the test suite. Which command should you use?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.  
 B) Treat every request as safe without review.  
-C) REST: resources, status codes, pagination (45 min)  
-D) Skipping input validation and assuming “happy path”.  
+C) API docs: OpenAPI + examples (35 min)  
+D) `dotnet test`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 2: You need to format the code. Which command should you use?
+A) Add logging and status code verification.  
 B) Making performance claims without measurements.  
-C) Create a short write-up: what changed, why, and how you verified it.  
+C) `dotnet format`  
+D) Document decisions and constraints clearly for reviewers.  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which action best satisfies the Core requirements?
+A) Design and secure REST APIs with authentication and authorization.  
+B) Apply the concepts to a realistic codebase (not just toy examples).  
+C) Run: `dotnet test`  
 D) Implement a small feature tied to this module in an existing starter app.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
+### Question 4: Which action upgrades the work to the Better level?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Avoid measuring results or performance.  
+B) If the module involves a database, tests must run against an isolated schema/database.  
+C) AuthN vs AuthZ: sessions/JWT + roles (45 min)  
+D) `dotnet test`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Document decisions and constraints clearly for reviewers.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+### Question 5: Which action qualifies as a Beast Mode upgrade?
+A) Run: `dotnet format`  
+B) Ship changes without documentation.  
 C) Add a performance or reliability improvement and **measure** the impact.  
-D) Skipping input validation and assuming “happy path”.  
+D) Document decisions and constraints clearly for reviewers.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which testing requirement is specified for this module?
-A) Input validation + error envelopes (40 min)  
-B) All work must be covered by **build + tests + analyzers in CI**.  
-C) Write tests that prove correctness and prevent regressions.  
+### Question 6: Before submitting, which verification step must you complete?
+A) If the module involves a database, tests must run against an isolated schema/database.  
+B) Run the module tests and confirm they pass.  
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
 D) Add or update documentation (README notes or ADR-style notes).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which common mistake should you avoid in this module?
-A) Explain the core concepts and tradeoffs for **APIs and Auth**.  
-B) Shipping without an automated test run in CI.  
-C) API docs: OpenAPI + examples (35 min)  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 7: Which testing requirement must be satisfied to pass?
+A) Skip testing and trust the first result.  
+B) All work must be covered by **build + tests + analyzers in CI**.  
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which statement best summarizes this module's focus?
-A) Design and secure REST APIs with authentication and authorization.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Write tests that prove correctness and prevent regressions.  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 8: Which option would be a common mistake to avoid?
+A) Shipping without an automated test run in CI.  
+B) Update the README with setup, run, and test commands.  
+C) Ship changes without documentation.  
+D) Explain the core concepts and tradeoffs for **APIs and Auth**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which outcome appears in the learning outcomes list?
-A) REST: resources, status codes, pagination (45 min)  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) AuthN vs AuthZ: sessions/JWT + roles (45 min)  
-D) All work must be covered by **build + tests + analyzers in CI**.  
+### Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) AuthN vs AuthZ: sessions/JWT + roles (45 min)  
+B) Explain the core concepts and tradeoffs for **APIs and Auth**.  
+C) Treat every request as safe without review.  
+D) Copy the starter pack from `languages/csharp/intermediate/starter-pack` into a new working folder.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
+### Question 10: Which topic would you revisit to solve this module's core problem?
 A) Add a performance or reliability improvement and **measure** the impact.  
-B) Write tests that prove correctness and prevent regressions.  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Skip testing and trust the first result.  
+B) REST: resources, status codes, pagination (45 min)  
+C) Copy the starter pack from `languages/csharp/intermediate/starter-pack` into a new working folder.  
+D) Add logging and status code verification.  
 
 **Your answer:** _______________
 

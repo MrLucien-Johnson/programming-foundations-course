@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
-B) Debug systematically and improve performance with evidence.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Debugging workflow: reproduce → isolate → fix (35 min)  
-B) Jump to the next module without verifying results.  
-C) Skip testing and trust the first result.  
-D) Document decisions and constraints clearly for reviewers.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Write tests that prove correctness and prevent regressions.  
-B) Logging and tracing basics (40 min)  
-C) Debug systematically and improve performance with evidence.  
-D) Implement a small feature tied to this module in an existing starter app.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Jump to the next module without verifying results.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Add or update documentation (README notes or ADR-style notes).  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which testing requirement is specified for this module?
-A) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Jump to the next module without verifying results.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which common mistake should you avoid in this module?
-A) Debug systematically and improve performance with evidence.  
-B) Shipping without an automated test run in CI.  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which statement best summarizes this module's focus?
-A) Logging and tracing basics (40 min)  
-B) Debug systematically and improve performance with evidence.  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Making performance claims without measurements.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Debug systematically and improve performance with evidence.  
-B) Ignore error handling for edge cases.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Debugging workflow: reproduce → isolate → fix (35 min)  
 C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+D) Copy the starter pack from `languages/sql/intermediate/starter-pack` into a new working folder.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Write tests that prove correctness and prevent regressions.  
-C) Ship changes without documentation.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) Capture a baseline timing or log snapshot.  
+C) Jump to the next module without verifying results.  
+D) Create a short write-up: what changed, why, and how you verified it.  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Verify the primary feature works with normal and edge-case inputs.  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Debugging workflow: reproduce → isolate → fix (35 min)  
+D) Add a performance or reliability improvement and **measure** the impact.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before submitting, which verification step must you complete?
+A) Run the module tests and confirm they pass.  
+B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+C) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
+D) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Update the README with setup, run, and test commands.  
+B) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
+C) Debugging workflow: reproduce → isolate → fix (35 min)  
+D) Create a short write-up: what changed, why, and how you verified it.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Shipping without an automated test run in CI.  
+B) Jump to the next module without verifying results.  
+C) Apply the concepts to a realistic codebase (not just toy examples).  
+D) Copy the starter pack from `languages/sql/intermediate/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Avoid measuring results or performance.  
+B) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
+C) Skip testing and trust the first result.  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Debugging workflow: reproduce → isolate → fix (35 min)  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) Debug systematically and improve performance with evidence.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.  
+B) Logging and tracing basics (40 min)  
+C) Skipping input validation and assuming “happy path”.  
+D) Copy the starter pack from `languages/sql/intermediate/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Ship changes without documentation.  
+B) Debug systematically and improve performance with evidence.  
+C) Skip testing and trust the first result.  
+D) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
 
 **Your answer:** _______________
 

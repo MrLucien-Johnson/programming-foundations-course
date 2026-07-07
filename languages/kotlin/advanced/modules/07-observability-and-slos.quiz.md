@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Skipping input validation and assuming “happy path”.  
-B) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Tracing: spans, context propagation (45 min)  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Update the README with setup, run, and test commands.  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Ship changes without documentation.  
-C) SLIs/SLOs and error budgets (45 min)  
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Create a short write-up: what changed, why, and how you verified it.  
+B) Apply the concepts to a realistic codebase (not just toy examples).  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+D) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Update the README with setup, run, and test commands.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Ignore error handling for edge cases.  
+C) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+D) Verify the primary feature works with normal and edge-case inputs.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before submitting, which verification step must you complete?
+A) Document alert thresholds and escalation steps.  
+B) Run the module tests and confirm they pass.  
+C) Document decisions and constraints clearly for reviewers.  
 D) Use tooling to keep quality high: ktlint + detekt.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Metrics: RED/USE and cardinality pitfalls (45 min)  
+B) Add or update documentation (README notes or ADR-style notes).  
+C) Document decisions and constraints clearly for reviewers.  
+D) All work must be covered by **build + tests + static analysis in CI**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.  
+B) Verify the primary feature works with normal and edge-case inputs.  
+C) Document decisions and constraints clearly for reviewers.  
+D) Shipping without an automated test run in CI.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) All work must be covered by **build + tests + static analysis in CI**.  
+C) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
+D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) SLIs/SLOs and error budgets (45 min)  
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Ship changes without documentation.  
-D) Making performance claims without measurements.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Jump to the next module without verifying results.  
-C) Ignore error handling for edge cases.  
-D) Add a performance or reliability improvement and **measure** the impact.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Use tooling to keep quality high: ktlint + detekt.  
-C) Change multiple variables at once so you cannot compare outcomes.  
+C) Add a performance or reliability improvement and **measure** the impact.  
 D) Run the module tests and confirm they pass.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Tracing: spans, context propagation (45 min)  
-B) Write tests that prove correctness and prevent regressions.  
-C) All work must be covered by **build + tests + static analysis in CI**.  
-D) Use tooling to keep quality high: ktlint + detekt.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
-A) Shipping without an automated test run in CI.  
-B) Ignore error handling for edge cases.  
-C) Alerting strategy + on-call hygiene (35 min)  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which statement best summarizes this module's focus?
+### Question 9: Which step appears in the guided walkthrough?
 A) Metrics: RED/USE and cardinality pitfalls (45 min)  
 B) Skip testing and trust the first result.  
-C) Instrument systems and run them with SLO-based operations.  
+C) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
 D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Ship changes without documentation.  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Treat every request as safe without review.  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+### Question 10: Which statement best summarizes the module focus?
+A) Write tests that prove correctness and prevent regressions.  
+B) Instrument systems and run them with SLO-based operations.  
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+D) Update the README with setup, run, and test commands.  
 
 **Your answer:** _______________
 

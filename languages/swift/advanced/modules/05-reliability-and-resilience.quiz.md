@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
-B) Reliability in data: dedupe + idempotency keys (45 min)  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Retries, timeouts, budgets, and jitter (45 min)  
-C) Making performance claims without measurements.  
-D) Add or update documentation (README notes or ADR-style notes).  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
+### Question 1: Which action best satisfies the Core requirements?
 A) Implement a small feature tied to this module in an existing starter app.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Treat every request as safe without review.  
-D) Update the README with setup, run, and test commands.  
+B) Skipping input validation and assuming “happy path”.  
+C) All work must be covered by **build + tests + lint/format in CI**.  
+D) Write tests that prove correctness and prevent regressions.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Run the module tests and confirm they pass.  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) Avoid measuring results or performance.  
+D) If the module involves a database, tests must run against an isolated schema/database.  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Design for failure using resilient patterns and operational readiness.  
+C) Skip testing and trust the first result.  
+D) All work must be covered by **build + tests + lint/format in CI**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before submitting, which verification step must you complete?
+A) Apply the concepts to a realistic codebase (not just toy examples).  
+B) Avoid measuring results or performance.  
+C) Run the module tests and confirm they pass.  
+D) All work must be covered by **build + tests + lint/format in CI**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Circuit breakers, bulkheads, and rate limits (45 min)  
+B) Write a test for a failure scenario.  
+C) All work must be covered by **build + tests + lint/format in CI**.  
+D) Reliability in data: dedupe + idempotency keys (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+B) Avoid measuring results or performance.  
+C) Write tests that prove correctness and prevent regressions.  
+D) Shipping without an automated test run in CI.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+B) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
+C) Update the README with setup, run, and test commands.  
+D) Shipping without an automated test run in CI.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Design for failure using resilient patterns and operational readiness.  
+B) Skipping input validation and assuming “happy path”.  
+C) Retries, timeouts, budgets, and jitter (45 min)  
+D) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Copy the starter pack from `languages/swift/advanced/starter-pack` into a new working folder.  
+B) Run: `swift main.swift`  
+C) Run the module tests and confirm they pass.  
+D) Circuit breakers, bulkheads, and rate limits (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Run the module tests and confirm they pass.  
 B) Run: `swift main.swift`  
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Retries, timeouts, budgets, and jitter (45 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-B) Ship changes without documentation.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Run the module tests and confirm they pass.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Avoid measuring results or performance.  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Treat every request as safe without review.  
-D) Run the module tests and confirm they pass.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
-A) Update the README with setup, run, and test commands.  
-B) All work must be covered by **build + tests + lint/format in CI**.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
-C) Shipping without an automated test run in CI.  
-D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which statement best summarizes this module's focus?
-A) Design for failure using resilient patterns and operational readiness.  
-B) Update the README with setup, run, and test commands.  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Create a short write-up: what changed, why, and how you verified it.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Design for failure using resilient patterns and operational readiness.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+D) Design for failure using resilient patterns and operational readiness.  
 
 **Your answer:** _______________
 

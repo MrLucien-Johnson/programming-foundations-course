@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which practice best supports reliable delivery in this module?
-A) Skip testing and trust the first result.  
-B) Ship changes without documentation.  
+### Question 1: Before submitting, which verification step must you complete?
+A) Run the module tests and confirm they pass.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Treat every request as safe without review.  
+D) Review the module goals and plan how you will reinforce foundational skills and patterns.  
+
+**Your answer:** _______________
+
+---
+
+### Question 2: Which step appears in the guided walkthrough?
+A) Copy the starter pack from `languages/java/intermediate/starter-pack` into a new working folder.  
+B) Avoid measuring results or performance.  
 C) Change multiple variables at once so you cannot compare outcomes.  
+D) Run: `javac Main.java && java Main`  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which verification step is required before moving on?
+A) Verify the primary feature works with normal and edge-case inputs.  
+B) Avoid measuring results or performance.  
+C) Ignore error handling for edge cases.  
+D) Add tests and document the reasoning.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before submitting, which verification step must you complete?
+A) Jump to the next module without verifying results.  
+B) Update the README with setup, run, and test commands.  
+C) Summarize the core concepts in your own words.  
 D) Treat every request as safe without review.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which habit improves reliability for this module?
-A) Ignore error handling for edge cases.  
-B) Ship changes without documentation.  
-C) Avoid measuring results or performance.  
+### Question 5: Which verification step is required before moving on?
+A) Change multiple variables at once so you cannot compare outcomes.  
+B) Summarize the core concepts in your own words.  
+C) Run: `javac Main.java && java Main`  
+D) Implement a small feature that uses at least two core concepts.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which action is listed as part of the guided walkthrough?
+A) Change multiple variables at once so you cannot compare outcomes.  
+B) Run: `javac Main.java && java Main`  
+C) Jump to the next module without verifying results.  
+D) Review the module goals and plan how you will reinforce foundational skills and patterns.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which step appears in the guided walkthrough?
+A) Verify the primary feature works with normal and edge-case inputs.  
+B) Ignore error handling for edge cases.  
+C) Update the README with setup, run, and test commands.  
+D) Summarize the core concepts in your own words.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which action is listed as part of the guided walkthrough?
+A) Run: `javac Main.java && java Main`  
+B) Implement a small feature that uses at least two core concepts.  
+C) Verify the primary feature works with normal and edge-case inputs.  
 D) Change multiple variables at once so you cannot compare outcomes.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action best supports a high-quality delivery?
+### Question 9: Which step appears in the guided walkthrough?
+A) Verify the primary feature works with normal and edge-case inputs.  
+B) Add tests and document the reasoning.  
+C) Run the module tests and confirm they pass.  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which action is listed as part of the guided walkthrough?
 A) Ship changes without documentation.  
-B) Avoid measuring results or performance.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Jump to the next module without verifying results.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which practice best supports reliable delivery in this module?
-A) Jump to the next module without verifying results.  
-B) Avoid measuring results or performance.  
-C) Treat every request as safe without review.  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which habit improves reliability for this module?
-A) Treat every request as safe without review.  
-B) Ignore error handling for edge cases.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Jump to the next module without verifying results.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which action best supports a high-quality delivery?
-A) Ignore error handling for edge cases.  
 B) Change multiple variables at once so you cannot compare outcomes.  
-C) Ship changes without documentation.  
-D) Jump to the next module without verifying results.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which practice best supports reliable delivery in this module?
-A) Jump to the next module without verifying results.  
-B) Ship changes without documentation.  
-C) Skip testing and trust the first result.  
-D) Treat every request as safe without review.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which habit improves reliability for this module?
-A) Jump to the next module without verifying results.  
-B) Skip testing and trust the first result.  
-C) Ignore error handling for edge cases.  
-D) Avoid measuring results or performance.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which action best supports a high-quality delivery?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Ignore error handling for edge cases.  
-C) Treat every request as safe without review.  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which practice best supports reliable delivery in this module?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Avoid measuring results or performance.  
-C) Ship changes without documentation.  
-D) Jump to the next module without verifying results.  
+C) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+D) Update the README with setup, run, and test commands.  
 
 **Your answer:** _______________
 

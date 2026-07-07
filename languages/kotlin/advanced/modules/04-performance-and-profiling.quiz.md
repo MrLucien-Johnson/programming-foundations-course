@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Run the module tests and confirm they pass.  
-B) Profiling methodology and baselines (40 min)  
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-D) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Treat every request as safe without review.  
-B) Profiling methodology and baselines (40 min)  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Write tests that prove correctness and prevent regressions.  
+B) Skip testing and trust the first result.  
+C) Treat every request as safe without review.  
 D) Implement a small feature tied to this module in an existing starter app.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Profiling methodology and baselines (40 min)  
+### Question 2: Which action upgrades the work to the Better level?
+A) Skipping input validation and assuming “happy path”.  
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
+C) Create a short write-up: what changed, why, and how you verified it.  
+D) Caching and invalidation strategies (40 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Update the README with setup, run, and test commands.  
-B) Avoid measuring results or performance.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Skip testing and trust the first result.  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Treat every request as safe without review.  
+B) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
+C) Add or update documentation (README notes or ADR-style notes).  
+D) Add a performance or reliability improvement and **measure** the impact.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Ship changes without documentation.  
+### Question 4: Before submitting, which verification step must you complete?
+A) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
 B) Run the module tests and confirm they pass.  
 C) Document decisions and constraints clearly for reviewers.  
-D) Skipping input validation and assuming “happy path”.  
+D) Add or update documentation (README notes or ADR-style notes).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Jump to the next module without verifying results.  
-B) All work must be covered by **build + tests + static analysis in CI**.  
-C) Profiling methodology and baselines (40 min)  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
-A) Shipping without an automated test run in CI.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) DB tuning: indexes, plans, and lock contention (45 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which statement best summarizes this module's focus?
-A) Implement a small feature tied to this module in an existing starter app.  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
 B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Profile, measure, and optimize across app + database + network.  
+C) All work must be covered by **build + tests + static analysis in CI**.  
+D) Create a short write-up: what changed, why, and how you verified it.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Profiling methodology and baselines (40 min)  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 6: Which option would be a common mistake to avoid?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) Shipping without an automated test run in CI.  
+C) Caching and invalidation strategies (40 min)  
+D) Update the README with setup, run, and test commands.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+B) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
+C) Making performance claims without measurements.  
+D) Avoid measuring results or performance.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Profiling methodology and baselines (40 min)  
+B) Review the module goals and plan how you will measure and improve runtime performance.  
+C) Treat every request as safe without review.  
+D) Create a short write-up: what changed, why, and how you verified it.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Run the module tests and confirm they pass.  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
+D) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Profile, measure, and optimize across app + database + network.  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Jump to the next module without verifying results.  
+D) Add a performance or reliability improvement and **measure** the impact.  
 
 **Your answer:** _______________
 

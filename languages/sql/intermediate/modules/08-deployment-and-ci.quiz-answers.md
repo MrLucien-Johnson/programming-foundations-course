@@ -1,72 +1,72 @@
 # SQL (PostgreSQL) Intermediate — Module 08: Deployment and CI Quiz Answers
 
-## Question 1: Which learning outcome is part of this module?
-**Answer: A** - Explain the core concepts and tradeoffs for **Deployment and CI**.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 2: Which topic is explicitly covered in the lesson list?
-**Answer: A** - Environments + configuration (35 min)
-
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 3: Which task appears in the Core exercises?
+## Question 1: Which action best satisfies the Core requirements?
 **Answer: A** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This task appears under Core exercises.
 
 ---
 
-## Question 4: Which task appears in the Better exercises?
-**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 2: Which action upgrades the work to the Better level?
+**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This task appears under Better exercises.
 
 ---
 
-## Question 5: Which task appears in the Beast Mode exercises?
-**Answer: B** - Add a performance or reliability improvement and **measure** the impact.
+## Question 3: Which action qualifies as a Beast Mode upgrade?
+**Answer: A** - Add a performance or reliability improvement and **measure** the impact.
 
 **Explanation:** This task appears under Beast Mode exercises.
 
 ---
 
-## Question 6: Which testing requirement is specified for this module?
-**Answer: D** - All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.
+## Question 4: Before submitting, which verification step must you complete?
+**Answer: D** - Run the module tests and confirm they pass.
+
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 5: Which testing requirement must be satisfied to pass?
+**Answer: B** - All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.
 
 **Explanation:** This requirement is listed under testing requirements.
 
 ---
 
-## Question 7: Which common mistake should you avoid in this module?
+## Question 6: Which option would be a common mistake to avoid?
 **Answer: D** - Shipping without an automated test run in CI.
 
 **Explanation:** This mistake is listed under common mistakes.
 
 ---
 
-## Question 8: Which statement best summarizes this module's focus?
-**Answer: B** - Containerize, configure, and deploy with automated CI checks.
+## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+**Answer: D** - Explain the core concepts and tradeoffs for **Deployment and CI**.
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
+
+---
+
+## Question 8: Which topic would you revisit to solve this module's core problem?
+**Answer: B** - Environments + configuration (35 min)
+
+**Explanation:** This topic appears in the lesson list.
+
+---
+
+## Question 9: Which step appears in the guided walkthrough?
+**Answer: A** - Copy the starter pack from `languages/sql/intermediate/starter-pack` into a new working folder.
+
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 10: Which statement best summarizes the module focus?
+**Answer: A** - Containerize, configure, and deploy with automated CI checks.
 
 **Explanation:** This statement comes from the module overview.
-
----
-
-## Question 9: Which outcome appears in the learning outcomes list?
-**Answer: A** - Apply the concepts to a realistic codebase (not just toy examples).
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 10: Which statement is listed as a learning outcome?
-**Answer: A** - Write tests that prove correctness and prevent regressions.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 

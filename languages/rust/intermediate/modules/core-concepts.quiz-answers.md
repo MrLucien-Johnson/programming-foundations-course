@@ -1,72 +1,72 @@
 # Core Concepts (Intermediate) Quiz Answers
 
-## Question 1: Which practice best supports reliable delivery in this module?
-**Answer: A** - Skip testing and trust the first result.
+## Question 1: You need to run the test suite. Which command should you use?
+**Answer: A** - `cargo test`
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 2: Which habit improves reliability for this module?
-**Answer: A** - Ignore error handling for edge cases.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This command runs the test suite.
 
 ---
 
-## Question 3: Which action best supports a high-quality delivery?
-**Answer: A** - Ship changes without documentation.
+## Question 2: You need to run lint checks. Which command should you use?
+**Answer: A** - `cargo clippy`
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 4: Which practice best supports reliable delivery in this module?
-**Answer: C** - Avoid measuring results or performance.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This command runs lint checks.
 
 ---
 
-## Question 5: Which habit improves reliability for this module?
-**Answer: C** - Change multiple variables at once so you cannot compare outcomes.
+## Question 3: You need to format the code. Which command should you use?
+**Answer: A** - `cargo fmt`
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 6: Which action best supports a high-quality delivery?
-**Answer: D** - Jump to the next module without verifying results.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This command formats the code.
 
 ---
 
-## Question 7: Which practice best supports reliable delivery in this module?
-**Answer: D** - Treat every request as safe without review.
+## Question 4: Before submitting, which verification step must you complete?
+**Answer: C** - Run the module tests and confirm they pass.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 8: Which habit improves reliability for this module?
-**Answer: A** - Skip testing and trust the first result.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 9: Which action best supports a high-quality delivery?
-**Answer: C** - Ignore error handling for edge cases.
+## Question 5: Which step appears in the guided walkthrough?
+**Answer: C** - Copy the starter pack from `languages/rust/intermediate/starter-pack` into a new working folder.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This step is listed in the guided walkthrough.
 
 ---
 
-## Question 10: Which practice best supports reliable delivery in this module?
-**Answer: A** - Ship changes without documentation.
+## Question 6: Which verification step is required before moving on?
+**Answer: D** - Verify the primary feature works with normal and edge-case inputs.
 
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 7: Before submitting, which verification step must you complete?
+**Answer: D** - Update the README with setup, run, and test commands.
+
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 8: Which verification step is required before moving on?
+**Answer: A** - Run: `cargo test`
+
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 9: Before submitting, which verification step must you complete?
+**Answer: C** - Run: `cargo clippy`
+
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 10: Which verification step is required before moving on?
+**Answer: A** - Run: `cargo fmt`
+
+**Explanation:** This item appears in the verification checklist.
 
 ---
 

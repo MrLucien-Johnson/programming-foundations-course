@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
-B) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Document decisions and constraints clearly for reviewers.  
+C) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
+D) Ship changes without documentation.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
+### Question 2: Which action upgrades the work to the Better level?
 A) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
 B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) SLIs/SLOs and error budgets (45 min)  
+C) Copy the starter pack from `languages/java/advanced/starter-pack` into a new working folder.  
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Ship changes without documentation.  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Alerting strategy + on-call hygiene (35 min)  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Review the module goals and plan how you will monitor, alert, and set service objectives.  
+C) Instrument systems and run them with SLO-based operations.  
+D) Update the README with setup, run, and test commands.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Treat every request as safe without review.  
-D) Add or update documentation (README notes or ADR-style notes).  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Treat every request as safe without review.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Avoid measuring results or performance.  
-D) Instrument systems and run them with SLO-based operations.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Run the module tests and confirm they pass.  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
-A) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).  
-B) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
-A) Shipping without an automated test run in CI.  
-B) Update the README with setup, run, and test commands.  
-C) Jump to the next module without verifying results.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which statement best summarizes this module's focus?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-D) Instrument systems and run them with SLO-based operations.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which outcome appears in the learning outcomes list?
+### Question 4: Before submitting, which verification step must you complete?
 A) Avoid measuring results or performance.  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Add or update documentation (README notes or ADR-style notes).  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+B) Run the module tests and confirm they pass.  
+C) Define SLIs and SLO targets for one critical path.  
+D) Document decisions and constraints clearly for reviewers.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Over-mocking (tests assert implementation details instead of outcomes).  
+B) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
+C) Review the module goals and plan how you will monitor, alert, and set service objectives.  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Tracing: spans, context propagation (45 min)  
+B) Avoid measuring results or performance.  
+C) Shipping without an automated test run in CI.  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Alerting strategy + on-call hygiene (35 min)  
+B) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
+C) Copy the starter pack from `languages/java/advanced/starter-pack` into a new working folder.  
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) SLIs/SLOs and error budgets (45 min)  
+B) Review the module goals and plan how you will monitor, alert, and set service objectives.  
+C) Skipping input validation and assuming “happy path”.  
+D) Implement a small feature tied to this module in an existing starter app.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+B) If the module involves a database, tests must run against an isolated schema/database.  
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+D) Copy the starter pack from `languages/java/advanced/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Treat every request as safe without review.  
+B) Define SLIs and SLO targets for one critical path.  
+C) Jump to the next module without verifying results.  
+D) Instrument systems and run them with SLO-based operations.  
 
 **Your answer:** _______________
 

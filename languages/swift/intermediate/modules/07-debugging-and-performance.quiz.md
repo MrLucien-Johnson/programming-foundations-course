@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Add or update documentation (README notes or ADR-style notes).  
-B) Treat every request as safe without review.  
-C) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
+### Question 1: Which action best satisfies the Core requirements?
+A) All work must be covered by **build + tests + lint/format in CI**.  
+B) Apply the concepts to a realistic codebase (not just toy examples).  
+C) Implement a small feature tied to this module in an existing starter app.  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+### Question 2: Which action upgrades the work to the Better level?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) All work must be covered by **build + tests + lint/format in CI**.  
+C) Write tests that prove correctness and prevent regressions.  
+D) Debugging workflow: reproduce → isolate → fix (35 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Apply the concepts to a realistic codebase (not just toy examples).  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) Debug systematically and improve performance with evidence.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before submitting, which verification step must you complete?
+A) Avoid measuring results or performance.  
+B) Run the module tests and confirm they pass.  
+C) Treat every request as safe without review.  
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Verify the primary feature works with normal and edge-case inputs.  
 D) All work must be covered by **build + tests + lint/format in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Debugging workflow: reproduce → isolate → fix (35 min)  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Avoid measuring results or performance.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Write tests that prove correctness and prevent regressions.  
-C) Skip testing and trust the first result.  
-D) Making performance claims without measurements.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Debug systematically and improve performance with evidence.  
-D) Making performance claims without measurements.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Add or update documentation (README notes or ADR-style notes).  
-B) Write tests that prove correctness and prevent regressions.  
-C) Use tooling to keep quality high: SwiftFormat + SwiftLint.  
-D) Add a performance or reliability improvement and **measure** the impact.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which testing requirement is specified for this module?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) All work must be covered by **build + tests + lint/format in CI**.  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which common mistake should you avoid in this module?
-A) Add or update documentation (README notes or ADR-style notes).  
-B) Shipping without an automated test run in CI.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which statement best summarizes this module's focus?
-A) Debug systematically and improve performance with evidence.  
+### Question 6: Which option would be a common mistake to avoid?
+A) All work must be covered by **build + tests + lint/format in CI**.  
 B) Document decisions and constraints clearly for reviewers.  
 C) Shipping without an automated test run in CI.  
-D) Ship changes without documentation.  
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Skipping input validation and assuming “happy path”.  
-B) Debug systematically and improve performance with evidence.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Ship changes without documentation.  
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+B) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
+C) Database performance: slow queries + indexes (45 min)  
+D) Use a profiler or debug tool to identify the bottleneck.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Write tests that prove correctness and prevent regressions.  
-D) Avoid measuring results or performance.  
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Debugging workflow: reproduce → isolate → fix (35 min)  
+B) Copy the starter pack from `languages/swift/intermediate/starter-pack` into a new working folder.  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+B) Skipping input validation and assuming “happy path”.  
+C) Copy the starter pack from `languages/swift/intermediate/starter-pack` into a new working folder.  
+D) Shipping without an automated test run in CI.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Document decisions and constraints clearly for reviewers.  
+B) Run the module tests and confirm they pass.  
+C) Debug systematically and improve performance with evidence.  
+D) Skip testing and trust the first result.  
 
 **Your answer:** _______________
 

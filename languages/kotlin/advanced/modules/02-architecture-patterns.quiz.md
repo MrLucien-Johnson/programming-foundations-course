@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Over-mocking (tests assert implementation details instead of outcomes).  
-B) Skipping input validation and assuming “happy path”.  
-C) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-D) Run the module tests and confirm they pass.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Layered vs hexagonal vs clean architecture (45 min)  
-D) Add or update documentation (README notes or ADR-style notes).  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Making performance claims without measurements.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+B) Update the README with setup, run, and test commands.  
 C) Implement a small feature tied to this module in an existing starter app.  
-D) CQRS and when *not* to use it (35 min)  
+D) All work must be covered by **build + tests + static analysis in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Over-mocking (tests assert implementation details instead of outcomes).  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) All work must be covered by **build + tests + static analysis in CI**.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Add or update documentation (README notes or ADR-style notes).  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
+### Question 2: Which action upgrades the work to the Better level?
 A) Use tooling to keep quality high: ktlint + detekt.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Run the module tests and confirm they pass.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
-A) All work must be covered by **build + tests + static analysis in CI**.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Layered vs hexagonal vs clean architecture (45 min)  
-D) Write tests that prove correctness and prevent regressions.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
-A) Jump to the next module without verifying results.  
 B) Skip testing and trust the first result.  
-C) Shipping without an automated test run in CI.  
-D) Add or update documentation (README notes or ADR-style notes).  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+D) Update the README with setup, run, and test commands.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Apply architectural patterns to keep systems evolvable.  
+B) Implement the pattern in a small feature slice.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before submitting, which verification step must you complete?
 A) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-B) Skip testing and trust the first result.  
-C) Document decisions and constraints clearly for reviewers.  
-D) Apply architectural patterns to keep systems evolvable.  
+B) Run the module tests and confirm they pass.  
+C) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
+D) If the module involves a database, tests must run against an isolated schema/database.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) CQRS and when *not* to use it (35 min)  
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Compare two patterns and choose one for the module scenario.  
+B) All work must be covered by **build + tests + static analysis in CI**.  
+C) Apply architectural patterns to keep systems evolvable.  
+D) Avoid measuring results or performance.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Skip testing and trust the first result.  
+B) Refactor one area for readability (without changing behavior) and prove it with tests.  
+C) Apply the concepts to a realistic codebase (not just toy examples).  
 D) Shipping without an automated test run in CI.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
+B) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Run the module tests and confirm they pass.  
+B) Treat every request as safe without review.  
+C) Layered vs hexagonal vs clean architecture (45 min)  
+D) Compare two patterns and choose one for the module scenario.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Create a short write-up: what changed, why, and how you verified it.  
+B) Update the README with setup, run, and test commands.  
+C) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
+D) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Apply architectural patterns to keep systems evolvable.  
+B) Layered vs hexagonal vs clean architecture (45 min)  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Making performance claims without measurements.  
 
 **Your answer:** _______________
 

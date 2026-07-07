@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Over-mocking (tests assert implementation details instead of outcomes).  
-B) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Ship changes without documentation.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Identify the hot path in the feature and choose a data structure that minimizes lookups.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Write tests that prove correctness and prevent regressions.  
-D) Big-O and tradeoffs in real code (45 min)  
+### Question 2: Which action upgrades the work to the Better level?
+A) Ignore error handling for edge cases.  
+B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+C) Run the module tests and confirm they pass.  
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Making performance claims without measurements.  
-B) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
-C) All work must be covered by **build + tests + lint/format in CI**.  
-D) Implement a small feature tied to this module in an existing starter app.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Sorting/searching: when built-ins are enough (35 min)  
-C) Skipping input validation and assuming “happy path”.  
-D) Write tests that prove correctness and prevent regressions.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Skipping input validation and assuming “happy path”.  
-B) Treat every request as safe without review.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Verify the primary feature works with normal and edge-case inputs.  
+B) Apply the concepts to a realistic codebase (not just toy examples).  
+C) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
 D) Add a performance or reliability improvement and **measure** the impact.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which testing requirement is specified for this module?
-A) All work must be covered by **build + tests + lint/format in CI**.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Create a short write-up: what changed, why, and how you verified it.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which common mistake should you avoid in this module?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Measuring: micro-benchmarks vs profiling (35 min)  
-C) Shipping without an automated test run in CI.  
+### Question 4: Before submitting, which verification step must you complete?
+A) Run the module tests and confirm they pass.  
+B) Use data structures and algorithms pragmatically in real applications.  
+C) Caching patterns: LRU + memoization (45 min)  
 D) Implement a small feature tied to this module in an existing starter app.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which statement best summarizes this module's focus?
-A) Skipping input validation and assuming “happy path”.  
-B) Use data structures and algorithms pragmatically in real applications.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+B) Shipping without an automated test run in CI.  
+C) Implement a helper that enforces the chosen structure (e.g., map for fast lookup).  
+D) All work must be covered by **build + tests + lint/format in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Use data structures and algorithms pragmatically in real applications.  
-B) All work must be covered by **build + tests + lint/format in CI**.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 6: Which option would be a common mistake to avoid?
+A) Shipping without an automated test run in CI.  
+B) Identify the hot path in the feature and choose a data structure that minimizes lookups.  
+C) Sorting/searching: when built-ins are enough (35 min)  
+D) Add a performance or reliability improvement and **measure** the impact.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Making performance claims without measurements.  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Write tests that prove correctness and prevent regressions.  
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Ignore error handling for edge cases.  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
+D) Change multiple variables at once so you cannot compare outcomes.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Change multiple variables at once so you cannot compare outcomes.  
+B) Big-O and tradeoffs in real code (45 min)  
+C) Implement a helper that enforces the chosen structure (e.g., map for fast lookup).  
+D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Run: `swift main.swift`  
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+D) Copy the starter pack from `languages/swift/intermediate/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
+B) Implement a helper that enforces the chosen structure (e.g., map for fast lookup).  
+C) Making performance claims without measurements.  
+D) Use data structures and algorithms pragmatically in real applications.  
 
 **Your answer:** _______________
 

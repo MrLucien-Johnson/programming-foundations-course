@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Explain the core concepts and tradeoffs for **System Design Foundations**.  
-B) Run: `javac Main.java && java Main`  
-C) Skip testing and trust the first result.  
-D) Ignore error handling for edge cases.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Refactor one area for readability (without changing behavior) and prove it with tests.  
+C) Treat every request as safe without review.  
+D) Reason about scalability, data, and tradeoffs under constraints.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Requirements → constraints → estimates (45 min)  
+### Question 2: Which action upgrades the work to the Better level?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) Jump to the next module without verifying results.  
+C) Run the module tests and confirm they pass.  
+D) Caching, load balancing, and data partitions (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Skipping input validation and assuming “happy path”.  
 B) Add or update documentation (README notes or ADR-style notes).  
-C) Making performance claims without measurements.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Reason about scalability, data, and tradeoffs under constraints.  
-C) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).  
-D) Implement a small feature tied to this module in an existing starter app.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
-A) Add or update documentation (README notes or ADR-style notes).  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Change multiple variables at once so you cannot compare outcomes.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Verify the primary feature works with normal and edge-case inputs.  
+C) Update the README with setup, run, and test commands.  
 D) Add a performance or reliability improvement and **measure** the impact.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Run the module tests and confirm they pass.  
-D) Explain the core concepts and tradeoffs for **System Design Foundations**.  
+### Question 4: Before submitting, which verification step must you complete?
+A) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).  
+B) Run the module tests and confirm they pass.  
+C) Refactor one area for readability (without changing behavior) and prove it with tests.  
+D) Write tests that prove correctness and prevent regressions.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Update the README with setup, run, and test commands.  
+B) Review the module goals and plan how you will translate requirements into scalable design.  
+C) Apply the concepts to a realistic codebase (not just toy examples).  
+D) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+B) Verify the primary feature works with normal and edge-case inputs.  
+C) Shipping without an automated test run in CI.  
+D) Copy the starter pack from `languages/java/advanced/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) If the module involves a database, tests must run against an isolated schema/database.  
+B) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Explain the core concepts and tradeoffs for **System Design Foundations**.  
+D) Update the README with setup, run, and test commands.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).  
+B) Requirements → constraints → estimates (45 min)  
+C) Run: `javac Main.java && java Main`  
 D) Refactor one area for readability (without changing behavior) and prove it with tests.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Ship changes without documentation.  
-B) Shipping without an automated test run in CI.  
-C) Ignore error handling for edge cases.  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+### Question 9: Which step appears in the guided walkthrough?
+A) Copy the starter pack from `languages/java/advanced/starter-pack` into a new working folder.  
+B) Consistency models + CAP in practice (45 min)  
+C) Document decisions and constraints clearly for reviewers.  
+D) Avoid measuring results or performance.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
+### Question 10: Which statement best summarizes the module focus?
 A) Reason about scalability, data, and tradeoffs under constraints.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).  
-D) Document decisions and constraints clearly for reviewers.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Update the README with setup, run, and test commands.  
+B) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Ship changes without documentation.  
+D) Change multiple variables at once so you cannot compare outcomes.  
 
 **Your answer:** _______________
 

@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Explain the core concepts and tradeoffs for **Databases**.  
-C) Indexes + query plans (45 min)  
-D) Skip testing and trust the first result.  
+### Question 1: You need to run the test suite. Which command should you use?
+A) Shipping without an automated test run in CI.  
+B) `python -m pytest`  
+C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+D) Implement CRUD operations and verify with sample data.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
+### Question 2: You need to run lint checks. Which command should you use?
 A) Skipping input validation and assuming “happy path”.  
-B) Schema design + constraints (45 min)  
-C) Explain the core concepts and tradeoffs for **Databases**.  
-D) Design schemas, write queries, and ship migrations safely.  
+B) `ruff check .`  
+C) Add or update documentation (README notes or ADR-style notes).  
+D) Implement CRUD operations and verify with sample data.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Indexes + query plans (45 min)  
-C) Design schemas, write queries, and ship migrations safely.  
+### Question 3: You need to format the code. Which command should you use?
+A) Review the module goals and plan how you will design schemas and reliable data access.  
+B) Create a short write-up: what changed, why, and how you verified it.  
+C) Implement a small feature tied to this module in an existing starter app.  
+D) `ruff format .`  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which action best satisfies the Core requirements?
+A) Model tables/entities with clear constraints and indexes.  
+B) Run: `ruff check .`  
+C) Update the README with setup, run, and test commands.  
 D) Implement a small feature tied to this module in an existing starter app.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+### Question 5: Which action upgrades the work to the Better level?
+A) Use tooling to keep quality high: ruff + black (or ruff format).  
 B) Treat every request as safe without review.  
-C) Use tooling to keep quality high: ruff + black (or ruff format).  
+C) Avoid measuring results or performance.  
 D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Transactions + isolation basics (45 min)  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Migrations: forwards/backwards + safety (45 min)  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 6: Which action qualifies as a Beast Mode upgrade?
+A) Skipping input validation and assuming “happy path”.  
+B) Shipping without an automated test run in CI.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Run: `ruff check .`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which testing requirement is specified for this module?
-A) Transactions + isolation basics (45 min)  
-B) Ignore error handling for edge cases.  
-C) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
-D) Change multiple variables at once so you cannot compare outcomes.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which common mistake should you avoid in this module?
-A) Shipping without an automated test run in CI.  
-B) Treat every request as safe without review.  
-C) Indexes + query plans (45 min)  
-D) Migrations: forwards/backwards + safety (45 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which statement best summarizes this module's focus?
-A) Treat every request as safe without review.  
-B) Design schemas, write queries, and ship migrations safely.  
-C) Migrations: forwards/backwards + safety (45 min)  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Add or update documentation (README notes or ADR-style notes).  
-B) Ignore error handling for edge cases.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 7: Before submitting, which verification step must you complete?
+A) Run the module tests and confirm they pass.  
+B) Review the module goals and plan how you will design schemas and reliable data access.  
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
 D) Apply the concepts to a realistic codebase (not just toy examples).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
-A) Indexes + query plans (45 min)  
-B) Jump to the next module without verifying results.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Write tests that prove correctness and prevent regressions.  
+### Question 8: Which testing requirement must be satisfied to pass?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+D) Run: `python -m pytest`  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which option would be a common mistake to avoid?
+A) Ship changes without documentation.  
+B) Use tooling to keep quality high: ruff + black (or ruff format).  
+C) Migrations: forwards/backwards + safety (45 min)  
+D) Shipping without an automated test run in CI.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Schema design + constraints (45 min)  
+B) Model tables/entities with clear constraints and indexes.  
+C) Treat every request as safe without review.  
+D) Explain the core concepts and tradeoffs for **Databases**.  
 
 **Your answer:** _______________
 

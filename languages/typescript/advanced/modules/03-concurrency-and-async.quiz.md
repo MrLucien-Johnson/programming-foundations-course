@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Skipping input validation and assuming “happy path”.  
-B) Run: `node index.js`  
-C) Backpressure + bounded work queues (55 min)  
-D) Explain the core concepts and tradeoffs for **Concurrency and Async**.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Concurrency primitives + race conditions (60 min)  
-B) Jump to the next module without verifying results.  
-C) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Making performance claims without measurements.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Ship changes without documentation.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Build correct concurrent systems and manage backpressure.  
+B) Skip testing and trust the first result.  
+C) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
 D) Implement a small feature tied to this module in an existing starter app.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Treat every request as safe without review.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Ignore error handling for edge cases.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Skip testing and trust the first result.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Making performance claims without measurements.  
-B) Treat every request as safe without review.  
-C) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+B) Timeouts, cancellation, and structured concurrency (55 min)  
+C) Over-mocking (tests assert implementation details instead of outcomes).  
 D) Add a performance or reliability improvement and **measure** the impact.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Run the module tests and confirm they pass.  
+### Question 4: Before submitting, which verification step must you complete?
+A) Timeouts, cancellation, and structured concurrency (55 min)  
+B) Run the module tests and confirm they pass.  
+C) Over-mocking (tests assert implementation details instead of outcomes).  
+D) Explain the core concepts and tradeoffs for **Concurrency and Async**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Making performance claims without measurements.  
-B) Avoid measuring results or performance.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Backpressure + bounded work queues (55 min)  
+B) Add or update documentation (README notes or ADR-style notes).  
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
 D) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Concurrency primitives + race conditions (60 min)  
-C) Shipping without an automated test run in CI.  
-D) Use tooling to keep quality high: ESLint + Prettier.  
+### Question 6: Which option would be a common mistake to avoid?
+A) Verify the primary feature works with normal and edge-case inputs.  
+B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) Shipping without an automated test run in CI.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
-A) Build correct concurrent systems and manage backpressure.  
-B) Shipping without an automated test run in CI.  
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
+B) Verify the primary feature works with normal and edge-case inputs.  
+C) Add a test for race conditions or timeouts.  
+D) Explain the core concepts and tradeoffs for **Concurrency and Async**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Shipping without an automated test run in CI.  
+B) Add a test for race conditions or timeouts.  
+C) Concurrency primitives + race conditions (60 min)  
+D) Build correct concurrent systems and manage backpressure.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
+B) Over-mocking (tests assert implementation details instead of outcomes).  
 C) Jump to the next module without verifying results.  
-D) Ship changes without documentation.  
+D) Treat every request as safe without review.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Idempotency + exactly-once myths (45 min)  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Add or update documentation (README notes or ADR-style notes).  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 10: Which statement best summarizes the module focus?
+A) Verify the primary feature works with normal and edge-case inputs.  
+B) Build correct concurrent systems and manage backpressure.  
+C) Timeouts, cancellation, and structured concurrency (55 min)  
+D) Implement an async or concurrent workflow.  
 
 **Your answer:** _______________
 

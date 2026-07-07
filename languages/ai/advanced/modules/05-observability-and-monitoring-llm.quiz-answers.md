@@ -1,72 +1,72 @@
 # AI — Module 05: Observability and Monitoring for LLM Apps Quiz Answers
 
-## Question 1: Which learning outcome is part of this module?
-**Answer: D** - Translate a vague request into a clear goal, constraints, and success criteria.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 2: Which topic is explicitly covered in the lesson list?
-**Answer: B** - What to measure: quality, safety, cost, latency (50 min)
-
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 3: Which task appears in the Core exercises?
+## Question 1: Which action best satisfies the Core requirements?
 **Answer: D** - Define SLIs/SLOs for an AI feature and map them to metrics.
 
 **Explanation:** This task appears under Core exercises.
 
 ---
 
-## Question 4: Which task appears in the Better exercises?
+## Question 2: Which action upgrades the work to the Better level?
 **Answer: B** - Add a “quality sampling” plan (privacy-safe) and escalation steps.
 
 **Explanation:** This task appears under Better exercises.
 
 ---
 
-## Question 5: Which task appears in the Beast Mode exercises?
-**Answer: C** - Design an on-call playbook for “quality drop” and “cost spike” incidents.
+## Question 3: Which action qualifies as a Beast Mode upgrade?
+**Answer: D** - Design an on-call playbook for “quality drop” and “cost spike” incidents.
 
 **Explanation:** This task appears under Beast Mode exercises.
 
 ---
 
-## Question 6: Which item is required in the verification checklist?
-**Answer: C** - Run the module tests and confirm they pass.
+## Question 4: Before submitting, which verification step must you complete?
+**Answer: B** - Run the module tests and confirm they pass.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 7: Which testing requirement is specified for this module?
-**Answer: B** - Monitoring validates fallbacks are working and not harming UX.
+## Question 5: Which testing requirement must be satisfied to pass?
+**Answer: C** - Monitoring validates fallbacks are working and not harming UX.
 
 **Explanation:** This requirement is listed under testing requirements.
 
 ---
 
-## Question 8: Which common mistake should you avoid in this module?
-**Answer: D** - Logging sensitive user data without redaction.
+## Question 6: Which option would be a common mistake to avoid?
+**Answer: C** - Logging sensitive user data without redaction.
 
 **Explanation:** This mistake is listed under common mistakes.
 
 ---
 
-## Question 9: Which statement best summarizes this module's focus?
-**Answer: A** - Instrument AI systems: quality metrics, cost/latency, tracing, and alerts tied to user impact.
+## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+**Answer: B** - Translate a vague request into a clear goal, constraints, and success criteria.
 
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 10: Which outcome appears in the learning outcomes list?
-**Answer: D** - Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+## Question 8: Which topic would you revisit to solve this module's core problem?
+**Answer: D** - What to measure: quality, safety, cost, latency (50 min)
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Explanation:** This topic appears in the lesson list.
+
+---
+
+## Question 9: Which step appears in the guided walkthrough?
+**Answer: A** - Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 10: Which statement best summarizes the module focus?
+**Answer: D** - Instrument AI systems: quality metrics, cost/latency, tracing, and alerts tied to user impact.
+
+**Explanation:** This statement comes from the module overview.
 
 ---
 

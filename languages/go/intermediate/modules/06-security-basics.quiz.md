@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Making performance claims without measurements.  
-B) OWASP Top 10: practical mapping (40 min)  
-C) Explain the core concepts and tradeoffs for **Security Basics**.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 1: You need to run the test suite. Which command should you use?
+A) Change multiple variables at once so you cannot compare outcomes.  
+B) Ship changes without documentation.  
+C) `go test ./...`  
+D) Over-mocking (tests assert implementation details instead of outcomes).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Avoid measuring results or performance.  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) OWASP Top 10: practical mapping (40 min)  
+### Question 2: You need to run lint checks. Which command should you use?
+A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Use tooling to keep quality high: gofmt + golangci-lint.  
+D) `golangci-lint run`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
+### Question 3: You need to format the code. Which command should you use?
+A) `gofmt -w .`  
+B) `go test ./...`  
+C) Create a short write-up: what changed, why, and how you verified it.  
+D) Write tests that prove correctness and prevent regressions.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which action best satisfies the Core requirements?
 A) Implement a small feature tied to this module in an existing starter app.  
-B) Injection + validation + encoding (45 min)  
-C) AuthZ checks + least privilege (35 min)  
+B) Run: `go test ./...`  
+C) `golangci-lint run`  
+D) Run the module tests and confirm they pass.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which action upgrades the work to the Better level?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) Treat every request as safe without review.  
+C) Write tests that prove correctness and prevent regressions.  
+D) Run: `go test ./...`  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which action qualifies as a Beast Mode upgrade?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Document decisions and constraints clearly for reviewers.  
+C) Implement a small feature tied to this module in an existing starter app.  
+D) Update the README with setup, run, and test commands.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Before submitting, which verification step must you complete?
+A) Add or update documentation (README notes or ADR-style notes).  
+B) Making performance claims without measurements.  
+C) Shipping without an automated test run in CI.  
+D) Run the module tests and confirm they pass.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which testing requirement must be satisfied to pass?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+B) AuthZ checks + least privilege (35 min)  
+C) Jump to the next module without verifying results.  
 D) All work must be covered by **gofmt + lint + tests in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Injection + validation + encoding (45 min)  
-C) Ignore error handling for edge cases.  
-D) Implement a small feature tied to this module in an existing starter app.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Ship changes without documentation.  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which testing requirement is specified for this module?
-A) All work must be covered by **gofmt + lint + tests in CI**.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Secrets + config management (35 min)  
-D) Explain the core concepts and tradeoffs for **Security Basics**.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which common mistake should you avoid in this module?
-A) Explain the core concepts and tradeoffs for **Security Basics**.  
-B) Treat every request as safe without review.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Shipping without an automated test run in CI.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which statement best summarizes this module's focus?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Explain the core concepts and tradeoffs for **Security Basics**.  
-C) Write tests that prove correctness and prevent regressions.  
-D) Reduce common vulnerabilities with safe defaults.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Ship changes without documentation.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which statement is listed as a learning outcome?
-A) Jump to the next module without verifying results.  
-B) Create a short write-up: what changed, why, and how you verified it.  
+### Question 9: Which option would be a common mistake to avoid?
+A) Treat every request as safe without review.  
+B) Shipping without an automated test run in CI.  
 C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Write tests that prove correctness and prevent regressions.  
+D) Add or update documentation (README notes or ADR-style notes).  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Update the README with setup, run, and test commands.  
+B) Verify the primary feature works with normal and edge-case inputs.  
+C) Run: `gofmt -w .`  
+D) Explain the core concepts and tradeoffs for **Security Basics**.  
 
 **Your answer:** _______________
 

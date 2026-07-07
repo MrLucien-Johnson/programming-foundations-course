@@ -1,72 +1,72 @@
 # AI — Module 07: Cost, Latency, and Ops Quiz Answers
 
-## Question 1: Which learning outcome is part of this module?
-**Answer: A** - Translate a vague request into a clear goal, constraints, and success criteria.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 2: Which topic is explicitly covered in the lesson list?
-**Answer: A** - Define budgets: tokens/requests, latency SLOs, and guardrails (45 min)
-
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 3: Which task appears in the Core exercises?
-**Answer: D** - Create a cost/latency plan for one workflow (budgets + how to enforce).
+## Question 1: Which action best satisfies the Core requirements?
+**Answer: A** - Create a cost/latency plan for one workflow (budgets + how to enforce).
 
 **Explanation:** This task appears under Core exercises.
 
 ---
 
-## Question 4: Which task appears in the Better exercises?
-**Answer: C** - Design a caching strategy and what cache keys should be.
+## Question 2: Which action upgrades the work to the Better level?
+**Answer: A** - Design a caching strategy and what cache keys should be.
 
 **Explanation:** This task appears under Better exercises.
 
 ---
 
-## Question 5: Which task appears in the Beast Mode exercises?
-**Answer: B** - Add a monitoring plan: what metrics, what dashboards, what alerts.
+## Question 3: Which action qualifies as a Beast Mode upgrade?
+**Answer: D** - Add a monitoring plan: what metrics, what dashboards, what alerts.
 
 **Explanation:** This task appears under Beast Mode exercises.
 
 ---
 
-## Question 6: Which testing requirement is specified for this module?
+## Question 4: Before submitting, which verification step must you complete?
+**Answer: C** - Run the module tests and confirm they pass.
+
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 5: Which testing requirement must be satisfied to pass?
 **Answer: B** - Evaluation harness records cost/latency per run (even estimated).
 
 **Explanation:** This requirement is listed under testing requirements.
 
 ---
 
-## Question 7: Which common mistake should you avoid in this module?
-**Answer: C** - No budgets, leading to runaway cost.
+## Question 6: Which option would be a common mistake to avoid?
+**Answer: B** - No budgets, leading to runaway cost.
 
 **Explanation:** This mistake is listed under common mistakes.
 
 ---
 
-## Question 8: Which statement best summarizes this module's focus?
-**Answer: D** - Plan and control cost/latency: budgets, caching, batching, and operational guardrails.
+## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+**Answer: C** - Translate a vague request into a clear goal, constraints, and success criteria.
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
+
+---
+
+## Question 8: Which topic would you revisit to solve this module's core problem?
+**Answer: D** - Define budgets: tokens/requests, latency SLOs, and guardrails (45 min)
+
+**Explanation:** This topic appears in the lesson list.
+
+---
+
+## Question 9: Which step appears in the guided walkthrough?
+**Answer: A** - Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
+
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 10: Which statement best summarizes the module focus?
+**Answer: A** - Plan and control cost/latency: budgets, caching, batching, and operational guardrails.
 
 **Explanation:** This statement comes from the module overview.
-
----
-
-## Question 9: Which outcome appears in the learning outcomes list?
-**Answer: A** - Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 10: Which statement is listed as a learning outcome?
-**Answer: A** - Build a small evaluation loop: test cases, metrics, and iteration notes.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 

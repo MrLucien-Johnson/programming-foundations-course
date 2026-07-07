@@ -6,69 +6,49 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which item is required in the verification checklist?
-A) Jump to the next module without verifying results.  
-B) Ship changes without documentation.  
+### Question 1: Before submitting, which verification step must you complete?
+A) Document data flow, dependencies, and risk points.  
+B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
 C) Run the module tests and confirm they pass.  
+D) Treat every request as safe without review.  
+
+**Your answer:** _______________
+
+---
+
+### Question 2: Which step appears in the guided walkthrough?
+A) Ignore error handling for edge cases.  
+B) Jump to the next module without verifying results.  
+C) Copy the starter pack from `languages/sql/advanced/starter-pack` into a new working folder.  
+D) Verify the primary feature works with normal and edge-case inputs.  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which verification step is required before moving on?
+A) Verify the primary feature works with normal and edge-case inputs.  
+B) Review tradeoffs and capture in a decision log.  
+C) Document data flow, dependencies, and risk points.  
+D) Draft a high-level system diagram.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before submitting, which verification step must you complete?
+A) Treat every request as safe without review.  
+B) Update the README with setup, run, and test commands.  
+C) Ship changes without documentation.  
 D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which check must be completed before moving on?
-A) Skip testing and trust the first result.  
-B) Ship changes without documentation.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Jump to the next module without verifying results.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which verification step is required?
-A) Update the README with setup, run, and test commands.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Ignore error handling for edge cases.  
-D) Ship changes without documentation.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which item is required in the verification checklist?
-A) Ignore error handling for edge cases.  
-B) Run: `psql -f queries.sql`  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Avoid measuring results or performance.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which practice best supports reliable delivery in this module?
-A) Ship changes without documentation.  
-B) Avoid measuring results or performance.  
-C) Treat every request as safe without review.  
-D) Change multiple variables at once so you cannot compare outcomes.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which habit improves reliability for this module?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Update the README with setup, run, and test commands.  
-C) Ignore error handling for edge cases.  
-D) Jump to the next module without verifying results.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which action best supports a high-quality delivery?
-A) Treat every request as safe without review.  
-B) Verify the primary feature works with normal and edge-case inputs.  
+### Question 5: Which verification step is required before moving on?
+A) Draft a high-level system diagram.  
+B) Ignore error handling for edge cases.  
 C) Ship changes without documentation.  
 D) Run: `psql -f queries.sql`  
 
@@ -76,30 +56,50 @@ D) Run: `psql -f queries.sql`
 
 ---
 
-### Question 8: Which practice best supports reliable delivery in this module?
-A) Ship changes without documentation.  
-B) Skip testing and trust the first result.  
-C) Avoid measuring results or performance.  
+### Question 6: Which action is listed as part of the guided walkthrough?
+A) Ignore error handling for edge cases.  
+B) Jump to the next module without verifying results.  
+C) Treat every request as safe without review.  
+D) Review the module goals and plan how you will synthesize architecture decisions.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which step appears in the guided walkthrough?
+A) Draft a high-level system diagram.  
+B) Verify the primary feature works with normal and edge-case inputs.  
+C) Update the README with setup, run, and test commands.  
 D) Run: `psql -f queries.sql`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which habit improves reliability for this module?
-A) Avoid measuring results or performance.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Treat every request as safe without review.  
-D) Ignore error handling for edge cases.  
+### Question 8: Which action is listed as part of the guided walkthrough?
+A) Ignore error handling for edge cases.  
+B) Document data flow, dependencies, and risk points.  
+C) Ship changes without documentation.  
+D) Run: `psql -f queries.sql`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which action best supports a high-quality delivery?
-A) Ship changes without documentation.  
+### Question 9: Which step appears in the guided walkthrough?
+A) Ignore error handling for edge cases.  
+B) Jump to the next module without verifying results.  
+C) Verify the primary feature works with normal and edge-case inputs.  
+D) Review tradeoffs and capture in a decision log.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which action is listed as part of the guided walkthrough?
+A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
 B) Avoid measuring results or performance.  
-C) Ignore error handling for edge cases.  
+C) Ship changes without documentation.  
 D) Skip testing and trust the first result.  
 
 **Your answer:** _______________

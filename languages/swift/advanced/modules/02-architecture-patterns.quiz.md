@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Avoid measuring results or performance.  
-B) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Event-driven design + sagas (45 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Layered vs hexagonal vs clean architecture (45 min)  
-B) Treat every request as safe without review.  
-C) Making performance claims without measurements.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Apply the concepts to a realistic codebase (not just toy examples).  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Use tooling to keep quality high: SwiftFormat + SwiftLint.  
 D) Verify the primary feature works with normal and edge-case inputs.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Making performance claims without measurements.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Write tests that prove correctness and prevent regressions.  
-D) Skip testing and trust the first result.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) Write tests that prove correctness and prevent regressions.  
+C) Document tradeoffs and why you chose it.  
+D) If the module involves a database, tests must run against an isolated schema/database.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Ship changes without documentation.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Treat every request as safe without review.  
+B) Add a performance or reliability improvement and **measure** the impact.  
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+D) Run the module tests and confirm they pass.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) All work must be covered by **build + tests + lint/format in CI**.  
+### Question 4: Before submitting, which verification step must you complete?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+B) Run the module tests and confirm they pass.  
+C) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+D) Ship changes without documentation.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Skip testing and trust the first result.  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+B) Ignore error handling for edge cases.  
+C) All work must be covered by **build + tests + lint/format in CI**.  
+D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Jump to the next module without verifying results.  
+B) Shipping without an automated test run in CI.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Verify the primary feature works with normal and edge-case inputs.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+B) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
+C) Implement the pattern in a small feature slice.  
+D) Apply architectural patterns to keep systems evolvable.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Layered vs hexagonal vs clean architecture (45 min)  
 B) Run the module tests and confirm they pass.  
 C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Ignore error handling for edge cases.  
+D) Run: `swift main.swift`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Ignore error handling for edge cases.  
-B) All work must be covered by **build + tests + lint/format in CI**.  
-C) Document decisions and constraints clearly for reviewers.  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 9: Which step appears in the guided walkthrough?
+A) Copy the starter pack from `languages/swift/advanced/starter-pack` into a new working folder.  
+B) Update the README with setup, run, and test commands.  
+C) Jump to the next module without verifying results.  
+D) Layered vs hexagonal vs clean architecture (45 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Shipping without an automated test run in CI.  
-B) DDD building blocks: entities, value objects, aggregates (45 min)  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Jump to the next module without verifying results.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which statement best summarizes this module's focus?
-A) Apply architectural patterns to keep systems evolvable.  
-B) Shipping without an automated test run in CI.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which outcome appears in the learning outcomes list?
-A) DDD building blocks: entities, value objects, aggregates (45 min)  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Avoid measuring results or performance.  
+### Question 10: Which statement best summarizes the module focus?
+A) All work must be covered by **build + tests + lint/format in CI**.  
+B) Add a performance or reliability improvement and **measure** the impact.  
+C) Apply architectural patterns to keep systems evolvable.  
+D) Skip testing and trust the first result.  
 
 **Your answer:** _______________
 

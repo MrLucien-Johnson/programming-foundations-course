@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Implement a small feature tied to this module in an existing starter app.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Jump to the next module without verifying results.  
+D) Run: `javac Main.java && java Main`  
+
+**Your answer:** _______________
+
+---
+
+### Question 2: Which action upgrades the work to the Better level?
+A) AuthN vs AuthZ: sessions/JWT + roles (45 min)  
 B) Explain the core concepts and tradeoffs for **APIs and Auth**.  
-C) Ship changes without documentation.  
-D) Ignore error handling for edge cases.  
+C) Over-mocking (tests assert implementation details instead of outcomes).  
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Avoid measuring results or performance.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Shipping without an automated test run in CI.  
-D) REST: resources, status codes, pagination (45 min)  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Making performance claims without measurements.  
+B) Define request/response contracts with example payloads.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Change multiple variables at once so you cannot compare outcomes.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) REST: resources, status codes, pagination (45 min)  
+### Question 4: Before submitting, which verification step must you complete?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+B) Copy the starter pack from `languages/java/intermediate/starter-pack` into a new working folder.  
+C) Run the module tests and confirm they pass.  
+D) Making performance claims without measurements.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Define request/response contracts with example payloads.  
+B) Input validation + error envelopes (40 min)  
 C) Implement a small feature tied to this module in an existing starter app.  
-D) Treat every request as safe without review.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
-A) Design and secure REST APIs with authentication and authorization.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 D) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Skip testing and trust the first result.  
-B) Jump to the next module without verifying results.  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 6: Which option would be a common mistake to avoid?
+A) Treat every request as safe without review.  
+B) Shipping without an automated test run in CI.  
+C) Refactor one area for readability (without changing behavior) and prove it with tests.  
+D) Avoid measuring results or performance.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which testing requirement is specified for this module?
-A) Skipping input validation and assuming “happy path”.  
-B) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
-C) Skip testing and trust the first result.  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Run the module tests and confirm they pass.  
+D) Explain the core concepts and tradeoffs for **APIs and Auth**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which common mistake should you avoid in this module?
-A) Jump to the next module without verifying results.  
-B) Document decisions and constraints clearly for reviewers.  
-C) AuthN vs AuthZ: sessions/JWT + roles (45 min)  
-D) Shipping without an automated test run in CI.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which statement best summarizes this module's focus?
-A) Avoid measuring results or performance.  
-B) Design and secure REST APIs with authentication and authorization.  
-C) Jump to the next module without verifying results.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Skip testing and trust the first result.  
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Ignore error handling for edge cases.  
 B) REST: resources, status codes, pagination (45 min)  
-C) Create a short write-up: what changed, why, and how you verified it.  
+C) Run the module tests and confirm they pass.  
 D) Apply the concepts to a realistic codebase (not just toy examples).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
+### Question 9: Which step appears in the guided walkthrough?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Add or update documentation (README notes or ADR-style notes).  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) Copy the starter pack from `languages/java/intermediate/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
 A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Ignore error handling for edge cases.  
-C) Write tests that prove correctness and prevent regressions.  
-D) Shipping without an automated test run in CI.  
+B) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).  
+C) Design and secure REST APIs with authentication and authorization.  
+D) Define request/response contracts with example payloads.  
 
 **Your answer:** _______________
 

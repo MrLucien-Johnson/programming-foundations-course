@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Ignore error handling for edge cases.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
+### Question 1: You need to run the test suite. Which command should you use?
+A) Use tooling to keep quality high: dotnet format + analyzers.  
+B) Run: `dotnet format`  
+C) Update the README with setup, run, and test commands.  
+D) `dotnet test`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Run the module tests and confirm they pass.  
-C) Profiling methodology and baselines (40 min)  
-D) Jump to the next module without verifying results.  
+### Question 2: You need to format the code. Which command should you use?
+A) Jump to the next module without verifying results.  
+B) Refactor one area for readability (without changing behavior) and prove it with tests.  
+C) `dotnet format`  
+D) Verify the primary feature works with normal and edge-case inputs.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Add a performance or reliability improvement and **measure** the impact.  
+### Question 3: Which action best satisfies the Core requirements?
+A) Copy the starter pack from `languages/csharp/advanced/starter-pack` into a new working folder.  
 B) Implement a small feature tied to this module in an existing starter app.  
-C) Profile, measure, and optimize across app + database + network.  
-D) Run the module tests and confirm they pass.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Profiling methodology and baselines (40 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Profile, measure, and optimize across app + database + network.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Create a short write-up: what changed, why, and how you verified it.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Avoid measuring results or performance.  
-C) Run: `dotnet format`  
-D) Change multiple variables at once so you cannot compare outcomes.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Run the module tests and confirm they pass.  
-B) Skipping input validation and assuming “happy path”.  
-C) Treat every request as safe without review.  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
-A) Run: `dotnet format`  
+### Question 4: Which action upgrades the work to the Better level?
+A) Create a short write-up: what changed, why, and how you verified it.  
 B) Add a performance or reliability improvement and **measure** the impact.  
-C) Skip testing and trust the first result.  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+D) Skipping input validation and assuming “happy path”.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which action qualifies as a Beast Mode upgrade?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Ignore error handling for edge cases.  
+C) Profile or trace to find hotspots.  
+D) Making performance claims without measurements.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Before submitting, which verification step must you complete?
+A) Run the module tests and confirm they pass.  
+B) Load testing + bottleneck identification (45 min)  
+C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+D) Apply the concepts to a realistic codebase (not just toy examples).  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which testing requirement must be satisfied to pass?
+A) Document decisions and constraints clearly for reviewers.  
+B) Use tooling to keep quality high: dotnet format + analyzers.  
+C) Caching and invalidation strategies (40 min)  
 D) All work must be covered by **build + tests + analyzers in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Add a performance or reliability improvement and **measure** the impact.  
+### Question 8: Which option would be a common mistake to avoid?
+A) Treat every request as safe without review.  
 B) Shipping without an automated test run in CI.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Skip testing and trust the first result.  
+C) Run: `dotnet format`  
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
-A) Add or update documentation (README notes or ADR-style notes).  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Profile, measure, and optimize across app + database + network.  
-D) Caching and invalidation strategies (40 min)  
+### Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Run: `dotnet test`  
+B) Update the README with setup, run, and test commands.  
+C) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
+D) Run: `dotnet format`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Profile, measure, and optimize across app + database + network.  
+### Question 10: Which topic would you revisit to solve this module's core problem?
+A) Copy the starter pack from `languages/csharp/advanced/starter-pack` into a new working folder.  
 B) Ignore error handling for edge cases.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+C) Profiling methodology and baselines (40 min)  
+D) Capture baseline performance metrics.  
 
 **Your answer:** _______________
 

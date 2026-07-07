@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-B) Explain the core concepts and tradeoffs for **Testing and Quality**.  
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-D) Treat every request as safe without review.  
+### Question 1: You need to run the test suite. Which command should you use?
+A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+B) `cargo test`  
+C) Verify the primary feature works with normal and edge-case inputs.  
+D) Add or update documentation (README notes or ADR-style notes).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Treat every request as safe without review.  
-C) Test pyramid and what to mock (40 min)  
-D) Making performance claims without measurements.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Unit tests: determinism, fixtures, factories (45 min)  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Integration tests: HTTP + DB (45 min)  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
-A) Test pyramid and what to mock (40 min)  
-B) Jump to the next module without verifying results.  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) All work must be covered by **fmt + clippy + tests in CI**.  
-B) Unit tests: determinism, fixtures, factories (45 min)  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Add a performance or reliability improvement and **measure** the impact.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which testing requirement is specified for this module?
-A) Document decisions and constraints clearly for reviewers.  
-B) Lint/format/typecheck as quality gates (40 min)  
-C) All work must be covered by **fmt + clippy + tests in CI**.  
-D) Write maintainable tests and enforce quality gates in CI.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which common mistake should you avoid in this module?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Shipping without an automated test run in CI.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which statement best summarizes this module's focus?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Avoid measuring results or performance.  
-C) Write maintainable tests and enforce quality gates in CI.  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Making performance claims without measurements.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+### Question 2: You need to run lint checks. Which command should you use?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.  
+B) Copy the starter pack from `languages/rust/intermediate/starter-pack` into a new working folder.  
+C) `cargo clippy`  
 D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
-A) Write maintainable tests and enforce quality gates in CI.  
-B) Making performance claims without measurements.  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Write tests that prove correctness and prevent regressions.  
+### Question 3: You need to format the code. Which command should you use?
+A) Use tooling to keep quality high: rustfmt + clippy.  
+B) `cargo fmt`  
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+D) Copy the starter pack from `languages/rust/intermediate/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which action best satisfies the Core requirements?
+A) Making performance claims without measurements.  
+B) Coverage and meaningful assertions (35 min)  
+C) Run the module tests and confirm they pass.  
+D) Implement a small feature tied to this module in an existing starter app.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which action upgrades the work to the Better level?
+A) Create a quality checklist (lint, format, tests) and run it locally.  
+B) Explain the core concepts and tradeoffs for **Testing and Quality**.  
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which action qualifies as a Beast Mode upgrade?
+A) Test pyramid and what to mock (40 min)  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Add unit tests for happy path, edge case, and error handling.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Before submitting, which verification step must you complete?
+A) Use tooling to keep quality high: rustfmt + clippy.  
+B) Write maintainable tests and enforce quality gates in CI.  
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+D) Run the module tests and confirm they pass.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which testing requirement must be satisfied to pass?
+A) Apply the concepts to a realistic codebase (not just toy examples).  
+B) Write tests that prove correctness and prevent regressions.  
+C) All work must be covered by **fmt + clippy + tests in CI**.  
+D) Explain the core concepts and tradeoffs for **Testing and Quality**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which option would be a common mistake to avoid?
+A) Shipping without an automated test run in CI.  
+B) Skip testing and trust the first result.  
+C) Treat every request as safe without review.  
+D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) All work must be covered by **fmt + clippy + tests in CI**.  
+B) Shipping without an automated test run in CI.  
+C) Ship changes without documentation.  
+D) Explain the core concepts and tradeoffs for **Testing and Quality**.  
 
 **Your answer:** _______________
 

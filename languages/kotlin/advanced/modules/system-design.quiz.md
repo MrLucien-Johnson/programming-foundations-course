@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which item is required in the verification checklist?
+### Question 1: Before submitting, which verification step must you complete?
 A) Run the module tests and confirm they pass.  
-B) Skip testing and trust the first result.  
-C) Treat every request as safe without review.  
-D) Ignore error handling for edge cases.  
+B) Review the module goals and plan how you will synthesize architecture decisions.  
+C) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
+D) Avoid measuring results or performance.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which check must be completed before moving on?
-A) Ship changes without documentation.  
-B) Ignore error handling for edge cases.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which verification step is required?
-A) Treat every request as safe without review.  
-B) Ship changes without documentation.  
-C) Update the README with setup, run, and test commands.  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which item is required in the verification checklist?
-A) Avoid measuring results or performance.  
-B) Ship changes without documentation.  
-C) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
-D) Ignore error handling for edge cases.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which practice best supports reliable delivery in this module?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Ignore error handling for edge cases.  
-D) Ship changes without documentation.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which habit improves reliability for this module?
-A) Run the module tests and confirm they pass.  
-B) Jump to the next module without verifying results.  
-C) Ignore error handling for edge cases.  
-D) Update the README with setup, run, and test commands.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which action best supports a high-quality delivery?
-A) Ignore error handling for edge cases.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Jump to the next module without verifying results.  
-D) Treat every request as safe without review.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which practice best supports reliable delivery in this module?
-A) Treat every request as safe without review.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which habit improves reliability for this module?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
-C) Ignore error handling for edge cases.  
-D) Update the README with setup, run, and test commands.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which action best supports a high-quality delivery?
+### Question 2: Which step appears in the guided walkthrough?
 A) Update the README with setup, run, and test commands.  
-B) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
-C) Jump to the next module without verifying results.  
-D) Ship changes without documentation.  
+B) Jump to the next module without verifying results.  
+C) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
+D) Change multiple variables at once so you cannot compare outcomes.  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which verification step is required before moving on?
+A) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
+B) Avoid measuring results or performance.  
+C) Verify the primary feature works with normal and edge-case inputs.  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before submitting, which verification step must you complete?
+A) Review tradeoffs and capture in a decision log.  
+B) Document data flow, dependencies, and risk points.  
+C) Update the README with setup, run, and test commands.  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which verification step is required before moving on?
+A) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
+B) Ship changes without documentation.  
+C) Review tradeoffs and capture in a decision log.  
+D) Review the module goals and plan how you will synthesize architecture decisions.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which action is listed as part of the guided walkthrough?
+A) Run the module tests and confirm they pass.  
+B) Review the module goals and plan how you will synthesize architecture decisions.  
+C) Ignore error handling for edge cases.  
+D) Update the README with setup, run, and test commands.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which step appears in the guided walkthrough?
+A) Ignore error handling for edge cases.  
+B) Jump to the next module without verifying results.  
+C) Avoid measuring results or performance.  
+D) Draft a high-level system diagram.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which action is listed as part of the guided walkthrough?
+A) Jump to the next module without verifying results.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Verify the primary feature works with normal and edge-case inputs.  
+D) Document data flow, dependencies, and risk points.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
+B) Ship changes without documentation.  
+C) Review tradeoffs and capture in a decision log.  
+D) Update the README with setup, run, and test commands.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which action is listed as part of the guided walkthrough?
+A) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
+B) Jump to the next module without verifying results.  
+C) Skip testing and trust the first result.  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
 
 **Your answer:** _______________
 

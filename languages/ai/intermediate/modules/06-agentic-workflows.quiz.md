@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Ignore error handling for edge cases.  
-B) Jump to the next module without verifying results.  
-C) Add a verification step that checks facts only against provided sources.  
-D) Translate a vague request into a clear goal, constraints, and success criteria.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) No verification step—agent confidently ships wrong results.  
-B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
-C) Agent loop: plan → act → observe → verify (50 min)  
-D) Change multiple variables at once so you cannot compare outcomes.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-B) Treat every request as safe without review.  
-C) No verification step—agent confidently ships wrong results.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Jump to the next module without verifying results.  
+B) Stop conditions and safety rails (45 min)  
+C) Document and version changes so improvements are explainable.  
 D) Design an agent workflow spec for “triage support tickets and draft responses”.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
-B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Build a small evaluation loop: test cases, metrics, and iteration notes.  
+B) Unbounded loops (no budgets/timeouts).  
 C) Add a tool budget and stop conditions; show how it prevents runaway loops.  
-D) Design multi-step agents with explicit planning, tool boundaries, stop conditions, and verification.  
+D) Skip testing and trust the first result.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Storing sensitive data as “memory” without a policy.  
-B) Document and version changes so improvements are explainable.  
-C) Change multiple variables at once so you cannot compare outcomes.  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Document and version changes so improvements are explainable.  
+B) Agent loop: plan → act → observe → verify (50 min)  
+C) Treat every request as safe without review.  
 D) Add adversarial cases that try to make the agent leak secrets or ignore constraints.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which testing requirement is specified for this module?
-A) Agent tested with simulated failures (tool down, partial data, conflicting instructions).  
-B) Add a verification step that checks facts only against provided sources.  
-C) No verification step—agent confidently ships wrong results.  
-D) Jump to the next module without verifying results.  
+### Question 4: Before submitting, which verification step must you complete?
+A) Treat every request as safe without review.  
+B) Document and version changes so improvements are explainable.  
+C) Run the module tests and confirm they pass.  
+D) Design the handoff protocol between steps.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which common mistake should you avoid in this module?
-A) Add a tool budget and stop conditions; show how it prevents runaway loops.  
-B) No verification step—agent confidently ships wrong results.  
-C) Translate a vague request into a clear goal, constraints, and success criteria.  
-D) Build a small evaluation loop: test cases, metrics, and iteration notes.  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Treat every request as safe without review.  
+B) Translate a vague request into a clear goal, constraints, and success criteria.  
+C) Document and version changes so improvements are explainable.  
+D) Agent tested with simulated failures (tool down, partial data, conflicting instructions).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which statement best summarizes this module's focus?
-A) Design multi-step agents with explicit planning, tool boundaries, stop conditions, and verification.  
-B) Add adversarial cases that try to make the agent leak secrets or ignore constraints.  
-C) Translate a vague request into a clear goal, constraints, and success criteria.  
-D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which outcome appears in the learning outcomes list?
+### Question 6: Which option would be a common mistake to avoid?
 A) No verification step—agent confidently ships wrong results.  
-B) Agent loop: plan → act → observe → verify (50 min)  
-C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
-D) Ignore error handling for edge cases.  
+B) Run the module tests and confirm they pass.  
+C) Jump to the next module without verifying results.  
+D) Define agent roles and responsibilities.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
-A) Ship changes without documentation.  
-B) Add a “human approval” checkpoint for high-risk actions.  
-C) Add a “post-run report” format (actions taken, evidence, uncertainties).  
-D) Build a small evaluation loop: test cases, metrics, and iteration notes.  
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Avoid measuring results or performance.  
+B) Translate a vague request into a clear goal, constraints, and success criteria.  
+C) Add a verification step that checks facts only against provided sources.  
+D) Add a tool budget and stop conditions; show how it prevents runaway loops.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Agent loop: plan → act → observe → verify (50 min)  
+B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+C) Add a verification step that checks facts only against provided sources.  
+D) Define agent roles and responsibilities.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Build a small evaluation loop: test cases, metrics, and iteration notes.  
+B) Add adversarial cases that try to make the agent leak secrets or ignore constraints.  
+C) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
+D) Avoid measuring results or performance.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Define agent roles and responsibilities.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) No verification step—agent confidently ships wrong results.  
+D) Design multi-step agents with explicit planning, tool boundaries, stop conditions, and verification.  
 
 **Your answer:** _______________
 

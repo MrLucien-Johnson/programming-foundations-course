@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which item is required in the verification checklist?
-A) Run the module tests and confirm they pass.  
-B) Avoid measuring results or performance.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Treat every request as safe without review.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which check must be completed before moving on?
-A) Ignore error handling for edge cases.  
-B) Jump to the next module without verifying results.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Avoid measuring results or performance.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which verification step is required?
-A) Change multiple variables at once so you cannot compare outcomes.  
+### Question 1: You need to run the test suite. Which command should you use?
+A) `python -m pytest`  
 B) Update the README with setup, run, and test commands.  
-C) Ship changes without documentation.  
-D) Ignore error handling for edge cases.  
+C) Draft a high-level system diagram.  
+D) Verify the primary feature works with normal and edge-case inputs.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which item is required in the verification checklist?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Treat every request as safe without review.  
+### Question 2: You need to run lint checks. Which command should you use?
+A) Review tradeoffs and capture in a decision log.  
+B) Copy the starter pack from `languages/python/advanced/starter-pack` into a new working folder.  
+C) `ruff check .`  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: You need to format the code. Which command should you use?
+A) Review tradeoffs and capture in a decision log.  
+B) `ruff format .`  
 C) Run: `python -m pytest`  
-D) Jump to the next module without verifying results.  
+D) Update the README with setup, run, and test commands.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which check must be completed before moving on?
-A) Ship changes without documentation.  
-B) Avoid measuring results or performance.  
-C) Treat every request as safe without review.  
-D) Run: `ruff check .`  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which verification step is required?
-A) Ignore error handling for edge cases.  
-B) Run: `ruff format .`  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Jump to the next module without verifying results.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which practice best supports reliable delivery in this module?
-A) Treat every request as safe without review.  
-B) Run: `python -m pytest`  
-C) Ignore error handling for edge cases.  
+### Question 4: Before submitting, which verification step must you complete?
+A) `ruff check .`  
+B) Ship changes without documentation.  
+C) Run the module tests and confirm they pass.  
 D) Change multiple variables at once so you cannot compare outcomes.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which habit improves reliability for this module?
-A) Run the module tests and confirm they pass.  
-B) Update the README with setup, run, and test commands.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which action best supports a high-quality delivery?
-A) Jump to the next module without verifying results.  
-B) Treat every request as safe without review.  
-C) Ignore error handling for edge cases.  
-D) Avoid measuring results or performance.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which practice best supports reliable delivery in this module?
-A) Skip testing and trust the first result.  
+### Question 5: Which step appears in the guided walkthrough?
+A) Run: `ruff check .`  
 B) Verify the primary feature works with normal and edge-case inputs.  
+C) Run: `python -m pytest`  
+D) Copy the starter pack from `languages/python/advanced/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which verification step is required before moving on?
+A) `ruff format .`  
+B) Verify the primary feature works with normal and edge-case inputs.  
+C) Draft a high-level system diagram.  
+D) Treat every request as safe without review.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Before submitting, which verification step must you complete?
+A) Update the README with setup, run, and test commands.  
+B) Ship changes without documentation.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) `ruff format .`  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which verification step is required before moving on?
+A) Ship changes without documentation.  
+B) Review the module goals and plan how you will synthesize architecture decisions.  
+C) Copy the starter pack from `languages/python/advanced/starter-pack` into a new working folder.  
+D) Run: `python -m pytest`  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Before submitting, which verification step must you complete?
+A) Jump to the next module without verifying results.  
+B) Draft a high-level system diagram.  
 C) Run: `ruff check .`  
-D) Ship changes without documentation.  
+D) Review the module goals and plan how you will synthesize architecture decisions.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which verification step is required before moving on?
+A) Jump to the next module without verifying results.  
+B) `ruff format .`  
+C) `ruff check .`  
+D) Run: `ruff format .`  
 
 **Your answer:** _______________
 

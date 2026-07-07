@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) AuthN vs AuthZ: sessions/JWT + roles (45 min)  
-B) Explain the core concepts and tradeoffs for **APIs and Auth**.  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Avoid measuring results or performance.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
+### Question 1: You need to run the test suite. Which command should you use?
 A) REST: resources, status codes, pagination (45 min)  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) Skip testing and trust the first result.  
-D) Skipping input validation and assuming “happy path”.  
+B) `go test ./...`  
+C) Add logging and status code verification.  
+D) Update the README with setup, run, and test commands.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Use tooling to keep quality high: gofmt + golangci-lint.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Ship changes without documentation.  
+### Question 2: You need to run lint checks. Which command should you use?
+A) `golangci-lint run`  
+B) Skip testing and trust the first result.  
+C) Apply the concepts to a realistic codebase (not just toy examples).  
+D) API docs: OpenAPI + examples (35 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: You need to format the code. Which command should you use?
+A) Making performance claims without measurements.  
+B) Avoid measuring results or performance.  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+D) `gofmt -w .`  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which action best satisfies the Core requirements?
+A) Add logging and status code verification.  
+B) Review the module goals and plan how you will design and secure API endpoints.  
+C) All work must be covered by **gofmt + lint + tests in CI**.  
 D) Implement a small feature tied to this module in an existing starter app.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Input validation + error envelopes (40 min)  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Shipping without an automated test run in CI.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 5: Which action upgrades the work to the Better level?
+A) REST: resources, status codes, pagination (45 min)  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) Skip testing and trust the first result.  
+D) Copy the starter pack from `languages/go/intermediate/starter-pack` into a new working folder.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Document decisions and constraints clearly for reviewers.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Making performance claims without measurements.  
-D) Ignore error handling for edge cases.  
+### Question 6: Which action qualifies as a Beast Mode upgrade?
+A) Treat every request as safe without review.  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+D) Add a performance or reliability improvement and **measure** the impact.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which testing requirement is specified for this module?
-A) Shipping without an automated test run in CI.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Write tests that prove correctness and prevent regressions.  
-D) All work must be covered by **gofmt + lint + tests in CI**.  
+### Question 7: Before submitting, which verification step must you complete?
+A) Run the module tests and confirm they pass.  
+B) Refactor one area for readability (without changing behavior) and prove it with tests.  
+C) Copy the starter pack from `languages/go/intermediate/starter-pack` into a new working folder.  
+D) Change multiple variables at once so you cannot compare outcomes.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which common mistake should you avoid in this module?
-A) Shipping without an automated test run in CI.  
+### Question 8: Which testing requirement must be satisfied to pass?
+A) Run: `gofmt -w .`  
 B) All work must be covered by **gofmt + lint + tests in CI**.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) `golangci-lint run`  
+D) Add logging and status code verification.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which statement best summarizes this module's focus?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Design and secure REST APIs with authentication and authorization.  
-C) Treat every request as safe without review.  
-D) Document decisions and constraints clearly for reviewers.  
+### Question 9: Which option would be a common mistake to avoid?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+B) Shipping without an automated test run in CI.  
+C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+D) API docs: OpenAPI + examples (35 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Over-mocking (tests assert implementation details instead of outcomes).  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Add or update documentation (README notes or ADR-style notes).  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which statement is listed as a learning outcome?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Rate limiting + basic abuse protections (35 min)  
-C) Ignore error handling for edge cases.  
-D) Write tests that prove correctness and prevent regressions.  
+### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+B) Ship changes without documentation.  
+C) Add logging and status code verification.  
+D) Explain the core concepts and tradeoffs for **APIs and Auth**.  
 
 **Your answer:** _______________
 

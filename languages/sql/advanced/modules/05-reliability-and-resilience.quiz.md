@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Run: `psql -f queries.sql`  
-B) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Skip testing and trust the first result.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Making performance claims without measurements.  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Run the module tests and confirm they pass.  
+D) Shipping without an automated test run in CI.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Retries, timeouts, budgets, and jitter (45 min)  
+### Question 2: Which action upgrades the work to the Better level?
+A) Over-mocking (tests assert implementation details instead of outcomes).  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 C) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
-D) Run the module tests and confirm they pass.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Run the module tests and confirm they pass.  
-C) Implement a small feature tied to this module in an existing starter app.  
 D) Document decisions and constraints clearly for reviewers.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Write tests that prove correctness and prevent regressions.  
-B) Run: `psql -f queries.sql`  
-C) Run the module tests and confirm they pass.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Design for failure using resilient patterns and operational readiness.  
+B) Document decisions and constraints clearly for reviewers.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Write tests that prove correctness and prevent regressions.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Jump to the next module without verifying results.  
-D) Add a performance or reliability improvement and **measure** the impact.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Run the module tests and confirm they pass.  
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
+### Question 4: Before submitting, which verification step must you complete?
 A) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.  
-B) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Ignore error handling for edge cases.  
+B) Jump to the next module without verifying results.  
+C) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
+D) Run the module tests and confirm they pass.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Avoid measuring results or performance.  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Ship changes without documentation.  
+B) Add retries, timeouts, or circuit breakers where needed.  
+C) Apply the concepts to a realistic codebase (not just toy examples).  
+D) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Refactor one area for readability (without changing behavior) and prove it with tests.  
 C) Shipping without an automated test run in CI.  
-D) Retries, timeouts, budgets, and jitter (45 min)  
+D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) List possible failure modes and mitigations.  
+B) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
+C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+D) Over-mocking (tests assert implementation details instead of outcomes).  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Write a test for a failure scenario.  
+B) Copy the starter pack from `languages/sql/advanced/starter-pack` into a new working folder.  
+C) Retries, timeouts, budgets, and jitter (45 min)  
+D) Change multiple variables at once so you cannot compare outcomes.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
 A) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
-B) Change multiple variables at once so you cannot compare outcomes.  
+B) Treat every request as safe without review.  
 C) Add or update documentation (README notes or ADR-style notes).  
-D) Design for failure using resilient patterns and operational readiness.  
+D) Copy the starter pack from `languages/sql/advanced/starter-pack` into a new working folder.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Making performance claims without measurements.  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 10: Which statement best summarizes the module focus?
+A) Circuit breakers, bulkheads, and rate limits (45 min)  
+B) Design for failure using resilient patterns and operational readiness.  
+C) Apply the concepts to a realistic codebase (not just toy examples).  
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 
 **Your answer:** _______________
 

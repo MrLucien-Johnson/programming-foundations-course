@@ -1,70 +1,70 @@
 # Rust Intermediate — Module 01: DSA (Practical) Quiz Answers
 
-## Question 1: Which learning outcome is part of this module?
-**Answer: D** - Explain the core concepts and tradeoffs for **DSA (Practical)**.
+## Question 1: You need to run the test suite. Which command should you use?
+**Answer: D** - `cargo test`
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 2: Which topic is explicitly covered in the lesson list?
-**Answer: C** - Big-O and tradeoffs in real code (45 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** This command runs the test suite.
 
 ---
 
-## Question 3: Which task appears in the Core exercises?
-**Answer: B** - Implement a small feature tied to this module in an existing starter app.
+## Question 2: You need to run lint checks. Which command should you use?
+**Answer: C** - `cargo clippy`
+
+**Explanation:** This command runs lint checks.
+
+---
+
+## Question 3: You need to format the code. Which command should you use?
+**Answer: B** - `cargo fmt`
+
+**Explanation:** This command formats the code.
+
+---
+
+## Question 4: Which action best satisfies the Core requirements?
+**Answer: D** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This task appears under Core exercises.
 
 ---
 
-## Question 4: Which task appears in the Better exercises?
-**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 5: Which action upgrades the work to the Better level?
+**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This task appears under Better exercises.
 
 ---
 
-## Question 5: Which task appears in the Beast Mode exercises?
-**Answer: A** - Add a performance or reliability improvement and **measure** the impact.
+## Question 6: Which action qualifies as a Beast Mode upgrade?
+**Answer: B** - Add a performance or reliability improvement and **measure** the impact.
 
 **Explanation:** This task appears under Beast Mode exercises.
 
 ---
 
-## Question 6: Which testing requirement is specified for this module?
-**Answer: B** - All work must be covered by **fmt + clippy + tests in CI**.
+## Question 7: Before submitting, which verification step must you complete?
+**Answer: C** - Run the module tests and confirm they pass.
+
+**Explanation:** This item appears in the verification checklist.
+
+---
+
+## Question 8: Which testing requirement must be satisfied to pass?
+**Answer: D** - All work must be covered by **fmt + clippy + tests in CI**.
 
 **Explanation:** This requirement is listed under testing requirements.
 
 ---
 
-## Question 7: Which common mistake should you avoid in this module?
-**Answer: C** - Shipping without an automated test run in CI.
+## Question 9: Which option would be a common mistake to avoid?
+**Answer: A** - Shipping without an automated test run in CI.
 
 **Explanation:** This mistake is listed under common mistakes.
 
 ---
 
-## Question 8: Which statement best summarizes this module's focus?
-**Answer: D** - Use data structures and algorithms pragmatically in real applications.
-
-**Explanation:** This statement comes from the module overview.
-
----
-
-## Question 9: Which outcome appears in the learning outcomes list?
-**Answer: A** - Apply the concepts to a realistic codebase (not just toy examples).
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 10: Which statement is listed as a learning outcome?
-**Answer: B** - Write tests that prove correctness and prevent regressions.
+## Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
+**Answer: B** - Explain the core concepts and tradeoffs for **DSA (Practical)**.
 
 **Explanation:** This outcome is listed in the module's learning outcomes.
 

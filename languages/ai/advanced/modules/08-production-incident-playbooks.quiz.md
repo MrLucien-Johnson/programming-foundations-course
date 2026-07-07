@@ -6,28 +6,28 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Ignore error handling for edge cases.  
-B) Be ready for production: incident types, triage, communication, mitigations, and postmortems.  
-C) Add communication templates (internal + user-facing) for common incidents.  
-D) Translate a vague request into a clear goal, constraints, and success criteria.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Ship changes without documentation.  
+B) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
+C) Postmortems: root cause, prevention, and follow-up evals (45 min)  
+D) Write an incident playbook for a cost spike and for a safety regression.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Incident categories: quality drop, safety event, cost spike, outage (45 min)  
-B) Update the README with setup, run, and test commands.  
-C) Mitigations that increase risk (e.g., disabling safety checks).  
-D) Design a post-incident improvement loop: update evals + guardrails.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Add “incident drills”: simulate failures and verify playbook effectiveness.  
+B) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Update the README with setup, run, and test commands.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Write an incident playbook for a cost spike and for a safety regression.  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Add automated detection rules that trigger playbook steps.  
 B) Verify the primary feature works with normal and edge-case inputs.  
 C) Document and version changes so improvements are explainable.  
 D) Playbooks: step-by-step actions and ownership (45 min)  
@@ -36,71 +36,71 @@ D) Playbooks: step-by-step actions and ownership (45 min)
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
-B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
-C) Skip testing and trust the first result.  
-D) Add “incident drills”: simulate failures and verify playbook effectiveness.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
-B) Be ready for production: incident types, triage, communication, mitigations, and postmortems.  
-C) Treat every request as safe without review.  
-D) Add automated detection rules that trigger playbook steps.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Run the module tests and confirm they pass.  
+### Question 4: Before submitting, which verification step must you complete?
+A) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
 B) Triage workflow: detect → contain → mitigate → recover (50 min)  
-C) Incidents are tested via drills; playbooks are updated based on results.  
-D) Jump to the next module without verifying results.  
+C) Be ready for production: incident types, triage, communication, mitigations, and postmortems.  
+D) Run the module tests and confirm they pass.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Add automated detection rules that trigger playbook steps.  
-B) Incident categories: quality drop, safety event, cost spike, outage (45 min)  
-C) Incidents are tested via drills; playbooks are updated based on results.  
-D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Incident categories: quality drop, safety event, cost spike, outage (45 min)  
+B) Update the README with setup, run, and test commands.  
+C) Playbooks: step-by-step actions and ownership (45 min)  
+D) Incidents are tested via drills; playbooks are updated based on results.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
+### Question 6: Which option would be a common mistake to avoid?
+A) No clear ownership or steps during incidents.  
+B) Add communication templates (internal + user-facing) for common incidents.  
+C) Add automated detection rules that trigger playbook steps.  
+D) Update the README with setup, run, and test commands.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
 A) Skip testing and trust the first result.  
-B) Treat every request as safe without review.  
-C) Ignore error handling for edge cases.  
-D) No clear ownership or steps during incidents.  
+B) Define escalation paths and owners.  
+C) Translate a vague request into a clear goal, constraints, and success criteria.  
+D) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Change multiple variables at once so you cannot compare outcomes.  
+B) Treat every request as safe without review.  
+C) Be ready for production: incident types, triage, communication, mitigations, and postmortems.  
+D) Incident categories: quality drop, safety event, cost spike, outage (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
 A) Treat every request as safe without review.  
 B) Add “incident drills”: simulate failures and verify playbook effectiveness.  
 C) Triage workflow: detect → contain → mitigate → recover (50 min)  
-D) Be ready for production: incident types, triage, communication, mitigations, and postmortems.  
+D) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Treat every request as safe without review.  
-B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Triage workflow: detect → contain → mitigate → recover (50 min)  
+### Question 10: Which statement best summarizes the module focus?
+A) Review the module goals and plan how you will prepare incident response playbooks.  
+B) Be ready for production: incident types, triage, communication, mitigations, and postmortems.  
+C) Add “incident drills”: simulate failures and verify playbook effectiveness.  
+D) Mitigations that increase risk (e.g., disabling safety checks).  
 
 **Your answer:** _______________
 

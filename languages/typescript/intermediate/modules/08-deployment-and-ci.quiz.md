@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-B) Explain the core concepts and tradeoffs for **Deployment and CI**.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Jump to the next module without verifying results.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Containerize, configure, and deploy with automated CI checks.  
-D) Environments + configuration (45 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which task appears in the Core exercises?
-A) Ship changes without documentation.  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Containerize, configure, and deploy with automated CI checks.  
-D) Implement a small feature tied to this module in an existing starter app.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task appears in the Better exercises?
+### Question 1: Which action best satisfies the Core requirements?
 A) Explain the core concepts and tradeoffs for **Deployment and CI**.  
-B) Use tooling to keep quality high: ESLint + Prettier.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Write tests that prove correctness and prevent regressions.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Explain the core concepts and tradeoffs for **Deployment and CI**.  
-B) Containers for local dev and CI (60 min)  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which testing requirement is specified for this module?
-A) Add a performance or reliability improvement and **measure** the impact.  
 B) Implement a small feature tied to this module in an existing starter app.  
-C) Document decisions and constraints clearly for reviewers.  
-D) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which common mistake should you avoid in this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) CI pipelines: caching, matrices, artifacts (55 min)  
-C) Implement a small feature tied to this module in an existing starter app.  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 D) Shipping without an automated test run in CI.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which statement best summarizes this module's focus?
-A) Containerize, configure, and deploy with automated CI checks.  
-B) Jump to the next module without verifying results.  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Change multiple variables at once so you cannot compare outcomes.  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which outcome appears in the learning outcomes list?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Ship changes without documentation.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Update the README with setup, run, and test commands.  
+B) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
+C) Containerize, configure, and deploy with automated CI checks.  
 D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement is listed as a learning outcome?
-A) Containers for local dev and CI (60 min)  
-B) Write tests that prove correctness and prevent regressions.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Containerize, configure, and deploy with automated CI checks.  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Use tooling to keep quality high: ESLint + Prettier.  
+B) Update the README with setup, run, and test commands.  
+C) Over-mocking (tests assert implementation details instead of outcomes).  
+D) Add a performance or reliability improvement and **measure** the impact.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before submitting, which verification step must you complete?
+A) Making performance claims without measurements.  
+B) Explain the core concepts and tradeoffs for **Deployment and CI**.  
+C) Run the module tests and confirm they pass.  
+D) Apply the concepts to a realistic codebase (not just toy examples).  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Create a deployment checklist (build, test, release).  
+B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+C) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which option would be a common mistake to avoid?
+A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+B) Deployments: health checks + migrations + rollback plan (60 min)  
+C) Avoid measuring results or performance.  
+D) Shipping without an automated test run in CI.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Run: `node index.js`  
+B) Add a CI workflow or script that runs tests automatically.  
+C) Create a deployment checklist (build, test, release).  
+D) Explain the core concepts and tradeoffs for **Deployment and CI**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Environments + configuration (45 min)  
+B) Add a CI workflow or script that runs tests automatically.  
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+D) Change multiple variables at once so you cannot compare outcomes.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Copy the starter pack from `languages/typescript/intermediate/starter-pack` into a new working folder.  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) Document decisions and constraints clearly for reviewers.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) If the module involves a database, tests must run against an isolated schema/database.  
+B) Containerize, configure, and deploy with automated CI checks.  
+C) Review the module goals and plan how you will ship safely with automation.  
+D) Copy the starter pack from `languages/typescript/intermediate/starter-pack` into a new working folder.  
 
 **Your answer:** _______________
 

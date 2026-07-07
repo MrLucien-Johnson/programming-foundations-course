@@ -1,72 +1,72 @@
 # AI — Module 06: Reliability and Fallbacks Quiz Answers
 
-## Question 1: Which learning outcome is part of this module?
-**Answer: D** - Translate a vague request into a clear goal, constraints, and success criteria.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 2: Which topic is explicitly covered in the lesson list?
-**Answer: C** - Reliability patterns: retries, timeouts, backoff, budgets (50 min)
-
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 3: Which task appears in the Core exercises?
-**Answer: B** - Design a fallback strategy for each top failure mode (model down, retrieval empty, tool error).
+## Question 1: Which action best satisfies the Core requirements?
+**Answer: D** - Design a fallback strategy for each top failure mode (model down, retrieval empty, tool error).
 
 **Explanation:** This task appears under Core exercises.
 
 ---
 
-## Question 4: Which task appears in the Better exercises?
-**Answer: D** - Add failure-injection tests to your harness (simulate outages/timeouts).
+## Question 2: Which action upgrades the work to the Better level?
+**Answer: C** - Add failure-injection tests to your harness (simulate outages/timeouts).
 
 **Explanation:** This task appears under Better exercises.
 
 ---
 
-## Question 5: Which task appears in the Beast Mode exercises?
-**Answer: A** - Design a human-in-the-loop queue with SLA and escalation.
+## Question 3: Which action qualifies as a Beast Mode upgrade?
+**Answer: B** - Design a human-in-the-loop queue with SLA and escalation.
 
 **Explanation:** This task appears under Beast Mode exercises.
 
 ---
 
-## Question 6: Which item is required in the verification checklist?
-**Answer: A** - Run the module tests and confirm they pass.
+## Question 4: Before submitting, which verification step must you complete?
+**Answer: D** - Run the module tests and confirm they pass.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 7: Which testing requirement is specified for this module?
-**Answer: C** - Harness includes simulated failures and verifies safe behavior.
+## Question 5: Which testing requirement must be satisfied to pass?
+**Answer: A** - Harness includes simulated failures and verifies safe behavior.
 
 **Explanation:** This requirement is listed under testing requirements.
 
 ---
 
-## Question 8: Which common mistake should you avoid in this module?
+## Question 6: Which option would be a common mistake to avoid?
 **Answer: A** - Unlimited retries that amplify outages and cost spikes.
 
 **Explanation:** This mistake is listed under common mistakes.
 
 ---
 
-## Question 9: Which statement best summarizes this module's focus?
-**Answer: B** - Design resilient systems: retries, timeouts, idempotency, degraded modes, and human fallback.
+## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+**Answer: C** - Translate a vague request into a clear goal, constraints, and success criteria.
 
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 10: Which outcome appears in the learning outcomes list?
-**Answer: A** - Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+## Question 8: Which topic would you revisit to solve this module's core problem?
+**Answer: A** - Reliability patterns: retries, timeouts, backoff, budgets (50 min)
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Explanation:** This topic appears in the lesson list.
+
+---
+
+## Question 9: Which step appears in the guided walkthrough?
+**Answer: B** - Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 10: Which statement best summarizes the module focus?
+**Answer: A** - Design resilient systems: retries, timeouts, idempotency, degraded modes, and human fallback.
+
+**Explanation:** This statement comes from the module overview.
 
 ---
 

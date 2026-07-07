@@ -1,72 +1,72 @@
 # CAdvanced — Module 04: Performance and Profiling Quiz Answers
 
-## Question 1: Which learning outcome is part of this module?
-**Answer: D** - Explain the core concepts and tradeoffs for **Performance and Profiling**.
+## Question 1: You need to run the test suite. Which command should you use?
+**Answer: D** - `dotnet test`
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 2: Which topic is explicitly covered in the lesson list?
-**Answer: C** - Profiling methodology and baselines (40 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** This command runs the test suite.
 
 ---
 
-## Question 3: Which task appears in the Core exercises?
+## Question 2: You need to format the code. Which command should you use?
+**Answer: C** - `dotnet format`
+
+**Explanation:** This command formats the code.
+
+---
+
+## Question 3: Which action best satisfies the Core requirements?
 **Answer: B** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This task appears under Core exercises.
 
 ---
 
-## Question 4: Which task appears in the Better exercises?
+## Question 4: Which action upgrades the work to the Better level?
 **Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This task appears under Better exercises.
 
 ---
 
-## Question 5: Which task appears in the Beast Mode exercises?
+## Question 5: Which action qualifies as a Beast Mode upgrade?
 **Answer: A** - Add a performance or reliability improvement and **measure** the impact.
 
 **Explanation:** This task appears under Beast Mode exercises.
 
 ---
 
-## Question 6: Which item is required in the verification checklist?
+## Question 6: Before submitting, which verification step must you complete?
 **Answer: A** - Run the module tests and confirm they pass.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 7: Which testing requirement is specified for this module?
+## Question 7: Which testing requirement must be satisfied to pass?
 **Answer: D** - All work must be covered by **build + tests + analyzers in CI**.
 
 **Explanation:** This requirement is listed under testing requirements.
 
 ---
 
-## Question 8: Which common mistake should you avoid in this module?
+## Question 8: Which option would be a common mistake to avoid?
 **Answer: B** - Shipping without an automated test run in CI.
 
 **Explanation:** This mistake is listed under common mistakes.
 
 ---
 
-## Question 9: Which statement best summarizes this module's focus?
-**Answer: C** - Profile, measure, and optimize across app + database + network.
+## Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
+**Answer: C** - Explain the core concepts and tradeoffs for **Performance and Profiling**.
 
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This outcome is listed in the module's learning outcomes.
 
 ---
 
-## Question 10: Which outcome appears in the learning outcomes list?
-**Answer: C** - Apply the concepts to a realistic codebase (not just toy examples).
+## Question 10: Which topic would you revisit to solve this module's core problem?
+**Answer: C** - Profiling methodology and baselines (40 min)
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Explanation:** This topic appears in the lesson list.
 
 ---
 

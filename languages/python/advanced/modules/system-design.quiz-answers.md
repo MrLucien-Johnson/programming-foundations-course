@@ -1,72 +1,72 @@
 # Systems and Design (Advanced) Quiz Answers
 
-## Question 1: Which item is required in the verification checklist?
-**Answer: A** - Run the module tests and confirm they pass.
+## Question 1: You need to run the test suite. Which command should you use?
+**Answer: A** - `python -m pytest`
+
+**Explanation:** This command runs the test suite.
+
+---
+
+## Question 2: You need to run lint checks. Which command should you use?
+**Answer: C** - `ruff check .`
+
+**Explanation:** This command runs lint checks.
+
+---
+
+## Question 3: You need to format the code. Which command should you use?
+**Answer: B** - `ruff format .`
+
+**Explanation:** This command formats the code.
+
+---
+
+## Question 4: Before submitting, which verification step must you complete?
+**Answer: C** - Run the module tests and confirm they pass.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 2: Which check must be completed before moving on?
-**Answer: C** - Verify the primary feature works with normal and edge-case inputs.
+## Question 5: Which step appears in the guided walkthrough?
+**Answer: D** - Copy the starter pack from `languages/python/advanced/starter-pack` into a new working folder.
+
+**Explanation:** This step is listed in the guided walkthrough.
+
+---
+
+## Question 6: Which verification step is required before moving on?
+**Answer: B** - Verify the primary feature works with normal and edge-case inputs.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 3: Which verification step is required?
-**Answer: B** - Update the README with setup, run, and test commands.
+## Question 7: Before submitting, which verification step must you complete?
+**Answer: A** - Update the README with setup, run, and test commands.
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 4: Which item is required in the verification checklist?
-**Answer: C** - Run: `python -m pytest`
+## Question 8: Which verification step is required before moving on?
+**Answer: D** - Run: `python -m pytest`
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 5: Which check must be completed before moving on?
-**Answer: D** - Run: `ruff check .`
+## Question 9: Before submitting, which verification step must you complete?
+**Answer: C** - Run: `ruff check .`
 
 **Explanation:** This item appears in the verification checklist.
 
 ---
 
-## Question 6: Which verification step is required?
-**Answer: B** - Run: `ruff format .`
+## Question 10: Which verification step is required before moving on?
+**Answer: D** - Run: `ruff format .`
 
 **Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 7: Which practice best supports reliable delivery in this module?
-**Answer: A** - Treat every request as safe without review.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 8: Which habit improves reliability for this module?
-**Answer: D** - Skip testing and trust the first result.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 9: Which action best supports a high-quality delivery?
-**Answer: C** - Ignore error handling for edge cases.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
-
----
-
-## Question 10: Which practice best supports reliable delivery in this module?
-**Answer: D** - Ship changes without documentation.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
 
 ---
 

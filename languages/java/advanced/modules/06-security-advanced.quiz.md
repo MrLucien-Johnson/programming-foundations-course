@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Encryption at rest/in transit + key management (45 min)  
-D) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
+### Question 1: Which action best satisfies the Core requirements?
+A) Jump to the next module without verifying results.  
+B) Review the module goals and plan how you will harden systems against advanced threats.  
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+D) Implement a small feature tied to this module in an existing starter app.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Add or update documentation (README notes or ADR-style notes).  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Threat modeling + abuse cases (45 min)  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 2: Which action upgrades the work to the Better level?
+A) Create a short write-up: what changed, why, and how you verified it.  
+B) Shipping without an automated test run in CI.  
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+D) Document decisions and constraints clearly for reviewers.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
-A) Document decisions and constraints clearly for reviewers.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).  
+### Question 3: Which action qualifies as a Beast Mode upgrade?
+A) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).  
+B) Add a performance or reliability improvement and **measure** the impact.  
+C) Run the module tests and confirm they pass.  
 D) Supply-chain security + dependency policies (35 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
-A) Avoid measuring results or performance.  
-B) Encryption at rest/in transit + key management (45 min)  
+### Question 4: Before submitting, which verification step must you complete?
+A) Threat-model, harden, and protect secrets, data, and supply chain.  
+B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
 C) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Skipping input validation and assuming “happy path”.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
 D) Run the module tests and confirm they pass.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Making performance claims without measurements.  
-B) Security testing and hardening checklist (40 min)  
+### Question 5: Which testing requirement must be satisfied to pass?
+A) Skip testing and trust the first result.  
+B) Create a short write-up: what changed, why, and how you verified it.  
 C) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+D) Run: `javac Main.java && java Main`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Update the README with setup, run, and test commands.  
+### Question 6: Which option would be a common mistake to avoid?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Add security logging or alerting for sensitive actions.  
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
 D) Shipping without an automated test run in CI.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
-A) Implement a small feature tied to this module in an existing starter app.  
+### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Skip testing and trust the first result.  
 B) Security testing and hardening checklist (40 min)  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Threat-model, harden, and protect secrets, data, and supply chain.  
+C) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
+D) Run: `javac Main.java && java Main`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Threat modeling + abuse cases (45 min)  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Jump to the next module without verifying results.  
+### Question 8: Which topic would you revisit to solve this module's core problem?
+A) Skipping input validation and assuming “happy path”.  
+B) Ship changes without documentation.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Threat modeling + abuse cases (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which step appears in the guided walkthrough?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.  
+B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+C) Security testing and hardening checklist (40 min)  
+D) Copy the starter pack from `languages/java/advanced/starter-pack` into a new working folder.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement best summarizes the module focus?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) Threat-model, harden, and protect secrets, data, and supply chain.  
+C) Run: `javac Main.java && java Main`  
+D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
 
 **Your answer:** _______________
 

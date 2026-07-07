@@ -6,101 +6,101 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which learning outcome is part of this module?
-A) Run the module tests and confirm they pass.  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Making performance claims without measurements.  
-D) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
+### Question 1: You need to run the test suite. Which command should you use?
+A) Instrument systems and run them with SLO-based operations.  
+B) Ship changes without documentation.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) `dotnet test`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is explicitly covered in the lesson list?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Making performance claims without measurements.  
-C) Jump to the next module without verifying results.  
-D) SLIs/SLOs and error budgets (45 min)  
+### Question 2: You need to format the code. Which command should you use?
+A) Alerting strategy + on-call hygiene (35 min)  
+B) Write tests that prove correctness and prevent regressions.  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) `dotnet format`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which task appears in the Core exercises?
+### Question 3: Which action best satisfies the Core requirements?
 A) Implement a small feature tied to this module in an existing starter app.  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Skip testing and trust the first result.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+B) Instrument systems and run them with SLO-based operations.  
+C) Skipping input validation and assuming “happy path”.  
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which task appears in the Better exercises?
+### Question 4: Which action upgrades the work to the Better level?
 A) SLIs/SLOs and error budgets (45 min)  
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Skip testing and trust the first result.  
-D) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+D) Making performance claims without measurements.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which task appears in the Beast Mode exercises?
+### Question 5: Which action qualifies as a Beast Mode upgrade?
 A) Add a performance or reliability improvement and **measure** the impact.  
-B) Ship changes without documentation.  
-C) Skip testing and trust the first result.  
-D) Treat every request as safe without review.  
+B) Define SLIs and SLO targets for one critical path.  
+C) Ship changes without documentation.  
+D) Verify the primary feature works with normal and edge-case inputs.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Document decisions and constraints clearly for reviewers.  
-B) Ignore error handling for edge cases.  
-C) Metrics: RED/USE and cardinality pitfalls (45 min)  
+### Question 6: Before submitting, which verification step must you complete?
+A) If the module involves a database, tests must run against an isolated schema/database.  
+B) `dotnet test`  
+C) Tracing: spans, context propagation (45 min)  
 D) Run the module tests and confirm they pass.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
+### Question 7: Which testing requirement must be satisfied to pass?
 A) All work must be covered by **build + tests + analyzers in CI**.  
-B) Avoid measuring results or performance.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+B) Document alert thresholds and escalation steps.  
+C) Update the README with setup, run, and test commands.  
+D) Alerting strategy + on-call hygiene (35 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) SLIs/SLOs and error budgets (45 min)  
+### Question 8: Which option would be a common mistake to avoid?
+A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
 B) Shipping without an automated test run in CI.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Write tests that prove correctness and prevent regressions.  
+C) Run the module tests and confirm they pass.  
+D) Use tooling to keep quality high: dotnet format + analyzers.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which statement best summarizes this module's focus?
+### Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
+A) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
+B) Metrics: RED/USE and cardinality pitfalls (45 min)  
+C) Implement a small feature tied to this module in an existing starter app.  
+D) Over-mocking (tests assert implementation details instead of outcomes).  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which topic would you revisit to solve this module's core problem?
 A) Instrument systems and run them with SLO-based operations.  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Add or update documentation (README notes or ADR-style notes).  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which outcome appears in the learning outcomes list?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Update the README with setup, run, and test commands.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+C) SLIs/SLOs and error budgets (45 min)  
+D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
 
 **Your answer:** _______________
 
