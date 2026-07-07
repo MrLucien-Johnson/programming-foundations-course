@@ -7,9 +7,9 @@ Answer these questions about what you've learned. Try to answer from memory firs
 ## Questions
 
 ### Question 1: Which learning outcome is part of this module?
-A) CI checks: eval gates, safety tests, and smoke tests (40 min)  
-B) Design a staged rollout with shadow evaluation and a rollback trigger.  
-C) Avoid measuring results or performance.  
+A) Environments: dev/stage/prod configs and secrets handling (45 min)  
+B) Create a deployment checklist for one AI feature.  
+C) Design a staged rollout with shadow evaluation and a rollback trigger.  
 D) Translate a vague request into a clear goal, constraints, and success criteria.  
 
 **Your answer:** _______________
@@ -17,9 +17,9 @@ D) Translate a vague request into a clear goal, constraints, and success criteri
 ---
 
 ### Question 2: Which topic is explicitly covered in the lesson list?
-A) Design a staged rollout with shadow evaluation and a rollback trigger.  
-B) Avoid measuring results or performance.  
-C) Ignore error handling for edge cases.  
+A) Skip testing and trust the first result.  
+B) Deploying prompt changes without a version or rollback strategy.  
+C) Design a staged rollout with shadow evaluation and a rollback trigger.  
 D) Environments: dev/stage/prod configs and secrets handling (45 min)  
 
 **Your answer:** _______________
@@ -27,20 +27,20 @@ D) Environments: dev/stage/prod configs and secrets handling (45 min)
 ---
 
 ### Question 3: Which task appears in the Core exercises?
-A) Verify the primary feature works with normal and edge-case inputs.  
+A) Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.  
 B) Create a deployment checklist for one AI feature.  
 C) Rollouts: canary, feature flags, and rollback criteria (45 min)  
-D) Skip testing and trust the first result.  
+D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 4: Which task appears in the Better exercises?
-A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
+A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
 B) Design a prompt versioning scheme and a change log format.  
-C) CI checks: eval gates, safety tests, and smoke tests (40 min)  
-D) No staging environment or test dataset.  
+C) Create a deployment checklist for one AI feature.  
+D) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
 
 **Your answer:** _______________
 
@@ -48,39 +48,59 @@ D) No staging environment or test dataset.
 
 ### Question 5: Which task appears in the Beast Mode exercises?
 A) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Define rollback criteria based on eval results and user-impact signals.  
+B) Ship an AI feature safely: config, versioning, rollout, and operational readiness.  
+C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
 D) Design a staged rollout with shadow evaluation and a rollback trigger.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Document and version changes so improvements are explainable.  
-B) Run the module tests and confirm they pass.  
-C) No plan for incidents or user-reported failures.  
-D) Skip testing and trust the first result.  
+### Question 6: Which testing requirement is specified for this module?
+A) Jump to the next module without verifying results.  
+B) Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.  
+C) Create a deployment checklist for one AI feature.  
+D) Ship an AI feature safely: config, versioning, rollout, and operational readiness.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) CI checks: eval gates, safety tests, and smoke tests (40 min)  
-B) Rollouts: canary, feature flags, and rollback criteria (45 min)  
-C) Jump to the next module without verifying results.  
-D) Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.  
+### Question 7: Which common mistake should you avoid in this module?
+A) Treat every request as safe without review.  
+B) Design a prompt versioning scheme and a change log format.  
+C) Ship changes without documentation.  
+D) Deploying prompt changes without a version or rollback strategy.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Deploying prompt changes without a version or rollback strategy.  
-B) Jump to the next module without verifying results.  
+### Question 8: Which statement best summarizes this module's focus?
+A) Ship an AI feature safely: config, versioning, rollout, and operational readiness.  
+B) Ignore error handling for edge cases.  
 C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
-D) Skip testing and trust the first result.  
+D) Add an incident response “first 30 minutes” checklist.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which outcome appears in the learning outcomes list?
+A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
+B) Ignore error handling for edge cases.  
+C) Rollouts: canary, feature flags, and rollback criteria (45 min)  
+D) Deploying prompt changes without a version or rollback strategy.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement is listed as a learning outcome?
+A) CI checks: eval gates, safety tests, and smoke tests (40 min)  
+B) Create a deployment checklist for one AI feature.  
+C) Build a small evaluation loop: test cases, metrics, and iteration notes.  
+D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 
@@ -92,9 +112,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You understand the module well.
-- **6-7 correct:** Great work! Review what you missed.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 

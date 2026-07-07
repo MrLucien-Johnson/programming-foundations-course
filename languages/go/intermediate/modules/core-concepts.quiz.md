@@ -6,61 +6,61 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which item is required in the verification checklist?
-A) Avoid measuring results or performance.  
-B) Skip testing and trust the first result.  
-C) Ship changes without documentation.  
-D) Run the module tests and confirm they pass.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which check must be completed before moving on?
-A) Avoid measuring results or performance.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Treat every request as safe without review.  
-D) Verify the primary feature works with normal and edge-case inputs.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which verification step is required?
-A) Jump to the next module without verifying results.  
-B) Skip testing and trust the first result.  
-C) Ship changes without documentation.  
-D) Update the README with setup, run, and test commands.  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which item is required in the verification checklist?
-A) Avoid measuring results or performance.  
+### Question 1: Which practice best supports reliable delivery in this module?
+A) Change multiple variables at once so you cannot compare outcomes.  
 B) Ignore error handling for edge cases.  
-C) Run: `go test ./...`  
+C) Avoid measuring results or performance.  
+D) Skip testing and trust the first result.  
+
+**Your answer:** _______________
+
+---
+
+### Question 2: Which habit improves reliability for this module?
+A) Change multiple variables at once so you cannot compare outcomes.  
+B) Avoid measuring results or performance.  
+C) Treat every request as safe without review.  
+D) Ignore error handling for edge cases.  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which action best supports a high-quality delivery?
+A) Jump to the next module without verifying results.  
+B) Avoid measuring results or performance.  
+C) Skip testing and trust the first result.  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which practice best supports reliable delivery in this module?
+A) Ignore error handling for edge cases.  
+B) Ship changes without documentation.  
+C) Avoid measuring results or performance.  
 D) Change multiple variables at once so you cannot compare outcomes.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which check must be completed before moving on?
+### Question 5: Which habit improves reliability for this module?
 A) Skip testing and trust the first result.  
-B) Change multiple variables at once so you cannot compare outcomes.  
+B) Jump to the next module without verifying results.  
 C) Ship changes without documentation.  
-D) Run: `golangci-lint run`  
+D) Change multiple variables at once so you cannot compare outcomes.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which verification step is required?
+### Question 6: Which action best supports a high-quality delivery?
 A) Avoid measuring results or performance.  
 B) Skip testing and trust the first result.  
 C) Treat every request as safe without review.  
-D) Run: `gofmt -w .`  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
@@ -68,19 +68,39 @@ D) Run: `gofmt -w .`
 
 ### Question 7: Which practice best supports reliable delivery in this module?
 A) Treat every request as safe without review.  
-B) Run: `go test ./...`  
-C) Run the module tests and confirm they pass.  
-D) Ignore error handling for edge cases.  
+B) Ignore error handling for edge cases.  
+C) Avoid measuring results or performance.  
+D) Ship changes without documentation.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 8: Which habit improves reliability for this module?
-A) Verify the primary feature works with normal and edge-case inputs.  
+A) Change multiple variables at once so you cannot compare outcomes.  
 B) Skip testing and trust the first result.  
-C) Run: `gofmt -w .`  
-D) Run: `go test ./...`  
+C) Treat every request as safe without review.  
+D) Jump to the next module without verifying results.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which action best supports a high-quality delivery?
+A) Treat every request as safe without review.  
+B) Ignore error handling for edge cases.  
+C) Avoid measuring results or performance.  
+D) Skip testing and trust the first result.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which practice best supports reliable delivery in this module?
+A) Avoid measuring results or performance.  
+B) Ignore error handling for edge cases.  
+C) Jump to the next module without verifying results.  
+D) Ship changes without documentation.  
 
 **Your answer:** _______________
 
@@ -92,9 +112,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You understand the module well.
-- **6-7 correct:** Great work! Review what you missed.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 

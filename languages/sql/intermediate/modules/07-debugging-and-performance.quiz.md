@@ -8,9 +8,9 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ### Question 1: Which learning outcome is part of this module?
 A) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
-B) Making performance claims without measurements.  
+B) Debug systematically and improve performance with evidence.  
 C) Implement a small feature tied to this module in an existing starter app.  
-D) Create a short write-up: what changed, why, and how you verified it.  
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
 
 **Your answer:** _______________
 
@@ -18,8 +18,8 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ### Question 2: Which topic is explicitly covered in the lesson list?
 A) Debugging workflow: reproduce → isolate → fix (35 min)  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Debug systematically and improve performance with evidence.  
+B) Jump to the next module without verifying results.  
+C) Skip testing and trust the first result.  
 D) Document decisions and constraints clearly for reviewers.  
 
 **Your answer:** _______________
@@ -29,7 +29,7 @@ D) Document decisions and constraints clearly for reviewers.
 ### Question 3: Which task appears in the Core exercises?
 A) Write tests that prove correctness and prevent regressions.  
 B) Logging and tracing basics (40 min)  
-C) Skip testing and trust the first result.  
+C) Debug systematically and improve performance with evidence.  
 D) Implement a small feature tied to this module in an existing starter app.  
 
 **Your answer:** _______________
@@ -38,9 +38,9 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ### Question 4: Which task appears in the Better exercises?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
-C) Ignore error handling for edge cases.  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
 
 **Your answer:** _______________
 
@@ -49,38 +49,58 @@ D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 ### Question 5: Which task appears in the Beast Mode exercises?
 A) Jump to the next module without verifying results.  
 B) Add a performance or reliability improvement and **measure** the impact.  
-C) Skipping input validation and assuming “happy path”.  
-D) Run the module tests and confirm they pass.  
+C) If the module involves a database, tests must run against an isolated schema/database.  
+D) Add or update documentation (README notes or ADR-style notes).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Run the module tests and confirm they pass.  
-B) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 6: Which testing requirement is specified for this module?
+A) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Jump to the next module without verifying results.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which common mistake should you avoid in this module?
+A) Debug systematically and improve performance with evidence.  
+B) Shipping without an automated test run in CI.  
+C) Create a short write-up: what changed, why, and how you verified it.  
 D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
-C) Run: `psql -f queries.sql`  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 8: Which statement best summarizes this module's focus?
+A) Logging and tracing basics (40 min)  
+B) Debug systematically and improve performance with evidence.  
+C) Create a short write-up: what changed, why, and how you verified it.  
+D) Making performance claims without measurements.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Logging and tracing basics (40 min)  
-B) Shipping without an automated test run in CI.  
-C) Run the module tests and confirm they pass.  
-D) Debug systematically and improve performance with evidence.  
+### Question 9: Which outcome appears in the learning outcomes list?
+A) Debug systematically and improve performance with evidence.  
+B) Ignore error handling for edge cases.  
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+D) Apply the concepts to a realistic codebase (not just toy examples).  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement is listed as a learning outcome?
+A) Create a short write-up: what changed, why, and how you verified it.  
+B) Write tests that prove correctness and prevent regressions.  
+C) Ship changes without documentation.  
+D) If the module involves a database, tests must run against an isolated schema/database.  
 
 **Your answer:** _______________
 
@@ -92,9 +112,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You understand the module well.
-- **6-7 correct:** Great work! Review what you missed.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 

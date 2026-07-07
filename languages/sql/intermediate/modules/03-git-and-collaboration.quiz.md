@@ -7,10 +7,10 @@ Answer these questions about what you've learned. Try to answer from memory firs
 ## Questions
 
 ### Question 1: Which learning outcome is part of this module?
-A) Run: `psql -f queries.sql`  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
+A) Shipping without an automated test run in CI.  
+B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
 C) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
-D) Working with CI failures (30 min)  
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 
 **Your answer:** _______________
 
@@ -18,19 +18,19 @@ D) Working with CI failures (30 min)
 
 ### Question 2: Which topic is explicitly covered in the lesson list?
 A) Branching strategies + commit hygiene (40 min)  
-B) Ship changes without documentation.  
-C) Ignore error handling for edge cases.  
-D) Jump to the next module without verifying results.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Collaborate safely using branching, PRs, and reviews.  
+D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 3: Which task appears in the Core exercises?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Shipping without an automated test run in CI.  
+A) Treat every request as safe without review.  
+B) Skip testing and trust the first result.  
 C) Implement a small feature tied to this module in an existing starter app.  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+D) PRs: review checklists and feedback loops (40 min)  
 
 **Your answer:** _______________
 
@@ -38,49 +38,69 @@ D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 ### Question 4: Which task appears in the Better exercises?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Create a short write-up: what changed, why, and how you verified it.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Collaborate safely using branching, PRs, and reviews.  
+B) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Collaborate safely using branching, PRs, and reviews.  
+D) Treat every request as safe without review.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 5: Which task appears in the Beast Mode exercises?
-A) Working with CI failures (30 min)  
+A) Implement a small feature tied to this module in an existing starter app.  
 B) Add a performance or reliability improvement and **measure** the impact.  
-C) Jump to the next module without verifying results.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+C) Treat every request as safe without review.  
+D) Add or update documentation (README notes or ADR-style notes).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Run the module tests and confirm they pass.  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Skipping input validation and assuming “happy path”.  
+### Question 6: Which testing requirement is specified for this module?
+A) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
+B) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Branching strategies + commit hygiene (40 min)  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which common mistake should you avoid in this module?
+A) Working with CI failures (30 min)  
+B) Jump to the next module without verifying results.  
+C) Shipping without an automated test run in CI.  
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which statement best summarizes this module's focus?
+A) Conflicts and rebasing safely (45 min)  
+B) Making performance claims without measurements.  
+C) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
+D) Collaborate safely using branching, PRs, and reviews.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which outcome appears in the learning outcomes list?
+A) Ship changes without documentation.  
+B) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
+C) Apply the concepts to a realistic codebase (not just toy examples).  
 D) Conflicts and rebasing safely (45 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Branching strategies + commit hygiene (40 min)  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
-D) Change multiple variables at once so you cannot compare outcomes.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
-A) Conflicts and rebasing safely (45 min)  
-B) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
-C) Document decisions and constraints clearly for reviewers.  
-D) Shipping without an automated test run in CI.  
+### Question 10: Which statement is listed as a learning outcome?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+C) Add or update documentation (README notes or ADR-style notes).  
+D) Write tests that prove correctness and prevent regressions.  
 
 **Your answer:** _______________
 
@@ -92,9 +112,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You understand the module well.
-- **6-7 correct:** Great work! Review what you missed.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 

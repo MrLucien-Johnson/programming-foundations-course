@@ -7,9 +7,9 @@ Answer these questions about what you've learned. Try to answer from memory firs
 ## Questions
 
 ### Question 1: Which learning outcome is part of this module?
-A) Treat every request as safe without review.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Making performance claims without measurements.  
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+C) Ignore error handling for edge cases.  
 D) Explain the core concepts and tradeoffs for **Deployment and CI**.  
 
 **Your answer:** _______________
@@ -17,9 +17,9 @@ D) Explain the core concepts and tradeoffs for **Deployment and CI**.
 ---
 
 ### Question 2: Which topic is explicitly covered in the lesson list?
-A) Ship changes without documentation.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Update the README with setup, run, and test commands.  
+A) Add or update documentation (README notes or ADR-style notes).  
+B) Implement a small feature tied to this module in an existing starter app.  
+C) Treat every request as safe without review.  
 D) Environments + configuration (35 min)  
 
 **Your answer:** _______________
@@ -27,60 +27,80 @@ D) Environments + configuration (35 min)
 ---
 
 ### Question 3: Which task appears in the Core exercises?
-A) Containerize, configure, and deploy with automated CI checks.  
-B) If the module involves a database, tests must run against an isolated schema/database.  
+A) Shipping without an automated test run in CI.  
+B) Use tooling to keep quality high: SwiftFormat + SwiftLint.  
 C) Implement a small feature tied to this module in an existing starter app.  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
+D) Skipping input validation and assuming “happy path”.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 4: Which task appears in the Better exercises?
-A) Avoid measuring results or performance.  
+A) Add a performance or reliability improvement and **measure** the impact.  
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Ship changes without documentation.  
-D) Run the module tests and confirm they pass.  
+C) Treat every request as safe without review.  
+D) All work must be covered by **build + tests + lint/format in CI**.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 5: Which task appears in the Beast Mode exercises?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Run the module tests and confirm they pass.  
+A) Making performance claims without measurements.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Write tests that prove correctness and prevent regressions.  
 D) Add a performance or reliability improvement and **measure** the impact.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Run the module tests and confirm they pass.  
-B) Write tests that prove correctness and prevent regressions.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Making performance claims without measurements.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
+### Question 6: Which testing requirement is specified for this module?
 A) All work must be covered by **build + tests + lint/format in CI**.  
-B) Jump to the next module without verifying results.  
-C) Treat every request as safe without review.  
-D) Add or update documentation (README notes or ADR-style notes).  
+B) Ship changes without documentation.  
+C) Avoid measuring results or performance.  
+D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
+### Question 7: Which common mistake should you avoid in this module?
 A) Shipping without an automated test run in CI.  
-B) Containerize, configure, and deploy with automated CI checks.  
-C) Run the module tests and confirm they pass.  
+B) Treat every request as safe without review.  
+C) Write tests that prove correctness and prevent regressions.  
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which statement best summarizes this module's focus?
+A) Containerize, configure, and deploy with automated CI checks.  
+B) Making performance claims without measurements.  
+C) Create a short write-up: what changed, why, and how you verified it.  
 D) Containers for local dev and CI (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which outcome appears in the learning outcomes list?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+B) Apply the concepts to a realistic codebase (not just toy examples).  
+C) Shipping without an automated test run in CI.  
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement is listed as a learning outcome?
+A) Jump to the next module without verifying results.  
+B) Write tests that prove correctness and prevent regressions.  
+C) Containerize, configure, and deploy with automated CI checks.  
+D) Environments + configuration (35 min)  
 
 **Your answer:** _______________
 
@@ -92,9 +112,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You understand the module well.
-- **6-7 correct:** Great work! Review what you missed.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 

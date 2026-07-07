@@ -8,9 +8,9 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ### Question 1: Which learning outcome is part of this module?
 A) Translate a vague request into a clear goal, constraints, and success criteria.  
-B) Reduce cost: caching, summarization, and context trimming (45 min)  
-C) Create a cost/latency plan for one workflow (budgets + how to enforce).  
-D) Optimizing for cost while silently harming quality.  
+B) Avoid measuring results or performance.  
+C) Optimizing for cost while silently harming quality.  
+D) Add an “early exit” rule when confidence is low.  
 
 **Your answer:** _______________
 
@@ -19,7 +19,7 @@ D) Optimizing for cost while silently harming quality.
 ### Question 2: Which topic is explicitly covered in the lesson list?
 A) Define budgets: tokens/requests, latency SLOs, and guardrails (45 min)  
 B) Document and version changes so improvements are explainable.  
-C) Create a cost/latency plan for one workflow (budgets + how to enforce).  
+C) Change multiple variables at once so you cannot compare outcomes.  
 D) Design a caching strategy and what cache keys should be.  
 
 **Your answer:** _______________
@@ -27,8 +27,8 @@ D) Design a caching strategy and what cache keys should be.
 ---
 
 ### Question 3: Which task appears in the Core exercises?
-A) Ignore error handling for edge cases.  
-B) Skip testing and trust the first result.  
+A) Define budgets: tokens/requests, latency SLOs, and guardrails (45 min)  
+B) Document and version changes so improvements are explainable.  
 C) Jump to the next module without verifying results.  
 D) Create a cost/latency plan for one workflow (budgets + how to enforce).  
 
@@ -37,50 +37,70 @@ D) Create a cost/latency plan for one workflow (budgets + how to enforce).
 ---
 
 ### Question 4: Which task appears in the Better exercises?
-A) Avoid measuring results or performance.  
-B) Define what happens when budgets are exceeded (fallback).  
+A) Reduce latency: parallel steps, smaller contexts, early exits (45 min)  
+B) Translate a vague request into a clear goal, constraints, and success criteria.  
 C) Design a caching strategy and what cache keys should be.  
-D) Reduce latency: parallel steps, smaller contexts, early exits (45 min)  
+D) Document and version changes so improvements are explainable.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 5: Which task appears in the Beast Mode exercises?
-A) Treat every request as safe without review.  
+A) Ship changes without documentation.  
 B) Add a monitoring plan: what metrics, what dashboards, what alerts.  
-C) Add an “early exit” rule when confidence is low.  
-D) Plan and control cost/latency: budgets, caching, batching, and operational guardrails.  
+C) Design a caching strategy and what cache keys should be.  
+D) Treat every request as safe without review.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
+### Question 6: Which testing requirement is specified for this module?
 A) Translate a vague request into a clear goal, constraints, and success criteria.  
-B) Run the module tests and confirm they pass.  
-C) Ignore error handling for edge cases.  
+B) Evaluation harness records cost/latency per run (even estimated).  
+C) Ship changes without documentation.  
 D) Add an “early exit” rule when confidence is low.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Reduce latency: parallel steps, smaller contexts, early exits (45 min)  
-B) Ship changes without documentation.  
-C) Evaluation harness records cost/latency per run (even estimated).  
+### Question 7: Which common mistake should you avoid in this module?
+A) Avoid measuring results or performance.  
+B) Add a monitoring plan: what metrics, what dashboards, what alerts.  
+C) No budgets, leading to runaway cost.  
 D) Build a small evaluation loop: test cases, metrics, and iteration notes.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Add an “early exit” rule when confidence is low.  
-B) Update the README with setup, run, and test commands.  
-C) Define budgets: tokens/requests, latency SLOs, and guardrails (45 min)  
-D) No budgets, leading to runaway cost.  
+### Question 8: Which statement best summarizes this module's focus?
+A) Jump to the next module without verifying results.  
+B) Reduce cost: caching, summarization, and context trimming (45 min)  
+C) Ops basics: logs, metrics, and alerts (40 min)  
+D) Plan and control cost/latency: budgets, caching, batching, and operational guardrails.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which outcome appears in the learning outcomes list?
+A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
+B) Define what happens when budgets are exceeded (fallback).  
+C) Reduce cost: caching, summarization, and context trimming (45 min)  
+D) Change multiple variables at once so you cannot compare outcomes.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement is listed as a learning outcome?
+A) Build a small evaluation loop: test cases, metrics, and iteration notes.  
+B) Jump to the next module without verifying results.  
+C) Ignore error handling for edge cases.  
+D) Evaluation harness records cost/latency per run (even estimated).  
 
 **Your answer:** _______________
 
@@ -92,9 +112,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You understand the module well.
-- **6-7 correct:** Great work! Review what you missed.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 

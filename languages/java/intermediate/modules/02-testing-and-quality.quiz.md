@@ -7,19 +7,19 @@ Answer these questions about what you've learned. Try to answer from memory firs
 ## Questions
 
 ### Question 1: Which learning outcome is part of this module?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+A) Making performance claims without measurements.  
 B) Explain the core concepts and tradeoffs for **Testing and Quality**.  
 C) Ignore error handling for edge cases.  
-D) Lint/format/typecheck as quality gates (40 min)  
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 2: Which topic is explicitly covered in the lesson list?
-A) Explain the core concepts and tradeoffs for **Testing and Quality**.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
+A) Skipping input validation and assuming “happy path”.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Ignore error handling for edge cases.  
 D) Test pyramid and what to mock (40 min)  
 
 **Your answer:** _______________
@@ -27,9 +27,9 @@ D) Test pyramid and what to mock (40 min)
 ---
 
 ### Question 3: Which task appears in the Core exercises?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Document decisions and constraints clearly for reviewers.  
-C) Run: `javac Main.java && java Main`  
+A) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
+B) Write tests that prove correctness and prevent regressions.  
+C) Coverage and meaningful assertions (35 min)  
 D) Implement a small feature tied to this module in an existing starter app.  
 
 **Your answer:** _______________
@@ -37,50 +37,70 @@ D) Implement a small feature tied to this module in an existing starter app.
 ---
 
 ### Question 4: Which task appears in the Better exercises?
-A) Avoid measuring results or performance.  
+A) Skip testing and trust the first result.  
 B) Explain the core concepts and tradeoffs for **Testing and Quality**.  
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Making performance claims without measurements.  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 5: Which task appears in the Beast Mode exercises?
-A) Test pyramid and what to mock (40 min)  
+A) Avoid measuring results or performance.  
 B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 C) Add a performance or reliability improvement and **measure** the impact.  
-D) Ignore error handling for edge cases.  
+D) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Avoid measuring results or performance.  
-B) Skipping input validation and assuming “happy path”.  
-C) Run the module tests and confirm they pass.  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 6: Which testing requirement is specified for this module?
+A) Over-mocking (tests assert implementation details instead of outcomes).  
+B) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).  
+C) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
+D) Test pyramid and what to mock (40 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Test pyramid and what to mock (40 min)  
+### Question 7: Which common mistake should you avoid in this module?
+A) Add a performance or reliability improvement and **measure** the impact.  
+B) Treat every request as safe without review.  
+C) Test pyramid and what to mock (40 min)  
+D) Shipping without an automated test run in CI.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which statement best summarizes this module's focus?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
 B) Add a performance or reliability improvement and **measure** the impact.  
-C) Shipping without an automated test run in CI.  
-D) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Shipping without an automated test run in CI.  
+C) Write maintainable tests and enforce quality gates in CI.  
 D) Coverage and meaningful assertions (35 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which outcome appears in the learning outcomes list?
+A) Ship changes without documentation.  
+B) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
+C) Apply the concepts to a realistic codebase (not just toy examples).  
+D) Skip testing and trust the first result.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement is listed as a learning outcome?
+A) If the module involves a database, tests must run against an isolated schema/database.  
+B) Write maintainable tests and enforce quality gates in CI.  
+C) Add or update documentation (README notes or ADR-style notes).  
+D) Write tests that prove correctness and prevent regressions.  
 
 **Your answer:** _______________
 
@@ -92,9 +112,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You understand the module well.
-- **6-7 correct:** Great work! Review what you missed.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 

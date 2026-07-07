@@ -1,23 +1,23 @@
 # Evaluation Harness (Intermediate) Quiz Answers
 
-## Question 1: Which item is required in the verification checklist?
-**Answer: D** - Run the module tests and confirm they pass.
+## Question 1: Which practice best supports reliable delivery in this module?
+**Answer: D** - Skip testing and trust the first result.
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 2: Which check must be completed before moving on?
-**Answer: A** - Verify the primary feature works with normal and edge-case inputs.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This reinforces the professional workflow expected in the module.
 
 ---
 
-## Question 3: Which verification step is required?
-**Answer: D** - Update the README with setup, run, and test commands.
+## Question 2: Which habit improves reliability for this module?
+**Answer: A** - Ignore error handling for edge cases.
 
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This reinforces the professional workflow expected in the module.
+
+---
+
+## Question 3: Which action best supports a high-quality delivery?
+**Answer: D** - Ship changes without documentation.
+
+**Explanation:** This reinforces the professional workflow expected in the module.
 
 ---
 
@@ -56,8 +56,22 @@
 
 ---
 
+## Question 9: Which action best supports a high-quality delivery?
+**Answer: A** - Ignore error handling for edge cases.
+
+**Explanation:** This reinforces the professional workflow expected in the module.
+
+---
+
+## Question 10: Which practice best supports reliable delivery in this module?
+**Answer: C** - Ship changes without documentation.
+
+**Explanation:** This reinforces the professional workflow expected in the module.
+
+---
+
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You are ready to move on.
-- **6-7 correct:** Great work! Review the missed concepts.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You are ready to move on.
+- **8-9 correct:** Great work! Review the missed concepts.
+- **0-7 correct:** Review the module and try again.

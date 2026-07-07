@@ -7,10 +7,10 @@ Answer these questions about what you've learned. Try to answer from memory firs
 ## Questions
 
 ### Question 1: Which learning outcome is part of this module?
-A) Update the README with setup, run, and test commands.  
-B) Treat every request as safe without review.  
+A) Change multiple variables at once so you cannot compare outcomes.  
+B) Human evaluation: rubrics and inter-rater consistency (40 min)  
 C) Translate a vague request into a clear goal, constraints, and success criteria.  
-D) Human evaluation: rubrics and inter-rater consistency (40 min)  
+D) Skip testing and trust the first result.  
 
 **Your answer:** _______________
 
@@ -19,7 +19,7 @@ D) Human evaluation: rubrics and inter-rater consistency (40 min)
 ### Question 2: Which topic is explicitly covered in the lesson list?
 A) Translate a vague request into a clear goal, constraints, and success criteria.  
 B) Define metrics: task success, format adherence, groundedness (45 min)  
-C) Skip testing and trust the first result.  
+C) No baseline or thresholds—can't tell if you improved.  
 D) Only measuring “vibes” instead of repeatable outcomes.  
 
 **Your answer:** _______________
@@ -28,9 +28,9 @@ D) Only measuring “vibes” instead of repeatable outcomes.
 
 ### Question 3: Which task appears in the Core exercises?
 A) Create an eval harness outline for one task and run it on 50 cases.  
-B) Jump to the next module without verifying results.  
-C) Treat LLM work like software testing: datasets, baselines, regression tests, and quality gates.  
-D) Only measuring “vibes” instead of repeatable outcomes.  
+B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
+C) Avoid measuring results or performance.  
+D) Jump to the next module without verifying results.  
 
 **Your answer:** _______________
 
@@ -40,25 +40,25 @@ D) Only measuring “vibes” instead of repeatable outcomes.
 A) Document and version changes so improvements are explainable.  
 B) Add adversarial cases (injection, contradictions) and track separate scores.  
 C) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-D) Treat every request as safe without review.  
+D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 5: Which task appears in the Beast Mode exercises?
-A) Only measuring “vibes” instead of repeatable outcomes.  
+A) Define pass/fail thresholds (e.g., 90% schema validity, 80% rubric score).  
 B) Design A/B testing rules for prompt versions with rollback criteria.  
-C) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-D) Define pass/fail thresholds (e.g., 90% schema validity, 80% rubric score).  
+C) Avoid measuring results or performance.  
+D) Evaluation run is deterministic where possible (fixed inputs, logged settings).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Run the module tests and confirm they pass.  
-B) Define pass/fail thresholds (e.g., 90% schema validity, 80% rubric score).  
+### Question 6: Which testing requirement is specified for this module?
+A) Evaluation run is deterministic where possible (fixed inputs, logged settings).  
+B) Create an eval harness outline for one task and run it on 50 cases.  
 C) Change multiple variables at once so you cannot compare outcomes.  
 D) Define metrics: task success, format adherence, groundedness (45 min)  
 
@@ -66,20 +66,40 @@ D) Define metrics: task success, format adherence, groundedness (45 min)
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Document and version changes so improvements are explainable.  
+### Question 7: Which common mistake should you avoid in this module?
+A) Add a regression report format (what changed, what broke, why).  
 B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
-C) Evaluation run is deterministic where possible (fixed inputs, logged settings).  
+C) No baseline or thresholds—can't tell if you improved.  
+D) Define metrics: task success, format adherence, groundedness (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which statement best summarizes this module's focus?
+A) Add adversarial cases (injection, contradictions) and track separate scores.  
+B) Only measuring “vibes” instead of repeatable outcomes.  
+C) Human evaluation: rubrics and inter-rater consistency (40 min)  
 D) Treat LLM work like software testing: datasets, baselines, regression tests, and quality gates.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Add adversarial cases (injection, contradictions) and track separate scores.  
-B) Update the README with setup, run, and test commands.  
-C) Human evaluation: rubrics and inter-rater consistency (40 min)  
+### Question 9: Which outcome appears in the learning outcomes list?
+A) Ignore error handling for edge cases.  
+B) Design A/B testing rules for prompt versions with rollback criteria.  
+C) Evaluation run is deterministic where possible (fixed inputs, logged settings).  
+D) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement is listed as a learning outcome?
+A) Ignore error handling for edge cases.  
+B) Build a small evaluation loop: test cases, metrics, and iteration notes.  
+C) Ship changes without documentation.  
 D) No baseline or thresholds—can't tell if you improved.  
 
 **Your answer:** _______________
@@ -92,9 +112,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You understand the module well.
-- **6-7 correct:** Great work! Review what you missed.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 

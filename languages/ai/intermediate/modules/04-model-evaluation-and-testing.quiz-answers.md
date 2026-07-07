@@ -35,29 +35,43 @@
 
 ---
 
-## Question 6: Which item is required in the verification checklist?
-**Answer: A** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 7: Which testing requirement is specified for this module?
-**Answer: C** - Evaluation run is deterministic where possible (fixed inputs, logged settings).
+## Question 6: Which testing requirement is specified for this module?
+**Answer: A** - Evaluation run is deterministic where possible (fixed inputs, logged settings).
 
 **Explanation:** This requirement is listed under testing requirements.
 
 ---
 
-## Question 8: Which common mistake should you avoid in this module?
-**Answer: D** - No baseline or thresholds—can't tell if you improved.
+## Question 7: Which common mistake should you avoid in this module?
+**Answer: C** - No baseline or thresholds—can't tell if you improved.
 
 **Explanation:** This mistake is listed under common mistakes.
 
 ---
 
+## Question 8: Which statement best summarizes this module's focus?
+**Answer: D** - Treat LLM work like software testing: datasets, baselines, regression tests, and quality gates.
+
+**Explanation:** This statement comes from the module overview.
+
+---
+
+## Question 9: Which outcome appears in the learning outcomes list?
+**Answer: D** - Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
+
+---
+
+## Question 10: Which statement is listed as a learning outcome?
+**Answer: B** - Build a small evaluation loop: test cases, metrics, and iteration notes.
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
+
+---
+
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You are ready to move on.
-- **6-7 correct:** Great work! Review the missed concepts.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You are ready to move on.
+- **8-9 correct:** Great work! Review the missed concepts.
+- **0-7 correct:** Review the module and try again.

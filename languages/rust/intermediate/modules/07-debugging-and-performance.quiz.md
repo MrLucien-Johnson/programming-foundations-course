@@ -7,30 +7,30 @@ Answer these questions about what you've learned. Try to answer from memory firs
 ## Questions
 
 ### Question 1: Which learning outcome is part of this module?
-A) Add a performance or reliability improvement and **measure** the impact.  
+A) Debug systematically and improve performance with evidence.  
 B) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Add or update documentation (README notes or ADR-style notes).  
+C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 2: Which topic is explicitly covered in the lesson list?
-A) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
+A) Making performance claims without measurements.  
 B) Debugging workflow: reproduce → isolate → fix (35 min)  
-C) Use tooling to keep quality high: rustfmt + clippy.  
-D) Ship changes without documentation.  
+C) Ship changes without documentation.  
+D) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 3: Which task appears in the Core exercises?
-A) Ignore error handling for edge cases.  
+A) Document decisions and constraints clearly for reviewers.  
 B) Implement a small feature tied to this module in an existing starter app.  
-C) Run: `cargo clippy`  
-D) Update the README with setup, run, and test commands.  
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+D) Skip testing and trust the first result.  
 
 **Your answer:** _______________
 
@@ -38,8 +38,8 @@ D) Update the README with setup, run, and test commands.
 
 ### Question 4: Which task appears in the Better exercises?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Logging and tracing basics (40 min)  
-C) Change multiple variables at once so you cannot compare outcomes.  
+B) Apply the concepts to a realistic codebase (not just toy examples).  
+C) Profiling CPU + memory (45 min)  
 D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
@@ -48,39 +48,59 @@ D) Ignore error handling for edge cases.
 
 ### Question 5: Which task appears in the Beast Mode exercises?
 A) Add a performance or reliability improvement and **measure** the impact.  
-B) Treat every request as safe without review.  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-D) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
+B) Shipping without an automated test run in CI.  
+C) Debugging workflow: reproduce → isolate → fix (35 min)  
+D) Database performance: slow queries + indexes (45 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Run the module tests and confirm they pass.  
-B) Debugging workflow: reproduce → isolate → fix (35 min)  
-C) Skipping input validation and assuming “happy path”.  
+### Question 6: Which testing requirement is specified for this module?
+A) All work must be covered by **fmt + clippy + tests in CI**.  
+B) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Debugging workflow: reproduce → isolate → fix (35 min)  
+D) Profiling CPU + memory (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which common mistake should you avoid in this module?
+A) Profiling CPU + memory (45 min)  
+B) Shipping without an automated test run in CI.  
+C) Change multiple variables at once so you cannot compare outcomes.  
 D) Treat every request as safe without review.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) All work must be covered by **fmt + clippy + tests in CI**.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Run the module tests and confirm they pass.  
+### Question 8: Which statement best summarizes this module's focus?
+A) All work must be covered by **fmt + clippy + tests in CI**.  
+B) Ship changes without documentation.  
+C) Debug systematically and improve performance with evidence.  
+D) Add a performance or reliability improvement and **measure** the impact.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Debug systematically and improve performance with evidence.  
-B) Run: `cargo clippy`  
-C) Shipping without an automated test run in CI.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 9: Which outcome appears in the learning outcomes list?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Treat every request as safe without review.  
+C) Apply the concepts to a realistic codebase (not just toy examples).  
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement is listed as a learning outcome?
+A) Write tests that prove correctness and prevent regressions.  
+B) Ship changes without documentation.  
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+D) Avoid measuring results or performance.  
 
 **Your answer:** _______________
 
@@ -92,9 +112,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You understand the module well.
-- **6-7 correct:** Great work! Review what you missed.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 

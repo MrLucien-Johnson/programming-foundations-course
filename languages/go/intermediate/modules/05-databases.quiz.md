@@ -7,10 +7,10 @@ Answer these questions about what you've learned. Try to answer from memory firs
 ## Questions
 
 ### Question 1: Which learning outcome is part of this module?
-A) Jump to the next module without verifying results.  
+A) Making performance claims without measurements.  
 B) Explain the core concepts and tradeoffs for **Databases**.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Design schemas, write queries, and ship migrations safely.  
+C) Change multiple variables at once so you cannot compare outcomes.  
+D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 
@@ -18,9 +18,9 @@ D) Design schemas, write queries, and ship migrations safely.
 
 ### Question 2: Which topic is explicitly covered in the lesson list?
 A) Schema design + constraints (45 min)  
-B) Ignore error handling for edge cases.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Design schemas, write queries, and ship migrations safely.  
+B) Jump to the next module without verifying results.  
+C) Making performance claims without measurements.  
+D) All work must be covered by **gofmt + lint + tests in CI**.  
 
 **Your answer:** _______________
 
@@ -28,59 +28,79 @@ D) Design schemas, write queries, and ship migrations safely.
 
 ### Question 3: Which task appears in the Core exercises?
 A) Implement a small feature tied to this module in an existing starter app.  
-B) Schema design + constraints (45 min)  
-C) Ship changes without documentation.  
-D) Treat every request as safe without review.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Shipping without an automated test run in CI.  
+D) Design schemas, write queries, and ship migrations safely.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 4: Which task appears in the Better exercises?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+A) Shipping without an automated test run in CI.  
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Create a short write-up: what changed, why, and how you verified it.  
+D) Transactions + isolation basics (45 min)  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 5: Which task appears in the Beast Mode exercises?
-A) Update the README with setup, run, and test commands.  
-B) Schema design + constraints (45 min)  
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+B) Change multiple variables at once so you cannot compare outcomes.  
 C) Add a performance or reliability improvement and **measure** the impact.  
-D) Document decisions and constraints clearly for reviewers.  
+D) Over-mocking (tests assert implementation details instead of outcomes).  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which item is required in the verification checklist?
-A) Ignore error handling for edge cases.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Run the module tests and confirm they pass.  
+### Question 6: Which testing requirement is specified for this module?
+A) Document decisions and constraints clearly for reviewers.  
+B) Indexes + query plans (45 min)  
+C) Create a short write-up: what changed, why, and how you verified it.  
+D) All work must be covered by **gofmt + lint + tests in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement is specified for this module?
-A) Skip testing and trust the first result.  
-B) All work must be covered by **gofmt + lint + tests in CI**.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Explain the core concepts and tradeoffs for **Databases**.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which common mistake should you avoid in this module?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 7: Which common mistake should you avoid in this module?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 B) Shipping without an automated test run in CI.  
+C) Explain the core concepts and tradeoffs for **Databases**.  
+D) Schema design + constraints (45 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which statement best summarizes this module's focus?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+B) Design schemas, write queries, and ship migrations safely.  
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Verify the primary feature works with normal and edge-case inputs.  
+D) All work must be covered by **gofmt + lint + tests in CI**.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which outcome appears in the learning outcomes list?
+A) Indexes + query plans (45 min)  
+B) Ship changes without documentation.  
+C) Apply the concepts to a realistic codebase (not just toy examples).  
+D) Change multiple variables at once so you cannot compare outcomes.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement is listed as a learning outcome?
+A) Implement a small feature tied to this module in an existing starter app.  
+B) Skipping input validation and assuming “happy path”.  
+C) Create a short write-up: what changed, why, and how you verified it.  
+D) Write tests that prove correctness and prevent regressions.  
 
 **Your answer:** _______________
 
@@ -92,9 +112,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You understand the module well.
-- **6-7 correct:** Great work! Review what you missed.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 

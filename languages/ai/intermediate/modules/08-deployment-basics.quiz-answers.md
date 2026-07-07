@@ -35,29 +35,43 @@
 
 ---
 
-## Question 6: Which item is required in the verification checklist?
-**Answer: B** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 7: Which testing requirement is specified for this module?
-**Answer: D** - Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.
+## Question 6: Which testing requirement is specified for this module?
+**Answer: B** - Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.
 
 **Explanation:** This requirement is listed under testing requirements.
 
 ---
 
-## Question 8: Which common mistake should you avoid in this module?
-**Answer: A** - Deploying prompt changes without a version or rollback strategy.
+## Question 7: Which common mistake should you avoid in this module?
+**Answer: D** - Deploying prompt changes without a version or rollback strategy.
 
 **Explanation:** This mistake is listed under common mistakes.
 
 ---
 
+## Question 8: Which statement best summarizes this module's focus?
+**Answer: A** - Ship an AI feature safely: config, versioning, rollout, and operational readiness.
+
+**Explanation:** This statement comes from the module overview.
+
+---
+
+## Question 9: Which outcome appears in the learning outcomes list?
+**Answer: A** - Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
+
+---
+
+## Question 10: Which statement is listed as a learning outcome?
+**Answer: C** - Build a small evaluation loop: test cases, metrics, and iteration notes.
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
+
+---
+
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You are ready to move on.
-- **6-7 correct:** Great work! Review the missed concepts.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You are ready to move on.
+- **8-9 correct:** Great work! Review the missed concepts.
+- **0-7 correct:** Review the module and try again.

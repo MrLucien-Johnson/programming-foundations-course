@@ -35,29 +35,43 @@
 
 ---
 
-## Question 6: Which item is required in the verification checklist?
-**Answer: A** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 7: Which testing requirement is specified for this module?
-**Answer: B** - Agent tested with simulated failures (tool down, partial data, conflicting instructions).
+## Question 6: Which testing requirement is specified for this module?
+**Answer: A** - Agent tested with simulated failures (tool down, partial data, conflicting instructions).
 
 **Explanation:** This requirement is listed under testing requirements.
 
 ---
 
-## Question 8: Which common mistake should you avoid in this module?
-**Answer: A** - No verification step—agent confidently ships wrong results.
+## Question 7: Which common mistake should you avoid in this module?
+**Answer: B** - No verification step—agent confidently ships wrong results.
 
 **Explanation:** This mistake is listed under common mistakes.
 
 ---
 
+## Question 8: Which statement best summarizes this module's focus?
+**Answer: A** - Design multi-step agents with explicit planning, tool boundaries, stop conditions, and verification.
+
+**Explanation:** This statement comes from the module overview.
+
+---
+
+## Question 9: Which outcome appears in the learning outcomes list?
+**Answer: C** - Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
+
+---
+
+## Question 10: Which statement is listed as a learning outcome?
+**Answer: D** - Build a small evaluation loop: test cases, metrics, and iteration notes.
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
+
+---
+
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You are ready to move on.
-- **6-7 correct:** Great work! Review the missed concepts.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You are ready to move on.
+- **8-9 correct:** Great work! Review the missed concepts.
+- **0-7 correct:** Review the module and try again.

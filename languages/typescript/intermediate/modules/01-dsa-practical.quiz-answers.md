@@ -35,29 +35,43 @@
 
 ---
 
-## Question 6: Which item is required in the verification checklist?
-**Answer: D** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 7: Which testing requirement is specified for this module?
-**Answer: C** - All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.
+## Question 6: Which testing requirement is specified for this module?
+**Answer: D** - All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.
 
 **Explanation:** This requirement is listed under testing requirements.
 
 ---
 
-## Question 8: Which common mistake should you avoid in this module?
+## Question 7: Which common mistake should you avoid in this module?
 **Answer: C** - Shipping without an automated test run in CI.
 
 **Explanation:** This mistake is listed under common mistakes.
 
 ---
 
+## Question 8: Which statement best summarizes this module's focus?
+**Answer: C** - Use data structures and algorithms pragmatically in real applications.
+
+**Explanation:** This statement comes from the module overview.
+
+---
+
+## Question 9: Which outcome appears in the learning outcomes list?
+**Answer: B** - Apply the concepts to a realistic codebase (not just toy examples).
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
+
+---
+
+## Question 10: Which statement is listed as a learning outcome?
+**Answer: D** - Write tests that prove correctness and prevent regressions.
+
+**Explanation:** This outcome is listed in the module's learning outcomes.
+
+---
+
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You are ready to move on.
-- **6-7 correct:** Great work! Review the missed concepts.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You are ready to move on.
+- **8-9 correct:** Great work! Review the missed concepts.
+- **0-7 correct:** Review the module and try again.

@@ -7,9 +7,9 @@ Answer these questions about what you've learned. Try to answer from memory firs
 ## Questions
 
 ### Question 1: Which learning outcome is part of this module?
-A) Jump to the next module without verifying results.  
-B) Coverage and meaningful assertions (35 min)  
-C) Test pyramid and what to mock (40 min)  
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+C) Add a performance or reliability improvement and **measure** the impact.  
 D) Explain the core concepts and tradeoffs for **Testing and Quality**.  
 
 **Your answer:** _______________
@@ -17,9 +17,9 @@ D) Explain the core concepts and tradeoffs for **Testing and Quality**.
 ---
 
 ### Question 2: Which topic is explicitly covered in the lesson list?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Ignore error handling for edge cases.  
+A) Skipping input validation and assuming “happy path”.  
+B) Apply the concepts to a realistic codebase (not just toy examples).  
+C) Making performance claims without measurements.  
 D) Test pyramid and what to mock (40 min)  
 
 **Your answer:** _______________
@@ -28,19 +28,19 @@ D) Test pyramid and what to mock (40 min)
 
 ### Question 3: Which task appears in the Core exercises?
 A) Implement a small feature tied to this module in an existing starter app.  
-B) All work must be covered by **build + tests + static analysis in CI**.  
-C) Making performance claims without measurements.  
-D) Write tests that prove correctness and prevent regressions.  
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+C) Add a performance or reliability improvement and **measure** the impact.  
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 4: Which task appears in the Better exercises?
-A) Integration tests: HTTP + DB (45 min)  
+A) Add a performance or reliability improvement and **measure** the impact.  
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Test pyramid and what to mock (40 min)  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+D) Create a short write-up: what changed, why, and how you verified it.  
 
 **Your answer:** _______________
 
@@ -48,39 +48,59 @@ D) Over-mocking (tests assert implementation details instead of outcomes).
 
 ### Question 5: Which task appears in the Beast Mode exercises?
 A) Add a performance or reliability improvement and **measure** the impact.  
-B) Document decisions and constraints clearly for reviewers.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Run the module tests and confirm they pass.  
-C) Document decisions and constraints clearly for reviewers.  
-D) Write tests that prove correctness and prevent regressions.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
-A) Lint/format/typecheck as quality gates (40 min)  
 B) Write tests that prove correctness and prevent regressions.  
-C) Ignore error handling for edge cases.  
-D) All work must be covered by **build + tests + static analysis in CI**.  
+C) Unit tests: determinism, fixtures, factories (45 min)  
+D) Test pyramid and what to mock (40 min)  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
+### Question 6: Which testing requirement is specified for this module?
+A) Write tests that prove correctness and prevent regressions.  
+B) All work must be covered by **build + tests + static analysis in CI**.  
+C) Create a short write-up: what changed, why, and how you verified it.  
+D) Ship changes without documentation.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which common mistake should you avoid in this module?
+A) Treat every request as safe without review.  
+B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+C) Implement a small feature tied to this module in an existing starter app.  
+D) Shipping without an automated test run in CI.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which statement best summarizes this module's focus?
 A) Lint/format/typecheck as quality gates (40 min)  
-B) Shipping without an automated test run in CI.  
-C) Run the module tests and confirm they pass.  
+B) Write maintainable tests and enforce quality gates in CI.  
+C) All work must be covered by **build + tests + static analysis in CI**.  
 D) Implement a small feature tied to this module in an existing starter app.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which outcome appears in the learning outcomes list?
+A) Coverage and meaningful assertions (35 min)  
+B) Add a performance or reliability improvement and **measure** the impact.  
+C) Apply the concepts to a realistic codebase (not just toy examples).  
+D) Lint/format/typecheck as quality gates (40 min)  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement is listed as a learning outcome?
+A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+C) Write tests that prove correctness and prevent regressions.  
+D) Refactor one area for readability (without changing behavior) and prove it with tests.  
 
 **Your answer:** _______________
 
@@ -92,9 +112,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You understand the module well.
-- **6-7 correct:** Great work! Review what you missed.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 

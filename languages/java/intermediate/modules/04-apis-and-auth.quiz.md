@@ -9,8 +9,8 @@ Answer these questions about what you've learned. Try to answer from memory firs
 ### Question 1: Which learning outcome is part of this module?
 A) Implement a small feature tied to this module in an existing starter app.  
 B) Explain the core concepts and tradeoffs for **APIs and Auth**.  
-C) Skipping input validation and assuming “happy path”.  
-D) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
+C) Ship changes without documentation.  
+D) Ignore error handling for edge cases.  
 
 **Your answer:** _______________
 
@@ -18,8 +18,8 @@ D) All work must be covered by **build + unit tests + slice/integration tests (S
 
 ### Question 2: Which topic is explicitly covered in the lesson list?
 A) Avoid measuring results or performance.  
-B) Skip testing and trust the first result.  
-C) Skipping input validation and assuming “happy path”.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Shipping without an automated test run in CI.  
 D) REST: resources, status codes, pagination (45 min)  
 
 **Your answer:** _______________
@@ -30,7 +30,7 @@ D) REST: resources, status codes, pagination (45 min)
 A) Apply the concepts to a realistic codebase (not just toy examples).  
 B) REST: resources, status codes, pagination (45 min)  
 C) Implement a small feature tied to this module in an existing starter app.  
-D) Create a short write-up: what changed, why, and how you verified it.  
+D) Treat every request as safe without review.  
 
 **Your answer:** _______________
 
@@ -38,49 +38,69 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ### Question 4: Which task appears in the Better exercises?
 A) Design and secure REST APIs with authentication and authorization.  
-B) Create a short write-up: what changed, why, and how you verified it.  
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Run: `javac Main.java && java Main`  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task appears in the Beast Mode exercises?
-A) REST: resources, status codes, pagination (45 min)  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Ship changes without documentation.  
-D) Add a performance or reliability improvement and **measure** the impact.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is required in the verification checklist?
-A) REST: resources, status codes, pagination (45 min)  
-B) Run the module tests and confirm they pass.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is specified for this module?
-A) Input validation + error envelopes (40 min)  
-B) Ignore error handling for edge cases.  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
 D) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which common mistake should you avoid in this module?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Shipping without an automated test run in CI.  
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+### Question 5: Which task appears in the Beast Mode exercises?
+A) Skip testing and trust the first result.  
+B) Jump to the next module without verifying results.  
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+D) Add a performance or reliability improvement and **measure** the impact.  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which testing requirement is specified for this module?
+A) Skipping input validation and assuming “happy path”.  
+B) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
+C) Skip testing and trust the first result.  
+D) Create a short write-up: what changed, why, and how you verified it.  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which common mistake should you avoid in this module?
+A) Jump to the next module without verifying results.  
+B) Document decisions and constraints clearly for reviewers.  
+C) AuthN vs AuthZ: sessions/JWT + roles (45 min)  
+D) Shipping without an automated test run in CI.  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which statement best summarizes this module's focus?
+A) Avoid measuring results or performance.  
+B) Design and secure REST APIs with authentication and authorization.  
+C) Jump to the next module without verifying results.  
+D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which outcome appears in the learning outcomes list?
+A) Skip testing and trust the first result.  
+B) REST: resources, status codes, pagination (45 min)  
+C) Create a short write-up: what changed, why, and how you verified it.  
+D) Apply the concepts to a realistic codebase (not just toy examples).  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which statement is listed as a learning outcome?
+A) If the module involves a database, tests must run against an isolated schema/database.  
+B) Ignore error handling for edge cases.  
+C) Write tests that prove correctness and prevent regressions.  
+D) Shipping without an automated test run in CI.  
 
 **Your answer:** _______________
 
@@ -92,9 +112,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You understand the module well.
-- **6-7 correct:** Great work! Review what you missed.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 

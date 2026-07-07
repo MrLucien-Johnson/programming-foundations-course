@@ -6,59 +6,59 @@ Answer these questions about what you've learned. Try to answer from memory firs
 
 ## Questions
 
-### Question 1: Which item is required in the verification checklist?
-A) Skip testing and trust the first result.  
-B) Run the module tests and confirm they pass.  
-C) Ignore error handling for edge cases.  
-D) Ship changes without documentation.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which check must be completed before moving on?
+### Question 1: Which practice best supports reliable delivery in this module?
 A) Ignore error handling for edge cases.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Jump to the next module without verifying results.  
+B) Skip testing and trust the first result.  
+C) Ship changes without documentation.  
+D) Avoid measuring results or performance.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which verification step is required?
-A) Update the README with setup, run, and test commands.  
-B) Avoid measuring results or performance.  
+### Question 2: Which habit improves reliability for this module?
+A) Ship changes without documentation.  
+B) Jump to the next module without verifying results.  
+C) Ignore error handling for edge cases.  
+D) Change multiple variables at once so you cannot compare outcomes.  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which action best supports a high-quality delivery?
+A) Ship changes without documentation.  
+B) Change multiple variables at once so you cannot compare outcomes.  
 C) Skip testing and trust the first result.  
+D) Avoid measuring results or performance.  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which practice best supports reliable delivery in this module?
+A) Treat every request as safe without review.  
+B) Change multiple variables at once so you cannot compare outcomes.  
+C) Jump to the next module without verifying results.  
+D) Avoid measuring results or performance.  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which habit improves reliability for this module?
+A) Skip testing and trust the first result.  
+B) Ignore error handling for edge cases.  
+C) Change multiple variables at once so you cannot compare outcomes.  
 D) Ship changes without documentation.  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which item is required in the verification checklist?
-A) Jump to the next module without verifying results.  
-B) Treat every request as safe without review.  
-C) Avoid measuring results or performance.  
-D) Run: `dotnet test`  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which check must be completed before moving on?
+### Question 6: Which action best supports a high-quality delivery?
 A) Ship changes without documentation.  
-B) Ignore error handling for edge cases.  
-C) Run: `dotnet format`  
-D) Jump to the next module without verifying results.  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which verification step is required?
-A) Ship changes without documentation.  
-B) Run: `dotnet format`  
+B) Jump to the next module without verifying results.  
 C) Treat every request as safe without review.  
 D) Avoid measuring results or performance.  
 
@@ -67,20 +67,40 @@ D) Avoid measuring results or performance.
 ---
 
 ### Question 7: Which practice best supports reliable delivery in this module?
-A) Run the module tests and confirm they pass.  
+A) Avoid measuring results or performance.  
 B) Treat every request as safe without review.  
-C) Ship changes without documentation.  
-D) Avoid measuring results or performance.  
+C) Jump to the next module without verifying results.  
+D) Ship changes without documentation.  
 
 **Your answer:** _______________
 
 ---
 
 ### Question 8: Which habit improves reliability for this module?
-A) Update the README with setup, run, and test commands.  
+A) Ship changes without documentation.  
 B) Skip testing and trust the first result.  
-C) Run: `dotnet test`  
-D) Run the module tests and confirm they pass.  
+C) Jump to the next module without verifying results.  
+D) Ignore error handling for edge cases.  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which action best supports a high-quality delivery?
+A) Jump to the next module without verifying results.  
+B) Skip testing and trust the first result.  
+C) Ignore error handling for edge cases.  
+D) Change multiple variables at once so you cannot compare outcomes.  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which practice best supports reliable delivery in this module?
+A) Ship changes without documentation.  
+B) Ignore error handling for edge cases.  
+C) Skip testing and trust the first result.  
+D) Treat every request as safe without review.  
 
 **Your answer:** _______________
 
@@ -92,9 +112,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **8/8 correct:** Excellent! You understand the module well.
-- **6-7 correct:** Great work! Review what you missed.
-- **0-5 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You understand the module well.
+- **8-9 correct:** Great work! Review what you missed.
+- **0-7 correct:** Review the module and try again.
 
 ---
 
