@@ -6,47 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Your project passes review only if which condition is true?
-A) Create a short write-up: what changed, why, and how you verified it.
-B) Shipping without an automated test run in CI.
-C) Deliverable runs locally with clear instructions.
-D) Add or update documentation (README notes or ADR-style notes).
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which step would keep the work within the Core scope?
-A) Write tests that prove correctness and prevent regressions.
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.
-C) Implement a small feature tied to this module in an existing starter app.
-D) Document decisions and constraints clearly for reviewers.
-
-**Your answer:** _______________
-
----
-
-### Question 3: A reviewer reports: a performance claim was made without benchmarks. Which mistake does this reflect?
-A) Includes tests appropriate for the feature.
-B) Add or update documentation (README notes or ADR-style notes).
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-D) Making performance claims without measurements.
-
-**Your answer:** _______________
-
----
-
-### Question 4: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
-A) Includes a short README section describing assumptions and tradeoffs.
-B) Explain the core concepts and tradeoffs for Concurrency and Async.
-C) Uses consistent style/formatting and passes the quality gate.
-D) If the module involves a database, tests must run against an isolated schema/database.
-
-**Your answer:** _______________
-
----
-
-### Question 5: A reviewer checks the Core checklist. Which action should they see?
+### Question 1: Which Core action would a senior engineer insist on before approving the change?
 A) Deliverable runs locally with clear instructions.
 B) Explain the core concepts and tradeoffs for Concurrency and Async.
 C) Add at least 3 focused unit tests that cover normal cases and edge cases.
@@ -56,51 +16,91 @@ D) Shipping without an automated test run in CI.
 
 ---
 
-### Question 6: Which step is explicitly called out as Better work?
+### Question 2: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+A) Includes tests appropriate for the feature.
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Includes a short README section describing assumptions and tradeoffs.
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which outcome represents a transferable software engineering skill?
 A) Document decisions and constraints clearly for reviewers.
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-C) Use tooling to keep quality high: ruff + black (or ruff format).
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Includes tests appropriate for the feature.
+C) Shipping without an automated test run in CI.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which option is listed under Better work for this module?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.
+### Question 4: Which common mistake matches this scenario: CI has no automated test run before release?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 B) Includes a short README section describing assumptions and tradeoffs.
-C) Deliverable runs locally with clear instructions.
-D) If the module involves a database, tests must run against an isolated schema/database.
+C) Shipping without an automated test run in CI.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which action pushes the work into Beast Mode?
-A) Skipping input validation and assuming “happy path”.
+### Question 5: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+A) Add a performance or reliability improvement and measure the impact.
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Shipping without an automated test run in CI.
+D) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which Better upgrade most improves maintainability or reliability?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Implement a small feature tied to this module in an existing starter app.
+D) Uses consistent style/formatting and passes the quality gate.
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which acceptance requirement most clearly blocks approval if missing?
+A) Includes tests appropriate for the feature.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Use tooling to keep quality high: ruff + black (or ruff format).
+D) Write tests that prove correctness and prevent regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which acceptance criterion would a reviewer check first to approve the submission?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 B) Over-mocking (tests assert implementation details instead of outcomes).
-C) Add or update documentation (README notes or ADR-style notes).
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Uses consistent style/formatting and passes the quality gate.
+D) Use tooling to keep quality high: ruff + black (or ruff format).
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which acceptance criterion must be satisfied before submission?
-A) Shipping without an automated test run in CI.
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-C) Making performance claims without measurements.
-D) Includes tests appropriate for the feature.
+### Question 9: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Uses consistent style/formatting and passes the quality gate.
+B) Explain the core concepts and tradeoffs for Concurrency and Async.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
-A) Use tooling to keep quality high: ruff + black (or ruff format).
-B) Implement a small feature tied to this module in an existing starter app.
-C) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
-D) Add a performance or reliability improvement and measure the impact.
+### Question 10: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+A) Write tests that prove correctness and prevent regressions.
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Implement a small feature tied to this module in an existing starter app.
+D) Document decisions and constraints clearly for reviewers.
 
 **Your answer:** _______________
 

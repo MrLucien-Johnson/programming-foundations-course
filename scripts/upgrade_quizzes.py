@@ -34,6 +34,17 @@ CORE_TEMPLATES = [
     "Which step would keep the work within the Core scope?",
 ]
 
+CORE_APPLIED_TEMPLATES = [
+    "A PR introduces new behavior. Which Core action is the minimum expected before review?",
+    "A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?",
+    "You're pressed for time but still need a safe release. Which Core action must remain?",
+    "Before shipping, which Core action best reduces regression risk?",
+    "Which Core action best reflects professional engineering practice in this situation?",
+    "Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?",
+    "A production fix is urgent. Which Core action is still required before release?",
+    "Which Core action would a senior engineer insist on before approving the change?",
+]
+
 BETTER_TEMPLATES = [
     "You already met Core. Which action qualifies as a Better upgrade?",
     "Which improvement moves a Core submission to the Better tier?",
@@ -41,6 +52,13 @@ BETTER_TEMPLATES = [
     "Which enhancement is a Better-level upgrade (not Beast Mode)?",
     "To earn a Better evaluation, which action should you add?",
     "Which step is explicitly called out as Better work?",
+]
+
+BETTER_APPLIED_TEMPLATES = [
+    "The work passes Core. Which improvement most clearly raises quality for reviewers?",
+    "A reviewer says, 'Good start.' Which Better upgrade should you add next?",
+    "Which Better action best demonstrates stronger engineering discipline?",
+    "Which Better upgrade most improves maintainability or reliability?",
 ]
 
 BEAST_TEMPLATES = [
@@ -51,6 +69,12 @@ BEAST_TEMPLATES = [
     "Which action qualifies as a Beast Mode stretch?",
 ]
 
+BEAST_APPLIED_TEMPLATES = [
+    "You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?",
+    "If you wanted to stretch the module into production readiness, which Beast Mode action fits?",
+    "Which Beast Mode action most clearly demonstrates advanced engineering judgment?",
+]
+
 ACCEPTANCE_TEMPLATES = [
     "Which requirement is part of the mini-project acceptance criteria?",
     "Your project passes review only if which condition is true?",
@@ -59,12 +83,23 @@ ACCEPTANCE_TEMPLATES = [
     "A reviewer approves the mini-project when which condition is met?",
 ]
 
+ACCEPTANCE_APPLIED_TEMPLATES = [
+    "A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?",
+    "Which acceptance criterion would a reviewer check first to approve the submission?",
+    "Which acceptance requirement most clearly blocks approval if missing?",
+    "Before sign-off, which acceptance criterion must be confirmed?",
+    "A reviewer denies approval due to one missing item. Which acceptance criterion is it?",
+    "Which acceptance criterion acts as a release gate for this module?",
+    "Which acceptance requirement protects review quality if enforced?",
+]
+
 TESTING_TEMPLATES = [
     "CI is failing because {issue}. Which testing requirement addresses this?",
     "A reviewer flags {issue}. Which testing requirement resolves it?",
     "Your tests are blocked by {issue}. Which requirement should you enforce?",
     "Which testing requirement is most relevant to this issue: {issue}?",
     "Which testing requirement should you apply given this issue: {issue}?",
+    "Production validation failed because {issue}. Which testing requirement would have prevented it?",
 ]
 
 TESTING_GENERIC_TEMPLATES = [
@@ -91,6 +126,13 @@ OUTCOME_TEMPLATES = [
     "Which statement is one of the learning outcomes for this module?",
 ]
 
+OUTCOME_APPLIED_TEMPLATES = [
+    "In a real code review, which outcome best reflects the skill you should demonstrate?",
+    "Which outcome represents a transferable software engineering skill?",
+    "A hiring manager asks what you can now do confidently. Which outcome fits?",
+    "Which outcome best captures the practical ability you should carry forward?",
+]
+
 TOPIC_TEMPLATES = [
     "Which topic is covered in this module?",
     "Which topic belongs to this module's outline?",
@@ -104,6 +146,12 @@ TOPIC_TEMPLATES = [
     "Which topic would you highlight when describing this module?",
 ]
 
+TOPIC_APPLIED_TEMPLATES = [
+    "A teammate needs help with a real project decision. Which topic should they revisit?",
+    "Which topic would you point to when scoping a real-world solution?",
+    "Which topic would you use to guide a design discussion?",
+]
+
 DELIVERABLE_TEMPLATES = [
     "Which deliverable should you produce for this module?",
     "Which output is listed as a required deliverable?",
@@ -115,6 +163,11 @@ DELIVERABLE_TEMPLATES = [
     "Which deliverable is required before moving on?",
 ]
 
+DELIVERABLE_APPLIED_TEMPLATES = [
+    "A reviewer wants proof of work. Which deliverable should you hand them?",
+    "Which deliverable best demonstrates the engineering work was completed?",
+    "Which deliverable would you send to a stakeholder as evidence of completion?",
+]
 
 def _normalize_heading(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.strip().lower()).strip("-")
@@ -291,6 +344,18 @@ def _choose_template(
     return template
 
 
+def _choose_preferred_template(
+    preferred: list[str],
+    fallback: list[str],
+    used_prompts: set[str],
+    rng: random.Random,
+) -> str:
+    available = [template for template in preferred if template not in used_prompts]
+    if available:
+        return _choose_template(available, used_prompts, rng)
+    return _choose_template(fallback, used_prompts, rng)
+
+
 def _testing_issue(requirement: str) -> str | None:
     lowered = requirement.lower()
     if "flake" in lowered or "deterministic" in lowered:
@@ -361,12 +426,15 @@ def _build_questions(
         return _select_items(items, count, rng, used_items[kind])
 
     plan = [
-        ("core", 2),
-        ("better", 2),
+        ("core", 1),
+        ("better", 1),
         ("beast", 1),
-        ("acceptance", 2),
+        ("acceptance", 1),
         ("testing", 2),
         ("mistakes", 1),
+        ("outcomes", 1),
+        ("topics", 1),
+        ("deliverables", 1),
     ]
 
     chosen: dict[str, list[str]] = {kind: select(kind, count) for kind, count in plan}
@@ -381,9 +449,9 @@ def _build_questions(
             "beast",
             "testing",
             "mistakes",
+            "outcomes",
             "topics",
             "deliverables",
-            "outcomes",
         ]
         while total < target:
             added = False
@@ -448,7 +516,9 @@ def _build_questions(
         ]
 
     for answer in chosen.get("core", []):
-        prompt = _choose_template(CORE_TEMPLATES, used_prompts, rng)
+        prompt = _choose_preferred_template(
+            CORE_APPLIED_TEMPLATES, CORE_TEMPLATES, used_prompts, rng
+        )
         explanation = "This action is listed under the Core exercises for the module."
         questions.append(
             _build_question(
@@ -462,7 +532,9 @@ def _build_questions(
         )
 
     for answer in chosen.get("better", []):
-        prompt = _choose_template(BETTER_TEMPLATES, used_prompts, rng)
+        prompt = _choose_preferred_template(
+            BETTER_APPLIED_TEMPLATES, BETTER_TEMPLATES, used_prompts, rng
+        )
         explanation = "This is explicitly listed in the Better exercises section."
         questions.append(
             _build_question(
@@ -476,7 +548,9 @@ def _build_questions(
         )
 
     for answer in chosen.get("beast", []):
-        prompt = _choose_template(BEAST_TEMPLATES, used_prompts, rng)
+        prompt = _choose_preferred_template(
+            BEAST_APPLIED_TEMPLATES, BEAST_TEMPLATES, used_prompts, rng
+        )
         explanation = "This action is part of the Beast Mode upgrades."
         questions.append(
             _build_question(
@@ -490,7 +564,9 @@ def _build_questions(
         )
 
     for answer in chosen.get("acceptance", []):
-        prompt = _choose_template(ACCEPTANCE_TEMPLATES, used_prompts, rng)
+        prompt = _choose_preferred_template(
+            ACCEPTANCE_APPLIED_TEMPLATES, ACCEPTANCE_TEMPLATES, used_prompts, rng
+        )
         explanation = "This requirement appears in the mini-project acceptance criteria."
         questions.append(
             _build_question(
@@ -544,7 +620,9 @@ def _build_questions(
         )
 
     for answer in chosen.get("outcomes", []):
-        prompt = _choose_template(OUTCOME_TEMPLATES, used_prompts, rng)
+        prompt = _choose_preferred_template(
+            OUTCOME_APPLIED_TEMPLATES, OUTCOME_TEMPLATES, used_prompts, rng
+        )
         explanation = "This statement appears in the Learning Outcomes section."
         questions.append(
             _build_question(
@@ -558,7 +636,9 @@ def _build_questions(
         )
 
     for answer in chosen.get("topics", []):
-        prompt = _choose_template(TOPIC_TEMPLATES, used_prompts, rng)
+        prompt = _choose_preferred_template(
+            TOPIC_APPLIED_TEMPLATES, TOPIC_TEMPLATES, used_prompts, rng
+        )
         explanation = "This topic is listed in the module outline."
         questions.append(
             _build_question(
@@ -572,7 +652,9 @@ def _build_questions(
         )
 
     for answer in chosen.get("deliverables", []):
-        prompt = _choose_template(DELIVERABLE_TEMPLATES, used_prompts, rng)
+        prompt = _choose_preferred_template(
+            DELIVERABLE_APPLIED_TEMPLATES, DELIVERABLE_TEMPLATES, used_prompts, rng
+        )
         explanation = "This deliverable is required in the module expectations."
         questions.append(
             _build_question(

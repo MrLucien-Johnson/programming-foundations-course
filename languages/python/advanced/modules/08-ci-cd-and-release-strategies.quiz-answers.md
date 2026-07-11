@@ -1,72 +1,72 @@
 # Python Advanced — Module 08: CI/CD and Release Strategies Quiz Answers
 
-## Question 1: To reach Beast Mode, which improvement should you choose?
-**Answer: A** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+## Question 1: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: A** - Use tooling to keep quality high: ruff + black (or ruff format).
 
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 2: Which step would keep the work within the Core scope?
-**Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Explanation:** This action is listed under the Core exercises for the module.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 3: Your project passes review only if which condition is true?
-**Answer: D** - Deliverable runs locally with clear instructions.
+## Question 2: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+**Answer: A** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 3: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+**Answer: D** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 4: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+**Answer: B** - Includes a short README section describing assumptions and tradeoffs.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 4: Which common mistake matches this scenario: a performance claim was made without benchmarks?
-**Answer: C** - Making performance claims without measurements.
+## Question 5: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: A** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 6: A reviewer reports: CI has no automated test run before release. Which mistake does this reflect?
+**Answer: C** - Shipping without an automated test run in CI.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 5: Which enhancement is a Better-level upgrade (not Beast Mode)?
-**Answer: D** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 6: Which step is explicitly called out as Better work?
-**Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 7: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
-**Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 8: You're preparing a submission and need to meet the Core bar. Which action is required?
-**Answer: C** - Implement a small feature tied to this module in an existing starter app.
+## Question 7: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: D** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 9: Which acceptance criterion must be satisfied before submission?
-**Answer: B** - Uses consistent style/formatting and passes the quality gate.
+## Question 8: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: B** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 10: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
-**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
+## Question 9: The work passes Core. Which improvement most clearly raises quality for reviewers?
+**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 10: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+**Answer: D** - Add or update documentation (README notes or ADR-style notes).
+
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 

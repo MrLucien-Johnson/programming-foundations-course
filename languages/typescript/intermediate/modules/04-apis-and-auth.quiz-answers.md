@@ -1,37 +1,37 @@
 # TypeScript Intermediate — Module 04: APIs and Auth Quiz Answers
 
-## Question 1: Which step would keep the work within the Core scope?
-**Answer: C** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: Before shipping, which Core action best reduces regression risk?
+**Answer: D** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 2: Which requirement is part of the mini-project acceptance criteria?
-**Answer: C** - Includes a short README section describing assumptions and tradeoffs.
+## Question 2: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
+**Answer: C** - All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 3: A reviewer checks the Core checklist. Which action should they see?
+## Question 3: You're pressed for time but still need a safe release. Which Core action must remain?
 **Answer: B** - Add or update documentation (README notes or ADR-style notes).
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 4: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
-**Answer: B** - All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+## Question 4: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
+**Answer: B** - Making performance claims without measurements.
 
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 5: Which option represents a Beast Mode enhancement?
-**Answer: D** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+## Question 5: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: C** - Includes tests appropriate for the feature.
 
-**Explanation:** This action is part of the Beast Mode upgrades.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
@@ -42,29 +42,29 @@
 
 ---
 
-## Question 7: A reviewer reports: tests assert implementation details instead of outcomes. Which mistake does this reflect?
-**Answer: C** - Over-mocking (tests assert implementation details instead of outcomes).
+## Question 7: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: C** - Document decisions and constraints clearly for reviewers.
 
-**Explanation:** This is listed in the Common Mistakes section to avoid.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 8: Which step is explicitly called out as Better work?
-**Answer: A** - Refactor one area for readability (without changing behavior) and prove it with tests.
+## Question 8: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 9: Which Better action best demonstrates stronger engineering discipline?
+**Answer: D** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 9: Which option is listed under Better work for this module?
-**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 10: Your project passes review only if which condition is true?
-**Answer: C** - Includes tests appropriate for the feature.
+## Question 10: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: B** - Includes a short README section describing assumptions and tradeoffs.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 

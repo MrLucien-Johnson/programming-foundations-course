@@ -1,72 +1,72 @@
 # Core Concepts (Intermediate) Quiz Answers
 
-## Question 1: Which topic appears in this module?
-**Answer: C** - object design and interfaces
+## Question 1: Which topic is included in this module's Topics list?
+**Answer: A** - object design and interfaces
 
 **Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 2: Which deliverable would satisfy the module expectations?
-**Answer: D** - example implementations in the repo
+## Question 2: Which deliverable best demonstrates the engineering work was completed?
+**Answer: D** - topic notes or summaries
 
 **Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 3: Which topic is covered in this module?
+## Question 3: Which deliverable would you send to a stakeholder as evidence of completion?
+**Answer: A** - example implementations in the repo
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 4: Which deliverable would satisfy the module expectations?
+**Answer: B** - topic notes or summaries
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 5: Which topic is called out in this module?
 **Answer: B** - error handling and debugging
 
 **Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 4: Which topic is included in this module's Topics list?
-**Answer: B** - object design and interfaces
+## Question 6: Which deliverable belongs to this module's expectations?
+**Answer: C** - topic notes or summaries
 
-**Explanation:** This topic is listed in the module outline.
-
----
-
-## Question 5: Which topic would you highlight when describing this module?
-**Answer: C** - testable module design
-
-**Explanation:** This topic is listed in the module outline.
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 6: Which deliverable should you produce for this module?
+## Question 7: A reviewer wants proof of work. Which deliverable should you hand them?
 **Answer: B** - example implementations in the repo
 
 **Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 7: Which topic belongs to this module's outline?
-**Answer: D** - error handling and debugging
+## Question 8: Which topic would you use to guide a design discussion?
+**Answer: C** - testable module design
 
 **Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 8: Which deliverable is required before moving on?
-**Answer: C** - topic notes or summaries
+## Question 9: Which topic would you point to when scoping a real-world solution?
+**Answer: C** - object design and interfaces
 
-**Explanation:** This deliverable is required in the module expectations.
-
----
-
-## Question 9: A reviewer expects which deliverable from this module?
-**Answer: A** - topic notes or summaries
-
-**Explanation:** This deliverable is required in the module expectations.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 10: Which output is listed as a required deliverable?
-**Answer: C** - topic notes or summaries
+## Question 10: A teammate needs help with a real project decision. Which topic should they revisit?
+**Answer: D** - error handling and debugging
 
-**Explanation:** This deliverable is required in the module expectations.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 

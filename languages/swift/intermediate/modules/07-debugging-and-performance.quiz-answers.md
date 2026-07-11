@@ -1,72 +1,72 @@
 # Swift Intermediate — Module 07: Debugging and Performance Quiz Answers
 
-## Question 1: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+## Question 1: Before shipping, which Core action best reduces regression risk?
+**Answer: D** - Add or update documentation (README notes or ADR-style notes).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 2: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: D** - Add a performance or reliability improvement and measure the impact.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 3: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+**Answer: C** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 4: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
 **Answer: D** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 2: Which acceptance criterion must be satisfied before submission?
-**Answer: A** - Uses consistent style/formatting and passes the quality gate.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 3: Your project passes review only if which condition is true?
-**Answer: C** - Includes tests appropriate for the feature.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 4: Which improvement moves a Core submission to the Better tier?
-**Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 5: Which action pushes the work into Beast Mode?
-**Answer: C** - Create a short write-up: what changed, why, and how you verified it.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 6: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
-**Answer: B** - Skipping input validation and assuming “happy path”.
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 7: A reviewer checks the Core checklist. Which action should they see?
-**Answer: C** - Add or update documentation (README notes or ADR-style notes).
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 8: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
-**Answer: A** - If the module involves a database, tests must run against an isolated schema/database.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 9: To satisfy the Core requirements, which step must be included?
+## Question 5: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
 **Answer: D** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 10: Which step is explicitly called out as Better work?
-**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 6: Which outcome represents a transferable software engineering skill?
+**Answer: D** - Use tooling to keep quality high: SwiftFormat + SwiftLint.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 7: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: A** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 8: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: A** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 9: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+**Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 10: A reviewer reports: bugs appear on unexpected inputs because validation was skipped. Which mistake does this reflect?
+**Answer: B** - Skipping input validation and assuming “happy path”.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 

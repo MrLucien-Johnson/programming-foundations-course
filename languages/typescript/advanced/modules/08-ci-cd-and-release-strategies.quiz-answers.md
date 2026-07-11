@@ -1,72 +1,72 @@
 # TypeScript Advanced — Module 08: CI/CD and Release Strategies Quiz Answers
 
-## Question 1: A reviewer flags lint/format/type errors are breaking CI. Which testing requirement resolves it?
-**Answer: D** - All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 2: Which option is listed under Better work for this module?
-**Answer: D** - Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 3: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+## Question 1: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
 **Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 4: A reviewer approves the mini-project when which condition is met?
-**Answer: B** - Deliverable runs locally with clear instructions.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 5: Which requirement is part of the mini-project acceptance criteria?
-**Answer: A** - Uses consistent style/formatting and passes the quality gate.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 6: Which step would keep the work within the Core scope?
-**Answer: D** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 7: To earn a Better evaluation, which action should you add?
-**Answer: C** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 8: Which option represents a Beast Mode enhancement?
-**Answer: C** - Create a short write-up: what changed, why, and how you verified it.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 9: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
+## Question 2: Which Core action best reflects professional engineering practice in this situation?
 **Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 10: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
-**Answer: B** - Making performance claims without measurements.
+## Question 3: Which Better action best demonstrates stronger engineering discipline?
+**Answer: B** - Refactor one area for readability (without changing behavior) and prove it with tests.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 4: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: B** - Apply the concepts to a realistic codebase (not just toy examples).
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 5: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: D** - Add a performance or reliability improvement and measure the impact.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 6: Production validation failed because lint/format/type errors are breaking CI. Which testing requirement would have prevented it?
+**Answer: D** - All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 7: Which acceptance requirement most clearly blocks approval if missing?
+**Answer: B** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 8: Your teammate says: bugs appear on unexpected inputs because validation was skipped. Which common mistake is this?
+**Answer: A** - Skipping input validation and assuming “happy path”.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 9: A production fix is urgent. Which Core action is still required before release?
+**Answer: D** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 10: Which acceptance requirement protects review quality if enforced?
+**Answer: D** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 

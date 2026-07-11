@@ -1,72 +1,72 @@
 # Java Intermediate — Module 07: Debugging and Performance Quiz Answers
 
-## Question 1: You're preparing a submission and need to meet the Core bar. Which action is required?
+## Question 1: Which acceptance requirement most clearly blocks approval if missing?
+**Answer: D** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 2: A reviewer flags feature tests fail when hitting real boundaries. Which testing requirement resolves it?
+**Answer: B** - All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 3: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: C** - Add or update documentation (README notes or ADR-style notes).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 4: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: C** - Document decisions and constraints clearly for reviewers.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 5: A reviewer reports: tests assert implementation details instead of outcomes. Which mistake does this reflect?
+**Answer: A** - Over-mocking (tests assert implementation details instead of outcomes).
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 6: Which Core action best reflects professional engineering practice in this situation?
 **Answer: D** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 2: Which improvement moves a Core submission to the Better tier?
-**Answer: D** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+## Question 7: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: C** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 3: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
-**Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+## Question 8: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: D** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 9: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 4: A reviewer checks the Core checklist. Which action should they see?
-**Answer: D** - Add or update documentation (README notes or ADR-style notes).
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 5: Your teammate says: bugs appear on unexpected inputs because validation was skipped. Which common mistake is this?
-**Answer: C** - Skipping input validation and assuming “happy path”.
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 6: Which step is explicitly called out as Better work?
+## Question 10: Which Better upgrade most improves maintainability or reliability?
 **Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 7: A reviewer approves the mini-project when which condition is met?
-**Answer: A** - Deliverable runs locally with clear instructions.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 8: Which requirement is part of the mini-project acceptance criteria?
-**Answer: C** - Includes tests appropriate for the feature.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 9: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
-**Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 10: Which task is explicitly listed as a Beast Mode upgrade?
-**Answer: A** - Create a short write-up: what changed, why, and how you verified it.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 

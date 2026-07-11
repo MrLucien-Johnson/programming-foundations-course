@@ -1,72 +1,72 @@
 # Go Advanced — Module 03: Concurrency and Async Quiz Answers
 
-## Question 1: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
-**Answer: D** - All work must be covered by gofmt + lint + tests in CI.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 2: To satisfy the Core requirements, which step must be included?
-**Answer: B** - Add or update documentation (README notes or ADR-style notes).
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 3: To reach Beast Mode, which improvement should you choose?
-**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 4: Which step is explicitly called out as Better work?
-**Answer: B** - Refactor one area for readability (without changing behavior) and prove it with tests.
+## Question 1: Which Better upgrade most improves maintainability or reliability?
+**Answer: C** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 5: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-**Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+## Question 2: Your teammate says: tests assert implementation details instead of outcomes. Which common mistake is this?
+**Answer: A** - Over-mocking (tests assert implementation details instead of outcomes).
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 3: Which Core action would a senior engineer insist on before approving the change?
+**Answer: C** - Add or update documentation (README notes or ADR-style notes).
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 6: Your project passes review only if which condition is true?
-**Answer: C** - Includes tests appropriate for the feature.
+## Question 4: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+**Answer: A** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 5: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+**Answer: C** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 6: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: C** - Create a short write-up: what changed, why, and how you verified it.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 7: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: C** - Includes a short README section describing assumptions and tradeoffs.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 7: A reviewer approves the mini-project when which condition is met?
+## Question 8: Production validation failed because lint/format/type errors are breaking CI. Which testing requirement would have prevented it?
+**Answer: A** - All work must be covered by gofmt + lint + tests in CI.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 9: Which acceptance criterion acts as a release gate for this module?
 **Answer: B** - Deliverable runs locally with clear instructions.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 8: A reviewer reports: CI has no automated test run before release. Which mistake does this reflect?
-**Answer: B** - Shipping without an automated test run in CI.
+## Question 10: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: C** - Explain the core concepts and tradeoffs for Concurrency and Async.
 
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 9: Which improvement moves a Core submission to the Better tier?
-**Answer: A** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 10: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
-**Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 

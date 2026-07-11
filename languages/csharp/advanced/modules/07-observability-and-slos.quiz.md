@@ -6,101 +6,101 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which step is explicitly called out as Better work?
-A) Use tooling to keep quality high: dotnet format + analyzers.
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-C) Add or update documentation (README notes or ADR-style notes).
-D) Deliverable runs locally with clear instructions.
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which requirement is part of the mini-project acceptance criteria?
+### Question 1: A reviewer says, 'Good start.' Which Better upgrade should you add next?
 A) Refactor one area for readability (without changing behavior) and prove it with tests.
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) Deliverable runs locally with clear instructions.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Explain the core concepts and tradeoffs for Observability and SLOs.
+
+**Your answer:** _______________
+
+---
+
+### Question 2: Which outcome best captures the practical ability you should carry forward?
+A) Write tests that prove correctness and prevent regressions.
+B) Skipping input validation and assuming “happy path”.
+C) Add a performance or reliability improvement and measure the impact.
+D) Includes tests appropriate for the feature.
+
+**Your answer:** _______________
+
+---
+
+### Question 3: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Shipping without an automated test run in CI.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which acceptance criterion acts as a release gate for this module?
+A) Deliverable runs locally with clear instructions.
+B) Use tooling to keep quality high: dotnet format + analyzers.
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Shipping without an automated test run in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
+A) Use tooling to keep quality high: dotnet format + analyzers.
+B) Skipping input validation and assuming “happy path”.
+C) Implement a small feature tied to this module in an existing starter app.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Making performance claims without measurements.
+D) Write tests that prove correctness and prevent regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Apply the concepts to a realistic codebase (not just toy examples).
 C) Includes tests appropriate for the feature.
-D) If the module involves a database, tests must run against an isolated schema/database.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
-A) Explain the core concepts and tradeoffs for Observability and SLOs.
-B) Refactor one area for readability (without changing behavior) and prove it with tests.
-C) Document decisions and constraints clearly for reviewers.
-D) Making performance claims without measurements.
+### Question 8: Before shipping, which Core action best reduces regression risk?
+A) Use tooling to keep quality high: dotnet format + analyzers.
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which testing requirement must be satisfied before submission?
-A) Add a performance or reliability improvement and measure the impact.
-B) Refactor one area for readability (without changing behavior) and prove it with tests.
-C) Document decisions and constraints clearly for reviewers.
-D) All work must be covered by build + tests + analyzers in CI.
+### Question 9: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Implement a small feature tied to this module in an existing starter app.
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which acceptance criterion must be satisfied before submission?
-A) Uses consistent style/formatting and passes the quality gate.
-B) Explain the core concepts and tradeoffs for Observability and SLOs.
-C) If the module involves a database, tests must run against an isolated schema/database.
-D) Apply the concepts to a realistic codebase (not just toy examples).
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which step would keep the work within the Core scope?
+### Question 10: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
 A) Over-mocking (tests assert implementation details instead of outcomes).
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 C) Explain the core concepts and tradeoffs for Observability and SLOs.
 D) Implement a small feature tied to this module in an existing starter app.
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which task best matches the Core expectations for this module?
-A) Use tooling to keep quality high: dotnet format + analyzers.
-B) If the module involves a database, tests must run against an isolated schema/database.
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.
-D) Add or update documentation (README notes or ADR-style notes).
-
-**Your answer:** _______________
-
----
-
-### Question 8: To reach Beast Mode, which improvement should you choose?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.
-B) Use tooling to keep quality high: dotnet format + analyzers.
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-D) Deliverable runs locally with clear instructions.
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which enhancement is a Better-level upgrade (not Beast Mode)?
-A) Includes a short README section describing assumptions and tradeoffs.
-B) Create a short write-up: what changed, why, and how you verified it.
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.
-D) Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
-A) Shipping without an automated test run in CI.
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.
-D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Your answer:** _______________
 

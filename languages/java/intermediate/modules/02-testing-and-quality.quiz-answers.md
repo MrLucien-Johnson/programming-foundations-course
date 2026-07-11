@@ -1,72 +1,72 @@
 # Java Intermediate — Module 02: Testing and Quality Quiz Answers
 
-## Question 1: You're preparing a submission and need to meet the Core bar. Which action is required?
-**Answer: C** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
 
-**Explanation:** This action is listed under the Core exercises for the module.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 2: Which acceptance criterion must be satisfied before submission?
-**Answer: C** - Uses consistent style/formatting and passes the quality gate.
+## Question 2: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+**Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 3: Which outcome best captures the practical ability you should carry forward?
+**Answer: C** - Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 4: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: B** - Deliverable runs locally with clear instructions.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 3: Which common mistake matches this scenario: a performance claim was made without benchmarks?
-**Answer: A** - Making performance claims without measurements.
+## Question 5: Before shipping, which Core action best reduces regression risk?
+**Answer: A** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 6: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
+**Answer: C** - Over-mocking (tests assert implementation details instead of outcomes).
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 4: Your tests are blocked by feature tests fail when hitting real boundaries. Which requirement should you enforce?
-**Answer: B** - All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 5: Which step is explicitly called out as Better work?
-**Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+## Question 7: The work passes Core. Which improvement most clearly raises quality for reviewers?
+**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 6: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-**Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 7: Which requirement is part of the mini-project acceptance criteria?
-**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 8: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
-**Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 9: To reach Beast Mode, which improvement should you choose?
-**Answer: C** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+## Question 8: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: A** - Add a performance or reliability improvement and measure the impact.
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 10: Which enhancement is a Better-level upgrade (not Beast Mode)?
-**Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 9: A production fix is urgent. Which Core action is still required before release?
+**Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 10: Which acceptance criterion acts as a release gate for this module?
+**Answer: C** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 

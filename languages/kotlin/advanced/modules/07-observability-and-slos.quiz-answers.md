@@ -1,72 +1,72 @@
 # Kotlin Advanced — Module 07: Observability and SLOs Quiz Answers
 
-## Question 1: To earn a Better evaluation, which action should you add?
-**Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+## Question 1: Which Core action best reflects professional engineering practice in this situation?
+**Answer: B** - Implement a small feature tied to this module in an existing starter app.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 2: To reach Beast Mode, which improvement should you choose?
-**Answer: C** - Create a short write-up: what changed, why, and how you verified it.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 3: A reviewer reports: tests assert implementation details instead of outcomes. Which mistake does this reflect?
-**Answer: A** - Over-mocking (tests assert implementation details instead of outcomes).
+## Question 2: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: C** - Use tooling to keep quality high: ktlint + detekt.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 3: This happened during review: tests assert implementation details instead of outcomes. Which mistake is it?
+**Answer: C** - Over-mocking (tests assert implementation details instead of outcomes).
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 4: Which item is explicitly required in the acceptance criteria?
-**Answer: A** - Deliverable runs locally with clear instructions.
+## Question 4: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: C** - Uses consistent style/formatting and passes the quality gate.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 5: A reviewer approves the mini-project when which condition is met?
-**Answer: C** - Includes a short README section describing assumptions and tradeoffs.
+## Question 5: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+**Answer: A** - If the module involves a database, tests must run against an isolated schema/database.
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 6: To satisfy the Core requirements, which step must be included?
-**Answer: C** - Add or update documentation (README notes or ADR-style notes).
+## Question 6: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 7: Which testing requirement must be satisfied before submission?
-**Answer: C** - All work must be covered by build + tests + static analysis in CI.
+## Question 7: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: B** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 8: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
-**Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 9: Which improvement moves a Core submission to the Better tier?
-**Answer: B** - Refactor one area for readability (without changing behavior) and prove it with tests.
+## Question 8: Which acceptance requirement protects review quality if enforced?
+**Answer: C** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 9: Which Better upgrade most improves maintainability or reliability?
+**Answer: C** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 10: A reviewer checks the Core checklist. Which action should they see?
-**Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+## Question 10: Production validation failed because tests are flaky and fail intermittently. Which testing requirement would have prevented it?
+**Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
-**Explanation:** This action is listed under the Core exercises for the module.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 

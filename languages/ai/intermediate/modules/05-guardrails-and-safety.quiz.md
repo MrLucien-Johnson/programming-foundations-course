@@ -6,39 +6,39 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which testing requirement should be verified in CI for this module?
-A) Safety tests are part of your evaluation harness.
-B) Logging sensitive data without a retention/redaction plan.
-C) Add a privacy threat model for stored prompts/outputs.
-D) Translate a vague request into a clear goal, constraints, and success criteria.
+### Question 1: Which option represents a common mistake to avoid?
+A) Includes a red-team dataset and a safety gate concept.
+B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+C) Trusting user content as instructions.
+D) Add prompt injection tests and verify proper refusal/containment.
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which step is explicitly called out as Better work?
-A) Build a small evaluation loop: test cases, metrics, and iteration notes.
-B) Document and version changes so improvements are explainable.
-C) Design an escalation policy (route to human, block, or safe-complete).
+### Question 2: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Includes a red-team dataset and a safety gate concept.
+B) Add prompt injection tests and verify proper refusal/containment.
+C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 D) Add a privacy threat model for stored prompts/outputs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which option represents a Beast Mode enhancement?
-A) Add a privacy threat model for stored prompts/outputs.
-B) Add prompt injection tests and verify proper refusal/containment.
-C) Includes input/output controls and a documented fallback strategy.
-D) Design an escalation policy (route to human, block, or safe-complete).
+### Question 3: Which acceptance criterion acts as a release gate for this module?
+A) Document and version changes so improvements are explainable.
+B) Trusting user content as instructions.
+C) Build a small evaluation loop: test cases, metrics, and iteration notes.
+D) Includes input/output controls and a documented fallback strategy.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which option represents a common mistake to avoid?
+### Question 4: In a real code review, which outcome best reflects the skill you should demonstrate?
 A) Add prompt injection tests and verify proper refusal/containment.
-B) Refusing too broadly instead of safe redirection.
+B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 C) Includes a red-team dataset and a safety gate concept.
 D) Create a safety checklist for your chosen use case and apply it to 30 test cases.
 
@@ -46,61 +46,61 @@ D) Create a safety checklist for your chosen use case and apply it to 30 test ca
 
 ---
 
-### Question 5: You already met Core. Which action qualifies as a Better upgrade?
-A) Create a safety checklist for your chosen use case and apply it to 30 test cases.
-B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-C) Add a privacy threat model for stored prompts/outputs.
-D) Add logging fields needed for audits (without storing sensitive content).
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is explicitly required in the acceptance criteria?
-A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-B) Add prompt injection tests and verify proper refusal/containment.
-C) Includes input/output controls and a documented fallback strategy.
-D) Design an escalation policy (route to human, block, or safe-complete).
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which task best matches the Core expectations for this module?
+### Question 5: The work passes Core. Which improvement most clearly raises quality for reviewers?
 A) Refusing too broadly instead of safe redirection.
-B) Safety tests are part of your evaluation harness.
-C) Add prompt injection tests and verify proper refusal/containment.
-D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+B) Design an escalation policy (route to human, block, or safe-complete).
+C) Trusting user content as instructions.
+D) Translate a vague request into a clear goal, constraints, and success criteria.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: A reviewer approves the mini-project when which condition is met?
-A) Design an escalation policy (route to human, block, or safe-complete).
-B) Add a privacy threat model for stored prompts/outputs.
-C) Refusing too broadly instead of safe redirection.
+### Question 6: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Design a “safety gate” in CI: fail if safety tests regress.
+B) Add prompt injection tests and verify proper refusal/containment.
+C) Add logging fields needed for audits (without storing sensitive content).
 D) Includes a red-team dataset and a safety gate concept.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-A) Add a privacy threat model for stored prompts/outputs.
-B) Create a safety checklist for your chosen use case and apply it to 30 test cases.
-C) Safety tests are part of your evaluation harness.
+### Question 7: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Add prompt injection tests and verify proper refusal/containment.
+B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+C) Document and version changes so improvements are explainable.
+D) Translate a vague request into a clear goal, constraints, and success criteria.
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which testing requirement should be verified in CI for this module?
+A) Safety tests are part of your evaluation harness.
+B) Translate a vague request into a clear goal, constraints, and success criteria.
+C) Design a “safety gate” in CI: fail if safety tests regress.
 D) Refusing too broadly instead of safe redirection.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which requirement belongs in the testing checklist for this module?
+### Question 9: A production fix is urgent. Which Core action is still required before release?
 A) Create a safety checklist for your chosen use case and apply it to 30 test cases.
-B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-C) Includes input/output controls and a documented fallback strategy.
-D) Safety tests are part of your evaluation harness.
+B) Document and version changes so improvements are explainable.
+C) Safety tests are part of your evaluation harness.
+D) Design an escalation policy (route to human, block, or safe-complete).
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which requirement belongs in the testing checklist for this module?
+A) Document and version changes so improvements are explainable.
+B) Create a safety checklist for your chosen use case and apply it to 30 test cases.
+C) Safety tests are part of your evaluation harness.
+D) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 
 **Your answer:** _______________
 

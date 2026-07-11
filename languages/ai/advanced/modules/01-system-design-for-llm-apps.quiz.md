@@ -6,67 +6,57 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which improvement moves a Core submission to the Better tier?
-A) Define SLOs for latency and quality with error budgets.
-B) Add a privacy-by-design plan (minimization, retention, access controls).
-C) Translate a vague request into a clear goal, constraints, and success criteria.
-D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+### Question 1: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Add a privacy-by-design plan (minimization, retention, access controls).
+B) No plan for scaling or failure, leading to outages/cost spikes.
+C) Identify failure modes and propose fallbacks for each.
+D) Translate a vague request into a clear goal, constraints, and success criteria.
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: You already met Core. Which action qualifies as a Better upgrade?
+### Question 2: Production validation failed because feature tests fail when hitting real boundaries. Which testing requirement would have prevented it?
 A) Add scaling considerations: caching layers, queues, and backpressure.
-B) Treating the model as a single black box without boundaries.
-C) Document and version changes so improvements are explainable.
-D) No plan for scaling or failure, leading to outages/cost spikes.
+B) Translate a vague request into a clear goal, constraints, and success criteria.
+C) Build a small evaluation loop: test cases, metrics, and iteration notes.
+D) Design includes test strategy across unit/integration/e2e + eval gates.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which acceptance criterion must be satisfied before submission?
-A) Document and version changes so improvements are explainable.
-B) Includes architecture, eval harness plan, safety checklist, cost/latency plan, fallback strategy.
-C) No plan for scaling or failure, leading to outages/cost spikes.
-D) Add scaling considerations: caching layers, queues, and backpressure.
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which task best matches the Core expectations for this module?
+### Question 3: Which acceptance requirement protects review quality if enforced?
 A) No plan for scaling or failure, leading to outages/cost spikes.
-B) Create an architecture diagram and data flow for one LLM feature.
-C) Add scaling considerations: caching layers, queues, and backpressure.
-D) Document and version changes so improvements are explainable.
+B) Document and version changes so improvements are explainable.
+C) Includes architecture, eval harness plan, safety checklist, cost/latency plan, fallback strategy.
+D) Translate a vague request into a clear goal, constraints, and success criteria.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Your tests are blocked by feature tests fail when hitting real boundaries. Which requirement should you enforce?
-A) Design includes test strategy across unit/integration/e2e + eval gates.
-B) Build a small evaluation loop: test cases, metrics, and iteration notes.
-C) Add scaling considerations: caching layers, queues, and backpressure.
-D) No plan for scaling or failure, leading to outages/cost spikes.
+### Question 4: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Add a privacy-by-design plan (minimization, retention, access controls).
+B) Design a migration plan for changing schemas/prompts with backward compatibility.
+C) Define SLOs for latency and quality with error budgets.
+D) Translate a vague request into a clear goal, constraints, and success criteria.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action pushes the work into Beast Mode?
-A) Includes architecture, eval harness plan, safety checklist, cost/latency plan, fallback strategy.
-B) Treating the model as a single black box without boundaries.
-C) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-D) Add a privacy-by-design plan (minimization, retention, access controls).
+### Question 5: Which testing requirement is most relevant to this issue: feature tests fail when hitting real boundaries?
+A) Design a migration plan for changing schemas/prompts with backward compatibility.
+B) Includes architecture, eval harness plan, safety checklist, cost/latency plan, fallback strategy.
+C) Build a small evaluation loop: test cases, metrics, and iteration notes.
+D) Design includes test strategy across unit/integration/e2e + eval gates.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which step would keep the work within the Core scope?
+### Question 6: A production fix is urgent. Which Core action is still required before release?
 A) Design includes test strategy across unit/integration/e2e + eval gates.
 B) Identify failure modes and propose fallbacks for each.
 C) Treating the model as a single black box without boundaries.
@@ -76,31 +66,41 @@ D) Translate a vague request into a clear goal, constraints, and success criteri
 
 ---
 
-### Question 8: Which behavior is listed as a common mistake for this module?
+### Question 7: Which option represents a common mistake to avoid?
 A) No plan for scaling or failure, leading to outages/cost spikes.
-B) Build a small evaluation loop: test cases, metrics, and iteration notes.
-C) Includes architecture, eval harness plan, safety checklist, cost/latency plan, fallback strategy.
-D) Document and version changes so improvements are explainable.
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which item is explicitly required in the acceptance criteria?
-A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-B) Treating the model as a single black box without boundaries.
-C) Add scaling considerations: caching layers, queues, and backpressure.
-D) Includes architecture, eval harness plan, safety checklist, cost/latency plan, fallback strategy.
-
-**Your answer:** _______________
-
----
-
-### Question 10: A reviewer flags feature tests fail when hitting real boundaries. Which testing requirement resolves it?
-A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-B) Identify failure modes and propose fallbacks for each.
-C) Design includes test strategy across unit/integration/e2e + eval gates.
+B) Add a privacy-by-design plan (minimization, retention, access controls).
+C) Define SLOs for latency and quality with error budgets.
 D) Create an architecture diagram and data flow for one LLM feature.
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which Better upgrade most improves maintainability or reliability?
+A) Build a small evaluation loop: test cases, metrics, and iteration notes.
+B) Identify failure modes and propose fallbacks for each.
+C) Add scaling considerations: caching layers, queues, and backpressure.
+D) Create an architecture diagram and data flow for one LLM feature.
+
+**Your answer:** _______________
+
+---
+
+### Question 9: You're pressed for time but still need a safe release. Which Core action must remain?
+A) Translate a vague request into a clear goal, constraints, and success criteria.
+B) Create an architecture diagram and data flow for one LLM feature.
+C) Add scaling considerations: caching layers, queues, and backpressure.
+D) Design a migration plan for changing schemas/prompts with backward compatibility.
+
+**Your answer:** _______________
+
+---
+
+### Question 10: In a real code review, which outcome best reflects the skill you should demonstrate?
+A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+B) Create an architecture diagram and data flow for one LLM feature.
+C) Define SLOs for latency and quality with error budgets.
+D) No plan for scaling or failure, leading to outages/cost spikes.
 
 **Your answer:** _______________
 

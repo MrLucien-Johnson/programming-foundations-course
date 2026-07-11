@@ -6,101 +6,101 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which acceptance criterion must be satisfied before submission?
-A) Uses consistent style/formatting and passes the quality gate.
-B) Making performance claims without measurements.
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.
-
-**Your answer:** _______________
-
----
-
-### Question 2: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-A) Skipping input validation and assuming “happy path”.
-B) Explain the core concepts and tradeoffs for Testing and Quality.
-C) Add at least 3 focused unit tests that cover normal cases and edge cases.
-D) Includes tests appropriate for the feature.
-
-**Your answer:** _______________
-
----
-
-### Question 3: To earn a Better evaluation, which action should you add?
-A) Document decisions and constraints clearly for reviewers.
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-C) Making performance claims without measurements.
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
-A) Apply the concepts to a realistic codebase (not just toy examples).
-B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+### Question 1: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Add a performance or reliability improvement and measure the impact.
 C) Explain the core concepts and tradeoffs for Testing and Quality.
+D) Skipping input validation and assuming “happy path”.
+
+**Your answer:** _______________
+
+---
+
+### Question 2: Which Better upgrade most improves maintainability or reliability?
+A) Add a performance or reliability improvement and measure the impact.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Uses consistent style/formatting and passes the quality gate.
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Your teammate says: tests assert implementation details instead of outcomes. Which common mistake is this?
+A) Explain the core concepts and tradeoffs for Testing and Quality.
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+### Question 4: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Implement a small feature tied to this module in an existing starter app.
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Create a short write-up: what changed, why, and how you verified it.
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+A) Shipping without an automated test run in CI.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Add a performance or reliability improvement and measure the impact.
 D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which item is explicitly required in the acceptance criteria?
-A) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
-B) Includes tests appropriate for the feature.
-C) Apply the concepts to a realistic codebase (not just toy examples).
-D) Making performance claims without measurements.
+### Question 6: Before shipping, which Core action best reduces regression risk?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: A reviewer checks the Core checklist. Which action should they see?
-A) Document decisions and constraints clearly for reviewers.
-B) Includes tests appropriate for the feature.
-C) Apply the concepts to a realistic codebase (not just toy examples).
-D) Implement a small feature tied to this module in an existing starter app.
+### Question 7: Which Core action best reflects professional engineering practice in this situation?
+A) Deliverable runs locally with clear instructions.
+B) Shipping without an automated test run in CI.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Your teammate says: bugs appear on unexpected inputs because validation was skipped. Which common mistake is this?
+### Question 8: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Use tooling to keep quality high: ESLint + Prettier.
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Includes tests appropriate for the feature.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+### Question 9: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
 A) Refactor one area for readability (without changing behavior) and prove it with tests.
-B) Includes a short README section describing assumptions and tradeoffs.
-C) Skipping input validation and assuming “happy path”.
-D) Deliverable runs locally with clear instructions.
+B) Use tooling to keep quality high: ESLint + Prettier.
+C) Deliverable runs locally with clear instructions.
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which option represents a Beast Mode enhancement?
-A) Skipping input validation and assuming “happy path”.
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.
-C) Add a performance or reliability improvement and measure the impact.
-D) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
-
-**Your answer:** _______________
-
----
-
-### Question 9: CI is failing because lint/format/type errors are breaking CI. Which testing requirement addresses this?
-A) Making performance claims without measurements.
-B) Includes a short README section describing assumptions and tradeoffs.
-C) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
-D) Add a performance or reliability improvement and measure the impact.
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which option is listed under Better work for this module?
-A) Over-mocking (tests assert implementation details instead of outcomes).
-B) Skipping input validation and assuming “happy path”.
-C) Refactor one area for readability (without changing behavior) and prove it with tests.
-D) Making performance claims without measurements.
+### Question 10: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Deliverable runs locally with clear instructions.
+B) Add or update documentation (README notes or ADR-style notes).
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Includes a short README section describing assumptions and tradeoffs.
 
 **Your answer:** _______________
 

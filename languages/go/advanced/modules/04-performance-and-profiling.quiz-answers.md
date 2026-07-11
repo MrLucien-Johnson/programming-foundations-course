@@ -1,72 +1,72 @@
 # Go Advanced — Module 04: Performance and Profiling Quiz Answers
 
-## Question 1: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
-**Answer: D** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+## Question 1: Which common mistake matches this scenario: a performance claim was made without benchmarks?
+**Answer: C** - Making performance claims without measurements.
 
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 2: Which item is explicitly required in the acceptance criteria?
-**Answer: A** - Includes a short README section describing assumptions and tradeoffs.
+## Question 2: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: A** - Deliverable runs locally with clear instructions.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 3: Which enhancement is a Better-level upgrade (not Beast Mode)?
-**Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+## Question 3: Which Better upgrade most improves maintainability or reliability?
+**Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 4: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
-**Answer: A** - All work must be covered by gofmt + lint + tests in CI.
+## Question 4: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 5: To earn a Better evaluation, which action should you add?
-**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 5: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: D** - Add a performance or reliability improvement and measure the impact.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 6: A reviewer checks the Core checklist. Which action should they see?
+## Question 6: You're pressed for time but still need a safe release. Which Core action must remain?
 **Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 7: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
-**Answer: A** - Over-mocking (tests assert implementation details instead of outcomes).
+## Question 7: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: A** - Document decisions and constraints clearly for reviewers.
 
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 8: Which action qualifies as a Beast Mode stretch?
-**Answer: D** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-
-**Explanation:** This action is part of the Beast Mode upgrades.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 9: To satisfy the Core requirements, which step must be included?
+## Question 8: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: D** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 9: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
 **Answer: C** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 10: Which acceptance criterion must be satisfied before submission?
-**Answer: C** - Uses consistent style/formatting and passes the quality gate.
+## Question 10: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+**Answer: A** - All work must be covered by gofmt + lint + tests in CI.
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 

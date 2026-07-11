@@ -1,72 +1,72 @@
 # Python Advanced — Module 05: Reliability and Resilience Quiz Answers
 
-## Question 1: A reviewer approves the mini-project when which condition is met?
-**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 2: Which step would keep the work within the Core scope?
-**Answer: B** - Add or update documentation (README notes or ADR-style notes).
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 3: Which improvement moves a Core submission to the Better tier?
-**Answer: D** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+## Question 1: The work passes Core. Which improvement most clearly raises quality for reviewers?
+**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 4: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
-**Answer: D** - Making performance claims without measurements.
+## Question 2: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
+**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
 
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 5: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-**Answer: D** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This action is listed under the Core exercises for the module.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 6: Which action qualifies as a Beast Mode stretch?
-**Answer: B** - Create a short write-up: what changed, why, and how you verified it.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 7: Which requirement is part of the mini-project acceptance criteria?
-**Answer: C** - Includes tests appropriate for the feature.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 8: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
+## Question 3: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
 **Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 9: You already met Core. Which action qualifies as a Better upgrade?
-**Answer: D** - Refactor one area for readability (without changing behavior) and prove it with tests.
+## Question 4: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: D** - Implement a small feature tied to this module in an existing starter app.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 10: CI is failing because lint/format/type errors are breaking CI. Which testing requirement addresses this?
-**Answer: C** - All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
+## Question 5: A reviewer reports: bugs appear on unexpected inputs because validation was skipped. Which mistake does this reflect?
+**Answer: C** - Skipping input validation and assuming “happy path”.
 
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 6: Which acceptance requirement most clearly blocks approval if missing?
+**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 7: You're pressed for time but still need a safe release. Which Core action must remain?
+**Answer: B** - Add or update documentation (README notes or ADR-style notes).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 8: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: D** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 9: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: A** - Create a short write-up: what changed, why, and how you verified it.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 10: Which outcome represents a transferable software engineering skill?
+**Answer: B** - Use tooling to keep quality high: ruff + black (or ruff format).
+
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 

@@ -1,72 +1,72 @@
 # Kotlin Advanced — Module 02: Architecture Patterns Quiz Answers
 
-## Question 1: A reviewer reports: bugs appear on unexpected inputs because validation was skipped. Which mistake does this reflect?
-**Answer: A** - Skipping input validation and assuming “happy path”.
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 2: Your project passes review only if which condition is true?
-**Answer: D** - Uses consistent style/formatting and passes the quality gate.
+## Question 1: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: A** - Uses consistent style/formatting and passes the quality gate.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 3: Which testing requirement must be satisfied before submission?
+## Question 2: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: B** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 3: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+**Answer: B** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 4: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: B** - Explain the core concepts and tradeoffs for Architecture Patterns.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 5: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
+**Answer: B** - Skipping input validation and assuming “happy path”.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 6: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+**Answer: A** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 7: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+**Answer: B** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 8: Which Core action best reflects professional engineering practice in this situation?
+**Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 9: Which requirement belongs in the testing checklist for this module?
 **Answer: B** - All work must be covered by build + tests + static analysis in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 4: You're preparing a submission and need to meet the Core bar. Which action is required?
-**Answer: D** - Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 5: Which action pushes the work into Beast Mode?
-**Answer: C** - Add a performance or reliability improvement and measure the impact.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 6: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
-**Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 7: Which step is explicitly called out as Better work?
-**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 8: A reviewer approves the mini-project when which condition is met?
-**Answer: A** - Includes tests appropriate for the feature.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 9: You already met Core. Which action qualifies as a Better upgrade?
+## Question 10: The work passes Core. Which improvement most clearly raises quality for reviewers?
 **Answer: D** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 10: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-**Answer: B** - Add or update documentation (README notes or ADR-style notes).
-
-**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 

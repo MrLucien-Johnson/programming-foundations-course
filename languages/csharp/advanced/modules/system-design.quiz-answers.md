@@ -1,70 +1,70 @@
 # Systems and Design (Advanced) Quiz Answers
 
-## Question 1: Which deliverable belongs to this module's expectations?
-**Answer: C** - profiling or benchmarking summary
+## Question 1: Which deliverable best demonstrates the engineering work was completed?
+**Answer: B** - profiling or benchmarking summary
 
 **Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 2: Which deliverable would you submit to complete this module?
-**Answer: A** - design notes with trade-offs
+## Question 2: Which deliverable would you send to a stakeholder as evidence of completion?
+**Answer: B** - design notes with trade-offs
 
 **Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 3: Which deliverable should you produce for this module?
+## Question 3: A reviewer wants proof of work. Which deliverable should you hand them?
 **Answer: A** - profiling or benchmarking summary
 
 **Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 4: A reviewer expects which deliverable from this module?
-**Answer: D** - profiling or benchmarking summary
-
-**Explanation:** This deliverable is required in the module expectations.
-
----
-
-## Question 5: Which topic is on the module outline?
-**Answer: B** - performance profiling and optimization
-
-**Explanation:** This topic is listed in the module outline.
-
----
-
-## Question 6: Which topic is covered in this module?
-**Answer: B** - API boundaries and layering
-
-**Explanation:** This topic is listed in the module outline.
-
----
-
-## Question 7: Which topic belongs to this module's outline?
-**Answer: D** - reliability, logging, and observability
-
-**Explanation:** This topic is listed in the module outline.
-
----
-
-## Question 8: Which topic is part of the module's coverage?
+## Question 4: Which topic would you use to guide a design discussion?
 **Answer: B** - reliability, logging, and observability
 
 **Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 9: Which output is listed as a required deliverable?
-**Answer: D** - profiling or benchmarking summary
+## Question 5: Which topic is on the module outline?
+**Answer: A** - reliability, logging, and observability
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 6: Which deliverable is explicitly listed for this module?
+**Answer: A** - profiling or benchmarking summary
 
 **Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 10: Which deliverable is required before moving on?
-**Answer: B** - design notes with trade-offs
+## Question 7: A teammate needs help with a real project decision. Which topic should they revisit?
+**Answer: C** - performance profiling and optimization
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 8: Which topic would you point to when scoping a real-world solution?
+**Answer: D** - API boundaries and layering
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 9: Which deliverable would you submit to complete this module?
+**Answer: A** - design notes with trade-offs
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 10: Which deliverable belongs to this module's expectations?
+**Answer: C** - profiling or benchmarking summary
 
 **Explanation:** This deliverable is required in the module expectations.
 

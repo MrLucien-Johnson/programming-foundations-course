@@ -6,101 +6,101 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which requirement is part of the mini-project acceptance criteria?
-A) Includes retention, minimization, access control, and auditability.
-B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-C) Add a privacy review checklist to releases.
-D) Build a small evaluation loop: test cases, metrics, and iteration notes.
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which item is explicitly required in the acceptance criteria?
-A) Tests include “data should not appear” negative cases.
-B) Define a safe logging schema that avoids storing raw sensitive text.
-C) Logging raw prompts/outputs indefinitely.
-D) Includes retention, minimization, access control, and auditability.
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which option represents a Beast Mode enhancement?
-A) Ignoring multi-tenant isolation and permissions in retrieval.
-B) Document and version changes so improvements are explainable.
-C) Build a small evaluation loop: test cases, metrics, and iteration notes.
+### Question 1: Which outcome represents a transferable software engineering skill?
+A) Define a safe logging schema that avoids storing raw sensitive text.
+B) Logging raw prompts/outputs indefinitely.
+C) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 D) Design audit queries/reports (who accessed what, when, and for what purpose).
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which step would keep the work within the Core scope?
-A) Create a data handling policy for your app: what is stored, for how long, and why.
+### Question 2: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Define a safe logging schema that avoids storing raw sensitive text.
 B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-C) Tests include “data should not appear” negative cases.
-D) Logging raw prompts/outputs indefinitely.
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which testing requirement must be satisfied before submission?
-A) Translate a vague request into a clear goal, constraints, and success criteria.
-B) Tests include “data should not appear” negative cases.
-C) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-D) Design a redaction strategy and test it on sample inputs.
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which option represents a common mistake to avoid?
-A) Document and version changes so improvements are explainable.
-B) Ignoring multi-tenant isolation and permissions in retrieval.
 C) Create a data handling policy for your app: what is stored, for how long, and why.
-D) Translate a vague request into a clear goal, constraints, and success criteria.
+D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: You're preparing a submission and need to meet the Core bar. Which action is required?
-A) Design a redaction strategy and test it on sample inputs.
-B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-C) Add a privacy review checklist to releases.
-D) Define a safe logging schema that avoids storing raw sensitive text.
-
-**Your answer:** _______________
-
----
-
-### Question 8: To earn a Better evaluation, which action should you add?
-A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-B) Includes retention, minimization, access control, and auditability.
+### Question 3: Which option represents a common mistake to avoid?
+A) Includes retention, minimization, access control, and auditability.
+B) Logging raw prompts/outputs indefinitely.
 C) Document and version changes so improvements are explainable.
-D) Add access-control-aware retrieval and test “no leakage” scenarios.
+D) Add a privacy review checklist to releases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which requirement belongs in the testing checklist for this module?
-A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-B) Define a safe logging schema that avoids storing raw sensitive text.
-C) Tests include “data should not appear” negative cases.
+### Question 4: Which testing requirement must be satisfied before submission?
+A) Add access-control-aware retrieval and test “no leakage” scenarios.
+B) Tests include “data should not appear” negative cases.
+C) Define a safe logging schema that avoids storing raw sensitive text.
 D) Ignoring multi-tenant isolation and permissions in retrieval.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which improvement moves a Core submission to the Better tier?
-A) Define a safe logging schema that avoids storing raw sensitive text.
-B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-C) Create a data handling policy for your app: what is stored, for how long, and why.
-D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+### Question 5: Which testing requirement should be verified in CI for this module?
+A) Translate a vague request into a clear goal, constraints, and success criteria.
+B) Ignoring multi-tenant isolation and permissions in retrieval.
+C) Define a safe logging schema that avoids storing raw sensitive text.
+D) Tests include “data should not appear” negative cases.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Tests include “data should not appear” negative cases.
+B) Design a redaction strategy and test it on sample inputs.
+C) Document and version changes so improvements are explainable.
+D) Add a privacy review checklist to releases.
+
+**Your answer:** _______________
+
+---
+
+### Question 7: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+A) Document and version changes so improvements are explainable.
+B) Create a data handling policy for your app: what is stored, for how long, and why.
+C) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+D) Build a small evaluation loop: test cases, metrics, and iteration notes.
+
+**Your answer:** _______________
+
+---
+
+### Question 8: You're pressed for time but still need a safe release. Which Core action must remain?
+A) Translate a vague request into a clear goal, constraints, and success criteria.
+B) Add a privacy review checklist to releases.
+C) Design a redaction strategy and test it on sample inputs.
+D) Define a safe logging schema that avoids storing raw sensitive text.
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Before sign-off, which acceptance criterion must be confirmed?
+A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+B) Build a small evaluation loop: test cases, metrics, and iteration notes.
+C) Design a redaction strategy and test it on sample inputs.
+D) Includes retention, minimization, access control, and auditability.
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which Better action best demonstrates stronger engineering discipline?
+A) Document and version changes so improvements are explainable.
+B) Build a small evaluation loop: test cases, metrics, and iteration notes.
+C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+D) Add access-control-aware retrieval and test “no leakage” scenarios.
 
 **Your answer:** _______________
 

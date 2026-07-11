@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
+### Question 1: Before shipping, which Core action best reduces regression risk?
 A) Includes tests appropriate for the feature.
 B) All work must be covered by migrations apply cleanly + pgTAP + SQL linting in CI.
 C) Add or update documentation (README notes or ADR-style notes).
@@ -16,37 +16,37 @@ D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 ---
 
-### Question 2: A reviewer checks the Core checklist. Which action should they see?
-A) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.
-B) Implement a small feature tied to this module in an existing starter app.
+### Question 2: You're pressed for time but still need a safe release. Which Core action must remain?
+A) Document decisions and constraints clearly for reviewers.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
 C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-D) Apply the concepts to a realistic codebase (not just toy examples).
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Your teammate says: CI has no automated test run before release. Which common mistake is this?
-A) Apply the concepts to a realistic codebase (not just toy examples).
-B) Explain the core concepts and tradeoffs for Reliability and Resilience.
-C) Shipping without an automated test run in CI.
+### Question 3: Which outcome represents a transferable software engineering skill?
+A) All work must be covered by migrations apply cleanly + pgTAP + SQL linting in CI.
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Document decisions and constraints clearly for reviewers.
 D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
-A) If the module involves a database, tests must run against an isolated schema/database.
+### Question 4: Your teammate says: bugs appear on unexpected inputs because validation was skipped. Which common mistake is this?
+A) Skipping input validation and assuming “happy path”.
 B) Add a performance or reliability improvement and measure the impact.
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-D) Skipping input validation and assuming “happy path”.
+D) Explain the core concepts and tradeoffs for Reliability and Resilience.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which enhancement is a Better-level upgrade (not Beast Mode)?
+### Question 5: Which Better upgrade most improves maintainability or reliability?
 A) Skipping input validation and assuming “happy path”.
 B) Document decisions and constraints clearly for reviewers.
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
@@ -56,17 +56,17 @@ D) Explain the core concepts and tradeoffs for Reliability and Resilience.
 
 ---
 
-### Question 6: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 6: Production validation failed because tests are flaky and fail intermittently. Which testing requirement would have prevented it?
 A) Tests must be deterministic (no flakes) and runnable by a reviewer.
 B) Implement a small feature tied to this module in an existing starter app.
-C) Apply the concepts to a realistic codebase (not just toy examples).
-D) Shipping without an automated test run in CI.
+C) Shipping without an automated test run in CI.
+D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which acceptance criterion must be satisfied before submission?
+### Question 7: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
 A) Deliverable runs locally with clear instructions.
 B) Add at least 3 focused unit tests that cover normal cases and edge cases.
 C) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.
@@ -76,31 +76,31 @@ D) Refactor one area for readability (without changing behavior) and prove it wi
 
 ---
 
-### Question 8: Which improvement moves a Core submission to the Better tier?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.
-B) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.
-C) Document decisions and constraints clearly for reviewers.
+### Question 8: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Add a performance or reliability improvement and measure the impact.
+B) Write tests that prove correctness and prevent regressions.
+C) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.
 D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which requirement is part of the mini-project acceptance criteria?
-A) Includes a short README section describing assumptions and tradeoffs.
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-D) All work must be covered by migrations apply cleanly + pgTAP + SQL linting in CI.
+### Question 9: CI is failing because lint/format/type errors are breaking CI. Which testing requirement addresses this?
+A) All work must be covered by migrations apply cleanly + pgTAP + SQL linting in CI.
+B) Implement a small feature tied to this module in an existing starter app.
+C) Uses consistent style/formatting and passes the quality gate.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which action pushes the work into Beast Mode?
-A) Write tests that prove correctness and prevent regressions.
-B) All work must be covered by migrations apply cleanly + pgTAP + SQL linting in CI.
-C) Add a performance or reliability improvement and measure the impact.
-D) Making performance claims without measurements.
+### Question 10: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Explain the core concepts and tradeoffs for Reliability and Resilience.
 
 **Your answer:** _______________
 

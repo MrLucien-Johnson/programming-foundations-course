@@ -6,101 +6,101 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
-A) Implement a small feature tied to this module in an existing starter app.
-B) Use tooling to keep quality high: dotnet format + analyzers.
-C) If the module involves a database, tests must run against an isolated schema/database.
-D) Create a short write-up: what changed, why, and how you verified it.
-
-**Your answer:** _______________
-
----
-
-### Question 2: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-A) Use tooling to keep quality high: dotnet format + analyzers.
-B) Explain the core concepts and tradeoffs for System Design Foundations.
-C) Add or update documentation (README notes or ADR-style notes).
+### Question 1: Which Better upgrade most improves maintainability or reliability?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Shipping without an automated test run in CI.
+C) Add a performance or reliability improvement and measure the impact.
 D) Document decisions and constraints clearly for reviewers.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: A reviewer reports: a performance claim was made without benchmarks. Which mistake does this reflect?
-A) Create a short write-up: what changed, why, and how you verified it.
-B) Making performance claims without measurements.
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+### Question 2: Which acceptance criterion would a reviewer check first to approve the submission?
+A) Deliverable runs locally with clear instructions.
+B) Shipping without an automated test run in CI.
+C) Explain the core concepts and tradeoffs for System Design Foundations.
+D) If the module involves a database, tests must run against an isolated schema/database.
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which Core action would a senior engineer insist on before approving the change?
+A) Includes tests appropriate for the feature.
+B) Write tests that prove correctness and prevent regressions.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Write tests that prove correctness and prevent regressions.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
 D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which enhancement is a Better-level upgrade (not Beast Mode)?
-A) Use tooling to keep quality high: dotnet format + analyzers.
-B) Shipping without an automated test run in CI.
+### Question 5: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
+A) Making performance claims without measurements.
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) Add or update documentation (README notes or ADR-style notes).
+D) Use tooling to keep quality high: dotnet format + analyzers.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which outcome represents a transferable software engineering skill?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Use tooling to keep quality high: dotnet format + analyzers.
+D) Deliverable runs locally with clear instructions.
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which acceptance criterion acts as a release gate for this module?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Uses consistent style/formatting and passes the quality gate.
 C) Refactor one area for readability (without changing behavior) and prove it with tests.
-D) Skipping input validation and assuming “happy path”.
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+### Question 8: Which Core action best reflects professional engineering practice in this situation?
+A) Use tooling to keep quality high: dotnet format + analyzers.
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Implement a small feature tied to this module in an existing starter app.
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which testing requirement should be verified in CI for this module?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) All work must be covered by build + tests + analyzers in CI.
+C) Making performance claims without measurements.
+D) Create a short write-up: what changed, why, and how you verified it.
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Create a short write-up: what changed, why, and how you verified it.
 B) Over-mocking (tests assert implementation details instead of outcomes).
-C) Uses consistent style/formatting and passes the quality gate.
-D) Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Your answer:** _______________
-
----
-
-### Question 6: A reviewer approves the mini-project when which condition is met?
-A) Write tests that prove correctness and prevent regressions.
-B) Includes tests appropriate for the feature.
-C) Implement a small feature tied to this module in an existing starter app.
-D) Apply the concepts to a realistic codebase (not just toy examples).
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which step would keep the work within the Core scope?
-A) Uses consistent style/formatting and passes the quality gate.
-B) Document decisions and constraints clearly for reviewers.
-C) Implement a small feature tied to this module in an existing starter app.
-D) Create a short write-up: what changed, why, and how you verified it.
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which item is explicitly required in the acceptance criteria?
-A) Add a performance or reliability improvement and measure the impact.
-B) Write tests that prove correctness and prevent regressions.
-C) Apply the concepts to a realistic codebase (not just toy examples).
-D) Uses consistent style/formatting and passes the quality gate.
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which option is listed under Better work for this module?
-A) Over-mocking (tests assert implementation details instead of outcomes).
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-C) Implement a small feature tied to this module in an existing starter app.
-D) Create a short write-up: what changed, why, and how you verified it.
-
-**Your answer:** _______________
-
----
-
-### Question 10: To reach Beast Mode, which improvement should you choose?
-A) Add at least 3 focused unit tests that cover normal cases and edge cases.
-B) Shipping without an automated test run in CI.
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-D) Add a performance or reliability improvement and measure the impact.
+C) Includes tests appropriate for the feature.
+D) Making performance claims without measurements.
 
 **Your answer:** _______________
 

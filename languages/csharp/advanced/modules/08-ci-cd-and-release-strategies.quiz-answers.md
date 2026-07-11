@@ -1,72 +1,72 @@
 # C# Advanced — Module 08: CI/CD and Release Strategies Quiz Answers
 
-## Question 1: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
-**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
+## Question 1: Which testing requirement must be satisfied before submission?
+**Answer: A** - All work must be covered by build + tests + analyzers in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 2: You're preparing a submission and need to meet the Core bar. Which action is required?
+## Question 2: Which Core action would a senior engineer insist on before approving the change?
 **Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 3: Which acceptance criterion must be satisfied before submission?
-**Answer: C** - Includes tests appropriate for the feature.
+## Question 3: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 4: Which acceptance requirement protects review quality if enforced?
+**Answer: B** - Deliverable runs locally with clear instructions.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 4: Which action qualifies as a Beast Mode stretch?
-**Answer: B** - Create a short write-up: what changed, why, and how you verified it.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 5: Which option is listed under Better work for this module?
+## Question 5: A reviewer says, 'Good start.' Which Better upgrade should you add next?
 **Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 6: Which task best matches the Core expectations for this module?
-**Answer: B** - Add or update documentation (README notes or ADR-style notes).
+## Question 6: A production fix is urgent. Which Core action is still required before release?
+**Answer: B** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 7: Your project passes review only if which condition is true?
-**Answer: D** - Deliverable runs locally with clear instructions.
+## Question 7: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 8: This happened during review: CI has no automated test run before release. Which mistake is it?
-**Answer: D** - Shipping without an automated test run in CI.
+## Question 8: Which outcome best captures the practical ability you should carry forward?
+**Answer: D** - Document decisions and constraints clearly for reviewers.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 9: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: D** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 10: This happened during review: CI has no automated test run before release. Which mistake is it?
+**Answer: C** - Shipping without an automated test run in CI.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 9: Which step is explicitly called out as Better work?
-**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 10: Which testing requirement should be verified in CI for this module?
-**Answer: C** - All work must be covered by build + tests + analyzers in CI.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 

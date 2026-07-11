@@ -1,70 +1,70 @@
 # SQL (PostgreSQL) Advanced — Module 07: Observability and SLOs Quiz Answers
 
-## Question 1: You already met Core. Which action qualifies as a Better upgrade?
-**Answer: B** - Refactor one area for readability (without changing behavior) and prove it with tests.
+## Question 1: Which Better upgrade most improves maintainability or reliability?
+**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 2: Which enhancement is a Better-level upgrade (not Beast Mode)?
-**Answer: C** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 3: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
-**Answer: B** - Skipping input validation and assuming “happy path”.
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 4: You're preparing a submission and need to meet the Core bar. Which action is required?
-**Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 5: Which requirement is part of the mini-project acceptance criteria?
-**Answer: A** - Uses consistent style/formatting and passes the quality gate.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 6: Your project passes review only if which condition is true?
-**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 7: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
-**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 8: Which action pushes the work into Beast Mode?
-**Answer: D** - Add a performance or reliability improvement and measure the impact.
+## Question 2: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: A** - Create a short write-up: what changed, why, and how you verified it.
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 9: To satisfy the Core requirements, which step must be included?
-**Answer: C** - Implement a small feature tied to this module in an existing starter app.
+## Question 3: Which outcome represents a transferable software engineering skill?
+**Answer: B** - Write tests that prove correctness and prevent regressions.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 4: Before shipping, which Core action best reduces regression risk?
+**Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 10: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
-**Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+## Question 5: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+**Answer: A** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 6: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
+**Answer: C** - All work must be covered by migrations apply cleanly + pgTAP + SQL linting in CI.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 7: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
+**Answer: D** - Skipping input validation and assuming “happy path”.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 8: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: B** - Includes a short README section describing assumptions and tradeoffs.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 9: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: C** - Add or update documentation (README notes or ADR-style notes).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 10: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 

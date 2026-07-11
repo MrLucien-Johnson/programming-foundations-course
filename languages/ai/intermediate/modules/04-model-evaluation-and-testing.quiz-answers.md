@@ -1,72 +1,72 @@
 # AI — Module 04: Model Evaluation and Testing Quiz Answers
 
-## Question 1: To earn a Better evaluation, which action should you add?
-**Answer: A** - Add a regression report format (what changed, what broke, why).
+## Question 1: Which acceptance requirement protects review quality if enforced?
+**Answer: A** - Harness is repeatable and can be re-run after changes.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 2: To satisfy the Core requirements, which step must be included?
-**Answer: B** - Create an eval harness outline for one task and run it on 50 cases.
+## Question 2: Before shipping, which Core action best reduces regression risk?
+**Answer: A** - Create an eval harness outline for one task and run it on 50 cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 3: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
-**Answer: B** - Evaluation run is deterministic where possible (fixed inputs, logged settings).
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 4: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+## Question 3: Production validation failed because tests are flaky and fail intermittently. Which testing requirement would have prevented it?
 **Answer: A** - Evaluation run is deterministic where possible (fixed inputs, logged settings).
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 5: Which item is explicitly required in the acceptance criteria?
-**Answer: B** - Harness is repeatable and can be re-run after changes.
+## Question 4: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+**Answer: B** - Evaluation run is deterministic where possible (fixed inputs, logged settings).
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 6: To reach Beast Mode, which improvement should you choose?
+## Question 5: Which Better action best demonstrates stronger engineering discipline?
+**Answer: D** - Add a regression report format (what changed, what broke, why).
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 6: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
 **Answer: A** - Design A/B testing rules for prompt versions with rollback criteria.
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 7: A reviewer reports: training-like artifacts. Which mistake does this reflect?
+## Question 7: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: B** - Build a small evaluation loop: test cases, metrics, and iteration notes.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 8: Which acceptance requirement most clearly blocks approval if missing?
+**Answer: B** - Includes a regression gate and report format.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 9: A reviewer reports: training-like artifacts. Which mistake does this reflect?
 **Answer: D** - Mixing data leakage into eval sets (training-like artifacts).
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 8: Which step would keep the work within the Core scope?
-**Answer: C** - Define pass/fail thresholds (e.g., 90% schema validity, 80% rubric score).
+## Question 10: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: D** - Define pass/fail thresholds (e.g., 90% schema validity, 80% rubric score).
 
 **Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 9: You already met Core. Which action qualifies as a Better upgrade?
-**Answer: C** - Add adversarial cases (injection, contradictions) and track separate scores.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 10: A reviewer approves the mini-project when which condition is met?
-**Answer: B** - Includes a regression gate and report format.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 

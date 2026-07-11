@@ -6,101 +6,101 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which option is listed under Better work for this module?
-A) Includes a short README section describing assumptions and tradeoffs.
+### Question 1: In a real code review, which outcome best reflects the skill you should demonstrate?
+A) Add a performance or reliability improvement and measure the impact.
 B) Uses consistent style/formatting and passes the quality gate.
-C) Apply the concepts to a realistic codebase (not just toy examples).
-D) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) Explain the core concepts and tradeoffs for System Design Foundations.
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: This happened during review: CI has no automated test run before release. Which mistake is it?
-A) Shipping without an automated test run in CI.
-B) Uses consistent style/formatting and passes the quality gate.
-C) Create a short write-up: what changed, why, and how you verified it.
-D) Includes a short README section describing assumptions and tradeoffs.
-
-**Your answer:** _______________
-
----
-
-### Question 3: A reviewer approves the mini-project when which condition is met?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.
-B) Create a short write-up: what changed, why, and how you verified it.
-C) All work must be covered by gofmt + lint + tests in CI.
-D) Uses consistent style/formatting and passes the quality gate.
-
-**Your answer:** _______________
-
----
-
-### Question 4: To earn a Better evaluation, which action should you add?
+### Question 2: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
 A) Implement a small feature tied to this module in an existing starter app.
-B) Uses consistent style/formatting and passes the quality gate.
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-D) If the module involves a database, tests must run against an isolated schema/database.
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which requirement is part of the mini-project acceptance criteria?
-A) Apply the concepts to a realistic codebase (not just toy examples).
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-C) Add at least 3 focused unit tests that cover normal cases and edge cases.
-D) Includes tests appropriate for the feature.
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which action pushes the work into Beast Mode?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-B) Use tooling to keep quality high: gofmt + golangci-lint.
-C) Apply the concepts to a realistic codebase (not just toy examples).
+B) All work must be covered by gofmt + lint + tests in CI.
+C) Create a short write-up: what changed, why, and how you verified it.
 D) Document decisions and constraints clearly for reviewers.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer checks the Core checklist. Which action should they see?
-A) Implement a small feature tied to this module in an existing starter app.
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-C) Shipping without an automated test run in CI.
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+### Question 3: Which testing requirement is most relevant to this issue: lint/format/type errors are breaking CI?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Making performance claims without measurements.
+C) All work must be covered by gofmt + lint + tests in CI.
+D) Apply the concepts to a realistic codebase (not just toy examples).
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
-A) Create a short write-up: what changed, why, and how you verified it.
-B) Apply the concepts to a realistic codebase (not just toy examples).
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+### Question 4: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
 D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-A) Skipping input validation and assuming “happy path”.
-B) Uses consistent style/formatting and passes the quality gate.
-C) Includes tests appropriate for the feature.
-D) Add at least 3 focused unit tests that cover normal cases and edge cases.
+### Question 5: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Deliverable runs locally with clear instructions.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer flags lint/format/type errors are breaking CI. Which testing requirement resolves it?
-A) Explain the core concepts and tradeoffs for System Design Foundations.
-B) Create a short write-up: what changed, why, and how you verified it.
-C) All work must be covered by gofmt + lint + tests in CI.
-D) Includes a short README section describing assumptions and tradeoffs.
+### Question 6: Which acceptance requirement most clearly blocks approval if missing?
+A) Uses consistent style/formatting and passes the quality gate.
+B) Document decisions and constraints clearly for reviewers.
+C) Write tests that prove correctness and prevent regressions.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which Better upgrade most improves maintainability or reliability?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Write tests that prove correctness and prevent regressions.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Explain the core concepts and tradeoffs for System Design Foundations.
+
+**Your answer:** _______________
+
+---
+
+### Question 8: A production fix is urgent. Which Core action is still required before release?
+A) Skipping input validation and assuming “happy path”.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) All work must be covered by gofmt + lint + tests in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 9: A reviewer reports: a performance claim was made without benchmarks. Which mistake does this reflect?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Making performance claims without measurements.
+
+**Your answer:** _______________
+
+---
+
+### Question 10: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) Implement a small feature tied to this module in an existing starter app.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 

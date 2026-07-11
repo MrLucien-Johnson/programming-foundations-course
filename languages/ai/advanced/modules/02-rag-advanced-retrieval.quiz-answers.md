@@ -1,72 +1,72 @@
 # AI — Module 02: RAG: Advanced Retrieval Quiz Answers
 
-## Question 1: To satisfy the Core requirements, which step must be included?
-**Answer: B** - Add a metadata strategy (document type, version, access controls).
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 2: Which enhancement is a Better-level upgrade (not Beast Mode)?
-**Answer: A** - Compare two chunking strategies and record tradeoffs.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 3: To reach Beast Mode, which improvement should you choose?
-**Answer: D** - Add access-control-aware retrieval (no leakage across permissions).
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 4: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
+## Question 1: Which Core action would a senior engineer insist on before approving the change?
 **Answer: B** - Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 5: Which item is explicitly required in the acceptance criteria?
+## Question 2: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: C** - Includes access control and freshness considerations.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 3: Which option represents a common mistake to avoid?
+**Answer: A** - Ignoring permissions/access control in retrieval.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 4: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: C** - Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 5: Which testing requirement must be satisfied before submission?
+**Answer: B** - Eval harness separates retrieval vs generation metrics.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 6: Which acceptance criterion acts as a release gate for this module?
 **Answer: D** - Demonstrates measured improvement on a fixed question set.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 6: Which behavior is listed as a common mistake for this module?
-**Answer: C** - Ignoring permissions/access control in retrieval.
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 7: Which testing requirement must be satisfied before submission?
-**Answer: C** - Eval harness separates retrieval vs generation metrics.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 8: Which requirement is part of the mini-project acceptance criteria?
-**Answer: D** - Includes access control and freshness considerations.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 9: Which improvement moves a Core submission to the Better tier?
-**Answer: D** - Add reranking and measure improvement on a fixed question set.
+## Question 7: Which Better upgrade most improves maintainability or reliability?
+**Answer: A** - Add reranking and measure improvement on a fixed question set.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 10: Which requirement belongs in the testing checklist for this module?
+## Question 8: Which requirement belongs in the testing checklist for this module?
 **Answer: A** - Eval harness separates retrieval vs generation metrics.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 9: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: B** - Add a metadata strategy (document type, version, access controls).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 10: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: B** - Add access-control-aware retrieval (no leakage across permissions).
+
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 

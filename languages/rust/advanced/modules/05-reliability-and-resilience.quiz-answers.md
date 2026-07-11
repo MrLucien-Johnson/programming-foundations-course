@@ -1,72 +1,72 @@
 # Rust Advanced — Module 05: Reliability and Resilience Quiz Answers
 
-## Question 1: Your project passes review only if which condition is true?
-**Answer: A** - Deliverable runs locally with clear instructions.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 2: Which task best matches the Core expectations for this module?
-**Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 3: Which testing requirement should be verified in CI for this module?
-**Answer: D** - All work must be covered by fmt + clippy + tests in CI.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 4: To reach Beast Mode, which improvement should you choose?
-**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
+## Question 1: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: B** - Create a short write-up: what changed, why, and how you verified it.
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 5: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
-**Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+## Question 2: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 3: Which testing requirement should be verified in CI for this module?
+**Answer: C** - All work must be covered by fmt + clippy + tests in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 6: A reviewer checks the Core checklist. Which action should they see?
-**Answer: B** - Implement a small feature tied to this module in an existing starter app.
+## Question 4: Which outcome represents a transferable software engineering skill?
+**Answer: D** - Use tooling to keep quality high: rustfmt + clippy.
 
-**Explanation:** This action is listed under the Core exercises for the module.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 7: Your teammate says: a performance claim was made without benchmarks. Which common mistake is this?
-**Answer: C** - Making performance claims without measurements.
+## Question 5: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+**Answer: A** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 6: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+**Answer: B** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 7: A reviewer reports: CI has no automated test run before release. Which mistake does this reflect?
+**Answer: D** - Shipping without an automated test run in CI.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 8: Which improvement moves a Core submission to the Better tier?
-**Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 9: You already met Core. Which action qualifies as a Better upgrade?
-**Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 10: Which requirement is part of the mini-project acceptance criteria?
-**Answer: C** - Includes tests appropriate for the feature.
+## Question 8: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: B** - Includes tests appropriate for the feature.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 9: Which Core action best reflects professional engineering practice in this situation?
+**Answer: D** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 10: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: A** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 

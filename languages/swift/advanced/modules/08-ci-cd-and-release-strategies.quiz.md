@@ -6,101 +6,101 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which action qualifies as a Beast Mode stretch?
-A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+### Question 1: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 B) Over-mocking (tests assert implementation details instead of outcomes).
-C) Includes tests appropriate for the feature.
-D) Create a short write-up: what changed, why, and how you verified it.
-
-**Your answer:** _______________
-
----
-
-### Question 2: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
-A) Apply the concepts to a realistic codebase (not just toy examples).
-B) Includes a short README section describing assumptions and tradeoffs.
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
 D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: To satisfy the Core requirements, which step must be included?
-A) Skipping input validation and assuming “happy path”.
+### Question 2: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 B) If the module involves a database, tests must run against an isolated schema/database.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+### Question 3: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) Explain the core concepts and tradeoffs for CI/CD and Release Strategies.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 4: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Making performance claims without measurements.
 C) Add at least 3 focused unit tests that cover normal cases and edge cases.
-D) Includes tests appropriate for the feature.
+D) Explain the core concepts and tradeoffs for CI/CD and Release Strategies.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-A) Write tests that prove correctness and prevent regressions.
-B) Shipping without an automated test run in CI.
-C) Skipping input validation and assuming “happy path”.
-D) Implement a small feature tied to this module in an existing starter app.
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which option is listed under Better work for this module?
-A) Deliverable runs locally with clear instructions.
-B) Write tests that prove correctness and prevent regressions.
+### Question 5: Which acceptance requirement protects review quality if enforced?
+A) Uses consistent style/formatting and passes the quality gate.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-D) Over-mocking (tests assert implementation details instead of outcomes).
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which improvement moves a Core submission to the Better tier?
-A) Apply the concepts to a realistic codebase (not just toy examples).
-B) Create a short write-up: what changed, why, and how you verified it.
+### Question 6: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Shipping without an automated test run in CI.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
 C) Refactor one area for readability (without changing behavior) and prove it with tests.
-D) Write tests that prove correctness and prevent regressions.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
-A) All work must be covered by build + tests + lint/format in CI.
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-C) Includes a short README section describing assumptions and tradeoffs.
-D) Add at least 3 focused unit tests that cover normal cases and edge cases.
+### Question 7: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Uses consistent style/formatting and passes the quality gate.
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) Add a performance or reliability improvement and measure the impact.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Your teammate says: a performance claim was made without benchmarks. Which common mistake is this?
-A) Implement a small feature tied to this module in an existing starter app.
-B) Document decisions and constraints clearly for reviewers.
-C) Includes a short README section describing assumptions and tradeoffs.
-D) Making performance claims without measurements.
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which item is explicitly required in the acceptance criteria?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+### Question 8: A production fix is urgent. Which Core action is still required before release?
+A) Shipping without an automated test run in CI.
 B) Implement a small feature tied to this module in an existing starter app.
-C) Uses consistent style/formatting and passes the quality gate.
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which acceptance criterion must be satisfied before submission?
-A) Create a short write-up: what changed, why, and how you verified it.
-B) Over-mocking (tests assert implementation details instead of outcomes).
+### Question 9: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Add a performance or reliability improvement and measure the impact.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 10: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Explain the core concepts and tradeoffs for CI/CD and Release Strategies.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 C) Deliverable runs locally with clear instructions.
-D) All work must be covered by build + tests + lint/format in CI.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 

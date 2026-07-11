@@ -6,67 +6,67 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which option is listed under Better work for this module?
-A) Add or update documentation (README notes or ADR-style notes).
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-C) All work must be covered by build + tests + lint/format in CI.
-D) Making performance claims without measurements.
+### Question 1: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: To satisfy the Core requirements, which step must be included?
+### Question 2: Which Core action best reflects professional engineering practice in this situation?
 A) Refactor one area for readability (without changing behavior) and prove it with tests.
-B) Add or update documentation (README notes or ADR-style notes).
-C) All work must be covered by build + tests + lint/format in CI.
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Shipping without an automated test run in CI.
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Your teammate says: a performance claim was made without benchmarks. Which common mistake is this?
-A) Write tests that prove correctness and prevent regressions.
+### Question 3: Which outcome represents a transferable software engineering skill?
+A) Over-mocking (tests assert implementation details instead of outcomes).
 B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Shipping without an automated test run in CI.
+D) Document decisions and constraints clearly for reviewers.
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Your teammate says: tests assert implementation details instead of outcomes. Which common mistake is this?
+A) Explain the core concepts and tradeoffs for Architecture Patterns.
+B) All work must be covered by build + tests + lint/format in CI.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Over-mocking (tests assert implementation details instead of outcomes).
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which acceptance requirement protects review quality if enforced?
+A) Uses consistent style/formatting and passes the quality gate.
+B) Document decisions and constraints clearly for reviewers.
 C) Explain the core concepts and tradeoffs for Architecture Patterns.
-D) Making performance claims without measurements.
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
-A) Making performance claims without measurements.
-B) Shipping without an automated test run in CI.
-C) Create a short write-up: what changed, why, and how you verified it.
-D) If the module involves a database, tests must run against an isolated schema/database.
+### Question 6: Before sign-off, which acceptance criterion must be confirmed?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Add a performance or reliability improvement and measure the impact.
+C) Shipping without an automated test run in CI.
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action pushes the work into Beast Mode?
-A) Write tests that prove correctness and prevent regressions.
-B) Refactor one area for readability (without changing behavior) and prove it with tests.
-C) Create a short write-up: what changed, why, and how you verified it.
-D) Includes a short README section describing assumptions and tradeoffs.
-
-**Your answer:** _______________
-
----
-
-### Question 6: Your project passes review only if which condition is true?
-A) Write tests that prove correctness and prevent regressions.
-B) Shipping without an automated test run in CI.
-C) If the module involves a database, tests must run against an isolated schema/database.
-D) Deliverable runs locally with clear instructions.
-
-**Your answer:** _______________
-
----
-
-### Question 7: You're preparing a submission and need to meet the Core bar. Which action is required?
+### Question 7: A PR introduces new behavior. Which Core action is the minimum expected before review?
 A) Explain the core concepts and tradeoffs for Architecture Patterns.
 B) All work must be covered by build + tests + lint/format in CI.
 C) Tests must be deterministic (no flakes) and runnable by a reviewer.
@@ -76,9 +76,9 @@ D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 ---
 
-### Question 8: Which improvement moves a Core submission to the Better tier?
+### Question 8: Which Better upgrade most improves maintainability or reliability?
 A) Tests must be deterministic (no flakes) and runnable by a reviewer.
-B) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 C) Deliverable runs locally with clear instructions.
 D) Document decisions and constraints clearly for reviewers.
 
@@ -87,19 +87,19 @@ D) Document decisions and constraints clearly for reviewers.
 ---
 
 ### Question 9: CI is failing because lint/format/type errors are breaking CI. Which testing requirement addresses this?
-A) Add or update documentation (README notes or ADR-style notes).
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-C) All work must be covered by build + tests + lint/format in CI.
-D) Making performance claims without measurements.
+A) Use tooling to keep quality high: SwiftFormat + SwiftLint.
+B) Deliverable runs locally with clear instructions.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) All work must be covered by build + tests + lint/format in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which item is explicitly required in the acceptance criteria?
+### Question 10: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
 A) Implement a small feature tied to this module in an existing starter app.
-B) Document decisions and constraints clearly for reviewers.
-C) Includes a short README section describing assumptions and tradeoffs.
+B) Explain the core concepts and tradeoffs for Architecture Patterns.
+C) If the module involves a database, tests must run against an isolated schema/database.
 D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________

@@ -1,72 +1,72 @@
 # TypeScript Intermediate — Module 05: Databases Quiz Answers
 
-## Question 1: Which action pushes the work into Beast Mode?
-**Answer: A** - Add a performance or reliability improvement and measure the impact.
+## Question 1: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
 
-**Explanation:** This action is part of the Beast Mode upgrades.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 2: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
+## Question 2: A reviewer reports: CI has no automated test run before release. Which mistake does this reflect?
+**Answer: D** - Shipping without an automated test run in CI.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 3: Before shipping, which Core action best reduces regression risk?
 **Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 3: Which improvement moves a Core submission to the Better tier?
-**Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+## Question 4: Which Core action best reflects professional engineering practice in this situation?
+**Answer: C** - Add or update documentation (README notes or ADR-style notes).
 
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 4: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
+## Question 5: A reviewer flags lint/format/type errors are breaking CI. Which testing requirement resolves it?
+**Answer: B** - All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 6: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
 **Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 5: Which requirement is part of the mini-project acceptance criteria?
+## Question 7: Which acceptance criterion acts as a release gate for this module?
 **Answer: A** - Includes tests appropriate for the feature.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 6: Which item is explicitly required in the acceptance criteria?
-**Answer: C** - Deliverable runs locally with clear instructions.
+## Question 8: Which outcome represents a transferable software engineering skill?
+**Answer: B** - Document decisions and constraints clearly for reviewers.
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 7: You're preparing a submission and need to meet the Core bar. Which action is required?
-**Answer: B** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This action is listed under the Core exercises for the module.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 8: To earn a Better evaluation, which action should you add?
-**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 9: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 9: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
-**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
+## Question 10: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: D** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 10: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
-**Answer: D** - Over-mocking (tests assert implementation details instead of outcomes).
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 

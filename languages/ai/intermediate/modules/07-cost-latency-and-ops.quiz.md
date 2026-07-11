@@ -6,18 +6,18 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
+### Question 1: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
 A) Create a cost/latency plan for one workflow (budgets + how to enforce).
-B) Design a canary/rollback plan for prompt version releases.
-C) Includes metrics to track quality, cost, and latency.
-D) Evaluation harness records cost/latency per run (even estimated).
+B) Includes explicit budgets and a fallback strategy.
+C) Evaluation harness records cost/latency per run (even estimated).
+D) No budgets, leading to runaway cost.
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action qualifies as a Beast Mode stretch?
-A) Design a canary/rollback plan for prompt version releases.
+### Question 2: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Includes metrics to track quality, cost, and latency.
 B) Optimizing for cost while silently harming quality.
 C) Document and version changes so improvements are explainable.
 D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
@@ -26,7 +26,7 @@ D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduc
 
 ---
 
-### Question 3: Which item is explicitly required in the acceptance criteria?
+### Question 3: Which acceptance requirement most clearly blocks approval if missing?
 A) Includes explicit budgets and a fallback strategy.
 B) Define what happens when budgets are exceeded (fallback).
 C) Create a cost/latency plan for one workflow (budgets + how to enforce).
@@ -36,41 +36,41 @@ D) No budgets, leading to runaway cost.
 
 ---
 
-### Question 4: Which testing requirement must be satisfied before submission?
-A) No budgets, leading to runaway cost.
-B) Includes metrics to track quality, cost, and latency.
-C) Design a canary/rollback plan for prompt version releases.
-D) Evaluation harness records cost/latency per run (even estimated).
+### Question 4: Which behavior is listed as a common mistake for this module?
+A) Design a canary/rollback plan for prompt version releases.
+B) Optimizing for cost while silently harming quality.
+C) Evaluation harness records cost/latency per run (even estimated).
+D) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which step would keep the work within the Core scope?
-A) No observability—failures are invisible until users complain.
+### Question 5: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Translate a vague request into a clear goal, constraints, and success criteria.
 B) Design a canary/rollback plan for prompt version releases.
-C) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-D) Define what happens when budgets are exceeded (fallback).
+C) Define what happens when budgets are exceeded (fallback).
+D) Includes explicit budgets and a fallback strategy.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option represents a common mistake to avoid?
-A) Optimizing for cost while silently harming quality.
-B) Define what happens when budgets are exceeded (fallback).
-C) Includes metrics to track quality, cost, and latency.
-D) Evaluation harness records cost/latency per run (even estimated).
+### Question 6: Which outcome best captures the practical ability you should carry forward?
+A) Document and version changes so improvements are explainable.
+B) No budgets, leading to runaway cost.
+C) No observability—failures are invisible until users complain.
+D) Includes explicit budgets and a fallback strategy.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which enhancement is a Better-level upgrade (not Beast Mode)?
+### Question 7: Which Better action best demonstrates stronger engineering discipline?
 A) Translate a vague request into a clear goal, constraints, and success criteria.
 B) Design a caching strategy and what cache keys should be.
-C) Includes metrics to track quality, cost, and latency.
-D) Optimizing for cost while silently harming quality.
+C) Add a monitoring plan: what metrics, what dashboards, what alerts.
+D) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 
 **Your answer:** _______________
 
@@ -86,21 +86,21 @@ D) Optimizing for cost while silently harming quality.
 
 ---
 
-### Question 9: Which step is explicitly called out as Better work?
+### Question 9: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
 A) Add a monitoring plan: what metrics, what dashboards, what alerts.
-B) Add an “early exit” rule when confidence is low.
-C) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-D) Build a small evaluation loop: test cases, metrics, and iteration notes.
+B) Document and version changes so improvements are explainable.
+C) Includes explicit budgets and a fallback strategy.
+D) Create a cost/latency plan for one workflow (budgets + how to enforce).
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which acceptance criterion must be satisfied before submission?
-A) Translate a vague request into a clear goal, constraints, and success criteria.
-B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-C) Design a canary/rollback plan for prompt version releases.
-D) Includes metrics to track quality, cost, and latency.
+### Question 10: Which requirement belongs in the testing checklist for this module?
+A) Design a canary/rollback plan for prompt version releases.
+B) Translate a vague request into a clear goal, constraints, and success criteria.
+C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+D) Evaluation harness records cost/latency per run (even estimated).
 
 **Your answer:** _______________
 

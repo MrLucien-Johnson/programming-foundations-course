@@ -6,49 +6,39 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: This happened during review: CI has no automated test run before release. Which mistake is it?
+### Question 1: Your teammate says: bugs appear on unexpected inputs because validation was skipped. Which common mistake is this?
+A) Use tooling to keep quality high: gofmt + golangci-lint.
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Skipping input validation and assuming “happy path”.
+D) Create a short write-up: what changed, why, and how you verified it.
+
+**Your answer:** _______________
+
+---
+
+### Question 2: A reviewer says, 'Good start.' Which Better upgrade should you add next?
 A) Refactor one area for readability (without changing behavior) and prove it with tests.
-B) Create a short write-up: what changed, why, and how you verified it.
-C) Deliverable runs locally with clear instructions.
-D) Shipping without an automated test run in CI.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Document decisions and constraints clearly for reviewers.
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which task best matches the Core expectations for this module?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-B) Apply the concepts to a realistic codebase (not just toy examples).
-C) Add or update documentation (README notes or ADR-style notes).
-D) Deliverable runs locally with clear instructions.
+### Question 3: A production fix is urgent. Which Core action is still required before release?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which enhancement is a Better-level upgrade (not Beast Mode)?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-B) Explain the core concepts and tradeoffs for Git and Collaboration.
-C) Uses consistent style/formatting and passes the quality gate.
-D) Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which acceptance criterion must be satisfied before submission?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-C) Refactor one area for readability (without changing behavior) and prove it with tests.
-D) Uses consistent style/formatting and passes the quality gate.
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which option represents a Beast Mode enhancement?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-B) Use tooling to keep quality high: gofmt + golangci-lint.
+### Question 4: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Explain the core concepts and tradeoffs for Git and Collaboration.
+B) Document decisions and constraints clearly for reviewers.
 C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 D) If the module involves a database, tests must run against an isolated schema/database.
 
@@ -56,51 +46,61 @@ D) If the module involves a database, tests must run against an isolated schema/
 
 ---
 
-### Question 6: A reviewer flags lint/format/type errors are breaking CI. Which testing requirement resolves it?
-A) Write tests that prove correctness and prevent regressions.
-B) Skipping input validation and assuming “happy path”.
-C) All work must be covered by gofmt + lint + tests in CI.
-D) Create a short write-up: what changed, why, and how you verified it.
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
-A) Making performance claims without measurements.
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.
-C) Includes a short README section describing assumptions and tradeoffs.
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-
-**Your answer:** _______________
-
----
-
-### Question 8: A reviewer checks the Core checklist. Which action should they see?
-A) Skipping input validation and assuming “happy path”.
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-C) Create a short write-up: what changed, why, and how you verified it.
-D) Implement a small feature tied to this module in an existing starter app.
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which item is explicitly required in the acceptance criteria?
-A) Add or update documentation (README notes or ADR-style notes).
+### Question 5: Which outcome best captures the practical ability you should carry forward?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
 B) Apply the concepts to a realistic codebase (not just toy examples).
-C) Skipping input validation and assuming “happy path”.
-D) Includes a short README section describing assumptions and tradeoffs.
+C) Deliverable runs locally with clear instructions.
+D) All work must be covered by gofmt + lint + tests in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: To earn a Better evaluation, which action should you add?
+### Question 6: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
 A) Apply the concepts to a realistic codebase (not just toy examples).
-B) Uses consistent style/formatting and passes the quality gate.
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-D) If the module involves a database, tests must run against an isolated schema/database.
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Document decisions and constraints clearly for reviewers.
+D) Deliverable runs locally with clear instructions.
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Before sign-off, which acceptance criterion must be confirmed?
+A) Write tests that prove correctness and prevent regressions.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Shipping without an automated test run in CI.
+D) Deliverable runs locally with clear instructions.
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which Core action would a senior engineer insist on before approving the change?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Over-mocking (tests assert implementation details instead of outcomes).
+
+**Your answer:** _______________
+
+---
+
+### Question 9: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Add a performance or reliability improvement and measure the impact.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Deliverable runs locally with clear instructions.
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which acceptance requirement protects review quality if enforced?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Includes tests appropriate for the feature.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Use tooling to keep quality high: gofmt + golangci-lint.
 
 **Your answer:** _______________
 

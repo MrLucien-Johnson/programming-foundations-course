@@ -1,72 +1,72 @@
 # Kotlin Advanced — Module 03: Concurrency and Async Quiz Answers
 
-## Question 1: A reviewer approves the mini-project when which condition is met?
-**Answer: B** - Uses consistent style/formatting and passes the quality gate.
+## Question 1: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+**Answer: B** - Includes a short README section describing assumptions and tradeoffs.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 2: Which action pushes the work into Beast Mode?
-**Answer: B** - Create a short write-up: what changed, why, and how you verified it.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 3: You already met Core. Which action qualifies as a Better upgrade?
-**Answer: B** - Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 4: To satisfy the Core requirements, which step must be included?
-**Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 5: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
+## Question 2: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
 **Answer: D** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 6: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
-**Answer: C** - Over-mocking (tests assert implementation details instead of outcomes).
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 7: Which acceptance criterion must be satisfied before submission?
-**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 8: Which task best matches the Core expectations for this module?
-**Answer: B** - Implement a small feature tied to this module in an existing starter app.
+## Question 3: A production fix is urgent. Which Core action is still required before release?
+**Answer: C** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 9: Which step is explicitly called out as Better work?
-**Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+## Question 4: Which acceptance criterion acts as a release gate for this module?
+**Answer: D** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 5: The work passes Core. Which improvement most clearly raises quality for reviewers?
+**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 10: Which testing requirement must be satisfied before submission?
-**Answer: D** - All work must be covered by build + tests + static analysis in CI.
+## Question 6: Which outcome represents a transferable software engineering skill?
+**Answer: B** - Explain the core concepts and tradeoffs for Concurrency and Async.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 7: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: B** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 8: A reviewer reports: a performance claim was made without benchmarks. Which mistake does this reflect?
+**Answer: C** - Making performance claims without measurements.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 9: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
+**Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 10: Which Core action would a senior engineer insist on before approving the change?
+**Answer: D** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 

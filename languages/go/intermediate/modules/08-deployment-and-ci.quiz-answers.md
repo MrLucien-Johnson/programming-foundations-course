@@ -1,72 +1,72 @@
 # Go Intermediate — Module 08: Deployment and CI Quiz Answers
 
-## Question 1: Which item is explicitly required in the acceptance criteria?
-**Answer: C** - Deliverable runs locally with clear instructions.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 2: To satisfy the Core requirements, which step must be included?
-**Answer: B** - Add or update documentation (README notes or ADR-style notes).
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 3: You already met Core. Which action qualifies as a Better upgrade?
-**Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 4: Which testing requirement is most relevant to this issue: lint/format/type errors are breaking CI?
-**Answer: C** - All work must be covered by gofmt + lint + tests in CI.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 5: Which requirement is part of the mini-project acceptance criteria?
+## Question 1: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
 **Answer: C** - Uses consistent style/formatting and passes the quality gate.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 6: Which option is listed under Better work for this module?
-**Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
+## Question 2: Which outcome represents a transferable software engineering skill?
+**Answer: B** - Apply the concepts to a realistic codebase (not just toy examples).
 
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 7: Which step would keep the work within the Core scope?
+## Question 3: Which Core action would a senior engineer insist on before approving the change?
+**Answer: C** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 4: A production fix is urgent. Which Core action is still required before release?
 **Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 8: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
-**Answer: C** - Over-mocking (tests assert implementation details instead of outcomes).
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 9: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
-**Answer: D** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+## Question 5: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
+**Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 10: Which action pushes the work into Beast Mode?
-**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
+## Question 6: A reviewer reports: CI has no automated test run before release. Which mistake does this reflect?
+**Answer: D** - Shipping without an automated test run in CI.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 7: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 8: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: B** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 9: Which acceptance requirement protects review quality if enforced?
+**Answer: A** - Includes a short README section describing assumptions and tradeoffs.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 10: The work passes Core. Which improvement most clearly raises quality for reviewers?
+**Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 

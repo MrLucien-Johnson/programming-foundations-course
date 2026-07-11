@@ -6,101 +6,101 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: You're preparing a submission and need to meet the Core bar. Which action is required?
-A) Unlimited retries that amplify outages and cost spikes.
-B) Harness includes simulated failures and verifies safe behavior.
-C) Add degraded-mode rules (abstain, ask, cached answer).
-D) Design a fallback strategy for each top failure mode (model down, retrieval empty, tool error).
+### Question 1: Which option represents a common mistake to avoid?
+A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+B) Add degraded-mode rules (abstain, ask, cached answer).
+C) Define retry budgets and stop conditions.
+D) Unlimited retries that amplify outages and cost spikes.
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which testing requirement must be satisfied before submission?
+### Question 2: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
 A) Harness includes simulated failures and verifies safe behavior.
+B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+C) Design a human-in-the-loop queue with SLA and escalation.
+D) No degraded-mode behavior; app just fails hard.
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which acceptance requirement protects review quality if enforced?
+A) Add post-incident review template focusing on prevention.
 B) Translate a vague request into a clear goal, constraints, and success criteria.
 C) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-D) Document and version changes so improvements are explainable.
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which option represents a common mistake to avoid?
-A) Unlimited retries that amplify outages and cost spikes.
-B) Translate a vague request into a clear goal, constraints, and success criteria.
-C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 D) Fallback strategy is explicit, testable, and tied to budgets/SLOs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which testing requirement should be verified in CI for this module?
-A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-B) No degraded-mode behavior; app just fails hard.
-C) Design a human-in-the-loop queue with SLA and escalation.
-D) Harness includes simulated failures and verifies safe behavior.
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which requirement is part of the mini-project acceptance criteria?
-A) Add degraded-mode rules (abstain, ask, cached answer).
-B) Harness includes simulated failures and verifies safe behavior.
-C) Fallback strategy is explicit, testable, and tied to budgets/SLOs.
-D) Define retry budgets and stop conditions.
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which action qualifies as a Beast Mode stretch?
-A) Design a human-in-the-loop queue with SLA and escalation.
-B) Add failure-injection tests to your harness (simulate outages/timeouts).
-C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-D) Define retry budgets and stop conditions.
-
-**Your answer:** _______________
-
----
-
-### Question 7: To satisfy the Core requirements, which step must be included?
-A) Fallback strategy is explicit, testable, and tied to budgets/SLOs.
+### Question 4: Which Better action best demonstrates stronger engineering discipline?
+A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 B) Define retry budgets and stop conditions.
-C) Harness includes simulated failures and verifies safe behavior.
+C) Fallback strategy is explicit, testable, and tied to budgets/SLOs.
+D) Add failure-injection tests to your harness (simulate outages/timeouts).
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which Core action best reflects professional engineering practice in this situation?
+A) Design a fallback strategy for each top failure mode (model down, retrieval empty, tool error).
+B) Build a small evaluation loop: test cases, metrics, and iteration notes.
+C) Add degraded-mode rules (abstain, ask, cached answer).
+D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Harness includes simulated failures and verifies safe behavior.
+B) Translate a vague request into a clear goal, constraints, and success criteria.
+C) Unlimited retries that amplify outages and cost spikes.
 D) Add degraded-mode rules (abstain, ask, cached answer).
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which enhancement is a Better-level upgrade (not Beast Mode)?
-A) No degraded-mode behavior; app just fails hard.
-B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-C) Add degraded-mode rules (abstain, ask, cached answer).
-D) Add post-incident review template focusing on prevention.
+### Question 7: You're pressed for time but still need a safe release. Which Core action must remain?
+A) Add degraded-mode rules (abstain, ask, cached answer).
+B) Translate a vague request into a clear goal, constraints, and success criteria.
+C) Build a small evaluation loop: test cases, metrics, and iteration notes.
+D) Define retry budgets and stop conditions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which item is explicitly required in the acceptance criteria?
-A) Add post-incident review template focusing on prevention.
-B) Unlimited retries that amplify outages and cost spikes.
-C) Add failure-injection tests to your harness (simulate outages/timeouts).
-D) Fallback strategy is explicit, testable, and tied to budgets/SLOs.
+### Question 8: Which testing requirement should be verified in CI for this module?
+A) Add failure-injection tests to your harness (simulate outages/timeouts).
+B) Define retry budgets and stop conditions.
+C) Design a fallback strategy for each top failure mode (model down, retrieval empty, tool error).
+D) Harness includes simulated failures and verifies safe behavior.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which option is listed under Better work for this module?
-A) Unlimited retries that amplify outages and cost spikes.
-B) Design a human-in-the-loop queue with SLA and escalation.
-C) Add failure-injection tests to your harness (simulate outages/timeouts).
-D) Fallback strategy is explicit, testable, and tied to budgets/SLOs.
+### Question 9: Which testing requirement must be satisfied before submission?
+A) Harness includes simulated failures and verifies safe behavior.
+B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+C) Build a small evaluation loop: test cases, metrics, and iteration notes.
+D) Unlimited retries that amplify outages and cost spikes.
+
+**Your answer:** _______________
+
+---
+
+### Question 10: In a real code review, which outcome best reflects the skill you should demonstrate?
+A) Add failure-injection tests to your harness (simulate outages/timeouts).
+B) Document and version changes so improvements are explainable.
+C) Design a fallback strategy for each top failure mode (model down, retrieval empty, tool error).
+D) Design a human-in-the-loop queue with SLA and escalation.
 
 **Your answer:** _______________
 

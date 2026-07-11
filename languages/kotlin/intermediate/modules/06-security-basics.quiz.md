@@ -6,68 +6,28 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which task is explicitly listed as a Beast Mode upgrade?
-A) If the module involves a database, tests must run against an isolated schema/database.
-B) Explain the core concepts and tradeoffs for Security Basics.
-C) Add at least 3 focused unit tests that cover normal cases and edge cases.
-D) Add a performance or reliability improvement and measure the impact.
-
-**Your answer:** _______________
-
----
-
-### Question 2: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
-A) Includes a short README section describing assumptions and tradeoffs.
-B) Document decisions and constraints clearly for reviewers.
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.
-D) Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which option is listed under Better work for this module?
-A) All work must be covered by build + tests + static analysis in CI.
-B) Shipping without an automated test run in CI.
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+### Question 1: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) Shipping without an automated test run in CI.
+B) All work must be covered by build + tests + static analysis in CI.
+C) Use tooling to keep quality high: ktlint + detekt.
 D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which enhancement is a Better-level upgrade (not Beast Mode)?
-A) Includes a short README section describing assumptions and tradeoffs.
-B) Uses consistent style/formatting and passes the quality gate.
-C) Add at least 3 focused unit tests that cover normal cases and edge cases.
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+### Question 2: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Implement a small feature tied to this module in an existing starter app.
+B) All work must be covered by build + tests + static analysis in CI.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which common mistake matches this scenario: a performance claim was made without benchmarks?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-B) Making performance claims without measurements.
-C) Deliverable runs locally with clear instructions.
-D) Use tooling to keep quality high: ktlint + detekt.
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which item is explicitly required in the acceptance criteria?
-A) Document decisions and constraints clearly for reviewers.
-B) Skipping input validation and assuming “happy path”.
-C) Add a performance or reliability improvement and measure the impact.
-D) Includes tests appropriate for the feature.
-
-**Your answer:** _______________
-
----
-
-### Question 7: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-A) Shipping without an automated test run in CI.
+### Question 3: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Explain the core concepts and tradeoffs for Security Basics.
 B) Includes tests appropriate for the feature.
 C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 D) Implement a small feature tied to this module in an existing starter app.
@@ -76,31 +36,71 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ---
 
-### Question 8: Which step would keep the work within the Core scope?
+### Question 4: Which requirement belongs in the testing checklist for this module?
 A) Add at least 3 focused unit tests that cover normal cases and edge cases.
-B) Create a short write-up: what changed, why, and how you verified it.
-C) All work must be covered by build + tests + static analysis in CI.
+B) Includes tests appropriate for the feature.
+C) Explain the core concepts and tradeoffs for Security Basics.
+D) All work must be covered by build + tests + static analysis in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 5: A production fix is urgent. Which Core action is still required before release?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Includes tests appropriate for the feature.
+C) If the module involves a database, tests must run against an isolated schema/database.
 D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
-A) Deliverable runs locally with clear instructions.
-B) Use tooling to keep quality high: ktlint + detekt.
-C) If the module involves a database, tests must run against an isolated schema/database.
-D) Making performance claims without measurements.
+### Question 6: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Add a performance or reliability improvement and measure the impact.
+B) All work must be covered by build + tests + static analysis in CI.
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer approves the mini-project when which condition is met?
-A) Deliverable runs locally with clear instructions.
-B) Over-mocking (tests assert implementation details instead of outcomes).
-C) If the module involves a database, tests must run against an isolated schema/database.
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+### Question 7: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Uses consistent style/formatting and passes the quality gate.
+B) Explain the core concepts and tradeoffs for Security Basics.
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Write tests that prove correctness and prevent regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 8: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+A) Includes tests appropriate for the feature.
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Shipping without an automated test run in CI.
+D) Write tests that prove correctness and prevent regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Your teammate says: tests assert implementation details instead of outcomes. Which common mistake is this?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Document decisions and constraints clearly for reviewers.
+D) Use tooling to keep quality high: ktlint + detekt.
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which Better upgrade most improves maintainability or reliability?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Making performance claims without measurements.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Apply the concepts to a realistic codebase (not just toy examples).
 
 **Your answer:** _______________
 

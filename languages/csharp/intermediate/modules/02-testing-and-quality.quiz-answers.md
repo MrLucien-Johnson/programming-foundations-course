@@ -1,56 +1,56 @@
 # C# Intermediate — Module 02: Testing and Quality Quiz Answers
 
-## Question 1: Which step would keep the work within the Core scope?
-**Answer: C** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+**Answer: D** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 2: Which common mistake matches this scenario: CI has no automated test run before release?
-**Answer: B** - Shipping without an automated test run in CI.
+## Question 2: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: B** - Document decisions and constraints clearly for reviewers.
 
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 3: Which option is listed under Better work for this module?
-**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 4: Which requirement is part of the mini-project acceptance criteria?
-**Answer: B** - Includes a short README section describing assumptions and tradeoffs.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 5: Your project passes review only if which condition is true?
-**Answer: A** - Deliverable runs locally with clear instructions.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 6: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
-**Answer: D** - Tests must be deterministic (no flakes) and runnable by a reviewer.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 7: Which action pushes the work into Beast Mode?
-**Answer: D** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+## Question 3: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: B** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 8: You already met Core. Which action qualifies as a Better upgrade?
-**Answer: D** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+## Question 4: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: D** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 5: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+**Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 6: This happened during review: CI has no automated test run before release. Which mistake is it?
+**Answer: D** - Shipping without an automated test run in CI.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 7: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+**Answer: D** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 8: The work passes Core. Which improvement most clearly raises quality for reviewers?
+**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
@@ -63,8 +63,8 @@
 
 ---
 
-## Question 10: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-**Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+## Question 10: Which Core action would a senior engineer insist on before approving the change?
+**Answer: B** - Add or update documentation (README notes or ADR-style notes).
 
 **Explanation:** This action is listed under the Core exercises for the module.
 

@@ -6,59 +6,9 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which task is explicitly listed as a Beast Mode upgrade?
-A) Making performance claims without measurements.
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-C) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which improvement moves a Core submission to the Better tier?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-B) Uses consistent style/formatting and passes the quality gate.
-C) Includes a short README section describing assumptions and tradeoffs.
-D) Includes tests appropriate for the feature.
-
-**Your answer:** _______________
-
----
-
-### Question 3: Your project passes review only if which condition is true?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-B) Over-mocking (tests assert implementation details instead of outcomes).
-C) Document decisions and constraints clearly for reviewers.
-D) Includes a short README section describing assumptions and tradeoffs.
-
-**Your answer:** _______________
-
----
-
-### Question 4: Your teammate says: a performance claim was made without benchmarks. Which common mistake is this?
-A) If the module involves a database, tests must run against an isolated schema/database.
-B) Includes a short README section describing assumptions and tradeoffs.
-C) Making performance claims without measurements.
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which item is explicitly required in the acceptance criteria?
-A) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
-B) Explain the core concepts and tradeoffs for Testing and Quality.
-C) Create a short write-up: what changed, why, and how you verified it.
-D) Deliverable runs locally with clear instructions.
-
-**Your answer:** _______________
-
----
-
-### Question 6: You're preparing a submission and need to meet the Core bar. Which action is required?
-A) Add or update documentation (README notes or ADR-style notes).
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+### Question 1: Which common mistake matches this scenario: CI has no automated test run before release?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) Use tooling to keep quality high: ruff + black (or ruff format).
 C) Create a short write-up: what changed, why, and how you verified it.
 D) Shipping without an automated test run in CI.
 
@@ -66,41 +16,91 @@ D) Shipping without an automated test run in CI.
 
 ---
 
-### Question 7: Which task best matches the Core expectations for this module?
-A) Explain the core concepts and tradeoffs for Testing and Quality.
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-C) Making performance claims without measurements.
-D) Implement a small feature tied to this module in an existing starter app.
+### Question 2: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Use tooling to keep quality high: ruff + black (or ruff format).
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-B) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+### Question 3: Which acceptance requirement most clearly blocks approval if missing?
+A) Create a short write-up: what changed, why, and how you verified it.
+B) Add a performance or reliability improvement and measure the impact.
+C) Explain the core concepts and tradeoffs for Testing and Quality.
+D) Includes a short README section describing assumptions and tradeoffs.
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Write tests that prove correctness and prevent regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 5: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Write tests that prove correctness and prevent regressions.
+D) Deliverable runs locally with clear instructions.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: A production fix is urgent. Which Core action is still required before release?
+A) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
 D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option is listed under Better work for this module?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.
-B) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
-C) Explain the core concepts and tradeoffs for Testing and Quality.
-D) Uses consistent style/formatting and passes the quality gate.
+### Question 7: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) Skipping input validation and assuming “happy path”.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Implement a small feature tied to this module in an existing starter app.
+D) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
-A) Uses consistent style/formatting and passes the quality gate.
-B) Apply the concepts to a realistic codebase (not just toy examples).
-C) If the module involves a database, tests must run against an isolated schema/database.
-D) Create a short write-up: what changed, why, and how you verified it.
+### Question 8: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+A) Deliverable runs locally with clear instructions.
+B) Includes tests appropriate for the feature.
+C) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
+D) Shipping without an automated test run in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 9: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Use tooling to keep quality high: ruff + black (or ruff format).
+D) Implement a small feature tied to this module in an existing starter app.
+
+**Your answer:** _______________
+
+---
+
+### Question 10: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Skipping input validation and assuming “happy path”.
+B) Implement a small feature tied to this module in an existing starter app.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Document decisions and constraints clearly for reviewers.
 
 **Your answer:** _______________
 

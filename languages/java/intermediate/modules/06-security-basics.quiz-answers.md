@@ -1,70 +1,70 @@
 # Java Intermediate — Module 06: Security Basics Quiz Answers
 
-## Question 1: Which common mistake matches this scenario: CI has no automated test run before release?
-**Answer: D** - Shipping without an automated test run in CI.
+## Question 1: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: D** - Apply the concepts to a realistic codebase (not just toy examples).
 
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 2: Which item is explicitly required in the acceptance criteria?
-**Answer: B** - Includes a short README section describing assumptions and tradeoffs.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 3: Which step would keep the work within the Core scope?
-**Answer: A** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 4: Which option represents a Beast Mode enhancement?
-**Answer: D** - Add a performance or reliability improvement and measure the impact.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 5: Your project passes review only if which condition is true?
-**Answer: D** - Includes tests appropriate for the feature.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 6: Which option is listed under Better work for this module?
-**Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 7: Which task best matches the Core expectations for this module?
-**Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 8: To earn a Better evaluation, which action should you add?
-**Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 9: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
-**Answer: A** - If the module involves a database, tests must run against an isolated schema/database.
+## Question 2: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+**Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 10: Which testing requirement is most relevant to this issue: feature tests fail when hitting real boundaries?
-**Answer: A** - All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+## Question 3: A production fix is urgent. Which Core action is still required before release?
+**Answer: C** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 4: Which acceptance criterion acts as a release gate for this module?
+**Answer: C** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 5: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+**Answer: A** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 6: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: C** - Create a short write-up: what changed, why, and how you verified it.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 7: Which Core action best reflects professional engineering practice in this situation?
+**Answer: D** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 8: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 9: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
+**Answer: C** - Over-mocking (tests assert implementation details instead of outcomes).
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 10: CI is failing because feature tests fail when hitting real boundaries. Which testing requirement addresses this?
+**Answer: B** - All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 

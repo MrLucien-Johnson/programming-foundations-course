@@ -1,72 +1,72 @@
 # C# Advanced — Module 05: Reliability and Resilience Quiz Answers
 
-## Question 1: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
-**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
+## Question 1: Which testing requirement should be verified in CI for this module?
+**Answer: A** - All work must be covered by build + tests + analyzers in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 2: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+## Question 2: A reviewer reports: bugs appear on unexpected inputs because validation was skipped. Which mistake does this reflect?
+**Answer: B** - Skipping input validation and assuming “happy path”.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 3: Which acceptance criterion acts as a release gate for this module?
+**Answer: B** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 4: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
 **Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 3: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-**Answer: D** - Add or update documentation (README notes or ADR-style notes).
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 4: Which enhancement is a Better-level upgrade (not Beast Mode)?
-**Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 5: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 5: You're preparing a submission and need to meet the Core bar. Which action is required?
+## Question 6: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: C** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 7: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: B** - Document decisions and constraints clearly for reviewers.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 8: A production fix is urgent. Which Core action is still required before release?
 **Answer: C** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 6: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
-**Answer: D** - Making performance claims without measurements.
+## Question 9: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: B** - Add or update documentation (README notes or ADR-style notes).
 
-**Explanation:** This is listed in the Common Mistakes section to avoid.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 7: Which option represents a Beast Mode enhancement?
-**Answer: C** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+## Question 10: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: C** - Create a short write-up: what changed, why, and how you verified it.
 
 **Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 8: Which acceptance criterion must be satisfied before submission?
-**Answer: B** - Includes tests appropriate for the feature.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 9: To earn a Better evaluation, which action should you add?
-**Answer: C** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 10: Which item is explicitly required in the acceptance criteria?
-**Answer: B** - Uses consistent style/formatting and passes the quality gate.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 

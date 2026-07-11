@@ -6,101 +6,101 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which testing requirement should you apply given this issue: database tests are polluting shared data?
-A) If the module involves a database, tests must run against an isolated schema/database.
-B) Includes a short README section describing assumptions and tradeoffs.
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-D) Apply the concepts to a realistic codebase (not just toy examples).
+### Question 1: Which Better action best demonstrates stronger engineering discipline?
+A) Deliverable runs locally with clear instructions.
+B) Making performance claims without measurements.
+C) Document decisions and constraints clearly for reviewers.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Your project passes review only if which condition is true?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-B) Includes a short README section describing assumptions and tradeoffs.
-C) Explain the core concepts and tradeoffs for CI/CD and Release Strategies.
-D) Create a short write-up: what changed, why, and how you verified it.
+### Question 2: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Document decisions and constraints clearly for reviewers.
+C) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+D) Making performance claims without measurements.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: A reviewer checks the Core checklist. Which action should they see?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-B) Add at least 3 focused unit tests that cover normal cases and edge cases.
-C) Write tests that prove correctness and prevent regressions.
-D) Deliverable runs locally with clear instructions.
+### Question 3: Which acceptance requirement most clearly blocks approval if missing?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Implement a small feature tied to this module in an existing starter app.
+C) Document decisions and constraints clearly for reviewers.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-A) Implement a small feature tied to this module in an existing starter app.
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-D) Explain the core concepts and tradeoffs for CI/CD and Release Strategies.
-
-**Your answer:** _______________
-
----
-
-### Question 5: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
-A) Includes tests appropriate for the feature.
-B) Uses consistent style/formatting and passes the quality gate.
-C) Making performance claims without measurements.
+### Question 4: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Skipping input validation and assuming “happy path”.
+C) If the module involves a database, tests must run against an isolated schema/database.
 D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which task is explicitly listed as a Beast Mode upgrade?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.
-B) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
-C) Add a performance or reliability improvement and measure the impact.
-D) Apply the concepts to a realistic codebase (not just toy examples).
-
-**Your answer:** _______________
-
----
-
-### Question 7: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
-A) Over-mocking (tests assert implementation details instead of outcomes).
-B) Add a performance or reliability improvement and measure the impact.
-C) Add at least 3 focused unit tests that cover normal cases and edge cases.
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.
-
-**Your answer:** _______________
-
----
-
-### Question 8: To earn a Better evaluation, which action should you add?
-A) Skipping input validation and assuming “happy path”.
-B) Add a performance or reliability improvement and measure the impact.
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-D) Includes a short README section describing assumptions and tradeoffs.
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which acceptance criterion must be satisfied before submission?
-A) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-C) Add a performance or reliability improvement and measure the impact.
+### Question 5: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Explain the core concepts and tradeoffs for CI/CD and Release Strategies.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Add or update documentation (README notes or ADR-style notes).
 D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which enhancement is a Better-level upgrade (not Beast Mode)?
-A) Over-mocking (tests assert implementation details instead of outcomes).
-B) Add a performance or reliability improvement and measure the impact.
-C) Uses consistent style/formatting and passes the quality gate.
-D) Refactor one area for readability (without changing behavior) and prove it with tests.
+### Question 6: Production validation failed because feature tests fail when hitting real boundaries. Which testing requirement would have prevented it?
+A) Add a performance or reliability improvement and measure the impact.
+B) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Making performance claims without measurements.
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which Core action best reflects professional engineering practice in this situation?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Deliverable runs locally with clear instructions.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Over-mocking (tests assert implementation details instead of outcomes).
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which outcome represents a transferable software engineering skill?
+A) Document decisions and constraints clearly for reviewers.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Add or update documentation (README notes or ADR-style notes).
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which acceptance criterion would a reviewer check first to approve the submission?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Includes tests appropriate for the feature.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Apply the concepts to a realistic codebase (not just toy examples).
+
+**Your answer:** _______________
+
+---
+
+### Question 10: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 

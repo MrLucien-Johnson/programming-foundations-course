@@ -1,72 +1,72 @@
 # Core Concepts (Intermediate) Quiz Answers
 
-## Question 1: Which deliverable should you produce for this module?
-**Answer: C** - topic notes or summaries
+## Question 1: Which topic would you point to when scoping a real-world solution?
+**Answer: C** - testable module design
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 2: Which deliverable would you send to a stakeholder as evidence of completion?
+**Answer: B** - example implementations in the repo
 
 **Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 2: Which topic is part of the module's coverage?
-**Answer: B** - idiomatic data modeling and typing
-
-**Explanation:** This topic is listed in the module outline.
-
----
-
-## Question 3: Which topic is called out in this module?
-**Answer: D** - testable module design
-
-**Explanation:** This topic is listed in the module outline.
-
----
-
-## Question 4: Which output is listed as a required deliverable?
-**Answer: D** - example implementations in the repo
-
-**Explanation:** This deliverable is required in the module expectations.
-
----
-
-## Question 5: Which topic is included in this module's Topics list?
-**Answer: D** - idiomatic data modeling and typing
-
-**Explanation:** This topic is listed in the module outline.
-
----
-
-## Question 6: Which topic would you highlight when describing this module?
-**Answer: D** - testable module design
-
-**Explanation:** This topic is listed in the module outline.
-
----
-
-## Question 7: Which deliverable would you submit to complete this module?
+## Question 3: Which deliverable best demonstrates the engineering work was completed?
 **Answer: B** - topic notes or summaries
 
 **Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 8: Which topic appears in this module?
-**Answer: C** - error handling and debugging
+## Question 4: Which topic would you use to guide a design discussion?
+**Answer: C** - idiomatic data modeling and typing
 
 **Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 9: Which deliverable belongs to this module's expectations?
+## Question 5: Which topic would you expect in this module?
+**Answer: B** - testable module design
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 6: Which deliverable is explicitly listed for this module?
+**Answer: D** - topic notes or summaries
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 7: A reviewer wants proof of work. Which deliverable should you hand them?
 **Answer: A** - example implementations in the repo
 
 **Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 10: A reviewer expects which deliverable from this module?
-**Answer: D** - example implementations in the repo
+## Question 8: Which deliverable would satisfy the module expectations?
+**Answer: B** - example implementations in the repo
 
 **Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 9: Which topic is included in this module's Topics list?
+**Answer: C** - idiomatic data modeling and typing
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 10: A teammate needs help with a real project decision. Which topic should they revisit?
+**Answer: B** - error handling and debugging
+
+**Explanation:** This topic is listed in the module outline.
 
 ---
 

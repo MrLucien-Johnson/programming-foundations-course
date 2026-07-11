@@ -1,72 +1,72 @@
 # Swift Advanced — Module 07: Observability and SLOs Quiz Answers
 
-## Question 1: To satisfy the Core requirements, which step must be included?
+## Question 1: A production fix is urgent. Which Core action is still required before release?
 **Answer: A** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 2: A reviewer approves the mini-project when which condition is met?
-**Answer: A** - Includes tests appropriate for the feature.
+## Question 2: Which acceptance requirement most clearly blocks approval if missing?
+**Answer: A** - Uses consistent style/formatting and passes the quality gate.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 3: Which enhancement is a Better-level upgrade (not Beast Mode)?
-**Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+## Question 3: Which Better upgrade most improves maintainability or reliability?
+**Answer: B** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 4: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+## Question 4: Which acceptance requirement protects review quality if enforced?
+**Answer: C** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 5: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
 **Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 5: Which action pushes the work into Beast Mode?
-**Answer: A** - Add a performance or reliability improvement and measure the impact.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 6: Which acceptance criterion must be satisfied before submission?
-**Answer: B** - Deliverable runs locally with clear instructions.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 7: A reviewer reports: tests assert implementation details instead of outcomes. Which mistake does this reflect?
+## Question 6: Your teammate says: tests assert implementation details instead of outcomes. Which common mistake is this?
 **Answer: B** - Over-mocking (tests assert implementation details instead of outcomes).
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 8: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
-**Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+## Question 7: Production validation failed because lint/format/type errors are breaking CI. Which testing requirement would have prevented it?
+**Answer: B** - All work must be covered by build + tests + lint/format in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 9: To earn a Better evaluation, which action should you add?
-**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 10: A reviewer checks the Core checklist. Which action should they see?
+## Question 8: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
 **Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 9: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: B** - Apply the concepts to a realistic codebase (not just toy examples).
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 10: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: D** - Add a performance or reliability improvement and measure the impact.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 

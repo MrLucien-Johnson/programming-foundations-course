@@ -1,72 +1,72 @@
 # C# Advanced — Module 07: Observability and SLOs Quiz Answers
 
-## Question 1: Which step is explicitly called out as Better work?
-**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 1: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: A** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 2: Which requirement is part of the mini-project acceptance criteria?
+## Question 2: Which outcome best captures the practical ability you should carry forward?
+**Answer: A** - Write tests that prove correctness and prevent regressions.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 3: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: D** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 4: Which acceptance criterion acts as a release gate for this module?
+**Answer: A** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 5: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
+**Answer: B** - Skipping input validation and assuming “happy path”.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 6: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+**Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 7: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
 **Answer: C** - Includes tests appropriate for the feature.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 3: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
-**Answer: D** - Making performance claims without measurements.
+## Question 8: Before shipping, which Core action best reduces regression risk?
+**Answer: D** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
-**Explanation:** This is listed in the Common Mistakes section to avoid.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 4: Which testing requirement must be satisfied before submission?
-**Answer: D** - All work must be covered by build + tests + analyzers in CI.
+## Question 9: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+**Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 5: Which acceptance criterion must be satisfied before submission?
-**Answer: A** - Uses consistent style/formatting and passes the quality gate.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 6: Which step would keep the work within the Core scope?
+## Question 10: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
 **Answer: D** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 7: Which task best matches the Core expectations for this module?
-**Answer: D** - Add or update documentation (README notes or ADR-style notes).
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 8: To reach Beast Mode, which improvement should you choose?
-**Answer: C** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 9: Which enhancement is a Better-level upgrade (not Beast Mode)?
-**Answer: D** - Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 10: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
-**Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 

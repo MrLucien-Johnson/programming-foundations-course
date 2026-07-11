@@ -6,39 +6,39 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+### Question 1: Which testing requirement must be satisfied before submission?
+A) All work must be covered by build + tests + analyzers in CI.
 B) Apply the concepts to a realistic codebase (not just toy examples).
-C) Explain the core concepts and tradeoffs for CI/CD and Release Strategies.
-D) If the module involves a database, tests must run against an isolated schema/database.
+C) Uses consistent style/formatting and passes the quality gate.
+D) Making performance claims without measurements.
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: You're preparing a submission and need to meet the Core bar. Which action is required?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+### Question 2: Which Core action would a senior engineer insist on before approving the change?
+A) Document decisions and constraints clearly for reviewers.
 B) Add at least 3 focused unit tests that cover normal cases and edge cases.
-C) Explain the core concepts and tradeoffs for CI/CD and Release Strategies.
-D) Use tooling to keep quality high: dotnet format + analyzers.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which acceptance criterion must be satisfied before submission?
+### Question 3: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
 A) Add or update documentation (README notes or ADR-style notes).
-B) Write tests that prove correctness and prevent regressions.
-C) Includes tests appropriate for the feature.
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) If the module involves a database, tests must run against an isolated schema/database.
 D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action qualifies as a Beast Mode stretch?
-A) Deliverable runs locally with clear instructions.
-B) Create a short write-up: what changed, why, and how you verified it.
+### Question 4: Which acceptance requirement protects review quality if enforced?
+A) All work must be covered by build + tests + analyzers in CI.
+B) Deliverable runs locally with clear instructions.
 C) Implement a small feature tied to this module in an existing starter app.
 D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
@@ -46,8 +46,8 @@ D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 ---
 
-### Question 5: Which option is listed under Better work for this module?
-A) Add a performance or reliability improvement and measure the impact.
+### Question 5: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Write tests that prove correctness and prevent regressions.
 B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 D) Uses consistent style/formatting and passes the quality gate.
@@ -56,51 +56,51 @@ D) Uses consistent style/formatting and passes the quality gate.
 
 ---
 
-### Question 6: Which task best matches the Core expectations for this module?
+### Question 6: A production fix is urgent. Which Core action is still required before release?
 A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-B) Add or update documentation (README notes or ADR-style notes).
-C) Uses consistent style/formatting and passes the quality gate.
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Implement a small feature tied to this module in an existing starter app.
+C) Document decisions and constraints clearly for reviewers.
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Your project passes review only if which condition is true?
+### Question 7: Which acceptance criterion would a reviewer check first to approve the submission?
 A) Use tooling to keep quality high: dotnet format + analyzers.
 B) All work must be covered by build + tests + analyzers in CI.
 C) Add or update documentation (README notes or ADR-style notes).
-D) Deliverable runs locally with clear instructions.
+D) Includes a short README section describing assumptions and tradeoffs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: This happened during review: CI has no automated test run before release. Which mistake is it?
+### Question 8: Which outcome best captures the practical ability you should carry forward?
 A) Implement a small feature tied to this module in an existing starter app.
 B) Refactor one area for readability (without changing behavior) and prove it with tests.
-C) Explain the core concepts and tradeoffs for CI/CD and Release Strategies.
-D) Shipping without an automated test run in CI.
+C) Shipping without an automated test run in CI.
+D) Document decisions and constraints clearly for reviewers.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step is explicitly called out as Better work?
-A) Includes tests appropriate for the feature.
-B) Add a performance or reliability improvement and measure the impact.
-C) Add at least 3 focused unit tests that cover normal cases and edge cases.
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which testing requirement should be verified in CI for this module?
+### Question 9: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
 A) Making performance claims without measurements.
-B) Add or update documentation (README notes or ADR-style notes).
-C) All work must be covered by build + tests + analyzers in CI.
-D) Includes a short README section describing assumptions and tradeoffs.
+B) Shipping without an automated test run in CI.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+### Question 10: This happened during review: CI has no automated test run before release. Which mistake is it?
+A) Deliverable runs locally with clear instructions.
+B) Document decisions and constraints clearly for reviewers.
+C) Shipping without an automated test run in CI.
+D) All work must be covered by build + tests + analyzers in CI.
 
 **Your answer:** _______________
 

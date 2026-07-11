@@ -1,72 +1,72 @@
 # Go Intermediate — Module 05: Databases Quiz Answers
 
-## Question 1: To earn a Better evaluation, which action should you add?
-**Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
+## Question 1: Which testing requirement should you apply given this issue: database tests are polluting shared data?
+**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 2: Which acceptance criterion must be satisfied before submission?
-**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
+## Question 2: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
+**Answer: D** - Skipping input validation and assuming “happy path”.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 3: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: A** - Uses consistent style/formatting and passes the quality gate.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 3: To satisfy the Core requirements, which step must be included?
+## Question 4: The work passes Core. Which improvement most clearly raises quality for reviewers?
+**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 5: Before shipping, which Core action best reduces regression risk?
 **Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 4: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
-**Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+## Question 6: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: C** - Write tests that prove correctness and prevent regressions.
 
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 5: Your project passes review only if which condition is true?
-**Answer: D** - Uses consistent style/formatting and passes the quality gate.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 6: Which task best matches the Core expectations for this module?
+## Question 7: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
 **Answer: B** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 7: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
-**Answer: B** - Over-mocking (tests assert implementation details instead of outcomes).
+## Question 8: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+**Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 8: Which improvement moves a Core submission to the Better tier?
-**Answer: A** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 9: Which task is explicitly listed as a Beast Mode upgrade?
-**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
+## Question 9: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: B** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 10: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
-**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
+## Question 10: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: A** - Includes a short README section describing assumptions and tradeoffs.
 
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 

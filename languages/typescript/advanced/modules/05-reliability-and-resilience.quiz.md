@@ -6,48 +6,48 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
-A) Add at least 3 focused unit tests that cover normal cases and edge cases.
-B) If the module involves a database, tests must run against an isolated schema/database.
-C) Apply the concepts to a realistic codebase (not just toy examples).
-D) Use tooling to keep quality high: ESLint + Prettier.
+### Question 1: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+A) Making performance claims without measurements.
+B) Write tests that prove correctness and prevent regressions.
+C) If the module involves a database, tests must run against an isolated schema/database.
+D) Explain the core concepts and tradeoffs for Reliability and Resilience.
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: A reviewer approves the mini-project when which condition is met?
-A) Shipping without an automated test run in CI.
+### Question 2: Which acceptance criterion acts as a release gate for this module?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 B) Includes a short README section describing assumptions and tradeoffs.
-C) Explain the core concepts and tradeoffs for Reliability and Resilience.
+C) Apply the concepts to a realistic codebase (not just toy examples).
 D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-B) Refactor one area for readability (without changing behavior) and prove it with tests.
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-D) Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Your answer:** _______________
-
----
-
-### Question 4: You already met Core. Which action qualifies as a Better upgrade?
-A) Add a performance or reliability improvement and measure the impact.
+### Question 3: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
 B) Add at least 3 focused unit tests that cover normal cases and edge cases.
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-D) Use tooling to keep quality high: ESLint + Prettier.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Apply the concepts to a realistic codebase (not just toy examples).
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: A reviewer reports: CI has no automated test run before release. Which mistake does this reflect?
-A) Shipping without an automated test run in CI.
+### Question 4: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Deliverable runs locally with clear instructions.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Apply the concepts to a realistic codebase (not just toy examples).
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which outcome best captures the practical ability you should carry forward?
+A) Explain the core concepts and tradeoffs for Reliability and Resilience.
 B) Tests must be deterministic (no flakes) and runnable by a reviewer.
 C) Deliverable runs locally with clear instructions.
 D) Implement a small feature tied to this module in an existing starter app.
@@ -56,51 +56,51 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode stretch?
+### Question 6: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
 A) Implement a small feature tied to this module in an existing starter app.
-B) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
-C) Uses consistent style/formatting and passes the quality gate.
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which enhancement is a Better-level upgrade (not Beast Mode)?
-A) Create a short write-up: what changed, why, and how you verified it.
-B) Use tooling to keep quality high: ESLint + Prettier.
-C) Refactor one area for readability (without changing behavior) and prove it with tests.
-D) Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
-A) Shipping without an automated test run in CI.
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.
-C) Apply the concepts to a realistic codebase (not just toy examples).
-D) Deliverable runs locally with clear instructions.
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which requirement is part of the mini-project acceptance criteria?
-A) Uses consistent style/formatting and passes the quality gate.
-B) Document decisions and constraints clearly for reviewers.
-C) Shipping without an automated test run in CI.
-D) Implement a small feature tied to this module in an existing starter app.
-
-**Your answer:** _______________
-
----
-
-### Question 10: A reviewer checks the Core checklist. Which action should they see?
-A) Write tests that prove correctness and prevent regressions.
 B) Add or update documentation (README notes or ADR-style notes).
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-D) Create a short write-up: what changed, why, and how you verified it.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Includes tests appropriate for the feature.
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which Better action best demonstrates stronger engineering discipline?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Document decisions and constraints clearly for reviewers.
+D) Includes a short README section describing assumptions and tradeoffs.
+
+**Your answer:** _______________
+
+---
+
+### Question 8: A reviewer reports: bugs appear on unexpected inputs because validation was skipped. Which mistake does this reflect?
+A) Skipping input validation and assuming “happy path”.
+B) Includes tests appropriate for the feature.
+C) Explain the core concepts and tradeoffs for Reliability and Resilience.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 9: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Implement a small feature tied to this module in an existing starter app.
+D) Includes tests appropriate for the feature.
+
+**Your answer:** _______________
+
+---
+
+### Question 10: You're pressed for time but still need a safe release. Which Core action must remain?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Implement a small feature tied to this module in an existing starter app.
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 

@@ -1,72 +1,72 @@
 # AI — Module 08: Deployment Basics Quiz Answers
 
-## Question 1: A reviewer checks the Core checklist. Which action should they see?
-**Answer: D** - Create a deployment checklist for one AI feature.
+## Question 1: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: C** - Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 2: Which testing requirement should be verified in CI for this module?
-**Answer: B** - Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 3: A reviewer approves the mini-project when which condition is met?
-**Answer: C** - Includes release strategy, evaluation gate, and rollback plan.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 4: Which option is listed under Better work for this module?
-**Answer: A** - Add a smoke test plan for your most important flows.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 5: Which testing requirement must be satisfied before submission?
-**Answer: C** - Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 6: Which requirement is part of the mini-project acceptance criteria?
-**Answer: B** - Includes safe config/secrets practices.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 7: Which improvement moves a Core submission to the Better tier?
-**Answer: D** - Design a prompt versioning scheme and a change log format.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 8: To reach Beast Mode, which improvement should you choose?
+## Question 2: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
 **Answer: A** - Design a staged rollout with shadow evaluation and a rollback trigger.
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 9: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
+## Question 3: Which testing requirement should be verified in CI for this module?
+**Answer: C** - Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 4: Which testing requirement must be satisfied before submission?
+**Answer: B** - Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 5: Which Better action best demonstrates stronger engineering discipline?
+**Answer: C** - Add a smoke test plan for your most important flows.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 6: Which Core action best reflects professional engineering practice in this situation?
+**Answer: D** - Create a deployment checklist for one AI feature.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 7: Which acceptance criterion acts as a release gate for this module?
+**Answer: A** - Includes safe config/secrets practices.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 8: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
 **Answer: D** - Define rollback criteria based on eval results and user-impact signals.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 10: Which option represents a common mistake to avoid?
-**Answer: B** - No staging environment or test dataset.
+## Question 9: Which behavior is listed as a common mistake for this module?
+**Answer: D** - No plan for incidents or user-reported failures.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 10: Which acceptance requirement protects review quality if enforced?
+**Answer: C** - Includes release strategy, evaluation gate, and rollback plan.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 

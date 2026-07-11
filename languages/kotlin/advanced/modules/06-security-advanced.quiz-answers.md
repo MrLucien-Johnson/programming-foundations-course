@@ -1,72 +1,72 @@
 # Kotlin Advanced — Module 06: Security (Advanced) Quiz Answers
 
-## Question 1: To satisfy the Core requirements, which step must be included?
-**Answer: C** - Add or update documentation (README notes or ADR-style notes).
+## Question 1: Which outcome best captures the practical ability you should carry forward?
+**Answer: B** - Apply the concepts to a realistic codebase (not just toy examples).
 
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 2: Which step would keep the work within the Core scope?
-**Answer: D** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This action is listed under the Core exercises for the module.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 3: Which improvement moves a Core submission to the Better tier?
-**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 2: Which Better action best demonstrates stronger engineering discipline?
+**Answer: C** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 4: Which testing requirement should be verified in CI for this module?
+## Question 3: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+**Answer: A** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 4: Which Core action would a senior engineer insist on before approving the change?
+**Answer: B** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 5: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 6: This happened during review: tests assert implementation details instead of outcomes. Which mistake is it?
+**Answer: C** - Over-mocking (tests assert implementation details instead of outcomes).
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 7: Which requirement belongs in the testing checklist for this module?
 **Answer: D** - All work must be covered by build + tests + static analysis in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 5: A reviewer approves the mini-project when which condition is met?
-**Answer: A** - Deliverable runs locally with clear instructions.
+## Question 8: Which acceptance requirement protects review quality if enforced?
+**Answer: C** - Includes tests appropriate for the feature.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 6: A reviewer reports: a performance claim was made without benchmarks. Which mistake does this reflect?
-**Answer: B** - Making performance claims without measurements.
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 7: To earn a Better evaluation, which action should you add?
-**Answer: A** - Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 8: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
-**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 9: To reach Beast Mode, which improvement should you choose?
-**Answer: C** - Add a performance or reliability improvement and measure the impact.
+## Question 9: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: C** - Create a short write-up: what changed, why, and how you verified it.
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 10: Which acceptance criterion must be satisfied before submission?
-**Answer: A** - Uses consistent style/formatting and passes the quality gate.
+## Question 10: You're pressed for time but still need a safe release. Which Core action must remain?
+**Answer: C** - Add or update documentation (README notes or ADR-style notes).
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 

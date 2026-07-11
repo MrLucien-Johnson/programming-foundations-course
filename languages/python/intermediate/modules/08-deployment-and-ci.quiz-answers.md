@@ -1,34 +1,34 @@
 # Python Intermediate — Module 08: Deployment and CI Quiz Answers
 
-## Question 1: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
-**Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
+## Question 1: A reviewer reports: tests assert implementation details instead of outcomes. Which mistake does this reflect?
+**Answer: B** - Over-mocking (tests assert implementation details instead of outcomes).
 
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 2: Which requirement is part of the mini-project acceptance criteria?
-**Answer: A** - Deliverable runs locally with clear instructions.
+## Question 2: Which acceptance requirement protects review quality if enforced?
+**Answer: B** - Uses consistent style/formatting and passes the quality gate.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode stretch?
-**Answer: C** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+## Question 3: Which acceptance requirement most clearly blocks approval if missing?
+**Answer: A** - Includes a short README section describing assumptions and tradeoffs.
 
-**Explanation:** This action is part of the Beast Mode upgrades.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 4: You're preparing a submission and need to meet the Core bar. Which action is required?
+## Question 4: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
 **Answer: D** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 5: To earn a Better evaluation, which action should you add?
+## Question 5: Which Better upgrade most improves maintainability or reliability?
 **Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -42,29 +42,29 @@
 
 ---
 
-## Question 7: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
-**Answer: A** - Making performance claims without measurements.
+## Question 7: Which outcome best captures the practical ability you should carry forward?
+**Answer: A** - Use tooling to keep quality high: ruff + black (or ruff format).
 
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 8: You already met Core. Which action qualifies as a Better upgrade?
-**Answer: C** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 9: Which item is explicitly required in the acceptance criteria?
-**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
+## Question 8: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: B** - Add a performance or reliability improvement and measure the impact.
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 10: Which task best matches the Core expectations for this module?
-**Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+## Question 9: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+**Answer: D** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 10: Before shipping, which Core action best reduces regression risk?
+**Answer: C** - Add or update documentation (README notes or ADR-style notes).
 
 **Explanation:** This action is listed under the Core exercises for the module.
 

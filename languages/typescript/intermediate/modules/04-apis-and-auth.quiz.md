@@ -6,27 +6,27 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which step would keep the work within the Core scope?
-A) Skipping input validation and assuming “happy path”.
+### Question 1: Before shipping, which Core action best reduces regression risk?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
 B) Deliverable runs locally with clear instructions.
-C) Implement a small feature tied to this module in an existing starter app.
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which requirement is part of the mini-project acceptance criteria?
+### Question 2: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
 A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-B) Use tooling to keep quality high: ESLint + Prettier.
-C) Includes a short README section describing assumptions and tradeoffs.
+B) Write tests that prove correctness and prevent regressions.
+C) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
 D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: A reviewer checks the Core checklist. Which action should they see?
+### Question 3: You're pressed for time but still need a safe release. Which Core action must remain?
 A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 B) Add or update documentation (README notes or ADR-style notes).
 C) Skipping input validation and assuming “happy path”.
@@ -36,21 +36,21 @@ D) Refactor one area for readability (without changing behavior) and prove it wi
 
 ---
 
-### Question 4: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
+### Question 4: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
 A) Deliverable runs locally with clear instructions.
-B) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+B) Making performance claims without measurements.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-D) Making performance claims without measurements.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which option represents a Beast Mode enhancement?
-A) Add at least 3 focused unit tests that cover normal cases and edge cases.
-B) Includes a short README section describing assumptions and tradeoffs.
-C) Over-mocking (tests assert implementation details instead of outcomes).
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+### Question 5: Before sign-off, which acceptance criterion must be confirmed?
+A) Document decisions and constraints clearly for reviewers.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Includes tests appropriate for the feature.
+D) Explain the core concepts and tradeoffs for APIs and Auth.
 
 **Your answer:** _______________
 
@@ -66,41 +66,41 @@ D) Shipping without an automated test run in CI.
 
 ---
 
-### Question 7: A reviewer reports: tests assert implementation details instead of outcomes. Which mistake does this reflect?
+### Question 7: In a real code review, which outcome best reflects the skill you should demonstrate?
 A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-C) Over-mocking (tests assert implementation details instead of outcomes).
+C) Document decisions and constraints clearly for reviewers.
 D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which step is explicitly called out as Better work?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-C) Deliverable runs locally with clear instructions.
+### Question 8: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Document decisions and constraints clearly for reviewers.
+C) Over-mocking (tests assert implementation details instead of outcomes).
 D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option is listed under Better work for this module?
+### Question 9: Which Better action best demonstrates stronger engineering discipline?
 A) Includes a short README section describing assumptions and tradeoffs.
 B) Add a performance or reliability improvement and measure the impact.
 C) Implement a small feature tied to this module in an existing starter app.
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Your project passes review only if which condition is true?
-A) Add at least 3 focused unit tests that cover normal cases and edge cases.
-B) Explain the core concepts and tradeoffs for APIs and Auth.
-C) Includes tests appropriate for the feature.
-D) Write tests that prove correctness and prevent regressions.
+### Question 10: Which acceptance criterion would a reviewer check first to approve the submission?
+A) Write tests that prove correctness and prevent regressions.
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Skipping input validation and assuming “happy path”.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 

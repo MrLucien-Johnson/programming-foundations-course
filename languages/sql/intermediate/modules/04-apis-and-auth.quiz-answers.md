@@ -1,72 +1,72 @@
 # SQL (PostgreSQL) Intermediate — Module 04: APIs and Auth Quiz Answers
 
-## Question 1: A reviewer approves the mini-project when which condition is met?
+## Question 1: Which acceptance requirement protects review quality if enforced?
 **Answer: C** - Uses consistent style/formatting and passes the quality gate.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 2: Which enhancement is a Better-level upgrade (not Beast Mode)?
-**Answer: A** - Refactor one area for readability (without changing behavior) and prove it with tests.
+## Question 2: Which Better upgrade most improves maintainability or reliability?
+**Answer: C** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode stretch?
-**Answer: D** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+## Question 3: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 4: A production fix is urgent. Which Core action is still required before release?
+**Answer: D** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 5: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 4: Which step would keep the work within the Core scope?
-**Answer: C** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 5: Which option is listed under Better work for this module?
-**Answer: D** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 6: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
-**Answer: D** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+## Question 6: Production validation failed because database tests are polluting shared data. Which testing requirement would have prevented it?
+**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 7: CI is failing because lint/format/type errors are breaking CI. Which testing requirement addresses this?
-**Answer: D** - All work must be covered by migrations apply cleanly + pgTAP + SQL linting in CI.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 8: You're preparing a submission and need to meet the Core bar. Which action is required?
-**Answer: B** - Add or update documentation (README notes or ADR-style notes).
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 9: Which common mistake matches this scenario: a performance claim was made without benchmarks?
-**Answer: D** - Making performance claims without measurements.
+## Question 7: This happened during review: bugs appear on unexpected inputs because validation was skipped. Which mistake is it?
+**Answer: C** - Skipping input validation and assuming “happy path”.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 10: Which acceptance criterion must be satisfied before submission?
-**Answer: A** - Includes tests appropriate for the feature.
+## Question 8: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 9: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: C** - Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 10: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
+**Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 

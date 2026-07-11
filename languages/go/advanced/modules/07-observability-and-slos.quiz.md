@@ -6,101 +6,101 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: To earn a Better evaluation, which action should you add?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-B) Includes tests appropriate for the feature.
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+### Question 1: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Shipping without an automated test run in CI.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+
+**Your answer:** _______________
+
+---
+
+### Question 2: Which acceptance requirement most clearly blocks approval if missing?
+A) Write tests that prove correctness and prevent regressions.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Includes tests appropriate for the feature.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Shipping without an automated test run in CI.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+### Question 4: CI is failing because lint/format/type errors are breaking CI. Which testing requirement addresses this?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Skipping input validation and assuming “happy path”.
+C) All work must be covered by gofmt + lint + tests in CI.
 D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
-A) Uses consistent style/formatting and passes the quality gate.
-B) Over-mocking (tests assert implementation details instead of outcomes).
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+### Question 5: Which Core action best reflects professional engineering practice in this situation?
+A) Shipping without an automated test run in CI.
+B) Implement a small feature tied to this module in an existing starter app.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) Explain the core concepts and tradeoffs for Observability and SLOs.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Add a performance or reliability improvement and measure the impact.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 D) Skipping input validation and assuming “happy path”.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Your teammate says: bugs appear on unexpected inputs because validation was skipped. Which common mistake is this?
-A) Skipping input validation and assuming “happy path”.
-B) Add at least 3 focused unit tests that cover normal cases and edge cases.
-C) Add a performance or reliability improvement and measure the impact.
-D) If the module involves a database, tests must run against an isolated schema/database.
+### Question 7: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Write tests that prove correctness and prevent regressions.
+C) Making performance claims without measurements.
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
-A) If the module involves a database, tests must run against an isolated schema/database.
-B) Making performance claims without measurements.
-C) Use tooling to keep quality high: gofmt + golangci-lint.
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-
-**Your answer:** _______________
-
----
-
-### Question 5: A reviewer checks the Core checklist. Which action should they see?
-A) Add at least 3 focused unit tests that cover normal cases and edge cases.
-B) Use tooling to keep quality high: gofmt + golangci-lint.
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.
-D) Uses consistent style/formatting and passes the quality gate.
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which acceptance criterion must be satisfied before submission?
-A) Uses consistent style/formatting and passes the quality gate.
-B) Skipping input validation and assuming “happy path”.
-C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+### Question 8: This happened during review: CI has no automated test run before release. Which mistake is it?
+A) All work must be covered by gofmt + lint + tests in CI.
+B) Document decisions and constraints clearly for reviewers.
+C) Deliverable runs locally with clear instructions.
 D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which task is explicitly listed as a Beast Mode upgrade?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-C) Shipping without an automated test run in CI.
-D) Includes tests appropriate for the feature.
+### Question 9: Which Better upgrade most improves maintainability or reliability?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which item is explicitly required in the acceptance criteria?
-A) All work must be covered by gofmt + lint + tests in CI.
-B) Create a short write-up: what changed, why, and how you verified it.
-C) If the module involves a database, tests must run against an isolated schema/database.
-D) Deliverable runs locally with clear instructions.
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which improvement moves a Core submission to the Better tier?
-A) Explain the core concepts and tradeoffs for Observability and SLOs.
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-C) If the module involves a database, tests must run against an isolated schema/database.
-D) Use tooling to keep quality high: gofmt + golangci-lint.
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which task best matches the Core expectations for this module?
-A) Implement a small feature tied to this module in an existing starter app.
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-C) Create a short write-up: what changed, why, and how you verified it.
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+### Question 10: Which outcome best captures the practical ability you should carry forward?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Skipping input validation and assuming “happy path”.
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 

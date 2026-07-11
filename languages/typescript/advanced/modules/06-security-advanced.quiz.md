@@ -6,101 +6,101 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which requirement is part of the mini-project acceptance criteria?
-A) Over-mocking (tests assert implementation details instead of outcomes).
-B) Add or update documentation (README notes or ADR-style notes).
-C) Add a performance or reliability improvement and measure the impact.
-D) Uses consistent style/formatting and passes the quality gate.
-
-**Your answer:** _______________
-
----
-
-### Question 2: You're preparing a submission and need to meet the Core bar. Which action is required?
-A) Use tooling to keep quality high: ESLint + Prettier.
-B) Over-mocking (tests assert implementation details instead of outcomes).
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-D) Add or update documentation (README notes or ADR-style notes).
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which option represents a Beast Mode enhancement?
-A) Explain the core concepts and tradeoffs for Security (Advanced).
-B) Add a performance or reliability improvement and measure the impact.
-C) Uses consistent style/formatting and passes the quality gate.
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which acceptance criterion must be satisfied before submission?
-A) Deliverable runs locally with clear instructions.
-B) Document decisions and constraints clearly for reviewers.
-C) Skipping input validation and assuming “happy path”.
-D) Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Your answer:** _______________
-
----
-
-### Question 5: A reviewer checks the Core checklist. Which action should they see?
-A) Deliverable runs locally with clear instructions.
-B) Create a short write-up: what changed, why, and how you verified it.
-C) Implement a small feature tied to this module in an existing starter app.
-D) Use tooling to keep quality high: ESLint + Prettier.
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which common mistake matches this scenario: a performance claim was made without benchmarks?
-A) Add a performance or reliability improvement and measure the impact.
+### Question 1: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
+A) Making performance claims without measurements.
 B) If the module involves a database, tests must run against an isolated schema/database.
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-D) Making performance claims without measurements.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which improvement moves a Core submission to the Better tier?
+### Question 2: A reviewer flags lint/format/type errors are breaking CI. Which testing requirement resolves it?
+A) Add a performance or reliability improvement and measure the impact.
+B) Skipping input validation and assuming “happy path”.
+C) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which acceptance criterion acts as a release gate for this module?
 A) Add at least 3 focused unit tests that cover normal cases and edge cases.
 B) Includes tests appropriate for the feature.
-C) Implement a small feature tied to this module in an existing starter app.
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Explain the core concepts and tradeoffs for Security (Advanced).
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: CI is failing because lint/format/type errors are breaking CI. Which testing requirement addresses this?
-A) Use tooling to keep quality high: ESLint + Prettier.
-B) Uses consistent style/formatting and passes the quality gate.
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+### Question 4: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Explain the core concepts and tradeoffs for Security (Advanced).
+
+**Your answer:** _______________
+
+---
+
+### Question 5: You're pressed for time but still need a safe release. Which Core action must remain?
+A) Document decisions and constraints clearly for reviewers.
+B) Add or update documentation (README notes or ADR-style notes).
+C) Making performance claims without measurements.
 D) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
-A) Shipping without an automated test run in CI.
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.
-D) Includes tests appropriate for the feature.
+### Question 6: Your teammate says: tests assert implementation details instead of outcomes. Which common mistake is this?
+A) Use tooling to keep quality high: ESLint + Prettier.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Write tests that prove correctness and prevent regressions.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: You already met Core. Which action qualifies as a Better upgrade?
-A) Uses consistent style/formatting and passes the quality gate.
-B) Implement a small feature tied to this module in an existing starter app.
-C) Refactor one area for readability (without changing behavior) and prove it with tests.
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+### Question 7: Before sign-off, which acceptance criterion must be confirmed?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Use tooling to keep quality high: ESLint + Prettier.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Uses consistent style/formatting and passes the quality gate.
+
+**Your answer:** _______________
+
+---
+
+### Question 8: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Includes tests appropriate for the feature.
+C) Implement a small feature tied to this module in an existing starter app.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which outcome best captures the practical ability you should carry forward?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Write tests that prove correctness and prevent regressions.
+D) Making performance claims without measurements.
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which Better upgrade most improves maintainability or reliability?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Includes tests appropriate for the feature.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 

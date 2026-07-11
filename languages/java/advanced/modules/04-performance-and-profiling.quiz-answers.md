@@ -1,70 +1,70 @@
 # Java Advanced — Module 04: Performance and Profiling Quiz Answers
 
-## Question 1: Your project passes review only if which condition is true?
-**Answer: C** - Includes a short README section describing assumptions and tradeoffs.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 2: Which improvement moves a Core submission to the Better tier?
-**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 3: Which action pushes the work into Beast Mode?
-**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
+## Question 1: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: D** - Add a performance or reliability improvement and measure the impact.
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 4: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
-**Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+## Question 2: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: D** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 5: Which acceptance criterion must be satisfied before submission?
-**Answer: B** - Deliverable runs locally with clear instructions.
+## Question 3: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: B** - Includes tests appropriate for the feature.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 6: To satisfy the Core requirements, which step must be included?
+## Question 4: You're pressed for time but still need a safe release. Which Core action must remain?
+**Answer: C** - Add or update documentation (README notes or ADR-style notes).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 5: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: B** - Explain the core concepts and tradeoffs for Performance and Profiling.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 6: A production fix is urgent. Which Core action is still required before release?
 **Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 7: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
-**Answer: A** - Skipping input validation and assuming “happy path”.
+## Question 7: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+**Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 8: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
+**Answer: D** - Making performance claims without measurements.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 8: Which option is listed under Better work for this module?
-**Answer: D** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+## Question 9: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: D** - Deliverable runs locally with clear instructions.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 9: A reviewer checks the Core checklist. Which action should they see?
-**Answer: C** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This action is listed under the Core exercises for the module.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 10: Which testing requirement is most relevant to this issue: feature tests fail when hitting real boundaries?
-**Answer: D** - All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+## Question 10: A reviewer flags feature tests fail when hitting real boundaries. Which testing requirement resolves it?
+**Answer: C** - All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 

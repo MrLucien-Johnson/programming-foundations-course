@@ -1,72 +1,72 @@
 # Java Intermediate — Module 05: Databases Quiz Answers
 
-## Question 1: A reviewer checks the Core checklist. Which action should they see?
-**Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+## Question 1: You're pressed for time but still need a safe release. Which Core action must remain?
+**Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 2: Which option is listed under Better work for this module?
-**Answer: A** - Refactor one area for readability (without changing behavior) and prove it with tests.
+## Question 2: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: A** - Explain the core concepts and tradeoffs for Databases.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 3: A reviewer flags feature tests fail when hitting real boundaries. Which testing requirement resolves it?
-**Answer: A** - All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+## Question 3: Which acceptance criterion acts as a release gate for this module?
+**Answer: A** - Includes a short README section describing assumptions and tradeoffs.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 4: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 4: Which step would keep the work within the Core scope?
-**Answer: C** - Add or update documentation (README notes or ADR-style notes).
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 5: Which enhancement is a Better-level upgrade (not Beast Mode)?
+## Question 5: A reviewer says, 'Good start.' Which Better upgrade should you add next?
 **Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 6: To reach Beast Mode, which improvement should you choose?
-**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 7: Which acceptance criterion must be satisfied before submission?
-**Answer: C** - Includes tests appropriate for the feature.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 8: A reviewer reports: CI has no automated test run before release. Which mistake does this reflect?
-**Answer: A** - Shipping without an automated test run in CI.
+## Question 6: This happened during review: bugs appear on unexpected inputs because validation was skipped. Which mistake is it?
+**Answer: D** - Skipping input validation and assuming “happy path”.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 9: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
-**Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+## Question 7: Which acceptance requirement protects review quality if enforced?
+**Answer: A** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 8: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
+**Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 10: Which requirement is part of the mini-project acceptance criteria?
-**Answer: A** - Uses consistent style/formatting and passes the quality gate.
+## Question 9: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: C** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 10: Which Core action would a senior engineer insist on before approving the change?
+**Answer: D** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 

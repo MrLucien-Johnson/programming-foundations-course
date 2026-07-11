@@ -1,72 +1,72 @@
 # C# Advanced — Module 04: Performance and Profiling Quiz Answers
 
-## Question 1: A reviewer approves the mini-project when which condition is met?
-**Answer: C** - Deliverable runs locally with clear instructions.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 2: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
-**Answer: A** - If the module involves a database, tests must run against an isolated schema/database.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 3: Which option represents a Beast Mode enhancement?
-**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 4: Which improvement moves a Core submission to the Better tier?
-**Answer: A** - Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 5: This happened during review: bugs appear on unexpected inputs because validation was skipped. Which mistake is it?
-**Answer: D** - Skipping input validation and assuming “happy path”.
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 6: Which task best matches the Core expectations for this module?
-**Answer: C** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 7: Your project passes review only if which condition is true?
+## Question 1: Which acceptance criterion acts as a release gate for this module?
 **Answer: D** - Includes tests appropriate for the feature.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 8: Which enhancement is a Better-level upgrade (not Beast Mode)?
-**Answer: D** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+## Question 2: The work passes Core. Which improvement most clearly raises quality for reviewers?
+**Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 9: To satisfy the Core requirements, which step must be included?
+## Question 3: This happened during review: tests assert implementation details instead of outcomes. Which mistake is it?
+**Answer: B** - Over-mocking (tests assert implementation details instead of outcomes).
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 4: Which requirement belongs in the testing checklist for this module?
+**Answer: A** - All work must be covered by build + tests + analyzers in CI.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 5: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: D** - Use tooling to keep quality high: dotnet format + analyzers.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 6: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: D** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 7: You're pressed for time but still need a safe release. Which Core action must remain?
 **Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 10: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
-**Answer: D** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+## Question 8: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 9: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 10: Which Core action best reflects professional engineering practice in this situation?
+**Answer: C** - Add or update documentation (README notes or ADR-style notes).
+
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 

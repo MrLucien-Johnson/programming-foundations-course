@@ -6,77 +6,77 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which topic would you highlight when describing this module?
-A) Skip testing and trust the first result.
-B) example implementations in the repo
-C) topic notes or summaries
-D) testable module design
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which output is listed as a required deliverable?
-A) topic notes or summaries
-B) error handling and debugging
-C) typing patterns and generics
-D) testable module design
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which topic is called out in this module?
-A) testable module design
-B) example implementations in the repo
-C) topic notes or summaries
-D) Skip testing and trust the first result.
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which topic is included in this module's Topics list?
-A) example implementations in the repo
-B) typing patterns and generics
-C) topic notes or summaries
-D) Skip testing and trust the first result.
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which topic would you expect in this module?
+### Question 1: Which topic is part of the module's coverage?
 A) Skip testing and trust the first result.
 B) topic notes or summaries
-C) example implementations in the repo
+C) testable module design
+D) example implementations in the repo
+
+**Your answer:** _______________
+
+---
+
+### Question 2: A reviewer wants proof of work. Which deliverable should you hand them?
+A) example implementations in the repo
+B) typing patterns and generics
+C) testable module design
 D) error handling and debugging
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which topic is covered in this module?
-A) topic notes or summaries
-B) Skip testing and trust the first result.
+### Question 3: Which deliverable belongs to this module's expectations?
+A) typing patterns and generics
+B) error handling and debugging
+C) topic notes or summaries
+D) testable module design
+
+**Your answer:** _______________
+
+---
+
+### Question 4: A teammate needs help with a real project decision. Which topic should they revisit?
+A) Skip testing and trust the first result.
+B) error handling and debugging
 C) example implementations in the repo
+D) topic notes or summaries
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which topic is on the module outline?
+A) example implementations in the repo
+B) Skip testing and trust the first result.
+C) topic notes or summaries
 D) testable module design
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which deliverable is explicitly listed for this module?
-A) error handling and debugging
-B) topic notes or summaries
-C) typing patterns and generics
-D) testable module design
+### Question 6: Which topic would you point to when scoping a real-world solution?
+A) Skip testing and trust the first result.
+B) testable module design
+C) topic notes or summaries
+D) example implementations in the repo
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which deliverable would satisfy the module expectations?
+### Question 7: Which deliverable would you send to a stakeholder as evidence of completion?
+A) topic notes or summaries
+B) testable module design
+C) error handling and debugging
+D) typing patterns and generics
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which deliverable best demonstrates the engineering work was completed?
 A) error handling and debugging
 B) typing patterns and generics
 C) testable module design
@@ -86,20 +86,20 @@ D) topic notes or summaries
 
 ---
 
-### Question 9: Which deliverable belongs to this module's expectations?
-A) error handling and debugging
-B) testable module design
-C) topic notes or summaries
-D) typing patterns and generics
+### Question 9: Which topic would you use to guide a design discussion?
+A) topic notes or summaries
+B) Skip testing and trust the first result.
+C) typing patterns and generics
+D) example implementations in the repo
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which deliverable should you produce for this module?
-A) testable module design
-B) example implementations in the repo
-C) typing patterns and generics
+### Question 10: Which deliverable would you submit to complete this module?
+A) topic notes or summaries
+B) typing patterns and generics
+C) testable module design
 D) error handling and debugging
 
 **Your answer:** _______________

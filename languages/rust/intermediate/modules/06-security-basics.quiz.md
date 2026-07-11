@@ -6,39 +6,39 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which task is explicitly listed as a Beast Mode upgrade?
-A) Apply the concepts to a realistic codebase (not just toy examples).
-B) Add a performance or reliability improvement and measure the impact.
-C) All work must be covered by fmt + clippy + tests in CI.
-D) Over-mocking (tests assert implementation details instead of outcomes).
-
-**Your answer:** _______________
-
----
-
-### Question 2: To satisfy the Core requirements, which step must be included?
+### Question 1: Before shipping, which Core action best reduces regression risk?
 A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-B) Refactor one area for readability (without changing behavior) and prove it with tests.
-C) Implement a small feature tied to this module in an existing starter app.
-D) Use tooling to keep quality high: rustfmt + clippy.
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which testing requirement should be verified in CI for this module?
-A) Making performance claims without measurements.
 B) All work must be covered by fmt + clippy + tests in CI.
 C) Use tooling to keep quality high: rustfmt + clippy.
-D) Deliverable runs locally with clear instructions.
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: A reviewer approves the mini-project when which condition is met?
-A) Explain the core concepts and tradeoffs for Security Basics.
-B) Includes a short README section describing assumptions and tradeoffs.
+### Question 2: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Create a short write-up: what changed, why, and how you verified it.
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which Better upgrade most improves maintainability or reliability?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Skipping input validation and assuming “happy path”.
+C) Making performance claims without measurements.
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which Core action would a senior engineer insist on before approving the change?
+A) Document decisions and constraints clearly for reviewers.
+B) Shipping without an automated test run in CI.
 C) Add at least 3 focused unit tests that cover normal cases and edge cases.
 D) Making performance claims without measurements.
 
@@ -46,61 +46,61 @@ D) Making performance claims without measurements.
 
 ---
 
-### Question 5: Which improvement moves a Core submission to the Better tier?
-A) Add a performance or reliability improvement and measure the impact.
-B) Write tests that prove correctness and prevent regressions.
-C) Deliverable runs locally with clear instructions.
-D) Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Your answer:** _______________
-
----
-
-### Question 6: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
-A) Making performance claims without measurements.
-B) Refactor one area for readability (without changing behavior) and prove it with tests.
-C) Includes a short README section describing assumptions and tradeoffs.
-D) Includes tests appropriate for the feature.
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
-A) Includes tests appropriate for the feature.
-B) Apply the concepts to a realistic codebase (not just toy examples).
+### Question 5: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) All work must be covered by fmt + clippy + tests in CI.
+B) Skipping input validation and assuming “happy path”.
 C) If the module involves a database, tests must run against an isolated schema/database.
+D) Create a short write-up: what changed, why, and how you verified it.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which outcome represents a transferable software engineering skill?
+A) Making performance claims without measurements.
+B) Explain the core concepts and tradeoffs for Security Basics.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) All work must be covered by fmt + clippy + tests in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which requirement belongs in the testing checklist for this module?
+A) All work must be covered by fmt + clippy + tests in CI.
+B) Document decisions and constraints clearly for reviewers.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Shipping without an automated test run in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
+A) Skipping input validation and assuming “happy path”.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Includes a short README section describing assumptions and tradeoffs.
+
+**Your answer:** _______________
+
+---
+
+### Question 9: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Deliverable runs locally with clear instructions.
+B) Explain the core concepts and tradeoffs for Security Basics.
+C) All work must be covered by fmt + clippy + tests in CI.
 D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: You're preparing a submission and need to meet the Core bar. Which action is required?
-A) Shipping without an automated test run in CI.
+### Question 10: Which acceptance criterion acts as a release gate for this module?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
 B) Add at least 3 focused unit tests that cover normal cases and edge cases.
-C) If the module involves a database, tests must run against an isolated schema/database.
-D) Making performance claims without measurements.
-
-**Your answer:** _______________
-
----
-
-### Question 9: Your project passes review only if which condition is true?
-A) Add or update documentation (README notes or ADR-style notes).
-B) Create a short write-up: what changed, why, and how you verified it.
-C) Includes tests appropriate for the feature.
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Your answer:** _______________
-
----
-
-### Question 10: You already met Core. Which action qualifies as a Better upgrade?
-A) Apply the concepts to a realistic codebase (not just toy examples).
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-C) Create a short write-up: what changed, why, and how you verified it.
-D) Document decisions and constraints clearly for reviewers.
+C) Uses consistent style/formatting and passes the quality gate.
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 

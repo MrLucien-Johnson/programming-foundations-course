@@ -6,67 +6,27 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which deliverable should you produce for this module?
-A) testable module design
-B) idiomatic data modeling and typing
-C) topic notes or summaries
-D) error handling and debugging
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which topic is part of the module's coverage?
-A) topic notes or summaries
-B) idiomatic data modeling and typing
-C) Skip testing and trust the first result.
-D) example implementations in the repo
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which topic is called out in this module?
-A) topic notes or summaries
-B) Skip testing and trust the first result.
-C) example implementations in the repo
-D) testable module design
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which output is listed as a required deliverable?
-A) idiomatic data modeling and typing
-B) error handling and debugging
-C) testable module design
-D) example implementations in the repo
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which topic is included in this module's Topics list?
-A) topic notes or summaries
+### Question 1: Which topic would you point to when scoping a real-world solution?
+A) Skip testing and trust the first result.
 B) example implementations in the repo
-C) Skip testing and trust the first result.
+C) testable module design
+D) topic notes or summaries
+
+**Your answer:** _______________
+
+---
+
+### Question 2: Which deliverable would you send to a stakeholder as evidence of completion?
+A) error handling and debugging
+B) example implementations in the repo
+C) testable module design
 D) idiomatic data modeling and typing
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which topic would you highlight when describing this module?
-A) example implementations in the repo
-B) topic notes or summaries
-C) Skip testing and trust the first result.
-D) testable module design
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which deliverable would you submit to complete this module?
+### Question 3: Which deliverable best demonstrates the engineering work was completed?
 A) idiomatic data modeling and typing
 B) topic notes or summaries
 C) error handling and debugging
@@ -76,9 +36,29 @@ D) testable module design
 
 ---
 
-### Question 8: Which topic appears in this module?
-A) Skip testing and trust the first result.
-B) example implementations in the repo
+### Question 4: Which topic would you use to guide a design discussion?
+A) example implementations in the repo
+B) Skip testing and trust the first result.
+C) idiomatic data modeling and typing
+D) topic notes or summaries
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which topic would you expect in this module?
+A) example implementations in the repo
+B) testable module design
+C) topic notes or summaries
+D) Skip testing and trust the first result.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which deliverable is explicitly listed for this module?
+A) testable module design
+B) idiomatic data modeling and typing
 C) error handling and debugging
 D) topic notes or summaries
 
@@ -86,20 +66,40 @@ D) topic notes or summaries
 
 ---
 
-### Question 9: Which deliverable belongs to this module's expectations?
+### Question 7: A reviewer wants proof of work. Which deliverable should you hand them?
 A) example implementations in the repo
-B) idiomatic data modeling and typing
+B) error handling and debugging
 C) testable module design
-D) error handling and debugging
+D) idiomatic data modeling and typing
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer expects which deliverable from this module?
+### Question 8: Which deliverable would satisfy the module expectations?
 A) testable module design
-B) error handling and debugging
+B) example implementations in the repo
+C) error handling and debugging
+D) idiomatic data modeling and typing
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which topic is included in this module's Topics list?
+A) example implementations in the repo
+B) Skip testing and trust the first result.
 C) idiomatic data modeling and typing
+D) topic notes or summaries
+
+**Your answer:** _______________
+
+---
+
+### Question 10: A teammate needs help with a real project decision. Which topic should they revisit?
+A) Skip testing and trust the first result.
+B) error handling and debugging
+C) topic notes or summaries
 D) example implementations in the repo
 
 **Your answer:** _______________

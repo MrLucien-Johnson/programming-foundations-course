@@ -6,57 +6,87 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: A reviewer flags lint/format/type errors are breaking CI. Which testing requirement resolves it?
-A) Deliverable runs locally with clear instructions.
-B) Uses consistent style/formatting and passes the quality gate.
+### Question 1: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Add or update documentation (README notes or ADR-style notes).
+C) Write tests that prove correctness and prevent regressions.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 2: Which Core action best reflects professional engineering practice in this situation?
+A) Shipping without an automated test run in CI.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) If the module involves a database, tests must run against an isolated schema/database.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which Better action best demonstrates stronger engineering discipline?
+A) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
 C) Skipping input validation and assuming “happy path”.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Your answer:** _______________
+
+---
+
+### Question 4: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) Shipping without an automated test run in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 5: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Add a performance or reliability improvement and measure the impact.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Production validation failed because lint/format/type errors are breaking CI. Which testing requirement would have prevented it?
+A) Deliverable runs locally with clear instructions.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Add or update documentation (README notes or ADR-style notes).
 D) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which option is listed under Better work for this module?
-A) Includes a short README section describing assumptions and tradeoffs.
-B) Making performance claims without measurements.
-C) Add at least 3 focused unit tests that cover normal cases and edge cases.
-D) Refactor one area for readability (without changing behavior) and prove it with tests.
+### Question 7: Which acceptance requirement most clearly blocks approval if missing?
+A) Create a short write-up: what changed, why, and how you verified it.
+B) Includes tests appropriate for the feature.
+C) If the module involves a database, tests must run against an isolated schema/database.
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.
-B) Includes a short README section describing assumptions and tradeoffs.
-C) Skipping input validation and assuming “happy path”.
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Your answer:** _______________
-
----
-
-### Question 4: A reviewer approves the mini-project when which condition is met?
-A) Add a performance or reliability improvement and measure the impact.
-B) Deliverable runs locally with clear instructions.
-C) Explain the core concepts and tradeoffs for CI/CD and Release Strategies.
-D) If the module involves a database, tests must run against an isolated schema/database.
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which requirement is part of the mini-project acceptance criteria?
-A) Uses consistent style/formatting and passes the quality gate.
-B) Create a short write-up: what changed, why, and how you verified it.
+### Question 8: Your teammate says: bugs appear on unexpected inputs because validation was skipped. Which common mistake is this?
+A) Skipping input validation and assuming “happy path”.
+B) Uses consistent style/formatting and passes the quality gate.
 C) Use tooling to keep quality high: ESLint + Prettier.
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which step would keep the work within the Core scope?
+### Question 9: A production fix is urgent. Which Core action is still required before release?
 A) Create a short write-up: what changed, why, and how you verified it.
 B) Explain the core concepts and tradeoffs for CI/CD and Release Strategies.
 C) Deliverable runs locally with clear instructions.
@@ -66,41 +96,11 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ---
 
-### Question 7: To earn a Better evaluation, which action should you add?
-A) Includes tests appropriate for the feature.
-B) Making performance claims without measurements.
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-D) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which option represents a Beast Mode enhancement?
-A) Document decisions and constraints clearly for reviewers.
+### Question 10: Which acceptance requirement protects review quality if enforced?
+A) Shipping without an automated test run in CI.
 B) Skipping input validation and assuming “happy path”.
-C) Create a short write-up: what changed, why, and how you verified it.
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Your answer:** _______________
-
----
-
-### Question 9: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-A) Use tooling to keep quality high: ESLint + Prettier.
-B) Add at least 3 focused unit tests that cover normal cases and edge cases.
-C) If the module involves a database, tests must run against an isolated schema/database.
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.
-
-**Your answer:** _______________
-
----
-
-### Question 10: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
-A) Deliverable runs locally with clear instructions.
-B) Making performance claims without measurements.
-C) Document decisions and constraints clearly for reviewers.
-D) Write tests that prove correctness and prevent regressions.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 

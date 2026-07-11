@@ -1,72 +1,72 @@
 # Rust Intermediate — Module 01: DSA (Practical) Quiz Answers
 
-## Question 1: Which acceptance criterion must be satisfied before submission?
-**Answer: C** - Includes a short README section describing assumptions and tradeoffs.
+## Question 1: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 2: To satisfy the Core requirements, which step must be included?
-**Answer: B** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This action is listed under the Core exercises for the module.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 3: To earn a Better evaluation, which action should you add?
-**Answer: A** - Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 4: Which task best matches the Core expectations for this module?
-**Answer: D** - Add or update documentation (README notes or ADR-style notes).
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 5: Which option represents a Beast Mode enhancement?
-**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
+## Question 2: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: C** - Create a short write-up: what changed, why, and how you verified it.
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 6: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
-**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
+## Question 3: You're pressed for time but still need a safe release. Which Core action must remain?
+**Answer: C** - Add or update documentation (README notes or ADR-style notes).
 
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 7: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
-**Answer: D** - Tests must be deterministic (no flakes) and runnable by a reviewer.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 8: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
-**Answer: C** - Making performance claims without measurements.
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 9: Which option is listed under Better work for this module?
+## Question 4: Which Better action best demonstrates stronger engineering discipline?
 **Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 10: Which item is explicitly required in the acceptance criteria?
+## Question 5: Which acceptance requirement protects review quality if enforced?
 **Answer: B** - Deliverable runs locally with clear instructions.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 6: Which requirement belongs in the testing checklist for this module?
+**Answer: A** - All work must be covered by fmt + clippy + tests in CI.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 7: Which acceptance criterion acts as a release gate for this module?
+**Answer: D** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 8: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: C** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 9: Which common mistake matches this scenario: a performance claim was made without benchmarks?
+**Answer: A** - Making performance claims without measurements.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 10: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: D** - Use tooling to keep quality high: rustfmt + clippy.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 

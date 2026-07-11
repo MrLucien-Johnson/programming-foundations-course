@@ -6,18 +6,8 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
-A) Add a performance or reliability improvement and measure the impact.
-B) Use tooling to keep quality high: ESLint + Prettier.
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-D) If the module involves a database, tests must run against an isolated schema/database.
-
-**Your answer:** _______________
-
----
-
-### Question 2: To earn a Better evaluation, which action should you add?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+### Question 1: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
 B) Explain the core concepts and tradeoffs for Deployment and CI.
 C) Skipping input validation and assuming “happy path”.
 D) Add at least 3 focused unit tests that cover normal cases and edge cases.
@@ -26,9 +16,49 @@ D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 ---
 
-### Question 3: Your project passes review only if which condition is true?
+### Question 2: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Making performance claims without measurements.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Deliverable runs locally with clear instructions.
+
+**Your answer:** _______________
+
+---
+
+### Question 3: A reviewer flags lint/format/type errors are breaking CI. Which testing requirement resolves it?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) Write tests that prove correctness and prevent regressions.
+D) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Before sign-off, which acceptance criterion must be confirmed?
+A) Shipping without an automated test run in CI.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+D) Uses consistent style/formatting and passes the quality gate.
+
+**Your answer:** _______________
+
+---
+
+### Question 5: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
 A) Document decisions and constraints clearly for reviewers.
-B) Includes tests appropriate for the feature.
+B) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+C) Add a performance or reliability improvement and measure the impact.
+D) Making performance claims without measurements.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which acceptance criterion would a reviewer check first to approve the submission?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) Includes a short README section describing assumptions and tradeoffs.
 C) Add at least 3 focused unit tests that cover normal cases and edge cases.
 D) Implement a small feature tied to this module in an existing starter app.
 
@@ -36,7 +66,17 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ---
 
-### Question 4: Which step would keep the work within the Core scope?
+### Question 7: In a real code review, which outcome best reflects the skill you should demonstrate?
+A) Document decisions and constraints clearly for reviewers.
+B) Add or update documentation (README notes or ADR-style notes).
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Shipping without an automated test run in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
 A) Skipping input validation and assuming “happy path”.
 B) Tests must be deterministic (no flakes) and runnable by a reviewer.
 C) Implement a small feature tied to this module in an existing starter app.
@@ -46,61 +86,21 @@ D) Over-mocking (tests assert implementation details instead of outcomes).
 
 ---
 
-### Question 5: Which option represents a Beast Mode enhancement?
-A) Over-mocking (tests assert implementation details instead of outcomes).
-B) Includes tests appropriate for the feature.
-C) Includes a short README section describing assumptions and tradeoffs.
-D) Create a short write-up: what changed, why, and how you verified it.
-
-**Your answer:** _______________
-
----
-
-### Question 6: You already met Core. Which action qualifies as a Better upgrade?
-A) Apply the concepts to a realistic codebase (not just toy examples).
-B) Use tooling to keep quality high: ESLint + Prettier.
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+### Question 9: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+A) Write tests that prove correctness and prevent regressions.
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Deliverable runs locally with clear instructions.
 D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Your teammate says: CI has no automated test run before release. Which common mistake is this?
-A) Uses consistent style/formatting and passes the quality gate.
-B) Use tooling to keep quality high: ESLint + Prettier.
-C) Add at least 3 focused unit tests that cover normal cases and edge cases.
-D) Shipping without an automated test run in CI.
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which task best matches the Core expectations for this module?
-A) Add or update documentation (README notes or ADR-style notes).
-B) If the module involves a database, tests must run against an isolated schema/database.
-C) Explain the core concepts and tradeoffs for Deployment and CI.
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-
-**Your answer:** _______________
-
----
-
-### Question 9: A reviewer approves the mini-project when which condition is met?
-A) Add or update documentation (README notes or ADR-style notes).
-B) Shipping without an automated test run in CI.
-C) Uses consistent style/formatting and passes the quality gate.
-D) Skipping input validation and assuming “happy path”.
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
-A) Apply the concepts to a realistic codebase (not just toy examples).
-B) Making performance claims without measurements.
-C) Skipping input validation and assuming “happy path”.
-D) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+### Question 10: Which Core action would a senior engineer insist on before approving the change?
+A) Create a short write-up: what changed, why, and how you verified it.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 

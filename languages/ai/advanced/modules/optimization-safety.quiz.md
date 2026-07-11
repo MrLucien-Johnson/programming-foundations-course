@@ -6,27 +6,27 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which topic is on the module outline?
+### Question 1: Which topic is part of the module's coverage?
 A) Skip testing and trust the first result.
 B) safety assessment summary
-C) safety evaluations and red-teaming
-D) cost and latency plan
+C) cost and latency plan
+D) safety evaluations and red-teaming
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which deliverable belongs to this module's expectations?
-A) caching and reuse strategies
-B) cost and latency plan
-C) safety evaluations and red-teaming
-D) cost and latency budgeting
+### Question 2: Which deliverable is required before moving on?
+A) cost and latency plan
+B) safety evaluations and red-teaming
+C) cost and latency budgeting
+D) caching and reuse strategies
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which topic is covered in this module?
+### Question 3: Which topic is called out in this module?
 A) Skip testing and trust the first result.
 B) caching and reuse strategies
 C) safety assessment summary
@@ -36,27 +36,27 @@ D) cost and latency plan
 
 ---
 
-### Question 4: Which topic appears in this module?
-A) cost and latency plan
-B) safety evaluations and red-teaming
-C) safety assessment summary
+### Question 4: Which topic would you point to when scoping a real-world solution?
+A) caching and reuse strategies
+B) safety assessment summary
+C) cost and latency plan
 D) Skip testing and trust the first result.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which deliverable would satisfy the module expectations?
-A) caching and reuse strategies
-B) safety assessment summary
-C) cost and latency budgeting
-D) safety evaluations and red-teaming
+### Question 5: Which topic appears in this module?
+A) safety assessment summary
+B) Skip testing and trust the first result.
+C) safety evaluations and red-teaming
+D) cost and latency plan
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which deliverable should you produce for this module?
+### Question 6: A reviewer wants proof of work. Which deliverable should you hand them?
 A) cost and latency budgeting
 B) cost and latency plan
 C) safety evaluations and red-teaming
@@ -66,41 +66,41 @@ D) caching and reuse strategies
 
 ---
 
-### Question 7: Which topic would you expect in this module?
+### Question 7: Which topic would you use to guide a design discussion?
 A) safety assessment summary
 B) cost and latency plan
-C) Skip testing and trust the first result.
-D) safety evaluations and red-teaming
+C) safety evaluations and red-teaming
+D) Skip testing and trust the first result.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic belongs to this module's outline?
-A) Skip testing and trust the first result.
-B) safety assessment summary
-C) caching and reuse strategies
-D) cost and latency plan
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which deliverable is required before moving on?
+### Question 8: A teammate needs help with a real project decision. Which topic should they revisit?
 A) cost and latency plan
-B) safety evaluations and red-teaming
-C) caching and reuse strategies
-D) cost and latency budgeting
+B) safety assessment summary
+C) cost and latency budgeting
+D) Skip testing and trust the first result.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which topic is included in this module's Topics list?
-A) safety assessment summary
-B) cost and latency budgeting
-C) Skip testing and trust the first result.
-D) cost and latency plan
+### Question 9: Which deliverable best demonstrates the engineering work was completed?
+A) cost and latency budgeting
+B) safety evaluations and red-teaming
+C) cost and latency plan
+D) caching and reuse strategies
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which deliverable would you send to a stakeholder as evidence of completion?
+A) safety evaluations and red-teaming
+B) safety assessment summary
+C) cost and latency budgeting
+D) caching and reuse strategies
 
 **Your answer:** _______________
 

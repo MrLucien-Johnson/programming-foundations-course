@@ -6,57 +6,17 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which task is explicitly listed as a Beast Mode upgrade?
-A) Includes tests appropriate for the feature.
-B) Add a performance or reliability improvement and measure the impact.
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-D) Includes a short README section describing assumptions and tradeoffs.
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which enhancement is a Better-level upgrade (not Beast Mode)?
-A) Includes tests appropriate for the feature.
-B) Over-mocking (tests assert implementation details instead of outcomes).
-C) Refactor one area for readability (without changing behavior) and prove it with tests.
-D) Explain the core concepts and tradeoffs for Security Basics.
-
-**Your answer:** _______________
-
----
-
-### Question 3: This happened during review: tests assert implementation details instead of outcomes. Which mistake is it?
-A) Uses consistent style/formatting and passes the quality gate.
-B) Create a short write-up: what changed, why, and how you verified it.
-C) Apply the concepts to a realistic codebase (not just toy examples).
+### Question 1: A reviewer reports: tests assert implementation details instead of outcomes. Which mistake does this reflect?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Add or update documentation (README notes or ADR-style notes).
+C) If the module involves a database, tests must run against an isolated schema/database.
 D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which step would keep the work within the Core scope?
-A) Making performance claims without measurements.
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-C) Shipping without an automated test run in CI.
-D) Add or update documentation (README notes or ADR-style notes).
-
-**Your answer:** _______________
-
----
-
-### Question 5: A reviewer checks the Core checklist. Which action should they see?
-A) Add at least 3 focused unit tests that cover normal cases and edge cases.
-B) Making performance claims without measurements.
-C) Includes a short README section describing assumptions and tradeoffs.
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which requirement is part of the mini-project acceptance criteria?
+### Question 2: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
 A) Making performance claims without measurements.
 B) Deliverable runs locally with clear instructions.
 C) Shipping without an automated test run in CI.
@@ -66,41 +26,81 @@ D) Refactor one area for readability (without changing behavior) and prove it wi
 
 ---
 
-### Question 7: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+### Question 3: A reviewer flags lint/format/type errors are breaking CI. Which testing requirement resolves it?
+A) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
 B) Making performance claims without measurements.
-C) Apply the concepts to a realistic codebase (not just toy examples).
-D) Create a short write-up: what changed, why, and how you verified it.
+C) Document decisions and constraints clearly for reviewers.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which option is listed under Better work for this module?
-A) Over-mocking (tests assert implementation details instead of outcomes).
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-C) Apply the concepts to a realistic codebase (not just toy examples).
+### Question 4: Which acceptance criterion acts as a release gate for this module?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Add a performance or reliability improvement and measure the impact.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Includes tests appropriate for the feature.
+D) Document decisions and constraints clearly for reviewers.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: You're pressed for time but still need a safe release. Which Core action must remain?
+A) Implement a small feature tied to this module in an existing starter app.
+B) Making performance claims without measurements.
+C) Includes a short README section describing assumptions and tradeoffs.
 D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
+### Question 7: In a real code review, which outcome best reflects the skill you should demonstrate?
 A) Add or update documentation (README notes or ADR-style notes).
-B) Uses consistent style/formatting and passes the quality gate.
-C) Deliverable runs locally with clear instructions.
+B) Use tooling to keep quality high: ruff + black (or ruff format).
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
 D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Your project passes review only if which condition is true?
+### Question 8: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Making performance claims without measurements.
+C) Add a performance or reliability improvement and measure the impact.
+D) Add or update documentation (README notes or ADR-style notes).
+
+**Your answer:** _______________
+
+---
+
+### Question 9: A reviewer says, 'Good start.' Which Better upgrade should you add next?
 A) Add a performance or reliability improvement and measure the impact.
-B) Includes tests appropriate for the feature.
-C) Making performance claims without measurements.
-D) Document decisions and constraints clearly for reviewers.
+B) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
+C) Document decisions and constraints clearly for reviewers.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 10: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Shipping without an automated test run in CI.
+C) Deliverable runs locally with clear instructions.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 

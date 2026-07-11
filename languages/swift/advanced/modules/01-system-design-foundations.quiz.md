@@ -6,38 +6,38 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: A reviewer reports: a performance claim was made without benchmarks. Which mistake does this reflect?
+### Question 1: In a real code review, which outcome best reflects the skill you should demonstrate?
 A) Deliverable runs locally with clear instructions.
-B) Use tooling to keep quality high: SwiftFormat + SwiftLint.
-C) Making performance claims without measurements.
-D) Write tests that prove correctness and prevent regressions.
+B) Skipping input validation and assuming “happy path”.
+C) Write tests that prove correctness and prevent regressions.
+D) Making performance claims without measurements.
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which option represents a Beast Mode enhancement?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-B) Includes tests appropriate for the feature.
-C) Over-mocking (tests assert implementation details instead of outcomes).
-D) Shipping without an automated test run in CI.
-
-**Your answer:** _______________
-
----
-
-### Question 3: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+### Question 2: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
 A) Includes a short README section describing assumptions and tradeoffs.
-B) Add at least 3 focused unit tests that cover normal cases and edge cases.
-C) All work must be covered by build + tests + lint/format in CI.
-D) Add a performance or reliability improvement and measure the impact.
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Document decisions and constraints clearly for reviewers.
+D) All work must be covered by build + tests + lint/format in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+### Question 3: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
+A) Explain the core concepts and tradeoffs for System Design Foundations.
+B) Add a performance or reliability improvement and measure the impact.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Your answer:** _______________
+
+---
+
+### Question 4: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
+A) Making performance claims without measurements.
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 C) Create a short write-up: what changed, why, and how you verified it.
 D) Includes tests appropriate for the feature.
@@ -46,47 +46,47 @@ D) Includes tests appropriate for the feature.
 
 ---
 
-### Question 5: Which step is explicitly called out as Better work?
+### Question 5: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
 A) Explain the core concepts and tradeoffs for System Design Foundations.
 B) Document decisions and constraints clearly for reviewers.
 C) All work must be covered by build + tests + lint/format in CI.
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which acceptance criterion must be satisfied before submission?
-A) Uses consistent style/formatting and passes the quality gate.
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-C) Making performance claims without measurements.
-D) Use tooling to keep quality high: SwiftFormat + SwiftLint.
+### Question 6: Which acceptance criterion would a reviewer check first to approve the submission?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Uses consistent style/formatting and passes the quality gate.
+C) Explain the core concepts and tradeoffs for System Design Foundations.
+D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which requirement is part of the mini-project acceptance criteria?
-A) Includes a short README section describing assumptions and tradeoffs.
-B) Implement a small feature tied to this module in an existing starter app.
-C) Over-mocking (tests assert implementation details instead of outcomes).
-D) Apply the concepts to a realistic codebase (not just toy examples).
+### Question 7: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
+A) Add a performance or reliability improvement and measure the impact.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) If the module involves a database, tests must run against an isolated schema/database.
+D) Explain the core concepts and tradeoffs for System Design Foundations.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which step would keep the work within the Core scope?
-A) Add or update documentation (README notes or ADR-style notes).
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-C) Skipping input validation and assuming “happy path”.
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+### Question 8: Which Core action would a senior engineer insist on before approving the change?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Skipping input validation and assuming “happy path”.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Includes a short README section describing assumptions and tradeoffs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: A reviewer checks the Core checklist. Which action should they see?
+### Question 9: You're pressed for time but still need a safe release. Which Core action must remain?
 A) Implement a small feature tied to this module in an existing starter app.
 B) Tests must be deterministic (no flakes) and runnable by a reviewer.
 C) Document decisions and constraints clearly for reviewers.
@@ -96,11 +96,11 @@ D) Add an integration test that hits a real boundary (HTTP, database, file syste
 
 ---
 
-### Question 10: Which option is listed under Better work for this module?
+### Question 10: The work passes Core. Which improvement most clearly raises quality for reviewers?
 A) Refactor one area for readability (without changing behavior) and prove it with tests.
-B) Uses consistent style/formatting and passes the quality gate.
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-D) If the module involves a database, tests must run against an isolated schema/database.
+B) Skipping input validation and assuming “happy path”.
+C) Write tests that prove correctness and prevent regressions.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 

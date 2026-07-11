@@ -1,72 +1,72 @@
 # Java Advanced — Module 08: CI/CD and Release Strategies Quiz Answers
 
-## Question 1: Which testing requirement should you apply given this issue: database tests are polluting shared data?
-**Answer: A** - If the module involves a database, tests must run against an isolated schema/database.
+## Question 1: Which Better action best demonstrates stronger engineering discipline?
+**Answer: D** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 2: Your project passes review only if which condition is true?
-**Answer: B** - Includes a short README section describing assumptions and tradeoffs.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 3: A reviewer checks the Core checklist. Which action should they see?
-**Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 4: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-**Answer: A** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 5: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
-**Answer: C** - Making performance claims without measurements.
+## Question 2: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
+**Answer: D** - Making performance claims without measurements.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 6: Which task is explicitly listed as a Beast Mode upgrade?
-**Answer: C** - Add a performance or reliability improvement and measure the impact.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 7: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
-**Answer: D** - Tests must be deterministic (no flakes) and runnable by a reviewer.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 8: To earn a Better evaluation, which action should you add?
-**Answer: C** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 9: Which acceptance criterion must be satisfied before submission?
-**Answer: D** - Includes tests appropriate for the feature.
+## Question 3: Which acceptance requirement most clearly blocks approval if missing?
+**Answer: A** - Includes a short README section describing assumptions and tradeoffs.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 10: Which enhancement is a Better-level upgrade (not Beast Mode)?
-**Answer: D** - Refactor one area for readability (without changing behavior) and prove it with tests.
+## Question 4: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
+**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 5: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: C** - Add or update documentation (README notes or ADR-style notes).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 6: Production validation failed because feature tests fail when hitting real boundaries. Which testing requirement would have prevented it?
+**Answer: B** - All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 7: Which Core action best reflects professional engineering practice in this situation?
+**Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 8: Which outcome represents a transferable software engineering skill?
+**Answer: A** - Document decisions and constraints clearly for reviewers.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 9: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: B** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 10: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: D** - Add a performance or reliability improvement and measure the impact.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 

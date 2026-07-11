@@ -1,9 +1,9 @@
 # Kotlin Intermediate — Module 08: Deployment and CI Quiz Answers
 
-## Question 1: Which testing requirement must be satisfied before submission?
-**Answer: B** - All work must be covered by build + tests + static analysis in CI.
+## Question 1: The work passes Core. Which improvement most clearly raises quality for reviewers?
+**Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
@@ -14,59 +14,59 @@
 
 ---
 
-## Question 3: Which step would keep the work within the Core scope?
-**Answer: C** - Implement a small feature tied to this module in an existing starter app.
+## Question 3: Your teammate says: CI has no automated test run before release. Which common mistake is this?
+**Answer: A** - Shipping without an automated test run in CI.
 
-**Explanation:** This action is listed under the Core exercises for the module.
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 4: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
+## Question 4: Which testing requirement must be satisfied before submission?
+**Answer: A** - All work must be covered by build + tests + static analysis in CI.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 5: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: B** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 6: A production fix is urgent. Which Core action is still required before release?
 **Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 5: Which task is explicitly listed as a Beast Mode upgrade?
-**Answer: B** - Add a performance or reliability improvement and measure the impact.
+## Question 7: Which outcome best captures the practical ability you should carry forward?
+**Answer: B** - Write tests that prove correctness and prevent regressions.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 8: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 6: Which improvement moves a Core submission to the Better tier?
-**Answer: B** - Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 7: This happened during review: tests assert implementation details instead of outcomes. Which mistake is it?
-**Answer: A** - Over-mocking (tests assert implementation details instead of outcomes).
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 8: To earn a Better evaluation, which action should you add?
-**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 9: A reviewer approves the mini-project when which condition is met?
-**Answer: D** - Uses consistent style/formatting and passes the quality gate.
+## Question 9: Which acceptance requirement most clearly blocks approval if missing?
+**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 10: Which acceptance criterion must be satisfied before submission?
-**Answer: D** - Deliverable runs locally with clear instructions.
+## Question 10: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: C** - Implement a small feature tied to this module in an existing starter app.
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 

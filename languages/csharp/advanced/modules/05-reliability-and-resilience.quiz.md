@@ -6,47 +6,77 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
-A) Making performance claims without measurements.
-B) Create a short write-up: what changed, why, and how you verified it.
+### Question 1: Which testing requirement should be verified in CI for this module?
+A) All work must be covered by build + tests + analyzers in CI.
+B) Includes a short README section describing assumptions and tradeoffs.
 C) Shipping without an automated test run in CI.
-D) If the module involves a database, tests must run against an isolated schema/database.
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.
-B) Explain the core concepts and tradeoffs for Reliability and Resilience.
+### Question 2: A reviewer reports: bugs appear on unexpected inputs because validation was skipped. Which mistake does this reflect?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Skipping input validation and assuming “happy path”.
 C) Includes a short README section describing assumptions and tradeoffs.
-D) Add or update documentation (README notes or ADR-style notes).
+D) All work must be covered by build + tests + analyzers in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-A) Write tests that prove correctness and prevent regressions.
-B) Add a performance or reliability improvement and measure the impact.
+### Question 3: Which acceptance criterion acts as a release gate for this module?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Skipping input validation and assuming “happy path”.
+D) Document decisions and constraints clearly for reviewers.
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
+
+**Your answer:** _______________
+
+---
+
+### Question 5: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Use tooling to keep quality high: dotnet format + analyzers.
+B) Add or update documentation (README notes or ADR-style notes).
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) Deliverable runs locally with clear instructions.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Before sign-off, which acceptance criterion must be confirmed?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Skipping input validation and assuming “happy path”.
 C) Includes tests appropriate for the feature.
-D) Add or update documentation (README notes or ADR-style notes).
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which enhancement is a Better-level upgrade (not Beast Mode)?
-A) Includes a short README section describing assumptions and tradeoffs.
-B) Making performance claims without measurements.
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-D) Uses consistent style/formatting and passes the quality gate.
+### Question 7: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) Create a short write-up: what changed, why, and how you verified it.
+B) Document decisions and constraints clearly for reviewers.
+C) Skipping input validation and assuming “happy path”.
+D) All work must be covered by build + tests + analyzers in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: You're preparing a submission and need to meet the Core bar. Which action is required?
+### Question 8: A production fix is urgent. Which Core action is still required before release?
 A) Uses consistent style/formatting and passes the quality gate.
 B) If the module involves a database, tests must run against an isolated schema/database.
 C) Implement a small feature tied to this module in an existing starter app.
@@ -56,51 +86,21 @@ D) Deliverable runs locally with clear instructions.
 
 ---
 
-### Question 6: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
-A) Create a short write-up: what changed, why, and how you verified it.
-B) Explain the core concepts and tradeoffs for Reliability and Resilience.
-C) Includes tests appropriate for the feature.
-D) Making performance claims without measurements.
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which option represents a Beast Mode enhancement?
-A) Add at least 3 focused unit tests that cover normal cases and edge cases.
-B) Document decisions and constraints clearly for reviewers.
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-D) Use tooling to keep quality high: dotnet format + analyzers.
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which acceptance criterion must be satisfied before submission?
-A) If the module involves a database, tests must run against an isolated schema/database.
-B) Includes tests appropriate for the feature.
-C) Explain the core concepts and tradeoffs for Reliability and Resilience.
-D) Add a performance or reliability improvement and measure the impact.
-
-**Your answer:** _______________
-
----
-
-### Question 9: To earn a Better evaluation, which action should you add?
-A) Includes tests appropriate for the feature.
+### Question 9: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Explain the core concepts and tradeoffs for Reliability and Resilience.
 B) Add or update documentation (README notes or ADR-style notes).
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-D) Uses consistent style/formatting and passes the quality gate.
+C) Includes tests appropriate for the feature.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which item is explicitly required in the acceptance criteria?
-A) Making performance claims without measurements.
-B) Uses consistent style/formatting and passes the quality gate.
-C) Use tooling to keep quality high: dotnet format + analyzers.
-D) Implement a small feature tied to this module in an existing starter app.
+### Question 10: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Write tests that prove correctness and prevent regressions.
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 

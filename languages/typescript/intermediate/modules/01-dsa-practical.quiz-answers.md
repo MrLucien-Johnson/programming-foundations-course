@@ -1,72 +1,72 @@
 # TypeScript Intermediate — Module 01: DSA (Practical) Quiz Answers
 
-## Question 1: Which option represents a Beast Mode enhancement?
-**Answer: D** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 2: You already met Core. Which action qualifies as a Better upgrade?
-**Answer: B** - Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 3: Your project passes review only if which condition is true?
-**Answer: A** - Includes a short README section describing assumptions and tradeoffs.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 4: A reviewer flags lint/format/type errors are breaking CI. Which testing requirement resolves it?
-**Answer: D** - All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+## Question 1: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 5: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
-**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 6: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
-**Answer: A** - Skipping input validation and assuming “happy path”.
+## Question 2: Which common mistake matches this scenario: CI has no automated test run before release?
+**Answer: D** - Shipping without an automated test run in CI.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 7: To satisfy the Core requirements, which step must be included?
-**Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+## Question 3: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
+**Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 8: Which requirement is part of the mini-project acceptance criteria?
-**Answer: B** - Uses consistent style/formatting and passes the quality gate.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 9: Which option is listed under Better work for this module?
-**Answer: A** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+## Question 4: Which Better action best demonstrates stronger engineering discipline?
+**Answer: D** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 10: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-**Answer: C** - Add or update documentation (README notes or ADR-style notes).
+## Question 5: Which Core action best reflects professional engineering practice in this situation?
+**Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 6: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: B** - Add or update documentation (README notes or ADR-style notes).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 7: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+**Answer: B** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 8: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 9: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: A** - Create a short write-up: what changed, why, and how you verified it.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 10: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: B** - Write tests that prove correctness and prevent regressions.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 

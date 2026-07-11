@@ -1,72 +1,72 @@
 # AI — Module 01: System Design for LLM Apps Quiz Answers
 
-## Question 1: Which improvement moves a Core submission to the Better tier?
-**Answer: A** - Define SLOs for latency and quality with error budgets.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 2: You already met Core. Which action qualifies as a Better upgrade?
-**Answer: A** - Add scaling considerations: caching layers, queues, and backpressure.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 3: Which acceptance criterion must be satisfied before submission?
-**Answer: B** - Includes architecture, eval harness plan, safety checklist, cost/latency plan, fallback strategy.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 4: Which task best matches the Core expectations for this module?
-**Answer: B** - Create an architecture diagram and data flow for one LLM feature.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 5: Your tests are blocked by feature tests fail when hitting real boundaries. Which requirement should you enforce?
-**Answer: A** - Design includes test strategy across unit/integration/e2e + eval gates.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 6: Which action pushes the work into Beast Mode?
-**Answer: D** - Add a privacy-by-design plan (minimization, retention, access controls).
+## Question 1: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: A** - Add a privacy-by-design plan (minimization, retention, access controls).
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 7: Which step would keep the work within the Core scope?
+## Question 2: Production validation failed because feature tests fail when hitting real boundaries. Which testing requirement would have prevented it?
+**Answer: D** - Design includes test strategy across unit/integration/e2e + eval gates.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 3: Which acceptance requirement protects review quality if enforced?
+**Answer: C** - Includes architecture, eval harness plan, safety checklist, cost/latency plan, fallback strategy.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 4: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: C** - Define SLOs for latency and quality with error budgets.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 5: Which testing requirement is most relevant to this issue: feature tests fail when hitting real boundaries?
+**Answer: D** - Design includes test strategy across unit/integration/e2e + eval gates.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 6: A production fix is urgent. Which Core action is still required before release?
 **Answer: B** - Identify failure modes and propose fallbacks for each.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 8: Which behavior is listed as a common mistake for this module?
+## Question 7: Which option represents a common mistake to avoid?
 **Answer: A** - No plan for scaling or failure, leading to outages/cost spikes.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 9: Which item is explicitly required in the acceptance criteria?
-**Answer: D** - Includes architecture, eval harness plan, safety checklist, cost/latency plan, fallback strategy.
+## Question 8: Which Better upgrade most improves maintainability or reliability?
+**Answer: C** - Add scaling considerations: caching layers, queues, and backpressure.
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 10: A reviewer flags feature tests fail when hitting real boundaries. Which testing requirement resolves it?
-**Answer: C** - Design includes test strategy across unit/integration/e2e + eval gates.
+## Question 9: You're pressed for time but still need a safe release. Which Core action must remain?
+**Answer: B** - Create an architecture diagram and data flow for one LLM feature.
 
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 10: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: A** - Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 

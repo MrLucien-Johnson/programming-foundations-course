@@ -1,72 +1,72 @@
 # Rust Intermediate — Module 03: Git and Collaboration Quiz Answers
 
-## Question 1: Which requirement is part of the mini-project acceptance criteria?
-**Answer: D** - Uses consistent style/formatting and passes the quality gate.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 2: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
-**Answer: D** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+## Question 1: Which testing requirement should be verified in CI for this module?
+**Answer: C** - All work must be covered by fmt + clippy + tests in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 3: Which step would keep the work within the Core scope?
+## Question 2: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+**Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 3: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: B** - Add a performance or reliability improvement and measure the impact.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 4: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: C** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 5: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: D** - Refactor one area for readability (without changing behavior) and prove it with tests.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 6: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 7: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
 **Answer: A** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 4: Which option represents a Beast Mode enhancement?
-**Answer: D** - Add a performance or reliability improvement and measure the impact.
+## Question 8: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: B** - Apply the concepts to a realistic codebase (not just toy examples).
 
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 5: Which acceptance criterion must be satisfied before submission?
-**Answer: D** - Deliverable runs locally with clear instructions.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 6: Which task best matches the Core expectations for this module?
-**Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+## Question 9: Before shipping, which Core action best reduces regression risk?
+**Answer: C** - Add or update documentation (README notes or ADR-style notes).
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 7: Which enhancement is a Better-level upgrade (not Beast Mode)?
-**Answer: B** - Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 8: Which testing requirement must be satisfied before submission?
-**Answer: B** - All work must be covered by fmt + clippy + tests in CI.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 9: Your teammate says: bugs appear on unexpected inputs because validation was skipped. Which common mistake is this?
+## Question 10: Your teammate says: bugs appear on unexpected inputs because validation was skipped. Which common mistake is this?
 **Answer: B** - Skipping input validation and assuming “happy path”.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 10: Which step is explicitly called out as Better work?
-**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 

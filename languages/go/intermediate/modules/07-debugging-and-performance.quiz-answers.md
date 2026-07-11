@@ -1,70 +1,70 @@
 # Go Intermediate — Module 07: Debugging and Performance Quiz Answers
 
-## Question 1: Which step would keep the work within the Core scope?
-**Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+## Question 1: Before shipping, which Core action best reduces regression risk?
+**Answer: D** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 2: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-**Answer: B** - Implement a small feature tied to this module in an existing starter app.
+## Question 2: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: D** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 3: Which item is explicitly required in the acceptance criteria?
-**Answer: D** - Uses consistent style/formatting and passes the quality gate.
+## Question 3: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+**Answer: D** - All work must be covered by gofmt + lint + tests in CI.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 4: Which acceptance criterion acts as a release gate for this module?
+**Answer: B** - Uses consistent style/formatting and passes the quality gate.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 4: Which option represents a Beast Mode enhancement?
-**Answer: C** - Add a performance or reliability improvement and measure the impact.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 5: To earn a Better evaluation, which action should you add?
-**Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+## Question 5: Which Better upgrade most improves maintainability or reliability?
+**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 6: A reviewer flags lint/format/type errors are breaking CI. Which testing requirement resolves it?
-**Answer: B** - All work must be covered by gofmt + lint + tests in CI.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 7: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
-**Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 8: A reviewer reports: tests assert implementation details instead of outcomes. Which mistake does this reflect?
-**Answer: A** - Over-mocking (tests assert implementation details instead of outcomes).
+## Question 6: Your teammate says: a performance claim was made without benchmarks. Which common mistake is this?
+**Answer: C** - Making performance claims without measurements.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 9: Which step is explicitly called out as Better work?
-**Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
+## Question 7: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+**Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 10: Your project passes review only if which condition is true?
-**Answer: D** - Deliverable runs locally with clear instructions.
+## Question 8: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: A** - Write tests that prove correctness and prevent regressions.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 9: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: C** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 10: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: C** - Deliverable runs locally with clear instructions.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 

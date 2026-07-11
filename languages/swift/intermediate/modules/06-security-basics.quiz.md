@@ -6,69 +6,59 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
-A) Shipping without an automated test run in CI.
-B) Includes tests appropriate for the feature.
-C) Explain the core concepts and tradeoffs for Security Basics.
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which requirement is part of the mini-project acceptance criteria?
-A) Add or update documentation (README notes or ADR-style notes).
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-C) Includes a short README section describing assumptions and tradeoffs.
-D) Apply the concepts to a realistic codebase (not just toy examples).
-
-**Your answer:** _______________
-
----
-
-### Question 3: Your project passes review only if which condition is true?
-A) Write tests that prove correctness and prevent regressions.
-B) Explain the core concepts and tradeoffs for Security Basics.
+### Question 1: Which outcome represents a transferable software engineering skill?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Apply the concepts to a realistic codebase (not just toy examples).
 C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) All work must be covered by build + tests + lint/format in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 2: Which acceptance criterion acts as a release gate for this module?
+A) Write tests that prove correctness and prevent regressions.
+B) All work must be covered by build + tests + lint/format in CI.
+C) Add a performance or reliability improvement and measure the impact.
 D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which option is listed under Better work for this module?
-A) Create a short write-up: what changed, why, and how you verified it.
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-C) Document decisions and constraints clearly for reviewers.
-D) If the module involves a database, tests must run against an isolated schema/database.
-
-**Your answer:** _______________
-
----
-
-### Question 5: Your teammate says: CI has no automated test run before release. Which common mistake is this?
-A) Uses consistent style/formatting and passes the quality gate.
-B) Add or update documentation (README notes or ADR-style notes).
-C) Shipping without an automated test run in CI.
-D) Write tests that prove correctness and prevent regressions.
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which enhancement is a Better-level upgrade (not Beast Mode)?
+### Question 3: Which Better upgrade most improves maintainability or reliability?
 A) Explain the core concepts and tradeoffs for Security Basics.
 B) All work must be covered by build + tests + lint/format in CI.
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 D) Includes a short README section describing assumptions and tradeoffs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which action qualifies as a Beast Mode stretch?
-A) Includes tests appropriate for the feature.
-B) Use tooling to keep quality high: SwiftFormat + SwiftLint.
+### Question 4: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Skipping input validation and assuming “happy path”.
+C) Includes tests appropriate for the feature.
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Before sign-off, which acceptance criterion must be confirmed?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Includes tests appropriate for the feature.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Skipping input validation and assuming “happy path”.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
@@ -76,17 +66,17 @@ D) Add a “failure mode” test (timeouts, invalid input, concurrency, or parti
 
 ---
 
-### Question 8: You're preparing a submission and need to meet the Core bar. Which action is required?
-A) If the module involves a database, tests must run against an isolated schema/database.
-B) Skipping input validation and assuming “happy path”.
-C) Includes tests appropriate for the feature.
-D) Add or update documentation (README notes or ADR-style notes).
+### Question 7: Which common mistake matches this scenario: CI has no automated test run before release?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Shipping without an automated test run in CI.
+C) Add a performance or reliability improvement and measure the impact.
+D) Document decisions and constraints clearly for reviewers.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
+### Question 8: You're pressed for time but still need a safe release. Which Core action must remain?
 A) Document decisions and constraints clearly for reviewers.
 B) Uses consistent style/formatting and passes the quality gate.
 C) Implement a small feature tied to this module in an existing starter app.
@@ -96,11 +86,21 @@ D) Over-mocking (tests assert implementation details instead of outcomes).
 
 ---
 
-### Question 10: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
-A) All work must be covered by build + tests + lint/format in CI.
-B) Skipping input validation and assuming “happy path”.
-C) Use tooling to keep quality high: SwiftFormat + SwiftLint.
-D) Add at least 3 focused unit tests that cover normal cases and edge cases.
+### Question 9: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Includes tests appropriate for the feature.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Add a performance or reliability improvement and measure the impact.
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 

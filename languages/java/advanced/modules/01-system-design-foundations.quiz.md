@@ -6,101 +6,101 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 1: Which Better action best demonstrates stronger engineering discipline?
+A) Implement a small feature tied to this module in an existing starter app.
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Create a short write-up: what changed, why, and how you verified it.
+
+**Your answer:** _______________
+
+---
+
+### Question 2: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
+D) Shipping without an automated test run in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
+B) Implement a small feature tied to this module in an existing starter app.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) If the module involves a database, tests must run against an isolated schema/database.
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Production validation failed because feature tests fail when hitting real boundaries. Which testing requirement would have prevented it?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Shipping without an automated test run in CI.
+D) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 5: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
 A) Deliverable runs locally with clear instructions.
-B) Explain the core concepts and tradeoffs for System Design Foundations.
-C) If the module involves a database, tests must run against an isolated schema/database.
+B) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Create a short write-up: what changed, why, and how you verified it.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: You're pressed for time but still need a safe release. Which Core action must remain?
+A) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+B) Document decisions and constraints clearly for reviewers.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Add a performance or reliability improvement and measure the impact.
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Before sign-off, which acceptance criterion must be confirmed?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Includes tests appropriate for the feature.
+C) Implement a small feature tied to this module in an existing starter app.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which acceptance criterion acts as a release gate for this module?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Making performance claims without measurements.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+### Question 9: In a real code review, which outcome best reflects the skill you should demonstrate?
+A) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
 D) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which step would keep the work within the Core scope?
-A) Add or update documentation (README notes or ADR-style notes).
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.
-C) Refactor one area for readability (without changing behavior) and prove it with tests.
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Your answer:** _______________
-
----
-
-### Question 3: A reviewer approves the mini-project when which condition is met?
-A) If the module involves a database, tests must run against an isolated schema/database.
-B) Making performance claims without measurements.
-C) Refactor one area for readability (without changing behavior) and prove it with tests.
-D) Includes a short README section describing assumptions and tradeoffs.
-
-**Your answer:** _______________
-
----
-
-### Question 4: Your teammate says: a performance claim was made without benchmarks. Which common mistake is this?
-A) Write tests that prove correctness and prevent regressions.
-B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+### Question 10: This happened during review: tests assert implementation details instead of outcomes. Which mistake is it?
+A) Uses consistent style/formatting and passes the quality gate.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-D) Making performance claims without measurements.
-
-**Your answer:** _______________
-
----
-
-### Question 5: You're preparing a submission and need to meet the Core bar. Which action is required?
-A) Apply the concepts to a realistic codebase (not just toy examples).
-B) Skipping input validation and assuming “happy path”.
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-D) Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which action qualifies as a Beast Mode stretch?
-A) Add a performance or reliability improvement and measure the impact.
-B) Includes a short README section describing assumptions and tradeoffs.
-C) Write tests that prove correctness and prevent regressions.
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Your answer:** _______________
-
----
-
-### Question 7: You already met Core. Which action qualifies as a Better upgrade?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.
-B) Add or update documentation (README notes or ADR-style notes).
-C) Making performance claims without measurements.
-D) Skipping input validation and assuming “happy path”.
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which option is listed under Better work for this module?
-A) Skipping input validation and assuming “happy path”.
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-C) Create a short write-up: what changed, why, and how you verified it.
-D) Explain the core concepts and tradeoffs for System Design Foundations.
-
-**Your answer:** _______________
-
----
-
-### Question 9: A reviewer flags feature tests fail when hitting real boundaries. Which testing requirement resolves it?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-B) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
-C) Making performance claims without measurements.
-D) Includes tests appropriate for the feature.
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which requirement is part of the mini-project acceptance criteria?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-B) Document decisions and constraints clearly for reviewers.
-C) Add or update documentation (README notes or ADR-style notes).
-D) Includes tests appropriate for the feature.
+D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 

@@ -1,72 +1,72 @@
 # AI — Module 03: Evals at Scale Quiz Answers
 
-## Question 1: To earn a Better evaluation, which action should you add?
-**Answer: B** - Add stratified sampling (by category, language, customer tier).
+## Question 1: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: D** - Includes datasets, automation, gates, budgets, and rollback criteria.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 2: Which Better upgrade most improves maintainability or reliability?
+**Answer: D** - Add stratified sampling (by category, language, customer tier).
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 2: You're preparing a submission and need to meet the Core bar. Which action is required?
-**Answer: C** - Design a scalable eval runner spec (batching, retries, budgets).
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 3: Which testing requirement must be satisfied before submission?
-**Answer: D** - Runs are reproducible: versioned prompts, datasets, and scoring rules.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 4: A reviewer checks the Core checklist. Which action should they see?
-**Answer: B** - Define a drift metric and a monitoring cadence.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 5: To reach Beast Mode, which improvement should you choose?
-**Answer: B** - Design a labeling workflow and calibration plan for human raters.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 6: Which improvement moves a Core submission to the Better tier?
+## Question 3: A reviewer says, 'Good start.' Which Better upgrade should you add next?
 **Answer: D** - Define “stop-the-line” criteria for regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 7: Which behavior is listed as a common mistake for this module?
-**Answer: D** - No budget controls for large eval runs.
+## Question 4: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: B** - Add shadow evaluation for live traffic (privacy-safe).
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 5: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: C** - Design a scalable eval runner spec (batching, retries, budgets).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 6: Which Core action would a senior engineer insist on before approving the change?
+**Answer: B** - Define a drift metric and a monitoring cadence.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 7: Which testing requirement must be satisfied before submission?
+**Answer: D** - Runs are reproducible: versioned prompts, datasets, and scoring rules.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 8: Which testing requirement should be verified in CI for this module?
+**Answer: B** - Runs are reproducible: versioned prompts, datasets, and scoring rules.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 9: Which behavior is listed as a common mistake for this module?
+**Answer: A** - Relying only on live user feedback instead of proactive evals.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 8: Which acceptance criterion must be satisfied before submission?
-**Answer: C** - Includes datasets, automation, gates, budgets, and rollback criteria.
+## Question 10: Which outcome best captures the practical ability you should carry forward?
+**Answer: A** - Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 9: Your project passes review only if which condition is true?
-**Answer: C** - Includes datasets, automation, gates, budgets, and rollback criteria.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 10: Which testing requirement should be verified in CI for this module?
-**Answer: A** - Runs are reproducible: versioned prompts, datasets, and scoring rules.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 

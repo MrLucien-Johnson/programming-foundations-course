@@ -6,101 +6,101 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which topic appears in this module?
-A) example queries checked into the repo
+### Question 1: A teammate needs help with a real project decision. Which topic should they revisit?
+A) Skip testing and trust the first result.
 B) relational modeling and normalization
-C) Skip testing and trust the first result.
+C) example queries checked into the repo
 D) topic notes or summaries
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which topic is covered in this module?
-A) relational modeling and normalization
-B) example queries checked into the repo
-C) topic notes or summaries
-D) Skip testing and trust the first result.
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which deliverable is explicitly listed for this module?
-A) topic notes or summaries
-B) relational modeling and normalization
-C) joins, aggregates, and window functions
-D) query troubleshooting and performance basics
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which topic belongs to this module's outline?
-A) topic notes or summaries
-B) joins, aggregates, and window functions
-C) Skip testing and trust the first result.
-D) example queries checked into the repo
-
-**Your answer:** _______________
-
----
-
-### Question 5: A learner asks what you'll study next. Which topic fits?
-A) example queries checked into the repo
-B) Skip testing and trust the first result.
-C) topic notes or summaries
-D) joins, aggregates, and window functions
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which topic is on the module outline?
-A) topic notes or summaries
-B) query troubleshooting and performance basics
-C) example queries checked into the repo
-D) Skip testing and trust the first result.
-
-**Your answer:** _______________
-
----
-
-### Question 7: A reviewer expects which deliverable from this module?
-A) relational modeling and normalization
-B) topic notes or summaries
-C) query troubleshooting and performance basics
-D) joins, aggregates, and window functions
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which topic is called out in this module?
+### Question 2: Which topic is included in this module's Topics list?
 A) Skip testing and trust the first result.
 B) topic notes or summaries
-C) relational modeling and normalization
+C) joins, aggregates, and window functions
 D) example queries checked into the repo
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which deliverable should you produce for this module?
+### Question 3: A reviewer wants proof of work. Which deliverable should you hand them?
 A) relational modeling and normalization
-B) joins, aggregates, and window functions
-C) query troubleshooting and performance basics
-D) example queries checked into the repo
+B) query troubleshooting and performance basics
+C) topic notes or summaries
+D) joins, aggregates, and window functions
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which topic would you highlight when describing this module?
-A) joins, aggregates, and window functions
+### Question 4: Which topic is on the module outline?
+A) Skip testing and trust the first result.
+B) example queries checked into the repo
+C) joins, aggregates, and window functions
+D) topic notes or summaries
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which topic would you point to when scoping a real-world solution?
+A) Skip testing and trust the first result.
 B) topic notes or summaries
 C) example queries checked into the repo
+D) joins, aggregates, and window functions
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which deliverable would you send to a stakeholder as evidence of completion?
+A) relational modeling and normalization
+B) query troubleshooting and performance basics
+C) example queries checked into the repo
+D) joins, aggregates, and window functions
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which topic would you use to guide a design discussion?
+A) example queries checked into the repo
+B) query troubleshooting and performance basics
+C) topic notes or summaries
 D) Skip testing and trust the first result.
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which deliverable best demonstrates the engineering work was completed?
+A) topic notes or summaries
+B) query troubleshooting and performance basics
+C) relational modeling and normalization
+D) joins, aggregates, and window functions
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which topic would you expect in this module?
+A) relational modeling and normalization
+B) Skip testing and trust the first result.
+C) topic notes or summaries
+D) example queries checked into the repo
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which topic appears in this module?
+A) Skip testing and trust the first result.
+B) relational modeling and normalization
+C) example queries checked into the repo
+D) topic notes or summaries
 
 **Your answer:** _______________
 

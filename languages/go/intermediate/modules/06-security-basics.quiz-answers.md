@@ -1,72 +1,72 @@
 # Go Intermediate — Module 06: Security Basics Quiz Answers
 
-## Question 1: Which action pushes the work into Beast Mode?
-**Answer: A** - Add a performance or reliability improvement and measure the impact.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 2: You already met Core. Which action qualifies as a Better upgrade?
-**Answer: A** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 3: A reviewer checks the Core checklist. Which action should they see?
-**Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 4: Which item is explicitly required in the acceptance criteria?
-**Answer: C** - Uses consistent style/formatting and passes the quality gate.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 5: Which enhancement is a Better-level upgrade (not Beast Mode)?
-**Answer: A** - Refactor one area for readability (without changing behavior) and prove it with tests.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 6: A reviewer flags lint/format/type errors are breaking CI. Which testing requirement resolves it?
-**Answer: D** - All work must be covered by gofmt + lint + tests in CI.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 7: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
+## Question 1: Before shipping, which Core action best reduces regression risk?
 **Answer: B** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 8: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
-**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
+## Question 2: Which Better upgrade most improves maintainability or reliability?
+**Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 3: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 9: A reviewer approves the mini-project when which condition is met?
-**Answer: A** - Deliverable runs locally with clear instructions.
+## Question 4: Which testing requirement is most relevant to this issue: lint/format/type errors are breaking CI?
+**Answer: C** - All work must be covered by gofmt + lint + tests in CI.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 5: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: A** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 6: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
+**Answer: A** - Over-mocking (tests assert implementation details instead of outcomes).
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 7: You're pressed for time but still need a safe release. Which Core action must remain?
+**Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 8: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: A** - Includes a short README section describing assumptions and tradeoffs.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 10: Your teammate says: CI has no automated test run before release. Which common mistake is this?
-**Answer: D** - Shipping without an automated test run in CI.
+## Question 9: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: C** - Apply the concepts to a realistic codebase (not just toy examples).
 
-**Explanation:** This is listed in the Common Mistakes section to avoid.
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 10: Which acceptance requirement protects review quality if enforced?
+**Answer: B** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 

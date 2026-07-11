@@ -1,72 +1,72 @@
 # Python Advanced — Module 04: Performance and Profiling Quiz Answers
 
-## Question 1: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
-**Answer: A** - If the module involves a database, tests must run against an isolated schema/database.
+## Question 1: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: A** - Includes tests appropriate for the feature.
 
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 2: Which improvement moves a Core submission to the Better tier?
-**Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
+## Question 2: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: D** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 3: Which Better upgrade most improves maintainability or reliability?
+**Answer: A** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode stretch?
-**Answer: A** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+## Question 4: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: A** - Write tests that prove correctness and prevent regressions.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 5: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: A** - Add a performance or reliability improvement and measure the impact.
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 4: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
-**Answer: A** - Skipping input validation and assuming “happy path”.
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 5: Which enhancement is a Better-level upgrade (not Beast Mode)?
-**Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 6: Which requirement is part of the mini-project acceptance criteria?
-**Answer: C** - Uses consistent style/formatting and passes the quality gate.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 7: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
-**Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+## Question 6: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
+**Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 8: A reviewer checks the Core checklist. Which action should they see?
-**Answer: C** - Implement a small feature tied to this module in an existing starter app.
+## Question 7: Which Core action would a senior engineer insist on before approving the change?
+**Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 9: Which acceptance criterion must be satisfied before submission?
-**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
+## Question 8: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
+**Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 10: To satisfy the Core requirements, which step must be included?
-**Answer: A** - Add or update documentation (README notes or ADR-style notes).
+## Question 9: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: A** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 10: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
+**Answer: C** - Skipping input validation and assuming “happy path”.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 

@@ -1,70 +1,70 @@
 # AI — Module 07: Data Governance and Privacy Quiz Answers
 
-## Question 1: Which requirement is part of the mini-project acceptance criteria?
-**Answer: A** - Includes retention, minimization, access control, and auditability.
+## Question 1: Which outcome represents a transferable software engineering skill?
+**Answer: C** - Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 2: Which item is explicitly required in the acceptance criteria?
-**Answer: D** - Includes retention, minimization, access control, and auditability.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 3: Which option represents a Beast Mode enhancement?
-**Answer: D** - Design audit queries/reports (who accessed what, when, and for what purpose).
+## Question 2: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: A** - Define a safe logging schema that avoids storing raw sensitive text.
 
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 4: Which step would keep the work within the Core scope?
-**Answer: A** - Create a data handling policy for your app: what is stored, for how long, and why.
-
-**Explanation:** This action is listed under the Core exercises for the module.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied before submission?
+## Question 3: Which option represents a common mistake to avoid?
+**Answer: B** - Logging raw prompts/outputs indefinitely.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 4: Which testing requirement must be satisfied before submission?
 **Answer: B** - Tests include “data should not appear” negative cases.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 6: Which option represents a common mistake to avoid?
-**Answer: B** - Ignoring multi-tenant isolation and permissions in retrieval.
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 7: You're preparing a submission and need to meet the Core bar. Which action is required?
-**Answer: A** - Design a redaction strategy and test it on sample inputs.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 8: To earn a Better evaluation, which action should you add?
-**Answer: D** - Add access-control-aware retrieval and test “no leakage” scenarios.
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 9: Which requirement belongs in the testing checklist for this module?
-**Answer: C** - Tests include “data should not appear” negative cases.
+## Question 5: Which testing requirement should be verified in CI for this module?
+**Answer: D** - Tests include “data should not appear” negative cases.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 10: Which improvement moves a Core submission to the Better tier?
-**Answer: A** - Define a safe logging schema that avoids storing raw sensitive text.
+## Question 6: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: D** - Add a privacy review checklist to releases.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 7: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+**Answer: B** - Create a data handling policy for your app: what is stored, for how long, and why.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 8: You're pressed for time but still need a safe release. Which Core action must remain?
+**Answer: C** - Design a redaction strategy and test it on sample inputs.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 9: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: D** - Includes retention, minimization, access control, and auditability.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 10: Which Better action best demonstrates stronger engineering discipline?
+**Answer: D** - Add access-control-aware retrieval and test “no leakage” scenarios.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 

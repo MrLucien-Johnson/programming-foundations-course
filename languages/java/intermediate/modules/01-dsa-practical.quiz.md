@@ -6,69 +6,29 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which item is explicitly required in the acceptance criteria?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+### Question 1: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+A) Includes tests appropriate for the feature.
 B) Add at least 3 focused unit tests that cover normal cases and edge cases.
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-D) Includes tests appropriate for the feature.
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which task is explicitly listed as a Beast Mode upgrade?
-A) Create a short write-up: what changed, why, and how you verified it.
-B) Over-mocking (tests assert implementation details instead of outcomes).
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.
-D) Add or update documentation (README notes or ADR-style notes).
+### Question 2: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Explain the core concepts and tradeoffs for DSA (Practical).
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: A reviewer approves the mini-project when which condition is met?
-A) If the module involves a database, tests must run against an isolated schema/database.
-B) Add at least 3 focused unit tests that cover normal cases and edge cases.
-C) Uses consistent style/formatting and passes the quality gate.
-D) Apply the concepts to a realistic codebase (not just toy examples).
-
-**Your answer:** _______________
-
----
-
-### Question 4: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.
-B) Includes tests appropriate for the feature.
-C) Apply the concepts to a realistic codebase (not just toy examples).
-D) Shipping without an automated test run in CI.
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which improvement moves a Core submission to the Better tier?
-A) If the module involves a database, tests must run against an isolated schema/database.
-B) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
-C) Shipping without an automated test run in CI.
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Your answer:** _______________
-
----
-
-### Question 6: CI is failing because feature tests fail when hitting real boundaries. Which testing requirement addresses this?
-A) Shipping without an automated test run in CI.
-B) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
-C) Uses consistent style/formatting and passes the quality gate.
-D) Write tests that prove correctness and prevent regressions.
-
-**Your answer:** _______________
-
----
-
-### Question 7: Which enhancement is a Better-level upgrade (not Beast Mode)?
+### Question 3: Which Better upgrade most improves maintainability or reliability?
 A) Includes tests appropriate for the feature.
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 C) Over-mocking (tests assert implementation details instead of outcomes).
 D) Add a performance or reliability improvement and measure the impact.
 
@@ -76,17 +36,57 @@ D) Add a performance or reliability improvement and measure the impact.
 
 ---
 
-### Question 8: You're preparing a submission and need to meet the Core bar. Which action is required?
-A) Includes a short README section describing assumptions and tradeoffs.
+### Question 4: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+A) Deliverable runs locally with clear instructions.
 B) Add at least 3 focused unit tests that cover normal cases and edge cases.
-C) Create a short write-up: what changed, why, and how you verified it.
-D) Document decisions and constraints clearly for reviewers.
+C) Write tests that prove correctness and prevent regressions.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which task best matches the Core expectations for this module?
+### Question 5: Which acceptance requirement protects review quality if enforced?
+A) Deliverable runs locally with clear instructions.
+B) Document decisions and constraints clearly for reviewers.
+C) Add a performance or reliability improvement and measure the impact.
+D) If the module involves a database, tests must run against an isolated schema/database.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
+D) Explain the core concepts and tradeoffs for DSA (Practical).
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which acceptance criterion acts as a release gate for this module?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Includes tests appropriate for the feature.
+D) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
+
+**Your answer:** _______________
+
+---
+
+### Question 8: This happened during review: bugs appear on unexpected inputs because validation was skipped. Which mistake is it?
+A) Add a performance or reliability improvement and measure the impact.
+B) Includes tests appropriate for the feature.
+C) Skipping input validation and assuming “happy path”.
+D) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which Core action best reflects professional engineering practice in this situation?
 A) Includes tests appropriate for the feature.
 B) Implement a small feature tied to this module in an existing starter app.
 C) Tests must be deterministic (no flakes) and runnable by a reviewer.
@@ -96,11 +96,11 @@ D) Add a performance or reliability improvement and measure the impact.
 
 ---
 
-### Question 10: Your teammate says: CI has no automated test run before release. Which common mistake is this?
+### Question 10: In a real code review, which outcome best reflects the skill you should demonstrate?
 A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 B) Apply the concepts to a realistic codebase (not just toy examples).
-C) Implement a small feature tied to this module in an existing starter app.
-D) Shipping without an automated test run in CI.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 

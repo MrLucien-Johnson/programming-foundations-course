@@ -6,38 +6,8 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which deliverable is required before moving on?
-A) testable module design
-B) error handling and debugging
-C) topic notes or summaries
-D) object design and interfaces
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which deliverable should you produce for this module?
-A) testable module design
-B) error handling and debugging
-C) topic notes or summaries
-D) object design and interfaces
-
-**Your answer:** _______________
-
----
-
-### Question 3: Which deliverable would satisfy the module expectations?
-A) example implementations in the repo
-B) testable module design
-C) error handling and debugging
-D) object design and interfaces
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which topic would you highlight when describing this module?
-A) error handling and debugging
+### Question 1: Which topic belongs to this module's outline?
+A) object design and interfaces
 B) example implementations in the repo
 C) Skip testing and trust the first result.
 D) topic notes or summaries
@@ -46,60 +16,90 @@ D) topic notes or summaries
 
 ---
 
-### Question 5: Which topic is called out in this module?
+### Question 2: Which deliverable is explicitly listed for this module?
 A) object design and interfaces
-B) Skip testing and trust the first result.
-C) example implementations in the repo
-D) topic notes or summaries
+B) testable module design
+C) topic notes or summaries
+D) error handling and debugging
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which topic is on the module outline?
-A) object design and interfaces
-B) Skip testing and trust the first result.
-C) example implementations in the repo
-D) topic notes or summaries
+### Question 3: Which deliverable would satisfy the module expectations?
+A) topic notes or summaries
+B) testable module design
+C) error handling and debugging
+D) object design and interfaces
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which deliverable belongs to this module's expectations?
-A) testable module design
+### Question 4: Which topic would you use to guide a design discussion?
+A) example implementations in the repo
 B) error handling and debugging
-C) object design and interfaces
-D) topic notes or summaries
+C) topic notes or summaries
+D) Skip testing and trust the first result.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: A reviewer expects which deliverable from this module?
+### Question 5: Which deliverable would you send to a stakeholder as evidence of completion?
+A) topic notes or summaries
+B) testable module design
+C) error handling and debugging
+D) object design and interfaces
+
+**Your answer:** _______________
+
+---
+
+### Question 6: A teammate needs help with a real project decision. Which topic should they revisit?
+A) topic notes or summaries
+B) example implementations in the repo
+C) Skip testing and trust the first result.
+D) testable module design
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which topic is on the module outline?
 A) error handling and debugging
-B) object design and interfaces
-C) testable module design
+B) Skip testing and trust the first result.
+C) example implementations in the repo
 D) topic notes or summaries
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: A learner asks what you'll study next. Which topic fits?
+### Question 8: A reviewer wants proof of work. Which deliverable should you hand them?
+A) object design and interfaces
+B) testable module design
+C) topic notes or summaries
+D) error handling and debugging
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which topic would you point to when scoping a real-world solution?
 A) Skip testing and trust the first result.
 B) topic notes or summaries
-C) testable module design
+C) object design and interfaces
 D) example implementations in the repo
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which topic appears in this module?
+### Question 10: Which deliverable best demonstrates the engineering work was completed?
 A) error handling and debugging
-B) topic notes or summaries
-C) Skip testing and trust the first result.
+B) testable module design
+C) object design and interfaces
 D) example implementations in the repo
 
 **Your answer:** _______________

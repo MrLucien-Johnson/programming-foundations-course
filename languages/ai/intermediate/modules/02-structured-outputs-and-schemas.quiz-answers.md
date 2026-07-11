@@ -1,69 +1,69 @@
 # AI — Module 02: Structured Outputs and Schemas Quiz Answers
 
-## Question 1: Which acceptance criterion must be satisfied before submission?
-**Answer: C** - Valid JSON for ≥95% of cases; clear handling for missing data.
+## Question 1: Production validation failed because database tests are polluting shared data. Which testing requirement would have prevented it?
+**Answer: B** - Automated validation against schema; repair attempts are capped.
 
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 2: Which task best matches the Core expectations for this module?
+## Question 2: Before shipping, which Core action best reduces regression risk?
 **Answer: B** - Create a 30-case dataset and measure JSON validity + required-field completeness.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 3: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
-**Answer: D** - Automated validation against schema; repair attempts are capped.
+## Question 3: Which behavior is listed as a common mistake for this module?
+**Answer: C** - No plan for schema evolution.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 4: Which testing requirement should you apply given this issue: database tests are polluting shared data?
+**Answer: C** - Automated validation against schema; repair attempts are capped.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 4: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
-**Answer: A** - Automated validation against schema; repair attempts are capped.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 5: Which task is explicitly listed as a Beast Mode upgrade?
-**Answer: A** - Design a red-team set that tries to inject extra fields or instructions.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 6: A reviewer approves the mini-project when which condition is met?
-**Answer: C** - Schema documented with examples and failure handling.
+## Question 5: Which acceptance requirement protects review quality if enforced?
+**Answer: A** - Valid JSON for ≥95% of cases; clear handling for missing data.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 7: Which option is listed under Better work for this module?
+## Question 6: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: D** - Schema documented with examples and failure handling.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 7: Which Better action best demonstrates stronger engineering discipline?
 **Answer: C** - Add schema versioning notes and a migration plan.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 8: Which improvement moves a Core submission to the Better tier?
-**Answer: D** - Add a repair prompt that fixes invalid JSON without adding new information.
+## Question 8: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: D** - Design a red-team set that tries to inject extra fields or instructions.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 9: Which behavior is listed as a common mistake for this module?
-**Answer: A** - No plan for schema evolution.
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 10: Which step would keep the work within the Core scope?
+## Question 9: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: A** - Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 10: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
 **Answer: C** - Design a schema for customer support tickets (category, summary, urgency, actions).
 
 **Explanation:** This action is listed under the Core exercises for the module.

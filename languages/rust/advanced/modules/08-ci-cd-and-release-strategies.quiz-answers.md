@@ -1,69 +1,69 @@
 # Rust Advanced — Module 08: CI/CD and Release Strategies Quiz Answers
 
-## Question 1: Which option is listed under Better work for this module?
-**Answer: B** - Refactor one area for readability (without changing behavior) and prove it with tests.
+## Question 1: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
+**Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 2: To earn a Better evaluation, which action should you add?
-**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 3: A reviewer checks the Core checklist. Which action should they see?
-**Answer: D** - Add or update documentation (README notes or ADR-style notes).
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 4: Which item is explicitly required in the acceptance criteria?
-**Answer: C** - Deliverable runs locally with clear instructions.
+## Question 2: Which acceptance criterion acts as a release gate for this module?
+**Answer: B** - Uses consistent style/formatting and passes the quality gate.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 5: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
+## Question 3: A reviewer reports: CI has no automated test run before release. Which mistake does this reflect?
+**Answer: D** - Shipping without an automated test run in CI.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 4: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 5: Which outcome best captures the practical ability you should carry forward?
+**Answer: A** - Apply the concepts to a realistic codebase (not just toy examples).
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 6: You're pressed for time but still need a safe release. Which Core action must remain?
 **Answer: B** - Implement a small feature tied to this module in an existing starter app.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 6: Which action qualifies as a Beast Mode stretch?
-**Answer: D** - Add a performance or reliability improvement and measure the impact.
+## Question 7: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: A** - Add or update documentation (README notes or ADR-style notes).
 
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 7: Which testing requirement should you apply given this issue: database tests are polluting shared data?
-**Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
 ## Question 8: Which testing requirement should be verified in CI for this module?
-**Answer: D** - All work must be covered by fmt + clippy + tests in CI.
+**Answer: B** - All work must be covered by fmt + clippy + tests in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 9: This happened during review: bugs appear on unexpected inputs because validation was skipped. Which mistake is it?
-**Answer: D** - Skipping input validation and assuming “happy path”.
+## Question 9: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
-**Explanation:** This is listed in the Common Mistakes section to avoid.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 10: Your project passes review only if which condition is true?
+## Question 10: Which acceptance requirement most clearly blocks approval if missing?
 **Answer: B** - Includes tests appropriate for the feature.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.

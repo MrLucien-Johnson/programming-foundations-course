@@ -1,70 +1,70 @@
 # AI — Module 05: Guardrails and Safety Quiz Answers
 
-## Question 1: Which testing requirement should be verified in CI for this module?
-**Answer: A** - Safety tests are part of your evaluation harness.
-
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 2: Which step is explicitly called out as Better work?
-**Answer: C** - Design an escalation policy (route to human, block, or safe-complete).
-
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 3: Which option represents a Beast Mode enhancement?
-**Answer: A** - Add a privacy threat model for stored prompts/outputs.
-
-**Explanation:** This action is part of the Beast Mode upgrades.
-
----
-
-## Question 4: Which option represents a common mistake to avoid?
-**Answer: B** - Refusing too broadly instead of safe redirection.
+## Question 1: Which option represents a common mistake to avoid?
+**Answer: C** - Trusting user content as instructions.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 5: You already met Core. Which action qualifies as a Better upgrade?
-**Answer: D** - Add logging fields needed for audits (without storing sensitive content).
+## Question 2: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: D** - Add a privacy threat model for stored prompts/outputs.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 6: Which item is explicitly required in the acceptance criteria?
-**Answer: C** - Includes input/output controls and a documented fallback strategy.
+## Question 3: Which acceptance criterion acts as a release gate for this module?
+**Answer: D** - Includes input/output controls and a documented fallback strategy.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 7: Which task best matches the Core expectations for this module?
-**Answer: C** - Add prompt injection tests and verify proper refusal/containment.
+## Question 4: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: B** - Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 
-**Explanation:** This action is listed under the Core exercises for the module.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 8: A reviewer approves the mini-project when which condition is met?
+## Question 5: The work passes Core. Which improvement most clearly raises quality for reviewers?
+**Answer: B** - Design an escalation policy (route to human, block, or safe-complete).
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 6: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
 **Answer: D** - Includes a red-team dataset and a safety gate concept.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 9: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-**Answer: B** - Create a safety checklist for your chosen use case and apply it to 30 test cases.
+## Question 7: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: A** - Add prompt injection tests and verify proper refusal/containment.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 8: Which testing requirement should be verified in CI for this module?
+**Answer: A** - Safety tests are part of your evaluation harness.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 9: A production fix is urgent. Which Core action is still required before release?
+**Answer: A** - Create a safety checklist for your chosen use case and apply it to 30 test cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
 ## Question 10: Which requirement belongs in the testing checklist for this module?
-**Answer: D** - Safety tests are part of your evaluation harness.
+**Answer: C** - Safety tests are part of your evaluation harness.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 

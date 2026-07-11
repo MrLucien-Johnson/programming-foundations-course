@@ -6,9 +6,39 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 1: Which acceptance requirement protects review quality if enforced?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Add a performance or reliability improvement and measure the impact.
+C) Deliverable runs locally with clear instructions.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+### Question 2: Which acceptance criterion acts as a release gate for this module?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Uses consistent style/formatting and passes the quality gate.
+C) All work must be covered by build + tests + static analysis in CI.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which Better action best demonstrates stronger engineering discipline?
+A) Making performance claims without measurements.
+B) Explain the core concepts and tradeoffs for Testing and Quality.
+C) Add a performance or reliability improvement and measure the impact.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
 A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) If the module involves a database, tests must run against an isolated schema/database.
 C) Add a performance or reliability improvement and measure the impact.
 D) Use tooling to keep quality high: ktlint + detekt.
 
@@ -16,49 +46,49 @@ D) Use tooling to keep quality high: ktlint + detekt.
 
 ---
 
-### Question 2: You already met Core. Which action qualifies as a Better upgrade?
+### Question 5: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Skipping input validation and assuming “happy path”.
+C) All work must be covered by build + tests + static analysis in CI.
+D) Add a performance or reliability improvement and measure the impact.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: In a real code review, which outcome best reflects the skill you should demonstrate?
 A) Uses consistent style/formatting and passes the quality gate.
-B) Write tests that prove correctness and prevent regressions.
-C) Refactor one area for readability (without changing behavior) and prove it with tests.
-D) Implement a small feature tied to this module in an existing starter app.
+B) Includes tests appropriate for the feature.
+C) Explain the core concepts and tradeoffs for Testing and Quality.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which option is listed under Better work for this module?
-A) Explain the core concepts and tradeoffs for Testing and Quality.
-B) Apply the concepts to a realistic codebase (not just toy examples).
-C) Add a performance or reliability improvement and measure the impact.
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which item is explicitly required in the acceptance criteria?
-A) Apply the concepts to a realistic codebase (not just toy examples).
-B) Add a performance or reliability improvement and measure the impact.
-C) Uses consistent style/formatting and passes the quality gate.
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which task best matches the Core expectations for this module?
-A) Over-mocking (tests assert implementation details instead of outcomes).
+### Question 7: Which testing requirement should be verified in CI for this module?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 B) All work must be covered by build + tests + static analysis in CI.
-C) Implement a small feature tied to this module in an existing starter app.
-D) Includes tests appropriate for the feature.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Explain the core concepts and tradeoffs for Testing and Quality.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.
-B) Write tests that prove correctness and prevent regressions.
+### Question 8: Which Core action would a senior engineer insist on before approving the change?
+A) Includes tests appropriate for the feature.
+B) Implement a small feature tied to this module in an existing starter app.
+C) Making performance claims without measurements.
+D) Apply the concepts to a realistic codebase (not just toy examples).
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Your teammate says: bugs appear on unexpected inputs because validation was skipped. Which common mistake is this?
+A) All work must be covered by build + tests + static analysis in CI.
+B) Includes a short README section describing assumptions and tradeoffs.
 C) Skipping input validation and assuming “happy path”.
 D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
@@ -66,41 +96,11 @@ D) Introduce a quality gate (pre-commit hook or CI step) that prevents common re
 
 ---
 
-### Question 7: You're preparing a submission and need to meet the Core bar. Which action is required?
-A) Add or update documentation (README notes or ADR-style notes).
-B) Skipping input validation and assuming “happy path”.
-C) Document decisions and constraints clearly for reviewers.
-D) Add a performance or reliability improvement and measure the impact.
-
-**Your answer:** _______________
-
----
-
-### Question 8: To reach Beast Mode, which improvement should you choose?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.
-B) Add a performance or reliability improvement and measure the impact.
-C) Includes a short README section describing assumptions and tradeoffs.
-D) Includes tests appropriate for the feature.
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which testing requirement should be verified in CI for this module?
-A) All work must be covered by build + tests + static analysis in CI.
-B) Add a performance or reliability improvement and measure the impact.
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
-D) Shipping without an automated test run in CI.
-
-**Your answer:** _______________
-
----
-
-### Question 10: A reviewer approves the mini-project when which condition is met?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
-B) Includes a short README section describing assumptions and tradeoffs.
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-D) Document decisions and constraints clearly for reviewers.
+### Question 10: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Uses consistent style/formatting and passes the quality gate.
+B) All work must be covered by build + tests + static analysis in CI.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 

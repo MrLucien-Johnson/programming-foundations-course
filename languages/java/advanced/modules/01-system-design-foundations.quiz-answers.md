@@ -1,72 +1,72 @@
 # Java Advanced — Module 01: System Design Foundations Quiz Answers
 
-## Question 1: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
-**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
+## Question 1: Which Better action best demonstrates stronger engineering discipline?
+**Answer: C** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
-**Explanation:** This requirement appears in the Testing Requirements section.
-
----
-
-## Question 2: Which step would keep the work within the Core scope?
-**Answer: A** - Add or update documentation (README notes or ADR-style notes).
-
-**Explanation:** This action is listed under the Core exercises for the module.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 3: A reviewer approves the mini-project when which condition is met?
-**Answer: D** - Includes a short README section describing assumptions and tradeoffs.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
-
----
-
-## Question 4: Your teammate says: a performance claim was made without benchmarks. Which common mistake is this?
-**Answer: D** - Making performance claims without measurements.
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
-
----
-
-## Question 5: You're preparing a submission and need to meet the Core bar. Which action is required?
-**Answer: D** - Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 6: Which action qualifies as a Beast Mode stretch?
-**Answer: A** - Add a performance or reliability improvement and measure the impact.
+## Question 2: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: B** - Create a short write-up: what changed, why, and how you verified it.
 
 **Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 7: You already met Core. Which action qualifies as a Better upgrade?
-**Answer: A** - Refactor one area for readability (without changing behavior) and prove it with tests.
+## Question 3: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: B** - Implement a small feature tied to this module in an existing starter app.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 8: Which option is listed under Better work for this module?
-**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This is explicitly listed in the Better exercises section.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 9: A reviewer flags feature tests fail when hitting real boundaries. Which testing requirement resolves it?
-**Answer: B** - All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+## Question 4: Production validation failed because feature tests fail when hitting real boundaries. Which testing requirement would have prevented it?
+**Answer: D** - All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 10: Which requirement is part of the mini-project acceptance criteria?
-**Answer: D** - Includes tests appropriate for the feature.
+## Question 5: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+**Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 6: You're pressed for time but still need a safe release. Which Core action must remain?
+**Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 7: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: B** - Includes tests appropriate for the feature.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 8: Which acceptance criterion acts as a release gate for this module?
+**Answer: B** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 9: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: D** - Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 10: This happened during review: tests assert implementation details instead of outcomes. Which mistake is it?
+**Answer: D** - Over-mocking (tests assert implementation details instead of outcomes).
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 

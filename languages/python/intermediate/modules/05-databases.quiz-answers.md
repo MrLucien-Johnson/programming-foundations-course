@@ -1,72 +1,72 @@
 # Python Intermediate — Module 05: Databases Quiz Answers
 
-## Question 1: Which step is explicitly called out as Better work?
-**Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+## Question 1: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+**Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 2: Which acceptance criterion must be satisfied before submission?
-**Answer: D** - Includes tests appropriate for the feature.
-
-**Explanation:** This requirement appears in the mini-project acceptance criteria.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 3: You're preparing a submission and need to meet the Core bar. Which action is required?
-**Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Explanation:** This action is listed under the Core exercises for the module.
-
----
-
-## Question 4: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+## Question 2: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
 **Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 5: To satisfy the Core requirements, which step must be included?
-**Answer: A** - Implement a small feature tied to this module in an existing starter app.
+## Question 3: A production fix is urgent. Which Core action is still required before release?
+**Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 6: You already met Core. Which action qualifies as a Better upgrade?
-**Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 4: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: C** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
-**Explanation:** This is explicitly listed in the Better exercises section.
-
----
-
-## Question 7: Your teammate says: a performance claim was made without benchmarks. Which common mistake is this?
-**Answer: C** - Making performance claims without measurements.
-
-**Explanation:** This is listed in the Common Mistakes section to avoid.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 8: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
-**Answer: D** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+## Question 5: Which outcome represents a transferable software engineering skill?
+**Answer: C** - Document decisions and constraints clearly for reviewers.
 
-**Explanation:** This requirement appears in the Testing Requirements section.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 9: Your project passes review only if which condition is true?
-**Answer: A** - Uses consistent style/formatting and passes the quality gate.
+## Question 6: Which acceptance criterion acts as a release gate for this module?
+**Answer: C** - Uses consistent style/formatting and passes the quality gate.
 
 **Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 10: To reach Beast Mode, which improvement should you choose?
-**Answer: A** - Create a short write-up: what changed, why, and how you verified it.
+## Question 7: Which Core action would a senior engineer insist on before approving the change?
+**Answer: D** - Add or update documentation (README notes or ADR-style notes).
 
-**Explanation:** This action is part of the Beast Mode upgrades.
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 8: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: A** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 9: Your teammate says: bugs appear on unexpected inputs because validation was skipped. Which common mistake is this?
+**Answer: B** - Skipping input validation and assuming “happy path”.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 10: The work passes Core. Which improvement most clearly raises quality for reviewers?
+**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 

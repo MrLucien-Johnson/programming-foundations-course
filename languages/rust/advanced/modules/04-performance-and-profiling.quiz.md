@@ -6,101 +6,101 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which testing requirement must be satisfied before submission?
-A) All work must be covered by fmt + clippy + tests in CI.
-B) Add at least 3 focused unit tests that cover normal cases and edge cases.
-C) Implement a small feature tied to this module in an existing starter app.
-D) Making performance claims without measurements.
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which requirement is part of the mini-project acceptance criteria?
-A) Uses consistent style/formatting and passes the quality gate.
-B) If the module involves a database, tests must run against an isolated schema/database.
+### Question 1: Which acceptance requirement protects review quality if enforced?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Includes tests appropriate for the feature.
 C) All work must be covered by fmt + clippy + tests in CI.
-D) Skipping input validation and assuming “happy path”.
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which enhancement is a Better-level upgrade (not Beast Mode)?
-A) Add or update documentation (README notes or ADR-style notes).
-B) Add at least 3 focused unit tests that cover normal cases and edge cases.
-C) Document decisions and constraints clearly for reviewers.
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Your answer:** _______________
-
----
-
-### Question 4: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
-A) Apply the concepts to a realistic codebase (not just toy examples).
-B) Over-mocking (tests assert implementation details instead of outcomes).
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-D) Add at least 3 focused unit tests that cover normal cases and edge cases.
-
-**Your answer:** _______________
-
----
-
-### Question 5: Your project passes review only if which condition is true?
-A) Explain the core concepts and tradeoffs for Performance and Profiling.
+### Question 2: Which testing requirement should be verified in CI for this module?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
 B) All work must be covered by fmt + clippy + tests in CI.
-C) Use tooling to keep quality high: rustfmt + clippy.
-D) Includes tests appropriate for the feature.
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
-A) Add or update documentation (README notes or ADR-style notes).
-B) Uses consistent style/formatting and passes the quality gate.
-C) Add a performance or reliability improvement and measure the impact.
-D) Over-mocking (tests assert implementation details instead of outcomes).
-
-**Your answer:** _______________
-
----
-
-### Question 7: To satisfy the Core requirements, which step must be included?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-B) Create a short write-up: what changed, why, and how you verified it.
-C) Making performance claims without measurements.
+C) Uses consistent style/formatting and passes the quality gate.
 D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which action pushes the work into Beast Mode?
-A) Add a performance or reliability improvement and measure the impact.
-B) Apply the concepts to a realistic codebase (not just toy examples).
+### Question 3: Which acceptance criterion would a reviewer check first to approve the submission?
+A) Write tests that prove correctness and prevent regressions.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Skipping input validation and assuming “happy path”.
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which Better upgrade most improves maintainability or reliability?
+A) Create a short write-up: what changed, why, and how you verified it.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) All work must be covered by fmt + clippy + tests in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
+A) Skipping input validation and assuming “happy path”.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) All work must be covered by fmt + clippy + tests in CI.
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which testing requirement should you apply given this issue: database tests are polluting shared data?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Shipping without an automated test run in CI.
+D) Over-mocking (tests assert implementation details instead of outcomes).
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which Core action best reflects professional engineering practice in this situation?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which outcome best captures the practical ability you should carry forward?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Skipping input validation and assuming “happy path”.
 C) Explain the core concepts and tradeoffs for Performance and Profiling.
-D) Document decisions and constraints clearly for reviewers.
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
-A) Includes a short README section describing assumptions and tradeoffs.
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.
-C) Create a short write-up: what changed, why, and how you verified it.
-D) Add a performance or reliability improvement and measure the impact.
+### Question 9: Which Core action would a senior engineer insist on before approving the change?
+A) Shipping without an automated test run in CI.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Use tooling to keep quality high: rustfmt + clippy.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which option is listed under Better work for this module?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.
-B) Refactor one area for readability (without changing behavior) and prove it with tests.
-C) Includes tests appropriate for the feature.
-D) Add at least 3 focused unit tests that cover normal cases and edge cases.
+### Question 10: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) Add or update documentation (README notes or ADR-style notes).
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
