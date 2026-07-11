@@ -96,7 +96,7 @@ D) Document decisions and constraints clearly for reviewers.
 
 ---
 
-### Question 10: Which Better action best demonstrates stronger engineering discipline?
+### Question 10: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) If the module involves a database, tests must run against an isolated schema/database.
 B) Implement a small feature tied to this module in an existing starter app.
 C) Over-mocking (tests assert implementation details instead of outcomes).

@@ -49,7 +49,7 @@
 
 ---
 
-## Question 8: Which Better upgrade most improves maintainability or reliability?
+## Question 8: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -63,7 +63,7 @@
 
 ---
 
-## Question 10: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+## Question 10: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 **Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

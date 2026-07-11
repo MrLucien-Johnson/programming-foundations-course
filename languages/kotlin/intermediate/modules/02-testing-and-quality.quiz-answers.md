@@ -14,14 +14,14 @@
 
 ---
 
-## Question 3: Which Better action best demonstrates stronger engineering discipline?
+## Question 3: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: D** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 4: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+## Question 4: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 **Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -42,7 +42,7 @@
 
 ---
 
-## Question 7: Which testing requirement should be verified in CI for this module?
+## Question 7: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: B** - All work must be covered by build + tests + static analysis in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which Better upgrade most improves maintainability or reliability?
+### Question 1: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 B) Shipping without an automated test run in CI.
 C) Add a performance or reliability improvement and measure the impact.
@@ -86,7 +86,7 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ---
 
-### Question 9: Which testing requirement should be verified in CI for this module?
+### Question 9: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Refactor one area for readability (without changing behavior) and prove it with tests.
 B) All work must be covered by build + tests + analyzers in CI.
 C) Making performance claims without measurements.

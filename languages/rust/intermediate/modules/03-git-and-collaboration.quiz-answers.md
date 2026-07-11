@@ -1,13 +1,13 @@
 # Rust Intermediate — Module 03: Git and Collaboration Quiz Answers
 
-## Question 1: Which testing requirement should be verified in CI for this module?
+## Question 1: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: C** - All work must be covered by fmt + clippy + tests in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 2: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+## Question 2: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 **Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

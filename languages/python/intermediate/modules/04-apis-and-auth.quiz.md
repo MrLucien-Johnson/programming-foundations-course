@@ -86,7 +86,7 @@ D) Includes a short README section describing assumptions and tradeoffs.
 
 ---
 
-### Question 9: Which Better upgrade most improves maintainability or reliability?
+### Question 9: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Explain the core concepts and tradeoffs for APIs and Auth.
 B) Refactor one area for readability (without changing behavior) and prove it with tests.
 C) Includes a short README section describing assumptions and tradeoffs.

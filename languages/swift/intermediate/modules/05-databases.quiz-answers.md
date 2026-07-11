@@ -7,7 +7,7 @@
 
 ---
 
-## Question 2: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+## Question 2: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 **Answer: A** - All work must be covered by build + tests + lint/format in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

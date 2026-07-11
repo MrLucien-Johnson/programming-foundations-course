@@ -21,7 +21,7 @@
 
 ---
 
-## Question 4: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+## Question 4: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 **Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -49,7 +49,7 @@
 
 ---
 
-## Question 8: Which Better action best demonstrates stronger engineering discipline?
+## Question 8: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

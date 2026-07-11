@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which Better action best demonstrates stronger engineering discipline?
+### Question 1: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Deliverable runs locally with clear instructions.
 B) Making performance claims without measurements.
 C) Document decisions and constraints clearly for reviewers.

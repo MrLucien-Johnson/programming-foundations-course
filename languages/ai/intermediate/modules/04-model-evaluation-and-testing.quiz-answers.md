@@ -28,7 +28,7 @@
 
 ---
 
-## Question 5: Which Better action best demonstrates stronger engineering discipline?
+## Question 5: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: D** - Add a regression report format (what changed, what broke, why).
 
 **Explanation:** This is explicitly listed in the Better exercises section.

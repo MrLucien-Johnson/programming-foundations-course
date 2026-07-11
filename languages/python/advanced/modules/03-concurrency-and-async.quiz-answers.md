@@ -28,14 +28,14 @@
 
 ---
 
-## Question 5: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+## Question 5: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 **Answer: D** - All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 6: Which Better upgrade most improves maintainability or reliability?
+## Question 6: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.

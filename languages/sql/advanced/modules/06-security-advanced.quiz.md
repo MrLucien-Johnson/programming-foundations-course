@@ -16,7 +16,7 @@ D) Apply the concepts to a realistic codebase (not just toy examples).
 
 ---
 
-### Question 2: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+### Question 2: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 A) All work must be covered by migrations apply cleanly + pgTAP + SQL linting in CI.
 B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 C) Refactor one area for readability (without changing behavior) and prove it with tests.
@@ -96,7 +96,7 @@ D) Write tests that prove correctness and prevent regressions.
 
 ---
 
-### Question 10: Which Better action best demonstrates stronger engineering discipline?
+### Question 10: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 B) Create a short write-up: what changed, why, and how you verified it.
 C) Making performance claims without measurements.

@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which testing requirement should be verified in CI for this module?
+### Question 1: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Making performance claims without measurements.
 B) All work must be covered by build + tests + analyzers in CI.
 C) Apply the concepts to a realistic codebase (not just toy examples).

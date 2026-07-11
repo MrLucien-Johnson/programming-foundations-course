@@ -66,7 +66,7 @@ D) Add a “failure mode” test (timeouts, invalid input, concurrency, or parti
 
 ---
 
-### Question 7: Which Better upgrade most improves maintainability or reliability?
+### Question 7: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 B) Write tests that prove correctness and prevent regressions.
 C) Includes a short README section describing assumptions and tradeoffs.

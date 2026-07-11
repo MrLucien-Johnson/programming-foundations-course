@@ -7,7 +7,7 @@
 
 ---
 
-## Question 2: Which Better upgrade most improves maintainability or reliability?
+## Question 2: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: D** - Add stratified sampling (by category, language, customer tier).
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -42,21 +42,21 @@
 
 ---
 
-## Question 7: Which testing requirement must be satisfied before submission?
+## Question 7: A reviewer asks for testing evidence. Which requirement must you show?
 **Answer: D** - Runs are reproducible: versioned prompts, datasets, and scoring rules.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 8: Which testing requirement should be verified in CI for this module?
+## Question 8: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: B** - Runs are reproducible: versioned prompts, datasets, and scoring rules.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 9: Which behavior is listed as a common mistake for this module?
+## Question 9: During review, which behavior would be flagged as a common mistake?
 **Answer: A** - Relying only on live user feedback instead of proactive evals.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.

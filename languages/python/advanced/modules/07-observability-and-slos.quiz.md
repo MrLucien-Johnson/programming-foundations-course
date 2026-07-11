@@ -96,7 +96,7 @@ D) Over-mocking (tests assert implementation details instead of outcomes).
 
 ---
 
-### Question 10: Which Better upgrade most improves maintainability or reliability?
+### Question 10: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Refactor one area for readability (without changing behavior) and prove it with tests.
 B) Write tests that prove correctness and prevent regressions.
 C) Deliverable runs locally with clear instructions.

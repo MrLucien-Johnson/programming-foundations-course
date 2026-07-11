@@ -14,7 +14,7 @@
 
 ---
 
-## Question 3: Which Better upgrade most improves maintainability or reliability?
+## Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

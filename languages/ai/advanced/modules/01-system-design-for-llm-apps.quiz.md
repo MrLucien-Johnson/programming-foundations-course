@@ -66,7 +66,7 @@ D) Translate a vague request into a clear goal, constraints, and success criteri
 
 ---
 
-### Question 7: Which option represents a common mistake to avoid?
+### Question 7: Which option reflects a mistake a reviewer would call out?
 A) No plan for scaling or failure, leading to outages/cost spikes.
 B) Add a privacy-by-design plan (minimization, retention, access controls).
 C) Define SLOs for latency and quality with error budgets.
@@ -76,7 +76,7 @@ D) Create an architecture diagram and data flow for one LLM feature.
 
 ---
 
-### Question 8: Which Better upgrade most improves maintainability or reliability?
+### Question 8: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Build a small evaluation loop: test cases, metrics, and iteration notes.
 B) Identify failure modes and propose fallbacks for each.
 C) Add scaling considerations: caching layers, queues, and backpressure.

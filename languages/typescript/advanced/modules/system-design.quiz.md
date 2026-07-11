@@ -6,29 +6,9 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which deliverable would you send to a stakeholder as evidence of completion?
-A) performance profiling and optimization
-B) design notes with trade-offs
-C) API boundaries and layering
-D) reliability, logging, and observability
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which deliverable would satisfy the module expectations?
-A) API boundaries and layering
-B) profiling or benchmarking summary
-C) performance profiling and optimization
-D) reliability, logging, and observability
-
-**Your answer:** _______________
-
----
-
-### Question 3: A reviewer wants proof of work. Which deliverable should you hand them?
+### Question 1: Which deliverable would confirm the work is ready for review?
 A) reliability, logging, and observability
-B) profiling or benchmarking summary
+B) design notes with trade-offs
 C) API boundaries and layering
 D) performance profiling and optimization
 
@@ -36,27 +16,17 @@ D) performance profiling and optimization
 
 ---
 
-### Question 4: Which deliverable belongs to this module's expectations?
-A) performance profiling and optimization
-B) API boundaries and layering
-C) design notes with trade-offs
-D) reliability, logging, and observability
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which topic appears in this module?
-A) profiling or benchmarking summary
+### Question 2: Which deliverable would you send to a stakeholder as evidence of completion?
+A) reliability, logging, and observability
 B) design notes with trade-offs
-C) performance profiling and optimization
-D) Skip testing and trust the first result.
+C) API boundaries and layering
+D) performance profiling and optimization
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which topic would you use to guide a design discussion?
+### Question 3: Which topic would you use to guide a design discussion?
 A) Skip testing and trust the first result.
 B) reliability, logging, and observability
 C) profiling or benchmarking summary
@@ -66,17 +36,17 @@ D) design notes with trade-offs
 
 ---
 
-### Question 7: Which deliverable would you submit to complete this module?
-A) reliability, logging, and observability
-B) design notes with trade-offs
-C) performance profiling and optimization
-D) API boundaries and layering
+### Question 4: Which deliverable should be included before requesting approval?
+A) performance profiling and optimization
+B) API boundaries and layering
+C) profiling or benchmarking summary
+D) reliability, logging, and observability
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: A teammate needs help with a real project decision. Which topic should they revisit?
+### Question 5: A teammate needs help with a real project decision. Which topic should they revisit?
 A) profiling or benchmarking summary
 B) design notes with trade-offs
 C) performance profiling and optimization
@@ -86,21 +56,51 @@ D) Skip testing and trust the first result.
 
 ---
 
-### Question 9: Which topic would you point to when scoping a real-world solution?
+### Question 6: A reviewer wants proof of work. Which deliverable should you hand them?
 A) profiling or benchmarking summary
-B) design notes with trade-offs
-C) Skip testing and trust the first result.
+B) reliability, logging, and observability
+C) API boundaries and layering
+D) performance profiling and optimization
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which deliverable best demonstrates the engineering work was completed?
+A) reliability, logging, and observability
+B) performance profiling and optimization
+C) design notes with trade-offs
 D) API boundaries and layering
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which deliverable best demonstrates the engineering work was completed?
-A) performance profiling and optimization
-B) reliability, logging, and observability
+### Question 8: Which deliverable would you submit to close the work item?
+A) design notes with trade-offs
+B) performance profiling and optimization
 C) API boundaries and layering
+D) reliability, logging, and observability
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which topic is relevant when making this engineering decision?
+A) Skip testing and trust the first result.
+B) performance profiling and optimization
+C) profiling or benchmarking summary
 D) design notes with trade-offs
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which topic would you point to when scoping a real-world solution?
+A) profiling or benchmarking summary
+B) design notes with trade-offs
+C) Skip testing and trust the first result.
+D) API boundaries and layering
 
 **Your answer:** _______________
 

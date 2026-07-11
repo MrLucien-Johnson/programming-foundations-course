@@ -96,7 +96,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 10: Which Better action best demonstrates stronger engineering discipline?
+### Question 10: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Uses consistent style/formatting and passes the quality gate.
 B) Create a short write-up: what changed, why, and how you verified it.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.

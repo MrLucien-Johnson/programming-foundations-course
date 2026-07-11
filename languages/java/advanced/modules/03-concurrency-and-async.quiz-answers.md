@@ -28,7 +28,7 @@
 
 ---
 
-## Question 5: Which Better upgrade most improves maintainability or reliability?
+## Question 5: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: A** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -56,7 +56,7 @@
 
 ---
 
-## Question 9: Your tests are blocked by feature tests fail when hitting real boundaries. Which requirement should you enforce?
+## Question 9: Your tests are blocked because feature tests fail when hitting real boundaries. Which requirement should you enforce?
 **Answer: C** - All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

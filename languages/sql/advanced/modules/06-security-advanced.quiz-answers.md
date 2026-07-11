@@ -7,7 +7,7 @@
 
 ---
 
-## Question 2: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+## Question 2: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 **Answer: A** - All work must be covered by migrations apply cleanly + pgTAP + SQL linting in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -63,7 +63,7 @@
 
 ---
 
-## Question 10: Which Better action best demonstrates stronger engineering discipline?
+## Question 10: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.

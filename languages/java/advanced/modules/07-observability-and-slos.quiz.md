@@ -26,7 +26,7 @@ D) Write tests that prove correctness and prevent regressions.
 
 ---
 
-### Question 3: Which Better upgrade most improves maintainability or reliability?
+### Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 B) Skipping input validation and assuming “happy path”.
 C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).

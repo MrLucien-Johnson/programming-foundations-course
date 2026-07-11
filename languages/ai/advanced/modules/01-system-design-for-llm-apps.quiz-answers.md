@@ -42,14 +42,14 @@
 
 ---
 
-## Question 7: Which option represents a common mistake to avoid?
+## Question 7: Which option reflects a mistake a reviewer would call out?
 **Answer: A** - No plan for scaling or failure, leading to outages/cost spikes.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 8: Which Better upgrade most improves maintainability or reliability?
+## Question 8: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: C** - Add scaling considerations: caching layers, queues, and backpressure.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

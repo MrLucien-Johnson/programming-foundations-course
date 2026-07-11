@@ -36,7 +36,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 4: Which testing requirement must be satisfied before submission?
+### Question 4: A reviewer asks for testing evidence. Which requirement must you show?
 A) All work must be covered by build + tests + static analysis in CI.
 B) Add or update documentation (README notes or ADR-style notes).
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.

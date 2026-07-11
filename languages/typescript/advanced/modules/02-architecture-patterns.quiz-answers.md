@@ -35,7 +35,7 @@
 
 ---
 
-## Question 6: Which Better action best demonstrates stronger engineering discipline?
+## Question 6: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: D** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

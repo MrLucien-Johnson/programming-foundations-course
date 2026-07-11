@@ -7,7 +7,7 @@
 
 ---
 
-## Question 2: Which Better upgrade most improves maintainability or reliability?
+## Question 2: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: B** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -28,7 +28,7 @@
 
 ---
 
-## Question 5: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+## Question 5: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 **Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

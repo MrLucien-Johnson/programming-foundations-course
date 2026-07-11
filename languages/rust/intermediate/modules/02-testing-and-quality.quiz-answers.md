@@ -28,7 +28,7 @@
 
 ---
 
-## Question 5: Which requirement belongs in the testing checklist for this module?
+## Question 5: Which testing requirement would you verify in CI before approving the change?
 **Answer: D** - All work must be covered by fmt + clippy + tests in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

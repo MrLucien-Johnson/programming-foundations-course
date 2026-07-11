@@ -7,7 +7,7 @@
 
 ---
 
-## Question 2: Which Better action best demonstrates stronger engineering discipline?
+## Question 2: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: C** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -42,7 +42,7 @@
 
 ---
 
-## Question 7: Which requirement belongs in the testing checklist for this module?
+## Question 7: Which testing requirement would you verify in CI before approving the change?
 **Answer: D** - All work must be covered by build + tests + static analysis in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

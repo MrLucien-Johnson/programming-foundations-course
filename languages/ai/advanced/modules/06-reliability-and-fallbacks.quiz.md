@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which option represents a common mistake to avoid?
+### Question 1: Which option reflects a mistake a reviewer would call out?
 A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 B) Add degraded-mode rules (abstain, ask, cached answer).
 C) Define retry budgets and stop conditions.
@@ -36,7 +36,7 @@ D) Fallback strategy is explicit, testable, and tied to budgets/SLOs.
 
 ---
 
-### Question 4: Which Better action best demonstrates stronger engineering discipline?
+### Question 4: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 B) Define retry budgets and stop conditions.
 C) Fallback strategy is explicit, testable, and tied to budgets/SLOs.
@@ -76,7 +76,7 @@ D) Define retry budgets and stop conditions.
 
 ---
 
-### Question 8: Which testing requirement should be verified in CI for this module?
+### Question 8: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Add failure-injection tests to your harness (simulate outages/timeouts).
 B) Define retry budgets and stop conditions.
 C) Design a fallback strategy for each top failure mode (model down, retrieval empty, tool error).
@@ -86,7 +86,7 @@ D) Harness includes simulated failures and verifies safe behavior.
 
 ---
 
-### Question 9: Which testing requirement must be satisfied before submission?
+### Question 9: A reviewer asks for testing evidence. Which requirement must you show?
 A) Harness includes simulated failures and verifies safe behavior.
 B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 C) Build a small evaluation loop: test cases, metrics, and iteration notes.

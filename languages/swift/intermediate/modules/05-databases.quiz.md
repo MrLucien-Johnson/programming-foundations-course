@@ -16,7 +16,7 @@ D) Document decisions and constraints clearly for reviewers.
 
 ---
 
-### Question 2: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+### Question 2: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 A) All work must be covered by build + tests + lint/format in CI.
 B) Add a performance or reliability improvement and measure the impact.
 C) Refactor one area for readability (without changing behavior) and prove it with tests.

@@ -86,7 +86,7 @@ D) Deliverable runs locally with clear instructions.
 
 ---
 
-### Question 9: Which Better action best demonstrates stronger engineering discipline?
+### Question 9: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Document decisions and constraints clearly for reviewers.
 B) Shipping without an automated test run in CI.
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).

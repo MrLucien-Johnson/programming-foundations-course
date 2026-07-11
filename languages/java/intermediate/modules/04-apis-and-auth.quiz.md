@@ -56,7 +56,7 @@ D) Deliverable runs locally with clear instructions.
 
 ---
 
-### Question 6: Which Better action best demonstrates stronger engineering discipline?
+### Question 6: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Write tests that prove correctness and prevent regressions.
 B) Document decisions and constraints clearly for reviewers.
 C) Refactor one area for readability (without changing behavior) and prove it with tests.
@@ -86,7 +86,7 @@ D) Introduce a quality gate (pre-commit hook or CI step) that prevents common re
 
 ---
 
-### Question 9: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 9: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) If the module involves a database, tests must run against an isolated schema/database.
 B) Deliverable runs locally with clear instructions.
 C) Includes tests appropriate for the feature.

@@ -66,7 +66,7 @@ D) Add a performance or reliability improvement and measure the impact.
 
 ---
 
-### Question 7: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+### Question 7: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 A) Refactor one area for readability (without changing behavior) and prove it with tests.
 B) Skipping input validation and assuming “happy path”.
 C) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.

@@ -86,7 +86,7 @@ D) Over-mocking (tests assert implementation details instead of outcomes).
 
 ---
 
-### Question 9: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 9: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Write tests that prove correctness and prevent regressions.
 B) Includes a short README section describing assumptions and tradeoffs.
 C) Deliverable runs locally with clear instructions.

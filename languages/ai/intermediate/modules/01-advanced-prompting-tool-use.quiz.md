@@ -46,7 +46,7 @@ D) Translate a vague request into a clear goal, constraints, and success criteri
 
 ---
 
-### Question 5: Which Better upgrade most improves maintainability or reliability?
+### Question 5: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Translate a vague request into a clear goal, constraints, and success criteria.
 B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 C) Add a verification step: check that tool output matches the request before replying.
@@ -56,7 +56,7 @@ D) Design an audit log schema for tool calls (who/what/when/why).
 
 ---
 
-### Question 6: Which requirement belongs in the testing checklist for this module?
+### Question 6: Which testing requirement would you verify in CI before approving the change?
 A) Includes an eval set of at least 20 cases, including failures.
 B) Document and version changes so improvements are explainable.
 C) End-to-end workflow tested with simulated tool failures and timeouts.
@@ -86,7 +86,7 @@ D) Document and version changes so improvements are explainable.
 
 ---
 
-### Question 9: Which testing requirement must be satisfied before submission?
+### Question 9: A reviewer asks for testing evidence. Which requirement must you show?
 A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 B) Design prompts that choose between: answer, ask clarifying question, or call tool.
 C) End-to-end workflow tested with simulated tool failures and timeouts.
@@ -96,7 +96,7 @@ D) Document and version changes so improvements are explainable.
 
 ---
 
-### Question 10: Which behavior is listed as a common mistake for this module?
+### Question 10: During review, which behavior would be flagged as a common mistake?
 A) Add retry rules with budgets and explicit error messages.
 B) Letting the model call tools with missing/ambiguous parameters.
 C) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.

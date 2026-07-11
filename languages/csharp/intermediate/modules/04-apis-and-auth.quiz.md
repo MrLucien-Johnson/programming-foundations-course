@@ -46,7 +46,7 @@ D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 ---
 
-### Question 5: Which testing requirement should be verified in CI for this module?
+### Question 5: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) All work must be covered by build + tests + analyzers in CI.
 B) Explain the core concepts and tradeoffs for APIs and Auth.
 C) Create a short write-up: what changed, why, and how you verified it.
@@ -76,7 +76,7 @@ D) If the module involves a database, tests must run against an isolated schema/
 
 ---
 
-### Question 8: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 8: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Apply the concepts to a realistic codebase (not just toy examples).
 B) Tests must be deterministic (no flakes) and runnable by a reviewer.
 C) Includes tests appropriate for the feature.
@@ -86,7 +86,7 @@ D) Add or update documentation (README notes or ADR-style notes).
 
 ---
 
-### Question 9: Which Better action best demonstrates stronger engineering discipline?
+### Question 9: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Making performance claims without measurements.
 B) Over-mocking (tests assert implementation details instead of outcomes).
 C) Implement a small feature tied to this module in an existing starter app.

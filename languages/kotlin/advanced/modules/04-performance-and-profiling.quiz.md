@@ -16,7 +16,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 2: Which Better upgrade most improves maintainability or reliability?
+### Question 2: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Tests must be deterministic (no flakes) and runnable by a reviewer.
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 C) Making performance claims without measurements.
@@ -96,7 +96,7 @@ D) Add a performance or reliability improvement and measure the impact.
 
 ---
 
-### Question 10: Which testing requirement must be satisfied before submission?
+### Question 10: A reviewer asks for testing evidence. Which requirement must you show?
 A) Includes a short README section describing assumptions and tradeoffs.
 B) All work must be covered by build + tests + static analysis in CI.
 C) Use tooling to keep quality high: ktlint + detekt.

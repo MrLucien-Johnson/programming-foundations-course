@@ -36,7 +36,7 @@ D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduc
 
 ---
 
-### Question 4: Which testing requirement should be verified in CI for this module?
+### Question 4: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) No citation requirement, leading to confident hallucinations.
 B) Track retrieval failures separately from generation failures.
 C) Includes a question set and a scoring rubric.
@@ -56,7 +56,7 @@ D) Chunking without metadata, making filtering impossible.
 
 ---
 
-### Question 6: Which option represents a common mistake to avoid?
+### Question 6: Which option reflects a mistake a reviewer would call out?
 A) No citation requirement, leading to confident hallucinations.
 B) Build a small evaluation loop: test cases, metrics, and iteration notes.
 C) Add a “no evidence → abstain” rule and test hallucination reduction.
@@ -66,7 +66,7 @@ D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduc
 
 ---
 
-### Question 7: Which requirement belongs in the testing checklist for this module?
+### Question 7: Which testing requirement would you verify in CI before approving the change?
 A) At minimum: manual scoring with a rubric; better: scripted scoring of citations/abstentions.
 B) Document and version changes so improvements are explainable.
 C) Chunking without metadata, making filtering impossible.

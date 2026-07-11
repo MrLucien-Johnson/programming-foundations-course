@@ -46,7 +46,7 @@ D) Over-mocking (tests assert implementation details instead of outcomes).
 
 ---
 
-### Question 5: Which testing requirement must be satisfied before submission?
+### Question 5: A reviewer asks for testing evidence. Which requirement must you show?
 A) Use tooling to keep quality high: dotnet format + analyzers.
 B) Includes tests appropriate for the feature.
 C) All work must be covered by build + tests + analyzers in CI.
@@ -96,7 +96,7 @@ D) Introduce a quality gate (pre-commit hook or CI step) that prevents common re
 
 ---
 
-### Question 10: Which Better upgrade most improves maintainability or reliability?
+### Question 10: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Uses consistent style/formatting and passes the quality gate.
 B) Use tooling to keep quality high: dotnet format + analyzers.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.

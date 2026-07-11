@@ -26,7 +26,7 @@ D) Refactor one area for readability (without changing behavior) and prove it wi
 
 ---
 
-### Question 3: Which Better upgrade most improves maintainability or reliability?
+### Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 B) Shipping without an automated test run in CI.
 C) Apply the concepts to a realistic codebase (not just toy examples).
@@ -56,7 +56,7 @@ D) Write tests that prove correctness and prevent regressions.
 
 ---
 
-### Question 6: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 6: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Uses consistent style/formatting and passes the quality gate.
 B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 C) Tests must be deterministic (no flakes) and runnable by a reviewer.

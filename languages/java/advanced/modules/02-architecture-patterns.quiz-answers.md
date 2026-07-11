@@ -14,7 +14,7 @@
 
 ---
 
-## Question 3: Which Better upgrade most improves maintainability or reliability?
+## Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: A** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -35,7 +35,7 @@
 
 ---
 
-## Question 6: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+## Question 6: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 **Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

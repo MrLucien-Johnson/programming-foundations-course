@@ -1,6 +1,6 @@
 # Kotlin Advanced — Module 08: CI/CD and Release Strategies Quiz Answers
 
-## Question 1: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+## Question 1: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 **Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -14,7 +14,7 @@
 
 ---
 
-## Question 3: Which requirement belongs in the testing checklist for this module?
+## Question 3: Which testing requirement would you verify in CI before approving the change?
 **Answer: D** - All work must be covered by build + tests + static analysis in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

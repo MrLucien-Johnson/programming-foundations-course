@@ -36,7 +36,7 @@ D) All work must be covered by fmt + clippy + tests in CI.
 
 ---
 
-### Question 4: Which Better upgrade most improves maintainability or reliability?
+### Question 4: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Implement a small feature tied to this module in an existing starter app.
 B) Refactor one area for readability (without changing behavior) and prove it with tests.
 C) Making performance claims without measurements.

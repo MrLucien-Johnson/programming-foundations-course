@@ -26,7 +26,7 @@ D) Introduce a quality gate (pre-commit hook or CI step) that prevents common re
 
 ---
 
-### Question 3: Which Better action best demonstrates stronger engineering discipline?
+### Question 3: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 B) Add at least 3 focused unit tests that cover normal cases and edge cases.
 C) Deliverable runs locally with clear instructions.

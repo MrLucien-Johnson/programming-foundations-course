@@ -56,7 +56,7 @@ D) Explain the core concepts and tradeoffs for APIs and Auth.
 
 ---
 
-### Question 6: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 6: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) Add or update documentation (README notes or ADR-style notes).
 B) If the module involves a database, tests must run against an isolated schema/database.
 C) Document decisions and constraints clearly for reviewers.
@@ -86,7 +86,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 9: Which Better action best demonstrates stronger engineering discipline?
+### Question 9: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Includes a short README section describing assumptions and tradeoffs.
 B) Add a performance or reliability improvement and measure the impact.
 C) Implement a small feature tied to this module in an existing starter app.

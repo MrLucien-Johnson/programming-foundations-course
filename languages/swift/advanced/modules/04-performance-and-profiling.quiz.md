@@ -36,7 +36,7 @@ D) Explain the core concepts and tradeoffs for Performance and Profiling.
 
 ---
 
-### Question 4: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+### Question 4: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 A) Add a performance or reliability improvement and measure the impact.
 B) Includes tests appropriate for the feature.
 C) Implement a small feature tied to this module in an existing starter app.
@@ -56,7 +56,7 @@ D) Add or update documentation (README notes or ADR-style notes).
 
 ---
 
-### Question 6: Which Better upgrade most improves maintainability or reliability?
+### Question 6: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Document decisions and constraints clearly for reviewers.
 B) Refactor one area for readability (without changing behavior) and prove it with tests.
 C) Uses consistent style/formatting and passes the quality gate.

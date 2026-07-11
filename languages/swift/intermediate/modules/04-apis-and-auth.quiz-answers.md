@@ -21,7 +21,7 @@
 
 ---
 
-## Question 4: Which Better action best demonstrates stronger engineering discipline?
+## Question 4: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.

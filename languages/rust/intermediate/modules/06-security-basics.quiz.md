@@ -26,7 +26,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 3: Which Better upgrade most improves maintainability or reliability?
+### Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Apply the concepts to a realistic codebase (not just toy examples).
 B) Skipping input validation and assuming “happy path”.
 C) Making performance claims without measurements.
@@ -66,7 +66,7 @@ D) All work must be covered by fmt + clippy + tests in CI.
 
 ---
 
-### Question 7: Which requirement belongs in the testing checklist for this module?
+### Question 7: Which testing requirement would you verify in CI before approving the change?
 A) All work must be covered by fmt + clippy + tests in CI.
 B) Document decisions and constraints clearly for reviewers.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.

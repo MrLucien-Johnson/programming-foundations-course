@@ -7,7 +7,7 @@
 
 ---
 
-## Question 2: Which option represents a common mistake to avoid?
+## Question 2: Which option reflects a mistake a reviewer would call out?
 **Answer: A** - No verification step—agent confidently ships wrong results.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
@@ -35,14 +35,14 @@
 
 ---
 
-## Question 6: Which testing requirement should be verified in CI for this module?
+## Question 6: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: D** - Agent tested with simulated failures (tool down, partial data, conflicting instructions).
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 7: Which testing requirement must be satisfied before submission?
+## Question 7: A reviewer asks for testing evidence. Which requirement must you show?
 **Answer: A** - Agent tested with simulated failures (tool down, partial data, conflicting instructions).
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -56,7 +56,7 @@
 
 ---
 
-## Question 9: Which Better action best demonstrates stronger engineering discipline?
+## Question 9: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: A** - Add a “human approval” checkpoint for high-risk actions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

@@ -6,19 +6,9 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which topic is called out in this module?
-A) profiling or benchmarking summary
-B) reliability, logging, and observability
-C) Skip testing and trust the first result.
-D) design notes with trade-offs
-
-**Your answer:** _______________
-
----
-
-### Question 2: A teammate needs help with a real project decision. Which topic should they revisit?
+### Question 1: Which topic would you point to when describing this module's focus?
 A) Skip testing and trust the first result.
-B) reliability, logging, and observability
+B) performance profiling and optimization
 C) profiling or benchmarking summary
 D) design notes with trade-offs
 
@@ -26,7 +16,17 @@ D) design notes with trade-offs
 
 ---
 
-### Question 3: Which topic is on the module outline?
+### Question 2: A teammate needs help with a project decision. Which topic should they revisit?
+A) profiling or benchmarking summary
+B) design notes with trade-offs
+C) Skip testing and trust the first result.
+D) reliability, logging, and observability
+
+**Your answer:** _______________
+
+---
+
+### Question 3: Which topic is relevant when making this engineering decision?
 A) profiling or benchmarking summary
 B) API boundaries and layering
 C) design notes with trade-offs
@@ -36,19 +36,19 @@ D) Skip testing and trust the first result.
 
 ---
 
-### Question 4: Which deliverable would you send to a stakeholder as evidence of completion?
-A) API boundaries and layering
+### Question 4: A teammate needs help with a real project decision. Which topic should they revisit?
+A) Skip testing and trust the first result.
 B) reliability, logging, and observability
-C) performance profiling and optimization
-D) profiling or benchmarking summary
+C) profiling or benchmarking summary
+D) design notes with trade-offs
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which deliverable best demonstrates the engineering work was completed?
+### Question 5: Which deliverable would you send to a stakeholder as evidence of completion?
 A) performance profiling and optimization
-B) design notes with trade-offs
+B) profiling or benchmarking summary
 C) API boundaries and layering
 D) reliability, logging, and observability
 
@@ -56,11 +56,11 @@ D) reliability, logging, and observability
 
 ---
 
-### Question 6: Which topic is part of the module's coverage?
-A) profiling or benchmarking summary
-B) design notes with trade-offs
-C) performance profiling and optimization
-D) Skip testing and trust the first result.
+### Question 6: Which deliverable best demonstrates the engineering work was completed?
+A) performance profiling and optimization
+B) reliability, logging, and observability
+C) profiling or benchmarking summary
+D) API boundaries and layering
 
 **Your answer:** _______________
 
@@ -76,30 +76,30 @@ D) Skip testing and trust the first result.
 
 ---
 
-### Question 8: A reviewer wants proof of work. Which deliverable should you hand them?
-A) reliability, logging, and observability
-B) performance profiling and optimization
-C) API boundaries and layering
-D) profiling or benchmarking summary
+### Question 8: Which topic should you reference when planning the solution?
+A) Skip testing and trust the first result.
+B) profiling or benchmarking summary
+C) reliability, logging, and observability
+D) design notes with trade-offs
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which topic would you point to when scoping a real-world solution?
+### Question 9: A reviewer wants proof of work. Which deliverable should you hand them?
+A) API boundaries and layering
+B) reliability, logging, and observability
+C) design notes with trade-offs
+D) performance profiling and optimization
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which topic would you point to when scoping a real-world solution?
 A) performance profiling and optimization
 B) Skip testing and trust the first result.
 C) design notes with trade-offs
-D) profiling or benchmarking summary
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which topic is covered in this module?
-A) design notes with trade-offs
-B) Skip testing and trust the first result.
-C) reliability, logging, and observability
 D) profiling or benchmarking summary
 
 **Your answer:** _______________

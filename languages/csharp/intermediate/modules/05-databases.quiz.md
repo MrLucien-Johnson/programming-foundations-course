@@ -26,7 +26,7 @@ D) Includes tests appropriate for the feature.
 
 ---
 
-### Question 3: Which Better upgrade most improves maintainability or reliability?
+### Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Implement a small feature tied to this module in an existing starter app.
 B) Includes tests appropriate for the feature.
 C) Apply the concepts to a realistic codebase (not just toy examples).
@@ -96,7 +96,7 @@ D) Shipping without an automated test run in CI.
 
 ---
 
-### Question 10: Which testing requirement should be verified in CI for this module?
+### Question 10: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Create a short write-up: what changed, why, and how you verified it.
 B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 C) All work must be covered by build + tests + analyzers in CI.

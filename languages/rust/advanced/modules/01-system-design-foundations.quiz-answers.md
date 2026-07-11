@@ -1,6 +1,6 @@
 # Rust Advanced — Module 01: System Design Foundations Quiz Answers
 
-## Question 1: Which Better upgrade most improves maintainability or reliability?
+## Question 1: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

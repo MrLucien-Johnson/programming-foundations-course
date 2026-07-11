@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 1: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) Includes tests appropriate for the feature.
 B) Add at least 3 focused unit tests that cover normal cases and edge cases.
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
@@ -26,7 +26,7 @@ D) Introduce a quality gate (pre-commit hook or CI step) that prevents common re
 
 ---
 
-### Question 3: Which Better upgrade most improves maintainability or reliability?
+### Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Includes tests appropriate for the feature.
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 C) Over-mocking (tests assert implementation details instead of outcomes).

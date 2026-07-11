@@ -56,7 +56,7 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ---
 
-### Question 6: Which Better upgrade most improves maintainability or reliability?
+### Question 6: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) All work must be covered by gofmt + lint + tests in CI.
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 C) Explain the core concepts and tradeoffs for Testing and Quality.

@@ -35,7 +35,7 @@
 
 ---
 
-## Question 6: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+## Question 6: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 **Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -63,7 +63,7 @@
 
 ---
 
-## Question 10: Which requirement belongs in the testing checklist for this module?
+## Question 10: Which testing requirement would you verify in CI before approving the change?
 **Answer: A** - All work must be covered by build + tests + static analysis in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

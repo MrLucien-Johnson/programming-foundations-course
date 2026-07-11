@@ -7,7 +7,7 @@
 
 ---
 
-## Question 2: Which requirement belongs in the testing checklist for this module?
+## Question 2: Which testing requirement would you verify in CI before approving the change?
 **Answer: C** - All work must be covered by fmt + clippy + tests in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -49,7 +49,7 @@
 
 ---
 
-## Question 8: Which Better action best demonstrates stronger engineering discipline?
+## Question 8: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which Better upgrade most improves maintainability or reliability?
+### Question 1: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Add communication templates (internal + user-facing) for common incidents.
 B) Mitigations that increase risk (e.g., disabling safety checks).
 C) Build a small evaluation loop: test cases, metrics, and iteration notes.
@@ -16,7 +16,7 @@ D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduc
 
 ---
 
-### Question 2: Which option represents a common mistake to avoid?
+### Question 2: Which option reflects a mistake a reviewer would call out?
 A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 B) Document and version changes so improvements are explainable.
 C) No clear ownership or steps during incidents.
@@ -36,7 +36,7 @@ D) Document and version changes so improvements are explainable.
 
 ---
 
-### Question 4: Which requirement belongs in the testing checklist for this module?
+### Question 4: Which testing requirement would you verify in CI before approving the change?
 A) Incidents are tested via drills; playbooks are updated based on results.
 B) Add communication templates (internal + user-facing) for common incidents.
 C) Design a post-incident improvement loop: update evals + guardrails.
@@ -46,7 +46,7 @@ D) Mitigations that increase risk (e.g., disabling safety checks).
 
 ---
 
-### Question 5: Which testing requirement should be verified in CI for this module?
+### Question 5: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Incidents are tested via drills; playbooks are updated based on results.
 B) Includes detection signals, mitigations, and follow-up prevention work.
 C) Add automated detection rules that trigger playbook steps.

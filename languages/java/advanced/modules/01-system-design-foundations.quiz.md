@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which Better action best demonstrates stronger engineering discipline?
+### Question 1: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Implement a small feature tied to this module in an existing starter app.
 B) Includes a short README section describing assumptions and tradeoffs.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.

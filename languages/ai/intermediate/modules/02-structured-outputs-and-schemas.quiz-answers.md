@@ -14,7 +14,7 @@
 
 ---
 
-## Question 3: Which behavior is listed as a common mistake for this module?
+## Question 3: During review, which behavior would be flagged as a common mistake?
 **Answer: C** - No plan for schema evolution.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
@@ -42,7 +42,7 @@
 
 ---
 
-## Question 7: Which Better action best demonstrates stronger engineering discipline?
+## Question 7: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: C** - Add schema versioning notes and a migration plan.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

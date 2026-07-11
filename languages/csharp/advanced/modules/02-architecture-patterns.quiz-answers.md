@@ -14,7 +14,7 @@
 
 ---
 
-## Question 3: Which requirement belongs in the testing checklist for this module?
+## Question 3: Which testing requirement would you verify in CI before approving the change?
 **Answer: D** - All work must be covered by build + tests + analyzers in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

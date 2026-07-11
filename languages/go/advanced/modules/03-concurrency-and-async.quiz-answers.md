@@ -1,6 +1,6 @@
 # Go Advanced — Module 03: Concurrency and Async Quiz Answers
 
-## Question 1: Which Better upgrade most improves maintainability or reliability?
+## Question 1: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: C** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -21,7 +21,7 @@
 
 ---
 
-## Question 4: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+## Question 4: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 **Answer: A** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

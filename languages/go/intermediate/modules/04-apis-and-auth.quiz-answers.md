@@ -49,7 +49,7 @@
 
 ---
 
-## Question 8: Which Better upgrade most improves maintainability or reliability?
+## Question 8: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: A** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

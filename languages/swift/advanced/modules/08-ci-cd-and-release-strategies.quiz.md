@@ -86,7 +86,7 @@ D) Deliverable runs locally with clear instructions.
 
 ---
 
-### Question 9: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 9: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Add at least 3 focused unit tests that cover normal cases and edge cases.
 B) Add a performance or reliability improvement and measure the impact.
 C) Tests must be deterministic (no flakes) and runnable by a reviewer.

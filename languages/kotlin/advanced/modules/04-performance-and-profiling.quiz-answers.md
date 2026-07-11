@@ -7,7 +7,7 @@
 
 ---
 
-## Question 2: Which Better upgrade most improves maintainability or reliability?
+## Question 2: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -63,7 +63,7 @@
 
 ---
 
-## Question 10: Which testing requirement must be satisfied before submission?
+## Question 10: A reviewer asks for testing evidence. Which requirement must you show?
 **Answer: B** - All work must be covered by build + tests + static analysis in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

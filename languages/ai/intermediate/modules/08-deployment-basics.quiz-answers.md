@@ -14,21 +14,21 @@
 
 ---
 
-## Question 3: Which testing requirement should be verified in CI for this module?
+## Question 3: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: C** - Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 4: Which testing requirement must be satisfied before submission?
+## Question 4: A reviewer asks for testing evidence. Which requirement must you show?
 **Answer: B** - Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 5: Which Better action best demonstrates stronger engineering discipline?
+## Question 5: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: C** - Add a smoke test plan for your most important flows.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -56,7 +56,7 @@
 
 ---
 
-## Question 9: Which behavior is listed as a common mistake for this module?
+## Question 9: During review, which behavior would be flagged as a common mistake?
 **Answer: D** - No plan for incidents or user-reported failures.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.

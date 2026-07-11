@@ -86,7 +86,7 @@ D) If the module involves a database, tests must run against an isolated schema/
 
 ---
 
-### Question 9: Which requirement belongs in the testing checklist for this module?
+### Question 9: Which testing requirement would you verify in CI before approving the change?
 A) Explain the core concepts and tradeoffs for Architecture Patterns.
 B) All work must be covered by build + tests + static analysis in CI.
 C) Over-mocking (tests assert implementation details instead of outcomes).

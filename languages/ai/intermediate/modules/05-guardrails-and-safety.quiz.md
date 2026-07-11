@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which option represents a common mistake to avoid?
+### Question 1: Which option reflects a mistake a reviewer would call out?
 A) Includes a red-team dataset and a safety gate concept.
 B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 C) Trusting user content as instructions.
@@ -76,7 +76,7 @@ D) Translate a vague request into a clear goal, constraints, and success criteri
 
 ---
 
-### Question 8: Which testing requirement should be verified in CI for this module?
+### Question 8: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Safety tests are part of your evaluation harness.
 B) Translate a vague request into a clear goal, constraints, and success criteria.
 C) Design a “safety gate” in CI: fail if safety tests regress.
@@ -96,7 +96,7 @@ D) Design an escalation policy (route to human, block, or safe-complete).
 
 ---
 
-### Question 10: Which requirement belongs in the testing checklist for this module?
+### Question 10: Which testing requirement would you verify in CI before approving the change?
 A) Document and version changes so improvements are explainable.
 B) Create a safety checklist for your chosen use case and apply it to 30 test cases.
 C) Safety tests are part of your evaluation harness.

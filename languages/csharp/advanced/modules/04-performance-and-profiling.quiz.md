@@ -36,7 +36,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 4: Which requirement belongs in the testing checklist for this module?
+### Question 4: Which testing requirement would you verify in CI before approving the change?
 A) All work must be covered by build + tests + analyzers in CI.
 B) Skipping input validation and assuming “happy path”.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.

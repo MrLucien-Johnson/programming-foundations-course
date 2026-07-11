@@ -36,7 +36,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 4: Which Better action best demonstrates stronger engineering discipline?
+### Question 4: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 B) Refactor one area for readability (without changing behavior) and prove it with tests.
 C) Write tests that prove correctness and prevent regressions.

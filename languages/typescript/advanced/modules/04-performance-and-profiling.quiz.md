@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+### Question 1: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 A) Shipping without an automated test run in CI.
 B) Includes a short README section describing assumptions and tradeoffs.
 C) Document decisions and constraints clearly for reviewers.

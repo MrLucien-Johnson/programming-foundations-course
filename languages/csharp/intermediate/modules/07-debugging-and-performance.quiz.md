@@ -56,7 +56,7 @@ D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 ---
 
-### Question 6: Which testing requirement must be satisfied before submission?
+### Question 6: A reviewer asks for testing evidence. Which requirement must you show?
 A) Explain the core concepts and tradeoffs for Debugging and Performance.
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 C) Over-mocking (tests assert implementation details instead of outcomes).

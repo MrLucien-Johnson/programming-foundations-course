@@ -56,7 +56,7 @@ D) Shipping without an automated test run in CI.
 
 ---
 
-### Question 6: Which Better upgrade most improves maintainability or reliability?
+### Question 6: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Over-mocking (tests assert implementation details instead of outcomes).
 B) Implement a small feature tied to this module in an existing starter app.
 C) Skipping input validation and assuming “happy path”.

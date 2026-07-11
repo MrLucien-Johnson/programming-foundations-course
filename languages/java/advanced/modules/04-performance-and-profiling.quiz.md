@@ -66,7 +66,7 @@ D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 ---
 
-### Question 7: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 7: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Includes tests appropriate for the feature.
 B) Explain the core concepts and tradeoffs for Performance and Profiling.
 C) Tests must be deterministic (no flakes) and runnable by a reviewer.

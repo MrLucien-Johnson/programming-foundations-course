@@ -1,16 +1,16 @@
 # Systems and Design (Advanced) Quiz Answers
 
-## Question 1: Which deliverable would you send to a stakeholder as evidence of completion?
-**Answer: D** - design notes with trade-offs
+## Question 1: Which topic would you use to guide a design discussion?
+**Answer: A** - performance profiling and optimization
 
-**Explanation:** This deliverable is required in the module expectations.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 2: Which topic would you point to when scoping a real-world solution?
-**Answer: B** - reliability, logging, and observability
+## Question 2: Which deliverable best demonstrates the engineering work was completed?
+**Answer: D** - profiling or benchmarking summary
 
-**Explanation:** This topic is listed in the module outline.
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
@@ -21,52 +21,52 @@
 
 ---
 
-## Question 4: Which topic would you use to guide a design discussion?
-**Answer: A** - performance profiling and optimization
-
-**Explanation:** This topic is listed in the module outline.
-
----
-
-## Question 5: Which topic belongs to this module's outline?
-**Answer: B** - performance profiling and optimization
-
-**Explanation:** This topic is listed in the module outline.
-
----
-
-## Question 6: Which deliverable best demonstrates the engineering work was completed?
-**Answer: B** - profiling or benchmarking summary
+## Question 4: A reviewer wants proof of work. Which deliverable should you hand them?
+**Answer: D** - profiling or benchmarking summary
 
 **Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 7: A reviewer wants proof of work. Which deliverable should you hand them?
-**Answer: A** - profiling or benchmarking summary
-
-**Explanation:** This deliverable is required in the module expectations.
-
----
-
-## Question 8: Which topic would you expect in this module?
+## Question 5: Which topic from the outline would you revisit to solve a similar problem?
 **Answer: B** - reliability, logging, and observability
 
 **Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 9: Which deliverable should you produce for this module?
-**Answer: C** - design notes with trade-offs
+## Question 6: Which topic would you highlight when scoping a real-world solution?
+**Answer: B** - reliability, logging, and observability
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 7: Which topic would you point to when scoping a real-world solution?
+**Answer: B** - reliability, logging, and observability
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 8: Which deliverable should be included before requesting approval?
+**Answer: A** - design notes with trade-offs
 
 **Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 10: Which topic appears in this module?
-**Answer: C** - reliability, logging, and observability
+## Question 9: Which topic is relevant when making this engineering decision?
+**Answer: A** - performance profiling and optimization
 
 **Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 10: Which deliverable would you send to a stakeholder as evidence of completion?
+**Answer: B** - design notes with trade-offs
+
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 

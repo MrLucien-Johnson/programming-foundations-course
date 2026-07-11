@@ -1,13 +1,13 @@
 # AI — Module 08: Production Incident Playbooks Quiz Answers
 
-## Question 1: Which Better upgrade most improves maintainability or reliability?
+## Question 1: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: A** - Add communication templates (internal + user-facing) for common incidents.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 2: Which option represents a common mistake to avoid?
+## Question 2: Which option reflects a mistake a reviewer would call out?
 **Answer: C** - No clear ownership or steps during incidents.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
@@ -21,14 +21,14 @@
 
 ---
 
-## Question 4: Which requirement belongs in the testing checklist for this module?
+## Question 4: Which testing requirement would you verify in CI before approving the change?
 **Answer: A** - Incidents are tested via drills; playbooks are updated based on results.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 5: Which testing requirement should be verified in CI for this module?
+## Question 5: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: A** - Incidents are tested via drills; playbooks are updated based on results.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

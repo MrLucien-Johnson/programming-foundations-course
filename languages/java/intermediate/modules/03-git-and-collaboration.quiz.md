@@ -66,7 +66,7 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ---
 
-### Question 7: Which Better action best demonstrates stronger engineering discipline?
+### Question 7: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Add at least 3 focused unit tests that cover normal cases and edge cases.
 B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 C) Shipping without an automated test run in CI.
@@ -86,7 +86,7 @@ D) Add an integration test that hits a real boundary (HTTP, database, file syste
 
 ---
 
-### Question 9: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 9: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 B) Document decisions and constraints clearly for reviewers.
 C) Tests must be deterministic (no flakes) and runnable by a reviewer.

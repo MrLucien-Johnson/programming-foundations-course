@@ -26,7 +26,7 @@ D) Uses consistent style/formatting and passes the quality gate.
 
 ---
 
-### Question 3: Which Better upgrade most improves maintainability or reliability?
+### Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 B) If the module involves a database, tests must run against an isolated schema/database.
 C) Deliverable runs locally with clear instructions.

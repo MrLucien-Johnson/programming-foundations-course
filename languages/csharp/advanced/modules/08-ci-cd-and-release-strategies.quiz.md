@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which testing requirement must be satisfied before submission?
+### Question 1: A reviewer asks for testing evidence. Which requirement must you show?
 A) All work must be covered by build + tests + analyzers in CI.
 B) Apply the concepts to a realistic codebase (not just toy examples).
 C) Uses consistent style/formatting and passes the quality gate.

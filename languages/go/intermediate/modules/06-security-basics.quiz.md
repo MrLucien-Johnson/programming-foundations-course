@@ -16,7 +16,7 @@ D) Document decisions and constraints clearly for reviewers.
 
 ---
 
-### Question 2: Which Better upgrade most improves maintainability or reliability?
+### Question 2: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Explain the core concepts and tradeoffs for Security Basics.
 B) All work must be covered by gofmt + lint + tests in CI.
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
@@ -26,7 +26,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 3: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 3: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) Write tests that prove correctness and prevent regressions.
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 C) If the module involves a database, tests must run against an isolated schema/database.

@@ -7,7 +7,7 @@
 
 ---
 
-## Question 2: Which requirement belongs in the testing checklist for this module?
+## Question 2: Which testing requirement would you verify in CI before approving the change?
 **Answer: B** - All work must be covered by build + tests + static analysis in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

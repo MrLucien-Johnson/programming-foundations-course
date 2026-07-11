@@ -16,7 +16,7 @@ D) Apply the concepts to a realistic codebase (not just toy examples).
 
 ---
 
-### Question 2: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 2: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Tests must be deterministic (no flakes) and runnable by a reviewer.
 B) Making performance claims without measurements.
 C) Create a short write-up: what changed, why, and how you verified it.

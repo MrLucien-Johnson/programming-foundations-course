@@ -26,7 +26,7 @@ D) Includes a short README section describing assumptions and tradeoffs.
 
 ---
 
-### Question 3: Which testing requirement should be verified in CI for this module?
+### Question 3: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Create a short write-up: what changed, why, and how you verified it.
 B) Implement a small feature tied to this module in an existing starter app.
 C) All work must be covered by fmt + clippy + tests in CI.
@@ -46,7 +46,7 @@ D) Use tooling to keep quality high: rustfmt + clippy.
 
 ---
 
-### Question 5: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 5: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) If the module involves a database, tests must run against an isolated schema/database.
 B) Refactor one area for readability (without changing behavior) and prove it with tests.
 C) Add at least 3 focused unit tests that cover normal cases and edge cases.

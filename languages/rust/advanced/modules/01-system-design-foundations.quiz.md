@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which Better upgrade most improves maintainability or reliability?
+### Question 1: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 C) Document decisions and constraints clearly for reviewers.

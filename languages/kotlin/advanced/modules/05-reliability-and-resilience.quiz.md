@@ -56,7 +56,7 @@ D) Add a “failure mode” test (timeouts, invalid input, concurrency, or parti
 
 ---
 
-### Question 6: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 6: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Tests must be deterministic (no flakes) and runnable by a reviewer.
 B) Write tests that prove correctness and prevent regressions.
 C) Shipping without an automated test run in CI.
@@ -96,7 +96,7 @@ D) Uses consistent style/formatting and passes the quality gate.
 
 ---
 
-### Question 10: Which requirement belongs in the testing checklist for this module?
+### Question 10: Which testing requirement would you verify in CI before approving the change?
 A) All work must be covered by build + tests + static analysis in CI.
 B) Making performance claims without measurements.
 C) Add at least 3 focused unit tests that cover normal cases and edge cases.

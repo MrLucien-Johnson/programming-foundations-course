@@ -16,7 +16,7 @@ D) Includes tests appropriate for the feature.
 
 ---
 
-### Question 2: Which testing requirement must be satisfied before submission?
+### Question 2: A reviewer asks for testing evidence. Which requirement must you show?
 A) All work must be covered by build + tests + static analysis in CI.
 B) Add at least 3 focused unit tests that cover normal cases and edge cases.
 C) Document decisions and constraints clearly for reviewers.
@@ -46,7 +46,7 @@ D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 ---
 
-### Question 5: Which Better upgrade most improves maintainability or reliability?
+### Question 5: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 B) If the module involves a database, tests must run against an isolated schema/database.
 C) Add a performance or reliability improvement and measure the impact.

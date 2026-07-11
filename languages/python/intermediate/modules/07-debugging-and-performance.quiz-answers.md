@@ -7,7 +7,7 @@
 
 ---
 
-## Question 2: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+## Question 2: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 **Answer: C** - All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

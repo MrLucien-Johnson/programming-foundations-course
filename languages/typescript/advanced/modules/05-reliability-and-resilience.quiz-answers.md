@@ -1,6 +1,6 @@
 # TypeScript Advanced — Module 05: Reliability and Resilience Quiz Answers
 
-## Question 1: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+## Question 1: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 **Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -42,7 +42,7 @@
 
 ---
 
-## Question 7: Which Better action best demonstrates stronger engineering discipline?
+## Question 7: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: A** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

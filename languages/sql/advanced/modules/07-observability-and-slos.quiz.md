@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which Better upgrade most improves maintainability or reliability?
+### Question 1: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) All work must be covered by migrations apply cleanly + pgTAP + SQL linting in CI.
 B) Includes tests appropriate for the feature.
 C) Over-mocking (tests assert implementation details instead of outcomes).

@@ -14,7 +14,7 @@
 
 ---
 
-## Question 3: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+## Question 3: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 **Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -56,7 +56,7 @@
 
 ---
 
-## Question 9: Which Better upgrade most improves maintainability or reliability?
+## Question 9: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: B** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

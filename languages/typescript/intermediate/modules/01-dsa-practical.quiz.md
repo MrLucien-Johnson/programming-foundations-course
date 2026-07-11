@@ -36,7 +36,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 4: Which Better action best demonstrates stronger engineering discipline?
+### Question 4: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Add or update documentation (README notes or ADR-style notes).
 B) Uses consistent style/formatting and passes the quality gate.
 C) Includes a short README section describing assumptions and tradeoffs.

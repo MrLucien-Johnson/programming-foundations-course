@@ -21,7 +21,7 @@
 
 ---
 
-## Question 4: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+## Question 4: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 **Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

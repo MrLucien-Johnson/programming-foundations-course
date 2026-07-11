@@ -26,7 +26,7 @@ D) Includes safe config/secrets practices.
 
 ---
 
-### Question 3: Which testing requirement should be verified in CI for this module?
+### Question 3: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 B) Deploying prompt changes without a version or rollback strategy.
 C) Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.
@@ -36,7 +36,7 @@ D) Translate a vague request into a clear goal, constraints, and success criteri
 
 ---
 
-### Question 4: Which testing requirement must be satisfied before submission?
+### Question 4: A reviewer asks for testing evidence. Which requirement must you show?
 A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 B) Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.
 C) Translate a vague request into a clear goal, constraints, and success criteria.
@@ -46,7 +46,7 @@ D) Build a small evaluation loop: test cases, metrics, and iteration notes.
 
 ---
 
-### Question 5: Which Better action best demonstrates stronger engineering discipline?
+### Question 5: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 B) Create a deployment checklist for one AI feature.
 C) Add a smoke test plan for your most important flows.
@@ -86,7 +86,7 @@ D) Define rollback criteria based on eval results and user-impact signals.
 
 ---
 
-### Question 9: Which behavior is listed as a common mistake for this module?
+### Question 9: During review, which behavior would be flagged as a common mistake?
 A) Add an incident response “first 30 minutes” checklist.
 B) Design a staged rollout with shadow evaluation and a rollback trigger.
 C) Define rollback criteria based on eval results and user-impact signals.

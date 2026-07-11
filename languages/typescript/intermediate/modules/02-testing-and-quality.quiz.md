@@ -16,7 +16,7 @@ D) Skipping input validation and assuming “happy path”.
 
 ---
 
-### Question 2: Which Better upgrade most improves maintainability or reliability?
+### Question 2: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Add a performance or reliability improvement and measure the impact.
 B) Refactor one area for readability (without changing behavior) and prove it with tests.
 C) Uses consistent style/formatting and passes the quality gate.
@@ -46,7 +46,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 5: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 5: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) Shipping without an automated test run in CI.
 B) Over-mocking (tests assert implementation details instead of outcomes).
 C) Add a performance or reliability improvement and measure the impact.

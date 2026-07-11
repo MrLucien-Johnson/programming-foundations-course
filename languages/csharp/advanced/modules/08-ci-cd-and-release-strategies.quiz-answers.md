@@ -1,6 +1,6 @@
 # C# Advanced — Module 08: CI/CD and Release Strategies Quiz Answers
 
-## Question 1: Which testing requirement must be satisfied before submission?
+## Question 1: A reviewer asks for testing evidence. Which requirement must you show?
 **Answer: A** - All work must be covered by build + tests + analyzers in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

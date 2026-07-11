@@ -46,7 +46,7 @@ D) Write tests that prove correctness and prevent regressions.
 
 ---
 
-### Question 5: Which requirement belongs in the testing checklist for this module?
+### Question 5: Which testing requirement would you verify in CI before approving the change?
 A) Create a short write-up: what changed, why, and how you verified it.
 B) Making performance claims without measurements.
 C) Includes a short README section describing assumptions and tradeoffs.

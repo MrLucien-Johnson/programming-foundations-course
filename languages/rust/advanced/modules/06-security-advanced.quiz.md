@@ -86,7 +86,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 9: Which testing requirement must be satisfied before submission?
+### Question 9: A reviewer asks for testing evidence. Which requirement must you show?
 A) Add or update documentation (README notes or ADR-style notes).
 B) Add a performance or reliability improvement and measure the impact.
 C) All work must be covered by fmt + clippy + tests in CI.

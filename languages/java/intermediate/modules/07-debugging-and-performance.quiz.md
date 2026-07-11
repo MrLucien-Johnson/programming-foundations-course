@@ -86,7 +86,7 @@ D) Uses consistent style/formatting and passes the quality gate.
 
 ---
 
-### Question 9: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 9: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) Apply the concepts to a realistic codebase (not just toy examples).
 B) Add or update documentation (README notes or ADR-style notes).
 C) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
@@ -96,7 +96,7 @@ D) If the module involves a database, tests must run against an isolated schema/
 
 ---
 
-### Question 10: Which Better upgrade most improves maintainability or reliability?
+### Question 10: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Shipping without an automated test run in CI.
 B) Includes tests appropriate for the feature.
 C) Refactor one area for readability (without changing behavior) and prove it with tests.

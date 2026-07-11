@@ -42,7 +42,7 @@
 
 ---
 
-## Question 7: Which Better action best demonstrates stronger engineering discipline?
+## Question 7: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: B** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -56,7 +56,7 @@
 
 ---
 
-## Question 9: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+## Question 9: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 **Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

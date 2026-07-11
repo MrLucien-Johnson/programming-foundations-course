@@ -26,12 +26,12 @@ class Question:
 
 
 CORE_TEMPLATES = [
-    "You're preparing a submission and need to meet the Core bar. Which action is required?",
-    "To satisfy the Core requirements, which step must be included?",
-    "A reviewer checks the Core checklist. Which action should they see?",
-    "Which task best matches the Core expectations for this module?",
-    "Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?",
-    "Which step would keep the work within the Core scope?",
+    "A reviewer expects the minimum acceptable work before approving. Which action must be present?",
+    "You're about to request review. Which step proves the baseline work is complete?",
+    "A teammate asks what the minimum bar is for this module. Which action should you point to?",
+    "Before asking for approval, which action shows the baseline expectations were met?",
+    "A project lead wants a safe baseline before shipping. Which action should happen first?",
+    "Which action demonstrates you met the baseline scope for this module?",
 ]
 
 CORE_APPLIED_TEMPLATES = [
@@ -46,27 +46,27 @@ CORE_APPLIED_TEMPLATES = [
 ]
 
 BETTER_TEMPLATES = [
-    "You already met Core. Which action qualifies as a Better upgrade?",
-    "Which improvement moves a Core submission to the Better tier?",
-    "Which option is listed under Better work for this module?",
-    "Which enhancement is a Better-level upgrade (not Beast Mode)?",
-    "To earn a Better evaluation, which action should you add?",
-    "Which step is explicitly called out as Better work?",
+    "The work passes baseline review. Which improvement most strengthens quality for reviewers?",
+    "A reviewer says, 'Good start.' Which upgrade would move it to a stronger standard?",
+    "A teammate asks for a quality boost. Which improvement would you prioritize?",
+    "A reviewer wants better maintainability or reliability. Which upgrade should you choose?",
+    "You have time for one extra improvement. Which action gives the biggest quality lift?",
+    "A lead asks what would make this work more resilient. Which improvement fits?",
 ]
 
 BETTER_APPLIED_TEMPLATES = [
     "The work passes Core. Which improvement most clearly raises quality for reviewers?",
     "A reviewer says, 'Good start.' Which Better upgrade should you add next?",
-    "Which Better action best demonstrates stronger engineering discipline?",
-    "Which Better upgrade most improves maintainability or reliability?",
+    "A reviewer asks for stronger engineering discipline. Which Better action fits?",
+    "A reviewer wants better maintainability or reliability. Which upgrade should you choose?",
 ]
 
 BEAST_TEMPLATES = [
-    "Which action pushes the work into Beast Mode?",
-    "Which task is explicitly listed as a Beast Mode upgrade?",
-    "To reach Beast Mode, which improvement should you choose?",
-    "Which option represents a Beast Mode enhancement?",
-    "Which action qualifies as a Beast Mode stretch?",
+    "You want a stretch goal that shows senior-level rigor. Which action fits?",
+    "A staff engineer asks for an advanced improvement. Which action should you take?",
+    "You want to go beyond expectations. Which action most clearly proves that?",
+    "Which action best demonstrates an advanced stretch beyond the baseline?",
+    "Which improvement most clearly elevates the work into an advanced tier?",
 ]
 
 BEAST_APPLIED_TEMPLATES = [
@@ -76,11 +76,11 @@ BEAST_APPLIED_TEMPLATES = [
 ]
 
 ACCEPTANCE_TEMPLATES = [
-    "Which requirement is part of the mini-project acceptance criteria?",
-    "Your project passes review only if which condition is true?",
-    "Which item is explicitly required in the acceptance criteria?",
-    "Which acceptance criterion must be satisfied before submission?",
-    "A reviewer approves the mini-project when which condition is met?",
+    "Approval is blocked until one requirement is met. Which requirement is it?",
+    "A reviewer passes the project only if which condition is true?",
+    "Which requirement would a reviewer verify before approving the submission?",
+    "Which acceptance requirement most directly blocks approval if missing?",
+    "Before sign-off, which requirement must be satisfied?",
 ]
 
 ACCEPTANCE_APPLIED_TEMPLATES = [
@@ -96,16 +96,16 @@ ACCEPTANCE_APPLIED_TEMPLATES = [
 TESTING_TEMPLATES = [
     "CI is failing because {issue}. Which testing requirement addresses this?",
     "A reviewer flags {issue}. Which testing requirement resolves it?",
-    "Your tests are blocked by {issue}. Which requirement should you enforce?",
+    "Your tests are blocked because {issue}. Which requirement should you enforce?",
     "Which testing requirement is most relevant to this issue: {issue}?",
     "Which testing requirement should you apply given this issue: {issue}?",
     "Production validation failed because {issue}. Which testing requirement would have prevented it?",
 ]
 
 TESTING_GENERIC_TEMPLATES = [
-    "Which testing requirement must be satisfied before submission?",
-    "Which requirement belongs in the testing checklist for this module?",
-    "Which testing requirement should be verified in CI for this module?",
+    "A reviewer asks for testing evidence. Which requirement must you show?",
+    "Which testing requirement would you verify in CI before approving the change?",
+    "Which testing requirement would prevent a reviewer from rejecting the submission?",
 ]
 
 MISTAKE_TEMPLATES = [
@@ -116,14 +116,14 @@ MISTAKE_TEMPLATES = [
 ]
 
 MISTAKE_GENERIC_TEMPLATES = [
-    "Which behavior is listed as a common mistake for this module?",
-    "Which option represents a common mistake to avoid?",
+    "During review, which behavior would be flagged as a common mistake?",
+    "Which option reflects a mistake a reviewer would call out?",
 ]
 
 OUTCOME_TEMPLATES = [
-    "A reviewer asks what capability you demonstrated. Which outcome matches?",
-    "Which outcome should you be able to show after finishing this module?",
-    "Which statement is one of the learning outcomes for this module?",
+    "In a real code review, which outcome best reflects the skill you should demonstrate?",
+    "A hiring manager asks what you can now do confidently. Which outcome fits?",
+    "Which outcome best captures the practical ability you should carry forward?",
 ]
 
 OUTCOME_APPLIED_TEMPLATES = [
@@ -134,16 +134,14 @@ OUTCOME_APPLIED_TEMPLATES = [
 ]
 
 TOPIC_TEMPLATES = [
-    "Which topic is covered in this module?",
-    "Which topic belongs to this module's outline?",
-    "A learner asks what you'll study next. Which topic fits?",
-    "Which topic appears in this module?",
-    "Which topic is included in this module's Topics list?",
-    "Which topic would you expect in this module?",
-    "Which topic is called out in this module?",
-    "Which topic is part of the module's coverage?",
-    "Which topic is on the module outline?",
-    "Which topic would you highlight when describing this module?",
+    "A teammate needs help with a project decision. Which topic should they revisit?",
+    "Which topic would you highlight when scoping a real-world solution?",
+    "Which topic would you use to guide a design discussion?",
+    "Which topic would you point to when describing this module's focus?",
+    "Which topic from the outline would you revisit to solve a similar problem?",
+    "Which topic belongs in a real-world discussion for this module?",
+    "Which topic should you reference when planning the solution?",
+    "Which topic is relevant when making this engineering decision?",
 ]
 
 TOPIC_APPLIED_TEMPLATES = [
@@ -153,14 +151,12 @@ TOPIC_APPLIED_TEMPLATES = [
 ]
 
 DELIVERABLE_TEMPLATES = [
-    "Which deliverable should you produce for this module?",
-    "Which output is listed as a required deliverable?",
-    "Which deliverable would satisfy the module expectations?",
-    "A reviewer expects which deliverable from this module?",
-    "Which deliverable is explicitly listed for this module?",
-    "Which deliverable would you submit to complete this module?",
-    "Which deliverable belongs to this module's expectations?",
-    "Which deliverable is required before moving on?",
+    "A reviewer wants proof of work. Which deliverable should you hand them?",
+    "Which deliverable best demonstrates the engineering work was completed?",
+    "Which deliverable would you send to a stakeholder as evidence of completion?",
+    "Which deliverable would you submit to close the work item?",
+    "Which deliverable should be included before requesting approval?",
+    "Which deliverable would confirm the work is ready for review?",
 ]
 
 DELIVERABLE_APPLIED_TEMPLATES = [

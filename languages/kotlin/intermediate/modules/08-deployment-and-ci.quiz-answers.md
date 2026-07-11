@@ -21,7 +21,7 @@
 
 ---
 
-## Question 4: Which testing requirement must be satisfied before submission?
+## Question 4: A reviewer asks for testing evidence. Which requirement must you show?
 **Answer: A** - All work must be covered by build + tests + static analysis in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

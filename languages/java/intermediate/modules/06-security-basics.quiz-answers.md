@@ -7,7 +7,7 @@
 
 ---
 
-## Question 2: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+## Question 2: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 **Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

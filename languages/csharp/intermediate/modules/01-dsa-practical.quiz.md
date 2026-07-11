@@ -36,7 +36,7 @@ D) Document decisions and constraints clearly for reviewers.
 
 ---
 
-### Question 4: Which testing requirement should be verified in CI for this module?
+### Question 4: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Implement a small feature tied to this module in an existing starter app.
 B) All work must be covered by build + tests + analyzers in CI.
 C) Write tests that prove correctness and prevent regressions.

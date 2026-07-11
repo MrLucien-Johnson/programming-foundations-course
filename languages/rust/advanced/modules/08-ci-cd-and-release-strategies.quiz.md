@@ -76,7 +76,7 @@ D) Shipping without an automated test run in CI.
 
 ---
 
-### Question 8: Which testing requirement should be verified in CI for this module?
+### Question 8: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Refactor one area for readability (without changing behavior) and prove it with tests.
 B) All work must be covered by fmt + clippy + tests in CI.
 C) Implement a small feature tied to this module in an existing starter app.

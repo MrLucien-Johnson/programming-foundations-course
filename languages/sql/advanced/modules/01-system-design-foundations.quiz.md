@@ -16,7 +16,7 @@ D) Add or update documentation (README notes or ADR-style notes).
 
 ---
 
-### Question 2: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 2: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) Includes tests appropriate for the feature.
 B) If the module involves a database, tests must run against an isolated schema/database.
 C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
@@ -56,7 +56,7 @@ D) All work must be covered by migrations apply cleanly + pgTAP + SQL linting in
 
 ---
 
-### Question 6: Which Better upgrade most improves maintainability or reliability?
+### Question 6: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Deliverable runs locally with clear instructions.
 B) Refactor one area for readability (without changing behavior) and prove it with tests.
 C) Document decisions and constraints clearly for reviewers.

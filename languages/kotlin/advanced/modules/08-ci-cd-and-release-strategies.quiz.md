@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 1: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) Skipping input validation and assuming “happy path”.
 B) Uses consistent style/formatting and passes the quality gate.
 C) If the module involves a database, tests must run against an isolated schema/database.
@@ -26,7 +26,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 3: Which requirement belongs in the testing checklist for this module?
+### Question 3: Which testing requirement would you verify in CI before approving the change?
 A) Uses consistent style/formatting and passes the quality gate.
 B) Apply the concepts to a realistic codebase (not just toy examples).
 C) Skipping input validation and assuming “happy path”.

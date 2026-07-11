@@ -46,7 +46,7 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ---
 
-### Question 5: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+### Question 5: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 A) Add a performance or reliability improvement and measure the impact.
 B) Includes a short README section describing assumptions and tradeoffs.
 C) Shipping without an automated test run in CI.
@@ -56,7 +56,7 @@ D) All work must be covered by ruff/format + unit tests + integration tests (HTT
 
 ---
 
-### Question 6: Which Better upgrade most improves maintainability or reliability?
+### Question 6: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 C) Implement a small feature tied to this module in an existing starter app.

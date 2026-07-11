@@ -14,7 +14,7 @@
 
 ---
 
-## Question 3: Which option represents a common mistake to avoid?
+## Question 3: Which option reflects a mistake a reviewer would call out?
 **Answer: A** - Ignoring permissions/access control in retrieval.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
@@ -28,7 +28,7 @@
 
 ---
 
-## Question 5: Which testing requirement must be satisfied before submission?
+## Question 5: A reviewer asks for testing evidence. Which requirement must you show?
 **Answer: B** - Eval harness separates retrieval vs generation metrics.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -42,14 +42,14 @@
 
 ---
 
-## Question 7: Which Better upgrade most improves maintainability or reliability?
+## Question 7: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: A** - Add reranking and measure improvement on a fixed question set.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 8: Which requirement belongs in the testing checklist for this module?
+## Question 8: Which testing requirement would you verify in CI before approving the change?
 **Answer: A** - Eval harness separates retrieval vs generation metrics.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

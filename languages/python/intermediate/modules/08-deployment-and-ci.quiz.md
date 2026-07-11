@@ -46,7 +46,7 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ---
 
-### Question 5: Which Better upgrade most improves maintainability or reliability?
+### Question 5: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Add at least 3 focused unit tests that cover normal cases and edge cases.
 B) Includes a short README section describing assumptions and tradeoffs.
 C) Refactor one area for readability (without changing behavior) and prove it with tests.
@@ -86,7 +86,7 @@ D) Use tooling to keep quality high: ruff + black (or ruff format).
 
 ---
 
-### Question 9: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 9: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Explain the core concepts and tradeoffs for Deployment and CI.
 B) Deliverable runs locally with clear instructions.
 C) Add a performance or reliability improvement and measure the impact.

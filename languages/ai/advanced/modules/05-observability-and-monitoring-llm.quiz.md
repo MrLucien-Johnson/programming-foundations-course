@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which behavior is listed as a common mistake for this module?
+### Question 1: During review, which behavior would be flagged as a common mistake?
 A) Design tracing across steps (retrieval, generation, tools).
 B) Monitoring validates fallbacks are working and not harming UX.
 C) Logging sensitive user data without redaction.
@@ -36,7 +36,7 @@ D) Monitoring validates fallbacks are working and not harming UX.
 
 ---
 
-### Question 4: Which testing requirement should be verified in CI for this module?
+### Question 4: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 B) Monitoring validates fallbacks are working and not harming UX.
 C) Design a dashboard layout and alert thresholds.
@@ -56,7 +56,7 @@ D) Build a small evaluation loop: test cases, metrics, and iteration notes.
 
 ---
 
-### Question 6: Which requirement belongs in the testing checklist for this module?
+### Question 6: Which testing requirement would you verify in CI before approving the change?
 A) Design an on-call playbook for “quality drop” and “cost spike” incidents.
 B) Build a small evaluation loop: test cases, metrics, and iteration notes.
 C) Monitoring validates fallbacks are working and not harming UX.
@@ -76,7 +76,7 @@ D) Define SLIs/SLOs for an AI feature and map them to metrics.
 
 ---
 
-### Question 8: Which Better upgrade most improves maintainability or reliability?
+### Question 8: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Includes quality, safety, cost, and latency signals.
 B) Translate a vague request into a clear goal, constraints, and success criteria.
 C) Add a “quality sampling” plan (privacy-safe) and escalation steps.

@@ -1,6 +1,6 @@
 # AI — Module 05: Observability and Monitoring for LLM Apps Quiz Answers
 
-## Question 1: Which behavior is listed as a common mistake for this module?
+## Question 1: During review, which behavior would be flagged as a common mistake?
 **Answer: C** - Logging sensitive user data without redaction.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
@@ -21,7 +21,7 @@
 
 ---
 
-## Question 4: Which testing requirement should be verified in CI for this module?
+## Question 4: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: B** - Monitoring validates fallbacks are working and not harming UX.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -35,7 +35,7 @@
 
 ---
 
-## Question 6: Which requirement belongs in the testing checklist for this module?
+## Question 6: Which testing requirement would you verify in CI before approving the change?
 **Answer: C** - Monitoring validates fallbacks are working and not harming UX.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -49,7 +49,7 @@
 
 ---
 
-## Question 8: Which Better upgrade most improves maintainability or reliability?
+## Question 8: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: C** - Add a “quality sampling” plan (privacy-safe) and escalation steps.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

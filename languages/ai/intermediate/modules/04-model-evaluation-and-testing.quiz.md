@@ -46,7 +46,7 @@ D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduc
 
 ---
 
-### Question 5: Which Better action best demonstrates stronger engineering discipline?
+### Question 5: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Evaluation run is deterministic where possible (fixed inputs, logged settings).
 B) Mixing data leakage into eval sets (training-like artifacts).
 C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).

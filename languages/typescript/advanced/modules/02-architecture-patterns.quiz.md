@@ -56,7 +56,7 @@ D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 ---
 
-### Question 6: Which Better action best demonstrates stronger engineering discipline?
+### Question 6: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) If the module involves a database, tests must run against an isolated schema/database.
 B) Add or update documentation (README notes or ADR-style notes).
 C) Includes tests appropriate for the feature.

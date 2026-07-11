@@ -26,7 +26,7 @@ D) Add a performance or reliability improvement and measure the impact.
 
 ---
 
-### Question 3: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+### Question 3: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 A) Add or update documentation (README notes or ADR-style notes).
 B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 C) Add a performance or reliability improvement and measure the impact.
@@ -46,7 +46,7 @@ D) All work must be covered by typecheck + lint + unit tests + integration tests
 
 ---
 
-### Question 5: Which Better action best demonstrates stronger engineering discipline?
+### Question 5: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Deliverable runs locally with clear instructions.
 B) Making performance claims without measurements.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.

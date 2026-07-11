@@ -21,7 +21,7 @@
 
 ---
 
-## Question 4: Which requirement belongs in the testing checklist for this module?
+## Question 4: Which testing requirement would you verify in CI before approving the change?
 **Answer: D** - All work must be covered by build + tests + static analysis in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -63,7 +63,7 @@
 
 ---
 
-## Question 10: Which Better upgrade most improves maintainability or reliability?
+## Question 10: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.

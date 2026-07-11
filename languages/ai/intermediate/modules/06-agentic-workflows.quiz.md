@@ -16,7 +16,7 @@ D) Explicit tool boundaries, stop conditions, and verification requirements.
 
 ---
 
-### Question 2: Which option represents a common mistake to avoid?
+### Question 2: Which option reflects a mistake a reviewer would call out?
 A) No verification step—agent confidently ships wrong results.
 B) Add a verification step that checks facts only against provided sources.
 C) Add a tool budget and stop conditions; show how it prevents runaway loops.
@@ -56,7 +56,7 @@ D) Storing sensitive data as “memory” without a policy.
 
 ---
 
-### Question 6: Which testing requirement should be verified in CI for this module?
+### Question 6: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Document and version changes so improvements are explainable.
 B) Add a “post-run report” format (actions taken, evidence, uncertainties).
 C) Add adversarial cases that try to make the agent leak secrets or ignore constraints.
@@ -66,7 +66,7 @@ D) Agent tested with simulated failures (tool down, partial data, conflicting in
 
 ---
 
-### Question 7: Which testing requirement must be satisfied before submission?
+### Question 7: A reviewer asks for testing evidence. Which requirement must you show?
 A) Agent tested with simulated failures (tool down, partial data, conflicting instructions).
 B) Design an agent workflow spec for “triage support tickets and draft responses”.
 C) Translate a vague request into a clear goal, constraints, and success criteria.
@@ -86,7 +86,7 @@ D) Add a verification step that checks facts only against provided sources.
 
 ---
 
-### Question 9: Which Better action best demonstrates stronger engineering discipline?
+### Question 9: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Add a “human approval” checkpoint for high-risk actions.
 B) Agent tested with simulated failures (tool down, partial data, conflicting instructions).
 C) No verification step—agent confidently ships wrong results.

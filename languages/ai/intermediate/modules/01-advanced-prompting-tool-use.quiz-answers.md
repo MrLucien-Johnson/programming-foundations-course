@@ -28,14 +28,14 @@
 
 ---
 
-## Question 5: Which Better upgrade most improves maintainability or reliability?
+## Question 5: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: C** - Add a verification step: check that tool output matches the request before replying.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 6: Which requirement belongs in the testing checklist for this module?
+## Question 6: Which testing requirement would you verify in CI before approving the change?
 **Answer: C** - End-to-end workflow tested with simulated tool failures and timeouts.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -56,14 +56,14 @@
 
 ---
 
-## Question 9: Which testing requirement must be satisfied before submission?
+## Question 9: A reviewer asks for testing evidence. Which requirement must you show?
 **Answer: C** - End-to-end workflow tested with simulated tool failures and timeouts.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 10: Which behavior is listed as a common mistake for this module?
+## Question 10: During review, which behavior would be flagged as a common mistake?
 **Answer: B** - Letting the model call tools with missing/ambiguous parameters.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.

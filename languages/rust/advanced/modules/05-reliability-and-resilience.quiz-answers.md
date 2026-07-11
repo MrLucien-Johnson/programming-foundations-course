@@ -14,7 +14,7 @@
 
 ---
 
-## Question 3: Which testing requirement should be verified in CI for this module?
+## Question 3: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: C** - All work must be covered by fmt + clippy + tests in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -28,7 +28,7 @@
 
 ---
 
-## Question 5: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+## Question 5: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 **Answer: A** - If the module involves a database, tests must run against an isolated schema/database.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

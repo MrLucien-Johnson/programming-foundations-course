@@ -42,7 +42,7 @@
 
 ---
 
-## Question 7: Which Better upgrade most improves maintainability or reliability?
+## Question 7: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.

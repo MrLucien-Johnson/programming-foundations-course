@@ -26,7 +26,7 @@ D) Translate a vague request into a clear goal, constraints, and success criteri
 
 ---
 
-### Question 3: Which option represents a common mistake to avoid?
+### Question 3: Which option reflects a mistake a reviewer would call out?
 A) Ignoring permissions/access control in retrieval.
 B) Document and version changes so improvements are explainable.
 C) Translate a vague request into a clear goal, constraints, and success criteria.
@@ -46,7 +46,7 @@ D) Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.
 
 ---
 
-### Question 5: Which testing requirement must be satisfied before submission?
+### Question 5: A reviewer asks for testing evidence. Which requirement must you show?
 A) Add reranking and measure improvement on a fixed question set.
 B) Eval harness separates retrieval vs generation metrics.
 C) Includes access control and freshness considerations.
@@ -66,7 +66,7 @@ D) Demonstrates measured improvement on a fixed question set.
 
 ---
 
-### Question 7: Which Better upgrade most improves maintainability or reliability?
+### Question 7: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Add reranking and measure improvement on a fixed question set.
 B) Add freshness tests: new doc appears and is retrievable within a target window.
 C) Document and version changes so improvements are explainable.
@@ -76,7 +76,7 @@ D) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 
 ---
 
-### Question 8: Which requirement belongs in the testing checklist for this module?
+### Question 8: Which testing requirement would you verify in CI before approving the change?
 A) Eval harness separates retrieval vs generation metrics.
 B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 C) Optimizing retrieval with changing datasets (no stable benchmark).

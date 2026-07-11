@@ -36,7 +36,7 @@ D) All work must be covered by build + tests + static analysis in CI.
 
 ---
 
-### Question 4: Which testing requirement must be satisfied before submission?
+### Question 4: A reviewer asks for testing evidence. Which requirement must you show?
 A) All work must be covered by build + tests + static analysis in CI.
 B) Over-mocking (tests assert implementation details instead of outcomes).
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
@@ -76,7 +76,7 @@ D) Introduce a quality gate (pre-commit hook or CI step) that prevents common re
 
 ---
 
-### Question 8: Which Better upgrade most improves maintainability or reliability?
+### Question 8: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 B) Includes tests appropriate for the feature.
 C) Includes a short README section describing assumptions and tradeoffs.

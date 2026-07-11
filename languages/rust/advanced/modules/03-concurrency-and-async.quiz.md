@@ -36,7 +36,7 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ---
 
-### Question 4: Which testing requirement must be satisfied before submission?
+### Question 4: A reviewer asks for testing evidence. Which requirement must you show?
 A) Skipping input validation and assuming “happy path”.
 B) Uses consistent style/formatting and passes the quality gate.
 C) All work must be covered by fmt + clippy + tests in CI.

@@ -46,7 +46,7 @@ D) Explain the core concepts and tradeoffs for Reliability and Resilience.
 
 ---
 
-### Question 5: Which Better upgrade most improves maintainability or reliability?
+### Question 5: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Skipping input validation and assuming “happy path”.
 B) Document decisions and constraints clearly for reviewers.
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).

@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which testing requirement should be verified in CI for this module?
+### Question 1: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Add at least 3 focused unit tests that cover normal cases and edge cases.
 B) Skipping input validation and assuming “happy path”.
 C) All work must be covered by fmt + clippy + tests in CI.
@@ -16,7 +16,7 @@ D) Shipping without an automated test run in CI.
 
 ---
 
-### Question 2: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 2: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Implement a small feature tied to this module in an existing starter app.
 B) Tests must be deterministic (no flakes) and runnable by a reviewer.
 C) Apply the concepts to a realistic codebase (not just toy examples).

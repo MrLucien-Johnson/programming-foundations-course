@@ -26,7 +26,7 @@ D) Refactor one area for readability (without changing behavior) and prove it wi
 
 ---
 
-### Question 3: Which requirement belongs in the testing checklist for this module?
+### Question 3: Which testing requirement would you verify in CI before approving the change?
 A) Add at least 3 focused unit tests that cover normal cases and edge cases.
 B) Implement a small feature tied to this module in an existing starter app.
 C) Create a short write-up: what changed, why, and how you verified it.

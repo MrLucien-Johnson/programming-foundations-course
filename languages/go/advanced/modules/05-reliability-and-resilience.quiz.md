@@ -26,7 +26,7 @@ D) Introduce a quality gate (pre-commit hook or CI step) that prevents common re
 
 ---
 
-### Question 3: Which Better upgrade most improves maintainability or reliability?
+### Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Includes tests appropriate for the feature.
 B) Implement a small feature tied to this module in an existing starter app.
 C) Explain the core concepts and tradeoffs for Reliability and Resilience.

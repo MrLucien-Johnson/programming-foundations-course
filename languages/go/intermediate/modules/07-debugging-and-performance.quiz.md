@@ -26,7 +26,7 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ---
 
-### Question 3: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+### Question 3: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 A) Add a performance or reliability improvement and measure the impact.
 B) Add or update documentation (README notes or ADR-style notes).
 C) Refactor one area for readability (without changing behavior) and prove it with tests.
@@ -46,7 +46,7 @@ D) Document decisions and constraints clearly for reviewers.
 
 ---
 
-### Question 5: Which Better upgrade most improves maintainability or reliability?
+### Question 5: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) All work must be covered by gofmt + lint + tests in CI.
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 C) Deliverable runs locally with clear instructions.

@@ -26,7 +26,7 @@ D) Over-mocking (tests assert implementation details instead of outcomes).
 
 ---
 
-### Question 3: Which Better upgrade most improves maintainability or reliability?
+### Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 B) Refactor one area for readability (without changing behavior) and prove it with tests.
 C) Create a short write-up: what changed, why, and how you verified it.

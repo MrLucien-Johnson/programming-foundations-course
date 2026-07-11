@@ -1,6 +1,6 @@
 # C# Advanced — Module 01: System Design Foundations Quiz Answers
 
-## Question 1: Which Better upgrade most improves maintainability or reliability?
+## Question 1: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: A** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -56,7 +56,7 @@
 
 ---
 
-## Question 9: Which testing requirement should be verified in CI for this module?
+## Question 9: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: B** - All work must be covered by build + tests + analyzers in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

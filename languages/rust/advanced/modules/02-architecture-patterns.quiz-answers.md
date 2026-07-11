@@ -21,7 +21,7 @@
 
 ---
 
-## Question 4: Which Better upgrade most improves maintainability or reliability?
+## Question 4: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: A** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -49,7 +49,7 @@
 
 ---
 
-## Question 8: Which testing requirement must be satisfied before submission?
+## Question 8: A reviewer asks for testing evidence. Which requirement must you show?
 **Answer: A** - All work must be covered by fmt + clippy + tests in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

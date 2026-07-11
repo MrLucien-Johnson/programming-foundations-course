@@ -46,7 +46,7 @@ D) Write tests that prove correctness and prevent regressions.
 
 ---
 
-### Question 5: Which testing requirement must be satisfied before submission?
+### Question 5: A reviewer asks for testing evidence. Which requirement must you show?
 A) Making performance claims without measurements.
 B) All work must be covered by build + tests + static analysis in CI.
 C) Implement a small feature tied to this module in an existing starter app.

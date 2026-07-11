@@ -46,7 +46,7 @@ D) Shipping without an automated test run in CI.
 
 ---
 
-### Question 5: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 5: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Includes tests appropriate for the feature.
 B) Add at least 3 focused unit tests that cover normal cases and edge cases.
 C) Includes a short README section describing assumptions and tradeoffs.

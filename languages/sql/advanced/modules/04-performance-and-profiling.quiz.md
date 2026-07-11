@@ -86,7 +86,7 @@ D) Includes tests appropriate for the feature.
 
 ---
 
-### Question 9: Which Better action best demonstrates stronger engineering discipline?
+### Question 9: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Create a short write-up: what changed, why, and how you verified it.
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 C) Write tests that prove correctness and prevent regressions.

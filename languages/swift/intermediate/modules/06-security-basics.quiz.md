@@ -26,7 +26,7 @@ D) Deliverable runs locally with clear instructions.
 
 ---
 
-### Question 3: Which Better upgrade most improves maintainability or reliability?
+### Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Explain the core concepts and tradeoffs for Security Basics.
 B) All work must be covered by build + tests + lint/format in CI.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.

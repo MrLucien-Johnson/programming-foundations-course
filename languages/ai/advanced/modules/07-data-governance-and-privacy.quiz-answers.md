@@ -14,21 +14,21 @@
 
 ---
 
-## Question 3: Which option represents a common mistake to avoid?
+## Question 3: Which option reflects a mistake a reviewer would call out?
 **Answer: B** - Logging raw prompts/outputs indefinitely.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 4: Which testing requirement must be satisfied before submission?
+## Question 4: A reviewer asks for testing evidence. Which requirement must you show?
 **Answer: B** - Tests include “data should not appear” negative cases.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 5: Which testing requirement should be verified in CI for this module?
+## Question 5: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: D** - Tests include “data should not appear” negative cases.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -63,7 +63,7 @@
 
 ---
 
-## Question 10: Which Better action best demonstrates stronger engineering discipline?
+## Question 10: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: D** - Add access-control-aware retrieval and test “no leakage” scenarios.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

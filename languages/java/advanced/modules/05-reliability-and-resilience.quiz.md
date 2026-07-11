@@ -46,7 +46,7 @@ D) If the module involves a database, tests must run against an isolated schema/
 
 ---
 
-### Question 5: Your tests are blocked by feature tests fail when hitting real boundaries. Which requirement should you enforce?
+### Question 5: Your tests are blocked because feature tests fail when hitting real boundaries. Which requirement should you enforce?
 A) Write tests that prove correctness and prevent regressions.
 B) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
 C) Shipping without an automated test run in CI.
@@ -76,7 +76,7 @@ D) Add a “failure mode” test (timeouts, invalid input, concurrency, or parti
 
 ---
 
-### Question 8: Which Better upgrade most improves maintainability or reliability?
+### Question 8: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) If the module involves a database, tests must run against an isolated schema/database.
 B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 C) Uses consistent style/formatting and passes the quality gate.

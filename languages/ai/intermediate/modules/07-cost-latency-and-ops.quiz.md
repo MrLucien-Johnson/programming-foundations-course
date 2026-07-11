@@ -36,7 +36,7 @@ D) No budgets, leading to runaway cost.
 
 ---
 
-### Question 4: Which behavior is listed as a common mistake for this module?
+### Question 4: During review, which behavior would be flagged as a common mistake?
 A) Design a canary/rollback plan for prompt version releases.
 B) Optimizing for cost while silently harming quality.
 C) Evaluation harness records cost/latency per run (even estimated).
@@ -66,7 +66,7 @@ D) Includes explicit budgets and a fallback strategy.
 
 ---
 
-### Question 7: Which Better action best demonstrates stronger engineering discipline?
+### Question 7: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Translate a vague request into a clear goal, constraints, and success criteria.
 B) Design a caching strategy and what cache keys should be.
 C) Add a monitoring plan: what metrics, what dashboards, what alerts.
@@ -76,7 +76,7 @@ D) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 
 ---
 
-### Question 8: Which testing requirement should be verified in CI for this module?
+### Question 8: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Evaluation harness records cost/latency per run (even estimated).
 B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 C) Add an “early exit” rule when confidence is low.
@@ -96,7 +96,7 @@ D) Create a cost/latency plan for one workflow (budgets + how to enforce).
 
 ---
 
-### Question 10: Which requirement belongs in the testing checklist for this module?
+### Question 10: Which testing requirement would you verify in CI before approving the change?
 A) Design a canary/rollback plan for prompt version releases.
 B) Translate a vague request into a clear goal, constraints, and success criteria.
 C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).

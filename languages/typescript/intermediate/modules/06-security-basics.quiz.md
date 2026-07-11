@@ -36,7 +36,7 @@ D) Use tooling to keep quality high: ESLint + Prettier.
 
 ---
 
-### Question 4: Which Better action best demonstrates stronger engineering discipline?
+### Question 4: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Tests must be deterministic (no flakes) and runnable by a reviewer.
 B) Refactor one area for readability (without changing behavior) and prove it with tests.
 C) Add at least 3 focused unit tests that cover normal cases and edge cases.

@@ -16,7 +16,7 @@ D) Skipping input validation and assuming “happy path”.
 
 ---
 
-### Question 2: Which Better upgrade most improves maintainability or reliability?
+### Question 2: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Over-mocking (tests assert implementation details instead of outcomes).
 B) Shipping without an automated test run in CI.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.

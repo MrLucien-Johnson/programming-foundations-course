@@ -16,7 +16,7 @@ D) If the module involves a database, tests must run against an isolated schema/
 
 ---
 
-### Question 2: Which testing requirement should be verified in CI for this module?
+### Question 2: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Refactor one area for readability (without changing behavior) and prove it with tests.
 B) All work must be covered by fmt + clippy + tests in CI.
 C) Uses consistent style/formatting and passes the quality gate.
@@ -36,7 +36,7 @@ D) Skipping input validation and assuming “happy path”.
 
 ---
 
-### Question 4: Which Better upgrade most improves maintainability or reliability?
+### Question 4: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Create a short write-up: what changed, why, and how you verified it.
 B) Uses consistent style/formatting and passes the quality gate.
 C) Refactor one area for readability (without changing behavior) and prove it with tests.

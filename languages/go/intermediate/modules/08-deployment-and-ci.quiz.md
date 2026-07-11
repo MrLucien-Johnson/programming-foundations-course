@@ -66,7 +66,7 @@ D) Shipping without an automated test run in CI.
 
 ---
 
-### Question 7: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 7: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) Use tooling to keep quality high: gofmt + golangci-lint.
 B) Apply the concepts to a realistic codebase (not just toy examples).
 C) If the module involves a database, tests must run against an isolated schema/database.

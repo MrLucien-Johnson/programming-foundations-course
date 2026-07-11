@@ -46,7 +46,7 @@ D) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
 
 ---
 
-### Question 5: Which Better upgrade most improves maintainability or reliability?
+### Question 5: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 B) Add a performance or reliability improvement and measure the impact.
 C) Add at least 3 focused unit tests that cover normal cases and edge cases.
@@ -86,7 +86,7 @@ D) Deliverable runs locally with clear instructions.
 
 ---
 
-### Question 9: Your tests are blocked by feature tests fail when hitting real boundaries. Which requirement should you enforce?
+### Question 9: Your tests are blocked because feature tests fail when hitting real boundaries. Which requirement should you enforce?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 B) Apply the concepts to a realistic codebase (not just toy examples).
 C) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.

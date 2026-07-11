@@ -26,7 +26,7 @@ D) No plan for schema evolution.
 
 ---
 
-### Question 3: Which behavior is listed as a common mistake for this module?
+### Question 3: During review, which behavior would be flagged as a common mistake?
 A) Design a red-team set that tries to inject extra fields or instructions.
 B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 C) No plan for schema evolution.
@@ -66,7 +66,7 @@ D) Schema documented with examples and failure handling.
 
 ---
 
-### Question 7: Which Better action best demonstrates stronger engineering discipline?
+### Question 7: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Schemas that don't match real inputs.
 B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 C) Add schema versioning notes and a migration plan.

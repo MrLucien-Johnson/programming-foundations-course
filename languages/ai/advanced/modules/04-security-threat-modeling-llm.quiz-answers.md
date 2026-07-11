@@ -7,21 +7,21 @@
 
 ---
 
-## Question 2: Which requirement belongs in the testing checklist for this module?
+## Question 2: Which testing requirement would you verify in CI before approving the change?
 **Answer: A** - Security tests included in the evaluation harness and CI gate.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 3: Which testing requirement should be verified in CI for this module?
+## Question 3: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: D** - Security tests included in the evaluation harness and CI gate.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 4: Which Better action best demonstrates stronger engineering discipline?
+## Question 4: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: C** - Add a least-privilege tool policy and verify via tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -56,7 +56,7 @@
 
 ---
 
-## Question 9: Which behavior is listed as a common mistake for this module?
+## Question 9: During review, which behavior would be flagged as a common mistake?
 **Answer: A** - Treating retrieved content as trusted instructions.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.

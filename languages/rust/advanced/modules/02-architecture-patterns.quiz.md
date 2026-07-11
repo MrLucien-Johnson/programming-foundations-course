@@ -36,7 +36,7 @@ D) Skipping input validation and assuming “happy path”.
 
 ---
 
-### Question 4: Which Better upgrade most improves maintainability or reliability?
+### Question 4: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Refactor one area for readability (without changing behavior) and prove it with tests.
 B) Add at least 3 focused unit tests that cover normal cases and edge cases.
 C) Making performance claims without measurements.
@@ -76,7 +76,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 8: Which testing requirement must be satisfied before submission?
+### Question 8: A reviewer asks for testing evidence. Which requirement must you show?
 A) All work must be covered by fmt + clippy + tests in CI.
 B) Uses consistent style/formatting and passes the quality gate.
 C) Includes a short README section describing assumptions and tradeoffs.

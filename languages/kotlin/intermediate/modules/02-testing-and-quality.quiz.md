@@ -26,7 +26,7 @@ D) Add a “failure mode” test (timeouts, invalid input, concurrency, or parti
 
 ---
 
-### Question 3: Which Better action best demonstrates stronger engineering discipline?
+### Question 3: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Making performance claims without measurements.
 B) Explain the core concepts and tradeoffs for Testing and Quality.
 C) Add a performance or reliability improvement and measure the impact.
@@ -36,7 +36,7 @@ D) Introduce a quality gate (pre-commit hook or CI step) that prevents common re
 
 ---
 
-### Question 4: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 4: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 B) If the module involves a database, tests must run against an isolated schema/database.
 C) Add a performance or reliability improvement and measure the impact.
@@ -66,7 +66,7 @@ D) Refactor one area for readability (without changing behavior) and prove it wi
 
 ---
 
-### Question 7: Which testing requirement should be verified in CI for this module?
+### Question 7: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 B) All work must be covered by build + tests + static analysis in CI.
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).

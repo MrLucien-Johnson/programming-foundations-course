@@ -26,7 +26,7 @@ D) Uses consistent style/formatting and passes the quality gate.
 
 ---
 
-### Question 3: Which Better action best demonstrates stronger engineering discipline?
+### Question 3: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Shipping without an automated test run in CI.
 B) Implement a small feature tied to this module in an existing starter app.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.

@@ -46,7 +46,7 @@ D) Shipping without an automated test run in CI.
 
 ---
 
-### Question 5: Which Better upgrade most improves maintainability or reliability?
+### Question 5: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Tests must be deterministic (no flakes) and runnable by a reviewer.
 B) Includes a short README section describing assumptions and tradeoffs.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.

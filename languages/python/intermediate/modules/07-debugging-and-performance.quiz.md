@@ -16,7 +16,7 @@ D) Add an integration test that hits a real boundary (HTTP, database, file syste
 
 ---
 
-### Question 2: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+### Question 2: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 B) Over-mocking (tests assert implementation details instead of outcomes).
 C) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.

@@ -16,7 +16,7 @@ D) Includes datasets, automation, gates, budgets, and rollback criteria.
 
 ---
 
-### Question 2: Which Better upgrade most improves maintainability or reliability?
+### Question 2: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Includes datasets, automation, gates, budgets, and rollback criteria.
 B) Runs are reproducible: versioned prompts, datasets, and scoring rules.
 C) Relying only on live user feedback instead of proactive evals.
@@ -66,7 +66,7 @@ D) Relying only on live user feedback instead of proactive evals.
 
 ---
 
-### Question 7: Which testing requirement must be satisfied before submission?
+### Question 7: A reviewer asks for testing evidence. Which requirement must you show?
 A) Relying only on live user feedback instead of proactive evals.
 B) Document and version changes so improvements are explainable.
 C) Define “stop-the-line” criteria for regressions.
@@ -76,7 +76,7 @@ D) Runs are reproducible: versioned prompts, datasets, and scoring rules.
 
 ---
 
-### Question 8: Which testing requirement should be verified in CI for this module?
+### Question 8: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Build a small evaluation loop: test cases, metrics, and iteration notes.
 B) Runs are reproducible: versioned prompts, datasets, and scoring rules.
 C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
@@ -86,7 +86,7 @@ D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduc
 
 ---
 
-### Question 9: Which behavior is listed as a common mistake for this module?
+### Question 9: During review, which behavior would be flagged as a common mistake?
 A) Relying only on live user feedback instead of proactive evals.
 B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 C) Translate a vague request into a clear goal, constraints, and success criteria.

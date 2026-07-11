@@ -46,7 +46,7 @@ D) All work must be covered by typecheck + lint + unit tests + integration tests
 
 ---
 
-### Question 5: Which Better action best demonstrates stronger engineering discipline?
+### Question 5: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 B) Tests must be deterministic (no flakes) and runnable by a reviewer.
 C) Add at least 3 focused unit tests that cover normal cases and edge cases.
@@ -66,7 +66,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 7: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+### Question 7: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 A) Create a short write-up: what changed, why, and how you verified it.
 B) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
 C) Add a performance or reliability improvement and measure the impact.

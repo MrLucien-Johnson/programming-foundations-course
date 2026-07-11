@@ -76,7 +76,7 @@ D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 ---
 
-### Question 8: Which Better upgrade most improves maintainability or reliability?
+### Question 8: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Tests must be deterministic (no flakes) and runnable by a reviewer.
 B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 C) Deliverable runs locally with clear instructions.
@@ -96,7 +96,7 @@ D) All work must be covered by build + tests + lint/format in CI.
 
 ---
 
-### Question 10: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 10: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) Implement a small feature tied to this module in an existing starter app.
 B) Explain the core concepts and tradeoffs for Architecture Patterns.
 C) If the module involves a database, tests must run against an isolated schema/database.

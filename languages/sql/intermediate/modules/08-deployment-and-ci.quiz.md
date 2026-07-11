@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which Better action best demonstrates stronger engineering discipline?
+### Question 1: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Add a performance or reliability improvement and measure the impact.
 B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 C) Includes tests appropriate for the feature.
@@ -86,7 +86,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 9: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 9: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Tests must be deterministic (no flakes) and runnable by a reviewer.
 B) Add a performance or reliability improvement and measure the impact.
 C) Document decisions and constraints clearly for reviewers.

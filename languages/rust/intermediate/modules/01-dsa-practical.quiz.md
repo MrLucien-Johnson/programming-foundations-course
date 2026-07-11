@@ -36,7 +36,7 @@ D) Add a “failure mode” test (timeouts, invalid input, concurrency, or parti
 
 ---
 
-### Question 4: Which Better action best demonstrates stronger engineering discipline?
+### Question 4: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Deliverable runs locally with clear instructions.
 B) Uses consistent style/formatting and passes the quality gate.
 C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
@@ -56,7 +56,7 @@ D) Add or update documentation (README notes or ADR-style notes).
 
 ---
 
-### Question 6: Which requirement belongs in the testing checklist for this module?
+### Question 6: Which testing requirement would you verify in CI before approving the change?
 A) All work must be covered by fmt + clippy + tests in CI.
 B) Add a performance or reliability improvement and measure the impact.
 C) Over-mocking (tests assert implementation details instead of outcomes).

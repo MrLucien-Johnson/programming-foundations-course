@@ -49,7 +49,7 @@
 
 ---
 
-## Question 8: Which testing requirement should be verified in CI for this module?
+## Question 8: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: B** - All work must be covered by fmt + clippy + tests in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

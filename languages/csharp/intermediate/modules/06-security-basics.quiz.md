@@ -66,7 +66,7 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ---
 
-### Question 7: Which Better upgrade most improves maintainability or reliability?
+### Question 7: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) If the module involves a database, tests must run against an isolated schema/database.
 B) Implement a small feature tied to this module in an existing starter app.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
@@ -76,7 +76,7 @@ D) Document decisions and constraints clearly for reviewers.
 
 ---
 
-### Question 8: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 8: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) Document decisions and constraints clearly for reviewers.
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 C) If the module involves a database, tests must run against an isolated schema/database.

@@ -36,7 +36,7 @@ D) Includes a short README section describing assumptions and tradeoffs.
 
 ---
 
-### Question 4: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 4: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 B) Shipping without an automated test run in CI.
 C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).

@@ -76,7 +76,7 @@ D) All work must be covered by ruff/format + unit tests + integration tests (HTT
 
 ---
 
-### Question 8: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+### Question 8: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 A) Deliverable runs locally with clear instructions.
 B) Includes tests appropriate for the feature.
 C) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.

@@ -35,7 +35,7 @@
 
 ---
 
-## Question 6: Which testing requirement must be satisfied before submission?
+## Question 6: A reviewer asks for testing evidence. Which requirement must you show?
 **Answer: D** - All work must be covered by build + tests + analyzers in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

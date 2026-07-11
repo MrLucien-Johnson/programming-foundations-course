@@ -26,7 +26,7 @@ D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 ---
 
-### Question 3: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 3: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) Apply the concepts to a realistic codebase (not just toy examples).
 B) If the module involves a database, tests must run against an isolated schema/database.
 C) Shipping without an automated test run in CI.
@@ -86,7 +86,7 @@ D) Shipping without an automated test run in CI.
 
 ---
 
-### Question 9: Which Better upgrade most improves maintainability or reliability?
+### Question 9: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) If the module involves a database, tests must run against an isolated schema/database.
 B) Refactor one area for readability (without changing behavior) and prove it with tests.
 C) Includes a short README section describing assumptions and tradeoffs.

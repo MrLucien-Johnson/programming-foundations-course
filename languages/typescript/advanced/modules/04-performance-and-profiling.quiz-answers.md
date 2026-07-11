@@ -1,6 +1,6 @@
 # TypeScript Advanced — Module 04: Performance and Profiling Quiz Answers
 
-## Question 1: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+## Question 1: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 **Answer: D** - All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

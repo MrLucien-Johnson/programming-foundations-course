@@ -16,7 +16,7 @@ D) Deliverable runs locally with clear instructions.
 
 ---
 
-### Question 2: Which Better action best demonstrates stronger engineering discipline?
+### Question 2: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) If the module involves a database, tests must run against an isolated schema/database.
 B) Deliverable runs locally with clear instructions.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
@@ -66,7 +66,7 @@ D) Add a performance or reliability improvement and measure the impact.
 
 ---
 
-### Question 7: Which requirement belongs in the testing checklist for this module?
+### Question 7: Which testing requirement would you verify in CI before approving the change?
 A) Explain the core concepts and tradeoffs for Security (Advanced).
 B) Implement a small feature tied to this module in an existing starter app.
 C) Shipping without an automated test run in CI.

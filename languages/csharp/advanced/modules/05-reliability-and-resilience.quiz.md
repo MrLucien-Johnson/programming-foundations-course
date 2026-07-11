@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which testing requirement should be verified in CI for this module?
+### Question 1: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) All work must be covered by build + tests + analyzers in CI.
 B) Includes a short README section describing assumptions and tradeoffs.
 C) Shipping without an automated test run in CI.
@@ -36,7 +36,7 @@ D) Document decisions and constraints clearly for reviewers.
 
 ---
 
-### Question 4: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 4: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Tests must be deterministic (no flakes) and runnable by a reviewer.
 B) Over-mocking (tests assert implementation details instead of outcomes).
 C) Apply the concepts to a realistic codebase (not just toy examples).

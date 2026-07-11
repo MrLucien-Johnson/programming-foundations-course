@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Which Better upgrade most improves maintainability or reliability?
+### Question 1: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Add at least 3 focused unit tests that cover normal cases and edge cases.
 B) Includes tests appropriate for the feature.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
@@ -36,7 +36,7 @@ D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 ---
 
-### Question 4: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 4: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) If the module involves a database, tests must run against an isolated schema/database.
 B) Explain the core concepts and tradeoffs for Concurrency and Async.
 C) Use tooling to keep quality high: gofmt + golangci-lint.

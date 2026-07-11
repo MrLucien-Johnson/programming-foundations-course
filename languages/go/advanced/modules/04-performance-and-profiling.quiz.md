@@ -26,7 +26,7 @@ D) Over-mocking (tests assert implementation details instead of outcomes).
 
 ---
 
-### Question 3: Which Better upgrade most improves maintainability or reliability?
+### Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Apply the concepts to a realistic codebase (not just toy examples).
 B) Implement a small feature tied to this module in an existing starter app.
 C) Refactor one area for readability (without changing behavior) and prove it with tests.
@@ -96,7 +96,7 @@ D) Write tests that prove correctness and prevent regressions.
 
 ---
 
-### Question 10: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+### Question 10: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 A) All work must be covered by gofmt + lint + tests in CI.
 B) Uses consistent style/formatting and passes the quality gate.
 C) Add or update documentation (README notes or ADR-style notes).

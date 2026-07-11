@@ -14,7 +14,7 @@
 
 ---
 
-## Question 3: Which Better upgrade most improves maintainability or reliability?
+## Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
@@ -63,7 +63,7 @@
 
 ---
 
-## Question 10: Your tests are blocked by lint/format/type errors are breaking CI. Which requirement should you enforce?
+## Question 10: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
 **Answer: A** - All work must be covered by gofmt + lint + tests in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

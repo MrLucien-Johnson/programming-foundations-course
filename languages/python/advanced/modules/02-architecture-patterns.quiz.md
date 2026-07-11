@@ -36,7 +36,7 @@ D) Add or update documentation (README notes or ADR-style notes).
 
 ---
 
-### Question 4: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 4: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Apply the concepts to a realistic codebase (not just toy examples).
 B) Tests must be deterministic (no flakes) and runnable by a reviewer.
 C) Add a performance or reliability improvement and measure the impact.
@@ -76,7 +76,7 @@ D) Add or update documentation (README notes or ADR-style notes).
 
 ---
 
-### Question 8: Which Better action best demonstrates stronger engineering discipline?
+### Question 8: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Explain the core concepts and tradeoffs for Architecture Patterns.
 B) If the module involves a database, tests must run against an isolated schema/database.
 C) Refactor one area for readability (without changing behavior) and prove it with tests.

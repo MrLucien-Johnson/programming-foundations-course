@@ -28,7 +28,7 @@
 
 ---
 
-## Question 5: Which testing requirement should be verified in CI for this module?
+## Question 5: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: A** - All work must be covered by build + tests + analyzers in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -49,14 +49,14 @@
 
 ---
 
-## Question 8: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+## Question 8: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 **Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 9: Which Better action best demonstrates stronger engineering discipline?
+## Question 9: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: D** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

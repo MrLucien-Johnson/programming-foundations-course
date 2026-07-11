@@ -1,6 +1,6 @@
 # Java Advanced — Module 01: System Design Foundations Quiz Answers
 
-## Question 1: Which Better action best demonstrates stronger engineering discipline?
+## Question 1: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: C** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

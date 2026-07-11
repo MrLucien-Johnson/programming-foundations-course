@@ -16,7 +16,7 @@ D) Create a short write-up: what changed, why, and how you verified it.
 
 ---
 
-### Question 2: Which requirement belongs in the testing checklist for this module?
+### Question 2: Which testing requirement would you verify in CI before approving the change?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 B) Uses consistent style/formatting and passes the quality gate.
 C) All work must be covered by build + tests + static analysis in CI.
@@ -56,7 +56,7 @@ D) Write tests that prove correctness and prevent regressions.
 
 ---
 
-### Question 6: Which Better action best demonstrates stronger engineering discipline?
+### Question 6: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Create a short write-up: what changed, why, and how you verified it.
 B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 C) Apply the concepts to a realistic codebase (not just toy examples).

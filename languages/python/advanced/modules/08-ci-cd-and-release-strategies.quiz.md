@@ -26,7 +26,7 @@ D) Add a “failure mode” test (timeouts, invalid input, concurrency, or parti
 
 ---
 
-### Question 3: Your tests are blocked by tests are flaky and fail intermittently. Which requirement should you enforce?
+### Question 3: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
 A) Deliverable runs locally with clear instructions.
 B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 C) Add a performance or reliability improvement and measure the impact.

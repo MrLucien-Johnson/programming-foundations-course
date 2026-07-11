@@ -26,7 +26,7 @@ D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 ---
 
-### Question 3: Which Better action best demonstrates stronger engineering discipline?
+### Question 3: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
 B) Refactor one area for readability (without changing behavior) and prove it with tests.
 C) Skipping input validation and assuming “happy path”.

@@ -7,7 +7,7 @@
 
 ---
 
-## Question 2: Which requirement belongs in the testing checklist for this module?
+## Question 2: Which testing requirement would you verify in CI before approving the change?
 **Answer: C** - All work must be covered by build + tests + static analysis in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -35,7 +35,7 @@
 
 ---
 
-## Question 6: Which Better action best demonstrates stronger engineering discipline?
+## Question 6: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.

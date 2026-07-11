@@ -36,7 +36,7 @@ D) Add an integration test that hits a real boundary (HTTP, database, file syste
 
 ---
 
-### Question 4: Which Better upgrade most improves maintainability or reliability?
+### Question 4: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Refactor one area for readability (without changing behavior) and prove it with tests.
 B) Write tests that prove correctness and prevent regressions.
 C) Deliverable runs locally with clear instructions.

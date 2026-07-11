@@ -76,7 +76,7 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ---
 
-### Question 8: Which Better upgrade most improves maintainability or reliability?
+### Question 8: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 B) Write tests that prove correctness and prevent regressions.
 C) If the module involves a database, tests must run against an isolated schema/database.

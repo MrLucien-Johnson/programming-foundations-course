@@ -46,7 +46,7 @@ D) Add a performance or reliability improvement and measure the impact.
 
 ---
 
-### Question 5: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 5: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) If the module involves a database, tests must run against an isolated schema/database.
 B) Deliverable runs locally with clear instructions.
 C) Shipping without an automated test run in CI.
@@ -86,7 +86,7 @@ D) Add a “failure mode” test (timeouts, invalid input, concurrency, or parti
 
 ---
 
-### Question 9: Which Better upgrade most improves maintainability or reliability?
+### Question 9: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Create a short write-up: what changed, why, and how you verified it.
 B) Explain the core concepts and tradeoffs for Observability and SLOs.
 C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.

@@ -56,7 +56,7 @@
 
 ---
 
-## Question 9: Which testing requirement must be satisfied before submission?
+## Question 9: A reviewer asks for testing evidence. Which requirement must you show?
 **Answer: C** - All work must be covered by fmt + clippy + tests in CI.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

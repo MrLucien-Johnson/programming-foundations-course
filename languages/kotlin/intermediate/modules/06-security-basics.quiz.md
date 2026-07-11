@@ -36,7 +36,7 @@ D) Implement a small feature tied to this module in an existing starter app.
 
 ---
 
-### Question 4: Which requirement belongs in the testing checklist for this module?
+### Question 4: Which testing requirement would you verify in CI before approving the change?
 A) Add at least 3 focused unit tests that cover normal cases and edge cases.
 B) Includes tests appropriate for the feature.
 C) Explain the core concepts and tradeoffs for Security Basics.
@@ -96,7 +96,7 @@ D) Use tooling to keep quality high: ktlint + detekt.
 
 ---
 
-### Question 10: Which Better upgrade most improves maintainability or reliability?
+### Question 10: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 B) Making performance claims without measurements.
 C) Add or update documentation (README notes or ADR-style notes).

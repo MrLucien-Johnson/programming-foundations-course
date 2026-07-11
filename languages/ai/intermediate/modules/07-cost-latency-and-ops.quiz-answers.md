@@ -21,7 +21,7 @@
 
 ---
 
-## Question 4: Which behavior is listed as a common mistake for this module?
+## Question 4: During review, which behavior would be flagged as a common mistake?
 **Answer: B** - Optimizing for cost while silently harming quality.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
@@ -42,14 +42,14 @@
 
 ---
 
-## Question 7: Which Better action best demonstrates stronger engineering discipline?
+## Question 7: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: B** - Design a caching strategy and what cache keys should be.
 
 **Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 8: Which testing requirement should be verified in CI for this module?
+## Question 8: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: A** - Evaluation harness records cost/latency per run (even estimated).
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -63,7 +63,7 @@
 
 ---
 
-## Question 10: Which requirement belongs in the testing checklist for this module?
+## Question 10: Which testing requirement would you verify in CI before approving the change?
 **Answer: D** - Evaluation harness records cost/latency per run (even estimated).
 
 **Explanation:** This requirement appears in the Testing Requirements section.

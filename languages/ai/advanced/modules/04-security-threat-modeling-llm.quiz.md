@@ -16,7 +16,7 @@ D) Create a threat model for one app: list threats and mitigations.
 
 ---
 
-### Question 2: Which requirement belongs in the testing checklist for this module?
+### Question 2: Which testing requirement would you verify in CI before approving the change?
 A) Security tests included in the evaluation harness and CI gate.
 B) Design a red-team suite that targets top threats.
 C) Add data minimization and retention rules to the design.
@@ -26,7 +26,7 @@ D) Over-permissioned tools without audit logs.
 
 ---
 
-### Question 3: Which testing requirement should be verified in CI for this module?
+### Question 3: Which testing requirement would prevent a reviewer from rejecting the submission?
 A) Add data minimization and retention rules to the design.
 B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 C) Add a supply-chain policy for prompt/eval artifacts.
@@ -36,7 +36,7 @@ D) Security tests included in the evaluation harness and CI gate.
 
 ---
 
-### Question 4: Which Better action best demonstrates stronger engineering discipline?
+### Question 4: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 B) Over-permissioned tools without audit logs.
 C) Add a least-privilege tool policy and verify via tests.
@@ -86,7 +86,7 @@ D) Design a red-team suite that targets top threats.
 
 ---
 
-### Question 9: Which behavior is listed as a common mistake for this module?
+### Question 9: During review, which behavior would be flagged as a common mistake?
 A) Treating retrieved content as trusted instructions.
 B) Design incident response for security events (triage + containment).
 C) Build a small evaluation loop: test cases, metrics, and iteration notes.

@@ -6,7 +6,7 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: Your tests are blocked by database tests are polluting shared data. Which requirement should you enforce?
+### Question 1: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
 A) Making performance claims without measurements.
 B) Write tests that prove correctness and prevent regressions.
 C) If the module involves a database, tests must run against an isolated schema/database.
@@ -66,7 +66,7 @@ D) Includes tests appropriate for the feature.
 
 ---
 
-### Question 7: Which Better action best demonstrates stronger engineering discipline?
+### Question 7: A reviewer asks for stronger engineering discipline. Which Better action fits?
 A) Refactor one area for readability (without changing behavior) and prove it with tests.
 B) Create a short write-up: what changed, why, and how you verified it.
 C) Document decisions and constraints clearly for reviewers.

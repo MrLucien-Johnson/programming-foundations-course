@@ -96,7 +96,7 @@ D) Making performance claims without measurements.
 
 ---
 
-### Question 10: Which Better upgrade most improves maintainability or reliability?
+### Question 10: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 A) Refactor one area for readability (without changing behavior) and prove it with tests.
 B) If the module involves a database, tests must run against an isolated schema/database.
 C) Includes tests appropriate for the feature.

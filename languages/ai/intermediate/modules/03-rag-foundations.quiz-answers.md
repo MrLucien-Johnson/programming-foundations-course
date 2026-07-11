@@ -21,7 +21,7 @@
 
 ---
 
-## Question 4: Which testing requirement should be verified in CI for this module?
+## Question 4: Which testing requirement would prevent a reviewer from rejecting the submission?
 **Answer: D** - At minimum: manual scoring with a rubric; better: scripted scoring of citations/abstentions.
 
 **Explanation:** This requirement appears in the Testing Requirements section.
@@ -35,14 +35,14 @@
 
 ---
 
-## Question 6: Which option represents a common mistake to avoid?
+## Question 6: Which option reflects a mistake a reviewer would call out?
 **Answer: A** - No citation requirement, leading to confident hallucinations.
 
 **Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 7: Which requirement belongs in the testing checklist for this module?
+## Question 7: Which testing requirement would you verify in CI before approving the change?
 **Answer: A** - At minimum: manual scoring with a rubric; better: scripted scoring of citations/abstentions.
 
 **Explanation:** This requirement appears in the Testing Requirements section.

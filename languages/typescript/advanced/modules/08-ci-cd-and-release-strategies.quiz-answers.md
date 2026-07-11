@@ -14,7 +14,7 @@
 
 ---
 
-## Question 3: Which Better action best demonstrates stronger engineering discipline?
+## Question 3: A reviewer asks for stronger engineering discipline. Which Better action fits?
 **Answer: B** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Explanation:** This is explicitly listed in the Better exercises section.

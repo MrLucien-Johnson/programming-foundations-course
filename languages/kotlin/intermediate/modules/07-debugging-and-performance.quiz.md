@@ -16,7 +16,7 @@ D) Add a performance or reliability improvement and measure the impact.
 
 ---
 
-### Question 2: Which requirement belongs in the testing checklist for this module?
+### Question 2: Which testing requirement would you verify in CI before approving the change?
 A) Write tests that prove correctness and prevent regressions.
 B) All work must be covered by build + tests + static analysis in CI.
 C) Uses consistent style/formatting and passes the quality gate.

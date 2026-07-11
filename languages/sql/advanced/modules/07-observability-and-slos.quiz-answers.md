@@ -1,6 +1,6 @@
 # SQL (PostgreSQL) Advanced — Module 07: Observability and SLOs Quiz Answers
 
-## Question 1: Which Better upgrade most improves maintainability or reliability?
+## Question 1: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Explanation:** This is explicitly listed in the Better exercises section.
