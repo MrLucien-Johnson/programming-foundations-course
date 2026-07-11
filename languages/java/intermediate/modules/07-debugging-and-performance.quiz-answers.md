@@ -1,28 +1,77 @@
 # Java Intermediate — Module 07: Debugging and Performance Quiz Answers
 
-## Question 1: What is the main focus of this module?
-**Answer: A** - Learn and apply the core concepts from Java Intermediate — Module 07: Debugging and Performance
+## Question 1: You're preparing a submission and need to meet the Core bar. Which action is required?
+**Answer: D** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
-**Explanation:** The module is designed to teach and apply its core concepts in practice.
-
----
-
-## Question 2: Which approach aligns with this course?
-**Answer: A** - Follow the lessons in order and complete the exercises
-
-**Explanation:** This course emphasizes structured learning and practice.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 3: What should you do after finishing this module?
-**Answer: A** - Complete the exercises or mini-project and review mistakes
+## Question 2: Which improvement moves a Core submission to the Better tier?
+**Answer: D** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
-**Explanation:** Practice and review help reinforce the concepts.
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 3: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+**Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 4: A reviewer checks the Core checklist. Which action should they see?
+**Answer: D** - Add or update documentation (README notes or ADR-style notes).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 5: Your teammate says: bugs appear on unexpected inputs because validation was skipped. Which common mistake is this?
+**Answer: C** - Skipping input validation and assuming “happy path”.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 6: Which step is explicitly called out as Better work?
+**Answer: C** - Refactor one area for readability (without changing behavior) and prove it with tests.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 7: A reviewer approves the mini-project when which condition is met?
+**Answer: A** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 8: Which requirement is part of the mini-project acceptance criteria?
+**Answer: C** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 9: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+**Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 10: Which task is explicitly listed as a Beast Mode upgrade?
+**Answer: A** - Create a short write-up: what changed, why, and how you verified it.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
 ## 🎯 How Did You Do?
 
-- **3/3 correct:** Excellent! You are ready to move on.
-- **2/3 correct:** Good work! Review the missed concept.
-- **0-1/3 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You are ready to move on.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

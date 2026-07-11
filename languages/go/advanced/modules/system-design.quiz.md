@@ -6,31 +6,101 @@ Answer these questions about what you learned. Try to answer from memory first!
 
 ## 🧪 Questions
 
-### Question 1: What is the main focus of this module?
-A) Learn and apply the core concepts from Systems and Design (Advanced)  
-B) Skip practice and only skim headings  
-C) Ignore the lesson goals and jump ahead  
-D) Avoid testing or verification steps  
+### Question 1: Which deliverable is explicitly listed for this module?
+A) API boundaries and layering
+B) design notes with trade-offs
+C) reliability, logging, and observability
+D) performance profiling and optimization
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which approach aligns with this course?
-A) Follow the lessons in order and complete the exercises  
-B) Skip practice work and avoid feedback  
-C) Only read without applying concepts  
-D) Ignore the instructions and improvise  
+### Question 2: Which topic belongs to this module's outline?
+A) profiling or benchmarking summary
+B) reliability, logging, and observability
+C) Skip testing and trust the first result.
+D) design notes with trade-offs
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: What should you do after finishing this module?
-A) Complete the exercises or mini-project and review mistakes  
-B) Delete your work and move on immediately  
-C) Avoid reflecting on what you learned  
-D) Stop learning until the next course  
+### Question 3: Which topic appears in this module?
+A) design notes with trade-offs
+B) profiling or benchmarking summary
+C) Skip testing and trust the first result.
+D) reliability, logging, and observability
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which topic is part of the module's coverage?
+A) profiling or benchmarking summary
+B) performance profiling and optimization
+C) design notes with trade-offs
+D) Skip testing and trust the first result.
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which topic would you expect in this module?
+A) Skip testing and trust the first result.
+B) design notes with trade-offs
+C) API boundaries and layering
+D) profiling or benchmarking summary
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Which deliverable would you submit to complete this module?
+A) API boundaries and layering
+B) design notes with trade-offs
+C) reliability, logging, and observability
+D) performance profiling and optimization
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Which deliverable would satisfy the module expectations?
+A) API boundaries and layering
+B) reliability, logging, and observability
+C) profiling or benchmarking summary
+D) performance profiling and optimization
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Which topic would you highlight when describing this module?
+A) design notes with trade-offs
+B) reliability, logging, and observability
+C) Skip testing and trust the first result.
+D) profiling or benchmarking summary
+
+**Your answer:** _______________
+
+---
+
+### Question 9: Which topic is included in this module's Topics list?
+A) performance profiling and optimization
+B) design notes with trade-offs
+C) profiling or benchmarking summary
+D) Skip testing and trust the first result.
+
+**Your answer:** _______________
+
+---
+
+### Question 10: Which output is listed as a required deliverable?
+A) profiling or benchmarking summary
+B) performance profiling and optimization
+C) API boundaries and layering
+D) reliability, logging, and observability
 
 **Your answer:** _______________
 
@@ -42,10 +112,6 @@ Once you finish, check the answers file for explanations.
 
 ## 🎯 How Did You Do?
 
-- **3/3 correct:** Excellent! You understand the module well. 🎉
-- **2/3 correct:** Good work! Review what you missed. 👍
-- **0-1/3 correct:** Review the module and try again. 💪
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

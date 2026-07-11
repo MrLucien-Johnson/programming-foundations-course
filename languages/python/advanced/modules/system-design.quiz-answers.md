@@ -1,28 +1,77 @@
 # Systems and Design (Advanced) Quiz Answers
 
-## Question 1: What is the main focus of this module?
-**Answer: A** - Learn and apply the core concepts from Systems and Design (Advanced)
+## Question 1: Which deliverable is explicitly listed for this module?
+**Answer: B** - design notes with trade-offs
 
-**Explanation:** The module is designed to teach and apply its core concepts in practice.
-
----
-
-## Question 2: Which approach aligns with this course?
-**Answer: A** - Follow the lessons in order and complete the exercises
-
-**Explanation:** This course emphasizes structured learning and practice.
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 3: What should you do after finishing this module?
-**Answer: A** - Complete the exercises or mini-project and review mistakes
+## Question 2: Which output is listed as a required deliverable?
+**Answer: B** - profiling or benchmarking summary
 
-**Explanation:** Practice and review help reinforce the concepts.
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 3: A learner asks what you'll study next. Which topic fits?
+**Answer: B** - API boundaries and layering
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 4: Which deliverable is required before moving on?
+**Answer: D** - design notes with trade-offs
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 5: Which deliverable would satisfy the module expectations?
+**Answer: C** - profiling or benchmarking summary
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 6: Which topic is part of the module's coverage?
+**Answer: D** - API boundaries and layering
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 7: Which topic would you highlight when describing this module?
+**Answer: A** - performance profiling and optimization
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 8: Which topic is on the module outline?
+**Answer: B** - performance profiling and optimization
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 9: Which topic is covered in this module?
+**Answer: B** - reliability, logging, and observability
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 10: A reviewer expects which deliverable from this module?
+**Answer: A** - design notes with trade-offs
+
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
 ## 🎯 How Did You Do?
 
-- **3/3 correct:** Excellent! You are ready to move on.
-- **2/3 correct:** Good work! Review the missed concept.
-- **0-1/3 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You are ready to move on.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

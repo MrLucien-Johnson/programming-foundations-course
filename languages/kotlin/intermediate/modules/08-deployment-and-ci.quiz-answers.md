@@ -1,28 +1,77 @@
 # Kotlin Intermediate — Module 08: Deployment and CI Quiz Answers
 
-## Question 1: What is the main focus of this module?
-**Answer: A** - Learn and apply the core concepts from Kotlin Intermediate — Module 08: Deployment and CI
+## Question 1: Which testing requirement must be satisfied before submission?
+**Answer: B** - All work must be covered by build + tests + static analysis in CI.
 
-**Explanation:** The module is designed to teach and apply its core concepts in practice.
-
----
-
-## Question 2: Which approach aligns with this course?
-**Answer: A** - Follow the lessons in order and complete the exercises
-
-**Explanation:** This course emphasizes structured learning and practice.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 3: What should you do after finishing this module?
-**Answer: A** - Complete the exercises or mini-project and review mistakes
+## Question 2: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
 
-**Explanation:** Practice and review help reinforce the concepts.
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 3: Which step would keep the work within the Core scope?
+**Answer: C** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 4: Your goal is to meet the minimum passing bar. Which action fulfills the Core criteria?
+**Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 5: Which task is explicitly listed as a Beast Mode upgrade?
+**Answer: B** - Add a performance or reliability improvement and measure the impact.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 6: Which improvement moves a Core submission to the Better tier?
+**Answer: B** - Refactor one area for readability (without changing behavior) and prove it with tests.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 7: This happened during review: tests assert implementation details instead of outcomes. Which mistake is it?
+**Answer: A** - Over-mocking (tests assert implementation details instead of outcomes).
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 8: To earn a Better evaluation, which action should you add?
+**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 9: A reviewer approves the mini-project when which condition is met?
+**Answer: D** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 10: Which acceptance criterion must be satisfied before submission?
+**Answer: D** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
 ## 🎯 How Did You Do?
 
-- **3/3 correct:** Excellent! You are ready to move on.
-- **2/3 correct:** Good work! Review the missed concept.
-- **0-1/3 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You are ready to move on.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

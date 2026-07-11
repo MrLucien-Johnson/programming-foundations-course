@@ -1,28 +1,77 @@
 # Python Intermediate — Module 07: Debugging and Performance Quiz Answers
 
-## Question 1: What is the main focus of this module?
-**Answer: A** - Learn and apply the core concepts from Python Intermediate — Module 07: Debugging and Performance
+## Question 1: Which task best matches the Core expectations for this module?
+**Answer: B** - Implement a small feature tied to this module in an existing starter app.
 
-**Explanation:** The module is designed to teach and apply its core concepts in practice.
-
----
-
-## Question 2: Which approach aligns with this course?
-**Answer: A** - Follow the lessons in order and complete the exercises
-
-**Explanation:** This course emphasizes structured learning and practice.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 3: What should you do after finishing this module?
-**Answer: A** - Complete the exercises or mini-project and review mistakes
+## Question 2: Your teammate says: CI has no automated test run before release. Which common mistake is this?
+**Answer: D** - Shipping without an automated test run in CI.
 
-**Explanation:** Practice and review help reinforce the concepts.
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 3: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 4: You're preparing a submission and need to meet the Core bar. Which action is required?
+**Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 5: Your project passes review only if which condition is true?
+**Answer: B** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 6: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
+**Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 7: Which task is explicitly listed as a Beast Mode upgrade?
+**Answer: A** - Add a performance or reliability improvement and measure the impact.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 8: You already met Core. Which action qualifies as a Better upgrade?
+**Answer: A** - Refactor one area for readability (without changing behavior) and prove it with tests.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 9: To earn a Better evaluation, which action should you add?
+**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 10: Which requirement is part of the mini-project acceptance criteria?
+**Answer: D** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
 ## 🎯 How Did You Do?
 
-- **3/3 correct:** Excellent! You are ready to move on.
-- **2/3 correct:** Good work! Review the missed concept.
-- **0-1/3 correct:** Review the module and try again.
+- **10/10 correct:** Excellent! You are ready to move on.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.
