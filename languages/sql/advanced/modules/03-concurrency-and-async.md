@@ -24,6 +24,26 @@ This module uses **PostgreSQL 15+ (local via Docker)**, **psql + migrations tool
 3) Timeouts, cancellation, and structured concurrency (45 min)
 4) Idempotency + exactly-once myths (35 min)
 
+## Guided Walkthrough
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/sql/advanced/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will handle parallel work safely.
+3. Identify shared state and define synchronization rules.
+4. Implement an async or concurrent workflow.
+5. Add a test for race conditions or timeouts.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+Use the starter pack in `languages/sql/advanced/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A minimal project scaffold.
+- A sample entry point you can expand.
+- A place to add tests and notes.
+
 ## Exercises
 ### Core
 - Implement a small feature tied to this module in an existing starter app.
@@ -63,6 +83,15 @@ Build a small, production-leaning feature or service slice that showcases **Conc
 | Code quality | Lint/format clean, clear naming | Clean architecture choices with justified tradeoffs |
 | Documentation | Setup + usage documented | Includes rationale, diagrams, or ADR-style notes |
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+- Run: `psql -f queries.sql`
+
 ## Common Mistakes
 - Shipping without an automated test run in CI.
 - Over-mocking (tests assert implementation details instead of outcomes).
@@ -70,5 +99,8 @@ Build a small, production-leaning feature or service slice that showcases **Conc
 - Making performance claims without measurements.
 
 ## Stretch Resources
-- (Add links to official docs, talks, and reference implementations.)
-- (Add 1–2 curated articles that deepen understanding.)
+
+
+- Concurrency primer: https://www.cs.cmu.edu/~fp/courses/15411-f15/
+- Async patterns: https://learn.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/
+

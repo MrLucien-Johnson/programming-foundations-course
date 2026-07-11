@@ -25,6 +25,28 @@ Instrument AI systems: quality metrics, cost/latency, tracing, and alerts tied t
 3) Dashboards and alerting strategy (45 min)
 4) Detecting regressions and drift in production (45 min)
 
+## Guided Walkthrough
+
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will add telemetry and alerts for LLM systems.
+3. Define logs, metrics, and traces for core flows.
+4. Set alert thresholds for critical events.
+5. Document escalation steps.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+
+Use the starter pack in `languages/ai/advanced/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Define SLIs/SLOs for an AI feature and map them to metrics.
@@ -58,9 +80,21 @@ Create an observability plan and incident triggers for an LLM app.
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+
 ## Common Mistakes
 - Logging sensitive user data without redaction.
 - Alerting on everything (no signal-to-noise strategy).
 
 ## Stretch Resources
-- (Placeholder) Add links to observability principles and monitoring patterns.
+
+
+- OpenTelemetry: https://opentelemetry.io/docs/
+- SRE workbook: https://sre.google/workbook/
+

@@ -24,6 +24,26 @@ This module uses **.NET 8**, **dotnet CLI + NuGet**, and **xUnit (or NUnit) + Fl
 3) DB tuning: indexes, plans, and lock contention (45 min)
 4) Caching and invalidation strategies (40 min)
 
+## Guided Walkthrough
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/csharp/advanced/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will measure and improve runtime performance.
+3. Capture baseline performance metrics.
+4. Profile or trace to find hotspots.
+5. Apply one optimization and re-measure.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+Use the starter pack in `languages/csharp/advanced/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A minimal project scaffold.
+- A sample entry point you can expand.
+- A place to add tests and notes.
+
 ## Exercises
 ### Core
 - Implement a small feature tied to this module in an existing starter app.
@@ -63,6 +83,17 @@ Build a small, production-leaning feature or service slice that showcases **Perf
 | Code quality | Lint/format clean, clear naming | Clean architecture choices with justified tradeoffs |
 | Documentation | Setup + usage documented | Includes rationale, diagrams, or ADR-style notes |
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+- Run: `dotnet test`
+- Run: `dotnet format`
+- Run: `dotnet format`
+
 ## Common Mistakes
 - Shipping without an automated test run in CI.
 - Over-mocking (tests assert implementation details instead of outcomes).
@@ -70,5 +101,8 @@ Build a small, production-leaning feature or service slice that showcases **Perf
 - Making performance claims without measurements.
 
 ## Stretch Resources
-- (Add links to official docs, talks, and reference implementations.)
-- (Add 1–2 curated articles that deepen understanding.)
+
+
+- Profiling guide: https://brendangregg.com/perf.html
+- Performance checklist: https://developer.mozilla.org/en-US/docs/Web/Performance
+

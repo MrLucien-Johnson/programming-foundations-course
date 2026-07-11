@@ -25,6 +25,20 @@
         <p class="note">Answer each question, then click “Check answers”.</p>
       </section>
 
+      <section id="quiz-status-panel" class="section card status-panel" aria-live="polite">
+        <div class="status-header">
+          <span class="status-pill" id="quiz-status-pill">Checking</span>
+          <strong id="quiz-status-title">Checking quiz availability</strong>
+        </div>
+        <p id="quiz-status-message" class="status-message">
+          We are verifying the quiz files for this module.
+        </p>
+        <div class="button-row" id="quiz-status-actions" hidden>
+          <button class="btn btn-secondary" id="quiz-status-back" type="button">Go back</button>
+          <a class="btn btn-secondary" href="courses.html">Back to courses</a>
+        </div>
+      </section>
+
       <section id="quiz-intro" class="section card">
         <h3>Quiz overview</h3>
         <p id="quiz-meta">Loading quiz details…</p>
@@ -38,6 +52,7 @@
       <section class="section" id="quiz-actions">
         <div class="button-row">
           <button class="btn btn-primary" id="check-answers" type="button">Check answers</button>
+          <button class="btn btn-secondary" id="reset-quiz" type="button">Try again</button>
           <a class="btn btn-secondary" href="courses.html">Back to courses</a>
         </div>
         <p id="quiz-score" class="quiz-score"></p>
@@ -51,10 +66,17 @@
       const quizContainer = document.getElementById("quiz-container");
       const scoreEl = document.getElementById("quiz-score");
       const checkButton = document.getElementById("check-answers");
+      const resetButton = document.getElementById("reset-quiz");
       const startButton = document.getElementById("start-quiz");
       const actionsSection = document.getElementById("quiz-actions");
       const introSection = document.getElementById("quiz-intro");
       const metaEl = document.getElementById("quiz-meta");
+      const statusPanel = document.getElementById("quiz-status-panel");
+      const statusPill = document.getElementById("quiz-status-pill");
+      const statusTitle = document.getElementById("quiz-status-title");
+      const statusMessage = document.getElementById("quiz-status-message");
+      const statusActions = document.getElementById("quiz-status-actions");
+      const statusBackButton = document.getElementById("quiz-status-back");
       const rawRoot =
         "https://raw.githubusercontent.com/MrLucien-Johnson/programming-foundations-course/main/";
 
@@ -78,6 +100,39 @@
         }
         return null;
       };
+
+      const setStatus = ({ state, title, message, showActions }) => {
+        if (!statusPanel) return;
+        statusPanel.dataset.state = state;
+        if (statusPill) statusPill.textContent = state;
+        if (statusTitle) statusTitle.textContent = title;
+        if (statusMessage) statusMessage.textContent = message;
+        if (statusActions) statusActions.hidden = !showActions;
+      };
+
+      const markUnavailable = (message) => {
+        setStatus({
+          state: "Unavailable",
+          title: "Quiz unavailable",
+          message,
+          showActions: true,
+        });
+        if (introSection) {
+          introSection.style.display = "none";
+        }
+        if (actionsSection) {
+          actionsSection.style.display = "none";
+        }
+        if (startButton) {
+          startButton.disabled = true;
+        }
+      };
+
+      if (statusBackButton) {
+        statusBackButton.addEventListener("click", () => {
+          window.history.back();
+        });
+      }
 
       const parseQuiz = (markdown) => {
         const lines = markdown.split("\n");
@@ -222,7 +277,20 @@
           const explanationEl = document.createElement("div");
           explanationEl.className = "quiz-explanation";
           explanationEl.style.display = "none";
+          const toggleButton = document.createElement("button");
+          toggleButton.type = "button";
+          toggleButton.className = "quiz-explain-toggle";
+          toggleButton.textContent = "Show explanation";
+          toggleButton.disabled = true;
+          toggleButton.setAttribute("aria-expanded", "false");
+          toggleButton.addEventListener("click", () => {
+            const isHidden = explanationEl.style.display === "none";
+            explanationEl.style.display = isHidden ? "block" : "none";
+            toggleButton.textContent = isHidden ? "Hide explanation" : "Show explanation";
+            toggleButton.setAttribute("aria-expanded", isHidden ? "true" : "false");
+          });
           questionEl.appendChild(optionsEl);
+          questionEl.appendChild(toggleButton);
           questionEl.appendChild(explanationEl);
           quizContainer.appendChild(questionEl);
         });
@@ -234,6 +302,7 @@
         questions.forEach((questionEl) => {
           const correctAnswer = questionEl.dataset.answer;
           const explanationEl = questionEl.querySelector(".quiz-explanation");
+          const toggleButton = questionEl.querySelector(".quiz-explain-toggle");
           const optionLabels = questionEl.querySelectorAll(".quiz-option");
           let selectedValue = null;
           optionLabels.forEach((label) => {
@@ -284,11 +353,36 @@
             } else {
               explanationEl.textContent = "";
             }
-            explanationEl.style.display = explanationEl.textContent || explanationEl.innerHTML ? "block" : "none";
+            const hasExplanation =
+              explanationEl.textContent.trim() || explanationEl.innerHTML.trim();
+            explanationEl.style.display = hasExplanation ? "block" : "none";
+            if (toggleButton) {
+              toggleButton.disabled = !hasExplanation;
+              toggleButton.textContent = hasExplanation ? "Hide explanation" : "Show explanation";
+              toggleButton.setAttribute("aria-expanded", hasExplanation ? "true" : "false");
+            }
           }
         });
 
         scoreEl.textContent = `Score: ${correct}/${questions.length}`;
+      };
+
+      const resetQuiz = () => {
+        quizContainer.querySelectorAll("input[type='radio']").forEach((input) => {
+          input.checked = false;
+        });
+        quizContainer.querySelectorAll(".quiz-option").forEach((label) => {
+          label.classList.remove("correct", "incorrect");
+        });
+        quizContainer.querySelectorAll(".quiz-explanation").forEach((explanation) => {
+          explanation.style.display = "none";
+        });
+        quizContainer.querySelectorAll(".quiz-explain-toggle").forEach((button) => {
+          button.textContent = "Show explanation";
+          button.disabled = true;
+          button.setAttribute("aria-expanded", "false");
+        });
+        scoreEl.textContent = "";
       };
 
       quizContainer.style.display = "none";
@@ -296,6 +390,12 @@
       if (actionsSection) {
         actionsSection.style.display = "none";
       }
+      setStatus({
+        state: "Checking",
+        title: "Checking quiz availability",
+        message: "We are verifying the quiz files for this module.",
+        showActions: false,
+      });
 
       const showQuiz = () => {
         quizContainer.style.display = "block";
@@ -306,20 +406,23 @@
         if (actionsSection) {
           actionsSection.style.display = "block";
         }
-        scoreEl.textContent = "";
+        resetQuiz();
       };
 
       if (startButton) {
         startButton.addEventListener("click", showQuiz);
       }
 
+      if (resetButton) {
+        resetButton.addEventListener("click", resetQuiz);
+      }
+
       if (!quizPath) {
         quizTitle.textContent = "Quiz not found";
-        quizContainer.innerHTML = "<p>Please return to the courses page and select a quiz.</p>";
+        quizContainer.innerHTML =
+          "<p>Please return to the courses page and select a quiz from a module.</p>";
         checkButton.disabled = true;
-        if (introSection) {
-          introSection.style.display = "none";
-        }
+        markUnavailable("No quiz was selected. Please return to the course and try again.");
       } else {
         const answersPath = buildAnswerPath(quizPath);
         fetchText(quizPath)
@@ -335,30 +438,57 @@
               .then((answersMarkdown) => {
                 const answers = parseAnswers(answersMarkdown);
                 renderQuiz(questions, answers);
+                setStatus({
+                  state: "Ready",
+                  title: "Quiz ready",
+                  message: "Everything is loaded. Start when you're ready.",
+                  showActions: false,
+                });
               })
               .catch(() => {
                 const fallback = fallbackAnswerPath(quizPath);
                 if (!fallback) {
                   renderQuiz(questions, new Map());
+                  setStatus({
+                    state: "Partial",
+                    title: "Quiz ready (answers pending)",
+                    message:
+                      "You can take the quiz now, but explanations are not available yet.",
+                    showActions: false,
+                  });
                   return;
                 }
                 return fetchText(fallback)
                   .then((answersMarkdown) => {
                     const answers = parseAnswers(answersMarkdown);
                     renderQuiz(questions, answers);
+                    setStatus({
+                      state: "Ready",
+                      title: "Quiz ready",
+                      message: "Everything is loaded. Start when you're ready.",
+                      showActions: false,
+                    });
                   })
                   .catch(() => {
                     renderQuiz(questions, new Map());
+                    setStatus({
+                      state: "Partial",
+                      title: "Quiz ready (answers pending)",
+                      message:
+                        "You can take the quiz now, but explanations are not available yet.",
+                      showActions: false,
+                    });
                   });
               });
           })
           .catch((error) => {
             quizTitle.textContent = "Quiz unavailable";
-            quizContainer.innerHTML = `<p>${error.message}</p>`;
+            quizContainer.innerHTML =
+              "<p>This quiz is not ready yet. Please try again later.</p>";
             checkButton.disabled = true;
-            if (introSection) {
-              introSection.style.display = "none";
-            }
+            markUnavailable(
+              "We could not load the quiz file. It may still be publishing. Please try again later."
+            );
           });
       }
 

@@ -25,6 +25,26 @@ This module uses **Go 1.22+**, **go mod**, and **testing + httptest**. When appl
 4) Indexes + query plans (45 min)
 5) ORM/query builder pitfalls (35 min)
 
+## Guided Walkthrough
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/go/intermediate/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will design schemas and reliable data access.
+3. Model tables/entities with clear constraints and indexes.
+4. Implement CRUD operations and verify with sample data.
+5. Document migrations and rollback steps.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+Use the starter pack in `languages/go/intermediate/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A minimal project scaffold.
+- A sample entry point you can expand.
+- A place to add tests and notes.
+
 ## Exercises
 ### Core
 - Implement a small feature tied to this module in an existing starter app.
@@ -64,6 +84,17 @@ Build a small, production-leaning feature or service slice that showcases **Data
 | Code quality | Lint/format clean, clear naming | Clean architecture choices with justified tradeoffs |
 | Documentation | Setup + usage documented | Includes rationale, diagrams, or ADR-style notes |
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+- Run: `go test ./...`
+- Run: `golangci-lint run`
+- Run: `gofmt -w .`
+
 ## Common Mistakes
 - Shipping without an automated test run in CI.
 - Over-mocking (tests assert implementation details instead of outcomes).
@@ -71,5 +102,8 @@ Build a small, production-leaning feature or service slice that showcases **Data
 - Making performance claims without measurements.
 
 ## Stretch Resources
-- (Add links to official docs, talks, and reference implementations.)
-- (Add 1–2 curated articles that deepen understanding.)
+
+
+- PostgreSQL docs: https://www.postgresql.org/docs/
+- Database indexing basics: https://use-the-index-luke.com/
+

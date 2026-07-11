@@ -26,6 +26,28 @@ Be ready for production: incident types, triage, communication, mitigations, and
 3) Playbooks: step-by-step actions and ownership (45 min)
 4) Postmortems: root cause, prevention, and follow-up evals (45 min)
 
+## Guided Walkthrough
+
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will prepare incident response playbooks.
+3. Write an incident runbook for a failure scenario.
+4. Define escalation paths and owners.
+5. Run a tabletop exercise and capture lessons.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+
+Use the starter pack in `languages/ai/advanced/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Write an incident playbook for a cost spike and for a safety regression.
@@ -59,9 +81,21 @@ Create an incident response package: playbooks + drills + postmortem template.
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+
 ## Common Mistakes
 - No clear ownership or steps during incidents.
 - Mitigations that increase risk (e.g., disabling safety checks).
 
 ## Stretch Resources
-- (Placeholder) Add links to incident response and operational readiness.
+
+
+- Incident response: https://sre.google/workbook/incident-response/
+- Postmortems: https://sre.google/sre-book/postmortem-culture/
+

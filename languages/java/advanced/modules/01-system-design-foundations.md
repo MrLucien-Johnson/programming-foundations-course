@@ -24,6 +24,26 @@ This module uses **Java 21 LTS**, **Maven (or Gradle)**, and **JUnit 5 + Mockito
 3) Consistency models + CAP in practice (45 min)
 4) Queues, streams, and asynchronous workflows (45 min)
 
+## Guided Walkthrough
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/java/advanced/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will translate requirements into scalable design.
+3. Draft a one-page design doc with requirements and constraints.
+4. Sketch architecture with data flow and failure points.
+5. Identify one scaling bottleneck and mitigation.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+Use the starter pack in `languages/java/advanced/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A minimal project scaffold.
+- A sample entry point you can expand.
+- A place to add tests and notes.
+
 ## Exercises
 ### Core
 - Implement a small feature tied to this module in an existing starter app.
@@ -63,6 +83,15 @@ Build a small, production-leaning feature or service slice that showcases **Syst
 | Code quality | Lint/format clean, clear naming | Clean architecture choices with justified tradeoffs |
 | Documentation | Setup + usage documented | Includes rationale, diagrams, or ADR-style notes |
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+- Run: `javac Main.java && java Main`
+
 ## Common Mistakes
 - Shipping without an automated test run in CI.
 - Over-mocking (tests assert implementation details instead of outcomes).
@@ -70,5 +99,8 @@ Build a small, production-leaning feature or service slice that showcases **Syst
 - Making performance claims without measurements.
 
 ## Stretch Resources
-- (Add links to official docs, talks, and reference implementations.)
-- (Add 1–2 curated articles that deepen understanding.)
+
+
+- System design primer: https://github.com/donnemartin/system-design-primer
+- Architecture notes: https://architecturenotes.co/
+

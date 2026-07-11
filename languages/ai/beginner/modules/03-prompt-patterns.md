@@ -24,6 +24,25 @@ Use reusable prompt patterns to improve reliability: checklists, decomposition, 
 3) Critique-and-revise: separate drafting from review (45 min)
 4) Self-consistency: multiple drafts + choose best via rubric (40 min)
 
+## Guided Walkthrough
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/beginner/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will apply prompt patterns to improve reliability.
+3. Select two prompt patterns and apply them to the same task.
+4. Compare outputs side by side and pick the best pattern.
+5. Document why the winning pattern works better.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+Use the starter pack in `languages/ai/beginner/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Design a JSON extraction prompt for customer emails (name, account, issue, urgency).
@@ -59,10 +78,20 @@ Build an “extract → validate → repair” workflow for JSON extraction.
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+Before moving on, confirm the following:
+
+- You can restate the module goal in your own words.
+- You have run at least one evaluation pass.
+- You documented what improved and what did not.
+
 ## Common Mistakes
 - Asking for JSON but not specifying schema/required fields.
 - Ignoring ambiguity and forcing made-up values.
 - No repair strategy for invalid outputs.
 
 ## Stretch Resources
-- (Placeholder) Add links to structured prompting and validation patterns.
+
+- Prompting guide: https://www.promptingguide.ai/
+- OpenAI guides: https://platform.openai.com/docs/guides
+

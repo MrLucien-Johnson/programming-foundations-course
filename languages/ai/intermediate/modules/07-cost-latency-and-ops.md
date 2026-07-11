@@ -25,6 +25,28 @@ Plan and control cost/latency: budgets, caching, batching, and operational guard
 3) Reduce latency: parallel steps, smaller contexts, early exits (45 min)
 4) Ops basics: logs, metrics, and alerts (40 min)
 
+## Guided Walkthrough
+
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will optimize for cost and latency.
+3. Measure baseline latency and token usage.
+4. Apply one optimization and re-measure.
+5. Document the tradeoffs.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+
+Use the starter pack in `languages/ai/intermediate/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Create a cost/latency plan for one workflow (budgets + how to enforce).
@@ -59,10 +81,22 @@ Write an ops plan for your AI feature: budgets, monitoring, and fallbacks.
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+
 ## Common Mistakes
 - No budgets, leading to runaway cost.
 - Optimizing for cost while silently harming quality.
 - No observability—failures are invisible until users complain.
 
 ## Stretch Resources
-- (Placeholder) Add links to cost/latency optimization and ops practices.
+
+
+- Latency optimization: https://platform.openai.com/docs/guides/latency-optimization
+- Monitoring guide: https://opentelemetry.io/docs/
+

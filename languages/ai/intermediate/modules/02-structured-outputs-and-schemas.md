@@ -24,6 +24,28 @@ Make outputs machine-consumable: JSON schemas, strict formatting, validation, an
 3) Validate + repair: detect invalid outputs and recover safely (50 min)
 4) Versioning: schema changes and backward compatibility (40 min)
 
+## Guided Walkthrough
+
+
+Follow these steps to turn the lesson into a real, working deliverable.
+
+1. Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
+2. Review the module goals and plan how you will generate structured outputs that pass validation.
+3. Define a JSON schema for the output.
+4. Add schema instructions to the prompt.
+5. Validate outputs with at least 5 test cases.
+6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+
+## Starter Pack
+
+
+Use the starter pack in `languages/ai/intermediate/starter-pack` for a clean baseline.
+
+Inside the pack:
+- A prompt spec template.
+- An evaluation notes template.
+- A place to capture workflow decisions.
+
 ## Exercises
 ### Core
 - Design a schema for customer support tickets (category, summary, urgency, actions).
@@ -58,10 +80,22 @@ Build a JSON extraction pipeline: extract → validate → repair → final.
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
 
+## Verification Checklist
+
+Before moving on, confirm the following:
+
+- Run the module tests and confirm they pass.
+- Verify the primary feature works with normal and edge-case inputs.
+- Update the README with setup, run, and test commands.
+
 ## Common Mistakes
 - Schemas that don't match real inputs.
 - Repair prompts that “invent” values.
 - No plan for schema evolution.
 
 ## Stretch Resources
-- (Placeholder) Add links to JSON Schema and validation best practices.
+
+
+- Structured outputs: https://platform.openai.com/docs/guides/structured-outputs
+- JSON schema basics: https://json-schema.org/learn/getting-started-step-by-step
+
