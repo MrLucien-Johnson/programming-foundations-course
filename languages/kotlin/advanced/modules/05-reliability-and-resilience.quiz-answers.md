@@ -1,77 +1,77 @@
 # Kotlin Advanced — Module 05: Reliability and Resilience Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: A** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: Which Core action would a senior engineer insist on before approving the change?
+**Answer: B** - Add or update documentation (README notes or ADR-style notes).
 
-**Explanation:** This task appears under Core exercises.
-
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: C** - Add a performance or reliability improvement and **measure** the impact.
+## Question 2: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: A** - Uses consistent style/formatting and passes the quality gate.
 
-**Explanation:** This task appears under Beast Mode exercises.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: A** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: C** - All work must be covered by **build + tests + static analysis in CI**.
+## Question 3: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
+**Answer: D** - Over-mocking (tests assert implementation details instead of outcomes).
 
-**Explanation:** This requirement is listed under testing requirements.
-
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: A** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: A** - Explain the core concepts and tradeoffs for **Reliability and Resilience**.
+## Question 4: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: D** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: C** - Retries, timeouts, budgets, and jitter (45 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: D** - Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.
+## Question 5: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+**Answer: C** - Includes a short README section describing assumptions and tradeoffs.
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 10: Which statement best summarizes the module focus?
-**Answer: D** - Design for failure using resilient patterns and operational readiness.
-
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## How Did You Do?
+## Question 6: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
+**Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 7: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 8: You're pressed for time but still need a safe release. Which Core action must remain?
+**Answer: C** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 9: Which outcome represents a transferable software engineering skill?
+**Answer: C** - Explain the core concepts and tradeoffs for Reliability and Resilience.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 10: Which testing requirement would you verify in CI before approving the change?
+**Answer: A** - All work must be covered by build + tests + static analysis in CI.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

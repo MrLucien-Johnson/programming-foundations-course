@@ -1,77 +1,77 @@
 # AI — Module 06: Reliability and Fallbacks Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: D** - Design a fallback strategy for each top failure mode (model down, retrieval empty, tool error).
+## Question 1: Which option reflects a mistake a reviewer would call out?
+**Answer: D** - Unlimited retries that amplify outages and cost spikes.
 
-**Explanation:** This task appears under Core exercises.
-
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: C** - Add failure-injection tests to your harness (simulate outages/timeouts).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: B** - Design a human-in-the-loop queue with SLA and escalation.
+## Question 2: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: C** - Design a human-in-the-loop queue with SLA and escalation.
 
-**Explanation:** This task appears under Beast Mode exercises.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
+## Question 3: Which acceptance requirement protects review quality if enforced?
+**Answer: D** - Fallback strategy is explicit, testable, and tied to budgets/SLOs.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 4: A reviewer asks for stronger engineering discipline. Which Better action fits?
+**Answer: D** - Add failure-injection tests to your harness (simulate outages/timeouts).
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 5: Which Core action best reflects professional engineering practice in this situation?
+**Answer: A** - Design a fallback strategy for each top failure mode (model down, retrieval empty, tool error).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 6: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: D** - Add degraded-mode rules (abstain, ask, cached answer).
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 7: You're pressed for time but still need a safe release. Which Core action must remain?
+**Answer: D** - Define retry budgets and stop conditions.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 8: Which testing requirement would prevent a reviewer from rejecting the submission?
+**Answer: D** - Harness includes simulated failures and verifies safe behavior.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 9: A reviewer asks for testing evidence. Which requirement must you show?
 **Answer: A** - Harness includes simulated failures and verifies safe behavior.
 
-**Explanation:** This requirement is listed under testing requirements.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: A** - Unlimited retries that amplify outages and cost spikes.
+## Question 10: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: B** - Document and version changes so improvements are explainable.
 
-**Explanation:** This mistake is listed under common mistakes.
-
----
-
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Translate a vague request into a clear goal, constraints, and success criteria.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: A** - Reliability patterns: retries, timeouts, backoff, budgets (50 min)
-
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: B** - Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 10: Which statement best summarizes the module focus?
-**Answer: A** - Design resilient systems: retries, timeouts, idempotency, degraded modes, and human fallback.
-
-**Explanation:** This statement comes from the module overview.
-
----
-
-## How Did You Do?
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

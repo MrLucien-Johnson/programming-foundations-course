@@ -1,77 +1,77 @@
 # AI — Module 03: Evals at Scale Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: D** - Design a scalable eval runner spec (batching, retries, budgets).
+## Question 1: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: D** - Includes datasets, automation, gates, budgets, and rollback criteria.
 
-**Explanation:** This task appears under Core exercises.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 2: Which action upgrades the work to the Better level?
+## Question 2: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
 **Answer: D** - Add stratified sampling (by category, language, customer tier).
 
-**Explanation:** This task appears under Better exercises.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
+## Question 3: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: D** - Define “stop-the-line” criteria for regressions.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 4: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
 **Answer: B** - Add shadow evaluation for live traffic (privacy-safe).
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
+## Question 5: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: C** - Design a scalable eval runner spec (batching, retries, budgets).
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: C** - Runs are reproducible: versioned prompts, datasets, and scoring rules.
-
-**Explanation:** This requirement is listed under testing requirements.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: C** - Relying only on live user feedback instead of proactive evals.
+## Question 6: Which Core action would a senior engineer insist on before approving the change?
+**Answer: B** - Define a drift metric and a monitoring cadence.
 
-**Explanation:** This mistake is listed under common mistakes.
-
----
-
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: B** - Translate a vague request into a clear goal, constraints, and success criteria.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: C** - Eval architecture: datasets, runners, scoring, reporting (55 min)
+## Question 7: A reviewer asks for testing evidence. Which requirement must you show?
+**Answer: D** - Runs are reproducible: versioned prompts, datasets, and scoring rules.
 
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: D** - Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: B** - Run evaluations reliably at scale: datasets, sampling, automation, and CI gating.
+## Question 8: Which testing requirement would prevent a reviewer from rejecting the submission?
+**Answer: B** - Runs are reproducible: versioned prompts, datasets, and scoring rules.
 
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## How Did You Do?
+## Question 9: During review, which behavior would be flagged as a common mistake?
+**Answer: A** - Relying only on live user feedback instead of proactive evals.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 10: Which outcome best captures the practical ability you should carry forward?
+**Answer: A** - Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

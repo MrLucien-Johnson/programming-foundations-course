@@ -1,121 +1,117 @@
 # AI — Module 08: Production Incident Playbooks Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Ship changes without documentation.  
-B) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
-C) Postmortems: root cause, prevention, and follow-up evals (45 min)  
-D) Write an incident playbook for a cost spike and for a safety regression.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Add “incident drills”: simulate failures and verify playbook effectiveness.  
-B) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Update the README with setup, run, and test commands.  
+### Question 1: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Add communication templates (internal + user-facing) for common incidents.
+B) Mitigations that increase risk (e.g., disabling safety checks).
+C) Build a small evaluation loop: test cases, metrics, and iteration notes.
+D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Add automated detection rules that trigger playbook steps.  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Document and version changes so improvements are explainable.  
-D) Playbooks: step-by-step actions and ownership (45 min)  
+### Question 2: Which option reflects a mistake a reviewer would call out?
+A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+B) Document and version changes so improvements are explainable.
+C) No clear ownership or steps during incidents.
+D) Translate a vague request into a clear goal, constraints, and success criteria.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
-B) Triage workflow: detect → contain → mitigate → recover (50 min)  
-C) Be ready for production: incident types, triage, communication, mitigations, and postmortems.  
-D) Run the module tests and confirm they pass.  
+### Question 3: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Design a post-incident improvement loop: update evals + guardrails.
+B) Add “incident drills”: simulate failures and verify playbook effectiveness.
+C) Translate a vague request into a clear goal, constraints, and success criteria.
+D) Document and version changes so improvements are explainable.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Incident categories: quality drop, safety event, cost spike, outage (45 min)  
-B) Update the README with setup, run, and test commands.  
-C) Playbooks: step-by-step actions and ownership (45 min)  
-D) Incidents are tested via drills; playbooks are updated based on results.  
+### Question 4: Which testing requirement would you verify in CI before approving the change?
+A) Incidents are tested via drills; playbooks are updated based on results.
+B) Add communication templates (internal + user-facing) for common incidents.
+C) Design a post-incident improvement loop: update evals + guardrails.
+D) Mitigations that increase risk (e.g., disabling safety checks).
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) No clear ownership or steps during incidents.  
-B) Add communication templates (internal + user-facing) for common incidents.  
-C) Add automated detection rules that trigger playbook steps.  
-D) Update the README with setup, run, and test commands.  
+### Question 5: Which testing requirement would prevent a reviewer from rejecting the submission?
+A) Incidents are tested via drills; playbooks are updated based on results.
+B) Includes detection signals, mitigations, and follow-up prevention work.
+C) Add automated detection rules that trigger playbook steps.
+D) Mitigations that increase risk (e.g., disabling safety checks).
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Skip testing and trust the first result.  
-B) Define escalation paths and owners.  
-C) Translate a vague request into a clear goal, constraints, and success criteria.  
-D) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
+### Question 6: Which acceptance requirement protects review quality if enforced?
+A) Build a small evaluation loop: test cases, metrics, and iteration notes.
+B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+C) Includes detection signals, mitigations, and follow-up prevention work.
+D) Document and version changes so improvements are explainable.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Treat every request as safe without review.  
-C) Be ready for production: incident types, triage, communication, mitigations, and postmortems.  
-D) Incident categories: quality drop, safety event, cost spike, outage (45 min)  
+### Question 7: A production fix is urgent. Which Core action is still required before release?
+A) Add automated detection rules that trigger playbook steps.
+B) Define immediate mitigations (feature flag off, degraded mode, stricter filters).
+C) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+D) Mitigations that increase risk (e.g., disabling safety checks).
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Treat every request as safe without review.  
-B) Add “incident drills”: simulate failures and verify playbook effectiveness.  
-C) Triage workflow: detect → contain → mitigate → recover (50 min)  
-D) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
+### Question 8: Before shipping, which Core action best reduces regression risk?
+A) Write an incident playbook for a cost spike and for a safety regression.
+B) Mitigations that increase risk (e.g., disabling safety checks).
+C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+D) Incidents are tested via drills; playbooks are updated based on results.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Review the module goals and plan how you will prepare incident response playbooks.  
-B) Be ready for production: incident types, triage, communication, mitigations, and postmortems.  
-C) Add “incident drills”: simulate failures and verify playbook effectiveness.  
-D) Mitigations that increase risk (e.g., disabling safety checks).  
+### Question 9: Which outcome best captures the practical ability you should carry forward?
+A) Incidents are tested via drills; playbooks are updated based on results.
+B) Includes detection signals, mitigations, and follow-up prevention work.
+C) Build a small evaluation loop: test cases, metrics, and iteration notes.
+D) No clear ownership or steps during incidents.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Add automated detection rules that trigger playbook steps.
+B) Translate a vague request into a clear goal, constraints, and success criteria.
+C) Write an incident playbook for a cost spike and for a safety regression.
+D) Define immediate mitigations (feature flag off, degraded mode, stricter filters).
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

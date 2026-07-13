@@ -1,121 +1,117 @@
 # TypeScript Advanced — Module 01: System Design Foundations Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Document decisions and constraints clearly for reviewers.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Ship changes without documentation.  
-C) Caching, load balancing, and data partitions (60 min)  
-D) Reason about scalability, data, and tradeoffs under constraints.  
+### Question 1: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Jump to the next module without verifying results.  
-D) Queues, streams, and asynchronous workflows (55 min)  
+### Question 2: Which acceptance requirement protects review quality if enforced?
+A) Create a short write-up: what changed, why, and how you verified it.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Avoid measuring results or performance.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Treat every request as safe without review.  
+### Question 3: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Add a performance or reliability improvement and measure the impact.
+D) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-B) Caching, load balancing, and data partitions (60 min)  
-C) Queues, streams, and asynchronous workflows (55 min)  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 4: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Add a performance or reliability improvement and measure the impact.
+B) Explain the core concepts and tradeoffs for System Design Foundations.
+C) Implement a small feature tied to this module in an existing starter app.
+D) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Queues, streams, and asynchronous workflows (55 min)  
-B) Run the module tests and confirm they pass.  
-C) Shipping without an automated test run in CI.  
-D) Sketch architecture with data flow and failure points.  
+### Question 5: A reviewer asks for stronger engineering discipline. Which Better action fits?
+A) Deliverable runs locally with clear instructions.
+B) Making performance claims without measurements.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Skipping input validation and assuming “happy path”.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **System Design Foundations**.  
-B) Ship changes without documentation.  
-C) Caching, load balancing, and data partitions (60 min)  
-D) Ignore error handling for edge cases.  
+### Question 6: Which testing requirement should you apply given this issue: database tests are polluting shared data?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) If the module involves a database, tests must run against an isolated schema/database.
+D) Use tooling to keep quality high: ESLint + Prettier.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Skipping input validation and assuming “happy path”.  
-B) Requirements → constraints → estimates (60 min)  
-C) Explain the core concepts and tradeoffs for **System Design Foundations**.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+### Question 7: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) Use tooling to keep quality high: ESLint + Prettier.
+C) Add a performance or reliability improvement and measure the impact.
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Jump to the next module without verifying results.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Reason about scalability, data, and tradeoffs under constraints.  
-D) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
+### Question 8: In a real code review, which outcome best reflects the skill you should demonstrate?
+A) Add a performance or reliability improvement and measure the impact.
+B) Write tests that prove correctness and prevent regressions.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Making performance claims without measurements.  
-B) Review the module goals and plan how you will translate requirements into scalable design.  
-C) Reason about scalability, data, and tradeoffs under constraints.  
-D) Run: `node index.js`  
+### Question 9: Which Core action best reflects professional engineering practice in this situation?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Document decisions and constraints clearly for reviewers.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Add or update documentation (README notes or ADR-style notes).
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

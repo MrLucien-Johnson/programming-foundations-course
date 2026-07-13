@@ -1,121 +1,117 @@
 # Rust Advanced — Module 01: System Design Foundations Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Making performance claims without measurements.  
-B) Requirements → constraints → estimates (45 min)  
-C) `cargo test`  
-D) `cargo clippy`  
-
-**Your answer:** _______________
-
----
-
-### Question 2: You need to run lint checks. Which command should you use?
-A) Skip testing and trust the first result.  
-B) `cargo clippy`  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Use tooling to keep quality high: rustfmt + clippy.  
+### Question 1: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Document decisions and constraints clearly for reviewers.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) Caching, load balancing, and data partitions (45 min)  
-B) Run: `cargo test`  
-C) `cargo test`  
-D) `cargo fmt`  
+### Question 2: Which acceptance requirement most clearly blocks approval if missing?
+A) Explain the core concepts and tradeoffs for System Design Foundations.
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Skipping input validation and assuming “happy path”.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action best satisfies the Core requirements?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Ignore error handling for edge cases.  
-C) Explain the core concepts and tradeoffs for **System Design Foundations**.  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+### Question 3: Production validation failed because database tests are polluting shared data. Which testing requirement would have prevented it?
+A) Add a performance or reliability improvement and measure the impact.
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Making performance claims without measurements.
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action upgrades the work to the Better level?
-A) Caching, load balancing, and data partitions (45 min)  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+### Question 4: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
+A) Includes tests appropriate for the feature.
+B) Making performance claims without measurements.
+C) Write tests that prove correctness and prevent regressions.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Sketch architecture with data flow and failure points.  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 5: Before shipping, which Core action best reduces regression risk?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Jump to the next module without verifying results.  
-C) Caching, load balancing, and data partitions (45 min)  
-D) Run the module tests and confirm they pass.  
+### Question 6: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Making performance claims without measurements.
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Deliverable runs locally with clear instructions.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement must be satisfied to pass?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) All work must be covered by **fmt + clippy + tests in CI**.  
-C) Identify one scaling bottleneck and mitigation.  
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 7: Which acceptance criterion would a reviewer check first to approve the submission?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Use tooling to keep quality high: rustfmt + clippy.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option would be a common mistake to avoid?
-A) Add or update documentation (README notes or ADR-style notes).  
-B) Shipping without an automated test run in CI.  
-C) Write tests that prove correctness and prevent regressions.  
-D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+### Question 8: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+A) Shipping without an automated test run in CI.
+B) Write tests that prove correctness and prevent regressions.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Treat every request as safe without review.  
-B) Skipping input validation and assuming “happy path”.  
-C) Explain the core concepts and tradeoffs for **System Design Foundations**.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 9: A reviewer reports: CI has no automated test run before release. Which mistake does this reflect?
+A) Includes tests appropriate for the feature.
+B) Shipping without an automated test run in CI.
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which outcome best captures the practical ability you should carry forward?
+A) Write tests that prove correctness and prevent regressions.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) All work must be covered by fmt + clippy + tests in CI.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

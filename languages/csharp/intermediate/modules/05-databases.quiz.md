@@ -1,121 +1,117 @@
-# CIntermediate — Module 05: Databases Quiz: Test Your Understanding
+# C# Intermediate — Module 05: Databases Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) `dotnet test`  
-B) Migrations: forwards/backwards + safety (45 min)  
-C) Run: `dotnet test`  
-D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: You need to format the code. Which command should you use?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) `dotnet format`  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 1: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Shipping without an automated test run in CI.
+D) Document decisions and constraints clearly for reviewers.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action best satisfies the Core requirements?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) `dotnet test`  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
+### Question 2: Which acceptance criterion would a reviewer check first to approve the submission?
+A) All work must be covered by build + tests + analyzers in CI.
+B) Document decisions and constraints clearly for reviewers.
+C) Making performance claims without measurements.
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action upgrades the work to the Better level?
-A) Indexes + query plans (45 min)  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Treat every request as safe without review.  
+### Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Implement a small feature tied to this module in an existing starter app.
+B) Includes tests appropriate for the feature.
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Treat every request as safe without review.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Indexes + query plans (45 min)  
+### Question 4: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
+A) Implement a small feature tied to this module in an existing starter app.
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Explain the core concepts and tradeoffs for Databases.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Design schemas, write queries, and ship migrations safely.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) `dotnet test`  
+### Question 5: Which Core action best reflects professional engineering practice in this situation?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Shipping without an automated test run in CI.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement must be satisfied to pass?
-A) Document migrations and rollback steps.  
-B) Document decisions and constraints clearly for reviewers.  
-C) All work must be covered by **build + tests + analyzers in CI**.  
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 6: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Explain the core concepts and tradeoffs for Databases.
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which option would be a common mistake to avoid?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Shipping without an automated test run in CI.  
-D) Transactions + isolation basics (45 min)  
+### Question 7: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Explain the core concepts and tradeoffs for Databases.
+B) Add a performance or reliability improvement and measure the impact.
+C) Deliverable runs locally with clear instructions.
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Migrations: forwards/backwards + safety (45 min)  
-C) Run: `dotnet format`  
-D) Explain the core concepts and tradeoffs for **Databases**.  
+### Question 8: Which outcome best captures the practical ability you should carry forward?
+A) Use tooling to keep quality high: dotnet format + analyzers.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Implement a small feature tied to this module in an existing starter app.
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which topic would you revisit to solve this module's core problem?
-A) Schema design + constraints (45 min)  
-B) Shipping without an automated test run in CI.  
-C) Jump to the next module without verifying results.  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 9: This happened during review: CI has no automated test run before release. Which mistake is it?
+A) Document decisions and constraints clearly for reviewers.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which testing requirement would prevent a reviewer from rejecting the submission?
+A) Create a short write-up: what changed, why, and how you verified it.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) All work must be covered by build + tests + analyzers in CI.
+D) Document decisions and constraints clearly for reviewers.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

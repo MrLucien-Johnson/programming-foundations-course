@@ -1,121 +1,117 @@
 # Core Concepts (Intermediate) Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) `ruff check .`  
-B) `python -m pytest`  
-C) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-D) Run: `ruff check .`  
-
-**Your answer:** _______________
-
----
-
-### Question 2: You need to run lint checks. Which command should you use?
-A) Ignore error handling for edge cases.  
-B) Run: `ruff format .`  
-C) `ruff check .`  
-D) Summarize the core concepts in your own words.  
+### Question 1: Which deliverable would confirm the work is ready for review?
+A) example implementations in the repo
+B) idiomatic data modeling and typing
+C) error handling and debugging
+D) testable module design
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) `ruff format .`  
-B) Update the README with setup, run, and test commands.  
-C) Run: `python -m pytest`  
-D) Copy the starter pack from `languages/python/intermediate/starter-pack` into a new working folder.  
+### Question 2: A teammate needs help with a real project decision. Which topic should they revisit?
+A) Skip testing and trust the first result.
+B) error handling and debugging
+C) topic notes or summaries
+D) example implementations in the repo
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Implement a small feature that uses at least two core concepts.  
-B) Ship changes without documentation.  
-C) Treat every request as safe without review.  
-D) Run the module tests and confirm they pass.  
+### Question 3: Which topic would you highlight when scoping a real-world solution?
+A) example implementations in the repo
+B) testable module design
+C) topic notes or summaries
+D) Skip testing and trust the first result.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which step appears in the guided walkthrough?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Avoid measuring results or performance.  
-C) Ship changes without documentation.  
-D) Copy the starter pack from `languages/python/intermediate/starter-pack` into a new working folder.  
+### Question 4: Which deliverable best demonstrates the engineering work was completed?
+A) idiomatic data modeling and typing
+B) error handling and debugging
+C) testable module design
+D) example implementations in the repo
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which verification step is required before moving on?
-A) Avoid measuring results or performance.  
-B) Copy the starter pack from `languages/python/intermediate/starter-pack` into a new working folder.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Implement a small feature that uses at least two core concepts.  
+### Question 5: A reviewer wants proof of work. Which deliverable should you hand them?
+A) error handling and debugging
+B) idiomatic data modeling and typing
+C) testable module design
+D) topic notes or summaries
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) Add tests and document the reasoning.  
-B) Update the README with setup, run, and test commands.  
-C) Jump to the next module without verifying results.  
-D) Review the module goals and plan how you will reinforce foundational skills and patterns.  
+### Question 6: Which topic would you point to when scoping a real-world solution?
+A) Skip testing and trust the first result.
+B) example implementations in the repo
+C) testable module design
+D) topic notes or summaries
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which verification step is required before moving on?
-A) `ruff format .`  
-B) Ignore error handling for edge cases.  
-C) Run: `python -m pytest`  
-D) Implement a small feature that uses at least two core concepts.  
+### Question 7: Which deliverable would you send to a stakeholder as evidence of completion?
+A) testable module design
+B) idiomatic data modeling and typing
+C) error handling and debugging
+D) example implementations in the repo
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Before submitting, which verification step must you complete?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) `ruff check .`  
-C) Run: `ruff check .`  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 8: Which topic would you use to guide a design discussion?
+A) example implementations in the repo
+B) Skip testing and trust the first result.
+C) idiomatic data modeling and typing
+D) topic notes or summaries
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which verification step is required before moving on?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Run: `ruff format .`  
-C) Skip testing and trust the first result.  
-D) Copy the starter pack from `languages/python/intermediate/starter-pack` into a new working folder.  
+### Question 9: Which deliverable should be included before requesting approval?
+A) idiomatic data modeling and typing
+B) testable module design
+C) error handling and debugging
+D) topic notes or summaries
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which topic is relevant when making this engineering decision?
+A) example implementations in the repo
+B) Skip testing and trust the first result.
+C) topic notes or summaries
+D) idiomatic data modeling and typing
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

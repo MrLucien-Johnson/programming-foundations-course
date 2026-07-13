@@ -1,77 +1,77 @@
-# CAdvanced — Module 07: Observability and SLOs Quiz Answers
+# C# Advanced — Module 07: Observability and SLOs Quiz Answers
 
-## Question 1: You need to run the test suite. Which command should you use?
-**Answer: D** - `dotnet test`
+## Question 1: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: A** - Refactor one area for readability (without changing behavior) and prove it with tests.
 
-**Explanation:** This command runs the test suite.
-
----
-
-## Question 2: You need to format the code. Which command should you use?
-**Answer: D** - `dotnet format`
-
-**Explanation:** This command formats the code.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 3: Which action best satisfies the Core requirements?
-**Answer: A** - Implement a small feature tied to this module in an existing starter app.
+## Question 2: Which outcome best captures the practical ability you should carry forward?
+**Answer: A** - Write tests that prove correctness and prevent regressions.
 
-**Explanation:** This task appears under Core exercises.
-
----
-
-## Question 4: Which action upgrades the work to the Better level?
-**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 5: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Add a performance or reliability improvement and **measure** the impact.
+## Question 3: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: D** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
-**Explanation:** This task appears under Beast Mode exercises.
-
----
-
-## Question 6: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 7: Which testing requirement must be satisfied to pass?
-**Answer: A** - All work must be covered by **build + tests + analyzers in CI**.
+## Question 4: Which acceptance criterion acts as a release gate for this module?
+**Answer: A** - Deliverable runs locally with clear instructions.
 
-**Explanation:** This requirement is listed under testing requirements.
-
----
-
-## Question 8: Which option would be a common mistake to avoid?
-**Answer: B** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: A** - Explain the core concepts and tradeoffs for **Observability and SLOs**.
+## Question 5: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
+**Answer: B** - Skipping input validation and assuming “happy path”.
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 10: Which topic would you revisit to solve this module's core problem?
-**Answer: C** - SLIs/SLOs and error budgets (45 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## How Did You Do?
+## Question 6: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+**Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 7: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: C** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 8: Before shipping, which Core action best reduces regression risk?
+**Answer: D** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 9: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+**Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 10: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: D** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

@@ -1,121 +1,117 @@
 # AI — Module 06: Agentic Workflows Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Jump to the next module without verifying results.  
-B) Stop conditions and safety rails (45 min)  
-C) Document and version changes so improvements are explainable.  
-D) Design an agent workflow spec for “triage support tickets and draft responses”.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-B) Unbounded loops (no budgets/timeouts).  
-C) Add a tool budget and stop conditions; show how it prevents runaway loops.  
-D) Skip testing and trust the first result.  
+### Question 1: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Design an agent workflow spec for “triage support tickets and draft responses”.
+B) Add a “post-run report” format (actions taken, evidence, uncertainties).
+C) No verification step—agent confidently ships wrong results.
+D) Explicit tool boundaries, stop conditions, and verification requirements.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Document and version changes so improvements are explainable.  
-B) Agent loop: plan → act → observe → verify (50 min)  
-C) Treat every request as safe without review.  
-D) Add adversarial cases that try to make the agent leak secrets or ignore constraints.  
+### Question 2: Which option reflects a mistake a reviewer would call out?
+A) No verification step—agent confidently ships wrong results.
+B) Add a verification step that checks facts only against provided sources.
+C) Add a tool budget and stop conditions; show how it prevents runaway loops.
+D) Design an agent workflow spec for “triage support tickets and draft responses”.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Treat every request as safe without review.  
-B) Document and version changes so improvements are explainable.  
-C) Run the module tests and confirm they pass.  
-D) Design the handoff protocol between steps.  
+### Question 3: You're pressed for time but still need a safe release. Which Core action must remain?
+A) No verification step—agent confidently ships wrong results.
+B) Storing sensitive data as “memory” without a policy.
+C) Design an agent workflow spec for “triage support tickets and draft responses”.
+D) Add a tool budget and stop conditions; show how it prevents runaway loops.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Treat every request as safe without review.  
-B) Translate a vague request into a clear goal, constraints, and success criteria.  
-C) Document and version changes so improvements are explainable.  
-D) Agent tested with simulated failures (tool down, partial data, conflicting instructions).  
+### Question 4: Which outcome represents a transferable software engineering skill?
+A) Translate a vague request into a clear goal, constraints, and success criteria.
+B) Storing sensitive data as “memory” without a policy.
+C) Unbounded loops (no budgets/timeouts).
+D) Add a tool budget and stop conditions; show how it prevents runaway loops.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) No verification step—agent confidently ships wrong results.  
-B) Run the module tests and confirm they pass.  
-C) Jump to the next module without verifying results.  
-D) Define agent roles and responsibilities.  
+### Question 5: Which acceptance requirement most clearly blocks approval if missing?
+A) Add a “human approval” checkpoint for high-risk actions.
+B) No verification step—agent confidently ships wrong results.
+C) Explicit tool boundaries, stop conditions, and verification requirements.
+D) Storing sensitive data as “memory” without a policy.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Avoid measuring results or performance.  
-B) Translate a vague request into a clear goal, constraints, and success criteria.  
-C) Add a verification step that checks facts only against provided sources.  
-D) Add a tool budget and stop conditions; show how it prevents runaway loops.  
+### Question 6: Which testing requirement would prevent a reviewer from rejecting the submission?
+A) Document and version changes so improvements are explainable.
+B) Add a “post-run report” format (actions taken, evidence, uncertainties).
+C) Add adversarial cases that try to make the agent leak secrets or ignore constraints.
+D) Agent tested with simulated failures (tool down, partial data, conflicting instructions).
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Agent loop: plan → act → observe → verify (50 min)  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Add a verification step that checks facts only against provided sources.  
-D) Define agent roles and responsibilities.  
+### Question 7: A reviewer asks for testing evidence. Which requirement must you show?
+A) Agent tested with simulated failures (tool down, partial data, conflicting instructions).
+B) Design an agent workflow spec for “triage support tickets and draft responses”.
+C) Translate a vague request into a clear goal, constraints, and success criteria.
+D) Includes an evaluation set with failures and adversarial prompts.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-B) Add adversarial cases that try to make the agent leak secrets or ignore constraints.  
-C) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
-D) Avoid measuring results or performance.  
+### Question 8: Which Core action would a senior engineer insist on before approving the change?
+A) Build a small evaluation loop: test cases, metrics, and iteration notes.
+B) Add a tool budget and stop conditions; show how it prevents runaway loops.
+C) No verification step—agent confidently ships wrong results.
+D) Add a verification step that checks facts only against provided sources.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Define agent roles and responsibilities.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) No verification step—agent confidently ships wrong results.  
-D) Design multi-step agents with explicit planning, tool boundaries, stop conditions, and verification.  
+### Question 9: A reviewer asks for stronger engineering discipline. Which Better action fits?
+A) Add a “human approval” checkpoint for high-risk actions.
+B) Agent tested with simulated failures (tool down, partial data, conflicting instructions).
+C) No verification step—agent confidently ships wrong results.
+D) Unbounded loops (no budgets/timeouts).
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which acceptance criterion acts as a release gate for this module?
+A) Agent tested with simulated failures (tool down, partial data, conflicting instructions).
+B) Includes an evaluation set with failures and adversarial prompts.
+C) No verification step—agent confidently ships wrong results.
+D) Document and version changes so improvements are explainable.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

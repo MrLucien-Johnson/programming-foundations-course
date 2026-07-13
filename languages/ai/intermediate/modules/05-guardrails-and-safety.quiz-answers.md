@@ -1,77 +1,77 @@
 # AI — Module 05: Guardrails and Safety Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
+## Question 1: Which option reflects a mistake a reviewer would call out?
+**Answer: C** - Trusting user content as instructions.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 2: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: D** - Add a privacy threat model for stored prompts/outputs.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 3: Which acceptance criterion acts as a release gate for this module?
+**Answer: D** - Includes input/output controls and a documented fallback strategy.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 4: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: B** - Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 5: The work passes Core. Which improvement most clearly raises quality for reviewers?
+**Answer: B** - Design an escalation policy (route to human, block, or safe-complete).
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 6: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: D** - Includes a red-team dataset and a safety gate concept.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 7: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: A** - Add prompt injection tests and verify proper refusal/containment.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 8: Which testing requirement would prevent a reviewer from rejecting the submission?
+**Answer: A** - Safety tests are part of your evaluation harness.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 9: A production fix is urgent. Which Core action is still required before release?
 **Answer: A** - Create a safety checklist for your chosen use case and apply it to 30 test cases.
 
-**Explanation:** This task appears under Core exercises.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: D** - Design an escalation policy (route to human, block, or safe-complete).
-
-**Explanation:** This task appears under Better exercises.
-
----
-
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: B** - Design a “safety gate” in CI: fail if safety tests regress.
-
-**Explanation:** This task appears under Beast Mode exercises.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: A** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 5: Which testing requirement must be satisfied to pass?
+## Question 10: Which testing requirement would you verify in CI before approving the change?
 **Answer: C** - Safety tests are part of your evaluation harness.
 
-**Explanation:** This requirement is listed under testing requirements.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: B** - Trusting user content as instructions.
-
-**Explanation:** This mistake is listed under common mistakes.
-
----
-
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Translate a vague request into a clear goal, constraints, and success criteria.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: A** - Threats and harms: injection, data leakage, unsafe content (45 min)
-
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: C** - Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 10: Which statement best summarizes the module focus?
-**Answer: B** - Implement practical guardrails: input validation, output constraints, injection defenses, and safe fallbacks.
-
-**Explanation:** This statement comes from the module overview.
-
----
-
-## How Did You Do?
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

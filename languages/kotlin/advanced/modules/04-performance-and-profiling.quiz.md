@@ -1,121 +1,117 @@
 # Kotlin Advanced — Module 04: Performance and Profiling Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Write tests that prove correctness and prevent regressions.  
-B) Skip testing and trust the first result.  
-C) Treat every request as safe without review.  
-D) Implement a small feature tied to this module in an existing starter app.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Skipping input validation and assuming “happy path”.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Caching and invalidation strategies (40 min)  
+### Question 1: Which Core action best reflects professional engineering practice in this situation?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Add or update documentation (README notes or ADR-style notes).
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Treat every request as safe without review.  
-B) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
-C) Add or update documentation (README notes or ADR-style notes).  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 2: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Making performance claims without measurements.
+D) Includes a short README section describing assumptions and tradeoffs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
-B) Run the module tests and confirm they pass.  
-C) Document decisions and constraints clearly for reviewers.  
-D) Add or update documentation (README notes or ADR-style notes).  
+### Question 3: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Making performance claims without measurements.
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Deliverable runs locally with clear instructions.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) All work must be covered by **build + tests + static analysis in CI**.  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 4: Which testing requirement should you apply given this issue: database tests are polluting shared data?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Document decisions and constraints clearly for reviewers.
+C) If the module involves a database, tests must run against an isolated schema/database.
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Shipping without an automated test run in CI.  
-C) Caching and invalidation strategies (40 min)  
-D) Update the README with setup, run, and test commands.  
+### Question 5: You're pressed for time but still need a safe release. Which Core action must remain?
+A) Implement a small feature tied to this module in an existing starter app.
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) Deliverable runs locally with clear instructions.
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
-C) Making performance claims without measurements.  
-D) Avoid measuring results or performance.  
+### Question 6: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Shipping without an automated test run in CI.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Profiling methodology and baselines (40 min)  
-B) Review the module goals and plan how you will measure and improve runtime performance.  
-C) Treat every request as safe without review.  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 7: A reviewer reports: bugs appear on unexpected inputs because validation was skipped. Which mistake does this reflect?
+A) Skipping input validation and assuming “happy path”.
+B) Document decisions and constraints clearly for reviewers.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Run the module tests and confirm they pass.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
-D) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
+### Question 8: Which acceptance criterion would a reviewer check first to approve the submission?
+A) Shipping without an automated test run in CI.
+B) Write tests that prove correctness and prevent regressions.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Profile, measure, and optimize across app + database + network.  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Jump to the next module without verifying results.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 9: Which outcome best captures the practical ability you should carry forward?
+A) Use tooling to keep quality high: ktlint + detekt.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: A reviewer asks for testing evidence. Which requirement must you show?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) All work must be covered by build + tests + static analysis in CI.
+C) Use tooling to keep quality high: ktlint + detekt.
+D) Add a performance or reliability improvement and measure the impact.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

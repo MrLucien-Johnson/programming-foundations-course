@@ -1,77 +1,77 @@
 # AI — Module 03: RAG Foundations Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: C** - Create a doc set (10–30 pages) and define a question set (30 questions).
+## Question 1: Which Core action would a senior engineer insist on before approving the change?
+**Answer: A** - Create a doc set (10–30 pages) and define a question set (30 questions).
 
-**Explanation:** This task appears under Core exercises.
-
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: A** - Add a “no evidence → abstain” rule and test hallucination reduction.
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: C** - Add query rewriting and compare retrieval hit-rate.
+## Question 2: Which acceptance criterion acts as a release gate for this module?
+**Answer: B** - Includes a question set and a scoring rubric.
 
-**Explanation:** This task appears under Beast Mode exercises.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: A** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
+## Question 3: Before shipping, which Core action best reduces regression risk?
+**Answer: A** - Design prompts that answer only using retrieved context and cite excerpts.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 4: Which testing requirement would prevent a reviewer from rejecting the submission?
+**Answer: D** - At minimum: manual scoring with a rubric; better: scripted scoring of citations/abstentions.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 5: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: C** - Includes chunking strategy, metadata plan, and grounding rules.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 6: Which option reflects a mistake a reviewer would call out?
+**Answer: A** - No citation requirement, leading to confident hallucinations.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 7: Which testing requirement would you verify in CI before approving the change?
 **Answer: A** - At minimum: manual scoring with a rubric; better: scripted scoring of citations/abstentions.
 
-**Explanation:** This requirement is listed under testing requirements.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: D** - No citation requirement, leading to confident hallucinations.
+## Question 8: The work passes Core. Which improvement most clearly raises quality for reviewers?
+**Answer: B** - Add a “no evidence → abstain” rule and test hallucination reduction.
 
-**Explanation:** This mistake is listed under common mistakes.
-
----
-
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: B** - Translate a vague request into a clear goal, constraints, and success criteria.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: B** - RAG mental model: retrieve → read → answer (45 min)
+## Question 9: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: B** - Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: C** - Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: A** - Build retrieval-augmented generation (RAG) systems: chunking, embeddings, retrieval, and grounded answering.
+## Question 10: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: B** - Add query rewriting and compare retrieval hit-rate.
 
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

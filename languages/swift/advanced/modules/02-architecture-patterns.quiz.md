@@ -1,121 +1,117 @@
 # Swift Advanced — Module 02: Architecture Patterns Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Use tooling to keep quality high: SwiftFormat + SwiftLint.  
-D) Verify the primary feature works with normal and edge-case inputs.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Write tests that prove correctness and prevent regressions.  
-C) Document tradeoffs and why you chose it.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 1: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Treat every request as safe without review.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-D) Run the module tests and confirm they pass.  
+### Question 2: Which Core action best reflects professional engineering practice in this situation?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Shipping without an automated test run in CI.
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Run the module tests and confirm they pass.  
-C) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-D) Ship changes without documentation.  
+### Question 3: Which outcome represents a transferable software engineering skill?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Shipping without an automated test run in CI.
+D) Document decisions and constraints clearly for reviewers.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-B) Ignore error handling for edge cases.  
-C) All work must be covered by **build + tests + lint/format in CI**.  
-D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+### Question 4: Your teammate says: tests assert implementation details instead of outcomes. Which common mistake is this?
+A) Explain the core concepts and tradeoffs for Architecture Patterns.
+B) All work must be covered by build + tests + lint/format in CI.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Jump to the next module without verifying results.  
-B) Shipping without an automated test run in CI.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 5: Which acceptance requirement protects review quality if enforced?
+A) Uses consistent style/formatting and passes the quality gate.
+B) Document decisions and constraints clearly for reviewers.
+C) Explain the core concepts and tradeoffs for Architecture Patterns.
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-B) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-C) Implement the pattern in a small feature slice.  
-D) Apply architectural patterns to keep systems evolvable.  
+### Question 6: Before sign-off, which acceptance criterion must be confirmed?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Add a performance or reliability improvement and measure the impact.
+C) Shipping without an automated test run in CI.
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Layered vs hexagonal vs clean architecture (45 min)  
-B) Run the module tests and confirm they pass.  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Run: `swift main.swift`  
+### Question 7: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Explain the core concepts and tradeoffs for Architecture Patterns.
+B) All work must be covered by build + tests + lint/format in CI.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/swift/advanced/starter-pack` into a new working folder.  
-B) Update the README with setup, run, and test commands.  
-C) Jump to the next module without verifying results.  
-D) Layered vs hexagonal vs clean architecture (45 min)  
+### Question 8: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Deliverable runs locally with clear instructions.
+D) Document decisions and constraints clearly for reviewers.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) All work must be covered by **build + tests + lint/format in CI**.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Apply architectural patterns to keep systems evolvable.  
-D) Skip testing and trust the first result.  
+### Question 9: CI is failing because lint/format/type errors are breaking CI. Which testing requirement addresses this?
+A) Use tooling to keep quality high: SwiftFormat + SwiftLint.
+B) Deliverable runs locally with clear instructions.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) All work must be covered by build + tests + lint/format in CI.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
+A) Implement a small feature tied to this module in an existing starter app.
+B) Explain the core concepts and tradeoffs for Architecture Patterns.
+C) If the module involves a database, tests must run against an isolated schema/database.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

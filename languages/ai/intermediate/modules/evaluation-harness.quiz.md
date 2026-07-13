@@ -1,121 +1,117 @@
 # Evaluation Harness (Intermediate) Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Before submitting, which verification step must you complete?
-A) Automate evaluation runs and capture metrics.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Avoid measuring results or performance.  
-D) Run the module tests and confirm they pass.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
-B) Ship changes without documentation.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Jump to the next module without verifying results.  
+### Question 1: A teammate needs help with a real project decision. Which topic should they revisit?
+A) Skip testing and trust the first result.
+B) evaluation report with findings
+C) evaluation harness or scripts
+D) regression tracking
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which verification step is required before moving on?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Ship changes without documentation.  
-C) Ignore error handling for edge cases.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 2: Which topic would you use to guide a design discussion?
+A) evaluation report with findings
+B) automated scoring or rubric checks
+C) Skip testing and trust the first result.
+D) evaluation harness or scripts
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
-B) Ignore error handling for edge cases.  
-C) Update the README with setup, run, and test commands.  
-D) Skip testing and trust the first result.  
+### Question 3: Which deliverable should be included before requesting approval?
+A) automated scoring or rubric checks
+B) evaluation report with findings
+C) regression tracking
+D) test cases and golden sets
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action is listed as part of the guided walkthrough?
-A) Ignore error handling for edge cases.  
-B) Review the module goals and plan how you will build an evaluation harness for repeatable testing.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Skip testing and trust the first result.  
+### Question 4: Which deliverable would you send to a stakeholder as evidence of completion?
+A) regression tracking
+B) automated scoring or rubric checks
+C) test cases and golden sets
+D) evaluation report with findings
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which step appears in the guided walkthrough?
-A) Define the evaluation categories and success criteria.  
-B) Ship changes without documentation.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Avoid measuring results or performance.  
+### Question 5: Which topic would you highlight when scoping a real-world solution?
+A) automated scoring or rubric checks
+B) evaluation harness or scripts
+C) Skip testing and trust the first result.
+D) evaluation report with findings
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which action is listed as part of the guided walkthrough?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Jump to the next module without verifying results.  
-C) Ship changes without documentation.  
-D) Automate evaluation runs and capture metrics.  
+### Question 6: Which topic would you point to when scoping a real-world solution?
+A) evaluation report with findings
+B) Skip testing and trust the first result.
+C) evaluation harness or scripts
+D) test cases and golden sets
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which step appears in the guided walkthrough?
-A) Treat every request as safe without review.  
-B) Ignore error handling for edge cases.  
-C) Summarize results and prioritize fixes.  
-D) Jump to the next module without verifying results.  
+### Question 7: Which deliverable best demonstrates the engineering work was completed?
+A) test cases and golden sets
+B) evaluation harness or scripts
+C) automated scoring or rubric checks
+D) regression tracking
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which action is listed as part of the guided walkthrough?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Jump to the next module without verifying results.  
-D) Ignore error handling for edge cases.  
+### Question 8: Which topic is relevant when making this engineering decision?
+A) evaluation harness or scripts
+B) regression tracking
+C) Skip testing and trust the first result.
+D) evaluation report with findings
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which practice best supports reliable delivery?
-A) Automate evaluation runs and capture metrics.  
-B) Treat every request as safe without review.  
-C) Ship changes without documentation.  
-D) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
+### Question 9: Which topic belongs in a real-world discussion for this module?
+A) evaluation harness or scripts
+B) Skip testing and trust the first result.
+C) test cases and golden sets
+D) evaluation report with findings
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: A reviewer wants proof of work. Which deliverable should you hand them?
+A) evaluation harness or scripts
+B) test cases and golden sets
+C) automated scoring or rubric checks
+D) regression tracking
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

@@ -1,121 +1,117 @@
 # Kotlin Intermediate — Module 01: DSA (Practical) Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Copy the starter pack from `languages/kotlin/intermediate/starter-pack` into a new working folder.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Document decisions and constraints clearly for reviewers.  
-D) Arrays/lists, hash maps, and sets (45 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Update the README with setup, run, and test commands.  
-B) Identify the hot path in the feature and choose a data structure that minimizes lookups.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Add or update documentation (README notes or ADR-style notes).  
+### Question 1: A reviewer reports: tests assert implementation details instead of outcomes. Which mistake does this reflect?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Explain the core concepts and tradeoffs for DSA (Practical).
+C) Deliverable runs locally with clear instructions.
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Update the README with setup, run, and test commands.  
-B) Making performance claims without measurements.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Implement a helper that enforces the chosen structure (e.g., map for fast lookup).  
+### Question 2: A reviewer asks for testing evidence. Which requirement must you show?
+A) All work must be covered by build + tests + static analysis in CI.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Document decisions and constraints clearly for reviewers.
+D) Includes a short README section describing assumptions and tradeoffs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Stacks/queues + BFS/DFS mental models (45 min)  
-C) Review the module goals and plan how you will select the right data structures and justify tradeoffs.  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 3: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Skipping input validation and assuming “happy path”.
+C) Add a performance or reliability improvement and measure the impact.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Use data structures and algorithms pragmatically in real applications.  
-B) All work must be covered by **build + tests + static analysis in CI**.  
-C) Skipping input validation and assuming “happy path”.  
-D) Add or update documentation (README notes or ADR-style notes).  
+### Question 4: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+A) Write tests that prove correctness and prevent regressions.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
-C) Shipping without an automated test run in CI.  
-D) Write tests that prove correctness and prevent regressions.  
+### Question 5: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Add a performance or reliability improvement and measure the impact.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
-B) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Measure the impact with a small benchmark or timing log.  
+### Question 6: Before sign-off, which acceptance criterion must be confirmed?
+A) Deliverable runs locally with clear instructions.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Shipping without an automated test run in CI.
+D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Big-O and tradeoffs in real code (45 min)  
-B) Making performance claims without measurements.  
-C) Ship changes without documentation.  
-D) Use tooling to keep quality high: ktlint + detekt.  
+### Question 7: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Copy the starter pack from `languages/kotlin/intermediate/starter-pack` into a new working folder.  
-C) Jump to the next module without verifying results.  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 8: Which acceptance requirement protects review quality if enforced?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Explain the core concepts and tradeoffs for DSA (Practical).
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Use data structures and algorithms pragmatically in real applications.  
-B) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
-C) Skip testing and trust the first result.  
-D) Document decisions and constraints clearly for reviewers.  
+### Question 9: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) Use tooling to keep quality high: ktlint + detekt.
+B) Skipping input validation and assuming “happy path”.
+C) Shipping without an automated test run in CI.
+D) All work must be covered by build + tests + static analysis in CI.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Before shipping, which Core action best reduces regression risk?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Shipping without an automated test run in CI.
+D) Add a performance or reliability improvement and measure the impact.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

@@ -1,121 +1,117 @@
 # Python Advanced — Module 07: Observability and SLOs Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Metrics: RED/USE and cardinality pitfalls (45 min)  
-C) `ruff check .`  
-D) `python -m pytest`  
-
-**Your answer:** _______________
-
----
-
-### Question 2: You need to run lint checks. Which command should you use?
-A) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) `ruff check .`  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 1: In a real code review, which outcome best reflects the skill you should demonstrate?
+A) Making performance claims without measurements.
+B) Deliverable runs locally with clear instructions.
+C) Explain the core concepts and tradeoffs for Observability and SLOs.
+D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) `ruff format .`  
-B) Skip testing and trust the first result.  
-C) Define SLIs and SLO targets for one critical path.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 2: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
+A) Explain the core concepts and tradeoffs for Observability and SLOs.
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Making performance claims without measurements.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action best satisfies the Core requirements?
-A) Making performance claims without measurements.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Document decisions and constraints clearly for reviewers.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 3: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action upgrades the work to the Better level?
-A) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 4: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
+A) Document decisions and constraints clearly for reviewers.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) `ruff check .`  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
+### Question 5: Production validation failed because tests are flaky and fail intermittently. Which testing requirement would have prevented it?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Making performance claims without measurements.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Use tooling to keep quality high: ruff + black (or ruff format).
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) Skipping input validation and assuming “happy path”.  
-B) Create a short write-up: what changed, why, and how you verified it.  
-C) Run the module tests and confirm they pass.  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 6: Which acceptance criterion would a reviewer check first to approve the submission?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement must be satisfied to pass?
-A) Update the README with setup, run, and test commands.  
-B) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 7: Which Core action would a senior engineer insist on before approving the change?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) Add a performance or reliability improvement and measure the impact.
+D) Skipping input validation and assuming “happy path”.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option would be a common mistake to avoid?
-A) Instrument systems and run them with SLO-based operations.  
-B) Shipping without an automated test run in CI.  
-C) Alerting strategy + on-call hygiene (35 min)  
-D) SLIs/SLOs and error budgets (45 min)  
+### Question 8: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Making performance claims without measurements.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-B) Tracing: spans, context propagation (45 min)  
-C) `ruff check .`  
-D) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
+### Question 9: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Add or update documentation (README notes or ADR-style notes).
+C) Includes tests appropriate for the feature.
+D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Write tests that prove correctness and prevent regressions.
+C) Deliverable runs locally with clear instructions.
+D) Includes a short README section describing assumptions and tradeoffs.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

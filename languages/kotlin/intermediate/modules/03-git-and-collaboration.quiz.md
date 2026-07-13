@@ -1,121 +1,117 @@
 # Kotlin Intermediate — Module 03: Git and Collaboration Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Avoid measuring results or performance.  
-B) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Use tooling to keep quality high: ktlint + detekt.  
-D) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
+### Question 1: Which outcome represents a transferable software engineering skill?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) Includes tests appropriate for the feature.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) Apply the concepts to a realistic codebase (not just toy examples).
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
-B) Skip testing and trust the first result.  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 2: This happened during review: bugs appear on unexpected inputs because validation was skipped. Which mistake is it?
+A) Includes tests appropriate for the feature.
+B) Deliverable runs locally with clear instructions.
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Skipping input validation and assuming “happy path”.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Treat every request as safe without review.  
-B) Run the module tests and confirm they pass.  
-C) Branching strategies + commit hygiene (40 min)  
-D) Document decisions and constraints clearly for reviewers.  
+### Question 3: Before sign-off, which acceptance criterion must be confirmed?
+A) Making performance claims without measurements.
+B) Implement a small feature tied to this module in an existing starter app.
+C) Uses consistent style/formatting and passes the quality gate.
+D) All work must be covered by build + tests + static analysis in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Skipping input validation and assuming “happy path”.  
-B) All work must be covered by **build + tests + static analysis in CI**.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Use tooling to keep quality high: ktlint + detekt.  
+### Question 4: A reviewer asks for testing evidence. Which requirement must you show?
+A) All work must be covered by build + tests + static analysis in CI.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Skipping input validation and assuming “happy path”.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Working with CI failures (30 min)  
-B) Shipping without an automated test run in CI.  
-C) Create a feature branch, commit in small increments, and open a PR description.  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+### Question 5: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Deliverable runs locally with clear instructions.
+C) Document decisions and constraints clearly for reviewers.
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Working with CI failures (30 min)  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Shipping without an automated test run in CI.  
-D) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
+### Question 6: Which Core action would a senior engineer insist on before approving the change?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Use tooling to keep quality high: ktlint + detekt.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Branching strategies + commit hygiene (40 min)  
+### Question 7: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Explain the core concepts and tradeoffs for Git and Collaboration.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Copy the starter pack from `languages/kotlin/intermediate/starter-pack` into a new working folder.  
-C) Ignore error handling for edge cases.  
-D) Update the README with setup, run, and test commands.  
+### Question 8: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Includes tests appropriate for the feature.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Use tooling to keep quality high: ktlint + detekt.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Ship changes without documentation.  
-C) Collaborate safely using branching, PRs, and reviews.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 9: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) Includes tests appropriate for the feature.
+B) Write tests that prove correctness and prevent regressions.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Add a performance or reliability improvement and measure the impact.
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) All work must be covered by build + tests + static analysis in CI.
+D) Skipping input validation and assuming “happy path”.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

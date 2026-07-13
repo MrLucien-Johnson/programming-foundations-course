@@ -1,77 +1,77 @@
 # Swift Intermediate — Module 04: APIs and Auth Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
+## Question 1: Which outcome best captures the practical ability you should carry forward?
+**Answer: C** - Use tooling to keep quality high: SwiftFormat + SwiftLint.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 2: You're pressed for time but still need a safe release. Which Core action must remain?
 **Answer: A** - Implement a small feature tied to this module in an existing starter app.
 
-**Explanation:** This task appears under Core exercises.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 3: Which acceptance requirement protects review quality if enforced?
+**Answer: C** - Includes a short README section describing assumptions and tradeoffs.
 
-**Explanation:** This task appears under Better exercises.
-
----
-
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: B** - Add a performance or reliability improvement and **measure** the impact.
-
-**Explanation:** This task appears under Beast Mode exercises.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: C** - Run the module tests and confirm they pass.
+## Question 4: A reviewer asks for stronger engineering discipline. Which Better action fits?
+**Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: C** - All work must be covered by **build + tests + lint/format in CI**.
-
-**Explanation:** This requirement is listed under testing requirements.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: D** - Shipping without an automated test run in CI.
+## Question 5: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+**Answer: A** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
-**Explanation:** This mistake is listed under common mistakes.
-
----
-
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Explain the core concepts and tradeoffs for **APIs and Auth**.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: D** - REST: resources, status codes, pagination (45 min)
+## Question 6: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: C** - Includes tests appropriate for the feature.
 
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: C** - Copy the starter pack from `languages/swift/intermediate/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: B** - Design and secure REST APIs with authentication and authorization.
+## Question 7: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: D** - Add a performance or reliability improvement and measure the impact.
 
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## How Did You Do?
+## Question 8: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
+**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 9: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
+**Answer: A** - Skipping input validation and assuming “happy path”.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 10: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

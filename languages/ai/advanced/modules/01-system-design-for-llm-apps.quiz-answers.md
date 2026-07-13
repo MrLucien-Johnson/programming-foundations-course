@@ -1,77 +1,77 @@
 # AI — Module 01: System Design for LLM Apps Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
+## Question 1: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: A** - Add a privacy-by-design plan (minimization, retention, access controls).
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 2: Production validation failed because feature tests fail when hitting real boundaries. Which testing requirement would have prevented it?
+**Answer: D** - Design includes test strategy across unit/integration/e2e + eval gates.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 3: Which acceptance requirement protects review quality if enforced?
+**Answer: C** - Includes architecture, eval harness plan, safety checklist, cost/latency plan, fallback strategy.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 4: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: C** - Define SLOs for latency and quality with error budgets.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 5: Which testing requirement is most relevant to this issue: feature tests fail when hitting real boundaries?
+**Answer: D** - Design includes test strategy across unit/integration/e2e + eval gates.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 6: A production fix is urgent. Which Core action is still required before release?
+**Answer: B** - Identify failure modes and propose fallbacks for each.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 7: Which option reflects a mistake a reviewer would call out?
+**Answer: A** - No plan for scaling or failure, leading to outages/cost spikes.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 8: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+**Answer: C** - Add scaling considerations: caching layers, queues, and backpressure.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 9: You're pressed for time but still need a safe release. Which Core action must remain?
 **Answer: B** - Create an architecture diagram and data flow for one LLM feature.
 
-**Explanation:** This task appears under Core exercises.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: B** - Add scaling considerations: caching layers, queues, and backpressure.
+## Question 10: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: A** - Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 
-**Explanation:** This task appears under Better exercises.
-
----
-
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: C** - Design a migration plan for changing schemas/prompts with backward compatibility.
-
-**Explanation:** This task appears under Beast Mode exercises.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: C** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: B** - Design includes test strategy across unit/integration/e2e + eval gates.
-
-**Explanation:** This requirement is listed under testing requirements.
-
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: D** - Treating the model as a single black box without boundaries.
-
-**Explanation:** This mistake is listed under common mistakes.
-
----
-
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: D** - Translate a vague request into a clear goal, constraints, and success criteria.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: D** - Requirements → constraints → architecture (55 min)
-
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 10: Which statement best summarizes the module focus?
-**Answer: D** - Design end-to-end LLM application architectures: data flows, boundaries, scaling, and safety constraints.
-
-**Explanation:** This statement comes from the module overview.
-
----
-
-## How Did You Do?
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

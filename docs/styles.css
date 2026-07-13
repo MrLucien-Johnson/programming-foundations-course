@@ -237,6 +237,45 @@ button:focus {
   font-weight: 600;
 }
 
+.pill-secondary {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.pill-muted {
+  background: var(--light-gray);
+  color: var(--black);
+}
+
+.search-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.search-item {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.search-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.search-item a {
+  font-weight: 600;
+}
+
+.search-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
 .card h4 {
   margin-top: 0;
 }
@@ -314,6 +353,45 @@ button:focus {
 
 .quiz-score {
   font-weight: 700;
+}
+
+.quiz-score.pass {
+  color: #2f7d32;
+}
+
+.quiz-score.fail {
+  color: #b71c1c;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal {
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.achievement-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
 }
 
 .quiz-explanation {

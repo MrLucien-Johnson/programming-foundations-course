@@ -1,121 +1,117 @@
 # Java Advanced — Module 04: Performance and Profiling Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Avoid measuring results or performance.  
-C) DB tuning: indexes, plans, and lock contention (45 min)  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 1: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Document decisions and constraints clearly for reviewers.
+C) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Skip testing and trust the first result.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
+### Question 2: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Shipping without an automated test run in CI.
+C) Skipping input validation and assuming “happy path”.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Skipping input validation and assuming “happy path”.  
-B) DB tuning: indexes, plans, and lock contention (45 min)  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Run the module tests and confirm they pass.  
+### Question 3: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Making performance claims without measurements.
+B) Includes tests appropriate for the feature.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Skipping input validation and assuming “happy path”.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Copy the starter pack from `languages/java/advanced/starter-pack` into a new working folder.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
+### Question 4: You're pressed for time but still need a safe release. Which Core action must remain?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Deliverable runs locally with clear instructions.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-B) Shipping without an automated test run in CI.  
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 5: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Explain the core concepts and tradeoffs for Performance and Profiling.
+C) Includes tests appropriate for the feature.
+D) Making performance claims without measurements.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Avoid measuring results or performance.  
-C) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
-D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+### Question 6: A production fix is urgent. Which Core action is still required before release?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Explain the core concepts and tradeoffs for Performance and Profiling.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Jump to the next module without verifying results.  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Review the module goals and plan how you will measure and improve runtime performance.  
-D) Profiling methodology and baselines (40 min)  
+### Question 7: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
+A) Includes tests appropriate for the feature.
+B) Explain the core concepts and tradeoffs for Performance and Profiling.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Making performance claims without measurements.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Treat every request as safe without review.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Copy the starter pack from `languages/java/advanced/starter-pack` into a new working folder.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 8: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Includes tests appropriate for the feature.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) Making performance claims without measurements.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Skipping input validation and assuming “happy path”.  
-B) Treat every request as safe without review.  
-C) Profile, measure, and optimize across app + database + network.  
-D) Write tests that prove correctness and prevent regressions.  
+### Question 9: Before sign-off, which acceptance criterion must be confirmed?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Add a performance or reliability improvement and measure the impact.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: A reviewer flags feature tests fail when hitting real boundaries. Which testing requirement resolves it?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Making performance claims without measurements.
+C) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+D) Add or update documentation (README notes or ADR-style notes).
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

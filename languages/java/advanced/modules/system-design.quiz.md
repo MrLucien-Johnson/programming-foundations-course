@@ -1,121 +1,117 @@
 # Systems and Design (Advanced) Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Before submitting, which verification step must you complete?
-A) Skip testing and trust the first result.  
-B) Run the module tests and confirm they pass.  
-C) Treat every request as safe without review.  
-D) Review tradeoffs and capture in a decision log.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/java/advanced/starter-pack` into a new working folder.  
-B) Jump to the next module without verifying results.  
-C) Avoid measuring results or performance.  
-D) Run: `javac Main.java && java Main`  
+### Question 1: A teammate needs help with a project decision. Which topic should they revisit?
+A) design notes with trade-offs
+B) Skip testing and trust the first result.
+C) reliability, logging, and observability
+D) profiling or benchmarking summary
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which verification step is required before moving on?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Skip testing and trust the first result.  
-D) Document data flow, dependencies, and risk points.  
+### Question 2: Which topic would you point to when describing this module's focus?
+A) performance profiling and optimization
+B) Skip testing and trust the first result.
+C) design notes with trade-offs
+D) profiling or benchmarking summary
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Treat every request as safe without review.  
-B) Review tradeoffs and capture in a decision log.  
-C) Update the README with setup, run, and test commands.  
-D) Review the module goals and plan how you will synthesize architecture decisions.  
+### Question 3: A reviewer wants proof of work. Which deliverable should you hand them?
+A) performance profiling and optimization
+B) reliability, logging, and observability
+C) API boundaries and layering
+D) design notes with trade-offs
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which verification step is required before moving on?
-A) Run: `javac Main.java && java Main`  
-B) Document data flow, dependencies, and risk points.  
-C) Treat every request as safe without review.  
-D) Jump to the next module without verifying results.  
+### Question 4: Which deliverable best demonstrates the engineering work was completed?
+A) design notes with trade-offs
+B) performance profiling and optimization
+C) API boundaries and layering
+D) reliability, logging, and observability
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action is listed as part of the guided walkthrough?
-A) Review the module goals and plan how you will synthesize architecture decisions.  
-B) Run the module tests and confirm they pass.  
-C) Run: `javac Main.java && java Main`  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 5: Which topic belongs in a real-world discussion for this module?
+A) API boundaries and layering
+B) profiling or benchmarking summary
+C) design notes with trade-offs
+D) Skip testing and trust the first result.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which step appears in the guided walkthrough?
-A) Skip testing and trust the first result.  
-B) Ship changes without documentation.  
-C) Run the module tests and confirm they pass.  
-D) Draft a high-level system diagram.  
+### Question 6: Which deliverable would you send to a stakeholder as evidence of completion?
+A) reliability, logging, and observability
+B) API boundaries and layering
+C) profiling or benchmarking summary
+D) performance profiling and optimization
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which action is listed as part of the guided walkthrough?
-A) Run: `javac Main.java && java Main`  
-B) Jump to the next module without verifying results.  
-C) Document data flow, dependencies, and risk points.  
-D) Skip testing and trust the first result.  
+### Question 7: Which topic would you use to guide a design discussion?
+A) profiling or benchmarking summary
+B) Skip testing and trust the first result.
+C) design notes with trade-offs
+D) performance profiling and optimization
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Review tradeoffs and capture in a decision log.  
-B) Avoid measuring results or performance.  
-C) Treat every request as safe without review.  
-D) Skip testing and trust the first result.  
+### Question 8: Which topic from the outline would you revisit to solve a similar problem?
+A) design notes with trade-offs
+B) Skip testing and trust the first result.
+C) reliability, logging, and observability
+D) profiling or benchmarking summary
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which action is listed as part of the guided walkthrough?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Run the module tests and confirm they pass.  
-C) Ignore error handling for edge cases.  
-D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+### Question 9: Which topic would you point to when scoping a real-world solution?
+A) design notes with trade-offs
+B) profiling or benchmarking summary
+C) Skip testing and trust the first result.
+D) reliability, logging, and observability
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: A teammate needs help with a real project decision. Which topic should they revisit?
+A) Skip testing and trust the first result.
+B) profiling or benchmarking summary
+C) design notes with trade-offs
+D) API boundaries and layering
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

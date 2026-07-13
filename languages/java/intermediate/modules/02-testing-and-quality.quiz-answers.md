@@ -1,77 +1,77 @@
 # Java Intermediate — Module 02: Testing and Quality Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: B** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
 
-**Explanation:** This task appears under Core exercises.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 2: Which action upgrades the work to the Better level?
+## Question 2: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+**Answer: C** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 3: Which outcome best captures the practical ability you should carry forward?
+**Answer: C** - Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 4: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: B** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 5: Before shipping, which Core action best reduces regression risk?
+**Answer: A** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 6: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
+**Answer: C** - Over-mocking (tests assert implementation details instead of outcomes).
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 7: The work passes Core. Which improvement most clearly raises quality for reviewers?
 **Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
-**Explanation:** This task appears under Better exercises.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: D** - Add a performance or reliability improvement and **measure** the impact.
+## Question 8: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: A** - Add a performance or reliability improvement and measure the impact.
 
-**Explanation:** This task appears under Beast Mode exercises.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: C** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: C** - All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.
+## Question 9: A production fix is urgent. Which Core action is still required before release?
+**Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
-**Explanation:** This requirement is listed under testing requirements.
-
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: C** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: D** - Explain the core concepts and tradeoffs for **Testing and Quality**.
+## Question 10: Which acceptance criterion acts as a release gate for this module?
+**Answer: C** - Includes tests appropriate for the feature.
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: C** - Test pyramid and what to mock (40 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: C** - Copy the starter pack from `languages/java/intermediate/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 10: Which statement best summarizes the module focus?
-**Answer: D** - Write maintainable tests and enforce quality gates in CI.
-
-**Explanation:** This statement comes from the module overview.
-
----
-
-## How Did You Do?
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

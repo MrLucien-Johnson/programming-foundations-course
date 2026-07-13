@@ -1,121 +1,117 @@
 # Systems and Design (Advanced) Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) `go test ./...`  
-B) Copy the starter pack from `languages/go/advanced/starter-pack` into a new working folder.  
-C) Avoid measuring results or performance.  
-D) Verify the primary feature works with normal and edge-case inputs.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: You need to run lint checks. Which command should you use?
-A) Document data flow, dependencies, and risk points.  
-B) Avoid measuring results or performance.  
-C) Run the module tests and confirm they pass.  
-D) `golangci-lint run`  
+### Question 1: Which topic would you use to guide a design discussion?
+A) performance profiling and optimization
+B) Skip testing and trust the first result.
+C) profiling or benchmarking summary
+D) design notes with trade-offs
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) Ship changes without documentation.  
-B) Ignore error handling for edge cases.  
-C) `gofmt -w .`  
-D) Run: `gofmt -w .`  
+### Question 2: Which deliverable best demonstrates the engineering work was completed?
+A) reliability, logging, and observability
+B) API boundaries and layering
+C) performance profiling and optimization
+D) profiling or benchmarking summary
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Document data flow, dependencies, and risk points.  
-C) Run the module tests and confirm they pass.  
-D) Ignore error handling for edge cases.  
+### Question 3: A teammate needs help with a real project decision. Which topic should they revisit?
+A) API boundaries and layering
+B) Skip testing and trust the first result.
+C) design notes with trade-offs
+D) profiling or benchmarking summary
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which step appears in the guided walkthrough?
-A) Run the module tests and confirm they pass.  
-B) Treat every request as safe without review.  
-C) Copy the starter pack from `languages/go/advanced/starter-pack` into a new working folder.  
-D) Skip testing and trust the first result.  
+### Question 4: A reviewer wants proof of work. Which deliverable should you hand them?
+A) performance profiling and optimization
+B) reliability, logging, and observability
+C) API boundaries and layering
+D) profiling or benchmarking summary
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which verification step is required before moving on?
-A) Ship changes without documentation.  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Skip testing and trust the first result.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 5: Which topic from the outline would you revisit to solve a similar problem?
+A) design notes with trade-offs
+B) reliability, logging, and observability
+C) Skip testing and trust the first result.
+D) profiling or benchmarking summary
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Review the module goals and plan how you will synthesize architecture decisions.  
-C) Treat every request as safe without review.  
-D) Update the README with setup, run, and test commands.  
+### Question 6: Which topic would you highlight when scoping a real-world solution?
+A) profiling or benchmarking summary
+B) reliability, logging, and observability
+C) Skip testing and trust the first result.
+D) design notes with trade-offs
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which verification step is required before moving on?
-A) Document data flow, dependencies, and risk points.  
-B) `gofmt -w .`  
-C) Ship changes without documentation.  
-D) Run: `go test ./...`  
+### Question 7: Which topic would you point to when scoping a real-world solution?
+A) Skip testing and trust the first result.
+B) reliability, logging, and observability
+C) profiling or benchmarking summary
+D) design notes with trade-offs
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Before submitting, which verification step must you complete?
-A) Ship changes without documentation.  
-B) Run: `golangci-lint run`  
-C) Copy the starter pack from `languages/go/advanced/starter-pack` into a new working folder.  
-D) Ignore error handling for edge cases.  
+### Question 8: Which deliverable should be included before requesting approval?
+A) design notes with trade-offs
+B) API boundaries and layering
+C) reliability, logging, and observability
+D) performance profiling and optimization
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which verification step is required before moving on?
-A) Run: `gofmt -w .`  
-B) Document data flow, dependencies, and risk points.  
-C) Skip testing and trust the first result.  
-D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+### Question 9: Which topic is relevant when making this engineering decision?
+A) performance profiling and optimization
+B) profiling or benchmarking summary
+C) Skip testing and trust the first result.
+D) design notes with trade-offs
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which deliverable would you send to a stakeholder as evidence of completion?
+A) API boundaries and layering
+B) design notes with trade-offs
+C) performance profiling and optimization
+D) reliability, logging, and observability
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

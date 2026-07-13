@@ -1,121 +1,117 @@
 # Swift Intermediate — Module 01: DSA (Practical) Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Identify the hot path in the feature and choose a data structure that minimizes lookups.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Ignore error handling for edge cases.  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Run the module tests and confirm they pass.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 1: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Use tooling to keep quality high: SwiftFormat + SwiftLint.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 2: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Use data structures and algorithms pragmatically in real applications.  
-C) Caching patterns: LRU + memoization (45 min)  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 3: A reviewer asks for stronger engineering discipline. Which Better action fits?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Deliverable runs locally with clear instructions.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Shipping without an automated test run in CI.  
-C) Implement a helper that enforces the chosen structure (e.g., map for fast lookup).  
-D) All work must be covered by **build + tests + lint/format in CI**.  
+### Question 4: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Write tests that prove correctness and prevent regressions.
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Skipping input validation and assuming “happy path”.
+D) Includes a short README section describing assumptions and tradeoffs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Shipping without an automated test run in CI.  
-B) Identify the hot path in the feature and choose a data structure that minimizes lookups.  
-C) Sorting/searching: when built-ins are enough (35 min)  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 5: A production fix is urgent. Which Core action is still required before release?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Deliverable runs locally with clear instructions.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Making performance claims without measurements.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Ignore error handling for edge cases.  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 6: Which common mistake matches this scenario: CI has no automated test run before release?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Uses consistent style/formatting and passes the quality gate.
+C) Shipping without an automated test run in CI.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Big-O and tradeoffs in real code (45 min)  
-C) Implement a helper that enforces the chosen structure (e.g., map for fast lookup).  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+### Question 7: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
+A) Deliverable runs locally with clear instructions.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Making performance claims without measurements.
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Run: `swift main.swift`  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Copy the starter pack from `languages/swift/intermediate/starter-pack` into a new working folder.  
+### Question 8: Before shipping, which Core action best reduces regression risk?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Deliverable runs locally with clear instructions.
+C) Implement a small feature tied to this module in an existing starter app.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
-B) Implement a helper that enforces the chosen structure (e.g., map for fast lookup).  
-C) Making performance claims without measurements.  
-D) Use data structures and algorithms pragmatically in real applications.  
+### Question 9: Which outcome represents a transferable software engineering skill?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Uses consistent style/formatting and passes the quality gate.
+C) Use tooling to keep quality high: SwiftFormat + SwiftLint.
+D) Includes a short README section describing assumptions and tradeoffs.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Use tooling to keep quality high: SwiftFormat + SwiftLint.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Add a performance or reliability improvement and measure the impact.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

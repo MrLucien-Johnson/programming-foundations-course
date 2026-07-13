@@ -1,77 +1,77 @@
 # Evaluation Harness (Intermediate) Quiz Answers
 
-## Question 1: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
+## Question 1: A teammate needs help with a real project decision. Which topic should they revisit?
+**Answer: D** - regression tracking
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 2: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 3: Which verification step is required before moving on?
-**Answer: D** - Verify the primary feature works with normal and edge-case inputs.
+## Question 2: Which topic would you use to guide a design discussion?
+**Answer: B** - automated scoring or rubric checks
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: C** - Update the README with setup, run, and test commands.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 5: Which action is listed as part of the guided walkthrough?
-**Answer: B** - Review the module goals and plan how you will build an evaluation harness for repeatable testing.
+## Question 3: Which deliverable should be included before requesting approval?
+**Answer: B** - evaluation report with findings
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 6: Which step appears in the guided walkthrough?
-**Answer: A** - Define the evaluation categories and success criteria.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 7: Which action is listed as part of the guided walkthrough?
-**Answer: D** - Automate evaluation runs and capture metrics.
+## Question 4: Which deliverable would you send to a stakeholder as evidence of completion?
+**Answer: D** - evaluation report with findings
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 8: Which step appears in the guided walkthrough?
-**Answer: C** - Summarize results and prioritize fixes.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 9: Which action is listed as part of the guided walkthrough?
-**Answer: A** - Document decisions in a short README section (assumptions, tradeoffs, next steps).
+## Question 5: Which topic would you highlight when scoping a real-world solution?
+**Answer: A** - automated scoring or rubric checks
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 10: Which practice best supports reliable delivery?
-**Answer: C** - Ship changes without documentation.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## How Did You Do?
+## Question 6: Which topic would you point to when scoping a real-world solution?
+**Answer: D** - test cases and golden sets
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 7: Which deliverable best demonstrates the engineering work was completed?
+**Answer: B** - evaluation harness or scripts
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 8: Which topic is relevant when making this engineering decision?
+**Answer: B** - regression tracking
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 9: Which topic belongs in a real-world discussion for this module?
+**Answer: C** - test cases and golden sets
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 10: A reviewer wants proof of work. Which deliverable should you hand them?
+**Answer: A** - evaluation harness or scripts
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

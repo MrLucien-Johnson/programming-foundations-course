@@ -1,121 +1,117 @@
-# CAdvanced — Module 07: Observability and SLOs Quiz: Test Your Understanding
+# C# Advanced — Module 07: Observability and SLOs Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Instrument systems and run them with SLO-based operations.  
-B) Ship changes without documentation.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) `dotnet test`  
-
-**Your answer:** _______________
-
----
-
-### Question 2: You need to format the code. Which command should you use?
-A) Alerting strategy + on-call hygiene (35 min)  
-B) Write tests that prove correctness and prevent regressions.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) `dotnet format`  
+### Question 1: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Deliverable runs locally with clear instructions.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Explain the core concepts and tradeoffs for Observability and SLOs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action best satisfies the Core requirements?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Instrument systems and run them with SLO-based operations.  
-C) Skipping input validation and assuming “happy path”.  
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 2: Which outcome best captures the practical ability you should carry forward?
+A) Write tests that prove correctness and prevent regressions.
+B) Skipping input validation and assuming “happy path”.
+C) Add a performance or reliability improvement and measure the impact.
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action upgrades the work to the Better level?
-A) SLIs/SLOs and error budgets (45 min)  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Making performance claims without measurements.  
+### Question 3: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Shipping without an automated test run in CI.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Define SLIs and SLO targets for one critical path.  
-C) Ship changes without documentation.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 4: Which acceptance criterion acts as a release gate for this module?
+A) Deliverable runs locally with clear instructions.
+B) Use tooling to keep quality high: dotnet format + analyzers.
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Before submitting, which verification step must you complete?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) `dotnet test`  
-C) Tracing: spans, context propagation (45 min)  
-D) Run the module tests and confirm they pass.  
+### Question 5: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
+A) Use tooling to keep quality high: dotnet format + analyzers.
+B) Skipping input validation and assuming “happy path”.
+C) Implement a small feature tied to this module in an existing starter app.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement must be satisfied to pass?
-A) All work must be covered by **build + tests + analyzers in CI**.  
-B) Document alert thresholds and escalation steps.  
-C) Update the README with setup, run, and test commands.  
-D) Alerting strategy + on-call hygiene (35 min)  
+### Question 6: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Making performance claims without measurements.
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which option would be a common mistake to avoid?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Shipping without an automated test run in CI.  
-C) Run the module tests and confirm they pass.  
-D) Use tooling to keep quality high: dotnet format + analyzers.  
+### Question 7: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) Includes tests appropriate for the feature.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
-B) Metrics: RED/USE and cardinality pitfalls (45 min)  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
+### Question 8: Before shipping, which Core action best reduces regression risk?
+A) Use tooling to keep quality high: dotnet format + analyzers.
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which topic would you revisit to solve this module's core problem?
-A) Instrument systems and run them with SLO-based operations.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) SLIs/SLOs and error budgets (45 min)  
-D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+### Question 9: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Implement a small feature tied to this module in an existing starter app.
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Explain the core concepts and tradeoffs for Observability and SLOs.
+D) Implement a small feature tied to this module in an existing starter app.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

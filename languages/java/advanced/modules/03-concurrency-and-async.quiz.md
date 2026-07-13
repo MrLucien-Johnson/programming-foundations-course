@@ -1,121 +1,117 @@
 # Java Advanced — Module 03: Concurrency and Async Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Document decisions and constraints clearly for reviewers.  
-C) Avoid measuring results or performance.  
-D) Implement a small feature tied to this module in an existing starter app.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Update the README with setup, run, and test commands.  
+### Question 1: A production fix is urgent. Which Core action is still required before release?
+A) Shipping without an automated test run in CI.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Timeouts, cancellation, and structured concurrency (45 min)  
-D) Ship changes without documentation.  
+### Question 2: Which acceptance requirement protects review quality if enforced?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Timeouts, cancellation, and structured concurrency (45 min)  
-B) Create a short write-up: what changed, why, and how you verified it.  
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-D) Run the module tests and confirm they pass.  
+### Question 3: Which Core action would a senior engineer insist on before approving the change?
+A) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Apply the concepts to a realistic codebase (not just toy examples).
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Update the README with setup, run, and test commands.  
-B) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 4: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Deliverable runs locally with clear instructions.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Shipping without an automated test run in CI.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Jump to the next module without verifying results.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+### Question 5: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Add a performance or reliability improvement and measure the impact.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Includes a short README section describing assumptions and tradeoffs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Explain the core concepts and tradeoffs for **Concurrency and Async**.  
-C) Identify shared state and define synchronization rules.  
-D) Copy the starter pack from `languages/java/advanced/starter-pack` into a new working folder.  
+### Question 6: Which common mistake matches this scenario: CI has no automated test run before release?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Shipping without an automated test run in CI.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Implement an async or concurrent workflow.  
-C) Concurrency primitives + race conditions (45 min)  
-D) Jump to the next module without verifying results.  
+### Question 7: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) If the module involves a database, tests must run against an isolated schema/database.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/java/advanced/starter-pack` into a new working folder.  
-B) Backpressure + bounded work queues (45 min)  
-C) Add or update documentation (README notes or ADR-style notes).  
-D) Shipping without an automated test run in CI.  
+### Question 8: Which acceptance criterion acts as a release gate for this module?
+A) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Explain the core concepts and tradeoffs for Concurrency and Async.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Update the README with setup, run, and test commands.  
-B) Review the module goals and plan how you will handle parallel work safely.  
-C) Build correct concurrent systems and manage backpressure.  
-D) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
+### Question 9: Your tests are blocked because feature tests fail when hitting real boundaries. Which requirement should you enforce?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+D) Document decisions and constraints clearly for reviewers.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which outcome represents a transferable software engineering skill?
+A) Explain the core concepts and tradeoffs for Concurrency and Async.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) All work must be covered by build + unit tests + slice/integration tests (Spring + DB) in CI.
+D) Includes a short README section describing assumptions and tradeoffs.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

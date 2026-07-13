@@ -1,121 +1,117 @@
 # Core Concepts (Intermediate) Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Treat every request as safe without review.  
-D) Review the module goals and plan how you will reinforce foundational skills and patterns.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/java/intermediate/starter-pack` into a new working folder.  
-B) Avoid measuring results or performance.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Run: `javac Main.java && java Main`  
+### Question 1: Which deliverable would you submit to close the work item?
+A) topic notes or summaries
+B) object design and interfaces
+C) testable module design
+D) error handling and debugging
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which verification step is required before moving on?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Avoid measuring results or performance.  
-C) Ignore error handling for edge cases.  
-D) Add tests and document the reasoning.  
+### Question 2: Which topic would you highlight when scoping a real-world solution?
+A) example implementations in the repo
+B) error handling and debugging
+C) topic notes or summaries
+D) Skip testing and trust the first result.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Jump to the next module without verifying results.  
-B) Update the README with setup, run, and test commands.  
-C) Summarize the core concepts in your own words.  
-D) Treat every request as safe without review.  
+### Question 3: A reviewer wants proof of work. Which deliverable should you hand them?
+A) topic notes or summaries
+B) object design and interfaces
+C) error handling and debugging
+D) testable module design
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which verification step is required before moving on?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Summarize the core concepts in your own words.  
-C) Run: `javac Main.java && java Main`  
-D) Implement a small feature that uses at least two core concepts.  
+### Question 4: Which topic would you use to guide a design discussion?
+A) topic notes or summaries
+B) example implementations in the repo
+C) testable module design
+D) Skip testing and trust the first result.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action is listed as part of the guided walkthrough?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Run: `javac Main.java && java Main`  
-C) Jump to the next module without verifying results.  
-D) Review the module goals and plan how you will reinforce foundational skills and patterns.  
+### Question 5: A teammate needs help with a real project decision. Which topic should they revisit?
+A) Skip testing and trust the first result.
+B) topic notes or summaries
+C) example implementations in the repo
+D) error handling and debugging
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which step appears in the guided walkthrough?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Ignore error handling for edge cases.  
-C) Update the README with setup, run, and test commands.  
-D) Summarize the core concepts in your own words.  
+### Question 6: Which topic would you point to when describing this module's focus?
+A) Skip testing and trust the first result.
+B) topic notes or summaries
+C) object design and interfaces
+D) example implementations in the repo
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which action is listed as part of the guided walkthrough?
-A) Run: `javac Main.java && java Main`  
-B) Implement a small feature that uses at least two core concepts.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 7: Which deliverable should be included before requesting approval?
+A) object design and interfaces
+B) testable module design
+C) topic notes or summaries
+D) error handling and debugging
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Add tests and document the reasoning.  
-C) Run the module tests and confirm they pass.  
-D) Ship changes without documentation.  
+### Question 8: Which topic would you point to when scoping a real-world solution?
+A) Skip testing and trust the first result.
+B) example implementations in the repo
+C) object design and interfaces
+D) topic notes or summaries
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which action is listed as part of the guided walkthrough?
-A) Ship changes without documentation.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-D) Update the README with setup, run, and test commands.  
+### Question 9: Which deliverable best demonstrates the engineering work was completed?
+A) object design and interfaces
+B) testable module design
+C) example implementations in the repo
+D) error handling and debugging
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which deliverable would you send to a stakeholder as evidence of completion?
+A) testable module design
+B) example implementations in the repo
+C) error handling and debugging
+D) object design and interfaces
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

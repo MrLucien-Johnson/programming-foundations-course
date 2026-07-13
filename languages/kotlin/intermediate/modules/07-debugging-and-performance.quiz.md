@@ -1,121 +1,117 @@
 # Kotlin Intermediate — Module 07: Debugging and Performance Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Review the module goals and plan how you will diagnose and fix slow or failing code.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Ship changes without documentation.  
-D) Logging and tracing basics (40 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Capture a baseline timing or log snapshot.  
-C) Use tooling to keep quality high: ktlint + detekt.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 1: Before shipping, which Core action best reduces regression risk?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Shipping without an automated test run in CI.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Debugging workflow: reproduce → isolate → fix (35 min)  
-B) Skipping input validation and assuming “happy path”.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 2: Which testing requirement would you verify in CI before approving the change?
+A) Write tests that prove correctness and prevent regressions.
+B) All work must be covered by build + tests + static analysis in CI.
+C) Uses consistent style/formatting and passes the quality gate.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) All work must be covered by **build + tests + static analysis in CI**.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Run the module tests and confirm they pass.  
+### Question 3: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) Deliverable runs locally with clear instructions.
+B) Add a performance or reliability improvement and measure the impact.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Logging and tracing basics (40 min)  
-B) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
-C) Shipping without an automated test run in CI.  
-D) All work must be covered by **build + tests + static analysis in CI**.  
+### Question 4: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Includes tests appropriate for the feature.
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Review the module goals and plan how you will diagnose and fix slow or failing code.  
-B) Avoid measuring results or performance.  
-C) Database performance: slow queries + indexes (45 min)  
-D) Shipping without an automated test run in CI.  
+### Question 5: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) All work must be covered by build + tests + static analysis in CI.
+B) Skipping input validation and assuming “happy path”.
+C) Uses consistent style/formatting and passes the quality gate.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
-B) Shipping without an automated test run in CI.  
-C) Review the module goals and plan how you will diagnose and fix slow or failing code.  
-D) Profiling CPU + memory (45 min)  
+### Question 6: A production fix is urgent. Which Core action is still required before release?
+A) All work must be covered by build + tests + static analysis in CI.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Implement a small feature tied to this module in an existing starter app.
+D) Document decisions and constraints clearly for reviewers.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Debugging workflow: reproduce → isolate → fix (35 min)  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Avoid measuring results or performance.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 7: Which acceptance requirement most clearly blocks approval if missing?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Deliverable runs locally with clear instructions.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Apply the concepts to a realistic codebase (not just toy examples).
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Add or update documentation (README notes or ADR-style notes).  
-B) All work must be covered by **build + tests + static analysis in CI**.  
-C) Copy the starter pack from `languages/kotlin/intermediate/starter-pack` into a new working folder.  
-D) Avoid measuring results or performance.  
+### Question 8: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
+A) Document decisions and constraints clearly for reviewers.
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) Skipping input validation and assuming “happy path”.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Avoid measuring results or performance.  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Debug systematically and improve performance with evidence.  
-D) Logging and tracing basics (40 min)  
+### Question 9: The work passes Core. Which improvement most clearly raises quality for reviewers?
+A) Document decisions and constraints clearly for reviewers.
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) All work must be covered by build + tests + static analysis in CI.
+C) Includes tests appropriate for the feature.
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

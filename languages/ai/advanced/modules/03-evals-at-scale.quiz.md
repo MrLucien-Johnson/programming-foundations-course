@@ -1,121 +1,117 @@
 # AI — Module 03: Evals at Scale Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Treat every request as safe without review.  
-B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
-C) Add shadow evaluation for live traffic (privacy-safe).  
-D) Design a scalable eval runner spec (batching, retries, budgets).  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Add shadow evaluation for live traffic (privacy-safe).  
-B) Treat every request as safe without review.  
-C) Review the module goals and plan how you will scale evaluations across large test sets.  
-D) Add stratified sampling (by category, language, customer tier).  
+### Question 1: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Runs are reproducible: versioned prompts, datasets, and scoring rules.
+B) Define “stop-the-line” criteria for regressions.
+C) Define a drift metric and a monitoring cadence.
+D) Includes datasets, automation, gates, budgets, and rollback criteria.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) CI integration: gates, baselines, and rollback triggers (45 min)  
-B) Add shadow evaluation for live traffic (privacy-safe).  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Run evaluations reliably at scale: datasets, sampling, automation, and CI gating.  
+### Question 2: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Includes datasets, automation, gates, budgets, and rollback criteria.
+B) Runs are reproducible: versioned prompts, datasets, and scoring rules.
+C) Relying only on live user feedback instead of proactive evals.
+D) Add stratified sampling (by category, language, customer tier).
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Document and version changes so improvements are explainable.  
-B) Ship changes without documentation.  
-C) Treat every request as safe without review.  
-D) Run the module tests and confirm they pass.  
+### Question 3: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Includes datasets, automation, gates, budgets, and rollback criteria.
+B) Runs are reproducible: versioned prompts, datasets, and scoring rules.
+C) Add shadow evaluation for live traffic (privacy-safe).
+D) Define “stop-the-line” criteria for regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) No budget controls for large eval runs.  
-B) Relying only on live user feedback instead of proactive evals.  
-C) Runs are reproducible: versioned prompts, datasets, and scoring rules.  
-D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+### Question 4: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Relying only on live user feedback instead of proactive evals.
+B) Add shadow evaluation for live traffic (privacy-safe).
+C) Design a scalable eval runner spec (batching, retries, budgets).
+D) Build a small evaluation loop: test cases, metrics, and iteration notes.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Relying only on live user feedback instead of proactive evals.  
-D) Define a drift metric and a monitoring cadence.  
+### Question 5: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Relying only on live user feedback instead of proactive evals.
+B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+C) Design a scalable eval runner spec (batching, retries, budgets).
+D) Build a small evaluation loop: test cases, metrics, and iteration notes.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Run the module tests and confirm they pass.  
-B) Translate a vague request into a clear goal, constraints, and success criteria.  
-C) Add shadow evaluation for live traffic (privacy-safe).  
-D) Human evaluation at scale: rubrics + calibration (45 min)  
+### Question 6: Which Core action would a senior engineer insist on before approving the change?
+A) Build a small evaluation loop: test cases, metrics, and iteration notes.
+B) Define a drift metric and a monitoring cadence.
+C) Runs are reproducible: versioned prompts, datasets, and scoring rules.
+D) Relying only on live user feedback instead of proactive evals.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Document and version changes so improvements are explainable.  
-B) Ship changes without documentation.  
-C) Eval architecture: datasets, runners, scoring, reporting (55 min)  
-D) Design a scalable eval runner spec (batching, retries, budgets).  
+### Question 7: A reviewer asks for testing evidence. Which requirement must you show?
+A) Relying only on live user feedback instead of proactive evals.
+B) Document and version changes so improvements are explainable.
+C) Define “stop-the-line” criteria for regressions.
+D) Runs are reproducible: versioned prompts, datasets, and scoring rules.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Translate a vague request into a clear goal, constraints, and success criteria.  
-B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
-C) Runs are reproducible: versioned prompts, datasets, and scoring rules.  
-D) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
+### Question 8: Which testing requirement would prevent a reviewer from rejecting the submission?
+A) Build a small evaluation loop: test cases, metrics, and iteration notes.
+B) Runs are reproducible: versioned prompts, datasets, and scoring rules.
+C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Design a labeling workflow and calibration plan for human raters.  
-B) Run evaluations reliably at scale: datasets, sampling, automation, and CI gating.  
-C) Runs are reproducible: versioned prompts, datasets, and scoring rules.  
-D) Design a scalable eval runner spec (batching, retries, budgets).  
+### Question 9: During review, which behavior would be flagged as a common mistake?
+A) Relying only on live user feedback instead of proactive evals.
+B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+C) Translate a vague request into a clear goal, constraints, and success criteria.
+D) Runs are reproducible: versioned prompts, datasets, and scoring rules.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which outcome best captures the practical ability you should carry forward?
+A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+B) Includes datasets, automation, gates, budgets, and rollback criteria.
+C) Define “stop-the-line” criteria for regressions.
+D) Design a scalable eval runner spec (batching, retries, budgets).
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

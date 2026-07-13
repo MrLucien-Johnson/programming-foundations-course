@@ -1,121 +1,117 @@
 # AI — Module 03: RAG Foundations Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-B) Document and version changes so improvements are explainable.  
-C) Create a doc set (10–30 pages) and define a question set (30 questions).  
-D) Treat every request as safe without review.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Add a “no evidence → abstain” rule and test hallucination reduction.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Retrieval: top-k, filters, and re-ranking basics (45 min)  
-D) Ship changes without documentation.  
+### Question 1: Which Core action would a senior engineer insist on before approving the change?
+A) Create a doc set (10–30 pages) and define a question set (30 questions).
+B) Not separating retrieval vs generation issues.
+C) No citation requirement, leading to confident hallucinations.
+D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Build retrieval-augmented generation (RAG) systems: chunking, embeddings, retrieval, and grounded answering.  
-B) Retrieval: top-k, filters, and re-ranking basics (45 min)  
-C) Add query rewriting and compare retrieval hit-rate.  
-D) Document and version changes so improvements are explainable.  
+### Question 2: Which acceptance criterion acts as a release gate for this module?
+A) Add a “no evidence → abstain” rule and test hallucination reduction.
+B) Includes a question set and a scoring rubric.
+C) Track retrieval failures separately from generation failures.
+D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Create a doc set (10–30 pages) and define a question set (30 questions).  
-C) Retrieval: top-k, filters, and re-ranking basics (45 min)  
-D) Skip testing and trust the first result.  
+### Question 3: Before shipping, which Core action best reduces regression risk?
+A) Design prompts that answer only using retrieved context and cite excerpts.
+B) Add a “no evidence → abstain” rule and test hallucination reduction.
+C) Design an offline evaluation for retrieval quality (precision@k proxy).
+D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) At minimum: manual scoring with a rubric; better: scripted scoring of citations/abstentions.  
-B) Review the module goals and plan how you will build a retrieval-augmented generation pipeline.  
-C) Build retrieval-augmented generation (RAG) systems: chunking, embeddings, retrieval, and grounded answering.  
-D) Grounded answers: cite sources and abstain when missing (45 min)  
+### Question 4: Which testing requirement would prevent a reviewer from rejecting the submission?
+A) No citation requirement, leading to confident hallucinations.
+B) Track retrieval failures separately from generation failures.
+C) Includes a question set and a scoring rubric.
+D) At minimum: manual scoring with a rubric; better: scripted scoring of citations/abstentions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Run the module tests and confirm they pass.  
-B) Avoid measuring results or performance.  
-C) At minimum: manual scoring with a rubric; better: scripted scoring of citations/abstentions.  
-D) No citation requirement, leading to confident hallucinations.  
+### Question 5: Which acceptance criterion would a reviewer check first to approve the submission?
+A) Track retrieval failures separately from generation failures.
+B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+C) Includes chunking strategy, metadata plan, and grounding rules.
+D) Chunking without metadata, making filtering impossible.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Track retrieval failures separately from generation failures.  
-B) Translate a vague request into a clear goal, constraints, and success criteria.  
-C) Chunking without metadata, making filtering impossible.  
-D) Retrieval: top-k, filters, and re-ranking basics (45 min)  
+### Question 6: Which option reflects a mistake a reviewer would call out?
+A) No citation requirement, leading to confident hallucinations.
+B) Build a small evaluation loop: test cases, metrics, and iteration notes.
+C) Add a “no evidence → abstain” rule and test hallucination reduction.
+D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Design an offline evaluation for retrieval quality (precision@k proxy).  
-B) RAG mental model: retrieve → read → answer (45 min)  
-C) Skip testing and trust the first result.  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 7: Which testing requirement would you verify in CI before approving the change?
+A) At minimum: manual scoring with a rubric; better: scripted scoring of citations/abstentions.
+B) Document and version changes so improvements are explainable.
+C) Chunking without metadata, making filtering impossible.
+D) No citation requirement, leading to confident hallucinations.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
-D) Skip testing and trust the first result.  
+### Question 8: The work passes Core. Which improvement most clearly raises quality for reviewers?
+A) At minimum: manual scoring with a rubric; better: scripted scoring of citations/abstentions.
+B) Add a “no evidence → abstain” rule and test hallucination reduction.
+C) Add query rewriting and compare retrieval hit-rate.
+D) Translate a vague request into a clear goal, constraints, and success criteria.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Build retrieval-augmented generation (RAG) systems: chunking, embeddings, retrieval, and grounded answering.  
-B) Update prompts to cite sources accurately.  
-C) Update the README with setup, run, and test commands.  
-D) Review the module goals and plan how you will build a retrieval-augmented generation pipeline.  
+### Question 9: In a real code review, which outcome best reflects the skill you should demonstrate?
+A) Design prompts that answer only using retrieved context and cite excerpts.
+B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+C) Not separating retrieval vs generation issues.
+D) No citation requirement, leading to confident hallucinations.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Translate a vague request into a clear goal, constraints, and success criteria.
+B) Add query rewriting and compare retrieval hit-rate.
+C) Design prompts that answer only using retrieved context and cite excerpts.
+D) Create a doc set (10–30 pages) and define a question set (30 questions).
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

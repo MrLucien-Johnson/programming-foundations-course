@@ -1,121 +1,117 @@
 # TypeScript Intermediate — Module 06: Security Basics Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) OWASP Top 10: practical mapping (50 min)  
-B) Jump to the next module without verifying results.  
-C) Secrets + config management (45 min)  
-D) Implement a small feature tied to this module in an existing starter app.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) List the top risks for this module (input validation, secrets, auth).  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Document decisions and constraints clearly for reviewers.  
+### Question 1: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+A) Add a performance or reliability improvement and measure the impact.
+B) Use tooling to keep quality high: ESLint + Prettier.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Use tooling to keep quality high: ESLint + Prettier.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Shipping without an automated test run in CI.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 2: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Use tooling to keep quality high: ESLint + Prettier.
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Uses consistent style/formatting and passes the quality gate.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Avoid measuring results or performance.  
-B) Create a short write-up: what changed, why, and how you verified it.  
-C) Run the module tests and confirm they pass.  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 3: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Shipping without an automated test run in CI.
+C) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+D) Use tooling to keep quality high: ESLint + Prettier.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) OWASP Top 10: practical mapping (50 min)  
-B) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-C) Use tooling to keep quality high: ESLint + Prettier.  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 4: A reviewer asks for stronger engineering discipline. Which Better action fits?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Making performance claims without measurements.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Shipping without an automated test run in CI.  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 5: Which outcome best captures the practical ability you should carry forward?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+C) Document decisions and constraints clearly for reviewers.
+D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Making performance claims without measurements.  
-C) Add validation and error handling for unsafe inputs.  
-D) Explain the core concepts and tradeoffs for **Security Basics**.  
+### Question 6: Production validation failed because tests are flaky and fail intermittently. Which testing requirement would have prevented it?
+A) Making performance claims without measurements.
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-B) OWASP Top 10: practical mapping (50 min)  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Skip testing and trust the first result.  
+### Question 7: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Making performance claims without measurements.
+C) Explain the core concepts and tradeoffs for Security Basics.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/typescript/intermediate/starter-pack` into a new working folder.  
-B) Treat every request as safe without review.  
-C) Explain the core concepts and tradeoffs for **Security Basics**.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 8: A reviewer reports: tests assert implementation details instead of outcomes. Which mistake does this reflect?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Document decisions and constraints clearly for reviewers.
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Use tooling to keep quality high: ESLint + Prettier.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Reduce common vulnerabilities with safe defaults.  
-B) List the top risks for this module (input validation, secrets, auth).  
-C) Jump to the next module without verifying results.  
-D) Copy the starter pack from `languages/typescript/intermediate/starter-pack` into a new working folder.  
+### Question 9: Which acceptance requirement most clearly blocks approval if missing?
+A) Use tooling to keep quality high: ESLint + Prettier.
+B) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Use tooling to keep quality high: ESLint + Prettier.
+C) Uses consistent style/formatting and passes the quality gate.
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

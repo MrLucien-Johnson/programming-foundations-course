@@ -1,77 +1,77 @@
 # TypeScript Intermediate — Module 04: APIs and Auth Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: A** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: Before shipping, which Core action best reduces regression risk?
+**Answer: D** - Implement a small feature tied to this module in an existing starter app.
 
-**Explanation:** This task appears under Core exercises.
-
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: D** - Add a performance or reliability improvement and **measure** the impact.
+## Question 2: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
+**Answer: C** - All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
 
-**Explanation:** This task appears under Beast Mode exercises.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: A** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: B** - All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.
+## Question 3: You're pressed for time but still need a safe release. Which Core action must remain?
+**Answer: B** - Add or update documentation (README notes or ADR-style notes).
 
-**Explanation:** This requirement is listed under testing requirements.
-
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: C** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Explain the core concepts and tradeoffs for **APIs and Auth**.
+## Question 4: This happened during review: a performance claim was made without benchmarks. Which mistake is it?
+**Answer: B** - Making performance claims without measurements.
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: C** - REST: resources, status codes, pagination (60 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/typescript/intermediate/starter-pack` into a new working folder.
+## Question 5: Before sign-off, which acceptance criterion must be confirmed?
+**Answer: C** - Includes tests appropriate for the feature.
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 10: Which statement best summarizes the module focus?
-**Answer: A** - Design and secure REST APIs with authentication and authorization.
-
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## How Did You Do?
+## Question 6: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
+**Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 7: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: C** - Document decisions and constraints clearly for reviewers.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 8: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: D** - Create a short write-up: what changed, why, and how you verified it.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 9: A reviewer asks for stronger engineering discipline. Which Better action fits?
+**Answer: D** - Refactor one area for readability (without changing behavior) and prove it with tests.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 10: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: B** - Includes a short README section describing assumptions and tradeoffs.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

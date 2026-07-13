@@ -1,121 +1,117 @@
 # Kotlin Advanced — Module 02: Architecture Patterns Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Update the README with setup, run, and test commands.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) All work must be covered by **build + tests + static analysis in CI**.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Use tooling to keep quality high: ktlint + detekt.  
-B) Skip testing and trust the first result.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Update the README with setup, run, and test commands.  
+### Question 1: Before sign-off, which acceptance criterion must be confirmed?
+A) Uses consistent style/formatting and passes the quality gate.
+B) All work must be covered by build + tests + static analysis in CI.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Apply architectural patterns to keep systems evolvable.  
-B) Implement the pattern in a small feature slice.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 2: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Use tooling to keep quality high: ktlint + detekt.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-B) Run the module tests and confirm they pass.  
-C) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 3: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+A) Shipping without an automated test run in CI.
+B) Implement a small feature tied to this module in an existing starter app.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Compare two patterns and choose one for the module scenario.  
-B) All work must be covered by **build + tests + static analysis in CI**.  
-C) Apply architectural patterns to keep systems evolvable.  
-D) Avoid measuring results or performance.  
+### Question 4: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Explain the core concepts and tradeoffs for Architecture Patterns.
+C) Making performance claims without measurements.
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Skip testing and trust the first result.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Shipping without an automated test run in CI.  
+### Question 5: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Skipping input validation and assuming “happy path”.
+C) Implement a small feature tied to this module in an existing starter app.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Ship changes without documentation.  
+### Question 6: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Run the module tests and confirm they pass.  
-B) Treat every request as safe without review.  
-C) Layered vs hexagonal vs clean architecture (45 min)  
-D) Compare two patterns and choose one for the module scenario.  
+### Question 7: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Includes tests appropriate for the feature.
+C) Making performance claims without measurements.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Update the README with setup, run, and test commands.  
-C) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-D) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
+### Question 8: Which Core action best reflects professional engineering practice in this situation?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Apply architectural patterns to keep systems evolvable.  
-B) Layered vs hexagonal vs clean architecture (45 min)  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Making performance claims without measurements.  
+### Question 9: Which testing requirement would you verify in CI before approving the change?
+A) Explain the core concepts and tradeoffs for Architecture Patterns.
+B) All work must be covered by build + tests + static analysis in CI.
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Skipping input validation and assuming “happy path”.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: The work passes Core. Which improvement most clearly raises quality for reviewers?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Add a performance or reliability improvement and measure the impact.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

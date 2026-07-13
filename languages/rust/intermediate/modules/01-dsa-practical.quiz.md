@@ -1,121 +1,117 @@
 # Rust Intermediate — Module 01: DSA (Practical) Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Use data structures and algorithms pragmatically in real applications.  
-B) Run the module tests and confirm they pass.  
-C) Ignore error handling for edge cases.  
-D) `cargo test`  
-
-**Your answer:** _______________
-
----
-
-### Question 2: You need to run lint checks. Which command should you use?
-A) Document decisions and constraints clearly for reviewers.  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) `cargo clippy`  
-D) Run the module tests and confirm they pass.  
+### Question 1: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Making performance claims without measurements.
+C) If the module involves a database, tests must run against an isolated schema/database.
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) `cargo fmt`  
-C) Arrays/lists, hash maps, and sets (45 min)  
-D) Avoid measuring results or performance.  
+### Question 2: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Making performance claims without measurements.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action best satisfies the Core requirements?
-A) Sorting/searching: when built-ins are enough (35 min)  
-B) Measure the impact with a small benchmark or timing log.  
-C) Run: `cargo clippy`  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 3: You're pressed for time but still need a safe release. Which Core action must remain?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Use tooling to keep quality high: rustfmt + clippy.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Stacks/queues + BFS/DFS mental models (45 min)  
-C) All work must be covered by **fmt + clippy + tests in CI**.  
-D) Add or update documentation (README notes or ADR-style notes).  
+### Question 4: A reviewer asks for stronger engineering discipline. Which Better action fits?
+A) Deliverable runs locally with clear instructions.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Skipping input validation and assuming “happy path”.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Review the module goals and plan how you will select the right data structures and justify tradeoffs.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-D) All work must be covered by **fmt + clippy + tests in CI**.  
+### Question 5: Which acceptance requirement protects review quality if enforced?
+A) Use tooling to keep quality high: rustfmt + clippy.
+B) Deliverable runs locally with clear instructions.
+C) Document decisions and constraints clearly for reviewers.
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) `cargo clippy`  
-C) Run the module tests and confirm they pass.  
-D) Implement a helper that enforces the chosen structure (e.g., map for fast lookup).  
+### Question 6: Which testing requirement would you verify in CI before approving the change?
+A) All work must be covered by fmt + clippy + tests in CI.
+B) Add a performance or reliability improvement and measure the impact.
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement must be satisfied to pass?
-A) Run: `cargo test`  
-B) `cargo clippy`  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) All work must be covered by **fmt + clippy + tests in CI**.  
+### Question 7: Which acceptance criterion acts as a release gate for this module?
+A) Use tooling to keep quality high: rustfmt + clippy.
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) All work must be covered by fmt + clippy + tests in CI.
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option would be a common mistake to avoid?
-A) Shipping without an automated test run in CI.  
-B) Update the README with setup, run, and test commands.  
-C) Ignore error handling for edge cases.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 8: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Making performance claims without measurements.
+B) Explain the core concepts and tradeoffs for DSA (Practical).
+C) Implement a small feature tied to this module in an existing starter app.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Treat every request as safe without review.  
-B) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
-C) Big-O and tradeoffs in real code (45 min)  
-D) Identify the hot path in the feature and choose a data structure that minimizes lookups.  
+### Question 9: Which common mistake matches this scenario: a performance claim was made without benchmarks?
+A) Making performance claims without measurements.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Add a performance or reliability improvement and measure the impact.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Includes tests appropriate for the feature.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) Use tooling to keep quality high: rustfmt + clippy.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

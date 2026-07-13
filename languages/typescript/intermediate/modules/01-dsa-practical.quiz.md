@@ -1,121 +1,117 @@
 # TypeScript Intermediate — Module 01: DSA (Practical) Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Implement a helper that enforces the chosen structure (e.g., map for fast lookup).  
-B) Review the module goals and plan how you will select the right data structures and justify tradeoffs.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Implement a small feature tied to this module in an existing starter app.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Use tooling to keep quality high: ESLint + Prettier.  
-B) Update the README with setup, run, and test commands.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Sorting/searching: when built-ins are enough (45 min)  
+### Question 1: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+A) Includes tests appropriate for the feature.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) If the module involves a database, tests must run against an isolated schema/database.
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Copy the starter pack from `languages/typescript/intermediate/starter-pack` into a new working folder.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 2: Which common mistake matches this scenario: CI has no automated test run before release?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Document decisions and constraints clearly for reviewers.  
-B) Run the module tests and confirm they pass.  
-C) Use tooling to keep quality high: ESLint + Prettier.  
-D) Caching patterns: LRU + memoization (60 min)  
+### Question 3: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Uses consistent style/formatting and passes the quality gate.
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Run the module tests and confirm they pass.  
-B) Arrays/lists, hash maps, and sets (60 min)  
-C) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+### Question 4: A reviewer asks for stronger engineering discipline. Which Better action fits?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Uses consistent style/formatting and passes the quality gate.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Big-O and tradeoffs in real code (55 min)  
-B) Use data structures and algorithms pragmatically in real applications.  
-C) Implement a helper that enforces the chosen structure (e.g., map for fast lookup).  
-D) Shipping without an automated test run in CI.  
+### Question 5: Which Core action best reflects professional engineering practice in this situation?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Document decisions and constraints clearly for reviewers.
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Review the module goals and plan how you will select the right data structures and justify tradeoffs.  
-C) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
-D) Copy the starter pack from `languages/typescript/intermediate/starter-pack` into a new working folder.  
+### Question 6: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Add or update documentation (README notes or ADR-style notes).
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Ignore error handling for edge cases.  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Big-O and tradeoffs in real code (55 min)  
-D) Use tooling to keep quality high: ESLint + Prettier.  
+### Question 7: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Implement a small feature tied to this module in an existing starter app.
+B) Includes tests appropriate for the feature.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Use tooling to keep quality high: ESLint + Prettier.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Use data structures and algorithms pragmatically in real applications.  
-B) Copy the starter pack from `languages/typescript/intermediate/starter-pack` into a new working folder.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Write tests that prove correctness and prevent regressions.  
+### Question 8: Before sign-off, which acceptance criterion must be confirmed?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Includes a short README section describing assumptions and tradeoffs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Measuring: micro-benchmarks vs profiling (45 min)  
-B) Avoid measuring results or performance.  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Use data structures and algorithms pragmatically in real applications.  
+### Question 9: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Create a short write-up: what changed, why, and how you verified it.
+B) Implement a small feature tied to this module in an existing starter app.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) Deliverable runs locally with clear instructions.
+B) Write tests that prove correctness and prevent regressions.
+C) Skipping input validation and assuming “happy path”.
+D) If the module involves a database, tests must run against an isolated schema/database.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

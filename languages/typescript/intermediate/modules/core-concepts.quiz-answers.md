@@ -1,77 +1,77 @@
 # Core Concepts (Intermediate) Quiz Answers
 
-## Question 1: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
+## Question 1: A teammate needs help with a real project decision. Which topic should they revisit?
+**Answer: B** - error handling and debugging
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 2: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/typescript/intermediate/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 3: Which verification step is required before moving on?
-**Answer: A** - Verify the primary feature works with normal and edge-case inputs.
+## Question 2: Which topic should you reference when planning the solution?
+**Answer: B** - testable module design
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: C** - Update the README with setup, run, and test commands.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 5: Which verification step is required before moving on?
-**Answer: B** - Run: `node index.js`
+## Question 3: Which topic would you use to guide a design discussion?
+**Answer: C** - typing patterns and generics
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 6: Which action is listed as part of the guided walkthrough?
-**Answer: B** - Review the module goals and plan how you will reinforce foundational skills and patterns.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 7: Which step appears in the guided walkthrough?
-**Answer: C** - Summarize the core concepts in your own words.
+## Question 4: Which deliverable would confirm the work is ready for review?
+**Answer: A** - topic notes or summaries
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 8: Which action is listed as part of the guided walkthrough?
-**Answer: A** - Implement a small feature that uses at least two core concepts.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: C** - Add tests and document the reasoning.
+## Question 5: Which deliverable should be included before requesting approval?
+**Answer: C** - topic notes or summaries
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 10: Which action is listed as part of the guided walkthrough?
-**Answer: B** - Document decisions in a short README section (assumptions, tradeoffs, next steps).
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## How Did You Do?
+## Question 6: Which topic from the outline would you revisit to solve a similar problem?
+**Answer: B** - testable module design
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 7: Which topic would you point to when scoping a real-world solution?
+**Answer: B** - testable module design
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 8: A reviewer wants proof of work. Which deliverable should you hand them?
+**Answer: C** - topic notes or summaries
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 9: Which deliverable best demonstrates the engineering work was completed?
+**Answer: A** - example implementations in the repo
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 10: Which deliverable would you send to a stakeholder as evidence of completion?
+**Answer: A** - topic notes or summaries
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

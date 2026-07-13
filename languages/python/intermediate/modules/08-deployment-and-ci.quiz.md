@@ -1,121 +1,117 @@
 # Python Intermediate — Module 08: Deployment and CI Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) `python -m pytest`  
-B) `ruff format .`  
-C) Write tests that prove correctness and prevent regressions.  
-D) Containerize, configure, and deploy with automated CI checks.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: You need to run lint checks. Which command should you use?
-A) `ruff check .`  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Treat every request as safe without review.  
-D) Containerize, configure, and deploy with automated CI checks.  
+### Question 1: A reviewer reports: tests assert implementation details instead of outcomes. Which mistake does this reflect?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) Skipping input validation and assuming “happy path”.  
-B) `ruff format .`  
-C) Use tooling to keep quality high: ruff + black (or ruff format).  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 2: Which acceptance requirement protects review quality if enforced?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Uses consistent style/formatting and passes the quality gate.
+C) Explain the core concepts and tradeoffs for Deployment and CI.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action best satisfies the Core requirements?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
-C) Run: `ruff format .`  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 3: Which acceptance requirement most clearly blocks approval if missing?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Explain the core concepts and tradeoffs for Deployment and CI.
+C) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Making performance claims without measurements.  
-C) Document rollback steps and environment variables.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 4: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
+B) Add a performance or reliability improvement and measure the impact.
+C) Uses consistent style/formatting and passes the quality gate.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Write tests that prove correctness and prevent regressions.  
-C) Run the module tests and confirm they pass.  
-D) Ship changes without documentation.  
+### Question 5: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) Shipping without an automated test run in CI.  
-B) Run the module tests and confirm they pass.  
-C) Skip testing and trust the first result.  
-D) Use tooling to keep quality high: ruff + black (or ruff format).  
+### Question 6: CI is failing because lint/format/type errors are breaking CI. Which testing requirement addresses this?
+A) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Making performance claims without measurements.
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement must be satisfied to pass?
-A) Create a deployment checklist (build, test, release).  
-B) Skip testing and trust the first result.  
-C) Skipping input validation and assuming “happy path”.  
-D) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
+### Question 7: Which outcome best captures the practical ability you should carry forward?
+A) Use tooling to keep quality high: ruff + black (or ruff format).
+B) Uses consistent style/formatting and passes the quality gate.
+C) Add or update documentation (README notes or ADR-style notes).
+D) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option would be a common mistake to avoid?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Update the README with setup, run, and test commands.  
-C) Shipping without an automated test run in CI.  
-D) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
+### Question 8: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Add a performance or reliability improvement and measure the impact.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Use tooling to keep quality high: ruff + black (or ruff format).
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Update the README with setup, run, and test commands.  
-B) Run the module tests and confirm they pass.  
-C) Review the module goals and plan how you will ship safely with automation.  
-D) Explain the core concepts and tradeoffs for **Deployment and CI**.  
+### Question 9: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
+A) Explain the core concepts and tradeoffs for Deployment and CI.
+B) Deliverable runs locally with clear instructions.
+C) Add a performance or reliability improvement and measure the impact.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Before shipping, which Core action best reduces regression risk?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Deliverable runs locally with clear instructions.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Add a performance or reliability improvement and measure the impact.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

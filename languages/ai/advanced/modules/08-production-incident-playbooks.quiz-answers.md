@@ -1,77 +1,77 @@
 # AI — Module 08: Production Incident Playbooks Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: D** - Write an incident playbook for a cost spike and for a safety regression.
+## Question 1: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+**Answer: A** - Add communication templates (internal + user-facing) for common incidents.
 
-**Explanation:** This task appears under Core exercises.
-
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: A** - Add “incident drills”: simulate failures and verify playbook effectiveness.
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
+## Question 2: Which option reflects a mistake a reviewer would call out?
+**Answer: C** - No clear ownership or steps during incidents.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 3: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: B** - Add “incident drills”: simulate failures and verify playbook effectiveness.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 4: Which testing requirement would you verify in CI before approving the change?
+**Answer: A** - Incidents are tested via drills; playbooks are updated based on results.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 5: Which testing requirement would prevent a reviewer from rejecting the submission?
+**Answer: A** - Incidents are tested via drills; playbooks are updated based on results.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 6: Which acceptance requirement protects review quality if enforced?
+**Answer: C** - Includes detection signals, mitigations, and follow-up prevention work.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 7: A production fix is urgent. Which Core action is still required before release?
+**Answer: B** - Define immediate mitigations (feature flag off, degraded mode, stricter filters).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 8: Before shipping, which Core action best reduces regression risk?
+**Answer: A** - Write an incident playbook for a cost spike and for a safety regression.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 9: Which outcome best captures the practical ability you should carry forward?
+**Answer: C** - Build a small evaluation loop: test cases, metrics, and iteration notes.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 10: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
 **Answer: A** - Add automated detection rules that trigger playbook steps.
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: D** - Incidents are tested via drills; playbooks are updated based on results.
-
-**Explanation:** This requirement is listed under testing requirements.
-
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: A** - No clear ownership or steps during incidents.
-
-**Explanation:** This mistake is listed under common mistakes.
-
----
-
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Translate a vague request into a clear goal, constraints, and success criteria.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: D** - Incident categories: quality drop, safety event, cost spike, outage (45 min)
-
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: D** - Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 10: Which statement best summarizes the module focus?
-**Answer: B** - Be ready for production: incident types, triage, communication, mitigations, and postmortems.
-
-**Explanation:** This statement comes from the module overview.
-
----
-
-## How Did You Do?
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

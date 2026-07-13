@@ -1,77 +1,77 @@
 # Kotlin Intermediate — Module 02: Testing and Quality Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: D** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: Which acceptance requirement protects review quality if enforced?
+**Answer: C** - Deliverable runs locally with clear instructions.
 
-**Explanation:** This task appears under Core exercises.
-
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Add a performance or reliability improvement and **measure** the impact.
+## Question 2: Which acceptance criterion acts as a release gate for this module?
+**Answer: B** - Uses consistent style/formatting and passes the quality gate.
 
-**Explanation:** This task appears under Beast Mode exercises.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: B** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: A** - All work must be covered by **build + tests + static analysis in CI**.
+## Question 3: A reviewer asks for stronger engineering discipline. Which Better action fits?
+**Answer: D** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
-**Explanation:** This requirement is listed under testing requirements.
-
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: B** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: D** - Explain the core concepts and tradeoffs for **Testing and Quality**.
+## Question 4: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
+**Answer: B** - If the module involves a database, tests must run against an isolated schema/database.
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: B** - Test pyramid and what to mock (40 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: C** - Copy the starter pack from `languages/kotlin/intermediate/starter-pack` into a new working folder.
+## Question 5: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: A** - Add or update documentation (README notes or ADR-style notes).
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 10: Which statement best summarizes the module focus?
-**Answer: C** - Write maintainable tests and enforce quality gates in CI.
-
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## How Did You Do?
+## Question 6: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: C** - Explain the core concepts and tradeoffs for Testing and Quality.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 7: Which testing requirement would prevent a reviewer from rejecting the submission?
+**Answer: B** - All work must be covered by build + tests + static analysis in CI.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 8: Which Core action would a senior engineer insist on before approving the change?
+**Answer: B** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 9: Your teammate says: bugs appear on unexpected inputs because validation was skipped. Which common mistake is this?
+**Answer: C** - Skipping input validation and assuming “happy path”.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 10: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: C** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

@@ -1,77 +1,77 @@
 # Core Concepts (Intermediate) Quiz Answers
 
-## Question 1: You need to run the test suite. Which command should you use?
-**Answer: B** - `dotnet test`
+## Question 1: Which topic would you point to when scoping a real-world solution?
+**Answer: C** - error handling and debugging
 
-**Explanation:** This command runs the test suite.
-
----
-
-## Question 2: You need to format the code. Which command should you use?
-**Answer: C** - `dotnet format`
-
-**Explanation:** This command formats the code.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 3: Before submitting, which verification step must you complete?
-**Answer: A** - Run the module tests and confirm they pass.
+## Question 2: Which topic would you highlight when scoping a real-world solution?
+**Answer: A** - testable module design
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 4: Which step appears in the guided walkthrough?
-**Answer: D** - Copy the starter pack from `languages/csharp/intermediate/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 5: Which verification step is required before moving on?
-**Answer: C** - Verify the primary feature works with normal and edge-case inputs.
+## Question 3: Which deliverable should be included before requesting approval?
+**Answer: A** - topic notes or summaries
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 6: Before submitting, which verification step must you complete?
-**Answer: B** - Update the README with setup, run, and test commands.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 7: Which verification step is required before moving on?
-**Answer: B** - Run: `dotnet test`
+## Question 4: A teammate needs help with a real project decision. Which topic should they revisit?
+**Answer: B** - object design and interfaces
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 8: Before submitting, which verification step must you complete?
-**Answer: B** - Run: `dotnet format`
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 9: Which verification step is required before moving on?
-**Answer: C** - Run: `dotnet format`
+## Question 5: Which deliverable would confirm the work is ready for review?
+**Answer: D** - topic notes or summaries
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 10: Which action is listed as part of the guided walkthrough?
-**Answer: A** - Review the module goals and plan how you will reinforce foundational skills and patterns.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## How Did You Do?
+## Question 6: Which deliverable would you send to a stakeholder as evidence of completion?
+**Answer: B** - topic notes or summaries
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 7: Which topic should you reference when planning the solution?
+**Answer: B** - testable module design
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 8: Which deliverable best demonstrates the engineering work was completed?
+**Answer: A** - example implementations in the repo
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 9: Which topic would you use to guide a design discussion?
+**Answer: C** - testable module design
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 10: A reviewer wants proof of work. Which deliverable should you hand them?
+**Answer: B** - topic notes or summaries
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

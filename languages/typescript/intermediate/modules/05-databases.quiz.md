@@ -1,121 +1,117 @@
 # TypeScript Intermediate — Module 05: Databases Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Shipping without an automated test run in CI.  
-C) Update the README with setup, run, and test commands.  
-D) Jump to the next module without verifying results.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Jump to the next module without verifying results.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Ignore error handling for edge cases.  
+### Question 1: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Use tooling to keep quality high: ESLint + Prettier.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Includes a short README section describing assumptions and tradeoffs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Treat every request as safe without review.  
-B) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-C) Making performance claims without measurements.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 2: A reviewer reports: CI has no automated test run before release. Which mistake does this reflect?
+A) Explain the core concepts and tradeoffs for Databases.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Use tooling to keep quality high: ESLint + Prettier.
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Run the module tests and confirm they pass.  
-C) Ignore error handling for edge cases.  
-D) Making performance claims without measurements.  
+### Question 3: Before shipping, which Core action best reduces regression risk?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Explain the core concepts and tradeoffs for Databases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-B) Update the README with setup, run, and test commands.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Making performance claims without measurements.  
+### Question 4: Which Core action best reflects professional engineering practice in this situation?
+A) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+B) Document decisions and constraints clearly for reviewers.
+C) Add or update documentation (README notes or ADR-style notes).
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Schema design + constraints (55 min)  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Shipping without an automated test run in CI.  
-D) Document migrations and rollback steps.  
+### Question 5: A reviewer flags lint/format/type errors are breaking CI. Which testing requirement resolves it?
+A) Add or update documentation (README notes or ADR-style notes).
+B) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+C) Add a performance or reliability improvement and measure the impact.
+D) Explain the core concepts and tradeoffs for Databases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Update the README with setup, run, and test commands.  
-B) Explain the core concepts and tradeoffs for **Databases**.  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 6: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Deliverable runs locally with clear instructions.
+D) Apply the concepts to a realistic codebase (not just toy examples).
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Implement CRUD operations and verify with sample data.  
-C) Document decisions and constraints clearly for reviewers.  
-D) Schema design + constraints (55 min)  
+### Question 7: Which acceptance criterion acts as a release gate for this module?
+A) Includes tests appropriate for the feature.
+B) Skipping input validation and assuming “happy path”.
+C) All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
+D) Use tooling to keep quality high: ESLint + Prettier.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Update the README with setup, run, and test commands.  
-B) Copy the starter pack from `languages/typescript/intermediate/starter-pack` into a new working folder.  
-C) Use tooling to keep quality high: ESLint + Prettier.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 8: Which outcome represents a transferable software engineering skill?
+A) Making performance claims without measurements.
+B) Document decisions and constraints clearly for reviewers.
+C) Shipping without an automated test run in CI.
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Migrations: forwards/backwards + safety (55 min)  
-B) Jump to the next module without verifying results.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Design schemas, write queries, and ship migrations safely.  
+### Question 9: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Document decisions and constraints clearly for reviewers.
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Deliverable runs locally with clear instructions.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Explain the core concepts and tradeoffs for Databases.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

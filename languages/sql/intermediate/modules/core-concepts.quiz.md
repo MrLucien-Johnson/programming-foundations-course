@@ -1,121 +1,117 @@
 # Core Concepts (Intermediate) Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Before submitting, which verification step must you complete?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Add tests and document the reasoning.  
-C) Run the module tests and confirm they pass.  
-D) Skip testing and trust the first result.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which step appears in the guided walkthrough?
-A) Run: `psql -f queries.sql`  
-B) Jump to the next module without verifying results.  
-C) Copy the starter pack from `languages/sql/intermediate/starter-pack` into a new working folder.  
-D) Treat every request as safe without review.  
+### Question 1: Which deliverable best demonstrates the engineering work was completed?
+A) relational modeling and normalization
+B) query troubleshooting and performance basics
+C) topic notes or summaries
+D) joins, aggregates, and window functions
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which verification step is required before moving on?
-A) Ignore error handling for edge cases.  
-B) Skip testing and trust the first result.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Avoid measuring results or performance.  
+### Question 2: Which topic would you point to when scoping a real-world solution?
+A) Skip testing and trust the first result.
+B) topic notes or summaries
+C) example queries checked into the repo
+D) joins, aggregates, and window functions
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Update the README with setup, run, and test commands.  
-C) Implement a small feature that uses at least two core concepts.  
-D) Copy the starter pack from `languages/sql/intermediate/starter-pack` into a new working folder.  
+### Question 3: Which deliverable would you send to a stakeholder as evidence of completion?
+A) joins, aggregates, and window functions
+B) query troubleshooting and performance basics
+C) example queries checked into the repo
+D) relational modeling and normalization
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which verification step is required before moving on?
-A) Implement a small feature that uses at least two core concepts.  
-B) Copy the starter pack from `languages/sql/intermediate/starter-pack` into a new working folder.  
-C) Treat every request as safe without review.  
-D) Run: `psql -f queries.sql`  
+### Question 4: Which topic belongs in a real-world discussion for this module?
+A) Skip testing and trust the first result.
+B) relational modeling and normalization
+C) example queries checked into the repo
+D) topic notes or summaries
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action is listed as part of the guided walkthrough?
-A) Avoid measuring results or performance.  
-B) Ship changes without documentation.  
-C) Review the module goals and plan how you will reinforce foundational skills and patterns.  
-D) Run: `psql -f queries.sql`  
+### Question 5: A reviewer wants proof of work. Which deliverable should you hand them?
+A) relational modeling and normalization
+B) joins, aggregates, and window functions
+C) query troubleshooting and performance basics
+D) topic notes or summaries
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which step appears in the guided walkthrough?
-A) Run: `psql -f queries.sql`  
-B) Summarize the core concepts in your own words.  
-C) Ignore error handling for edge cases.  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 6: Which topic would you point to when describing this module's focus?
+A) topic notes or summaries
+B) relational modeling and normalization
+C) example queries checked into the repo
+D) Skip testing and trust the first result.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which action is listed as part of the guided walkthrough?
-A) Run: `psql -f queries.sql`  
-B) Implement a small feature that uses at least two core concepts.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Skip testing and trust the first result.  
+### Question 7: A teammate needs help with a real project decision. Which topic should they revisit?
+A) Skip testing and trust the first result.
+B) relational modeling and normalization
+C) example queries checked into the repo
+D) topic notes or summaries
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Update the README with setup, run, and test commands.  
-B) Treat every request as safe without review.  
-C) Jump to the next module without verifying results.  
-D) Add tests and document the reasoning.  
+### Question 8: Which topic would you highlight when scoping a real-world solution?
+A) example queries checked into the repo
+B) joins, aggregates, and window functions
+C) Skip testing and trust the first result.
+D) topic notes or summaries
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which action is listed as part of the guided walkthrough?
-A) Run: `psql -f queries.sql`  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Jump to the next module without verifying results.  
-D) Run the module tests and confirm they pass.  
+### Question 9: Which topic would you use to guide a design discussion?
+A) example queries checked into the repo
+B) query troubleshooting and performance basics
+C) topic notes or summaries
+D) Skip testing and trust the first result.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: A teammate needs help with a project decision. Which topic should they revisit?
+A) joins, aggregates, and window functions
+B) topic notes or summaries
+C) example queries checked into the repo
+D) Skip testing and trust the first result.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

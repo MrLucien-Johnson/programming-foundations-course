@@ -1,77 +1,77 @@
 # Kotlin Intermediate — Module 06: Security Basics Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: B** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: C** - Use tooling to keep quality high: ktlint + detekt.
 
-**Explanation:** This task appears under Core exercises.
-
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: D** - Add a performance or reliability improvement and **measure** the impact.
+## Question 2: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: D** - Deliverable runs locally with clear instructions.
 
-**Explanation:** This task appears under Beast Mode exercises.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: A** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: A** - All work must be covered by **build + tests + static analysis in CI**.
+## Question 3: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: D** - Implement a small feature tied to this module in an existing starter app.
 
-**Explanation:** This requirement is listed under testing requirements.
-
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: B** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: A** - Explain the core concepts and tradeoffs for **Security Basics**.
+## Question 4: Which testing requirement would you verify in CI before approving the change?
+**Answer: D** - All work must be covered by build + tests + static analysis in CI.
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: B** - OWASP Top 10: practical mapping (40 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: D** - Copy the starter pack from `languages/kotlin/intermediate/starter-pack` into a new working folder.
+## Question 5: A production fix is urgent. Which Core action is still required before release?
+**Answer: A** - Add or update documentation (README notes or ADR-style notes).
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 10: Which statement best summarizes the module focus?
-**Answer: B** - Reduce common vulnerabilities with safe defaults.
-
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## How Did You Do?
+## Question 6: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: A** - Add a performance or reliability improvement and measure the impact.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 7: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+**Answer: A** - Uses consistent style/formatting and passes the quality gate.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 8: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+**Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 9: Your teammate says: tests assert implementation details instead of outcomes. Which common mistake is this?
+**Answer: A** - Over-mocking (tests assert implementation details instead of outcomes).
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 10: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

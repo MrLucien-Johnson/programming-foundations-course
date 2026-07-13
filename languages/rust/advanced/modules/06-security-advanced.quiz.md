@@ -1,121 +1,117 @@
 # Rust Advanced — Module 06: Security (Advanced) Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Making performance claims without measurements.  
-C) Skip testing and trust the first result.  
-D) `cargo test`  
-
-**Your answer:** _______________
-
----
-
-### Question 2: You need to run lint checks. Which command should you use?
-A) Document decisions and constraints clearly for reviewers.  
-B) `cargo clippy`  
-C) Security testing and hardening checklist (40 min)  
-D) Model a threat scenario and document mitigations.  
+### Question 1: Which outcome best captures the practical ability you should carry forward?
+A) Making performance claims without measurements.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Implement a small feature tied to this module in an existing starter app.
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) Run: `cargo test`  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) `cargo fmt`  
+### Question 2: Which acceptance requirement most clearly blocks approval if missing?
+A) Uses consistent style/formatting and passes the quality gate.
+B) All work must be covered by fmt + clippy + tests in CI.
+C) Skipping input validation and assuming “happy path”.
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action best satisfies the Core requirements?
-A) Run: `cargo fmt`  
-B) Avoid measuring results or performance.  
-C) Ignore error handling for edge cases.  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 3: A production fix is urgent. Which Core action is still required before release?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Document decisions and constraints clearly for reviewers.
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action upgrades the work to the Better level?
-A) `cargo clippy`  
-B) Shipping without an automated test run in CI.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Run: `cargo clippy`  
+### Question 4: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Add or update documentation (README notes or ADR-style notes).
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Run: `cargo clippy`  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Review the module goals and plan how you will harden systems against advanced threats.  
+### Question 5: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Document decisions and constraints clearly for reviewers.
+B) All work must be covered by fmt + clippy + tests in CI.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Review the module goals and plan how you will harden systems against advanced threats.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Use tooling to keep quality high: rustfmt + clippy.  
+### Question 6: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
+A) Uses consistent style/formatting and passes the quality gate.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Includes tests appropriate for the feature.
+D) Use tooling to keep quality high: rustfmt + clippy.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement must be satisfied to pass?
-A) `cargo fmt`  
-B) Copy the starter pack from `languages/rust/advanced/starter-pack` into a new working folder.  
-C) All work must be covered by **fmt + clippy + tests in CI**.  
-D) Review dependencies for vulnerabilities.  
+### Question 7: Which testing requirement is most relevant to this issue: tests are flaky and fail intermittently?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) Use tooling to keep quality high: rustfmt + clippy.
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option would be a common mistake to avoid?
-A) Supply-chain security + dependency policies (35 min)  
-B) Treat every request as safe without review.  
-C) Add security logging or alerting for sensitive actions.  
-D) Shipping without an automated test run in CI.  
+### Question 8: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Making performance claims without measurements.
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) `cargo clippy`  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+### Question 9: A reviewer asks for testing evidence. Which requirement must you show?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Add a performance or reliability improvement and measure the impact.
+C) All work must be covered by fmt + clippy + tests in CI.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Add a performance or reliability improvement and measure the impact.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Includes a short README section describing assumptions and tradeoffs.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

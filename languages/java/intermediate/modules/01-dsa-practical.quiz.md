@@ -1,121 +1,117 @@
 # Java Intermediate — Module 01: DSA (Practical) Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Update the README with setup, run, and test commands.  
-C) Making performance claims without measurements.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Copy the starter pack from `languages/java/intermediate/starter-pack` into a new working folder.  
-D) Measure the impact with a small benchmark or timing log.  
+### Question 1: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
+A) Includes tests appropriate for the feature.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Copy the starter pack from `languages/java/intermediate/starter-pack` into a new working folder.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+### Question 2: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Explain the core concepts and tradeoffs for DSA (Practical).
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Over-mocking (tests assert implementation details instead of outcomes).  
-B) Create a short write-up: what changed, why, and how you verified it.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Run the module tests and confirm they pass.  
+### Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Includes tests appropriate for the feature.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Caching patterns: LRU + memoization (45 min)  
-D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+### Question 4: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+A) Deliverable runs locally with clear instructions.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Write tests that prove correctness and prevent regressions.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Review the module goals and plan how you will select the right data structures and justify tradeoffs.  
-B) Caching patterns: LRU + memoization (45 min)  
-C) Document decisions and constraints clearly for reviewers.  
-D) Shipping without an automated test run in CI.  
+### Question 5: Which acceptance requirement protects review quality if enforced?
+A) Deliverable runs locally with clear instructions.
+B) Document decisions and constraints clearly for reviewers.
+C) Add a performance or reliability improvement and measure the impact.
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 6: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
+D) Explain the core concepts and tradeoffs for DSA (Practical).
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Big-O and tradeoffs in real code (45 min)  
-B) Skip testing and trust the first result.  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Treat every request as safe without review.  
+### Question 7: Which acceptance criterion acts as a release gate for this module?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Includes tests appropriate for the feature.
+D) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Copy the starter pack from `languages/java/intermediate/starter-pack` into a new working folder.  
-D) Stacks/queues + BFS/DFS mental models (45 min)  
+### Question 8: This happened during review: bugs appear on unexpected inputs because validation was skipped. Which mistake is it?
+A) Add a performance or reliability improvement and measure the impact.
+B) Includes tests appropriate for the feature.
+C) Skipping input validation and assuming “happy path”.
+D) Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Identify the hot path in the feature and choose a data structure that minimizes lookups.  
-C) Use data structures and algorithms pragmatically in real applications.  
-D) Caching patterns: LRU + memoization (45 min)  
+### Question 9: Which Core action best reflects professional engineering practice in this situation?
+A) Includes tests appropriate for the feature.
+B) Implement a small feature tied to this module in an existing starter app.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: In a real code review, which outcome best reflects the skill you should demonstrate?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Over-mocking (tests assert implementation details instead of outcomes).
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

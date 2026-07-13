@@ -1,121 +1,117 @@
 # Kotlin Intermediate — Module 06: Security Basics Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Over-mocking (tests assert implementation details instead of outcomes).  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Document decisions and constraints clearly for reviewers.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Write a short threat checklist and review it after changes.  
-B) Use tooling to keep quality high: ktlint + detekt.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Making performance claims without measurements.  
+### Question 1: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) Shipping without an automated test run in CI.
+B) All work must be covered by build + tests + static analysis in CI.
+C) Use tooling to keep quality high: ktlint + detekt.
+D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Making performance claims without measurements.  
-B) Skipping input validation and assuming “happy path”.  
-C) OWASP Top 10: practical mapping (40 min)  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 2: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Implement a small feature tied to this module in an existing starter app.
+B) All work must be covered by build + tests + static analysis in CI.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Add validation and error handling for unsafe inputs.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Add or update documentation (README notes or ADR-style notes).  
+### Question 3: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Explain the core concepts and tradeoffs for Security Basics.
+B) Includes tests appropriate for the feature.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) All work must be covered by **build + tests + static analysis in CI**.  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Apply the concepts to a realistic codebase (not just toy examples).  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 4: Which testing requirement would you verify in CI before approving the change?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Includes tests appropriate for the feature.
+C) Explain the core concepts and tradeoffs for Security Basics.
+D) All work must be covered by build + tests + static analysis in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Treat every request as safe without review.  
-B) Shipping without an automated test run in CI.  
-C) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-D) Skip testing and trust the first result.  
+### Question 5: A production fix is urgent. Which Core action is still required before release?
+A) Add or update documentation (README notes or ADR-style notes).
+B) Includes tests appropriate for the feature.
+C) If the module involves a database, tests must run against an isolated schema/database.
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Security Basics**.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Write a short threat checklist and review it after changes.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+### Question 6: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Add a performance or reliability improvement and measure the impact.
+B) All work must be covered by build + tests + static analysis in CI.
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) OWASP Top 10: practical mapping (40 min)  
-C) All work must be covered by **build + tests + static analysis in CI**.  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 7: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Uses consistent style/formatting and passes the quality gate.
+B) Explain the core concepts and tradeoffs for Security Basics.
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Secrets + config management (35 min)  
-B) Ship changes without documentation.  
-C) Injection + validation + encoding (45 min)  
-D) Copy the starter pack from `languages/kotlin/intermediate/starter-pack` into a new working folder.  
+### Question 8: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+A) Includes tests appropriate for the feature.
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Shipping without an automated test run in CI.
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Avoid measuring results or performance.  
-B) Reduce common vulnerabilities with safe defaults.  
-C) Skipping input validation and assuming “happy path”.  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+### Question 9: Your teammate says: tests assert implementation details instead of outcomes. Which common mistake is this?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Document decisions and constraints clearly for reviewers.
+D) Use tooling to keep quality high: ktlint + detekt.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Making performance claims without measurements.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Apply the concepts to a realistic codebase (not just toy examples).
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

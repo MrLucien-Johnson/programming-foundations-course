@@ -81,7 +81,9 @@
         <h3>Not sure which to choose?</h3>
         <p>
           Python is the simplest starting point for most beginners. If you already use Windows or
-          want to learn software used in many companies, C# is a great choice.
+          want to learn software used in many companies, C# is a great choice. If you want to build
+          AI workflows, prompt systems, and evaluation skills, start with the AI Prompt Creation
+          course.
         </p>
         <p class="note">
           You can switch later. The learning steps are very similar in both courses.
@@ -111,36 +113,67 @@
         />
         <div id="search-results" class="section card"></div>
       </section>
+      <footer class="footer">
+        <p>
+          Need support?
+          <a href="https://www.instagram.com/abelsolutionslimited/"
+            >Instagram @abelsolutionslimited</a
+          >
+        </p>
+      </footer>
     </main>
 
     <script>
       const defaultEntries = [
         {
-          label: "Python: Setup & First Script (Lesson)",
+          title: "Setup & First Script",
+          courseName: "Python Course",
+          type: "Lesson",
+          level: "Beginner",
           link: "course-viewer.html?path=python-beginner-workbook/module-01-setup/README.md",
         },
         {
-          label: "Python: Module 1 Quiz",
+          title: "Module 1 Quiz",
+          courseName: "Python Course",
+          type: "Quiz",
+          level: "Beginner",
           link: "quiz-viewer.html?quiz=python-beginner-workbook/module-01-setup/exercises/quiz.md",
         },
         {
-          label: "C#: Setup & First Program (Lesson)",
+          title: "Setup & First Program",
+          courseName: "C# Course",
+          type: "Lesson",
+          level: "Beginner",
           link: "course-viewer.html?path=csharp-beginner-workbook/module-01-setup/README.md",
         },
         {
-          label: "C#: Module 1 Quiz",
+          title: "Module 1 Quiz",
+          courseName: "C# Course",
+          type: "Quiz",
+          level: "Beginner",
           link: "quiz-viewer.html?quiz=csharp-beginner-workbook/module-01-setup/exercises/quiz.md",
         },
         {
-          label: "AI: AI Foundations (Lesson)",
+          title: "AI Foundations",
+          courseName: "AI Prompt Creation Course",
+          type: "Lesson",
+          level: "Beginner",
           link: "course-viewer.html?path=languages/ai/beginner/modules/01-ai-foundations.md",
         },
         {
-          label: "AI: AI Foundations (Quiz)",
+          title: "AI Foundations Quiz",
+          courseName: "AI Prompt Creation Course",
+          type: "Quiz",
+          level: "Beginner",
           link: "quiz-viewer.html?quiz=languages/ai/beginner/modules/01-ai-foundations.quiz.md",
         },
       ];
-      let entries = [...defaultEntries];
+      const buildSearchText = (item) =>
+        `${item.courseName} ${item.title} ${item.type} ${item.level}`.toLowerCase();
+      let entries = defaultEntries.map((item) => ({
+        ...item,
+        searchText: buildSearchText(item),
+      }));
 
       const searchInput = document.getElementById("course-search");
       const resultsEl = document.getElementById("search-results");
@@ -152,9 +185,20 @@
           return;
         }
         resultsEl.innerHTML =
-          "<ul>" +
+          '<ul class="search-list">' +
           items
-            .map((item) => `<li><a href=\"${item.link}\">${item.label}</a></li>`)
+            .map(
+              (item) => `
+              <li class="search-item">
+                <a href="${item.link}">${item.title}</a>
+                <div class="search-meta">
+                  <span class="pill">${item.level}</span>
+                  <span class="pill pill-secondary">${item.type}</span>
+                  <span class="pill pill-muted">${item.courseName}</span>
+                </div>
+              </li>
+            `
+            )
             .join("") +
           "</ul>";
       };
@@ -182,22 +226,49 @@
       };
 
       const buildEntries = (courses) =>
-        courses.flatMap((course) =>
-          course.modules.flatMap((module) => {
+        courses.flatMap((course) => {
+          const level = course.level || "Beginner";
+          return course.modules.flatMap((module) => {
             const lessonEntry = {
-              label: `${course.name}: ${module.title} (Lesson)`,
+              title: module.title,
               link: `course-viewer.html?path=${module.path}`,
+              courseName: course.name,
+              type: "Lesson",
+              level,
             };
             const entries = [lessonEntry];
             if (module.quiz) {
               entries.push({
-                label: `${course.name}: ${module.title} (Quiz)`,
+                title: `${module.title} Quiz`,
                 link: `quiz-viewer.html?quiz=${module.quiz}`,
+                courseName: course.name,
+                type: "Quiz",
+                level,
               });
             }
             return entries;
-          })
-        );
+          });
+        });
+
+      const levelOrder = {
+        Beginner: 1,
+        "Intermediate + Advanced": 2,
+      };
+      const typeOrder = {
+        Lesson: 1,
+        Quiz: 2,
+      };
+
+      const sortEntries = (items) =>
+        [...items].sort((a, b) => {
+          const levelRank = (levelOrder[a.level] || 99) - (levelOrder[b.level] || 99);
+          if (levelRank !== 0) return levelRank;
+          const typeRank = (typeOrder[a.type] || 99) - (typeOrder[b.type] || 99);
+          if (typeRank !== 0) return typeRank;
+          const courseRank = a.courseName.localeCompare(b.courseName);
+          if (courseRank !== 0) return courseRank;
+          return a.title.localeCompare(b.title);
+        });
 
       const renderAdvancedCourses = (courses) => {
         if (!courseGrid) return;
@@ -235,7 +306,10 @@
           if (!response.ok) throw new Error("Failed to load course index");
           const data = await response.json();
           if (!data.courses) throw new Error("Missing course data");
-          entries = buildEntries(data.courses);
+          entries = buildEntries(data.courses).map((item) => ({
+            ...item,
+            searchText: buildSearchText(item),
+          }));
           renderAdvancedCourses(data.courses);
         } catch (error) {
           console.warn("Unable to load course index.", error);
@@ -243,15 +317,15 @@
         }
 
         if (!searchInput) return;
-        renderResults(entries.slice(0, 8));
+        renderResults(sortEntries(entries).slice(0, 8));
         searchInput.addEventListener("input", () => {
           const query = searchInput.value.toLowerCase().trim();
           if (!query) {
-            renderResults(entries.slice(0, 8));
+            renderResults(sortEntries(entries).slice(0, 8));
             return;
           }
-          const filtered = entries.filter((item) => item.label.toLowerCase().includes(query));
-          renderResults(filtered.slice(0, 20));
+          const filtered = entries.filter((item) => item.searchText.includes(query));
+          renderResults(sortEntries(filtered).slice(0, 20));
         });
       };
 

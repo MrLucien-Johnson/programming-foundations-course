@@ -1,121 +1,117 @@
-# CIntermediate — Module 04: APIs and Auth Quiz: Test Your Understanding
+# C# Intermediate — Module 04: APIs and Auth Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Treat every request as safe without review.  
-C) API docs: OpenAPI + examples (35 min)  
-D) `dotnet test`  
-
-**Your answer:** _______________
-
----
-
-### Question 2: You need to format the code. Which command should you use?
-A) Add logging and status code verification.  
-B) Making performance claims without measurements.  
-C) `dotnet format`  
-D) Document decisions and constraints clearly for reviewers.  
+### Question 1: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) Add a performance or reliability improvement and measure the impact.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Implement a small feature tied to this module in an existing starter app.
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action best satisfies the Core requirements?
-A) Design and secure REST APIs with authentication and authorization.  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Run: `dotnet test`  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 2: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Document decisions and constraints clearly for reviewers.
+C) Skipping input validation and assuming “happy path”.
+D) Add a performance or reliability improvement and measure the impact.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) AuthN vs AuthZ: sessions/JWT + roles (45 min)  
-D) `dotnet test`  
+### Question 3: Your teammate says: a performance claim was made without benchmarks. Which common mistake is this?
+A) Making performance claims without measurements.
+B) Use tooling to keep quality high: dotnet format + analyzers.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Explain the core concepts and tradeoffs for APIs and Auth.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action qualifies as a Beast Mode upgrade?
-A) Run: `dotnet format`  
-B) Ship changes without documentation.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Document decisions and constraints clearly for reviewers.  
+### Question 4: Which acceptance criterion would a reviewer check first to approve the submission?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Write tests that prove correctness and prevent regressions.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Before submitting, which verification step must you complete?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Run the module tests and confirm they pass.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Add or update documentation (README notes or ADR-style notes).  
+### Question 5: Which testing requirement would prevent a reviewer from rejecting the submission?
+A) All work must be covered by build + tests + analyzers in CI.
+B) Explain the core concepts and tradeoffs for APIs and Auth.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement must be satisfied to pass?
-A) Skip testing and trust the first result.  
-B) All work must be covered by **build + tests + analyzers in CI**.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 6: Before sign-off, which acceptance criterion must be confirmed?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Skipping input validation and assuming “happy path”.
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which option would be a common mistake to avoid?
-A) Shipping without an automated test run in CI.  
-B) Update the README with setup, run, and test commands.  
-C) Ship changes without documentation.  
-D) Explain the core concepts and tradeoffs for **APIs and Auth**.  
+### Question 7: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Use tooling to keep quality high: dotnet format + analyzers.
+C) Uses consistent style/formatting and passes the quality gate.
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) AuthN vs AuthZ: sessions/JWT + roles (45 min)  
-B) Explain the core concepts and tradeoffs for **APIs and Auth**.  
-C) Treat every request as safe without review.  
-D) Copy the starter pack from `languages/csharp/intermediate/starter-pack` into a new working folder.  
+### Question 8: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
+A) Apply the concepts to a realistic codebase (not just toy examples).
+B) Tests must be deterministic (no flakes) and runnable by a reviewer.
+C) Includes tests appropriate for the feature.
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which topic would you revisit to solve this module's core problem?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) REST: resources, status codes, pagination (45 min)  
-C) Copy the starter pack from `languages/csharp/intermediate/starter-pack` into a new working folder.  
-D) Add logging and status code verification.  
+### Question 9: A reviewer asks for stronger engineering discipline. Which Better action fits?
+A) Making performance claims without measurements.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Implement a small feature tied to this module in an existing starter app.
+D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Includes tests appropriate for the feature.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Shipping without an automated test run in CI.
+D) Add or update documentation (README notes or ADR-style notes).
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

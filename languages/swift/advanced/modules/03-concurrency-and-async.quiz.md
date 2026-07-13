@@ -1,121 +1,117 @@
 # Swift Advanced — Module 03: Concurrency and Async Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Backpressure + bounded work queues (45 min)  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Create a short write-up: what changed, why, and how you verified it.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Avoid measuring results or performance.  
-C) Backpressure + bounded work queues (45 min)  
-D) Update the README with setup, run, and test commands.  
+### Question 1: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Use tooling to keep quality high: SwiftFormat + SwiftLint.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Ship changes without documentation.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Timeouts, cancellation, and structured concurrency (45 min)  
+### Question 2: Which common mistake matches this scenario: CI has no automated test run before release?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Shipping without an automated test run in CI.
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Identify shared state and define synchronization rules.  
-D) Idempotency + exactly-once myths (35 min)  
+### Question 3: A reviewer asks for stronger engineering discipline. Which Better action fits?
+A) Shipping without an automated test run in CI.
+B) Implement a small feature tied to this module in an existing starter app.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Identify shared state and define synchronization rules.  
-B) Avoid measuring results or performance.  
-C) All work must be covered by **build + tests + lint/format in CI**.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 4: Which acceptance requirement protects review quality if enforced?
+A) All work must be covered by build + tests + lint/format in CI.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Add or update documentation (README notes or ADR-style notes).
+D) Includes a short README section describing assumptions and tradeoffs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Add a test for race conditions or timeouts.  
-B) Shipping without an automated test run in CI.  
-C) Write tests that prove correctness and prevent regressions.  
-D) Run the module tests and confirm they pass.  
+### Question 5: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Shipping without an automated test run in CI.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Concurrency and Async**.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Skipping input validation and assuming “happy path”.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 6: A production fix is urgent. Which Core action is still required before release?
+A) Deliverable runs locally with clear instructions.
+B) Write tests that prove correctness and prevent regressions.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Refactor one area for readability (without changing behavior) and prove it with tests.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Skipping input validation and assuming “happy path”.  
-B) Treat every request as safe without review.  
-C) Concurrency primitives + race conditions (45 min)  
-D) Shipping without an automated test run in CI.  
+### Question 7: In a real code review, which outcome best reflects the skill you should demonstrate?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Explain the core concepts and tradeoffs for Concurrency and Async.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Idempotency + exactly-once myths (35 min)  
-B) Document decisions and constraints clearly for reviewers.  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-D) Copy the starter pack from `languages/swift/advanced/starter-pack` into a new working folder.  
+### Question 8: Production validation failed because lint/format/type errors are breaking CI. Which testing requirement would have prevented it?
+A) Add a performance or reliability improvement and measure the impact.
+B) All work must be covered by build + tests + lint/format in CI.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Build correct concurrent systems and manage backpressure.  
-B) Copy the starter pack from `languages/swift/advanced/starter-pack` into a new working folder.  
-C) Run: `swift main.swift`  
-D) All work must be covered by **build + tests + lint/format in CI**.  
+### Question 9: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Uses consistent style/formatting and passes the quality gate.
+D) Shipping without an automated test run in CI.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Document decisions and constraints clearly for reviewers.
+D) Explain the core concepts and tradeoffs for Concurrency and Async.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

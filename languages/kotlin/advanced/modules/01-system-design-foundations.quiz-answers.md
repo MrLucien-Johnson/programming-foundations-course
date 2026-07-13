@@ -1,77 +1,77 @@
 # Kotlin Advanced — Module 01: System Design Foundations Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
+## Question 1: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: C** - Document decisions and constraints clearly for reviewers.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 2: A PR introduces new behavior. Which Core action is the minimum expected before review?
 **Answer: A** - Implement a small feature tied to this module in an existing starter app.
 
-**Explanation:** This task appears under Core exercises.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 3: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+**Answer: A** - Includes tests appropriate for the feature.
 
-**Explanation:** This task appears under Better exercises.
-
----
-
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: C** - Add a performance or reliability improvement and **measure** the impact.
-
-**Explanation:** This task appears under Beast Mode exercises.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
+## Question 4: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+**Answer: A** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: C** - All work must be covered by **build + tests + static analysis in CI**.
-
-**Explanation:** This requirement is listed under testing requirements.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: B** - Shipping without an automated test run in CI.
+## Question 5: A reviewer asks for testing evidence. Which requirement must you show?
+**Answer: B** - All work must be covered by build + tests + static analysis in CI.
 
-**Explanation:** This mistake is listed under common mistakes.
-
----
-
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: D** - Explain the core concepts and tradeoffs for **System Design Foundations**.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: D** - Requirements → constraints → estimates (45 min)
+## Question 6: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: C** - Add or update documentation (README notes or ADR-style notes).
 
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: D** - Reason about scalability, data, and tradeoffs under constraints.
+## Question 7: Which acceptance requirement most clearly blocks approval if missing?
+**Answer: B** - Uses consistent style/formatting and passes the quality gate.
 
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## How Did You Do?
+## Question 8: Your teammate says: tests assert implementation details instead of outcomes. Which common mistake is this?
+**Answer: C** - Over-mocking (tests assert implementation details instead of outcomes).
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 9: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+**Answer: A** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 10: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+**Answer: D** - Add a performance or reliability improvement and measure the impact.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

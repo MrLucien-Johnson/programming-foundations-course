@@ -1,121 +1,117 @@
 # Rust Advanced — Module 02: Architecture Patterns Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Run: `cargo fmt`  
-B) `cargo test`  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
-
-**Your answer:** _______________
-
----
-
-### Question 2: You need to run lint checks. Which command should you use?
-A) Avoid measuring results or performance.  
-B) `cargo clippy`  
-C) Shipping without an automated test run in CI.  
-D) Ship changes without documentation.  
+### Question 1: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) Explain the core concepts and tradeoffs for Architecture Patterns.
+C) Implement a small feature tied to this module in an existing starter app.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) `cargo fmt`  
-B) CQRS and when *not* to use it (35 min)  
-C) Run: `cargo fmt`  
-D) Run: `cargo test`  
+### Question 2: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Explain the core concepts and tradeoffs for Architecture Patterns.
+C) Making performance claims without measurements.
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action best satisfies the Core requirements?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) Run: `cargo fmt`  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 3: A reviewer reports: bugs appear on unexpected inputs because validation was skipped. Which mistake does this reflect?
+A) Create a short write-up: what changed, why, and how you verified it.
+B) Deliverable runs locally with clear instructions.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Skipping input validation and assuming “happy path”.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Jump to the next module without verifying results.  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 4: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Making performance claims without measurements.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Skip testing and trust the first result.  
+### Question 5: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Add or update documentation (README notes or ADR-style notes).
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Write tests that prove correctness and prevent regressions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Run the module tests and confirm they pass.  
-C) Treat every request as safe without review.  
-D) All work must be covered by **fmt + clippy + tests in CI**.  
+### Question 6: Which acceptance criterion acts as a release gate for this module?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Deliverable runs locally with clear instructions.
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement must be satisfied to pass?
-A) `cargo test`  
-B) Skipping input validation and assuming “happy path”.  
-C) Making performance claims without measurements.  
-D) All work must be covered by **fmt + clippy + tests in CI**.  
+### Question 7: If you wanted to stretch the module into production readiness, which Beast Mode action fits?
+A) Includes tests appropriate for the feature.
+B) Document decisions and constraints clearly for reviewers.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option would be a common mistake to avoid?
-A) Shipping without an automated test run in CI.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Write tests that prove correctness and prevent regressions.  
+### Question 8: A reviewer asks for testing evidence. Which requirement must you show?
+A) All work must be covered by fmt + clippy + tests in CI.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-B) Shipping without an automated test run in CI.  
-C) Event-driven design + sagas (45 min)  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 9: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Explain the core concepts and tradeoffs for Architecture Patterns.
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Skipping input validation and assuming “happy path”.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Uses consistent style/formatting and passes the quality gate.
+D) Includes tests appropriate for the feature.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

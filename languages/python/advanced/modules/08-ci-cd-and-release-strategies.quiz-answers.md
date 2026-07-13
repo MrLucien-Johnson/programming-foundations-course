@@ -1,77 +1,77 @@
 # Python Advanced — Module 08: CI/CD and Release Strategies Quiz Answers
 
-## Question 1: You need to run the test suite. Which command should you use?
-**Answer: A** - `python -m pytest`
+## Question 1: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: A** - Use tooling to keep quality high: ruff + black (or ruff format).
 
-**Explanation:** This command runs the test suite.
-
----
-
-## Question 2: You need to run lint checks. Which command should you use?
-**Answer: C** - `ruff check .`
-
-**Explanation:** This command runs lint checks.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## Question 3: You need to format the code. Which command should you use?
-**Answer: B** - `ruff format .`
+## Question 2: Which testing requirement is most relevant to this issue: database tests are polluting shared data?
+**Answer: A** - If the module involves a database, tests must run against an isolated schema/database.
 
-**Explanation:** This command formats the code.
-
----
-
-## Question 4: Which action best satisfies the Core requirements?
-**Answer: A** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This task appears under Core exercises.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 5: Which action upgrades the work to the Better level?
-**Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 3: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
+**Answer: D** - Tests must be deterministic (no flakes) and runnable by a reviewer.
 
-**Explanation:** This task appears under Better exercises.
-
----
-
-## Question 6: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Add a performance or reliability improvement and **measure** the impact.
-
-**Explanation:** This task appears under Beast Mode exercises.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 7: Before submitting, which verification step must you complete?
-**Answer: C** - Run the module tests and confirm they pass.
+## Question 4: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+**Answer: B** - Includes a short README section describing assumptions and tradeoffs.
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 8: Which testing requirement must be satisfied to pass?
-**Answer: C** - All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.
-
-**Explanation:** This requirement is listed under testing requirements.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 9: Which option would be a common mistake to avoid?
+## Question 5: Which acceptance criterion would a reviewer check first to approve the submission?
+**Answer: A** - Deliverable runs locally with clear instructions.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 6: A reviewer reports: CI has no automated test run before release. Which mistake does this reflect?
 **Answer: C** - Shipping without an automated test run in CI.
 
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Explain the core concepts and tradeoffs for **CI/CD and Release Strategies**.
+## Question 7: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: D** - Implement a small feature tied to this module in an existing starter app.
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## How Did You Do?
+## Question 8: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: B** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 9: The work passes Core. Which improvement most clearly raises quality for reviewers?
+**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 10: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+**Answer: D** - Add or update documentation (README notes or ADR-style notes).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

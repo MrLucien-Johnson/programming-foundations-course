@@ -1,77 +1,77 @@
 # AI — Module 04: Model Evaluation and Testing Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: C** - Create an eval harness outline for one task and run it on 50 cases.
+## Question 1: Which acceptance requirement protects review quality if enforced?
+**Answer: A** - Harness is repeatable and can be re-run after changes.
 
-**Explanation:** This task appears under Core exercises.
-
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: B** - Add adversarial cases (injection, contradictions) and track separate scores.
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Design A/B testing rules for prompt versions with rollback criteria.
+## Question 2: Before shipping, which Core action best reduces regression risk?
+**Answer: A** - Create an eval harness outline for one task and run it on 50 cases.
 
-**Explanation:** This task appears under Beast Mode exercises.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: B** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
+## Question 3: Production validation failed because tests are flaky and fail intermittently. Which testing requirement would have prevented it?
+**Answer: A** - Evaluation run is deterministic where possible (fixed inputs, logged settings).
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 4: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
 **Answer: B** - Evaluation run is deterministic where possible (fixed inputs, logged settings).
 
-**Explanation:** This requirement is listed under testing requirements.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: A** - No baseline or thresholds—can't tell if you improved.
+## Question 5: A reviewer asks for stronger engineering discipline. Which Better action fits?
+**Answer: D** - Add a regression report format (what changed, what broke, why).
 
-**Explanation:** This mistake is listed under common mistakes.
-
----
-
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Translate a vague request into a clear goal, constraints, and success criteria.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: D** - Define metrics: task success, format adherence, groundedness (45 min)
+## Question 6: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: A** - Design A/B testing rules for prompt versions with rollback criteria.
 
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: D** - Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: B** - Treat LLM work like software testing: datasets, baselines, regression tests, and quality gates.
+## Question 7: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: B** - Build a small evaluation loop: test cases, metrics, and iteration notes.
 
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## How Did You Do?
+## Question 8: Which acceptance requirement most clearly blocks approval if missing?
+**Answer: B** - Includes a regression gate and report format.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 9: A reviewer reports: training-like artifacts. Which mistake does this reflect?
+**Answer: D** - Mixing data leakage into eval sets (training-like artifacts).
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 10: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+**Answer: D** - Define pass/fail thresholds (e.g., 90% schema validity, 80% rubric score).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

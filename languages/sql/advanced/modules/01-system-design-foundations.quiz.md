@@ -1,121 +1,117 @@
 # SQL (PostgreSQL) Advanced — Module 01: System Design Foundations Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Update the README with setup, run, and test commands.  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Update the README with setup, run, and test commands.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Ship changes without documentation.  
-D) Run: `psql -f queries.sql`  
+### Question 1: Before shipping, which Core action best reduces regression risk?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Shipping without an automated test run in CI.
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Avoid measuring results or performance.  
-D) Run: `psql -f queries.sql`  
+### Question 2: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
+A) Includes tests appropriate for the feature.
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Draft a one-page design doc with requirements and constraints.  
-C) Jump to the next module without verifying results.  
-D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+### Question 3: Which outcome best captures the practical ability you should carry forward?
+A) Explain the core concepts and tradeoffs for System Design Foundations.
+B) Includes a short README section describing assumptions and tradeoffs.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 4: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
+A) Includes tests appropriate for the feature.
+B) Skipping input validation and assuming “happy path”.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Shipping without an automated test run in CI.  
-B) Update the README with setup, run, and test commands.  
-C) Run the module tests and confirm they pass.  
-D) Skip testing and trust the first result.  
+### Question 5: Which acceptance criterion acts as a release gate for this module?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Implement a small feature tied to this module in an existing starter app.
+D) All work must be covered by migrations apply cleanly + pgTAP + SQL linting in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **System Design Foundations**.  
-B) Avoid measuring results or performance.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 6: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Deliverable runs locally with clear instructions.
+B) Refactor one area for readability (without changing behavior) and prove it with tests.
+C) Document decisions and constraints clearly for reviewers.
+D) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Requirements → constraints → estimates (45 min)  
-B) Making performance claims without measurements.  
-C) Avoid measuring results or performance.  
-D) Copy the starter pack from `languages/sql/advanced/starter-pack` into a new working folder.  
+### Question 7: Which Core action best reflects professional engineering practice in this situation?
+A) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.
+B) Explain the core concepts and tradeoffs for System Design Foundations.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Avoid measuring results or performance.  
-B) Run: `psql -f queries.sql`  
-C) Copy the starter pack from `languages/sql/advanced/starter-pack` into a new working folder.  
-D) Queues, streams, and asynchronous workflows (45 min)  
+### Question 8: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Add a performance or reliability improvement and measure the impact.
+D) Skipping input validation and assuming “happy path”.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Reason about scalability, data, and tradeoffs under constraints.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Sketch architecture with data flow and failure points.  
+### Question 9: Which acceptance requirement most clearly blocks approval if missing?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Over-mocking (tests assert implementation details instead of outcomes).
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which testing requirement should you apply given this issue: lint/format/type errors are breaking CI?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.
+C) All work must be covered by migrations apply cleanly + pgTAP + SQL linting in CI.
+D) Document decisions and constraints clearly for reviewers.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

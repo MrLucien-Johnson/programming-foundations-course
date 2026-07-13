@@ -1,77 +1,77 @@
 # Java Intermediate — Module 01: DSA (Practical) Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: A** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: Your tests are blocked because database tests are polluting shared data. Which requirement should you enforce?
+**Answer: D** - If the module involves a database, tests must run against an isolated schema/database.
 
-**Explanation:** This task appears under Core exercises.
-
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Add a performance or reliability improvement and **measure** the impact.
+## Question 2: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: B** - Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
-**Explanation:** This task appears under Beast Mode exercises.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: A** - All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.
+## Question 3: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
 
-**Explanation:** This requirement is listed under testing requirements.
-
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: D** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Explain the core concepts and tradeoffs for **DSA (Practical)**.
+## Question 4: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+**Answer: B** - Add at least 3 focused unit tests that cover normal cases and edge cases.
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: A** - Big-O and tradeoffs in real code (45 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: C** - Copy the starter pack from `languages/java/intermediate/starter-pack` into a new working folder.
+## Question 5: Which acceptance requirement protects review quality if enforced?
+**Answer: A** - Deliverable runs locally with clear instructions.
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 10: Which statement best summarizes the module focus?
-**Answer: C** - Use data structures and algorithms pragmatically in real applications.
-
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## How Did You Do?
+## Question 6: A reviewer flags tests are flaky and fail intermittently. Which testing requirement resolves it?
+**Answer: B** - Tests must be deterministic (no flakes) and runnable by a reviewer.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 7: Which acceptance criterion acts as a release gate for this module?
+**Answer: C** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 8: This happened during review: bugs appear on unexpected inputs because validation was skipped. Which mistake is it?
+**Answer: C** - Skipping input validation and assuming “happy path”.
+
+**Explanation:** This is listed in the Common Mistakes section to avoid.
+
+---
+
+## Question 9: Which Core action best reflects professional engineering practice in this situation?
+**Answer: B** - Implement a small feature tied to this module in an existing starter app.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 10: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: B** - Apply the concepts to a realistic codebase (not just toy examples).
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

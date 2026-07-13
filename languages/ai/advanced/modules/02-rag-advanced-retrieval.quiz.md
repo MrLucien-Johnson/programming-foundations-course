@@ -1,121 +1,117 @@
 # AI — Module 02: RAG: Advanced Retrieval Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Compare retrieval results across 10 queries.  
-B) Document and version changes so improvements are explainable.  
-C) Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.  
-D) Document the best-performing approach.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Compare two chunking strategies and record tradeoffs.  
-B) Ignore error handling for edge cases.  
-C) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
-D) Add a metadata strategy (document type, version, access controls).  
+### Question 1: Which Core action would a senior engineer insist on before approving the change?
+A) Ignoring permissions/access control in retrieval.
+B) Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.
+C) Add reranking and measure improvement on a fixed question set.
+D) Build a small evaluation loop: test cases, metrics, and iteration notes.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Add access-control-aware retrieval (no leakage across permissions).  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Experiment with chunking and re-ranking strategies.  
-D) Retrieval quality signals: precision, recall, and failure modes (50 min)  
+### Question 2: Before sign-off, which acceptance criterion must be confirmed?
+A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+B) Add access-control-aware retrieval (no leakage across permissions).
+C) Includes access control and freshness considerations.
+D) Translate a vague request into a clear goal, constraints, and success criteria.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Compare two chunking strategies and record tradeoffs.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.  
+### Question 3: Which option reflects a mistake a reviewer would call out?
+A) Ignoring permissions/access control in retrieval.
+B) Document and version changes so improvements are explainable.
+C) Translate a vague request into a clear goal, constraints, and success criteria.
+D) Eval harness separates retrieval vs generation metrics.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Update the README with setup, run, and test commands.  
-B) Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.  
-C) Eval harness separates retrieval vs generation metrics.  
-D) Skip testing and trust the first result.  
+### Question 4: In a real code review, which outcome best reflects the skill you should demonstrate?
+A) Includes access control and freshness considerations.
+B) Demonstrates measured improvement on a fixed question set.
+C) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+D) Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Optimizing retrieval with changing datasets (no stable benchmark).  
-B) Reranking and query rewriting (45 min)  
-C) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-D) Review the module goals and plan how you will improve retrieval quality and ranking.  
+### Question 5: A reviewer asks for testing evidence. Which requirement must you show?
+A) Add reranking and measure improvement on a fixed question set.
+B) Eval harness separates retrieval vs generation metrics.
+C) Includes access control and freshness considerations.
+D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Translate a vague request into a clear goal, constraints, and success criteria.  
-B) Experiment with chunking and re-ranking strategies.  
-C) Eval harness separates retrieval vs generation metrics.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 6: Which acceptance criterion acts as a release gate for this module?
+A) Add freshness tests: new doc appears and is retrievable within a target window.
+B) Eval harness separates retrieval vs generation metrics.
+C) Add access-control-aware retrieval (no leakage across permissions).
+D) Demonstrates measured improvement on a fixed question set.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
-B) Compare two chunking strategies and record tradeoffs.  
-C) Retrieval quality signals: precision, recall, and failure modes (50 min)  
-D) Experiment with chunking and re-ranking strategies.  
+### Question 7: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Add reranking and measure improvement on a fixed question set.
+B) Add freshness tests: new doc appears and is retrievable within a target window.
+C) Document and version changes so improvements are explainable.
+D) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
-B) Reranking and query rewriting (45 min)  
-C) Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.  
-D) Document and version changes so improvements are explainable.  
+### Question 8: Which testing requirement would you verify in CI before approving the change?
+A) Eval harness separates retrieval vs generation metrics.
+B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+C) Optimizing retrieval with changing datasets (no stable benchmark).
+D) Add a metadata strategy (document type, version, access controls).
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Translate a vague request into a clear goal, constraints, and success criteria.  
-B) Update the README with setup, run, and test commands.  
-C) Improve retrieval quality: hybrid search, metadata filters, reranking, and freshness.  
-D) Treat every request as safe without review.  
+### Question 9: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) Add reranking and measure improvement on a fixed question set.
+B) Add a metadata strategy (document type, version, access controls).
+C) Compare two chunking strategies and record tradeoffs.
+D) Optimizing retrieval with changing datasets (no stable benchmark).
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Add a metadata strategy (document type, version, access controls).
+B) Add access-control-aware retrieval (no leakage across permissions).
+C) Compare two chunking strategies and record tradeoffs.
+D) Build a small evaluation loop: test cases, metrics, and iteration notes.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

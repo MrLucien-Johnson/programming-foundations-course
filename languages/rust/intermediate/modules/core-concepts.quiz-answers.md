@@ -1,77 +1,77 @@
 # Core Concepts (Intermediate) Quiz Answers
 
-## Question 1: You need to run the test suite. Which command should you use?
-**Answer: A** - `cargo test`
+## Question 1: Which deliverable best demonstrates the engineering work was completed?
+**Answer: B** - topic notes or summaries
 
-**Explanation:** This command runs the test suite.
-
----
-
-## Question 2: You need to run lint checks. Which command should you use?
-**Answer: A** - `cargo clippy`
-
-**Explanation:** This command runs lint checks.
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 3: You need to format the code. Which command should you use?
-**Answer: A** - `cargo fmt`
+## Question 2: Which topic would you point to when scoping a real-world solution?
+**Answer: C** - error handling and debugging
 
-**Explanation:** This command formats the code.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: C** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 5: Which step appears in the guided walkthrough?
-**Answer: C** - Copy the starter pack from `languages/rust/intermediate/starter-pack` into a new working folder.
+## Question 3: Which topic from the outline would you revisit to solve a similar problem?
+**Answer: C** - testable module design
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 6: Which verification step is required before moving on?
-**Answer: D** - Verify the primary feature works with normal and edge-case inputs.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 7: Before submitting, which verification step must you complete?
-**Answer: D** - Update the README with setup, run, and test commands.
+## Question 4: Which deliverable would you submit to close the work item?
+**Answer: C** - topic notes or summaries
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 8: Which verification step is required before moving on?
-**Answer: A** - Run: `cargo test`
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 9: Before submitting, which verification step must you complete?
-**Answer: C** - Run: `cargo clippy`
+## Question 5: Which deliverable would you send to a stakeholder as evidence of completion?
+**Answer: D** - topic notes or summaries
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 10: Which verification step is required before moving on?
-**Answer: A** - Run: `cargo fmt`
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## How Did You Do?
+## Question 6: Which topic would you point to when describing this module's focus?
+**Answer: B** - error handling and debugging
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 7: A teammate needs help with a real project decision. Which topic should they revisit?
+**Answer: C** - testable module design
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 8: Which topic would you use to guide a design discussion?
+**Answer: D** - ownership patterns and borrowing
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 9: A reviewer wants proof of work. Which deliverable should you hand them?
+**Answer: A** - example implementations in the repo
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 10: A teammate needs help with a project decision. Which topic should they revisit?
+**Answer: C** - testable module design
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

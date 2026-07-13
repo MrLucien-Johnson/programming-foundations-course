@@ -1,121 +1,117 @@
-# CAdvanced — Module 04: Performance and Profiling Quiz: Test Your Understanding
+# C# Advanced — Module 04: Performance and Profiling Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Use tooling to keep quality high: dotnet format + analyzers.  
-B) Run: `dotnet format`  
-C) Update the README with setup, run, and test commands.  
-D) `dotnet test`  
-
-**Your answer:** _______________
-
----
-
-### Question 2: You need to format the code. Which command should you use?
-A) Jump to the next module without verifying results.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) `dotnet format`  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 1: Which acceptance criterion acts as a release gate for this module?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action best satisfies the Core requirements?
-A) Copy the starter pack from `languages/csharp/advanced/starter-pack` into a new working folder.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Profiling methodology and baselines (40 min)  
+### Question 2: The work passes Core. Which improvement most clearly raises quality for reviewers?
+A) Skipping input validation and assuming “happy path”.
+B) Write tests that prove correctness and prevent regressions.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Use tooling to keep quality high: dotnet format + analyzers.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action upgrades the work to the Better level?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Skipping input validation and assuming “happy path”.  
+### Question 3: This happened during review: tests assert implementation details instead of outcomes. Which mistake is it?
+A) Document decisions and constraints clearly for reviewers.
+B) Over-mocking (tests assert implementation details instead of outcomes).
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Ignore error handling for edge cases.  
-C) Profile or trace to find hotspots.  
-D) Making performance claims without measurements.  
+### Question 4: Which testing requirement would you verify in CI before approving the change?
+A) All work must be covered by build + tests + analyzers in CI.
+B) Skipping input validation and assuming “happy path”.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Load testing + bottleneck identification (45 min)  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 5: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) Includes tests appropriate for the feature.
+B) Making performance claims without measurements.
+C) Skipping input validation and assuming “happy path”.
+D) Use tooling to keep quality high: dotnet format + analyzers.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement must be satisfied to pass?
-A) Document decisions and constraints clearly for reviewers.  
-B) Use tooling to keep quality high: dotnet format + analyzers.  
-C) Caching and invalidation strategies (40 min)  
-D) All work must be covered by **build + tests + analyzers in CI**.  
+### Question 6: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Skipping input validation and assuming “happy path”.
+B) Explain the core concepts and tradeoffs for Performance and Profiling.
+C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which option would be a common mistake to avoid?
-A) Treat every request as safe without review.  
-B) Shipping without an automated test run in CI.  
-C) Run: `dotnet format`  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 7: You're pressed for time but still need a safe release. Which Core action must remain?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Add at least 3 focused unit tests that cover normal cases and edge cases.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Run: `dotnet test`  
-B) Update the README with setup, run, and test commands.  
-C) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
-D) Run: `dotnet format`  
+### Question 8: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Add or update documentation (README notes or ADR-style notes).
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which topic would you revisit to solve this module's core problem?
-A) Copy the starter pack from `languages/csharp/advanced/starter-pack` into a new working folder.  
-B) Ignore error handling for edge cases.  
-C) Profiling methodology and baselines (40 min)  
-D) Capture baseline performance metrics.  
+### Question 9: A reviewer flags database tests are polluting shared data. Which testing requirement resolves it?
+A) Deliverable runs locally with clear instructions.
+B) Add a performance or reliability improvement and measure the impact.
+C) If the module involves a database, tests must run against an isolated schema/database.
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which Core action best reflects professional engineering practice in this situation?
+A) Includes tests appropriate for the feature.
+B) Shipping without an automated test run in CI.
+C) Add or update documentation (README notes or ADR-style notes).
+D) If the module involves a database, tests must run against an isolated schema/database.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

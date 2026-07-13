@@ -1,77 +1,77 @@
 # TypeScript Advanced — Module 01: System Design Foundations Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: A** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: Which common mistake matches this scenario: tests assert implementation details instead of outcomes?
+**Answer: A** - Over-mocking (tests assert implementation details instead of outcomes).
 
-**Explanation:** This task appears under Core exercises.
-
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Add a performance or reliability improvement and **measure** the impact.
+## Question 2: Which acceptance requirement protects review quality if enforced?
+**Answer: C** - Includes a short README section describing assumptions and tradeoffs.
 
-**Explanation:** This task appears under Beast Mode exercises.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: A** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: A** - All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.
+## Question 3: Your tests are blocked because lint/format/type errors are breaking CI. Which requirement should you enforce?
+**Answer: D** - All work must be covered by typecheck + lint + unit tests + integration tests (HTTP + DB) in CI.
 
-**Explanation:** This requirement is listed under testing requirements.
-
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: C** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** This requirement appears in the Testing Requirements section.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: A** - Explain the core concepts and tradeoffs for **System Design Foundations**.
+## Question 4: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: A** - Add a performance or reliability improvement and measure the impact.
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
-
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: B** - Requirements → constraints → estimates (60 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** This action is part of the Beast Mode upgrades.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: D** - Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.
+## Question 5: A reviewer asks for stronger engineering discipline. Which Better action fits?
+**Answer: C** - Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 10: Which statement best summarizes the module focus?
-**Answer: C** - Reason about scalability, data, and tradeoffs under constraints.
-
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This is explicitly listed in the Better exercises section.
 
 ---
 
-## How Did You Do?
+## Question 6: Which testing requirement should you apply given this issue: database tests are polluting shared data?
+**Answer: C** - If the module involves a database, tests must run against an isolated schema/database.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 7: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: D** - Includes tests appropriate for the feature.
+
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
+
+---
+
+## Question 8: In a real code review, which outcome best reflects the skill you should demonstrate?
+**Answer: B** - Write tests that prove correctness and prevent regressions.
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 9: Which Core action best reflects professional engineering practice in this situation?
+**Answer: A** - Add at least 3 focused unit tests that cover normal cases and edge cases.
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## Question 10: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: D** - Add or update documentation (README notes or ADR-style notes).
+
+**Explanation:** This action is listed under the Core exercises for the module.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

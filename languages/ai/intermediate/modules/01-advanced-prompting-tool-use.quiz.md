@@ -1,121 +1,117 @@
 # AI — Module 01: Advanced Prompting: Tool Use Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Jump to the next module without verifying results.  
-B) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-C) Write a tool contract for “create_task(title, owner, due_date)” (or equivalent).  
-D) Error handling: retries, timeouts, partial failures (45 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Error handling: retries, timeouts, partial failures (45 min)  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Add a verification step: check that tool output matches the request before replying.  
-D) Jump to the next module without verifying results.  
+### Question 1: Which Core action would a senior engineer insist on before approving the change?
+A) Design prompts that choose between: answer, ask clarifying question, or call tool.
+B) No verification of tool results before presenting them to users.
+C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+D) Translate a vague request into a clear goal, constraints, and success criteria.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Skip testing and trust the first result.  
-B) Unlimited retries that increase cost and latency.  
-C) Add adversarial inputs that attempt to override tool constraints.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 2: A production fix is urgent. Which Core action is still required before release?
+A) Write a tool contract for “create_task(title, owner, due_date)” (or equivalent).
+B) Document and version changes so improvements are explainable.
+C) Add retry rules with budgets and explicit error messages.
+D) No verification of tool results before presenting them to users.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Verification: validate tool results before responding (45 min)  
-D) Build a small evaluation loop: test cases, metrics, and iteration notes.  
+### Question 3: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Add a verification step: check that tool output matches the request before replying.
+B) Add adversarial inputs that attempt to override tool constraints.
+C) Build a small evaluation loop: test cases, metrics, and iteration notes.
+D) Letting the model call tools with missing/ambiguous parameters.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Letting the model call tools with missing/ambiguous parameters.  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Write a tool contract and validation rules.  
-D) End-to-end workflow tested with simulated tool failures and timeouts.  
+### Question 4: Which outcome best captures the practical ability you should carry forward?
+A) End-to-end workflow tested with simulated tool failures and timeouts.
+B) Write a tool contract for “create_task(title, owner, due_date)” (or equivalent).
+C) Design an audit log schema for tool calls (who/what/when/why).
+D) Translate a vague request into a clear goal, constraints, and success criteria.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Verification: validate tool results before responding (45 min)  
-C) Letting the model call tools with missing/ambiguous parameters.  
-D) Design an audit log schema for tool calls (who/what/when/why).  
+### Question 5: A reviewer wants better maintainability or reliability. Which upgrade should you choose?
+A) Translate a vague request into a clear goal, constraints, and success criteria.
+B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+C) Add a verification step: check that tool output matches the request before replying.
+D) Design an audit log schema for tool calls (who/what/when/why).
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Avoid measuring results or performance.  
-B) Update the README with setup, run, and test commands.  
-C) Translate a vague request into a clear goal, constraints, and success criteria.  
-D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+### Question 6: Which testing requirement would you verify in CI before approving the change?
+A) Includes an eval set of at least 20 cases, including failures.
+B) Document and version changes so improvements are explainable.
+C) End-to-end workflow tested with simulated tool failures and timeouts.
+D) Add adversarial inputs that attempt to override tool constraints.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Write a tool contract and validation rules.  
-B) Add adversarial inputs that attempt to override tool constraints.  
-C) Letting the model call tools with missing/ambiguous parameters.  
-D) From instruction to contract: inputs/outputs, allowed actions, and constraints (50 min)  
+### Question 7: A reviewer is ready to approve once one missing requirement is fixed. Which requirement is it?
+A) No verification of tool results before presenting them to users.
+B) Add retry rules with budgets and explicit error messages.
+C) Translate a vague request into a clear goal, constraints, and success criteria.
+D) Includes an eval set of at least 20 cases, including failures.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Design prompts that reliably call tools/functions: explicit contracts, error handling, and verification—without vendor-specific features.  
-B) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
-C) Treat every request as safe without review.  
-D) End-to-end workflow tested with simulated tool failures and timeouts.  
+### Question 8: Which acceptance criterion acts as a release gate for this module?
+A) Has clear contracts, error handling, and a verification step.
+B) Unlimited retries that increase cost and latency.
+C) Build a small evaluation loop: test cases, metrics, and iteration notes.
+D) Document and version changes so improvements are explainable.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Review the module goals and plan how you will design tool-aware prompts with validation.  
-B) Design prompts that reliably call tools/functions: explicit contracts, error handling, and verification—without vendor-specific features.  
-C) Document and version changes so improvements are explainable.  
-D) Verification: validate tool results before responding (45 min)  
+### Question 9: A reviewer asks for testing evidence. Which requirement must you show?
+A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+B) Design prompts that choose between: answer, ask clarifying question, or call tool.
+C) End-to-end workflow tested with simulated tool failures and timeouts.
+D) Document and version changes so improvements are explainable.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: During review, which behavior would be flagged as a common mistake?
+A) Add retry rules with budgets and explicit error messages.
+B) Letting the model call tools with missing/ambiguous parameters.
+C) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
+D) Document and version changes so improvements are explainable.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

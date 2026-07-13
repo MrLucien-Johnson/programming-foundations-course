@@ -1,121 +1,117 @@
 # Python Intermediate — Module 03: Git and Collaboration Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) `python -m pytest`  
-D) PRs: review checklists and feedback loops (40 min)  
-
-**Your answer:** _______________
-
----
-
-### Question 2: You need to run lint checks. Which command should you use?
-A) Skipping input validation and assuming “happy path”.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) `ruff check .`  
+### Question 1: A hiring manager asks what you can now do confidently. Which outcome fits?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Skipping input validation and assuming “happy path”.
+C) Use tooling to keep quality high: ruff + black (or ruff format).
+D) Making performance claims without measurements.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) `ruff format .`  
-B) Skip testing and trust the first result.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) `python -m pytest`  
+### Question 2: This happened during review: bugs appear on unexpected inputs because validation was skipped. Which mistake is it?
+A) Refactor one area for readability (without changing behavior) and prove it with tests.
+B) Skipping input validation and assuming “happy path”.
+C) Explain the core concepts and tradeoffs for Git and Collaboration.
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action best satisfies the Core requirements?
-A) Making performance claims without measurements.  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) `ruff check .`  
+### Question 3: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+A) Over-mocking (tests assert implementation details instead of outcomes).
+B) Add a performance or reliability improvement and measure the impact.
+C) Refactor one area for readability (without changing behavior) and prove it with tests.
+D) Apply the concepts to a realistic codebase (not just toy examples).
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action upgrades the work to the Better level?
-A) Conflicts and rebasing safely (45 min)  
-B) Copy the starter pack from `languages/python/intermediate/starter-pack` into a new working folder.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 4: Production validation failed because lint/format/type errors are breaking CI. Which testing requirement would have prevented it?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) All work must be covered by ruff/format + unit tests + integration tests (HTTP + DB) in CI.
+C) Create a short write-up: what changed, why, and how you verified it.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Update the README with setup, run, and test commands.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Jump to the next module without verifying results.  
+### Question 5: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) Add at least 3 focused unit tests that cover normal cases and edge cases.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Ignore error handling for edge cases.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) `python -m pytest`  
+### Question 6: Which Core action would a senior engineer insist on before approving the change?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Add a performance or reliability improvement and measure the impact.
+C) Deliverable runs locally with clear instructions.
+D) Implement a small feature tied to this module in an existing starter app.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement must be satisfied to pass?
-A) PRs: review checklists and feedback loops (40 min)  
-B) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
-C) Making performance claims without measurements.  
-D) Review the module goals and plan how you will work in branches, reviews, and clean history.  
+### Question 7: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+A) Create a short write-up: what changed, why, and how you verified it.
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Includes a short README section describing assumptions and tradeoffs.
+D) Add at least 3 focused unit tests that cover normal cases and edge cases.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option would be a common mistake to avoid?
-A) Run: `python -m pytest`  
-B) Shipping without an automated test run in CI.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Review the module goals and plan how you will work in branches, reviews, and clean history.  
+### Question 8: CI is failing because tests are flaky and fail intermittently. Which testing requirement addresses this?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Add or update documentation (README notes or ADR-style notes).
+C) Implement a small feature tied to this module in an existing starter app.
+D) Deliverable runs locally with clear instructions.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Update the README with setup, run, and test commands.  
+### Question 9: A reviewer asks for stronger engineering discipline. Which Better action fits?
+A) Document decisions and constraints clearly for reviewers.
+B) Shipping without an automated test run in CI.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Apply the concepts to a realistic codebase (not just toy examples).
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Before sign-off, which acceptance criterion must be confirmed?
+A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+B) Shipping without an automated test run in CI.
+C) Skipping input validation and assuming “happy path”.
+D) Deliverable runs locally with clear instructions.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

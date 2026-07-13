@@ -1,121 +1,117 @@
 # Swift Advanced — Module 05: Reliability and Resilience Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Skipping input validation and assuming “happy path”.  
-C) All work must be covered by **build + tests + lint/format in CI**.  
-D) Write tests that prove correctness and prevent regressions.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Run the module tests and confirm they pass.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Avoid measuring results or performance.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 1: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Use tooling to keep quality high: SwiftFormat + SwiftLint.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Write tests that prove correctness and prevent regressions.
+D) Apply the concepts to a realistic codebase (not just toy examples).
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Design for failure using resilient patterns and operational readiness.  
-C) Skip testing and trust the first result.  
-D) All work must be covered by **build + tests + lint/format in CI**.  
+### Question 2: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Document decisions and constraints clearly for reviewers.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Avoid measuring results or performance.  
-C) Run the module tests and confirm they pass.  
-D) All work must be covered by **build + tests + lint/format in CI**.  
+### Question 3: A reviewer says, 'Good start.' Which Better upgrade should you add next?
+A) Implement a small feature tied to this module in an existing starter app.
+B) Use tooling to keep quality high: SwiftFormat + SwiftLint.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Add or update documentation (README notes or ADR-style notes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Circuit breakers, bulkheads, and rate limits (45 min)  
-B) Write a test for a failure scenario.  
-C) All work must be covered by **build + tests + lint/format in CI**.  
-D) Reliability in data: dedupe + idempotency keys (45 min)  
+### Question 4: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
+A) Write tests that prove correctness and prevent regressions.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Add or update documentation (README notes or ADR-style notes).
+D) If the module involves a database, tests must run against an isolated schema/database.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Avoid measuring results or performance.  
-C) Write tests that prove correctness and prevent regressions.  
-D) Shipping without an automated test run in CI.  
+### Question 5: Which acceptance requirement protects review quality if enforced?
+A) Document decisions and constraints clearly for reviewers.
+B) Deliverable runs locally with clear instructions.
+C) Add or update documentation (README notes or ADR-style notes).
+D) Use tooling to keep quality high: SwiftFormat + SwiftLint.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
-C) Update the README with setup, run, and test commands.  
-D) Shipping without an automated test run in CI.  
+### Question 6: Which testing requirement should you apply given this issue: tests are flaky and fail intermittently?
+A) Explain the core concepts and tradeoffs for Reliability and Resilience.
+B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Tests must be deterministic (no flakes) and runnable by a reviewer.
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Design for failure using resilient patterns and operational readiness.  
-B) Skipping input validation and assuming “happy path”.  
-C) Retries, timeouts, budgets, and jitter (45 min)  
-D) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
+### Question 7: You're pressed for time but still need a safe release. Which Core action must remain?
+A) Uses consistent style/formatting and passes the quality gate.
+B) Write tests that prove correctness and prevent regressions.
+C) Implement a small feature tied to this module in an existing starter app.
+D) Apply the concepts to a realistic codebase (not just toy examples).
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/swift/advanced/starter-pack` into a new working folder.  
-B) Run: `swift main.swift`  
-C) Run the module tests and confirm they pass.  
-D) Circuit breakers, bulkheads, and rate limits (45 min)  
+### Question 8: Which common mistake matches this scenario: bugs appear on unexpected inputs because validation was skipped?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Add a performance or reliability improvement and measure the impact.
+C) Skipping input validation and assuming “happy path”.
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Run the module tests and confirm they pass.  
-B) Run: `swift main.swift`  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Design for failure using resilient patterns and operational readiness.  
+### Question 9: Which outcome represents a transferable software engineering skill?
+A) Skipping input validation and assuming “happy path”.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Making performance claims without measurements.
+D) Use tooling to keep quality high: SwiftFormat + SwiftLint.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which acceptance criterion acts as a release gate for this module?
+A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+B) Apply the concepts to a realistic codebase (not just toy examples).
+C) All work must be covered by build + tests + lint/format in CI.
+D) Includes a short README section describing assumptions and tradeoffs.
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

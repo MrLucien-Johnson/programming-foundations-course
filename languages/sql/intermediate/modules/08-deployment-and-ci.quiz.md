@@ -1,121 +1,117 @@
 # SQL (PostgreSQL) Intermediate — Module 08: Deployment and CI Quiz: Test Your Understanding
 
-## Instructions
+## 📝 Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about what you learned. Try to answer from memory first!
 
-## Questions
+## 🧪 Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Document decisions and constraints clearly for reviewers.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Explain the core concepts and tradeoffs for **Deployment and CI**.  
-
-**Your answer:** _______________
-
----
-
-### Question 2: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Containers for local dev and CI (45 min)  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Update the README with setup, run, and test commands.  
+### Question 1: A reviewer asks for stronger engineering discipline. Which Better action fits?
+A) Add a performance or reliability improvement and measure the impact.
+B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+C) Includes tests appropriate for the feature.
+D) All work must be covered by migrations apply cleanly + pgTAP + SQL linting in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Create a deployment checklist (build, test, release).  
-C) Avoid measuring results or performance.  
-D) Shipping without an automated test run in CI.  
+### Question 2: A PR introduces new behavior. Which Core action is the minimum expected before review?
+A) Uses consistent style/formatting and passes the quality gate.
+B) Create a short write-up: what changed, why, and how you verified it.
+C) Add at least 3 focused unit tests that cover normal cases and edge cases.
+D) All work must be covered by migrations apply cleanly + pgTAP + SQL linting in CI.
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Document decisions and constraints clearly for reviewers.  
-B) Environments + configuration (35 min)  
-C) CI pipelines: caching, matrices, artifacts (45 min)  
-D) Run the module tests and confirm they pass.  
+### Question 3: CI is failing because database tests are polluting shared data. Which testing requirement addresses this?
+A) Deliverable runs locally with clear instructions.
+B) If the module involves a database, tests must run against an isolated schema/database.
+C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+D) Document decisions and constraints clearly for reviewers.
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+### Question 4: Which outcome represents a transferable software engineering skill?
+A) Deliverable runs locally with clear instructions.
+B) Uses consistent style/formatting and passes the quality gate.
+C) Explain the core concepts and tradeoffs for Deployment and CI.
+D) Includes a short README section describing assumptions and tradeoffs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Ignore error handling for edge cases.  
-B) Add a CI workflow or script that runs tests automatically.  
-C) Avoid measuring results or performance.  
-D) Shipping without an automated test run in CI.  
+### Question 5: You're pressed for time but still need a safe release. Which Core action must remain?
+A) Making performance claims without measurements.
+B) Implement a small feature tied to this module in an existing starter app.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Includes a short README section describing assumptions and tradeoffs.
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Document rollback steps and environment variables.  
-B) Environments + configuration (35 min)  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Explain the core concepts and tradeoffs for **Deployment and CI**.  
+### Question 6: This happened during review: tests assert implementation details instead of outcomes. Which mistake is it?
+A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+B) Write tests that prove correctness and prevent regressions.
+C) If the module involves a database, tests must run against an isolated schema/database.
+D) Over-mocking (tests assert implementation details instead of outcomes).
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Environments + configuration (35 min)  
-C) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
-D) Run the module tests and confirm they pass.  
+### Question 7: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+A) Includes tests appropriate for the feature.
+B) Add a performance or reliability improvement and measure the impact.
+C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.
+D) Uses consistent style/formatting and passes the quality gate.
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/sql/intermediate/starter-pack` into a new working folder.  
-B) Update the README with setup, run, and test commands.  
-C) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-D) Explain the core concepts and tradeoffs for **Deployment and CI**.  
+### Question 8: Which acceptance criterion acts as a release gate for this module?
+A) Includes a short README section describing assumptions and tradeoffs.
+B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+C) Tests must be deterministic (no flakes) and runnable by a reviewer.
+D) Create a short write-up: what changed, why, and how you verified it.
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Containerize, configure, and deploy with automated CI checks.  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) Review the module goals and plan how you will ship safely with automation.  
-D) Add or update documentation (README notes or ADR-style notes).  
+### Question 9: Your tests are blocked because tests are flaky and fail intermittently. Which requirement should you enforce?
+A) Tests must be deterministic (no flakes) and runnable by a reviewer.
+B) Add a performance or reliability improvement and measure the impact.
+C) Document decisions and constraints clearly for reviewers.
+D) Includes tests appropriate for the feature.
 
 **Your answer:** _______________
 
 ---
 
-## Check Your Answers
+### Question 10: Which acceptance requirement protects review quality if enforced?
+A) If the module involves a database, tests must run against an isolated schema/database.
+B) Includes tests appropriate for the feature.
+C) Apply the concepts to a realistic codebase (not just toy examples).
+D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).
+
+**Your answer:** _______________
+
+---
+
+## ✅ Check Your Answers
 
 Once you finish, check the answers file for explanations.
 
-## How Did You Do?
+## 🎯 How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
-
----
-
-**Good luck!** Check your answers when you are ready.
+- **10/10 correct:** Excellent! You understand the module well. 🎉
+- **8-9/10 correct:** Great work! Review the ones you missed.
+- **0-7/10 correct:** Review the module and try again. 💪

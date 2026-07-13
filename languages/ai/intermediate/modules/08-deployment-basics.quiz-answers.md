@@ -1,77 +1,77 @@
 # AI — Module 08: Deployment Basics Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
+## Question 1: A hiring manager asks what you can now do confidently. Which outcome fits?
+**Answer: C** - Produce prompts/specs that are repeatable (not “one-off magic prompts”).
+
+**Explanation:** This statement appears in the Learning Outcomes section.
+
+---
+
+## Question 2: You have extra time to go beyond expectations. Which Beast Mode action best shows senior-level rigor?
+**Answer: A** - Design a staged rollout with shadow evaluation and a rollback trigger.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 3: Which testing requirement would prevent a reviewer from rejecting the submission?
+**Answer: C** - Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 4: A reviewer asks for testing evidence. Which requirement must you show?
+**Answer: B** - Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 5: A reviewer asks for stronger engineering discipline. Which Better action fits?
+**Answer: C** - Add a smoke test plan for your most important flows.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 6: Which Core action best reflects professional engineering practice in this situation?
 **Answer: D** - Create a deployment checklist for one AI feature.
 
-**Explanation:** This task appears under Core exercises.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: D** - Design a prompt versioning scheme and a change log format.
+## Question 7: Which acceptance criterion acts as a release gate for this module?
+**Answer: A** - Includes safe config/secrets practices.
 
-**Explanation:** This task appears under Better exercises.
-
----
-
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: B** - Design a staged rollout with shadow evaluation and a rollback trigger.
-
-**Explanation:** This task appears under Beast Mode exercises.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: B** - Run the module tests and confirm they pass.
+## Question 8: A teammate asks how to make the change safe to merge. Which Core action is non-negotiable?
+**Answer: D** - Define rollback criteria based on eval results and user-impact signals.
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: D** - Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.
-
-**Explanation:** This requirement is listed under testing requirements.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: B** - Deploying prompt changes without a version or rollback strategy.
+## Question 9: During review, which behavior would be flagged as a common mistake?
+**Answer: D** - No plan for incidents or user-reported failures.
 
-**Explanation:** This mistake is listed under common mistakes.
-
----
-
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: D** - Translate a vague request into a clear goal, constraints, and success criteria.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: A** - Environments: dev/stage/prod configs and secrets handling (45 min)
+## Question 10: Which acceptance requirement protects review quality if enforced?
+**Answer: C** - Includes release strategy, evaluation gate, and rollback plan.
 
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: C** - Ship an AI feature safely: config, versioning, rollout, and operational readiness.
-
-**Explanation:** This statement comes from the module overview.
-
----
-
-## How Did You Do?
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

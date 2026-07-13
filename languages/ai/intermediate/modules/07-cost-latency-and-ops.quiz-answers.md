@@ -1,77 +1,77 @@
 # AI — Module 07: Cost, Latency, and Ops Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
+## Question 1: Your team wants to reduce risk quickly. Which Core action gives the biggest safety gain?
 **Answer: A** - Create a cost/latency plan for one workflow (budgets + how to enforce).
 
-**Explanation:** This task appears under Core exercises.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: A** - Design a caching strategy and what cache keys should be.
+## Question 2: A reviewer denies approval due to one missing item. Which acceptance criterion is it?
+**Answer: A** - Includes metrics to track quality, cost, and latency.
 
-**Explanation:** This task appears under Better exercises.
-
----
-
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: D** - Add a monitoring plan: what metrics, what dashboards, what alerts.
-
-**Explanation:** This task appears under Beast Mode exercises.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: C** - Run the module tests and confirm they pass.
+## Question 3: Which acceptance requirement most clearly blocks approval if missing?
+**Answer: A** - Includes explicit budgets and a fallback strategy.
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: B** - Evaluation harness records cost/latency per run (even estimated).
-
-**Explanation:** This requirement is listed under testing requirements.
+**Explanation:** This requirement appears in the mini-project acceptance criteria.
 
 ---
 
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: B** - No budgets, leading to runaway cost.
+## Question 4: During review, which behavior would be flagged as a common mistake?
+**Answer: B** - Optimizing for cost while silently harming quality.
 
-**Explanation:** This mistake is listed under common mistakes.
-
----
-
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Translate a vague request into a clear goal, constraints, and success criteria.
-
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Explanation:** This is listed in the Common Mistakes section to avoid.
 
 ---
 
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: D** - Define budgets: tokens/requests, latency SLOs, and guardrails (45 min)
+## Question 5: A PR introduces new behavior. Which Core action is the minimum expected before review?
+**Answer: C** - Define what happens when budgets are exceeded (fallback).
 
-**Explanation:** This topic appears in the lesson list.
-
----
-
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This action is listed under the Core exercises for the module.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: A** - Plan and control cost/latency: budgets, caching, batching, and operational guardrails.
+## Question 6: Which outcome best captures the practical ability you should carry forward?
+**Answer: A** - Document and version changes so improvements are explainable.
 
-**Explanation:** This statement comes from the module overview.
+**Explanation:** This statement appears in the Learning Outcomes section.
 
 ---
 
-## How Did You Do?
+## Question 7: A reviewer asks for stronger engineering discipline. Which Better action fits?
+**Answer: B** - Design a caching strategy and what cache keys should be.
+
+**Explanation:** This is explicitly listed in the Better exercises section.
+
+---
+
+## Question 8: Which testing requirement would prevent a reviewer from rejecting the submission?
+**Answer: A** - Evaluation harness records cost/latency per run (even estimated).
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## Question 9: Which Beast Mode action most clearly demonstrates advanced engineering judgment?
+**Answer: A** - Add a monitoring plan: what metrics, what dashboards, what alerts.
+
+**Explanation:** This action is part of the Beast Mode upgrades.
+
+---
+
+## Question 10: Which testing requirement would you verify in CI before approving the change?
+**Answer: D** - Evaluation harness records cost/latency per run (even estimated).
+
+**Explanation:** This requirement appears in the Testing Requirements section.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.

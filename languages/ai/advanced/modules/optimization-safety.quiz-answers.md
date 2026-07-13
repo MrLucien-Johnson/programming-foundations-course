@@ -1,77 +1,77 @@
 # Optimization and Safety (Advanced) Quiz Answers
 
-## Question 1: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
+## Question 1: Which topic should you reference when planning the solution?
+**Answer: B** - safety evaluations and red-teaming
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 2: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 3: Which verification step is required before moving on?
-**Answer: C** - Verify the primary feature works with normal and edge-case inputs.
+## Question 2: Which topic would you use to guide a design discussion?
+**Answer: C** - safety evaluations and red-teaming
 
-**Explanation:** This item appears in the verification checklist.
-
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: C** - Update the README with setup, run, and test commands.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## Question 5: Which action is listed as part of the guided walkthrough?
-**Answer: C** - Review the module goals and plan how you will balance optimization with safety constraints.
+## Question 3: Which deliverable best demonstrates the engineering work was completed?
+**Answer: B** - safety assessment summary
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 6: Which step appears in the guided walkthrough?
-**Answer: B** - Identify the primary optimization goal (cost, latency, accuracy).
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 7: Which action is listed as part of the guided walkthrough?
-**Answer: B** - List safety constraints that must not be violated.
+## Question 4: A reviewer wants proof of work. Which deliverable should you hand them?
+**Answer: C** - cost and latency plan
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 8: Which step appears in the guided walkthrough?
-**Answer: C** - Run a before/after comparison and document tradeoffs.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** This deliverable is required in the module expectations.
 
 ---
 
-## Question 9: Which action is listed as part of the guided walkthrough?
-**Answer: A** - Document decisions in a short README section (assumptions, tradeoffs, next steps).
+## Question 5: Which topic belongs in a real-world discussion for this module?
+**Answer: A** - safety evaluations and red-teaming
 
-**Explanation:** This step is listed in the guided walkthrough.
-
----
-
-## Question 10: Which practice best supports reliable delivery?
-**Answer: D** - Ship changes without documentation.
-
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Explanation:** This topic is listed in the module outline.
 
 ---
 
-## How Did You Do?
+## Question 6: A teammate needs help with a real project decision. Which topic should they revisit?
+**Answer: C** - cost and latency budgeting
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 7: Which deliverable would you send to a stakeholder as evidence of completion?
+**Answer: A** - cost and latency plan
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## Question 8: Which topic would you point to when scoping a real-world solution?
+**Answer: A** - caching and reuse strategies
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 9: Which topic would you highlight when scoping a real-world solution?
+**Answer: C** - caching and reuse strategies
+
+**Explanation:** This topic is listed in the module outline.
+
+---
+
+## Question 10: Which deliverable would confirm the work is ready for review?
+**Answer: B** - cost and latency plan
+
+**Explanation:** This deliverable is required in the module expectations.
+
+---
+
+## 🎯 How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9/10 correct:** Good work! Review the missed concepts.
+- **0-7/10 correct:** Review the module and try again.
