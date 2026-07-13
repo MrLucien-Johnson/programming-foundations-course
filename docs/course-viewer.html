@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Course Lesson Viewer</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      window.__loadMarkedFallback = () => {
+        const fallback = document.createElement("script");
+        fallback.src = "https://unpkg.com/marked/marked.min.js";
+        document.head.appendChild(fallback);
+      };
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"
+      onerror="window.__loadMarkedFallback && window.__loadMarkedFallback()"
+    ></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
