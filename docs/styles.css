@@ -448,6 +448,130 @@ h4 {
   padding-top: 12px;
 }
 
+/* ── Section lead copy ── */
+.section-lead {
+  margin: 0 0 24px;
+  max-width: 52ch;
+  color: var(--gray);
+}
+
+/* ── What you'll learn (curriculum stages) ── */
+.learn-stages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  border-left: 3px solid var(--light-gray);
+  margin-left: 14px;
+}
+
+.learn-stage {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 0 0 28px 20px;
+  position: relative;
+  animation: riseIn 0.55s ease both;
+}
+
+.learn-stage:last-child {
+  padding-bottom: 0;
+}
+
+.learn-stage:nth-child(1) { animation-delay: 0.05s; }
+.learn-stage:nth-child(2) { animation-delay: 0.1s; }
+.learn-stage:nth-child(3) { animation-delay: 0.15s; }
+.learn-stage:nth-child(4) { animation-delay: 0.2s; }
+.learn-stage:nth-child(5) { animation-delay: 0.25s; }
+.learn-stage:nth-child(6) { animation-delay: 0.3s; }
+
+.learn-stage-num {
+  width: 32px;
+  height: 32px;
+  margin-left: -38px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--gold-light);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px var(--paper);
+}
+
+.learn-stage h4 {
+  margin: 2px 0 6px;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.learn-stage p {
+  margin: 0;
+  color: var(--gray);
+  max-width: 48ch;
+}
+
+/* ── Who this is for ── */
+.audience-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.audience-list li {
+  padding: 14px 0 14px 18px;
+  border-left: 4px solid var(--gold);
+  color: var(--gray);
+  animation: riseIn 0.5s ease both;
+}
+
+.audience-list li:nth-child(1) { animation-delay: 0.05s; }
+.audience-list li:nth-child(2) { animation-delay: 0.12s; }
+.audience-list li:nth-child(3) { animation-delay: 0.18s; }
+
+.audience-list strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ── Closing CTA ── */
+.home-cta {
+  padding: 32px 28px;
+  background:
+    radial-gradient(ellipse 80% 80% at 0% 50%, rgba(201, 162, 39, 0.14), transparent 55%),
+    linear-gradient(135deg, var(--ink) 0%, #1a1f28 100%);
+  color: var(--paper);
+  border-radius: var(--radius-lg);
+  animation: riseIn 0.6s ease both;
+}
+
+.home-cta h3 {
+  color: var(--gold-light);
+  margin-top: 0;
+}
+
+.home-cta .section-lead {
+  color: rgba(243, 239, 230, 0.8);
+}
+
+.home-cta .btn-ghost {
+  color: var(--paper);
+  border-color: rgba(243, 239, 230, 0.35);
+}
+
+.home-cta .btn-ghost:hover {
+  background: rgba(243, 239, 230, 0.1);
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+}
+
 /* ── Mission & steps ── */
 .mission {
   border-left: 5px solid var(--gold);
