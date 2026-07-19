@@ -21,11 +21,27 @@
 
     <main id="main" class="container">
       <div id="breadcrumb" class="breadcrumb"></div>
-      <section class="hero">
-        <h2 id="lesson-title">Loading lesson…</h2>
-        <p class="note">
-          This lesson is displayed from the course repository, but you stay on the learning site.
-        </p>
+      <section class="hero lesson-hero">
+        <div class="lesson-hero-grid">
+          <div>
+            <p class="pill" id="lesson-lang-pill" hidden></p>
+            <h2 id="lesson-title">Loading lesson…</h2>
+            <p class="note">
+              This lesson is displayed from the course repository, but you stay on the learning site.
+            </p>
+          </div>
+          <div class="lesson-progress-widget" id="lesson-progress-widget" hidden aria-live="polite">
+            <svg class="progress-ring" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="progress-ring-track" cx="60" cy="60" r="52" />
+              <circle class="progress-ring-value" id="progress-ring-value" cx="60" cy="60" r="52" />
+            </svg>
+            <div class="progress-ring-label">
+              <strong id="progress-ring-pct">0%</strong>
+              <span>course done</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-track" id="module-track" hidden role="list" aria-label="Modules in this course"></div>
       </section>
 
       <section id="module-dashboard" class="section">
@@ -66,6 +82,51 @@
       const completionStatus = document.getElementById("completion-status");
       const dashboardGrid = document.getElementById("dashboard-grid");
       const dashboardSection = document.getElementById("module-dashboard");
+      const langPill = document.getElementById("lesson-lang-pill");
+      const progressWidget = document.getElementById("lesson-progress-widget");
+      const progressRingValue = document.getElementById("progress-ring-value");
+      const progressRingPct = document.getElementById("progress-ring-pct");
+      const moduleTrack = document.getElementById("module-track");
+
+      const CIRCUMFERENCE = 2 * Math.PI * 52;
+
+      const updateCourseProgressUI = (course, currentPath) => {
+        if (!course || !progressWidget || !moduleTrack) return;
+        const total = course.modules.length;
+        const done = course.modules.filter((m) => isCompleted(m.path)).length;
+        const pct = total ? Math.round((done / total) * 100) : 0;
+
+        progressWidget.hidden = false;
+        if (progressRingValue) {
+          progressRingValue.style.strokeDasharray = String(CIRCUMFERENCE);
+          progressRingValue.style.strokeDashoffset = String(
+            CIRCUMFERENCE - (pct / 100) * CIRCUMFERENCE
+          );
+        }
+        if (progressRingPct) progressRingPct.textContent = `${pct}%`;
+
+        if (langPill) {
+          langPill.hidden = false;
+          langPill.textContent = course.name.replace(/ Course$/i, "");
+        }
+
+        moduleTrack.hidden = false;
+        moduleTrack.innerHTML = course.modules
+          .map((module, i) => {
+            const complete = isCompleted(module.path);
+            const current = module.path === currentPath;
+            const state = current ? "is-current" : complete ? "is-done" : "";
+            return `
+              <a class="module-track-node ${state}" role="listitem"
+                 href="course-viewer.html?path=${encodeURIComponent(module.path)}"
+                 title="${module.title}">
+                <span class="module-track-dot">${complete && !current ? "✓" : i + 1}</span>
+                <span class="module-track-label">${module.title}</span>
+              </a>
+            `;
+          })
+          .join("");
+      };
 
       const DEFAULT_COURSES = [
         {
@@ -832,6 +893,8 @@
           if (isCompleted(repoPath)) {
             completionStatus.textContent = "Marked as complete.";
           }
+          window.__activeCourse = course;
+          updateCourseProgressUI(course, repoPath);
         }
 
         fetch(rawUrl)
@@ -912,6 +975,9 @@
         if (!repoPath) return;
         saveCompletion(repoPath);
         completionStatus.textContent = "Marked as complete.";
+        if (window.__activeCourse) {
+          updateCourseProgressUI(window.__activeCourse, repoPath);
+        }
       });
     </script>
   </body>
