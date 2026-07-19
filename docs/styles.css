@@ -22,44 +22,43 @@
   --shadow-soft: 0 8px 28px rgba(14, 17, 22, 0.08);
   --shadow-deep: 0 18px 48px rgba(14, 17, 22, 0.14);
 
-  /* 3D bevel depth — exaggerated so depth is obvious */
+  /* 3D bevel depth — subtle but readable */
   --bevel-raised:
-    inset 2px 2px 0 rgba(255, 255, 255, 1),
-    inset -2px -2px 0 rgba(14, 17, 22, 0.18),
-    0 1px 0 rgba(255, 255, 255, 0.6),
-    0 6px 0 rgba(14, 17, 22, 0.06),
-    0 14px 32px rgba(14, 17, 22, 0.16);
+    inset 1px 1px 0 rgba(255, 255, 255, 0.9),
+    inset -1px -1px 0 rgba(14, 17, 22, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.45),
+    0 3px 0 rgba(14, 17, 22, 0.04),
+    0 10px 26px rgba(14, 17, 22, 0.1);
   --bevel-raised-hover:
-    inset 2px 2px 0 rgba(255, 255, 255, 1),
-    inset -2px -2px 0 rgba(14, 17, 22, 0.22),
-    0 1px 0 rgba(255, 255, 255, 0.7),
-    0 8px 0 rgba(14, 17, 22, 0.08),
-    0 22px 44px rgba(14, 17, 22, 0.22);
+    inset 1px 1px 0 rgba(255, 255, 255, 0.95),
+    inset -1px -1px 0 rgba(14, 17, 22, 0.14),
+    0 1px 0 rgba(255, 255, 255, 0.5),
+    0 4px 0 rgba(14, 17, 22, 0.05),
+    0 16px 36px rgba(14, 17, 22, 0.14);
   --bevel-inset:
-    inset 3px 3px 8px rgba(14, 17, 22, 0.16),
-    inset -2px -2px 0 rgba(255, 255, 255, 0.75);
+    inset 2px 2px 5px rgba(14, 17, 22, 0.1),
+    inset -1px -1px 0 rgba(255, 255, 255, 0.65);
   --bevel-btn:
-    inset 0 2px 0 rgba(255, 255, 255, 0.28),
-    inset 0 -4px 0 rgba(0, 0, 0, 0.35),
-    0 1px 0 rgba(255, 255, 255, 0.15),
-    0 5px 0 rgba(0, 0, 0, 0.2),
-    0 10px 20px rgba(14, 17, 22, 0.3);
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.25),
+    0 1px 0 rgba(255, 255, 255, 0.1),
+    0 3px 0 rgba(0, 0, 0, 0.12),
+    0 8px 16px rgba(14, 17, 22, 0.22);
   --bevel-btn-gold:
-    inset 0 2px 0 rgba(255, 255, 255, 0.55),
-    inset 0 -4px 0 rgba(90, 65, 0, 0.4),
-    0 1px 0 rgba(255, 255, 255, 0.25),
-    0 5px 0 rgba(120, 90, 10, 0.35),
-    0 12px 22px rgba(154, 123, 26, 0.4);
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -2px 0 rgba(120, 90, 10, 0.3),
+    0 1px 0 rgba(255, 255, 255, 0.18),
+    0 3px 0 rgba(120, 90, 10, 0.2),
+    0 8px 18px rgba(154, 123, 26, 0.28);
   --bevel-btn-press:
-    inset 3px 4px 10px rgba(0, 0, 0, 0.45),
-    inset -1px -1px 0 rgba(255, 255, 255, 0.15),
-    0 1px 0 rgba(0, 0, 0, 0.2);
+    inset 2px 3px 6px rgba(0, 0, 0, 0.35),
+    inset -1px -1px 0 rgba(255, 255, 255, 0.12);
   --bevel-dark:
-    inset 2px 2px 0 rgba(255, 255, 255, 0.18),
-    inset -2px -2px 0 rgba(0, 0, 0, 0.65),
-    0 6px 0 rgba(0, 0, 0, 0.35),
-    0 18px 40px rgba(0, 0, 0, 0.5),
-    0 2px 0 rgba(226, 193, 90, 0.2);
+    inset 1px 1px 0 rgba(255, 255, 255, 0.12),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.5),
+    0 3px 0 rgba(0, 0, 0, 0.22),
+    0 14px 36px rgba(0, 0, 0, 0.4),
+    0 1px 0 rgba(226, 193, 90, 0.15);
 
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
@@ -491,11 +490,11 @@ h4 {
 .hero {
   background:
     linear-gradient(165deg, #ffffff 0%, #faf7f0 55%, #f3efe6 100%);
-  border: 2px solid #cfc8b8;
+  border: 1px solid #d5cfbf;
   border-top-color: #ffffff;
   border-left-color: #f5f1e8;
-  border-right-color: #9a917c;
-  border-bottom-color: #6f6758;
+  border-right-color: #b8b09c;
+  border-bottom-color: #9a917c;
   border-radius: var(--radius-lg);
   padding: 28px 32px;
   box-shadow: var(--bevel-raised);
@@ -637,11 +636,11 @@ h4 {
 .card {
   background:
     linear-gradient(165deg, #ffffff 0%, #fcfaf6 60%, #f7f3ea 100%);
-  border: 2px solid #cfc8b8;
+  border: 1px solid #d5cfbf;
   border-top-color: #ffffff;
-  border-left-color: #f7f3ea;
-  border-right-color: #9a917c;
-  border-bottom-color: #6f6758;
+  border-left-color: #f5f1e8;
+  border-right-color: #b8b09c;
+  border-bottom-color: #9a917c;
   border-radius: var(--radius-md);
   padding: 22px;
   box-shadow: var(--bevel-raised);
@@ -663,11 +662,11 @@ h4 {
   gap: 14px;
   background:
     linear-gradient(180deg, #ffffff 0%, #faf7f0 100%);
-  border: 2px solid #cfc8b8;
+  border: 1px solid #d5cfbf;
   border-top-color: #ffffff;
-  border-left-color: #f7f3ea;
-  border-right-color: #9a917c;
-  border-bottom-color: #6f6758;
+  border-left-color: #f5f1e8;
+  border-right-color: #b8b09c;
+  border-bottom-color: #9a917c;
   border-radius: var(--radius-lg);
   padding: 0;
   overflow: hidden;
@@ -782,11 +781,11 @@ h4 {
 .step {
   background:
     linear-gradient(165deg, #ffffff 0%, #faf7f0 100%);
-  border: 2px solid #cfc8b8;
+  border: 1px solid #d5cfbf;
   border-top-color: #ffffff;
-  border-left-color: #f7f3ea;
-  border-right-color: #9a917c;
-  border-bottom-color: #6f6758;
+  border-left-color: #f5f1e8;
+  border-right-color: #b8b09c;
+  border-bottom-color: #9a917c;
   border-radius: var(--radius-md);
   padding: 22px;
   position: relative;
@@ -968,11 +967,11 @@ h4 {
 .matcher {
   background:
     linear-gradient(165deg, #ffffff 0%, #faf7f0 100%);
-  border: 2px solid #cfc8b8;
+  border: 1px solid #d5cfbf;
   border-top-color: #ffffff;
-  border-left-color: #f7f3ea;
-  border-right-color: #9a917c;
-  border-bottom-color: #6f6758;
+  border-left-color: #f5f1e8;
+  border-right-color: #b8b09c;
+  border-bottom-color: #9a917c;
   border-radius: var(--radius-lg);
   padding: 28px;
   box-shadow: var(--bevel-raised);
@@ -1034,11 +1033,11 @@ h4 {
 /* ── Playground ── */
 .playground {
   background: var(--white);
-  border: 2px solid #cfc8b8;
+  border: 1px solid #d5cfbf;
   border-top-color: #ffffff;
-  border-left-color: #f7f3ea;
-  border-right-color: #9a917c;
-  border-bottom-color: #6f6758;
+  border-left-color: #f5f1e8;
+  border-right-color: #b8b09c;
+  border-bottom-color: #9a917c;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--bevel-raised);
@@ -1105,11 +1104,11 @@ h4 {
 .path-viz {
   background:
     linear-gradient(165deg, #ffffff 0%, #faf7f0 100%);
-  border: 2px solid #cfc8b8;
+  border: 1px solid #d5cfbf;
   border-top-color: #ffffff;
-  border-left-color: #f7f3ea;
-  border-right-color: #9a917c;
-  border-bottom-color: #6f6758;
+  border-left-color: #f5f1e8;
+  border-right-color: #b8b09c;
+  border-bottom-color: #9a917c;
   border-radius: var(--radius-lg);
   padding: 28px;
   box-shadow: var(--bevel-raised);
