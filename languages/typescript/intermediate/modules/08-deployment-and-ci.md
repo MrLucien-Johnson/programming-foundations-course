@@ -6,11 +6,10 @@ Containerize, configure, and deploy with automated CI checks.
 This module uses **Node.js LTS**, **npm (or pnpm), TypeScript compiler (tsc)**, and **Vitest (or Jest)**. When applicable, you’ll build or extend a small service using **Fastify (or Express) for REST APIs** and **PostgreSQL + migrations (Prisma or Knex)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Deployment and CI**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ESLint + Prettier.
-- Document decisions and constraints clearly for reviewers.
+- Separate environments and configuration (dev/stage/prod) without baking secrets into images.
+- Use containers to make local and CI environments reproducible.
+- Design CI pipelines with caching, matrices, and artifacts where they help.
+- Deploy with health checks, safe migrations, and a rollback plan.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **TypeScript**.

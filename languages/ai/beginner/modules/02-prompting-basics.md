@@ -8,11 +8,11 @@ Learn how to write prompts like specifications: define role, task, constraints, 
 - Customer support summarisation (ticket → summary + sentiment + category)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Write prompts with explicit constraints and output format.
+- Separate instructions from user content with clear delimiters.
+- Add few-shot examples that demonstrate the desired behavior.
+- Handle missing info with clarify-or-refuse rules.
+- Score outputs on format, factuality, and helpfulness.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

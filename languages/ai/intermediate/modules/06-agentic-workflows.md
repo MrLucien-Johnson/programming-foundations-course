@@ -7,11 +7,11 @@ Design multi-step agents with explicit planning, tool boundaries, stop condition
 - Agent workflow for a multi-step task (research → draft → verify → deliver)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Specify agent plans with tool boundaries and stop conditions.
+- Insert verification steps that check claims against sources.
+- Enforce tool budgets to prevent runaway loops.
+- Require human approval for high-risk actions.
+- Emit post-run reports covering actions, evidence, and uncertainties.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

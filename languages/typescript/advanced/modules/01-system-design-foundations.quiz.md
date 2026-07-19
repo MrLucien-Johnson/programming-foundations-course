@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Document decisions and constraints clearly for reviewers.  
+### Question 1: A stakeholder says “make it scale.” What should you produce first?
+**Checks outcome 1:** Turn vague product goals into requirements, constraints, and rough capacity estimates.
+
+A) A production deploy with no written constraints  
+B) Measurable requirements, hard constraints, and rough capacity estimates  
+C) A choice of logo colors  
+D) Only a list of frameworks you like  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Ship changes without documentation.  
-C) Caching, load balancing, and data partitions (60 min)  
-D) Reason about scalability, data, and tradeoffs under constraints.  
+### Question 2: Which estimate is most useful early in a design?
+**Checks outcome 1:** Turn vague product goals into requirements, constraints, and rough capacity estimates.
+
+A) Exact microsecond latency of every function  
+B) Order-of-magnitude QPS, storage, and payload size  
+C) The CEO’s favorite database brand  
+D) How many linters the repo has  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Jump to the next module without verifying results.  
-D) Queues, streams, and asynchronous workflows (55 min)  
+### Question 3: Read-heavy traffic with mostly identical responses. First lever?
+**Checks outcome 2:** Choose caching, load balancing, and data partitioning approaches for a given load pattern.
+
+A) Replicate writes to every client browser  
+B) A cache in front of the origin with a clear TTL/invalidation story  
+C) Disable the load balancer  
+D) Store everything in one giant unsorted file  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Avoid measuring results or performance.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Treat every request as safe without review.  
+### Question 4: Why partition (shard) a growing dataset?
+**Checks outcome 2:** Choose caching, load balancing, and data partitioning approaches for a given load pattern.
+
+A) To make CAP irrelevant  
+B) To keep each node’s data and query load within capacity  
+C) Because load balancers cannot distribute connections  
+D) To avoid writing indexes forever  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-B) Caching, load balancing, and data partitions (60 min)  
-C) Queues, streams, and asynchronous workflows (55 min)  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 5: CAP “partition tolerance” in practice means…
+**Checks outcome 3:** Apply CAP/consistency tradeoffs to pick a consistency model for a use case.
+
+A) You never need retries  
+B) The system keeps operating despite network splits between nodes  
+C) All writes are free  
+D) Caches never expire  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Queues, streams, and asynchronous workflows (55 min)  
-B) Run the module tests and confirm they pass.  
-C) Shipping without an automated test run in CI.  
-D) Sketch architecture with data flow and failure points.  
+### Question 6: A bank ledger needs strong correctness across accounts. Prefer…
+**Checks outcome 3:** Apply CAP/consistency tradeoffs to pick a consistency model for a use case.
+
+A) Eventual consistency with no conflict handling  
+B) Strong consistency (or ACID transactions) for money movement  
+C) Best-effort UDP without acks  
+D) Client-side-only validation  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **System Design Foundations**.  
-B) Ship changes without documentation.  
-C) Caching, load balancing, and data partitions (60 min)  
-D) Ignore error handling for edge cases.  
+### Question 7: When are queues/streams a better fit than sync request/response?
+**Checks outcome 4:** Design async workflows with queues or streams when synchronous request paths are insufficient.
+
+A) For every static CSS file  
+B) When work is bursty, long-running, or must fan out asynchronously  
+C) When you want to avoid all observability  
+D) When CAP says consistency is free  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Skipping input validation and assuming “happy path”.  
-B) Requirements → constraints → estimates (60 min)  
-C) Explain the core concepts and tradeoffs for **System Design Foundations**.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+### Question 8: A stream consumer crashes mid-batch. What design concern appears?
+**Checks outcome 4:** Design async workflows with queues or streams when synchronous request paths are insufficient.
+
+A) Only CSS theming  
+B) At-least-once delivery and idempotent processing  
+C) Whether OpenAPI fonts are pretty  
+D) Deleting the partition key forever  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Jump to the next module without verifying results.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Reason about scalability, data, and tradeoffs under constraints.  
-D) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
+### Question 9: A load balancer’s primary job is to…
+**Checks outcome 2:** Choose caching, load balancing, and data partitioning approaches for a given load pattern.
+
+A) Encrypt backups by itself  
+B) Distribute traffic across healthy instances  
+C) Replace the database schema  
+D) Write ADRs automatically  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Making performance claims without measurements.  
-B) Review the module goals and plan how you will translate requirements into scalable design.  
-C) Reason about scalability, data, and tradeoffs under constraints.  
-D) Run: `node index.js`  
+### Question 10: Which constraint most changes a chatty mobile API design?
+**Checks outcome 1:** Turn vague product goals into requirements, constraints, and rough capacity estimates.
+
+A) The office snack budget  
+B) Bandwidth, battery, and high latency on poor networks  
+C) Whether CI uses matrices  
+D) The number of README badges  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

@@ -1,77 +1,79 @@
 # Optimization and Safety (Advanced) Quiz Answers
 
-## Question 1: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
+## Question 1: Cutting tokens by removing safety instructions is…
+**Answer: B** — Unsafe — keep required policy checks even under budget pressure
 
-**Explanation:** This item appears in the verification checklist.
+**Outcome 1:** Budget cost and latency without sacrificing required safety checks.
 
----
-
-## Question 2: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** Do not optimize away safety.
 
 ---
 
-## Question 3: Which verification step is required before moving on?
-**Answer: C** - Verify the primary feature works with normal and edge-case inputs.
+## Question 2: A cost plan should state…
+**Answer: B** — Budgets, enforcement, and what quality/safety must not regress
 
-**Explanation:** This item appears in the verification checklist.
+**Outcome 1:** Budget cost and latency without sacrificing required safety checks.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: C** - Update the README with setup, run, and test commands.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Budgets need hard constraints and non-negotiables.
 
 ---
 
-## Question 5: Which action is listed as part of the guided walkthrough?
-**Answer: C** - Review the module goals and plan how you will balance optimization with safety constraints.
+## Question 3: Caching model outputs is inappropriate when…
+**Answer: B** — Outputs are user-specific/sensitive or must reflect fresh private data
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 2:** Apply caching/reuse only when correctness and privacy allow.
 
----
-
-## Question 6: Which step appears in the guided walkthrough?
-**Answer: B** - Identify the primary optimization goal (cost, latency, accuracy).
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** Privacy and freshness gate caching.
 
 ---
 
-## Question 7: Which action is listed as part of the guided walkthrough?
-**Answer: B** - List safety constraints that must not be violated.
+## Question 4: Reuse strategies should document…
+**Answer: B** — Cache keys, invalidation, and sensitivity rules
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 2:** Apply caching/reuse only when correctness and privacy allow.
 
----
-
-## Question 8: Which step appears in the guided walkthrough?
-**Answer: C** - Run a before/after comparison and document tradeoffs.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** Operationalize safe reuse.
 
 ---
 
-## Question 9: Which action is listed as part of the guided walkthrough?
-**Answer: A** - Document decisions in a short README section (assumptions, tradeoffs, next steps).
+## Question 5: Performance work without safety evals risks…
+**Answer: B** — Faster, cheaper, more dangerous systems
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Plan safety evaluations and red-teaming alongside performance work.
+
+**Explanation:** Optimize with red-team gates.
 
 ---
 
-## Question 10: Which practice best supports reliable delivery?
-**Answer: D** - Ship changes without documentation.
+## Question 6: A safety assessment summary for optimization should include…
+**Answer: B** — What was changed, residual risks, and eval evidence
 
-**Explanation:** This reinforces the professional workflow expected in the module.
+**Outcome 3:** Plan safety evaluations and red-teaming alongside performance work.
+
+**Explanation:** Evidence that safety still holds.
+
+---
+
+## Question 7: Latency wins that increase jailbreak success should…
+**Answer: B** — Be rejected or redesigned until safety gates pass
+
+**Outcome 1:** Budget cost and latency without sacrificing required safety checks.
+
+**Explanation:** Safety is a release constraint.
+
+---
+
+## Question 8: Shared caches across tenants without isolation…
+**Answer: B** — Risk cross-tenant data leakage
+
+**Outcome 2:** Apply caching/reuse only when correctness and privacy allow.
+
+**Explanation:** Isolation is a caching safety rule.
 
 ---
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8/8 correct:** Excellent! You are ready to move on.
+- **6-7 correct:** Great work — review the missed outcomes.
+- **0-5 correct:** Revisit the module lessons, then try again.

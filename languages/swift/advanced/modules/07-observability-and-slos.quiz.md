@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Review the module goals and plan how you will monitor, alert, and set service objectives.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Document decisions and constraints clearly for reviewers.  
+### Question 1: An SLI is…
+**Checks outcome 1:** Define SLIs/SLOs and manage error budgets for a service.
+
+A) A motivational poster  
+B) A quantitative measure of user-visible reliability (e.g., success rate)  
+C) A CSS variable  
+D) A git branch name  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Update the README with setup, run, and test commands.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Skip testing and trust the first result.  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 2: An error budget is…
+**Checks outcome 1:** Define SLIs/SLOs and manage error budgets for a service.
+
+A) Unlimited downtime as a treat  
+B) Allowed unreliability derived from the SLO before you must slow feature work  
+C) A caching TTL  
+D) A threat model section  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Making performance claims without measurements.  
-C) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 3: RED metrics stand for…
+**Checks outcome 2:** Apply RED/USE metrics while avoiding high-cardinality label explosions.
+
+A) Redact, Encrypt, Delete  
+B) Rate, Errors, Duration  
+C) Retry, Evict, Drop  
+D) Read, Edit, Deploy  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Review the module goals and plan how you will monitor, alert, and set service objectives.  
-B) Jump to the next module without verifying results.  
-C) Run the module tests and confirm they pass.  
-D) Treat every request as safe without review.  
+### Question 4: High-cardinality labels (user_id on every metric) typically cause…
+**Checks outcome 2:** Apply RED/USE metrics while avoiding high-cardinality label explosions.
+
+A) Cheaper metrics forever  
+B) Metric store explosion and useless dashboards  
+C) Stronger consistency  
+D) Free tracing  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Run: `swift main.swift`  
-B) Jump to the next module without verifying results.  
-C) All work must be covered by **build + tests + lint/format in CI**.  
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 5: Trace context propagation lets you…
+**Checks outcome 3:** Propagate trace context across services to diagnose latency.
+
+A) See one request across service spans  
+B) Delete logs forever  
+C) Skip SLOs  
+D) Avoid timeouts  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Shipping without an automated test run in CI.  
-C) Run: `swift main.swift`  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 6: A span without parent linkage in a deep call chain usually means…
+**Checks outcome 3:** Propagate trace context across services to diagnose latency.
+
+A) Perfect observability  
+B) Broken context propagation at a boundary  
+C) CAP solved  
+D) Idempotency keys are wrong  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Skipping input validation and assuming “happy path”.  
-C) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 7: A good alert is…
+**Checks outcome 4:** Design alerts that are actionable and kind to on-call.
+
+A) Triggered by every DEBUG log line  
+B) Tied to user impact / SLO burn and actionable for humans  
+C) Emailed hourly with no owner  
+D) Only a Slack emoji  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Treat every request as safe without review.  
-B) SLIs/SLOs and error budgets (45 min)  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Shipping without an automated test run in CI.  
+### Question 8: Pager fatigue usually comes from…
+**Checks outcome 4:** Design alerts that are actionable and kind to on-call.
+
+A) Too few actionable alerts  
+B) Noisy, non-actionable alerts that train people to ignore pages  
+C) Perfect SLOs  
+D) Too much tracing context  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Create a short write-up: what changed, why, and how you verified it.  
-B) Use tooling to keep quality high: SwiftFormat + SwiftLint.  
-C) All work must be covered by **build + tests + lint/format in CI**.  
-D) Copy the starter pack from `languages/swift/advanced/starter-pack` into a new working folder.  
+### Question 9: Burning the error budget quickly should trigger…
+**Checks outcome 1:** Define SLIs/SLOs and manage error budgets for a service.
+
+A) Ignoring reliability work  
+B) Prioritizing reliability fixes over risky feature launches  
+C) Deleting SLIs  
+D) Disabling canaries forever  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Add logs/metrics for visibility.  
-B) Making performance claims without measurements.  
-C) Instrument systems and run them with SLO-based operations.  
-D) Run: `swift main.swift`  
+### Question 10: USE metrics focus on…
+**Checks outcome 2:** Apply RED/USE metrics while avoiding high-cardinality label explosions.
+
+A) Utilization, Saturation, Errors for resources  
+B) Only user-facing request rates  
+C) Unrelated marketing KPIs  
+D) Git blame  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

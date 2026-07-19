@@ -8,11 +8,11 @@ Run evaluations reliably at scale: datasets, sampling, automation, and CI gating
 - JSON extraction (schema + rule-based checks as scalable evals)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Design batch eval runners with retries, budgets, and reproducibility.
+- Detect quality drift with stratified sampling and cadence.
+- Define stop-the-line criteria for regressions.
+- Run privacy-safe shadow evaluation on live traffic.
+- Operate human labeling with calibration across raters.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

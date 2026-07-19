@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) All work must be covered by **build + tests + lint/format in CI**.  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Ship changes without documentation.  
+### Question 1: What is the best first step when a bug is reported?
+**Checks outcome 1:** Follow a reproduce → isolate → fix debugging workflow with evidence.
+
+A) Rewrite the whole app  
+B) Reproduce it reliably with clear steps/inputs  
+C) Delete logs so they stay clean  
+D) Optimize unrelated code  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) All work must be covered by **build + tests + lint/format in CI**.  
-C) Write tests that prove correctness and prevent regressions.  
-D) Debugging workflow: reproduce → isolate → fix (35 min)  
+### Question 2: After reproducing, what comes next in a solid workflow?
+**Checks outcome 1:** Follow a reproduce → isolate → fix debugging workflow with evidence.
+
+A) Ship a random change  
+B) Isolate the failing component/layer, then fix with a regression test  
+C) Turn off monitoring  
+D) Blame the reporter  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Debug systematically and improve performance with evidence.  
+### Question 3: Which log practice helps production debugging most?
+**Checks outcome 2:** Use logging and basic tracing to locate failures in running systems.
+
+A) Logging secrets and full card numbers  
+B) Structured logs with request IDs and actionable context (no secrets)  
+C) Printing nothing ever  
+D) Only logging on the developer laptop  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Avoid measuring results or performance.  
-B) Run the module tests and confirm they pass.  
-C) Treat every request as safe without review.  
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 4: Why profile before micro-optimizing random functions?
+**Checks outcome 3:** Profile CPU and memory to find real hotspots before optimizing.
+
+A) Profiling is slower than guessing wrong forever  
+B) Evidence shows where time/memory actually go — intuition is often wrong  
+C) Profilers delete bugs automatically  
+D) Benchmarks are forbidden by the language  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) All work must be covered by **build + tests + lint/format in CI**.  
+### Question 5: A memory profile shows unbounded growth on each request. Likely class of issue?
+**Checks outcome 3:** Profile CPU and memory to find real hotspots before optimizing.
+
+A) A leak / unbounded cache / retaining references  
+B) Perfect GC behavior  
+C) Too many useful indexes  
+D) Commit messages that are too clear  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) All work must be covered by **build + tests + lint/format in CI**.  
-B) Document decisions and constraints clearly for reviewers.  
-C) Shipping without an automated test run in CI.  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 6: An endpoint is slow and DB time dominates. What should you inspect?
+**Checks outcome 4:** Improve database performance using slow-query analysis and indexes.
+
+A) Only the favicon  
+B) Slow queries and whether indexes/plans match the filters  
+C) The office thermostat  
+D) Whether the README mentions SQL comments  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Explain the core concepts and tradeoffs for **Debugging and Performance**.  
-C) Database performance: slow queries + indexes (45 min)  
-D) Use a profiler or debug tool to identify the bottleneck.  
+### Question 7: Tracing across services primarily helps you…
+**Checks outcome 2:** Use logging and basic tracing to locate failures in running systems.
+
+A) See a request's path/latency across components  
+B) Replace unit tests  
+C) Avoid writing logs forever  
+D) Encrypt disks by itself  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Debugging workflow: reproduce → isolate → fix (35 min)  
-B) Copy the starter pack from `languages/swift/intermediate/starter-pack` into a new working folder.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
+### Question 8: Why add a regression test after fixing a bug?
+**Checks outcome 1:** Follow a reproduce → isolate → fix debugging workflow with evidence.
+
+A) To guarantee the same bug can return unnoticed  
+B) To lock the fixed behavior so it cannot silently break again  
+C) Because CI requires failing tests  
+D) To increase flakiness  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Skipping input validation and assuming “happy path”.  
-C) Copy the starter pack from `languages/swift/intermediate/starter-pack` into a new working folder.  
-D) Shipping without an automated test run in CI.  
+### Question 9: Adding an index on every column “just in case” is often bad because…
+**Checks outcome 4:** Improve database performance using slow-query analysis and indexes.
+
+A) Indexes are free  
+B) Extra indexes slow writes and may never help reads  
+C) SQL forbids more than one index  
+D) Query plans ignore indexes always  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Document decisions and constraints clearly for reviewers.  
-B) Run the module tests and confirm they pass.  
-C) Debug systematically and improve performance with evidence.  
-D) Skip testing and trust the first result.  
+### Question 10: A micro-benchmark says a function is 2% faster, but users still wait 5s. What next?
+**Checks outcome 3:** Profile CPU and memory to find real hotspots before optimizing.
+
+A) Stop measuring  
+B) Profile the end-to-end path — the hotspot may be elsewhere (often I/O/DB)  
+C) Optimize the function another 50 times blindly  
+D) Disable logging of latency  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

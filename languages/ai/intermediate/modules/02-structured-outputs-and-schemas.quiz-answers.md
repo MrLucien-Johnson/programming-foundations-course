@@ -1,77 +1,97 @@
 # AI — Module 02: Structured Outputs and Schemas Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: B** - Design a schema for customer support tickets (category, summary, urgency, actions).
+## Question 1: A ticket schema should define…
+**Answer: B** — Fields like category, summary, urgency, actions — with types
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Design schemas for task outputs with required and optional fields.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: D** - Add a repair prompt that fixes invalid JSON without adding new information.
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Schemas encode the product contract.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Add a “strict mode” validator and a fallback response when validation fails.
+## Question 2: Optional vs required fields matter because…
+**Answer: B** — They change pass/fail and missing-data behavior
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Design schemas for task outputs with required and optional fields.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Requirements drive validation.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: A** - Automated validation against schema; repair attempts are capped.
+## Question 3: Measuring JSON validity + required-field completeness tells you…
+**Answer: B** — Structural quality of structured outputs
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Validate outputs and measure validity/completeness on a dataset.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: C** - Schemas that don't match real inputs.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** These are core structured-output metrics.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Translate a vague request into a clear goal, constraints, and success criteria.
+## Question 4: A 30-case dataset is useful to…
+**Answer: B** — Estimate validity rates beyond anecdotes
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 2:** Validate outputs and measure validity/completeness on a dataset.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: D** - Define schemas: required fields, types, and constraints (45 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Sample size beats one lucky example.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: D** - Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
+## Question 5: Repair must not…
+**Answer: B** — Invent missing business facts to satisfy the schema
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Add capped repair passes that fix structure without new facts.
+
+**Explanation:** Repair is structural, not creative.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: D** - Make outputs machine-consumable: JSON schemas, strict formatting, validation, and repair loops.
+## Question 6: Capping repair attempts prevents…
+**Answer: B** — Unbounded cost loops on hopeless outputs
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 3:** Add capped repair passes that fix structure without new facts.
+
+**Explanation:** Budgets apply to repair too.
+
+---
+
+## Question 7: Schema versioning helps when…
+**Answer: B** — Producers/consumers evolve without silent breakages
+
+**Outcome 4:** Version schemas and plan migrations for breaking changes.
+
+**Explanation:** Versions + migrations keep contracts coherent.
+
+---
+
+## Question 8: A breaking field rename should include…
+**Answer: B** — A migration plan and dual-read period if needed
+
+**Outcome 4:** Version schemas and plan migrations for breaking changes.
+
+**Explanation:** Treat schema breaks like API breaks.
+
+---
+
+## Question 9: Strict mode fails validation — best response?
+**Answer: B** — Fallback: error, abstain, or safe partial per policy
+
+**Outcome 5:** Fail closed with a fallback when strict validation fails.
+
+**Explanation:** Fail closed with an explicit fallback.
+
+---
+
+## Question 10: Red-team “extra fields / injected instructions” tests…
+**Answer: B** — Whether validators and prompts reject schema abuse
+
+**Outcome 5:** Fail closed with a fallback when strict validation fails.
+
+**Explanation:** Structured outputs need adversarial coverage too.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

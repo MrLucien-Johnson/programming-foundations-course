@@ -6,11 +6,11 @@ Design schemas, write queries, and ship migrations safely.
 This module uses **Python 3.12+**, **venv + pip (or uv/poetry)**, and **pytest**. When applicable, you’ll build or extend a small service using **FastAPI (or Flask) for REST APIs** and **PostgreSQL + migrations (Alembic)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Databases**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ruff + black (or ruff format).
-- Document decisions and constraints clearly for reviewers.
+- Design schemas with constraints that protect data integrity.
+- Write forward/backwards-safe migrations and apply them carefully.
+- Use transactions and reason about basic isolation needs.
+- Choose indexes and read query plans to fix slow queries.
+- Avoid common ORM/query-builder pitfalls (N+1, lazy loads, unbounded queries).
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Python**.

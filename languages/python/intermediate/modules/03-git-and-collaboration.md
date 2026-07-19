@@ -6,11 +6,10 @@ Collaborate safely using branching, PRs, and reviews.
 This module uses **Python 3.12+**, **venv + pip (or uv/poetry)**, and **pytest**. When applicable, you’ll build or extend a small service using **FastAPI (or Flask) for REST APIs** and **PostgreSQL + migrations (Alembic)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Git and Collaboration**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ruff + black (or ruff format).
-- Document decisions and constraints clearly for reviewers.
+- Use a clear branching strategy and write commits that explain why a change happened.
+- Open and review pull requests using a practical checklist and actionable feedback.
+- Resolve merge conflicts and rebase safely without rewriting shared history carelessly.
+- Diagnose CI failures from logs and fix the underlying issue before merging.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Python**.

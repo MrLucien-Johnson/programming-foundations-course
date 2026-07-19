@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Review the module goals and plan how you will work in branches, reviews, and clean history.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 1: Which commit message is more useful in review history?
+**Checks outcome 1:** Use a clear branching strategy and write commits that explain why a change happened.
+
+A) `fix`  
+B) `asdf`  
+C) `Validate email before creating user to prevent duplicate accounts`  
+D) `Update file`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Create a feature branch, commit in small increments, and open a PR description.  
-C) Collaborate safely using branching, PRs, and reviews.  
-D) Write tests that prove correctness and prevent regressions.  
+### Question 2: You are starting a feature on a shared repo using short-lived feature branches. Where should the work begin?
+**Checks outcome 1:** Use a clear branching strategy and write commits that explain why a change happened.
+
+A) Commit directly to `main` with no review  
+B) A feature branch off an up-to-date `main`  
+C) A random orphan branch with no base  
+D) Rewriting `main` history on every save  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Skipping input validation and assuming “happy path”.  
-B) Copy the starter pack from `languages/typescript/intermediate/starter-pack` into a new working folder.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 3: What belongs on a PR review checklist?
+**Checks outcome 2:** Open and review pull requests using a practical checklist and actionable feedback.
+
+A) Only whether the author used dark mode  
+B) Correctness, tests, risk, and clarity of the change  
+C) Rejecting any change that touches more than one file  
+D) Approving without reading if CI is green  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Avoid measuring results or performance.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Ship changes without documentation.  
-D) Run the module tests and confirm they pass.  
+### Question 4: Which review comment is more actionable?
+**Checks outcome 2:** Open and review pull requests using a practical checklist and actionable feedback.
+
+A) `This is bad.`  
+B) `Please fix.`  
+C) `Can we extract the retry loop into a helper and add a test for the timeout path?`  
+D) `👀`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Use tooling to keep quality high: ESLint + Prettier.  
-B) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-C) Collaborate safely using branching, PRs, and reviews.  
-D) Avoid measuring results or performance.  
+### Question 5: You and a teammate both edited the same lines. Git stops with a conflict. What do you do?
+**Checks outcome 3:** Resolve merge conflicts and rebase safely without rewriting shared history carelessly.
+
+A) Delete the repository  
+B) Resolve the conflicting hunks, test, then continue the merge/rebase  
+C) Force-push without looking  
+D) Ignore the conflict markers and commit them as-is  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Shipping without an automated test run in CI.  
-B) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-D) Branching strategies + commit hygiene (50 min)  
+### Question 6: When is rewriting history with rebase riskiest?
+**Checks outcome 3:** Resolve merge conflicts and rebase safely without rewriting shared history carelessly.
+
+A) On a local branch only you use  
+B) On a shared branch others already pulled  
+C) Before the first commit exists  
+D) On a scratch file outside git  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Skipping input validation and assuming “happy path”.  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Ignore error handling for edge cases.  
-D) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
+### Question 7: CI fails on your PR. Best next step?
+**Checks outcome 4:** Diagnose CI failures from logs and fix the underlying issue before merging.
+
+A) Merge anyway and hope  
+B) Open the failing job logs, reproduce locally if possible, fix, and push  
+C) Disable the workflow permanently  
+D) Blame the linter and skip review  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Branching strategies + commit hygiene (50 min)  
-B) Skipping input validation and assuming “happy path”.  
-C) Avoid measuring results or performance.  
-D) Review the module goals and plan how you will work in branches, reviews, and clean history.  
+### Question 8: A CI job fails with a flaky timeout only sometimes. What is a professional response?
+**Checks outcome 4:** Diagnose CI failures from logs and fix the underlying issue before merging.
+
+A) Ignore flakes forever  
+B) Stabilize the test (determinism/timeouts/isolation) or quarantine with a tracked fix  
+C) Delete all tests  
+D) Only run CI on Fridays  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Ship changes without documentation.  
-D) Copy the starter pack from `languages/typescript/intermediate/starter-pack` into a new working folder.  
+### Question 9: Why keep commits focused (one logical change) when collaborating?
+**Checks outcome 1:** Use a clear branching strategy and write commits that explain why a change happened.
+
+A) Git requires exactly one file per commit  
+B) Reviewers can understand, revert, and bisect more easily  
+C) It makes CI slower on purpose  
+D) It hides the real diff  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Avoid measuring results or performance.  
-B) Collaborate safely using branching, PRs, and reviews.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Making performance claims without measurements.  
+### Question 10: A PR description should mainly help reviewers by…
+**Checks outcome 2:** Open and review pull requests using a practical checklist and actionable feedback.
+
+A) Listing every keystroke  
+B) Explaining intent, risk, test plan, and how to verify  
+C) Pasting unrelated stack traces only  
+D) Omitting context so review is a puzzle  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

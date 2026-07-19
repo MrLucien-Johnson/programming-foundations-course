@@ -6,11 +6,11 @@ Use data structures and algorithms pragmatically in real applications.
 This module uses **Go 1.22+**, **go mod**, and **testing + httptest**. When applicable, you’ll build or extend a small service using **net/http (or chi/gin) REST** and **PostgreSQL + migrations (goose) + database/sql (or sqlc)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **DSA (Practical)**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: gofmt + golangci-lint.
-- Document decisions and constraints clearly for reviewers.
+- Choose list vs dict vs set for a given access pattern and justify the Big-O tradeoff.
+- Apply stack/queue and BFS/DFS mental models to a small graph or tree-style problem.
+- Decide when the language's built-in sort/search is enough versus writing a custom approach.
+- Apply memoization or an LRU cache when recomputation is the bottleneck.
+- Measure a change with a micro-benchmark and explain when profiling is the better tool.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Go**.

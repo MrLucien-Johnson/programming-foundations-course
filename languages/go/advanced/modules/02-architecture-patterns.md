@@ -6,11 +6,10 @@ Apply architectural patterns to keep systems evolvable.
 This module uses **Go 1.22+**, **go mod**, and **testing + httptest**. When applicable, you’ll build or extend a small service using **net/http (or chi/gin) REST** and **PostgreSQL + migrations (goose) + database/sql (or sqlc)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Architecture Patterns**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: gofmt + golangci-lint.
-- Document decisions and constraints clearly for reviewers.
+- Compare layered, hexagonal, and clean architecture and place dependencies correctly.
+- Model domain concepts with entities, value objects, and aggregates.
+- Design event-driven flows and sagas for multi-step business processes.
+- Decide when CQRS helps — and when it adds unjustified complexity.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Go**.

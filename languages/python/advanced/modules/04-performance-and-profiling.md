@@ -6,11 +6,10 @@ Profile, measure, and optimize across app + database + network.
 This module uses **Python 3.12+**, **venv + pip (or uv/poetry)**, and **pytest**. When applicable, you’ll build or extend a small service using **FastAPI (or Flask) for REST APIs** and **PostgreSQL + migrations (Alembic)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Performance and Profiling**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ruff + black (or ruff format).
-- Document decisions and constraints clearly for reviewers.
+- Establish performance baselines before changing code.
+- Run load tests and locate bottlenecks with evidence.
+- Tune databases using indexes, query plans, and lock analysis.
+- Choose cache invalidation strategies that match correctness needs.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Python**.

@@ -1,77 +1,97 @@
 # AI — Module 07: Data Governance and Privacy Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: C** - Create a data handling policy for your app: what is stored, for how long, and why.
+## Question 1: A data handling policy should answer…
+**Answer: B** — What is stored, purpose, retention, and who can access
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Write data-handling policies for what is stored, why, and how long.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: A** - Add access-control-aware retrieval and test “no leakage” scenarios.
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Concrete policy beats slogans.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Design audit queries/reports (who accessed what, when, and for what purpose).
+## Question 2: Purpose limitation means…
+**Answer: B** — Use collected data only for stated purposes
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Write data-handling policies for what is stored, why, and how long.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: A** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Purpose binds processing.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: B** - Tests include “data should not appear” negative cases.
+## Question 3: Redaction tests should include…
+**Answer: B** — Samples where PII must not appear in outputs/logs
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Implement and test PII redaction on inputs/outputs.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: D** - Logging raw prompts/outputs indefinitely.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Negative cases prove redaction.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: A** - Translate a vague request into a clear goal, constraints, and success criteria.
+## Question 4: Redacting in the UI but logging raw text…
+**Answer: B** — Leaves a major leak channel
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 2:** Implement and test PII redaction on inputs/outputs.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: A** - Data classification and minimization (45 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Protect all channels.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: C** - Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+## Question 5: No-leakage tests for RAG verify…
+**Answer: B** — Unauthorized docs never appear in context/answers
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Enforce permission-aware retrieval and no-leakage tests.
+
+**Explanation:** AuthZ belongs in retrieval tests.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: A** - Handle data responsibly: minimization, retention, access control, consent, and auditability.
+## Question 6: Permission metadata on chunks enables…
+**Answer: B** — Filtering retrieval by caller rights
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 3:** Enforce permission-aware retrieval and no-leakage tests.
+
+**Explanation:** Metadata drives ACL filters.
+
+---
+
+## Question 7: Safe logging schemas typically store…
+**Answer: B** — IDs, categories, hashes/redacted snippets — not raw secrets
+
+**Outcome 4:** Design safe logging schemas that avoid raw sensitive text.
+
+**Explanation:** Minimize sensitive telemetry.
+
+---
+
+## Question 8: Audit queries (“who accessed what”) support…
+**Answer: B** — Accountability and incident investigation
+
+**Outcome 4:** Design safe logging schemas that avoid raw sensitive text.
+
+**Explanation:** Governance needs auditability.
+
+---
+
+## Question 9: Privacy review in releases catches…
+**Answer: B** — New data flows that expand retention or exposure
+
+**Outcome 5:** Add privacy review checklists to release process.
+
+**Explanation:** Ship checks for data risk.
+
+---
+
+## Question 10: “Data should not appear” negative tests are critical because…
+**Answer: A** — Absence is hard to notice without assertions
+
+**Outcome 5:** Add privacy review checklists to release process.
+
+**Explanation:** Assert non-presence explicitly.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

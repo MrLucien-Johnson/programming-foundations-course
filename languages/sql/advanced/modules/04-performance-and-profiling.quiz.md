@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Load testing + bottleneck identification (45 min)  
-C) Run the module tests and confirm they pass.  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 1: Why capture a baseline before optimizing?
+**Checks outcome 1:** Establish performance baselines before changing code.
+
+A) So you can claim victory without numbers  
+B) To know whether a change actually improved latency/throughput  
+C) Baselines are illegal in production  
+D) To avoid writing tests  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Profile or trace to find hotspots.  
-C) Treat every request as safe without review.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 2: A good baseline includes…
+**Checks outcome 1:** Establish performance baselines before changing code.
+
+A) Only vibes from code review  
+B) Workload definition plus measured latency/error/resource metrics  
+C) A single untimed run on a laptop during a meeting  
+D) Disabling monitoring  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Making performance claims without measurements.  
+### Question 3: Load testing primarily answers…
+**Checks outcome 2:** Run load tests and locate bottlenecks with evidence.
+
+A) Whether the logo is centered  
+B) How the system behaves under target/peak concurrency and data size  
+C) Whether CAP is solved  
+D) Whether commits explain why  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Profile or trace to find hotspots.  
-B) Skip testing and trust the first result.  
-C) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-D) Run the module tests and confirm they pass.  
+### Question 4: CPU is idle but latency is high. Likely bottleneck class?
+**Checks outcome 2:** Run load tests and locate bottlenecks with evidence.
+
+A) Always the sorting algorithm  
+B) I/O waits, locks, or external dependencies  
+C) Too many unit tests  
+D) Missing README badges  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Shipping without an automated test run in CI.  
-B) DB tuning: indexes, plans, and lock contention (45 min)  
-C) Run the module tests and confirm they pass.  
-D) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
+### Question 5: A slow filter on `user_id` with sequential scans suggests…
+**Checks outcome 3:** Tune databases using indexes, query plans, and lock analysis.
+
+A) Deleting the WHERE clause  
+B) Adding/using an appropriate index and verifying the plan  
+C) Buying a new laptop only  
+D) Caching the entire internet  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Ignore error handling for edge cases.  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Update the README with setup, run, and test commands.  
-D) Shipping without an automated test run in CI.  
+### Question 6: Lock contention shows up as…
+**Checks outcome 3:** Tune databases using indexes, query plans, and lock analysis.
+
+A) Faster writes always  
+B) Sessions waiting on locks held by other transactions  
+C) Free consistency  
+D) Lower cardinality metrics  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Performance and Profiling**.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) DB tuning: indexes, plans, and lock contention (45 min)  
-D) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
+### Question 7: Cache-aside with TTL mainly risks…
+**Checks outcome 4:** Choose cache invalidation strategies that match correctness needs.
+
+A) Serving stale data until TTL/invalidation  
+B) Never needing a database  
+C) Guaranteed linearizability  
+D) Automatic threat models  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.  
-B) Profiling methodology and baselines (40 min)  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Avoid measuring results or performance.  
+### Question 8: Write-through caching means…
+**Checks outcome 4:** Choose cache invalidation strategies that match correctness needs.
+
+A) Writes update cache and store together (sync path)  
+B) Never writing to the store  
+C) Only invalidating on Fridays  
+D) Deleting keys randomly for fun  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Avoid measuring results or performance.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Copy the starter pack from `languages/sql/advanced/starter-pack` into a new working folder.  
+### Question 9: You found a hotspot function via profiler. Next step?
+**Checks outcome 2:** Run load tests and locate bottlenecks with evidence.
+
+A) Rewrite the whole monorepo  
+B) Optimize that hotspot and re-measure against the baseline  
+C) Disable the profiler forever  
+D) Add random sleeps  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Profile, measure, and optimize across app + database + network.  
-D) Document decisions and constraints clearly for reviewers.  
+### Question 10: Micro-optimizing before profiling is risky because…
+**Checks outcome 1:** Establish performance baselines before changing code.
+
+A) Profilers always lie  
+B) You may optimize the wrong place while the real hotspot remains  
+C) Baselines forbid improvements  
+D) Load tests are illegal  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

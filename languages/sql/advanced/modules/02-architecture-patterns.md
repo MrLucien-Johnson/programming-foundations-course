@@ -6,11 +6,10 @@ Apply architectural patterns to keep systems evolvable.
 This module uses **PostgreSQL 15+ (local via Docker)**, **psql + migrations tool (Sqitch/Flyway/Liquibase) + SQL formatter (sqlfluff)**, and **pgTAP (or migration + query validation scripts)**. When applicable, you’ll build or extend a small service using **Interface layer via views/functions + (optional) PostgREST** and **PostgreSQL schemas, roles, RLS, indexes, EXPLAIN**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Architecture Patterns**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.
-- Document decisions and constraints clearly for reviewers.
+- Compare layered, hexagonal, and clean architecture and place dependencies correctly.
+- Model domain concepts with entities, value objects, and aggregates.
+- Design event-driven flows and sagas for multi-step business processes.
+- Decide when CQRS helps — and when it adds unjustified complexity.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **SQL (PostgreSQL)**.

@@ -6,11 +6,10 @@ Containerize, configure, and deploy with automated CI checks.
 This module uses **JDK 21 + Kotlin**, **Gradle**, and **JUnit 5 + MockK**. When applicable, you’ll build or extend a small service using **Ktor (or Spring Boot) REST** and **PostgreSQL + migrations (Flyway) + Exposed (or JDBC)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Deployment and CI**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ktlint + detekt.
-- Document decisions and constraints clearly for reviewers.
+- Separate environments and configuration (dev/stage/prod) without baking secrets into images.
+- Use containers to make local and CI environments reproducible.
+- Design CI pipelines with caching, matrices, and artifacts where they help.
+- Deploy with health checks, safe migrations, and a rollback plan.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Kotlin**.

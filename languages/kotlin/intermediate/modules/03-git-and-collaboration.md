@@ -6,11 +6,10 @@ Collaborate safely using branching, PRs, and reviews.
 This module uses **JDK 21 + Kotlin**, **Gradle**, and **JUnit 5 + MockK**. When applicable, you’ll build or extend a small service using **Ktor (or Spring Boot) REST** and **PostgreSQL + migrations (Flyway) + Exposed (or JDBC)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Git and Collaboration**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ktlint + detekt.
-- Document decisions and constraints clearly for reviewers.
+- Use a clear branching strategy and write commits that explain why a change happened.
+- Open and review pull requests using a practical checklist and actionable feedback.
+- Resolve merge conflicts and rebase safely without rewriting shared history carelessly.
+- Diagnose CI failures from logs and fix the underlying issue before merging.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Kotlin**.

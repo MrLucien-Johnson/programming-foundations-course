@@ -8,11 +8,11 @@ Understand what LLMs are good at, what they’re bad at, and how to frame AI wor
 - Meeting notes → action items (notes → owners + deadlines)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Translate a vague request into goal, constraints, and success criteria.
+- Write a one-page task spec with inputs, outputs, and failure modes.
+- Build a small eval set covering good, bad, and ambiguous cases.
+- Add grounding/fallback rules and measure their effect on failures.
+- Version prompt/spec changes with an iteration log.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

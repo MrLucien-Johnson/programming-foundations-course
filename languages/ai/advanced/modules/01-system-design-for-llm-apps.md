@@ -8,11 +8,11 @@ Design end-to-end LLM application architectures: data flows, boundaries, scaling
 - Agent workflow for multi-step task (bounded loops + tool isolation)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Draw architecture and data flow for an LLM feature including failure modes.
+- Plan scaling with caches, queues, and backpressure for model/tool workloads.
+- Define latency/quality SLOs and error budgets for the feature.
+- Design prompt/schema migrations with backward compatibility.
+- Apply privacy-by-design (minimization, retention, access control).
 
 ## Prerequisites
 - Comfort writing clear, structured English.

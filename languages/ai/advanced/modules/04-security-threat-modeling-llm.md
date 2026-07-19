@@ -8,11 +8,11 @@ Threat model LLM applications: injection, data exfiltration, tool abuse, and sup
 - RAG Q&A over docs (permissions-aware retrieval)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Produce a threat model with mitigations for an LLM app.
+- Build red-team suites targeting top threats (injection, tool abuse).
+- Enforce least-privilege tool policies verified by tests.
+- Apply data minimization and retention to prompts/outputs.
+- Plan incident response and supply-chain controls for AI artifacts.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

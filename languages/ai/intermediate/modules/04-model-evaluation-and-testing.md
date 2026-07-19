@@ -8,11 +8,11 @@ Treat LLM work like software testing: datasets, baselines, regression tests, and
 - Data extraction into JSON (schema validation as a test)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Run a repeatable eval harness on a fixed case set.
+- Set pass/fail thresholds for schema and rubric scores.
+- Score adversarial cases separately from the main set.
+- Produce regression reports with change impact and rollback criteria.
+- Record cost and latency alongside quality metrics.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

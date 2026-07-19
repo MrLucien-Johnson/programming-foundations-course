@@ -6,11 +6,11 @@ Design and secure REST APIs with authentication and authorization.
 This module uses **JDK 21 + Kotlin**, **Gradle**, and **JUnit 5 + MockK**. When applicable, you’ll build or extend a small service using **Ktor (or Spring Boot) REST** and **PostgreSQL + migrations (Flyway) + Exposed (or JDBC)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **APIs and Auth**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ktlint + detekt.
-- Document decisions and constraints clearly for reviewers.
+- Design REST endpoints with clear resources, status codes, and pagination.
+- Validate input and return consistent error envelopes for clients.
+- Distinguish authentication from authorization and apply sessions/JWT/roles appropriately.
+- Add basic rate limiting / abuse protections to sensitive endpoints.
+- Document the API with OpenAPI (or equivalent) including examples.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Kotlin**.

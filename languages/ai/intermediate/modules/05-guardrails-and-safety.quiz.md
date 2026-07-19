@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Create a safety checklist for your chosen use case and apply it to 30 test cases.  
-B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
-C) Create a guardrail checklist for sensitive cases.  
-D) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
+### Question 1: Output controls in RAG should…
+**Checks outcome 1:** Enforce input/output controls including source-only and refusal rules.
+
+A) Allow answers without evidence  
+B) Require evidence or refuse/abstain  
+C) Strip all citations  
+D) Log raw secrets  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Trusting user content as instructions.  
-D) Design an escalation policy (route to human, block, or safe-complete).  
+### Question 2: Input controls typically…
+**Checks outcome 1:** Enforce input/output controls including source-only and refusal rules.
+
+A) Trust all user text as system policy  
+B) Detect/block injection and disallowed content before tools run  
+C) Disable AuthZ  
+D) Skip evals  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-B) Design a “safety gate” in CI: fail if safety tests regress.  
-C) Write red-team prompts to stress the system.  
-D) Safety testing: red-team sets and escalation paths (40 min)  
+### Question 3: Least-privilege tools mean…
+**Checks outcome 2:** Constrain tools with least privilege and verify via tests.
+
+A) Every agent can drop production tables  
+B) Only tools needed for the task are exposed, with arg limits  
+C) No tools ever  
+D) Tools without contracts  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Input controls: allowlists, redaction, and instruction boundaries (45 min)  
-C) Jump to the next module without verifying results.  
-D) Logging sensitive data without a retention/redaction plan.  
+### Question 4: Tests should try to make the agent…
+**Checks outcome 2:** Constrain tools with least privilege and verify via tests.
+
+A) Only summarize kindly  
+B) Call disallowed tools or exfiltrate secrets — and verify denial  
+C) Skip audit logs  
+D) Disable refusals  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Document and version changes so improvements are explainable.  
-B) Document mitigations for each failure.  
-C) Safety tests are part of your evaluation harness.  
-D) Review the module goals and plan how you will add guardrails and red-team coverage.  
+### Question 5: Red-team suites focus on…
+**Checks outcome 3:** Build red-team suites that target top abuse paths.
+
+A) Happy-path UX copy  
+B) Highest-impact abuse and bypass attempts  
+C) Font kerning  
+D) CDN purge times  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Ignore error handling for edge cases.  
-B) Trusting user content as instructions.  
-C) Implement practical guardrails: input validation, output constraints, injection defenses, and safe fallbacks.  
-D) Translate a vague request into a clear goal, constraints, and success criteria.  
+### Question 6: Prompt injection into tool args is dangerous because…
+**Checks outcome 3:** Build red-team suites that target top abuse paths.
+
+A) Args are never executed  
+B) It can trigger unintended side effects  
+C) It only affects CSS  
+D) It improves grounding  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Add prompt injection tests and verify proper refusal/containment.  
-B) Threats and harms: injection, data leakage, unsafe content (45 min)  
-C) Translate a vague request into a clear goal, constraints, and success criteria.  
-D) Safety testing: red-team sets and escalation paths (40 min)  
+### Question 7: A CI safety gate should…
+**Checks outcome 4:** Add safety gates in CI that fail on safety regressions.
+
+A) Be optional forever  
+B) Fail the build when safety evals regress beyond threshold  
+C) Only run on Fridays  
+D) Store production keys in artifacts  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Threats and harms: injection, data leakage, unsafe content (45 min)  
-B) Safety tests are part of your evaluation harness.  
-C) Add logging fields needed for audits (without storing sensitive content).  
-D) Document and version changes so improvements are explainable.  
+### Question 8: Safety tests belong in the harness so…
+**Checks outcome 4:** Add safety gates in CI that fail on safety regressions.
+
+A) They are forgotten  
+B) Every prompt change re-checks policy behavior  
+C) Latency is ignored  
+D) Schemas are deleted  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
-D) Logging sensitive data without a retention/redaction plan.  
+### Question 9: Escalation for high-risk outputs may include…
+**Checks outcome 5:** Design escalation paths for high-risk model outputs.
+
+A) Auto-publish always  
+B) Human review, block, or safe-complete paths  
+C) Higher temperature  
+D) Disabling logs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Threats and harms: injection, data leakage, unsafe content (45 min)  
-B) Implement practical guardrails: input validation, output constraints, injection defenses, and safe fallbacks.  
-C) Avoid measuring results or performance.  
-D) Safety tests are part of your evaluation harness.  
+### Question 10: Audit-friendly logging for safety events should…
+**Checks outcome 5:** Design escalation paths for high-risk model outputs.
+
+A) Include full sensitive payloads always  
+B) Record category and action taken without unnecessary secrets  
+C) Be off in production  
+D) Replace threat models  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

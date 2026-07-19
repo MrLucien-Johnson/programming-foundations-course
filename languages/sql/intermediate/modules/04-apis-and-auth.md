@@ -6,11 +6,11 @@ Design and secure REST APIs with authentication and authorization.
 This module uses **PostgreSQL 15+ (local via Docker)**, **psql + migrations tool (Sqitch/Flyway/Liquibase) + SQL formatter (sqlfluff)**, and **pgTAP (or migration + query validation scripts)**. When applicable, you’ll build or extend a small service using **Interface layer via views/functions + (optional) PostgREST** and **PostgreSQL schemas, roles, RLS, indexes, EXPLAIN**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **APIs and Auth**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.
-- Document decisions and constraints clearly for reviewers.
+- Design REST endpoints with clear resources, status codes, and pagination.
+- Validate input and return consistent error envelopes for clients.
+- Distinguish authentication from authorization and apply sessions/JWT/roles appropriately.
+- Add basic rate limiting / abuse protections to sensitive endpoints.
+- Document the API with OpenAPI (or equivalent) including examples.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **SQL (PostgreSQL)**.

@@ -7,11 +7,11 @@ Make outputs machine-consumable: JSON schemas, strict formatting, validation, an
 - Data extraction into JSON (emails/notes → schema)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Design schemas for task outputs with required and optional fields.
+- Validate outputs and measure validity/completeness on a dataset.
+- Add capped repair passes that fix structure without new facts.
+- Version schemas and plan migrations for breaking changes.
+- Fail closed with a fallback when strict validation fails.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

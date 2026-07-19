@@ -8,11 +8,11 @@ Implement practical guardrails: input validation, output constraints, injection 
 - Agent workflow (tool constraints + audit logs)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Enforce input/output controls including source-only and refusal rules.
+- Constrain tools with least privilege and verify via tests.
+- Build red-team suites that target top abuse paths.
+- Add safety gates in CI that fail on safety regressions.
+- Design escalation paths for high-risk model outputs.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

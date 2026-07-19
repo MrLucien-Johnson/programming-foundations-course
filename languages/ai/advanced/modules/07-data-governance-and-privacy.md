@@ -8,11 +8,11 @@ Handle data responsibly: minimization, retention, access control, consent, and a
 - Customer support summarisation (PII redaction + retention)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Write data-handling policies for what is stored, why, and how long.
+- Implement and test PII redaction on inputs/outputs.
+- Enforce permission-aware retrieval and no-leakage tests.
+- Design safe logging schemas that avoid raw sensitive text.
+- Add privacy review checklists to release process.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

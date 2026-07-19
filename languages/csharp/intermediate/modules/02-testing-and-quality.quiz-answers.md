@@ -1,77 +1,106 @@
-# CIntermediate — Module 02: Testing and Quality Quiz Answers
+# C# Intermediate — Module 02: Testing and Quality Quiz Answers
 
-## Question 1: You need to run the test suite. Which command should you use?
-**Answer: C** - `dotnet test`
+## Question 1: On the test pyramid, which layer should usually be the largest (most numerous)?
+**Answer: B** — Unit tests
 
-**Explanation:** This command runs the test suite.
+**Outcome 1:** Place tests on the test pyramid and choose what to mock versus what to hit for real.
 
----
-
-## Question 2: You need to format the code. Which command should you use?
-**Answer: A** - `dotnet format`
-
-**Explanation:** This command formats the code.
+**Explanation:** Unit tests are fast and numerous; integration/E2E are fewer and slower.
 
 ---
 
-## Question 3: Which action best satisfies the Core requirements?
-**Answer: D** - Implement a small feature tied to this module in an existing starter app.
+## Question 2: You are unit-testing a pure pricing function. What should you usually avoid mocking?
+**Answer: A** — The function's own arithmetic
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Place tests on the test pyramid and choose what to mock versus what to hit for real.
 
----
-
-## Question 4: Which action upgrades the work to the Better level?
-**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Don't mock the behavior you are trying to prove. Mock slow/external boundaries, not the subject itself.
 
 ---
 
-## Question 5: Which action qualifies as a Beast Mode upgrade?
-**Answer: C** - Add a performance or reliability improvement and **measure** the impact.
+## Question 3: A test fails only when run after another test. What is the likely problem?
+**Answer: B** — Shared mutable state — the suite is not deterministic/isolated
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 2:** Write deterministic unit tests using fixtures/factories and meaningful assertions.
 
----
-
-## Question 6: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Order-dependent failures usually mean leaked global/DB/file state. Tests must isolate and reset fixtures.
 
 ---
 
-## Question 7: Which testing requirement must be satisfied to pass?
-**Answer: A** - All work must be covered by **build + tests + analyzers in CI**.
+## Question 4: Which assertion is stronger for `create_user(email)`?
+**Answer: B** — `assert result.email == email and result.id is not None`
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Write deterministic unit tests using fixtures/factories and meaningful assertions.
 
----
-
-## Question 8: Which option would be a common mistake to avoid?
-**Answer: C** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Meaningful assertions check observable outcomes, not merely “something happened.”
 
 ---
 
-## Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: A** - Explain the core concepts and tradeoffs for **Testing and Quality**.
+## Question 5: Which example is an integration test?
+**Answer: B** — Hitting a real test database or HTTP endpoint and asserting the response
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 3:** Add an integration test that crosses a real boundary (HTTP, DB, filesystem, or process).
+
+**Explanation:** Integration tests cross a real boundary (HTTP/DB/etc.), not just in-memory mocks of the unit.
 
 ---
 
-## Question 10: Which topic would you revisit to solve this module's core problem?
-**Answer: C** - Test pyramid and what to mock (40 min)
+## Question 6: Coverage reports 100%, but a bug still ships. What lesson fits?
+**Answer: B** — Coverage without meaningful assertions can still miss behavior
 
-**Explanation:** This topic appears in the lesson list.
+**Outcome 4:** Interpret coverage as a signal — not a substitute for strong assertions.
+
+**Explanation:** Coverage shows what ran, not whether you asserted the right outcomes.
+
+---
+
+## Question 7: Why run lint/format/typecheck in CI as quality gates?
+**Answer: B** — To catch style, bug-prone patterns, and type issues before merge
+
+**Outcome 5:** Use lint, format, and typecheck as automated quality gates.
+
+**Explanation:** Automated gates keep a consistent baseline so humans review design and behavior.
+
+---
+
+## Question 8: Your feature writes to Postgres. Which test strategy best proves the boundary works?
+**Answer: B** — An integration test against an isolated test schema/database
+
+**Outcome 3:** Add an integration test that crosses a real boundary (HTTP, DB, filesystem, or process).
+
+**Explanation:** DB behavior needs an isolated real (or close-to-real) boundary — not only mocks.
+
+---
+
+## Question 9: When is mocking an HTTP client appropriate in a unit test?
+**Answer: B** — When the code under test calls an external service and you want a fast, deterministic unit test
+
+**Outcome 1:** Place tests on the test pyramid and choose what to mock versus what to hit for real.
+
+**Explanation:** Mock external I/O for unit speed/determinism; still keep some integration tests that hit real boundaries.
+
+---
+
+## Question 10: What is the main value of lint/format/typecheck gates in CI?
+**Answer: B** — They catch style, bug-prone patterns, and type issues before merge
+
+**Outcome 5:** Use lint, format, and typecheck as automated quality gates.
+
+**Explanation:** Automated quality gates keep a consistent baseline so humans review design and behavior.
+
+---
+
+## Question 11: In this course's C# tooling, which command runs the test suite?
+**Answer: A** — `dotnet test`
+
+**Outcome 5:** Use lint, format, and typecheck as automated quality gates.
+
+**Explanation:** `dotnet test` runs the suite; format is a style gate, not the test runner.
 
 ---
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **11/11 correct:** Excellent! You are ready to move on.
+- **9-10 correct:** Great work — review the missed outcomes.
+- **0-8 correct:** Revisit the module lessons, then try again.

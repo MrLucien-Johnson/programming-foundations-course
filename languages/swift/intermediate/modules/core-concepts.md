@@ -2,10 +2,10 @@
 
 Focus on intermediate Swift skills for maintainable applications.
 
-## Topics
-- protocol design and composition
-- error handling and debugging
-- testable module design
+## Learning Outcomes
+- Model data idiomatically with clear types and boundaries.
+- Handle errors in a way that is debuggable and safe for callers.
+- Design modules that are testable without hidden global state.
 
 ## Deliverables
 - topic notes or summaries

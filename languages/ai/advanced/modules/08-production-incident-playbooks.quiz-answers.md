@@ -1,77 +1,97 @@
 # AI — Module 08: Production Incident Playbooks Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: D** - Write an incident playbook for a cost spike and for a safety regression.
+## Question 1: A cost-spike playbook’s first mitigations often include…
+**Answer: B** — Rate limits, disabling expensive paths, or rolling back a canary
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Write playbooks for cost spikes, safety regressions, and quality drops.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: A** - Add “incident drills”: simulate failures and verify playbook effectiveness.
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Stop the bleeding on spend.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Add automated detection rules that trigger playbook steps.
+## Question 2: A safety-regression playbook should prioritize…
+**Answer: B** — Containment (stricter filters/flags off) before deep debugging
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Write playbooks for cost spikes, safety regressions, and quality drops.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Safety first, then root cause.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: D** - Incidents are tested via drills; playbooks are updated based on results.
+## Question 3: Feature flags in incidents enable…
+**Answer: B** — Fast disable of risky behavior without full redeploy
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Define immediate mitigations: flags, degrade modes, stricter filters.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: A** - No clear ownership or steps during incidents.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Flags are kill switches.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Translate a vague request into a clear goal, constraints, and success criteria.
+## Question 4: Degraded mode during an incident should be…
+**Answer: B** — Predeclared so operators know the safe subset of behavior
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 2:** Define immediate mitigations: flags, degrade modes, stricter filters.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: D** - Incident categories: quality drop, safety event, cost spike, outage (45 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Know the safe subset in advance.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: D** - Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+## Question 5: Incident drills matter because…
+**Answer: B** — Practice reveals gaps in detection and steps under time pressure
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Run incident drills that exercise detection and response.
+
+**Explanation:** Drill → improve playbooks.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: B** - Be ready for production: incident types, triage, communication, mitigations, and postmortems.
+## Question 6: A drill that never triggers alerts shows…
+**Answer: B** — A detection gap to fix
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 3:** Run incident drills that exercise detection and response.
+
+**Explanation:** Detection is part of the playbook.
+
+---
+
+## Question 7: Communication templates reduce…
+**Answer: B** — Ad-hoc conflicting messages during stress
+
+**Outcome 4:** Prepare internal and user-facing communication templates.
+
+**Explanation:** Say the right thing quickly.
+
+---
+
+## Question 8: User-facing incident notes should…
+**Answer: B** — Be accurate, calm, and actionable without oversharing
+
+**Outcome 4:** Prepare internal and user-facing communication templates.
+
+**Explanation:** Honest, careful communication.
+
+---
+
+## Question 9: After action items should include…
+**Answer: B** — New eval cases and tighter guardrails for the failure mode
+
+**Outcome 5:** Close the loop by updating evals and guardrails after incidents.
+
+**Explanation:** Turn incidents into permanent controls.
+
+---
+
+## Question 10: Updating evals post-incident prevents…
+**Answer: B** — The same failure class from shipping unnoticed again
+
+**Outcome 5:** Close the loop by updating evals and guardrails after incidents.
+
+**Explanation:** Regression tests for production pain.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

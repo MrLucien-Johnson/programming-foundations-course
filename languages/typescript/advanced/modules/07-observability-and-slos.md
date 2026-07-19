@@ -6,11 +6,10 @@ Instrument systems and run them with SLO-based operations.
 This module uses **Node.js LTS**, **npm (or pnpm), TypeScript compiler (tsc)**, and **Vitest (or Jest)**. When applicable, you’ll build or extend a small service using **Fastify (or Express) for REST APIs** and **PostgreSQL + migrations (Prisma or Knex)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Observability and SLOs**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ESLint + Prettier.
-- Document decisions and constraints clearly for reviewers.
+- Define SLIs/SLOs and manage error budgets for a service.
+- Apply RED/USE metrics while avoiding high-cardinality label explosions.
+- Propagate trace context across services to diagnose latency.
+- Design alerts that are actionable and kind to on-call.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **TypeScript**.

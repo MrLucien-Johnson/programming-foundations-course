@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Skip testing and trust the first result.  
-B) Ignore error handling for edge cases.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 1: Threat modeling starts by…
+**Checks outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
+
+A) Buying a bigger WAF only  
+B) Listing assets, entry points, threats, and mitigations for the feature  
+C) Disabling logs  
+D) Skipping AuthN  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-D) Run: `node index.js`  
+### Question 2: An “abuse case” focuses on…
+**Checks outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
+
+A) Happy-path UX copy  
+B) How a motivated attacker or abusive user misuses the system  
+C) Only unit test names  
+D) CDN cache hit ratios  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Making performance claims without measurements.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Run the module tests and confirm they pass.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 3: TLS primarily protects…
+**Checks outcome 2:** Apply encryption at rest/in transit with sound key management.
+
+A) Data in transit from eavesdropping/tampering  
+B) Disk sectors at rest by itself  
+C) Supply-chain commits  
+D) Error budgets  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-D) Ship changes without documentation.  
+### Question 4: Where should encryption keys live?
+**Checks outcome 2:** Apply encryption at rest/in transit with sound key management.
+
+A) Committed next to source  
+B) In a managed KMS/HSM with rotation and access control  
+C) In client-side JavaScript comments  
+D) In screenshots of the dashboard  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
-B) Making performance claims without measurements.  
-C) Supply-chain security + dependency policies (45 min)  
-D) Shipping without an automated test run in CI.  
+### Question 5: Pinning dependency versions and verifying checksums helps against…
+**Checks outcome 3:** Enforce supply-chain controls for dependencies and build artifacts.
+
+A) UI alignment bugs  
+B) Malicious or swapped packages in the supply chain  
+C) Slow CSS  
+D) CAP tradeoffs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Shipping without an automated test run in CI.  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Supply-chain security + dependency policies (45 min)  
-D) Write tests that prove correctness and prevent regressions.  
+### Question 6: A compromised build pipeline can…
+**Checks outcome 3:** Enforce supply-chain controls for dependencies and build artifacts.
+
+A) Only affect documentation typos  
+B) Inject malicious artifacts into what you ship  
+C) Improve SLO burn rates automatically  
+D) Replace threat models  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-B) Skip testing and trust the first result.  
-C) Making performance claims without measurements.  
-D) Update the README with setup, run, and test commands.  
+### Question 7: A hardening checklist should include…
+**Checks outcome 4:** Execute a hardening checklist covering auth, config, and security tests.
+
+A) Only choosing fonts  
+B) AuthZ reviews, secret hygiene, dependency updates, and security test gates  
+C) Disabling HTTPS in prod  
+D) Sharing root credentials in chat  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Update the README with setup, run, and test commands.  
-C) Ship changes without documentation.  
-D) Threat modeling + abuse cases (55 min)  
+### Question 8: Security tests in CI are valuable because they…
+**Checks outcome 4:** Execute a hardening checklist covering auth, config, and security tests.
+
+A) Replace threat modeling forever  
+B) Catch regressions in injection, authz, and dependency policy before release  
+C) Make retries unnecessary  
+D) Guarantee zero incidents  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
-B) Run: `node index.js`  
-C) Run the module tests and confirm they pass.  
-D) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
+### Question 9: Prioritising mitigations should weigh…
+**Checks outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
+
+A) Only how trendy the control is  
+B) Likelihood × impact and exploitability of each threat  
+C) Whether the control uses purple gradients  
+D) Commit message length  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Run the module tests and confirm they pass.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Skipping input validation and assuming “happy path”.  
-D) Threat-model, harden, and protect secrets, data, and supply chain.  
+### Question 10: Encrypting a database volume but logging raw PAN data means…
+**Checks outcome 2:** Apply encryption at rest/in transit with sound key management.
+
+A) You are fully safe  
+B) Sensitive data still leaks via another channel  
+C) TLS is unnecessary  
+D) Keys can be public  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

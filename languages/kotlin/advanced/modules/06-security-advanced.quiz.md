@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Threat modeling + abuse cases (45 min)  
-C) All work must be covered by **build + tests + static analysis in CI**.  
-D) Skipping input validation and assuming “happy path”.  
+### Question 1: Threat modeling starts by…
+**Checks outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
+
+A) Buying a bigger WAF only  
+B) Listing assets, entry points, threats, and mitigations for the feature  
+C) Disabling logs  
+D) Skipping AuthN  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Treat every request as safe without review.  
-C) Encryption at rest/in transit + key management (45 min)  
-D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+### Question 2: An “abuse case” focuses on…
+**Checks outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
+
+A) Happy-path UX copy  
+B) How a motivated attacker or abusive user misuses the system  
+C) Only unit test names  
+D) CDN cache hit ratios  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Ship changes without documentation.  
-D) Avoid measuring results or performance.  
+### Question 3: TLS primarily protects…
+**Checks outcome 2:** Apply encryption at rest/in transit with sound key management.
+
+A) Data in transit from eavesdropping/tampering  
+B) Disk sectors at rest by itself  
+C) Supply-chain commits  
+D) Error budgets  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Add or update documentation (README notes or ADR-style notes).  
-B) Run the module tests and confirm they pass.  
-C) Review dependencies for vulnerabilities.  
-D) Use tooling to keep quality high: ktlint + detekt.  
+### Question 4: Where should encryption keys live?
+**Checks outcome 2:** Apply encryption at rest/in transit with sound key management.
+
+A) Committed next to source  
+B) In a managed KMS/HSM with rotation and access control  
+C) In client-side JavaScript comments  
+D) In screenshots of the dashboard  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Update the README with setup, run, and test commands.  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) All work must be covered by **build + tests + static analysis in CI**.  
-D) Apply the concepts to a realistic codebase (not just toy examples).  
+### Question 5: Pinning dependency versions and verifying checksums helps against…
+**Checks outcome 3:** Enforce supply-chain controls for dependencies and build artifacts.
+
+A) UI alignment bugs  
+B) Malicious or swapped packages in the supply chain  
+C) Slow CSS  
+D) CAP tradeoffs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Shipping without an automated test run in CI.  
-B) Supply-chain security + dependency policies (35 min)  
-C) All work must be covered by **build + tests + static analysis in CI**.  
-D) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
+### Question 6: A compromised build pipeline can…
+**Checks outcome 3:** Enforce supply-chain controls for dependencies and build artifacts.
+
+A) Only affect documentation typos  
+B) Inject malicious artifacts into what you ship  
+C) Improve SLO burn rates automatically  
+D) Replace threat models  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-B) Jump to the next module without verifying results.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
+### Question 7: A hardening checklist should include…
+**Checks outcome 4:** Execute a hardening checklist covering auth, config, and security tests.
+
+A) Only choosing fonts  
+B) AuthZ reviews, secret hygiene, dependency updates, and security test gates  
+C) Disabling HTTPS in prod  
+D) Sharing root credentials in chat  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Threat modeling + abuse cases (45 min)  
-B) Skip testing and trust the first result.  
-C) Threat-model, harden, and protect secrets, data, and supply chain.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 8: Security tests in CI are valuable because they…
+**Checks outcome 4:** Execute a hardening checklist covering auth, config, and security tests.
+
+A) Replace threat modeling forever  
+B) Catch regressions in injection, authz, and dependency policy before release  
+C) Make retries unnecessary  
+D) Guarantee zero incidents  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 9: Prioritising mitigations should weigh…
+**Checks outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
+
+A) Only how trendy the control is  
+B) Likelihood × impact and exploitability of each threat  
+C) Whether the control uses purple gradients  
+D) Commit message length  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Threat-model, harden, and protect secrets, data, and supply chain.  
-B) Review the module goals and plan how you will harden systems against advanced threats.  
-C) Skip testing and trust the first result.  
-D) Document decisions and constraints clearly for reviewers.  
+### Question 10: Encrypting a database volume but logging raw PAN data means…
+**Checks outcome 2:** Apply encryption at rest/in transit with sound key management.
+
+A) You are fully safe  
+B) Sensitive data still leaks via another channel  
+C) TLS is unnecessary  
+D) Keys can be public  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

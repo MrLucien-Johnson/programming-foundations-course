@@ -2,10 +2,10 @@
 
 Focus on intermediate Rust skills for maintainable applications.
 
-## Topics
-- ownership patterns and borrowing
-- error handling and debugging
-- testable module design
+## Learning Outcomes
+- Model data idiomatically with clear types and boundaries.
+- Handle errors in a way that is debuggable and safe for callers.
+- Design modules that are testable without hidden global state.
 
 ## Deliverables
 - topic notes or summaries

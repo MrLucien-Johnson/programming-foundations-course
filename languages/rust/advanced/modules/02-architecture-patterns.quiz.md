@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Run: `cargo fmt`  
-B) `cargo test`  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
+### Question 1: In hexagonal architecture, domain logic should depend on…
+**Checks outcome 1:** Compare layered, hexagonal, and clean architecture and place dependencies correctly.
+
+A) Concrete HTTP frameworks and SQL drivers directly  
+B) Ports (interfaces); adapters implement infrastructure outside  
+C) Global mutable singletons only  
+D) The presentation layer’s CSS  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: You need to run lint checks. Which command should you use?
-A) Avoid measuring results or performance.  
-B) `cargo clippy`  
-C) Shipping without an automated test run in CI.  
-D) Ship changes without documentation.  
+### Question 2: Layered architecture usually forbids…
+**Checks outcome 1:** Compare layered, hexagonal, and clean architecture and place dependencies correctly.
+
+A) Having a UI at all  
+B) Lower layers depending upward on UI/controllers  
+C) Using a database  
+D) Writing tests  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) `cargo fmt`  
-B) CQRS and when *not* to use it (35 min)  
-C) Run: `cargo fmt`  
-D) Run: `cargo test`  
+### Question 3: A money amount with currency is best modeled as…
+**Checks outcome 2:** Model domain concepts with entities, value objects, and aggregates.
+
+A) Two unrelated ints with no rules  
+B) A value object enforcing valid combinations  
+C) A UI color picker  
+D) A thread ID  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action best satisfies the Core requirements?
-A) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) Run: `cargo fmt`  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 4: An aggregate boundary mainly protects…
+**Checks outcome 2:** Model domain concepts with entities, value objects, and aggregates.
+
+A) CSS specificity  
+B) Consistency of a cluster of entities updated together  
+C) DNS TTLs  
+D) Lint rule names  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Jump to the next module without verifying results.  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 5: A saga is useful when…
+**Checks outcome 3:** Design event-driven flows and sagas for multi-step business processes.
+
+A) A single local ACID transaction covers the whole business process  
+B) A long process spans services and needs compensating steps on failure  
+C) You only render static HTML  
+D) You want to avoid all failure handling  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Skip testing and trust the first result.  
+### Question 6: Event-driven design primarily helps by…
+**Checks outcome 3:** Design event-driven flows and sagas for multi-step business processes.
+
+A) Deleting all APIs  
+B) Decoupling producers from consumers via facts that happened  
+C) Guaranteeing exactly-once everywhere for free  
+D) Removing the need for schemas  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Run the module tests and confirm they pass.  
-C) Treat every request as safe without review.  
-D) All work must be covered by **fmt + clippy + tests in CI**.  
+### Question 7: CQRS is often overkill when…
+**Checks outcome 4:** Decide when CQRS helps — and when it adds unjustified complexity.
+
+A) Read and write models are simple and change together  
+B) You already have extreme read/write asymmetry and scaling pain  
+C) You need separate optimized projections proven by load  
+D) Audit projections are a hard requirement  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement must be satisfied to pass?
-A) `cargo test`  
-B) Skipping input validation and assuming “happy path”.  
-C) Making performance claims without measurements.  
-D) All work must be covered by **fmt + clippy + tests in CI**.  
+### Question 8: A team adopts CQRS “for purity” on a CRUD admin tool. Risk?
+**Checks outcome 4:** Decide when CQRS helps — and when it adds unjustified complexity.
+
+A) Too little ceremony  
+B) Extra moving parts without a scaling/consistency payoff  
+C) Automatic CAP compliance  
+D) Free idempotency  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option would be a common mistake to avoid?
-A) Shipping without an automated test run in CI.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Write tests that prove correctness and prevent regressions.  
+### Question 9: Clean architecture’s dependency rule says source code dependencies point…
+**Checks outcome 1:** Compare layered, hexagonal, and clean architecture and place dependencies correctly.
+
+A) Outward toward frameworks  
+B) Inward toward enterprise/domain policy  
+C) Only sideways between random packages  
+D) Nowhere — cycles are encouraged  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Architecture Patterns**.  
-B) Shipping without an automated test run in CI.  
-C) Event-driven design + sagas (45 min)  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 10: Two entities that must stay consistent in one transaction likely belong…
+**Checks outcome 2:** Model domain concepts with entities, value objects, and aggregates.
+
+A) In separate aggregates with no coordination  
+B) In the same aggregate (or a carefully designed process)  
+C) Only in the CDN  
+D) In client localStorage exclusively  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

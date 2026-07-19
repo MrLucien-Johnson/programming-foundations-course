@@ -6,11 +6,10 @@ Collaborate safely using branching, PRs, and reviews.
 This module uses **PostgreSQL 15+ (local via Docker)**, **psql + migrations tool (Sqitch/Flyway/Liquibase) + SQL formatter (sqlfluff)**, and **pgTAP (or migration + query validation scripts)**. When applicable, you’ll build or extend a small service using **Interface layer via views/functions + (optional) PostgREST** and **PostgreSQL schemas, roles, RLS, indexes, EXPLAIN**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Git and Collaboration**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.
-- Document decisions and constraints clearly for reviewers.
+- Use a clear branching strategy and write commits that explain why a change happened.
+- Open and review pull requests using a practical checklist and actionable feedback.
+- Resolve merge conflicts and rebase safely without rewriting shared history carelessly.
+- Diagnose CI failures from logs and fix the underlying issue before merging.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **SQL (PostgreSQL)**.

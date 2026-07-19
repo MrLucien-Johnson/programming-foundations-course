@@ -8,11 +8,11 @@ Instrument AI systems: quality metrics, cost/latency, tracing, and alerts tied t
 - RAG Q&A (groundedness + abstention monitoring)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Define SLIs/SLOs for quality, safety, cost, and latency.
+- Design dashboards and alert thresholds operators can act on.
+- Trace multi-step LLM flows (retrieval, generation, tools).
+- Sample quality safely (privacy-preserving) with escalation paths.
+- Run continuous canary evaluation in production.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

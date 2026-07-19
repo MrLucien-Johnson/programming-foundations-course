@@ -1,77 +1,97 @@
-# CAdvanced — Module 05: Reliability and Resilience Quiz Answers
+# C# Advanced — Module 05: Reliability and Resilience Quiz Answers
 
-## Question 1: You need to run the test suite. Which command should you use?
-**Answer: B** - `dotnet test`
+## Question 1: Retrying immediately forever without jitter tends to…
+**Answer: B** — Create synchronized retry storms that worsen outages
 
-**Explanation:** This command runs the test suite.
+**Outcome 1:** Configure retries with timeouts, budgets, and jitter for transient faults.
 
----
-
-## Question 2: You need to format the code. Which command should you use?
-**Answer: D** - `dotnet format`
-
-**Explanation:** This command formats the code.
+**Explanation:** Backoff + jitter spreads retries; budgets cap total attempts.
 
 ---
 
-## Question 3: Which action best satisfies the Core requirements?
-**Answer: A** - Implement a small feature tied to this module in an existing starter app.
+## Question 2: A timeout without a retry budget means…
+**Answer: A** — You may still hammer a sick dependency indefinitely via client loops
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Configure retries with timeouts, budgets, and jitter for transient faults.
 
----
-
-## Question 4: Which action upgrades the work to the Better level?
-**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Pair timeouts with limited retries and overall deadlines.
 
 ---
 
-## Question 5: Which action qualifies as a Beast Mode upgrade?
-**Answer: D** - Add a performance or reliability improvement and **measure** the impact.
+## Question 3: A circuit breaker opens when…
+**Answer: A** — Error rates/latency cross a threshold, failing fast instead of calling the dependency
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 2:** Apply circuit breakers, bulkheads, and rate limits to contain failures.
 
----
-
-## Question 6: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Open circuits shed load from unhealthy dependencies.
 
 ---
 
-## Question 7: Which testing requirement must be satisfied to pass?
-**Answer: B** - All work must be covered by **build + tests + analyzers in CI**.
+## Question 4: Bulkheads help by…
+**Answer: B** — Isolating resources so one failure domain cannot exhaust another
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Apply circuit breakers, bulkheads, and rate limits to contain failures.
 
----
-
-## Question 8: Which option would be a common mistake to avoid?
-**Answer: D** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Bulkheads compartmentalize blast radius.
 
 ---
 
-## Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: A** - Explain the core concepts and tradeoffs for **Reliability and Resilience**.
+## Question 5: Idempotency keys are most critical for…
+**Answer: B** — Create/payment operations that clients may retry
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 3:** Use idempotency keys and dedupe to make retried writes safe.
+
+**Explanation:** Retried side-effecting writes need dedupe.
 
 ---
 
-## Question 10: Which topic would you revisit to solve this module's core problem?
-**Answer: B** - Retries, timeouts, budgets, and jitter (45 min)
+## Question 6: Deduping consumer messages by event ID prevents…
+**Answer: B** — Double-applying the same business effect after redelivery
 
-**Explanation:** This topic appears in the lesson list.
+**Outcome 3:** Use idempotency keys and dedupe to make retried writes safe.
+
+**Explanation:** At-least-once delivery + dedupe ≈ safe processing.
+
+---
+
+## Question 7: A runbook should primarily contain…
+**Answer: B** — Detection signals, mitigation steps, owners, and escalation paths
+
+**Outcome 4:** Write and follow runbooks for common incident classes.
+
+**Explanation:** Runbooks make incidents executable under pressure.
+
+---
+
+## Question 8: During an incident, the first reliability move is often…
+**Answer: B** — Mitigate user impact (rollback, feature flag, degrade) then diagnose
+
+**Outcome 4:** Write and follow runbooks for common incident classes.
+
+**Explanation:** Stop the bleeding, then find root cause.
+
+---
+
+## Question 9: Rate limiting a dependency client protects…
+**Answer: B** — Both your service and the dependency from overload
+
+**Outcome 2:** Apply circuit breakers, bulkheads, and rate limits to contain failures.
+
+**Explanation:** Client-side limits are part of being a good citizen under stress.
+
+---
+
+## Question 10: Which retry policy is safest for non-idempotent POSTs without keys?
+**Answer: B** — Fail clearly / get an idempotency key before retrying side effects
+
+**Outcome 1:** Configure retries with timeouts, budgets, and jitter for transient faults.
+
+**Explanation:** Do not blindly retry unsafe side effects.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

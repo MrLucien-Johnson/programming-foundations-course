@@ -1,77 +1,79 @@
 # Systems and Design (Advanced) Quiz Answers
 
-## Question 1: You need to run the test suite. Which command should you use?
-**Answer: A** - `dotnet test`
+## Question 1: A scalable design doc should state…
+**Answer: B** — Expected load, bottlenecks, and how the design handles them
 
-**Explanation:** This command runs the test suite.
+**Outcome 1:** Design a service for expected scale with explicit bottlenecks and mitigations.
 
----
-
-## Question 2: You need to format the code. Which command should you use?
-**Answer: A** - `dotnet format`
-
-**Explanation:** This command formats the code.
+**Explanation:** Scale claims need load assumptions and bottleneck thinking.
 
 ---
 
-## Question 3: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
+## Question 2: Vertical scaling alone becomes a problem when…
+**Answer: A** — A single machine’s limits or cost ceiling are hit
 
-**Explanation:** This item appears in the verification checklist.
+**Outcome 1:** Design a service for expected scale with explicit bottlenecks and mitigations.
 
----
-
-## Question 4: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/csharp/advanced/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** Eventually you need horizontal strategies.
 
 ---
 
-## Question 5: Which verification step is required before moving on?
-**Answer: D** - Verify the primary feature works with normal and edge-case inputs.
+## Question 3: Recording rejected alternatives in an ADR helps reviewers…
+**Answer: B** — Understand why this option won given constraints
 
-**Explanation:** This item appears in the verification checklist.
+**Outcome 2:** Document architecture tradeoffs and rejected alternatives clearly.
 
----
-
-## Question 6: Before submitting, which verification step must you complete?
-**Answer: C** - Update the README with setup, run, and test commands.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Tradeoff docs preserve decision rationale.
 
 ---
 
-## Question 7: Which verification step is required before moving on?
-**Answer: C** - Run: `dotnet test`
+## Question 4: “We picked eventual consistency” without saying why is weak because…
+**Answer: B** — Reviewers cannot judge fitness without constraints and failure modes
 
-**Explanation:** This item appears in the verification checklist.
+**Outcome 2:** Document architecture tradeoffs and rejected alternatives clearly.
 
----
-
-## Question 8: Before submitting, which verification step must you complete?
-**Answer: D** - Run: `dotnet format`
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Name the constraint that forced the tradeoff.
 
 ---
 
-## Question 9: Which verification step is required before moving on?
-**Answer: A** - Run: `dotnet format`
+## Question 5: If the design hinges on a cache hit rate, verification should include…
+**Answer: B** — A load or rehearsal that measures hit rate under realistic keys
 
-**Explanation:** This item appears in the verification checklist.
+**Outcome 3:** Define verification (tests, load checks, or probes) that match the design risks.
+
+**Explanation:** Validate the risky assumptions, not only happy-path code.
 
 ---
 
-## Question 10: Which action is listed as part of the guided walkthrough?
-**Answer: A** - Review the module goals and plan how you will synthesize architecture decisions.
+## Question 6: A design that adds many new failure domains should plan…
+**Answer: B** — Health checks, SLOs, and failure drills for those domains
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Define verification (tests, load checks, or probes) that match the design risks.
+
+**Explanation:** New complexity needs operable verification.
+
+---
+
+## Question 7: Sharding by user_id helps when…
+**Answer: A** — Traffic and data grow beyond one node fairly evenly by user
+
+**Outcome 1:** Design a service for expected scale with explicit bottlenecks and mitigations.
+
+**Explanation:** Key choice must match access patterns — cross-shard ops stay hard.
+
+---
+
+## Question 8: A good tradeoff write-up compares options on…
+**Answer: B** — Cost, complexity, consistency, and operability against requirements
+
+**Outcome 2:** Document architecture tradeoffs and rejected alternatives clearly.
+
+**Explanation:** Tradeoffs are multi-dimensional against real constraints.
 
 ---
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8/8 correct:** Excellent! You are ready to move on.
+- **6-7 correct:** Great work — review the missed outcomes.
+- **0-5 correct:** Revisit the module lessons, then try again.

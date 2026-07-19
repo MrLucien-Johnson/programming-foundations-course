@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) `python -m pytest`  
-B) Making performance claims without measurements.  
-C) Document decisions and constraints clearly for reviewers.  
-D) Use data structures and algorithms pragmatically in real applications.  
+### Question 1: You need average O(1) lookup of a user record by `user_id`. Which structure fits best?
+**Checks outcome 1:** Choose list vs dict vs set for a given access pattern and justify the Big-O tradeoff.
+
+A) A list you scan from the start each time  
+B) A hash map/dict keyed by `user_id`  
+C) A set/hash set of unsorted display names  
+D) A nested list of all fields without keys  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: You need to run lint checks. Which command should you use?
-A) Run: `ruff format .`  
-B) Copy the starter pack from `languages/python/intermediate/starter-pack` into a new working folder.  
-C) `ruff check .`  
-D) Making performance claims without measurements.  
+### Question 2: You must enforce unique email addresses and only care whether an email already exists. Best choice?
+**Checks outcome 1:** Choose list vs dict vs set for a given access pattern and justify the Big-O tradeoff.
+
+A) A list of emails  
+B) A hash map/dict mapping email → full user object (required even if unused)  
+C) A set/hash set of emails  
+D) A queue of emails  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) Implement a helper that enforces the chosen structure (e.g., map for fast lookup).  
-B) Document decisions and constraints clearly for reviewers.  
-C) `ruff format .`  
-D) Update the README with setup, run, and test commands.  
+### Question 3: You need to explore a graph level-by-level (nearest neighbors first). Which approach matches?
+**Checks outcome 2:** Apply stack/queue and BFS/DFS mental models to a small graph or tree-style problem.
+
+A) Depth-first search with a stack (or recursion)  
+B) Breadth-first search with a queue  
+C) Binary search on a sorted array  
+D) LRU eviction of the oldest key  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action best satisfies the Core requirements?
-A) Shipping without an automated test run in CI.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) `python -m pytest`  
-D) Update the README with setup, run, and test commands.  
+### Question 4: Undo/redo history in an editor is best modeled with which structure?
+**Checks outcome 2:** Apply stack/queue and BFS/DFS mental models to a small graph or tree-style problem.
+
+A) A queue (FIFO)  
+B) A stack (LIFO)  
+C) A hash set  
+D) A priority queue ordered by timestamp only once at insert  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action upgrades the work to the Better level?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 5: You have a list of 50,000 comparable IDs and need them sorted once before a report. What should you do first?
+**Checks outcome 3:** Decide when the language's built-in sort/search is enough versus writing a custom approach.
+
+A) Write a custom quicksort from scratch  
+B) Use the language's built-in sort unless you have a measured reason not to  
+C) Always switch to a hand-rolled linked-list sort for clarity  
+D) Sort with bubble sort so Big-O stays obvious  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Document decisions and constraints clearly for reviewers.  
-B) Avoid measuring results or performance.  
-C) Skip testing and trust the first result.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 6: A pure function is called repeatedly with the same arguments inside a hot loop. Which pattern helps first?
+**Checks outcome 4:** Apply memoization or an LRU cache when recomputation is the bottleneck.
+
+A) Delete the function and inline random values  
+B) Memoization or an LRU cache so repeated inputs reuse results  
+C) Replace the dict with a list scan  
+D) Disable tests to save time  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) `ruff format .`  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Run the module tests and confirm they pass.  
-D) Over-mocking (tests assert implementation details instead of outcomes).  
+### Question 7: An LRU cache is full and a new key arrives. What happens to the least recently used entry?
+**Checks outcome 4:** Apply memoization or an LRU cache when recomputation is the bottleneck.
+
+A) It stays forever  
+B) It is evicted to make room  
+C) It becomes the most recently used without eviction  
+D) All keys are wiped  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement must be satisfied to pass?
-A) Use data structures and algorithms pragmatically in real applications.  
-B) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
-C) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+### Question 8: You want a quick before/after timing of one helper function. Best first tool?
+**Checks outcome 5:** Measure a change with a micro-benchmark and explain when profiling is the better tool.
+
+A) A micro-benchmark / timing of that function  
+B) Only a full-cluster production profiler with no local measurement  
+C) Guessing from code review alone  
+D) Turning off tests so numbers look better  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option would be a common mistake to avoid?
-A) Copy the starter pack from `languages/python/intermediate/starter-pack` into a new working folder.  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Write tests that prove correctness and prevent regressions.  
-D) Shipping without an automated test run in CI.  
+### Question 9: When is profiling usually better than a micro-benchmark?
+**Checks outcome 5:** Measure a change with a micro-benchmark and explain when profiling is the better tool.
+
+A) When you already know the one-line hotspot with certainty  
+B) When you need to find where a whole program spends CPU or memory  
+C) When you want to skip measurements entirely  
+D) When sorting a 10-element list  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Run: `ruff format .`  
-C) Treat every request as safe without review.  
-D) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
+### Question 10: Looking up whether an id is in a large unsorted list of IDs is typically:
+**Checks outcome 1:** Choose list vs dict vs set for a given access pattern and justify the Big-O tradeoff.
+
+A) O(1) average  
+B) O(n)  
+C) O(log n) without sorting  
+D) O(n²) always  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

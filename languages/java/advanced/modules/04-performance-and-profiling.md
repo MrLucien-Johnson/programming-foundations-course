@@ -6,11 +6,10 @@ Profile, measure, and optimize across app + database + network.
 This module uses **Java 21 LTS**, **Maven (or Gradle)**, and **JUnit 5 + Mockito**. When applicable, you’ll build or extend a small service using **Spring Boot REST** and **PostgreSQL + migrations (Flyway) + JPA/Hibernate**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Performance and Profiling**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: Spotless + Checkstyle (or Error Prone).
-- Document decisions and constraints clearly for reviewers.
+- Establish performance baselines before changing code.
+- Run load tests and locate bottlenecks with evidence.
+- Tune databases using indexes, query plans, and lock analysis.
+- Choose cache invalidation strategies that match correctness needs.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Java**.

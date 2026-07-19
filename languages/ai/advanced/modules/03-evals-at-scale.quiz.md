@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Treat every request as safe without review.  
-B) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
-C) Add shadow evaluation for live traffic (privacy-safe).  
-D) Design a scalable eval runner spec (batching, retries, budgets).  
+### Question 1: A scalable eval runner should log…
+**Checks outcome 1:** Design batch eval runners with retries, budgets, and reproducibility.
+
+A) Nothing  
+B) Dataset, prompt, scorer versions plus budgets/retries  
+C) Only wall time  
+D) Production passwords  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Add shadow evaluation for live traffic (privacy-safe).  
-B) Treat every request as safe without review.  
-C) Review the module goals and plan how you will scale evaluations across large test sets.  
-D) Add stratified sampling (by category, language, customer tier).  
+### Question 2: Batching evals primarily helps…
+**Checks outcome 1:** Design batch eval runners with retries, budgets, and reproducibility.
+
+A) Hide failures  
+B) Throughput and cost control for large sets  
+C) Delete stratification  
+D) Skip gates  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) CI integration: gates, baselines, and rollback triggers (45 min)  
-B) Add shadow evaluation for live traffic (privacy-safe).  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Run evaluations reliably at scale: datasets, sampling, automation, and CI gating.  
+### Question 3: Stratified sampling matters because…
+**Checks outcome 2:** Detect quality drift with stratified sampling and cadence.
+
+A) All users are identical  
+B) Overall averages can hide regressions in a segment  
+C) Drift cannot exist  
+D) Labels are free  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Document and version changes so improvements are explainable.  
-B) Ship changes without documentation.  
-C) Treat every request as safe without review.  
-D) Run the module tests and confirm they pass.  
+### Question 4: A drift metric without a cadence is weak because…
+**Checks outcome 2:** Detect quality drift with stratified sampling and cadence.
+
+A) Cadence is optional decoration  
+B) You will not notice slow quality decay in time  
+C) Shadow evals forbid cadence  
+D) Budgets replace monitoring  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) No budget controls for large eval runs.  
-B) Relying only on live user feedback instead of proactive evals.  
-C) Runs are reproducible: versioned prompts, datasets, and scoring rules.  
-D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+### Question 5: Stop-the-line criteria should be…
+**Checks outcome 3:** Define stop-the-line criteria for regressions.
+
+A) Invented during the outage  
+B) Predeclared thresholds that halt releases  
+C) Secret from eng  
+D) Only aesthetic  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Relying only on live user feedback instead of proactive evals.  
-D) Define a drift metric and a monitoring cadence.  
+### Question 6: A sudden schema-validity collapse should…
+**Checks outcome 3:** Define stop-the-line criteria for regressions.
+
+A) Ship anyway  
+B) Trip stop-the-line and rollback/investigate  
+C) Raise temperature  
+D) Delete the dataset  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Run the module tests and confirm they pass.  
-B) Translate a vague request into a clear goal, constraints, and success criteria.  
-C) Add shadow evaluation for live traffic (privacy-safe).  
-D) Human evaluation at scale: rubrics + calibration (45 min)  
+### Question 7: Shadow eval on live traffic must be…
+**Checks outcome 4:** Run privacy-safe shadow evaluation on live traffic.
+
+A) Logged with full sensitive payloads publicly  
+B) Privacy-safe (minimize/redact) and non-user-impacting  
+C) Allowed to change user answers  
+D) Unversioned  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Document and version changes so improvements are explainable.  
-B) Ship changes without documentation.  
-C) Eval architecture: datasets, runners, scoring, reporting (55 min)  
-D) Design a scalable eval runner spec (batching, retries, budgets).  
+### Question 8: Shadow scoring a new prompt helps you…
+**Checks outcome 4:** Run privacy-safe shadow evaluation on live traffic.
+
+A) Skip offline sets forever  
+B) Estimate live impact before progressive delivery  
+C) Avoid canaries  
+D) Disable labeling  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Translate a vague request into a clear goal, constraints, and success criteria.  
-B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
-C) Runs are reproducible: versioned prompts, datasets, and scoring rules.  
-D) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
+### Question 9: Rater calibration reduces…
+**Checks outcome 5:** Operate human labeling with calibration across raters.
+
+A) Dataset size needs  
+B) Inconsistent human scores that muddy drift signals  
+C) The need for automation  
+D) Budgets  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Design a labeling workflow and calibration plan for human raters.  
-B) Run evaluations reliably at scale: datasets, sampling, automation, and CI gating.  
-C) Runs are reproducible: versioned prompts, datasets, and scoring rules.  
-D) Design a scalable eval runner spec (batching, retries, budgets).  
+### Question 10: A labeling workflow should include…
+**Checks outcome 5:** Operate human labeling with calibration across raters.
+
+A) One rater forever with no guide  
+B) Guidelines, examples, and periodic agreement checks  
+C) Public posting of raw customer text  
+D) No audit trail  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

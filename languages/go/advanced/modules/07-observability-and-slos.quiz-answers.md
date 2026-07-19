@@ -1,77 +1,97 @@
 # Go Advanced — Module 07: Observability and SLOs Quiz Answers
 
-## Question 1: You need to run the test suite. Which command should you use?
-**Answer: D** - `go test ./...`
+## Question 1: An SLI is…
+**Answer: B** — A quantitative measure of user-visible reliability (e.g., success rate)
 
-**Explanation:** This command runs the test suite.
+**Outcome 1:** Define SLIs/SLOs and manage error budgets for a service.
 
----
-
-## Question 2: You need to run lint checks. Which command should you use?
-**Answer: B** - `golangci-lint run`
-
-**Explanation:** This command runs lint checks.
+**Explanation:** SLIs measure experience; SLOs set targets on those measures.
 
 ---
 
-## Question 3: You need to format the code. Which command should you use?
-**Answer: A** - `gofmt -w .`
+## Question 2: An error budget is…
+**Answer: B** — Allowed unreliability derived from the SLO before you must slow feature work
 
-**Explanation:** This command formats the code.
+**Outcome 1:** Define SLIs/SLOs and manage error budgets for a service.
 
----
-
-## Question 4: Which action best satisfies the Core requirements?
-**Answer: B** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This task appears under Core exercises.
+**Explanation:** Budgets balance velocity vs reliability.
 
 ---
 
-## Question 5: Which action upgrades the work to the Better level?
-**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 3: RED metrics stand for…
+**Answer: B** — Rate, Errors, Duration
 
-**Explanation:** This task appears under Better exercises.
+**Outcome 2:** Apply RED/USE metrics while avoiding high-cardinality label explosions.
 
----
-
-## Question 6: Which action qualifies as a Beast Mode upgrade?
-**Answer: B** - Add a performance or reliability improvement and **measure** the impact.
-
-**Explanation:** This task appears under Beast Mode exercises.
+**Explanation:** RED is a common request-centric metric set.
 
 ---
 
-## Question 7: Before submitting, which verification step must you complete?
-**Answer: A** - Run the module tests and confirm they pass.
+## Question 4: High-cardinality labels (user_id on every metric) typically cause…
+**Answer: B** — Metric store explosion and useless dashboards
 
-**Explanation:** This item appears in the verification checklist.
+**Outcome 2:** Apply RED/USE metrics while avoiding high-cardinality label explosions.
 
----
-
-## Question 8: Which testing requirement must be satisfied to pass?
-**Answer: C** - All work must be covered by **gofmt + lint + tests in CI**.
-
-**Explanation:** This requirement is listed under testing requirements.
+**Explanation:** Keep label cardinality bounded.
 
 ---
 
-## Question 9: Which option would be a common mistake to avoid?
-**Answer: D** - Shipping without an automated test run in CI.
+## Question 5: Trace context propagation lets you…
+**Answer: A** — See one request across service spans
 
-**Explanation:** This mistake is listed under common mistakes.
+**Outcome 3:** Propagate trace context across services to diagnose latency.
+
+**Explanation:** Propagation stitches spans into one distributed trace.
 
 ---
 
-## Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Explain the core concepts and tradeoffs for **Observability and SLOs**.
+## Question 6: A span without parent linkage in a deep call chain usually means…
+**Answer: B** — Broken context propagation at a boundary
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 3:** Propagate trace context across services to diagnose latency.
+
+**Explanation:** Missing parents break end-to-end latency diagnosis.
+
+---
+
+## Question 7: A good alert is…
+**Answer: B** — Tied to user impact / SLO burn and actionable for humans
+
+**Outcome 4:** Design alerts that are actionable and kind to on-call.
+
+**Explanation:** Alert on symptoms that need human action.
+
+---
+
+## Question 8: Pager fatigue usually comes from…
+**Answer: B** — Noisy, non-actionable alerts that train people to ignore pages
+
+**Outcome 4:** Design alerts that are actionable and kind to on-call.
+
+**Explanation:** Hygiene: fewer, better alerts.
+
+---
+
+## Question 9: Burning the error budget quickly should trigger…
+**Answer: B** — Prioritizing reliability fixes over risky feature launches
+
+**Outcome 1:** Define SLIs/SLOs and manage error budgets for a service.
+
+**Explanation:** Budgets are decision tools, not vanity charts.
+
+---
+
+## Question 10: USE metrics focus on…
+**Answer: A** — Utilization, Saturation, Errors for resources
+
+**Outcome 2:** Apply RED/USE metrics while avoiding high-cardinality label explosions.
+
+**Explanation:** USE complements RED for resource-centric views.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

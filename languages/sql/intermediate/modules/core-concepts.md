@@ -2,10 +2,10 @@
 
 Focus on intermediate SQL skills for reliable analytics and reporting.
 
-## Topics
-- relational modeling and normalization
-- joins, aggregates, and window functions
-- query troubleshooting and performance basics
+## Learning Outcomes
+- Model data idiomatically with clear types and boundaries.
+- Handle errors in a way that is debuggable and safe for callers.
+- Design modules that are testable without hidden global state.
 
 ## Deliverables
 - topic notes or summaries

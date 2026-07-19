@@ -1,77 +1,97 @@
 # Python Advanced — Module 02: Architecture Patterns Quiz Answers
 
-## Question 1: You need to run the test suite. Which command should you use?
-**Answer: D** - `python -m pytest`
+## Question 1: In hexagonal architecture, domain logic should depend on…
+**Answer: B** — Ports (interfaces); adapters implement infrastructure outside
 
-**Explanation:** This command runs the test suite.
+**Outcome 1:** Compare layered, hexagonal, and clean architecture and place dependencies correctly.
 
----
-
-## Question 2: You need to run lint checks. Which command should you use?
-**Answer: C** - `ruff check .`
-
-**Explanation:** This command runs lint checks.
+**Explanation:** Ports/adapters keep the domain independent of frameworks.
 
 ---
 
-## Question 3: You need to format the code. Which command should you use?
-**Answer: C** - `ruff format .`
+## Question 2: Layered architecture usually forbids…
+**Answer: B** — Lower layers depending upward on UI/controllers
 
-**Explanation:** This command formats the code.
+**Outcome 1:** Compare layered, hexagonal, and clean architecture and place dependencies correctly.
 
----
-
-## Question 4: Which action best satisfies the Core requirements?
-**Answer: D** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This task appears under Core exercises.
+**Explanation:** Dependencies should point inward/downward, not from domain to UI.
 
 ---
 
-## Question 5: Which action upgrades the work to the Better level?
-**Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 3: A money amount with currency is best modeled as…
+**Answer: B** — A value object enforcing valid combinations
 
-**Explanation:** This task appears under Better exercises.
+**Outcome 2:** Model domain concepts with entities, value objects, and aggregates.
 
----
-
-## Question 6: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Add a performance or reliability improvement and **measure** the impact.
-
-**Explanation:** This task appears under Beast Mode exercises.
+**Explanation:** Value objects capture immutable domain rules without identity.
 
 ---
 
-## Question 7: Before submitting, which verification step must you complete?
-**Answer: A** - Run the module tests and confirm they pass.
+## Question 4: An aggregate boundary mainly protects…
+**Answer: B** — Consistency of a cluster of entities updated together
 
-**Explanation:** This item appears in the verification checklist.
+**Outcome 2:** Model domain concepts with entities, value objects, and aggregates.
 
----
-
-## Question 8: Which testing requirement must be satisfied to pass?
-**Answer: C** - All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.
-
-**Explanation:** This requirement is listed under testing requirements.
+**Explanation:** Aggregates define transactional consistency boundaries in DDD.
 
 ---
 
-## Question 9: Which option would be a common mistake to avoid?
-**Answer: B** - Shipping without an automated test run in CI.
+## Question 5: A saga is useful when…
+**Answer: B** — A long process spans services and needs compensating steps on failure
 
-**Explanation:** This mistake is listed under common mistakes.
+**Outcome 3:** Design event-driven flows and sagas for multi-step business processes.
+
+**Explanation:** Sagas coordinate distributed steps with compensations, not one giant DB TX.
 
 ---
 
-## Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: B** - Explain the core concepts and tradeoffs for **Architecture Patterns**.
+## Question 6: Event-driven design primarily helps by…
+**Answer: B** — Decoupling producers from consumers via facts that happened
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 3:** Design event-driven flows and sagas for multi-step business processes.
+
+**Explanation:** Events decouple; delivery semantics still need careful design.
+
+---
+
+## Question 7: CQRS is often overkill when…
+**Answer: A** — Read and write models are simple and change together
+
+**Outcome 4:** Decide when CQRS helps — and when it adds unjustified complexity.
+
+**Explanation:** CQRS adds dual models/complexity; use it when asymmetry justifies it.
+
+---
+
+## Question 8: A team adopts CQRS “for purity” on a CRUD admin tool. Risk?
+**Answer: B** — Extra moving parts without a scaling/consistency payoff
+
+**Outcome 4:** Decide when CQRS helps — and when it adds unjustified complexity.
+
+**Explanation:** Patterns must earn their complexity against real constraints.
+
+---
+
+## Question 9: Clean architecture’s dependency rule says source code dependencies point…
+**Answer: B** — Inward toward enterprise/domain policy
+
+**Outcome 1:** Compare layered, hexagonal, and clean architecture and place dependencies correctly.
+
+**Explanation:** Inner policy must not depend on outer details.
+
+---
+
+## Question 10: Two entities that must stay consistent in one transaction likely belong…
+**Answer: B** — In the same aggregate (or a carefully designed process)
+
+**Outcome 2:** Model domain concepts with entities, value objects, and aggregates.
+
+**Explanation:** Aggregate design follows consistency needs.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

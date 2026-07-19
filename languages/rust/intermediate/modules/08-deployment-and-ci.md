@@ -6,11 +6,10 @@ Containerize, configure, and deploy with automated CI checks.
 This module uses **Rust stable (rustup)**, **Cargo**, and **cargo test**. When applicable, you’ll build or extend a small service using **axum (or actix-web) REST + tokio** and **PostgreSQL + migrations (sqlx migrate) + SQLx**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Deployment and CI**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: rustfmt + clippy.
-- Document decisions and constraints clearly for reviewers.
+- Separate environments and configuration (dev/stage/prod) without baking secrets into images.
+- Use containers to make local and CI environments reproducible.
+- Design CI pipelines with caching, matrices, and artifacts where they help.
+- Deploy with health checks, safe migrations, and a rollback plan.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Rust**.

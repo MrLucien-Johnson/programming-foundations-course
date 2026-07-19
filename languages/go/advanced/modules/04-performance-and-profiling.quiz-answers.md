@@ -1,77 +1,97 @@
 # Go Advanced — Module 04: Performance and Profiling Quiz Answers
 
-## Question 1: You need to run the test suite. Which command should you use?
-**Answer: A** - `go test ./...`
+## Question 1: Why capture a baseline before optimizing?
+**Answer: B** — To know whether a change actually improved latency/throughput
 
-**Explanation:** This command runs the test suite.
+**Outcome 1:** Establish performance baselines before changing code.
 
----
-
-## Question 2: You need to run lint checks. Which command should you use?
-**Answer: B** - `golangci-lint run`
-
-**Explanation:** This command runs lint checks.
+**Explanation:** Without a baseline you cannot prove improvement.
 
 ---
 
-## Question 3: You need to format the code. Which command should you use?
-**Answer: A** - `gofmt -w .`
+## Question 2: A good baseline includes…
+**Answer: B** — Workload definition plus measured latency/error/resource metrics
 
-**Explanation:** This command formats the code.
+**Outcome 1:** Establish performance baselines before changing code.
 
----
-
-## Question 4: Which action best satisfies the Core requirements?
-**Answer: B** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This task appears under Core exercises.
+**Explanation:** Baselines need a defined load and recorded metrics.
 
 ---
 
-## Question 5: Which action upgrades the work to the Better level?
-**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 3: Load testing primarily answers…
+**Answer: B** — How the system behaves under target/peak concurrency and data size
 
-**Explanation:** This task appears under Better exercises.
+**Outcome 2:** Run load tests and locate bottlenecks with evidence.
 
----
-
-## Question 6: Which action qualifies as a Beast Mode upgrade?
-**Answer: C** - Add a performance or reliability improvement and **measure** the impact.
-
-**Explanation:** This task appears under Beast Mode exercises.
+**Explanation:** Load tests reveal bottlenecks under realistic pressure.
 
 ---
 
-## Question 7: Before submitting, which verification step must you complete?
-**Answer: B** - Run the module tests and confirm they pass.
+## Question 4: CPU is idle but latency is high. Likely bottleneck class?
+**Answer: B** — I/O waits, locks, or external dependencies
 
-**Explanation:** This item appears in the verification checklist.
+**Outcome 2:** Run load tests and locate bottlenecks with evidence.
 
----
-
-## Question 8: Which testing requirement must be satisfied to pass?
-**Answer: C** - All work must be covered by **gofmt + lint + tests in CI**.
-
-**Explanation:** This requirement is listed under testing requirements.
+**Explanation:** Idle CPU with high latency often means waiting on I/O or locks.
 
 ---
 
-## Question 9: Which option would be a common mistake to avoid?
-**Answer: A** - Shipping without an automated test run in CI.
+## Question 5: A slow filter on `user_id` with sequential scans suggests…
+**Answer: B** — Adding/using an appropriate index and verifying the plan
 
-**Explanation:** This mistake is listed under common mistakes.
+**Outcome 3:** Tune databases using indexes, query plans, and lock analysis.
+
+**Explanation:** Indexes + plans are the primary DB performance tools.
 
 ---
 
-## Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: B** - Explain the core concepts and tradeoffs for **Performance and Profiling**.
+## Question 6: Lock contention shows up as…
+**Answer: B** — Sessions waiting on locks held by other transactions
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 3:** Tune databases using indexes, query plans, and lock analysis.
+
+**Explanation:** Contended locks serialize work and inflate latency.
+
+---
+
+## Question 7: Cache-aside with TTL mainly risks…
+**Answer: A** — Serving stale data until TTL/invalidation
+
+**Outcome 4:** Choose cache invalidation strategies that match correctness needs.
+
+**Explanation:** TTLs trade freshness for simplicity; invalidate when correctness demands.
+
+---
+
+## Question 8: Write-through caching means…
+**Answer: A** — Writes update cache and store together (sync path)
+
+**Outcome 4:** Choose cache invalidation strategies that match correctness needs.
+
+**Explanation:** Write-through keeps cache warmer at the cost of write latency.
+
+---
+
+## Question 9: You found a hotspot function via profiler. Next step?
+**Answer: B** — Optimize that hotspot and re-measure against the baseline
+
+**Outcome 2:** Run load tests and locate bottlenecks with evidence.
+
+**Explanation:** Measure → change → re-measure the same scenario.
+
+---
+
+## Question 10: Micro-optimizing before profiling is risky because…
+**Answer: B** — You may optimize the wrong place while the real hotspot remains
+
+**Outcome 1:** Establish performance baselines before changing code.
+
+**Explanation:** Evidence first; intuition about hotspots is often wrong.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

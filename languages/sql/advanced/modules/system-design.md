@@ -2,10 +2,10 @@
 
 Strengthen SQL architecture and scale considerations.
 
-## Topics
-- schema evolution and migration strategy
-- performance tuning and indexing
-- reliability, auditing, and lineage
+## Learning Outcomes
+- Design a service for expected scale with explicit bottlenecks and mitigations.
+- Document architecture tradeoffs and rejected alternatives clearly.
+- Define verification (tests, load checks, or probes) that match the design risks.
 
 ## Deliverables
 - design notes with trade-offs

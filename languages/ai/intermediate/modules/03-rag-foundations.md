@@ -7,11 +7,11 @@ Build retrieval-augmented generation (RAG) systems: chunking, embeddings, retrie
 - RAG-based Q&A over docs (answer with citations to provided excerpts)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Chunk documents and attach metadata for retrieval.
+- Answer only from retrieved context with citations.
+- Abstain when evidence is missing and measure hallucination drop.
+- Separate retrieval failures from generation failures in evals.
+- Improve hit-rate with query rewriting and simple offline metrics.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

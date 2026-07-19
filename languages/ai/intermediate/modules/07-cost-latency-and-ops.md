@@ -8,11 +8,11 @@ Plan and control cost/latency: budgets, caching, batching, and operational guard
 - RAG Q&A (context trimming + abstention)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Set cost/latency budgets and enforce them in workflows.
+- Design cache keys and reuse strategies that preserve correctness.
+- Add early-exit/abstain rules when confidence is low.
+- Monitor quality, cost, and latency with actionable alerts.
+- Plan canary/rollback for prompt and model version changes.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

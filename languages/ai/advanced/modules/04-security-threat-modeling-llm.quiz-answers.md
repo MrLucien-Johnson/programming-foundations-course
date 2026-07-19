@@ -1,77 +1,97 @@
 # AI — Module 04: Security Threat Modeling for LLM Apps Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: B** - Create a threat model for one app: list threats and mitigations.
+## Question 1: Threat modeling an agent should list…
+**Answer: B** — Assets, attackers, abuse paths, and mitigations
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Produce a threat model with mitigations for an LLM app.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: D** - Add a least-privilege tool policy and verify via tests.
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Structured threats → prioritized controls.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Design incident response for security events (triage + containment).
+## Question 2: Tool abuse as a threat means…
+**Answer: B** — Attackers coerce the agent into harmful side effects
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Produce a threat model with mitigations for an LLM app.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: A** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Agents + tools = actionable attack surface.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: B** - Security tests included in the evaluation harness and CI gate.
+## Question 3: Red-team suites should map to…
+**Answer: B** — Top threats from the model
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Build red-team suites targeting top threats (injection, tool abuse).
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: B** - Treating retrieved content as trusted instructions.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Tests follow the threat model.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: D** - Translate a vague request into a clear goal, constraints, and success criteria.
+## Question 4: Injection that tries to exfiltrate secrets should expect…
+**Answer: B** — Containment/refusal and no secret leakage
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 2:** Build red-team suites targeting top threats (injection, tool abuse).
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: C** - Threat modeling workflow: assets, attackers, entry points (50 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Security tests assert negative outcomes.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: D** - Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+## Question 5: Least-privilege tool policy is verified by…
+**Answer: B** — Tests that attempt disallowed tools/args and expect denial
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Enforce least-privilege tool policies verified by tests.
+
+**Explanation:** Prove the policy holds.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: C** - Threat model LLM applications: injection, data exfiltration, tool abuse, and supply chain risks.
+## Question 6: Over-broad tools increase…
+**Answer: B** — Blast radius when injection succeeds
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 3:** Enforce least-privilege tool policies verified by tests.
+
+**Explanation:** Privilege amplifies compromise.
+
+---
+
+## Question 7: Retention rules for prompts/outputs reduce…
+**Answer: B** — Long-term exposure of sensitive content
+
+**Outcome 4:** Apply data minimization and retention to prompts/outputs.
+
+**Explanation:** Minimize how long risk lives.
+
+---
+
+## Question 8: Data minimization says…
+**Answer: B** — Collect/process only what the task needs
+
+**Outcome 4:** Apply data minimization and retention to prompts/outputs.
+
+**Explanation:** Less data → less breach impact.
+
+---
+
+## Question 9: Supply-chain policy for prompts/evals covers…
+**Answer: B** — Integrity/ownership of prompt packs, datasets, and scorers
+
+**Outcome 5:** Plan incident response and supply-chain controls for AI artifacts.
+
+**Explanation:** AI artifacts are part of the trusted compute base.
+
+---
+
+## Question 10: Incident response for a prompt-injection breach should include…
+**Answer: B** — Triage, containment (flags/tool lockdown), and follow-up hardening
+
+**Outcome 5:** Plan incident response and supply-chain controls for AI artifacts.
+
+**Explanation:** Security IR applies to LLM apps too.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

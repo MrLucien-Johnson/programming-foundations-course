@@ -7,11 +7,11 @@ Combine prompts into a workflow: input → transform → validate → output, wi
 - Agent workflow for a multi-step task (plan → execute → verify)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Design multi-step workflows with explicit step I/O contracts.
+- Add verification steps before accepting intermediate outputs.
+- Set retry budgets and stop conditions for uncertain results.
+- Log privacy-safe audit fields for each run.
+- Define fallbacks when a step fails or confidence is low.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

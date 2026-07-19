@@ -8,11 +8,11 @@ Design prompts that reliably call tools/functions: explicit contracts, error han
 - Customer support summarisation (tool use: knowledge lookup as “tool”, simulated)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Write tool contracts with typed arguments and error cases.
+- Choose among answer, clarify, or call-tool based on the request.
+- Verify tool results against the user request before finalizing.
+- Apply retry budgets and clear errors for tool failures.
+- Log tool calls in an audit schema without leaking secrets.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

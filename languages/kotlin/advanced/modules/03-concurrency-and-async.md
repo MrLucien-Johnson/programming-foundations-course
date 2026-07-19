@@ -6,11 +6,10 @@ Build correct concurrent systems and manage backpressure.
 This module uses **JDK 21 + Kotlin**, **Gradle**, and **JUnit 5 + MockK**. When applicable, you’ll build or extend a small service using **Ktor (or Spring Boot) REST** and **PostgreSQL + migrations (Flyway) + Exposed (or JDBC)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Concurrency and Async**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ktlint + detekt.
-- Document decisions and constraints clearly for reviewers.
+- Identify race conditions and choose safe synchronization or ownership patterns.
+- Apply backpressure with bounded queues so producers cannot overwhelm consumers.
+- Use timeouts, cancellation, and structured concurrency to bound work lifetimes.
+- Design for at-least-once delivery and idempotent handlers — not mythical exactly-once.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Kotlin**.

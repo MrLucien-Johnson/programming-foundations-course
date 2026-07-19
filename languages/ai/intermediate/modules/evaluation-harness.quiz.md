@@ -2,105 +2,102 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Before submitting, which verification step must you complete?
-A) Automate evaluation runs and capture metrics.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Avoid measuring results or performance.  
-D) Run the module tests and confirm they pass.  
+### Question 1: Golden sets are valuable because…
+**Checks outcome 1:** Assemble golden/test sets for automated or rubric scoring.
+
+A) They replace all metrics  
+B) They provide expected outputs/labels for scoring  
+C) They store secrets safely  
+D) They remove the need for rubrics  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
-B) Ship changes without documentation.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Jump to the next module without verifying results.  
+### Question 2: Rubric checks in a harness…
+**Checks outcome 1:** Assemble golden/test sets for automated or rubric scoring.
+
+A) Cannot be partially automated  
+B) Turn quality dimensions into scored fields  
+C) Only measure latency  
+D) Forbid golden sets  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which verification step is required before moving on?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Ship changes without documentation.  
-C) Ignore error handling for edge cases.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 3: Regression tracking requires…
+**Checks outcome 2:** Run the harness repeatedly and track regressions over time.
+
+A) Deleting old scores  
+B) Comparable runs on a stable case set with logged versions  
+C) Random new cases each time only  
+D) No thresholds  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
-B) Ignore error handling for edge cases.  
-C) Update the README with setup, run, and test commands.  
-D) Skip testing and trust the first result.  
+### Question 4: A score drop after a prompt edit should…
+**Checks outcome 2:** Run the harness repeatedly and track regressions over time.
+
+A) Be celebrated blindly  
+B) Trigger investigation and possibly revert  
+C) Delete the harness  
+D) Disable CI  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action is listed as part of the guided walkthrough?
-A) Ignore error handling for edge cases.  
-B) Review the module goals and plan how you will build an evaluation harness for repeatable testing.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Skip testing and trust the first result.  
+### Question 5: An evaluation report for release should include…
+**Checks outcome 3:** Produce evaluation reports that drive go/no-go decisions.
+
+A) Only screenshots of chat  
+B) Metrics, failing cases, and a clear pass/fail recommendation  
+C) API keys  
+D) Unrelated sprint velocity  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which step appears in the guided walkthrough?
-A) Define the evaluation categories and success criteria.  
-B) Ship changes without documentation.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Avoid measuring results or performance.  
+### Question 6: Findings without next actions are weak because…
+**Checks outcome 3:** Produce evaluation reports that drive go/no-go decisions.
+
+A) Actions are optional forever  
+B) Teams need mitigations or accept-risk decisions  
+C) Harnesses forbid actions  
+D) Goldens replace decisions  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which action is listed as part of the guided walkthrough?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Jump to the next module without verifying results.  
-C) Ship changes without documentation.  
-D) Automate evaluation runs and capture metrics.  
+### Question 7: Mixing unlabeled production samples into scoring without a scheme…
+**Checks outcome 1:** Assemble golden/test sets for automated or rubric scoring.
+
+A) Always improves precision  
+B) Can bias results unless sampling/labeling is controlled  
+C) Is required for harnesses  
+D) Removes variance  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which step appears in the guided walkthrough?
-A) Treat every request as safe without review.  
-B) Ignore error handling for edge cases.  
-C) Summarize results and prioritize fixes.  
-D) Jump to the next module without verifying results.  
+### Question 8: Pinning dataset and scorer versions prevents…
+**Checks outcome 2:** Run the harness repeatedly and track regressions over time.
 
-**Your answer:** _______________
-
----
-
-### Question 9: Which action is listed as part of the guided walkthrough?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Jump to the next module without verifying results.  
-D) Ignore error handling for edge cases.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which practice best supports reliable delivery?
-A) Automate evaluation runs and capture metrics.  
-B) Treat every request as safe without review.  
-C) Ship changes without documentation.  
-D) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
+A) All model drift  
+B) Fake “improvements” from changing the test itself  
+C) Cost tracking  
+D) Safety tests  
 
 **Your answer:** _______________
 
@@ -112,9 +109,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **8/8 correct:** Excellent — you can apply this module's outcomes.
+- **6-7 correct:** Strong — review the missed outcome(s).
+- **0-5 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

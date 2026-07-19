@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Treat every request as safe without review.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Dashboards and alerting strategy (45 min)  
-D) Define SLIs/SLOs for an AI feature and map them to metrics.  
+### Question 1: LLM SLIs often include…
+**Checks outcome 1:** Define SLIs/SLOs for quality, safety, cost, and latency.
+
+A) Only CPU temperature  
+B) Success/groundedness proxies, safety hits, latency, cost  
+C) Git blame counts  
+D) Office occupancy  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
-B) Add a “quality sampling” plan (privacy-safe) and escalation steps.  
-C) Ignore error handling for edge cases.  
-D) Define logs, metrics, and traces for core flows.  
+### Question 2: Mapping SLOs to metrics ensures…
+**Checks outcome 1:** Define SLIs/SLOs for quality, safety, cost, and latency.
+
+A) Pretty charts without decisions  
+B) Error budgets and alerts attach to real targets  
+C) Traces are optional forever  
+D) Canaries are banned  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Logging and tracing: correlation IDs and privacy-safe logs (45 min)  
-B) Avoid measuring results or performance.  
-C) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-D) Design an on-call playbook for “quality drop” and “cost spike” incidents.  
+### Question 3: Alert thresholds should be…
+**Checks outcome 2:** Design dashboards and alert thresholds operators can act on.
+
+A) So sensitive every blip pages  
+B) Tied to user impact / budget burn and actionable  
+C) Hidden from on-call  
+D) Based only on vanity KPIs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Treat every request as safe without review.  
-B) Run the module tests and confirm they pass.  
-C) Add a canary evaluation that runs continuously.  
-D) Logging sensitive user data without redaction.  
+### Question 4: A dashboard without owners…
+**Checks outcome 2:** Design dashboards and alert thresholds operators can act on.
+
+A) Still pages usefully  
+B) Tends to rot; assign responders per signal  
+C) Replaces runbooks  
+D) Fixes drift  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Jump to the next module without verifying results.  
-B) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
-C) Monitoring validates fallbacks are working and not harming UX.  
-D) Ship changes without documentation.  
+### Question 5: Tracing retrieval → generation → tools shows…
+**Checks outcome 3:** Trace multi-step LLM flows (retrieval, generation, tools).
+
+A) Only DNS  
+B) Where latency and failures occur in the LLM pipeline  
+C) Font metrics  
+D) Threat models  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
-B) Logging and tracing: correlation IDs and privacy-safe logs (45 min)  
-C) Logging sensitive user data without redaction.  
-D) Document and version changes so improvements are explainable.  
+### Question 6: Missing trace context between retrieval and generation…
+**Checks outcome 3:** Trace multi-step LLM flows (retrieval, generation, tools).
+
+A) Is fine  
+B) Breaks end-to-end latency diagnosis  
+C) Improves groundedness  
+D) Reduces cardinality issues  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Translate a vague request into a clear goal, constraints, and success criteria.  
-C) Run the module tests and confirm they pass.  
-D) Add a “quality sampling” plan (privacy-safe) and escalation steps.  
+### Question 7: Privacy-safe quality sampling means…
+**Checks outcome 4:** Sample quality safely (privacy-preserving) with escalation paths.
+
+A) Dumping raw tickets to public Slack  
+B) Redacting/minimizing content while still scoring subsets  
+C) Never sampling  
+D) Storing secrets longer  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Logging sensitive user data without redaction.  
-B) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
-C) Run the module tests and confirm they pass.  
-D) What to measure: quality, safety, cost, latency (50 min)  
+### Question 8: Escalation for quality drop should be documented so…
+**Checks outcome 4:** Sample quality safely (privacy-preserving) with escalation paths.
+
+A) On-call improvises each time  
+B) Responders know when to flag/rollback/page specialists  
+C) Metrics are deleted  
+D) Canaries continue blindly  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
-B) Design an on-call playbook for “quality drop” and “cost spike” incidents.  
-C) Design a dashboard layout and alert thresholds.  
-D) Avoid measuring results or performance.  
+### Question 9: Continuous canary eval…
+**Checks outcome 5:** Run continuous canary evaluation in production.
+
+A) Replaces all offline sets  
+B) Detects live regressions early on a small cohort  
+C) Guarantees zero cost  
+D) Disables SLOs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Logging sensitive user data without redaction.  
-B) Detecting regressions and drift in production (45 min)  
-C) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
-D) Instrument AI systems: quality metrics, cost/latency, tracing, and alerts tied to user impact.  
+### Question 10: Monitoring must verify fallbacks because…
+**Checks outcome 5:** Run continuous canary evaluation in production.
+
+A) Fallbacks never fail  
+B) Broken fallbacks can silently degrade UX or safety  
+C) Alerts forbid fallbacks  
+D) Traces replace fallbacks  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

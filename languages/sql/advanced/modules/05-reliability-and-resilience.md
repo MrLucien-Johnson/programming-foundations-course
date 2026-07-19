@@ -6,11 +6,10 @@ Design for failure using resilient patterns and operational readiness.
 This module uses **PostgreSQL 15+ (local via Docker)**, **psql + migrations tool (Sqitch/Flyway/Liquibase) + SQL formatter (sqlfluff)**, and **pgTAP (or migration + query validation scripts)**. When applicable, you’ll build or extend a small service using **Interface layer via views/functions + (optional) PostgREST** and **PostgreSQL schemas, roles, RLS, indexes, EXPLAIN**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Reliability and Resilience**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.
-- Document decisions and constraints clearly for reviewers.
+- Configure retries with timeouts, budgets, and jitter for transient faults.
+- Apply circuit breakers, bulkheads, and rate limits to contain failures.
+- Use idempotency keys and dedupe to make retried writes safe.
+- Write and follow runbooks for common incident classes.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **SQL (PostgreSQL)**.

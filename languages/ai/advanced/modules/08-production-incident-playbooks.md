@@ -9,11 +9,11 @@ Be ready for production: incident types, triage, communication, mitigations, and
 - Agent workflows (tool abuse / runaway loops)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Write playbooks for cost spikes, safety regressions, and quality drops.
+- Define immediate mitigations: flags, degrade modes, stricter filters.
+- Run incident drills that exercise detection and response.
+- Prepare internal and user-facing communication templates.
+- Close the loop by updating evals and guardrails after incidents.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

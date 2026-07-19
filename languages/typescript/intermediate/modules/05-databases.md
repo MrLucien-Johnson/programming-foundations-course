@@ -6,11 +6,11 @@ Design schemas, write queries, and ship migrations safely.
 This module uses **Node.js LTS**, **npm (or pnpm), TypeScript compiler (tsc)**, and **Vitest (or Jest)**. When applicable, you’ll build or extend a small service using **Fastify (or Express) for REST APIs** and **PostgreSQL + migrations (Prisma or Knex)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Databases**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ESLint + Prettier.
-- Document decisions and constraints clearly for reviewers.
+- Design schemas with constraints that protect data integrity.
+- Write forward/backwards-safe migrations and apply them carefully.
+- Use transactions and reason about basic isolation needs.
+- Choose indexes and read query plans to fix slow queries.
+- Avoid common ORM/query-builder pitfalls (N+1, lazy loads, unbounded queries).
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **TypeScript**.

@@ -6,11 +6,10 @@ Reduce common vulnerabilities with safe defaults.
 This module uses **Swift 5.10+ (SwiftPM)**, **Swift Package Manager (swift build)**, and **XCTest (swift test)**. When applicable, you’ll build or extend a small service using **Vapor (server-side Swift) for REST APIs** and **PostgreSQL + migrations (Fluent)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Security Basics**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: SwiftFormat + SwiftLint.
-- Document decisions and constraints clearly for reviewers.
+- Map real application risks to the OWASP Top 10 categories.
+- Store and load secrets via config/secret managers — never commit them.
+- Prevent injection using validation, encoding, and parameterized queries.
+- Enforce authorization checks with least privilege on every sensitive action.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Swift**.

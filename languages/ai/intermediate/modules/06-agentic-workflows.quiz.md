@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Jump to the next module without verifying results.  
-B) Stop conditions and safety rails (45 min)  
-C) Document and version changes so improvements are explainable.  
-D) Design an agent workflow spec for “triage support tickets and draft responses”.  
+### Question 1: An agent workflow spec should state…
+**Checks outcome 1:** Specify agent plans with tool boundaries and stop conditions.
+
+A) “Figure it out” only  
+B) Steps, allowed tools, stop conditions, and outputs  
+C) Unlimited recursive self-calls  
+D) No verification  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-B) Unbounded loops (no budgets/timeouts).  
-C) Add a tool budget and stop conditions; show how it prevents runaway loops.  
-D) Skip testing and trust the first result.  
+### Question 2: Tool boundaries exist to…
+**Checks outcome 1:** Specify agent plans with tool boundaries and stop conditions.
+
+A) Maximize surprise side effects  
+B) Prevent actions outside the task’s privilege set  
+C) Remove stop conditions  
+D) Skip evals  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Document and version changes so improvements are explainable.  
-B) Agent loop: plan → act → observe → verify (50 min)  
-C) Treat every request as safe without review.  
-D) Add adversarial cases that try to make the agent leak secrets or ignore constraints.  
+### Question 3: Verification before deliver means…
+**Checks outcome 2:** Insert verification steps that check claims against sources.
+
+A) Trusting the first draft always  
+B) Checking facts against provided sources  
+C) Deleting uncertainties  
+D) Calling more tools randomly  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Treat every request as safe without review.  
-B) Document and version changes so improvements are explainable.  
-C) Run the module tests and confirm they pass.  
-D) Design the handoff protocol between steps.  
+### Question 4: A tool budget of N calls stops…
+**Checks outcome 3:** Enforce tool budgets to prevent runaway loops.
+
+A) All useful work  
+B) Runaway loops that burn cost and time  
+C) Human approvals  
+D) Audit reports  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Treat every request as safe without review.  
-B) Translate a vague request into a clear goal, constraints, and success criteria.  
-C) Document and version changes so improvements are explainable.  
-D) Agent tested with simulated failures (tool down, partial data, conflicting instructions).  
+### Question 5: Missing stop conditions typically cause…
+**Checks outcome 3:** Enforce tool budgets to prevent runaway loops.
+
+A) Cleaner traces  
+B) Endless plan/execute cycles  
+C) Stronger grounding  
+D) Cheaper runs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) No verification step—agent confidently ships wrong results.  
-B) Run the module tests and confirm they pass.  
-C) Jump to the next module without verifying results.  
-D) Define agent roles and responsibilities.  
+### Question 6: Human approval checkpoints belong on…
+**Checks outcome 4:** Require human approval for high-risk actions.
+
+A) Every adjective choice  
+B) High-risk side effects (refunds, emails, deletes)  
+C) Read-only lookups only  
+D) Cache hits  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Avoid measuring results or performance.  
-B) Translate a vague request into a clear goal, constraints, and success criteria.  
-C) Add a verification step that checks facts only against provided sources.  
-D) Add a tool budget and stop conditions; show how it prevents runaway loops.  
+### Question 7: Adversarial cases that push secret leakage should…
+**Checks outcome 4:** Require human approval for high-risk actions.
+
+A) Be omitted  
+B) Be in the eval set with expected denials  
+C) Auto-succeed  
+D) Disable reports  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Agent loop: plan → act → observe → verify (50 min)  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Add a verification step that checks facts only against provided sources.  
-D) Define agent roles and responsibilities.  
+### Question 8: A post-run report should include…
+**Checks outcome 5:** Emit post-run reports covering actions, evidence, and uncertainties.
+
+A) Only “done”  
+B) Actions taken, evidence, and remaining uncertainties  
+C) Raw API keys  
+D) Unrelated metrics  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-B) Add adversarial cases that try to make the agent leak secrets or ignore constraints.  
-C) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
-D) Avoid measuring results or performance.  
+### Question 9: Listing uncertainties helps operators…
+**Checks outcome 5:** Emit post-run reports covering actions, evidence, and uncertainties.
+
+A) Ignore risk  
+B) Decide what needs human follow-up  
+C) Delete sources  
+D) Raise budgets silently  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Define agent roles and responsibilities.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) No verification step—agent confidently ships wrong results.  
-D) Design multi-step agents with explicit planning, tool boundaries, stop conditions, and verification.  
+### Question 10: Simulating tool-down failures in tests checks…
+**Checks outcome 2:** Insert verification steps that check claims against sources.
+
+A) Happy-path only  
+B) Whether the agent degrades safely (retry/stop/escalate)  
+C) Font loading  
+D) Schema cosmetics  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

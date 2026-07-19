@@ -8,11 +8,11 @@ Ship an AI feature safely: config, versioning, rollout, and operational readines
 - Data extraction JSON (schema/versioning in rollout)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Create a deployment checklist including eval and safety gates.
+- Version prompts/schemas and keep a change log.
+- Define rollback triggers from eval and user-impact signals.
+- Run smoke tests on critical flows post-deploy.
+- Use staged rollout with shadow evaluation where appropriate.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

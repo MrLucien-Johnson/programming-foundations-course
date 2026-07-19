@@ -1,77 +1,97 @@
 # Swift Intermediate — Module 05: Databases Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: B** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: You need emails to be unique per user. Where should that rule live primarily?
+**Answer: B** — As a database unique constraint (and validated in the app)
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Design schemas with constraints that protect data integrity.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Integrity constraints in the DB enforce rules even if app code misses a check.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Add a performance or reliability improvement and **measure** the impact.
+## Question 2: A foreign key constraint helps by…
+**Answer: B** — Preventing orphan rows that reference missing parents
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Design schemas with constraints that protect data integrity.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: C** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** FKs preserve referential integrity between tables.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: B** - All work must be covered by **build + tests + lint/format in CI**.
+## Question 3: What makes a migration safer to ship?
+**Answer: B** — A reviewed migration that is expandable/rollback-aware and tested on a copy first
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Write forward/backwards-safe migrations and apply them carefully.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: A** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Migrations should be reviewed, tested, and have a safety/rollback story.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Explain the core concepts and tradeoffs for **Databases**.
+## Question 4: Why wrap multi-step money transfers in a transaction?
+**Answer: A** — So partial updates cannot leave balances inconsistent if a step fails
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 3:** Use transactions and reason about basic isolation needs.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: D** - Schema design + constraints (45 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Transactions commit all-or-nothing for a unit of work.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: C** - Copy the starter pack from `languages/swift/intermediate/starter-pack` into a new working folder.
+## Question 5: A query filters frequently on `orders.user_id` and is slow. First database lever?
+**Answer: A** — Add an appropriate index on `user_id` (and verify with the query plan)
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 4:** Choose indexes and read query plans to fix slow queries.
+
+**Explanation:** Indexes + EXPLAIN/query plans are the core performance tools in this module.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: C** - Design schemas, write queries, and ship migrations safely.
+## Question 6: What does reading a query plan help you see?
+**Answer: B** — Whether the database uses indexes, scans, joins, and costly steps
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 4:** Choose indexes and read query plans to fix slow queries.
+
+**Explanation:** Plans show how the engine executes SQL so you can fix real bottlenecks.
+
+---
+
+## Question 7: What is the N+1 query problem?
+**Answer: B** — Running one query, then one extra query per returned row (often via lazy ORM loads)
+
+**Outcome 5:** Avoid common ORM/query-builder pitfalls (N+1, lazy loads, unbounded queries).
+
+**Explanation:** N+1 is a classic ORM pitfall — fix with joins/eager loading/batch queries.
+
+---
+
+## Question 8: An ORM call loads an entire table into memory without a limit. Risk?
+**Answer: B** — Unbounded queries can exhaust memory and crush latency
+
+**Outcome 5:** Avoid common ORM/query-builder pitfalls (N+1, lazy loads, unbounded queries).
+
+**Explanation:** Always bound list queries (pagination/limits) in real systems.
+
+---
+
+## Question 9: Why prefer expandable migrations over rewrite-in-place of historical migration files already applied?
+**Answer: A** — History already applied in other environments will diverge and break deploys
+
+**Outcome 2:** Write forward/backwards-safe migrations and apply them carefully.
+
+**Explanation:** Applied migrations are history; change forward with new migrations.
+
+---
+
+## Question 10: Isolation levels mainly trade off between…
+**Answer: B** — Consistency vs concurrency anomalies/performance
+
+**Outcome 3:** Use transactions and reason about basic isolation needs.
+
+**Explanation:** Stronger isolation reduces anomalies but can reduce throughput; pick what the use case needs.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

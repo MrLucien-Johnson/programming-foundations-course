@@ -6,11 +6,10 @@ Threat-model, harden, and protect secrets, data, and supply chain.
 This module uses **Swift 5.10+ (SwiftPM)**, **Swift Package Manager (swift build)**, and **XCTest (swift test)**. When applicable, you’ll build or extend a small service using **Vapor (server-side Swift) for REST APIs** and **PostgreSQL + migrations (Fluent)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Security (Advanced)**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: SwiftFormat + SwiftLint.
-- Document decisions and constraints clearly for reviewers.
+- Threat-model a feature including abuse cases and prioritised mitigations.
+- Apply encryption at rest/in transit with sound key management.
+- Enforce supply-chain controls for dependencies and build artifacts.
+- Execute a hardening checklist covering auth, config, and security tests.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Swift**.

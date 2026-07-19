@@ -6,11 +6,10 @@ Build correct concurrent systems and manage backpressure.
 This module uses **Rust stable (rustup)**, **Cargo**, and **cargo test**. When applicable, you’ll build or extend a small service using **axum (or actix-web) REST + tokio** and **PostgreSQL + migrations (sqlx migrate) + SQLx**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Concurrency and Async**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: rustfmt + clippy.
-- Document decisions and constraints clearly for reviewers.
+- Identify race conditions and choose safe synchronization or ownership patterns.
+- Apply backpressure with bounded queues so producers cannot overwhelm consumers.
+- Use timeouts, cancellation, and structured concurrency to bound work lifetimes.
+- Design for at-least-once delivery and idempotent handlers — not mythical exactly-once.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Rust**.

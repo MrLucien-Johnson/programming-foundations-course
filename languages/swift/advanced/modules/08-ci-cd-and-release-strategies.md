@@ -6,11 +6,10 @@ Ship safely with progressive delivery, rollbacks, and versioning.
 This module uses **Swift 5.10+ (SwiftPM)**, **Swift Package Manager (swift build)**, and **XCTest (swift test)**. When applicable, you’ll build or extend a small service using **Vapor (server-side Swift) for REST APIs** and **PostgreSQL + migrations (Fluent)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **CI/CD and Release Strategies**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: SwiftFormat + SwiftLint.
-- Document decisions and constraints clearly for reviewers.
+- Choose canary, blue-green, or rolling releases for a risk profile.
+- Use feature flags and safe config changes to control exposure.
+- Plan production database migrations that avoid downtime and lockouts.
+- Execute rollbacks with clear versioning and changelogs.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Swift**.

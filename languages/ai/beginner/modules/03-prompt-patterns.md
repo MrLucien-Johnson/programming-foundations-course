@@ -7,11 +7,11 @@ Use reusable prompt patterns to improve reliability: checklists, decomposition, 
 - Data extraction into JSON (free text → structured fields)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Design extraction prompts that emit valid structured fields.
+- Specify required-field checklists and missing-data behavior.
+- Add a review/repair pass that fixes structure without inventing facts.
+- Build an error taxonomy and track reductions across iterations.
+- Cover tricky cases with targeted few-shot examples.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

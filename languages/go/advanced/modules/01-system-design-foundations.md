@@ -6,11 +6,10 @@ Reason about scalability, data, and tradeoffs under constraints.
 This module uses **Go 1.22+**, **go mod**, and **testing + httptest**. When applicable, you’ll build or extend a small service using **net/http (or chi/gin) REST** and **PostgreSQL + migrations (goose) + database/sql (or sqlc)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **System Design Foundations**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: gofmt + golangci-lint.
-- Document decisions and constraints clearly for reviewers.
+- Turn vague product goals into requirements, constraints, and rough capacity estimates.
+- Choose caching, load balancing, and data partitioning approaches for a given load pattern.
+- Apply CAP/consistency tradeoffs to pick a consistency model for a use case.
+- Design async workflows with queues or streams when synchronous request paths are insufficient.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Go**.

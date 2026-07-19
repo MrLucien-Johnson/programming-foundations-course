@@ -6,11 +6,10 @@ Ship safely with progressive delivery, rollbacks, and versioning.
 This module uses **PostgreSQL 15+ (local via Docker)**, **psql + migrations tool (Sqitch/Flyway/Liquibase) + SQL formatter (sqlfluff)**, and **pgTAP (or migration + query validation scripts)**. When applicable, you’ll build or extend a small service using **Interface layer via views/functions + (optional) PostgREST** and **PostgreSQL schemas, roles, RLS, indexes, EXPLAIN**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **CI/CD and Release Strategies**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.
-- Document decisions and constraints clearly for reviewers.
+- Choose canary, blue-green, or rolling releases for a risk profile.
+- Use feature flags and safe config changes to control exposure.
+- Plan production database migrations that avoid downtime and lockouts.
+- Execute rollbacks with clear versioning and changelogs.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **SQL (PostgreSQL)**.

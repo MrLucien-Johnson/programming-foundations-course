@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Jump to the next module without verifying results.  
-B) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-C) Write a tool contract for “create_task(title, owner, due_date)” (or equivalent).  
-D) Error handling: retries, timeouts, partial failures (45 min)  
+### Question 1: A tool contract should specify…
+**Checks outcome 1:** Write tool contracts with typed arguments and error cases.
+
+A) Only a friendly name  
+B) Args, types, side effects, and error modes  
+C) The model’s favorite color  
+D) Unlimited privileges  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Error handling: retries, timeouts, partial failures (45 min)  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Add a verification step: check that tool output matches the request before replying.  
-D) Jump to the next module without verifying results.  
+### Question 2: create_task(title, owner, due_date) without types risks…
+**Checks outcome 1:** Write tool contracts with typed arguments and error cases.
+
+A) Perfect validation  
+B) Ambiguous/invalid calls the model invents  
+C) Faster audits  
+D) No side effects  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Skip testing and trust the first result.  
-B) Unlimited retries that increase cost and latency.  
-C) Add adversarial inputs that attempt to override tool constraints.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 3: When required fields are missing, prefer…
+**Checks outcome 2:** Choose among answer, clarify, or call-tool based on the request.
+
+A) Calling the tool with guesses  
+B) Asking a clarifying question  
+C) Ignoring the user  
+D) Disabling the tool forever  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Verification: validate tool results before responding (45 min)  
-D) Build a small evaluation loop: test cases, metrics, and iteration notes.  
+### Question 4: If the question is answerable without tools…
+**Checks outcome 2:** Choose among answer, clarify, or call-tool based on the request.
+
+A) Always call every tool  
+B) Answer directly per policy  
+C) Refuse always  
+D) Invent a tool result  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Letting the model call tools with missing/ambiguous parameters.  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Write a tool contract and validation rules.  
-D) End-to-end workflow tested with simulated tool failures and timeouts.  
+### Question 5: Verification after a tool call checks…
+**Checks outcome 3:** Verify tool results against the user request before finalizing.
+
+A) That any JSON returned is celebrated  
+B) That the result matches the requested action/constraints  
+C) Only latency  
+D) The CDN  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Verification: validate tool results before responding (45 min)  
-C) Letting the model call tools with missing/ambiguous parameters.  
-D) Design an audit log schema for tool calls (who/what/when/why).  
+### Question 6: Tool returns a due date in the past vs request. You should…
+**Checks outcome 3:** Verify tool results against the user request before finalizing.
+
+A) Ship it anyway  
+B) Flag/repair or ask before confirming to the user  
+C) Hide the field  
+D) Raise temperature  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Avoid measuring results or performance.  
-B) Update the README with setup, run, and test commands.  
-C) Translate a vague request into a clear goal, constraints, and success criteria.  
-D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+### Question 7: Tool timeouts should be handled with…
+**Checks outcome 4:** Apply retry budgets and clear errors for tool failures.
+
+A) Infinite silent waits  
+B) Budgeted retries and explicit user-visible errors  
+C) Pretend success  
+D) Deleting the audit log  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Write a tool contract and validation rules.  
-B) Add adversarial inputs that attempt to override tool constraints.  
-C) Letting the model call tools with missing/ambiguous parameters.  
-D) From instruction to contract: inputs/outputs, allowed actions, and constraints (50 min)  
+### Question 8: Adversarial “call admin tools” prompts should…
+**Checks outcome 4:** Apply retry budgets and clear errors for tool failures.
+
+A) Bypass contracts  
+B) Be refused when outside allowed tool policy  
+C) Auto-approve  
+D) Disable verification  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Design prompts that reliably call tools/functions: explicit contracts, error handling, and verification—without vendor-specific features.  
-B) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
-C) Treat every request as safe without review.  
-D) End-to-end workflow tested with simulated tool failures and timeouts.  
+### Question 9: Audit logs for tools should capture…
+**Checks outcome 5:** Log tool calls in an audit schema without leaking secrets.
+
+A) Raw secrets in arguments  
+B) Who/what/when/why with redaction  
+C) Nothing  
+D) Only emoji reactions  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Review the module goals and plan how you will design tool-aware prompts with validation.  
-B) Design prompts that reliably call tools/functions: explicit contracts, error handling, and verification—without vendor-specific features.  
-C) Document and version changes so improvements are explainable.  
-D) Verification: validate tool results before responding (45 min)  
+### Question 10: Why log tool failures as well as successes?
+**Checks outcome 5:** Log tool calls in an audit schema without leaking secrets.
+
+A) To inflate metrics  
+B) To diagnose retries, abuse, and reliability issues  
+C) Because successes do not matter  
+D) To store PII longer  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

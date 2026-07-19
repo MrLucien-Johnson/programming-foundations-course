@@ -6,11 +6,10 @@ Build correct concurrent systems and manage backpressure.
 This module uses **.NET 8**, **dotnet CLI + NuGet**, and **xUnit (or NUnit) + FluentAssertions**. When applicable, you’ll build or extend a small service using **ASP.NET Core Web API** and **PostgreSQL + migrations (EF Core)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Concurrency and Async**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: dotnet format + analyzers.
-- Document decisions and constraints clearly for reviewers.
+- Identify race conditions and choose safe synchronization or ownership patterns.
+- Apply backpressure with bounded queues so producers cannot overwhelm consumers.
+- Use timeouts, cancellation, and structured concurrency to bound work lifetimes.
+- Design for at-least-once delivery and idempotent handlers — not mythical exactly-once.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **C#**.

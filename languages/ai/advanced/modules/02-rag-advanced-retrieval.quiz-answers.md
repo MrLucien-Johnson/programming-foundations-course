@@ -1,77 +1,97 @@
 # AI — Module 02: RAG: Advanced Retrieval Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: C** - Design a retrieval evaluation plan: hit-rate, groundedness, abstentions.
+## Question 1: Separating hit-rate from groundedness tells you…
+**Answer: B** — Whether misses are retrieval or generation problems
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Evaluate retrieval with hit-rate, groundedness, and abstention metrics.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: A** - Compare two chunking strategies and record tradeoffs.
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Split metrics guide fixes.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Add access-control-aware retrieval (no leakage across permissions).
+## Question 2: High abstention with high hit-rate may mean…
+**Answer: B** — Over-strict grounding or poor evidence use in generation
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Evaluate retrieval with hit-rate, groundedness, and abstention metrics.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: A** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Interpret metric pairs, not single numbers.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: C** - Eval harness separates retrieval vs generation metrics.
+## Question 3: Comparing two chunking strategies requires…
+**Answer: B** — The same question set and recorded metrics
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Compare chunking strategies with measured tradeoffs.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: A** - Optimizing retrieval with changing datasets (no stable benchmark).
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Controlled A/B on retrieval units.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: A** - Translate a vague request into a clear goal, constraints, and success criteria.
+## Question 4: Huge chunks often hurt because…
+**Answer: B** — Irrelevant text dilutes retrieval and context windows
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 2:** Compare chunking strategies with measured tradeoffs.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: C** - Retrieval quality signals: precision, recall, and failure modes (50 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Chunk size is a relevance/context tradeoff.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+## Question 5: Reranking helps when…
+**Answer: B** — Top-n candidates need relevance reordering before generation
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Add reranking and quantify lift on a fixed question set.
+
+**Explanation:** Rerank refines candidate lists.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: C** - Improve retrieval quality: hybrid search, metadata filters, reranking, and freshness.
+## Question 6: Measure rerank lift by…
+**Answer: B** — Diffing metrics on a fixed question set with/without rerank
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 3:** Add reranking and quantify lift on a fixed question set.
+
+**Explanation:** Hold the set constant.
+
+---
+
+## Question 7: ACL-aware retrieval means…
+**Answer: B** — Only retrieve documents the caller is allowed to see
+
+**Outcome 4:** Enforce access-control-aware retrieval to prevent leakage.
+
+**Explanation:** Filter at retrieval time, not after generation.
+
+---
+
+## Question 8: Leakage across permissions is a…
+**Answer: B** — Security/privacy incident class for RAG
+
+**Outcome 4:** Enforce access-control-aware retrieval to prevent leakage.
+
+**Explanation:** Treat cross-tenant retrieval as a breach path.
+
+---
+
+## Question 9: Freshness tests verify…
+**Answer: B** — Newly added docs become retrievable within an agreed window
+
+**Outcome 5:** Test freshness so new docs become retrievable within a target window.
+
+**Explanation:** Index lag is a product bug for many domains.
+
+---
+
+## Question 10: Groundedness scoring checks…
+**Answer: A** — Whether claims are supported by retrieved evidence
+
+**Outcome 1:** Evaluate retrieval with hit-rate, groundedness, and abstention metrics.
+
+**Explanation:** Groundedness is evidence alignment.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Build correct concurrent systems and manage backpressure.  
-B) Skip testing and trust the first result.  
-C) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 1: Two threads increment the same counter without synchronization. Result?
+**Checks outcome 1:** Identify race conditions and choose safe synchronization or ownership patterns.
+
+A) Always perfectly accurate counts  
+B) A race: lost updates are possible  
+C) Automatic database indexing  
+D) CAP becoming irrelevant  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Skip testing and trust the first result.  
+### Question 2: Which approach often prevents races better than sprinkling locks everywhere?
+**Checks outcome 1:** Identify race conditions and choose safe synchronization or ownership patterns.
+
+A) Sharing more mutable globals  
+B) Owning data per task/actor and communicating by messages  
+C) Disabling tests  
+D) Sleeping randomly longer  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Timeouts, cancellation, and structured concurrency (55 min)  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 3: An unbounded in-memory queue under load typically causes…
+**Checks outcome 2:** Apply backpressure with bounded queues so producers cannot overwhelm consumers.
+
+A) Perfect backpressure  
+B) Memory growth and eventual collapse  
+C) Faster GC forever  
+D) Stronger consistency  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Timeouts, cancellation, and structured concurrency (55 min)  
-B) Run the module tests and confirm they pass.  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Explain the core concepts and tradeoffs for **Concurrency and Async**.  
+### Question 4: Backpressure means…
+**Checks outcome 2:** Apply backpressure with bounded queues so producers cannot overwhelm consumers.
+
+A) Producers keep sending at full speed no matter what  
+B) Consumers/signals slow or block producers when buffers fill  
+C) Deleting metrics  
+D) Turning off timeouts  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Backpressure + bounded work queues (55 min)  
-B) Add or update documentation (README notes or ADR-style notes).  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-D) All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.  
+### Question 5: Why set timeouts on outbound calls?
+**Checks outcome 3:** Use timeouts, cancellation, and structured concurrency to bound work lifetimes.
+
+A) To guarantee success  
+B) To bound wait time when dependencies hang  
+C) Because retries are illegal  
+D) To increase cardinality of every metric  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Shipping without an automated test run in CI.  
+### Question 6: Structured concurrency encourages…
+**Checks outcome 3:** Use timeouts, cancellation, and structured concurrency to bound work lifetimes.
+
+A) Fire-and-forget tasks with no parent ownership  
+B) Parent scopes that cancel/wait for child tasks cleanly  
+C) Ignoring cancellation forever  
+D) Sharing one global mutable list for all jobs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Add a test for race conditions or timeouts.  
-D) Explain the core concepts and tradeoffs for **Concurrency and Async**.  
+### Question 7: “Exactly-once delivery” across unreliable networks is…
+**Checks outcome 4:** Design for at-least-once delivery and idempotent handlers — not mythical exactly-once.
+
+A) Trivial if you enable a checkbox  
+B) Effectively achieved via idempotent processing of at-least-once deliveries  
+C) Guaranteed by UDP  
+D) Unnecessary if you use JSON  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Shipping without an automated test run in CI.  
-B) Add a test for race conditions or timeouts.  
-C) Concurrency primitives + race conditions (60 min)  
-D) Build correct concurrent systems and manage backpressure.  
+### Question 8: An idempotency key on a payment create endpoint helps when…
+**Checks outcome 4:** Design for at-least-once delivery and idempotent handlers — not mythical exactly-once.
+
+A) The client retries after a timeout and might double-charge  
+B) You want to skip AuthZ  
+C) Caches should never expire  
+D) You delete audit logs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/typescript/advanced/starter-pack` into a new working folder.  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Jump to the next module without verifying results.  
-D) Treat every request as safe without review.  
+### Question 9: A worker pool of size N with a bounded queue of size M is full. A good policy is…
+**Checks outcome 2:** Apply backpressure with bounded queues so producers cannot overwhelm consumers.
+
+A) Allocate infinite threads silently  
+B) Reject, block, or shed load with a clear signal  
+C) Drop ACLs  
+D) Disable health checks  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Build correct concurrent systems and manage backpressure.  
-C) Timeouts, cancellation, and structured concurrency (55 min)  
-D) Implement an async or concurrent workflow.  
+### Question 10: A cancelled request should ideally…
+**Checks outcome 3:** Use timeouts, cancellation, and structured concurrency to bound work lifetimes.
+
+A) Keep running forever consuming CPU/DB  
+B) Propagate cancellation so downstream work stops promptly  
+C) Delete the database schema  
+D) Raise cardinality of user-id labels  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

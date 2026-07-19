@@ -6,11 +6,10 @@ Build correct concurrent systems and manage backpressure.
 This module uses **Python 3.12+**, **venv + pip (or uv/poetry)**, and **pytest**. When applicable, you’ll build or extend a small service using **FastAPI (or Flask) for REST APIs** and **PostgreSQL + migrations (Alembic)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Concurrency and Async**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ruff + black (or ruff format).
-- Document decisions and constraints clearly for reviewers.
+- Identify race conditions and choose safe synchronization or ownership patterns.
+- Apply backpressure with bounded queues so producers cannot overwhelm consumers.
+- Use timeouts, cancellation, and structured concurrency to bound work lifetimes.
+- Design for at-least-once delivery and idempotent handlers — not mythical exactly-once.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Python**.

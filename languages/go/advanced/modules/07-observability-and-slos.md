@@ -6,11 +6,10 @@ Instrument systems and run them with SLO-based operations.
 This module uses **Go 1.22+**, **go mod**, and **testing + httptest**. When applicable, you’ll build or extend a small service using **net/http (or chi/gin) REST** and **PostgreSQL + migrations (goose) + database/sql (or sqlc)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Observability and SLOs**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: gofmt + golangci-lint.
-- Document decisions and constraints clearly for reviewers.
+- Define SLIs/SLOs and manage error budgets for a service.
+- Apply RED/USE metrics while avoiding high-cardinality label explosions.
+- Propagate trace context across services to diagnose latency.
+- Design alerts that are actionable and kind to on-call.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Go**.

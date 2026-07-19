@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Update the README with setup, run, and test commands.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Write tests that prove correctness and prevent regressions.  
+### Question 1: Why keep production config/secrets out of the container image?
+**Checks outcome 1:** Separate environments and configuration (dev/stage/prod) without baking secrets into images.
+
+A) Images are never stored anywhere  
+B) Images get copied widely — secrets belong in env/secret injection at runtime  
+C) Kubernetes forbids environment variables  
+D) Config never changes between environments  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Create a deployment checklist (build, test, release).  
+### Question 2: Dev and prod should differ mainly by…
+**Checks outcome 1:** Separate environments and configuration (dev/stage/prod) without baking secrets into images.
+
+A) Completely different undocumented codepaths with no parity  
+B) Configuration/data — not “works on my machine” snowflake setups  
+C) Disabling HTTPS only in prod  
+D) Skipping tests only in prod  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Shipping without an automated test run in CI.  
-B) Document decisions and constraints clearly for reviewers.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Create a deployment checklist (build, test, release).  
+### Question 3: Containers help CI/local work by…
+**Checks outcome 2:** Use containers to make local and CI environments reproducible.
+
+A) Guaranteeing marketing copy is correct  
+B) Packaging dependencies so runs are more reproducible across machines  
+C) Removing the need for tests  
+D) Making rollbacks impossible  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Add a CI workflow or script that runs tests automatically.  
-C) Treat every request as safe without review.  
-D) Run the module tests and confirm they pass.  
+### Question 4: Why cache dependencies in CI?
+**Checks outcome 3:** Design CI pipelines with caching, matrices, and artifacts where they help.
+
+A) To hide failing tests  
+B) To speed pipelines by reusing downloaded packages between runs  
+C) To avoid ever updating libraries  
+D) To store production secrets in the cache  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Add a CI workflow or script that runs tests automatically.  
-D) All work must be covered by **build + tests + static analysis in CI**.  
+### Question 5: A CI matrix is useful when you need to…
+**Checks outcome 3:** Design CI pipelines with caching, matrices, and artifacts where they help.
+
+A) Run the same checks across versions/platforms (e.g., 3.11 and 3.12)  
+B) Deploy on every keystroke to production  
+C) Skip linting forever  
+D) Store passwords in artifacts  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Shipping without an automated test run in CI.  
-B) Skip testing and trust the first result.  
-C) Ignore error handling for edge cases.  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 6: CI artifacts are typically used to…
+**Checks outcome 3:** Design CI pipelines with caching, matrices, and artifacts where they help.
+
+A) Publish build outputs (wheels, images metadata, coverage reports) for later jobs/humans  
+B) Replace git remotes  
+C) Bypass code review  
+D) Disable health checks  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Making performance claims without measurements.  
-B) Explain the core concepts and tradeoffs for **Deployment and CI**.  
-C) Avoid measuring results or performance.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 7: What is a health check for in deployment?
+**Checks outcome 4:** Deploy with health checks, safe migrations, and a rollback plan.
+
+A) A cosmetic README badge only  
+B) Letting the platform know whether the new instance is ready to receive traffic  
+C) Deleting the database nightly  
+D) Formatting source files  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Environments + configuration (35 min)  
-D) Add a CI workflow or script that runs tests automatically.  
+### Question 8: Before a migration that might fail in production, you should have…
+**Checks outcome 4:** Deploy with health checks, safe migrations, and a rollback plan.
+
+A) No plan  
+B) A tested forward path and a rollback/mitigation plan  
+C) Only a screenshot of local success  
+D) Force-push to main during peak traffic  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Use tooling to keep quality high: ktlint + detekt.  
-B) Containerize, configure, and deploy with automated CI checks.  
-C) Copy the starter pack from `languages/kotlin/intermediate/starter-pack` into a new working folder.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 9: A bad deploy is live. What does a rollback plan enable?
+**Checks outcome 4:** Deploy with health checks, safe migrations, and a rollback plan.
+
+A) Faster return to a known-good version while you diagnose  
+B) Permanent data corruption as a feature  
+C) Skipping blameless review forever  
+D) Turning off monitoring  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Deployments: health checks + migrations + rollback plan (45 min)  
-B) Containerize, configure, and deploy with automated CI checks.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Create a deployment checklist (build, test, release).  
+### Question 10: Why run the same container image in CI tests and staging when possible?
+**Checks outcome 2:** Use containers to make local and CI environments reproducible.
+
+A) To maximize environment drift  
+B) To test what you actually ship  
+C) Because registries reject tags  
+D) To avoid writing Dockerfiles with any base image  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) `cargo test`  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Review the module goals and plan how you will automate releases and rollback.  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 1: A canary release primarily…
+**Checks outcome 1:** Choose canary, blue-green, or rolling releases for a risk profile.
+
+A) Ships to 100% instantly  
+B) Exposes a new version to a small slice of traffic first  
+C) Deletes the old version immediately  
+D) Skips health checks  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: You need to run lint checks. Which command should you use?
-A) `cargo clippy`  
-B) All work must be covered by **fmt + clippy + tests in CI**.  
-C) Avoid measuring results or performance.  
-D) Write tests that prove correctness and prevent regressions.  
+### Question 2: Blue-green deployment keeps…
+**Checks outcome 1:** Choose canary, blue-green, or rolling releases for a risk profile.
+
+A) Two environments so you can switch traffic atomically and roll back fast  
+B) No way to roll back  
+C) Only canary pods forever  
+D) Secrets in the image  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) Release strategies: canary, blue/green, rolling (45 min)  
-B) All work must be covered by **fmt + clippy + tests in CI**.  
-C) `cargo fmt`  
-D) Avoid measuring results or performance.  
+### Question 3: Feature flags help you…
+**Checks outcome 2:** Use feature flags and safe config changes to control exposure.
+
+A) Avoid all testing  
+B) Decouple deploy from release and kill-switch bad behavior  
+C) Skip AuthZ  
+D) Ignore migrations  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action best satisfies the Core requirements?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) All work must be covered by **fmt + clippy + tests in CI**.  
-C) Making performance claims without measurements.  
-D) Avoid measuring results or performance.  
+### Question 4: A risky config change should be…
+**Checks outcome 2:** Use feature flags and safe config changes to control exposure.
+
+A) Pushed globally with no kill switch  
+B) Rolled out gradually with monitoring and a fast revert path  
+C) Stored only in chat history  
+D) Applied by editing production DB by hand mid-flight  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action upgrades the work to the Better level?
-A) Ship changes without documentation.  
-B) All work must be covered by **fmt + clippy + tests in CI**.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 5: Expand/contract migrations reduce risk by…
+**Checks outcome 3:** Plan production database migrations that avoid downtime and lockouts.
+
+A) Dropping columns in the same deploy that removes all readers  
+B) Adding new schema first, dual-writing/reading, then removing old later  
+C) Rewriting applied migration files in place  
+D) Skipping backups  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Ignore error handling for edge cases.  
-B) Use tooling to keep quality high: rustfmt + clippy.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Run: `cargo fmt`  
+### Question 6: Taking a long ACCESS EXCLUSIVE lock on a hot table during peak…
+**Checks outcome 3:** Plan production database migrations that avoid downtime and lockouts.
+
+A) Is ideal for UX  
+B) Can stall writes/reads and cause an outage  
+C) Improves canaries  
+D) Replaces feature flags  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Create a short write-up: what changed, why, and how you verified it.  
-C) Avoid measuring results or performance.  
-D) Create a release checklist with versioning rules.  
+### Question 7: A rollback plan needs…
+**Checks outcome 4:** Execute rollbacks with clear versioning and changelogs.
+
+A) Hope  
+B) A known-good version, data compatibility rules, and a practiced switch  
+C) Deleting metrics first  
+D) Force-pushing secrets  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement must be satisfied to pass?
-A) Run: `cargo fmt`  
-B) All work must be covered by **fmt + clippy + tests in CI**.  
-C) Feature flags + config safety (35 min)  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 8: Changelogs/versioning help incidents by…
+**Checks outcome 4:** Execute rollbacks with clear versioning and changelogs.
+
+A) Hiding what shipped  
+B) Making it obvious what changed when symptoms started  
+C) Replacing monitoring  
+D) Guaranteeing zero bugs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option would be a common mistake to avoid?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Run the module tests and confirm they pass.  
-C) Update the README with setup, run, and test commands.  
-D) Shipping without an automated test run in CI.  
+### Question 9: Rolling deploys gradually replace instances. Main risk to watch?
+**Checks outcome 1:** Choose canary, blue-green, or rolling releases for a risk profile.
+
+A) Mixed versions briefly serving traffic  
+B) Instant dual environments for free  
+C) Automatic schema expand/contract  
+D) Feature flags becoming unnecessary  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **CI/CD and Release Strategies**.  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Making performance claims without measurements.  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 10: Turning a flag on for 5% of users is similar in spirit to…
+**Checks outcome 2:** Use feature flags and safe config changes to control exposure.
+
+A) A full blue-green cutover with no metrics  
+B) A canary / progressive delivery of a behavior  
+C) Deleting the old code path immediately in DB  
+D) Skipping CI  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

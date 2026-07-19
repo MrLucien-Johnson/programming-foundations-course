@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Skip testing and trust the first result.  
-B) Jump to the next module without verifying results.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Set up automated tests and build steps.  
+### Question 1: A canary release primarily…
+**Checks outcome 1:** Choose canary, blue-green, or rolling releases for a risk profile.
+
+A) Ships to 100% instantly  
+B) Exposes a new version to a small slice of traffic first  
+C) Deletes the old version immediately  
+D) Skips health checks  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Skip testing and trust the first result.  
+### Question 2: Blue-green deployment keeps…
+**Checks outcome 1:** Choose canary, blue-green, or rolling releases for a risk profile.
+
+A) Two environments so you can switch traffic atomically and roll back fast  
+B) No way to roll back  
+C) Only canary pods forever  
+D) Secrets in the image  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Ship changes without documentation.  
-B) Set up automated tests and build steps.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 3: Feature flags help you…
+**Checks outcome 2:** Use feature flags and safe config changes to control exposure.
+
+A) Avoid all testing  
+B) Decouple deploy from release and kill-switch bad behavior  
+C) Skip AuthZ  
+D) Ignore migrations  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Treat every request as safe without review.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 4: A risky config change should be…
+**Checks outcome 2:** Use feature flags and safe config changes to control exposure.
+
+A) Pushed globally with no kill switch  
+B) Rolled out gradually with monitoring and a fast revert path  
+C) Stored only in chat history  
+D) Applied by editing production DB by hand mid-flight  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Avoid measuring results or performance.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) All work must be covered by **build + unit tests + slice/integration tests (Spring + DB) in CI**.  
-D) Set up automated tests and build steps.  
+### Question 5: Expand/contract migrations reduce risk by…
+**Checks outcome 3:** Plan production database migrations that avoid downtime and lockouts.
+
+A) Dropping columns in the same deploy that removes all readers  
+B) Adding new schema first, dual-writing/reading, then removing old later  
+C) Rewriting applied migration files in place  
+D) Skipping backups  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Rollbacks, versioning, and changelogs (40 min)  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Shipping without an automated test run in CI.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+### Question 6: Taking a long ACCESS EXCLUSIVE lock on a hot table during peak…
+**Checks outcome 3:** Plan production database migrations that avoid downtime and lockouts.
+
+A) Is ideal for UX  
+B) Can stall writes/reads and cause an outage  
+C) Improves canaries  
+D) Replaces feature flags  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **CI/CD and Release Strategies**.  
-B) Skip testing and trust the first result.  
-C) Ignore error handling for edge cases.  
-D) Ship safely with progressive delivery, rollbacks, and versioning.  
+### Question 7: A rollback plan needs…
+**Checks outcome 4:** Execute rollbacks with clear versioning and changelogs.
+
+A) Hope  
+B) A known-good version, data compatibility rules, and a practiced switch  
+C) Deleting metrics first  
+D) Force-pushing secrets  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Release strategies: canary, blue/green, rolling (45 min)  
-B) Skip testing and trust the first result.  
-C) Set up automated tests and build steps.  
-D) Add or update documentation (README notes or ADR-style notes).  
+### Question 8: Changelogs/versioning help incidents by…
+**Checks outcome 4:** Execute rollbacks with clear versioning and changelogs.
+
+A) Hiding what shipped  
+B) Making it obvious what changed when symptoms started  
+C) Replacing monitoring  
+D) Guaranteeing zero bugs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Making performance claims without measurements.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Copy the starter pack from `languages/java/advanced/starter-pack` into a new working folder.  
+### Question 9: Rolling deploys gradually replace instances. Main risk to watch?
+**Checks outcome 1:** Choose canary, blue-green, or rolling releases for a risk profile.
+
+A) Mixed versions briefly serving traffic  
+B) Instant dual environments for free  
+C) Automatic schema expand/contract  
+D) Feature flags becoming unnecessary  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Over-mocking (tests assert implementation details instead of outcomes).  
-B) Ship safely with progressive delivery, rollbacks, and versioning.  
-C) Set up automated tests and build steps.  
-D) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
+### Question 10: Turning a flag on for 5% of users is similar in spirit to…
+**Checks outcome 2:** Use feature flags and safe config changes to control exposure.
+
+A) A full blue-green cutover with no metrics  
+B) A canary / progressive delivery of a behavior  
+C) Deleting the old code path immediately in DB  
+D) Skipping CI  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

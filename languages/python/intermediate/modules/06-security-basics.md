@@ -6,11 +6,10 @@ Reduce common vulnerabilities with safe defaults.
 This module uses **Python 3.12+**, **venv + pip (or uv/poetry)**, and **pytest**. When applicable, you’ll build or extend a small service using **FastAPI (or Flask) for REST APIs** and **PostgreSQL + migrations (Alembic)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Security Basics**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ruff + black (or ruff format).
-- Document decisions and constraints clearly for reviewers.
+- Map real application risks to the OWASP Top 10 categories.
+- Store and load secrets via config/secret managers — never commit them.
+- Prevent injection using validation, encoding, and parameterized queries.
+- Enforce authorization checks with least privilege on every sensitive action.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Python**.

@@ -6,11 +6,10 @@ Instrument systems and run them with SLO-based operations.
 This module uses **Rust stable (rustup)**, **Cargo**, and **cargo test**. When applicable, you’ll build or extend a small service using **axum (or actix-web) REST + tokio** and **PostgreSQL + migrations (sqlx migrate) + SQLx**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Observability and SLOs**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: rustfmt + clippy.
-- Document decisions and constraints clearly for reviewers.
+- Define SLIs/SLOs and manage error budgets for a service.
+- Apply RED/USE metrics while avoiding high-cardinality label explosions.
+- Propagate trace context across services to diagnose latency.
+- Design alerts that are actionable and kind to on-call.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Rust**.

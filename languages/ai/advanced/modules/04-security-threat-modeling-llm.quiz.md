@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Tool security: least privilege, allowlists, and audit logs (45 min)  
-B) Create a threat model for one app: list threats and mitigations.  
-C) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-D) Document mitigations and monitoring.  
+### Question 1: Threat modeling an agent should list…
+**Checks outcome 1:** Produce a threat model with mitigations for an LLM app.
+
+A) Only UX colors  
+B) Assets, attackers, abuse paths, and mitigations  
+C) Font pairings  
+D) Canary percentages only  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Run the module tests and confirm they pass.  
-B) Secure data handling: redaction, retention, and access control (45 min)  
-C) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
-D) Add a least-privilege tool policy and verify via tests.  
+### Question 2: Tool abuse as a threat means…
+**Checks outcome 1:** Produce a threat model with mitigations for an LLM app.
+
+A) Tools never fail  
+B) Attackers coerce the agent into harmful side effects  
+C) Retrieval is perfect  
+D) Evals are offline only  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Design incident response for security events (triage + containment).  
-B) Ship changes without documentation.  
-C) Tool security: least privilege, allowlists, and audit logs (45 min)  
-D) Identify threat actors and attack vectors.  
+### Question 3: Red-team suites should map to…
+**Checks outcome 2:** Build red-team suites targeting top threats (injection, tool abuse).
+
+A) Random jokes  
+B) Top threats from the model  
+C) Only latency cases  
+D) CDN purge tests  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Design a red-team suite that targets top threats.  
-C) Treat every request as safe without review.  
-D) Build a small evaluation loop: test cases, metrics, and iteration notes.  
+### Question 4: Injection that tries to exfiltrate secrets should expect…
+**Checks outcome 2:** Build red-team suites targeting top threats (injection, tool abuse).
+
+A) Compliance  
+B) Containment/refusal and no secret leakage  
+C) Higher privileges  
+D) Disabled audits  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
-B) Security tests included in the evaluation harness and CI gate.  
-C) Design incident response for security events (triage + containment).  
-D) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
+### Question 5: Least-privilege tool policy is verified by…
+**Checks outcome 3:** Enforce least-privilege tool policies verified by tests.
+
+A) Documentation alone  
+B) Tests that attempt disallowed tools/args and expect denial  
+C) Turning off AuthZ  
+D) Logging secrets  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Prompt injection and data exfiltration defenses (55 min)  
-B) Treating retrieved content as trusted instructions.  
-C) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
-D) Add a least-privilege tool policy and verify via tests.  
+### Question 6: Over-broad tools increase…
+**Checks outcome 3:** Enforce least-privilege tool policies verified by tests.
+
+A) Safety  
+B) Blast radius when injection succeeds  
+C) Groundedness  
+D) Cache hit rate  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Add a least-privilege tool policy and verify via tests.  
-C) Over-permissioned tools without audit logs.  
-D) Translate a vague request into a clear goal, constraints, and success criteria.  
+### Question 7: Retention rules for prompts/outputs reduce…
+**Checks outcome 4:** Apply data minimization and retention to prompts/outputs.
+
+A) All model errors  
+B) Long-term exposure of sensitive content  
+C) The need for ACLs  
+D) Eval versioning  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Run the module tests and confirm they pass.  
-B) Skip testing and trust the first result.  
-C) Threat modeling workflow: assets, attackers, entry points (50 min)  
-D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
+### Question 8: Data minimization says…
+**Checks outcome 4:** Apply data minimization and retention to prompts/outputs.
+
+A) Send entire customer histories by default  
+B) Collect/process only what the task needs  
+C) Log raw PANs for convenience  
+D) Train publicly on private tickets without review  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Design a red-team suite that targets top threats.  
-B) Ignore error handling for edge cases.  
-C) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-D) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
+### Question 9: Supply-chain policy for prompts/evals covers…
+**Checks outcome 5:** Plan incident response and supply-chain controls for AI artifacts.
+
+A) Only npm logos  
+B) Integrity/ownership of prompt packs, datasets, and scorers  
+C) Office Wi-Fi SSIDs  
+D) Font licenses only  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Over-permissioned tools without audit logs.  
-B) Identify threat actors and attack vectors.  
-C) Threat model LLM applications: injection, data exfiltration, tool abuse, and supply chain risks.  
-D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+### Question 10: Incident response for a prompt-injection breach should include…
+**Checks outcome 5:** Plan incident response and supply-chain controls for AI artifacts.
+
+A) Silence  
+B) Triage, containment (flags/tool lockdown), and follow-up hardening  
+C) Raising temperature  
+D) Deleting threat models  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

@@ -1,77 +1,97 @@
 # AI — Module 01: Advanced Prompting: Tool Use Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: C** - Write a tool contract for “create_task(title, owner, due_date)” (or equivalent).
+## Question 1: A tool contract should specify…
+**Answer: B** — Args, types, side effects, and error modes
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Write tool contracts with typed arguments and error cases.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: C** - Add a verification step: check that tool output matches the request before replying.
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Contracts make tool use testable and safe.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: C** - Add adversarial inputs that attempt to override tool constraints.
+## Question 2: create_task(title, owner, due_date) without types risks…
+**Answer: B** — Ambiguous/invalid calls the model invents
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Write tool contracts with typed arguments and error cases.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: A** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Typed args reduce malformed calls.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: D** - End-to-end workflow tested with simulated tool failures and timeouts.
+## Question 3: When required fields are missing, prefer…
+**Answer: B** — Asking a clarifying question
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Choose among answer, clarify, or call-tool based on the request.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: C** - Letting the model call tools with missing/ambiguous parameters.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Clarify before side-effecting tools.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Translate a vague request into a clear goal, constraints, and success criteria.
+## Question 4: If the question is answerable without tools…
+**Answer: B** — Answer directly per policy
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 2:** Choose among answer, clarify, or call-tool based on the request.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: D** - From instruction to contract: inputs/outputs, allowed actions, and constraints (50 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Tool use is optional — not a reflex.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: B** - Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
+## Question 5: Verification after a tool call checks…
+**Answer: B** — That the result matches the requested action/constraints
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Verify tool results against the user request before finalizing.
+
+**Explanation:** Never trust tool output blindly.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: B** - Design prompts that reliably call tools/functions: explicit contracts, error handling, and verification—without vendor-specific features.
+## Question 6: Tool returns a due date in the past vs request. You should…
+**Answer: B** — Flag/repair or ask before confirming to the user
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 3:** Verify tool results against the user request before finalizing.
+
+**Explanation:** Verify semantic fit, not only parse success.
+
+---
+
+## Question 7: Tool timeouts should be handled with…
+**Answer: B** — Budgeted retries and explicit user-visible errors
+
+**Outcome 4:** Apply retry budgets and clear errors for tool failures.
+
+**Explanation:** Failures need budgets and clear messaging.
+
+---
+
+## Question 8: Adversarial “call admin tools” prompts should…
+**Answer: B** — Be refused when outside allowed tool policy
+
+**Outcome 4:** Apply retry budgets and clear errors for tool failures.
+
+**Explanation:** Tool policy is a safety boundary.
+
+---
+
+## Question 9: Audit logs for tools should capture…
+**Answer: B** — Who/what/when/why with redaction
+
+**Outcome 5:** Log tool calls in an audit schema without leaking secrets.
+
+**Explanation:** Provenance without sensitive dumps.
+
+---
+
+## Question 10: Why log tool failures as well as successes?
+**Answer: B** — To diagnose retries, abuse, and reliability issues
+
+**Outcome 5:** Log tool calls in an audit schema without leaking secrets.
+
+**Explanation:** Failure telemetry improves ops and safety.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

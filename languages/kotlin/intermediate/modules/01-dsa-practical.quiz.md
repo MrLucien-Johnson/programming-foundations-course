@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Copy the starter pack from `languages/kotlin/intermediate/starter-pack` into a new working folder.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Document decisions and constraints clearly for reviewers.  
-D) Arrays/lists, hash maps, and sets (45 min)  
+### Question 1: You need average O(1) lookup of a user record by `user_id`. Which structure fits best?
+**Checks outcome 1:** Choose list vs dict vs set for a given access pattern and justify the Big-O tradeoff.
+
+A) A list you scan from the start each time  
+B) A hash map/dict keyed by `user_id`  
+C) A set/hash set of unsorted display names  
+D) A nested list of all fields without keys  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Update the README with setup, run, and test commands.  
-B) Identify the hot path in the feature and choose a data structure that minimizes lookups.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Add or update documentation (README notes or ADR-style notes).  
+### Question 2: You must enforce unique email addresses and only care whether an email already exists. Best choice?
+**Checks outcome 1:** Choose list vs dict vs set for a given access pattern and justify the Big-O tradeoff.
+
+A) A list of emails  
+B) A hash map/dict mapping email → full user object (required even if unused)  
+C) A set/hash set of emails  
+D) A queue of emails  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Update the README with setup, run, and test commands.  
-B) Making performance claims without measurements.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Implement a helper that enforces the chosen structure (e.g., map for fast lookup).  
+### Question 3: You need to explore a graph level-by-level (nearest neighbors first). Which approach matches?
+**Checks outcome 2:** Apply stack/queue and BFS/DFS mental models to a small graph or tree-style problem.
+
+A) Depth-first search with a stack (or recursion)  
+B) Breadth-first search with a queue  
+C) Binary search on a sorted array  
+D) LRU eviction of the oldest key  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Stacks/queues + BFS/DFS mental models (45 min)  
-C) Review the module goals and plan how you will select the right data structures and justify tradeoffs.  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 4: Undo/redo history in an editor is best modeled with which structure?
+**Checks outcome 2:** Apply stack/queue and BFS/DFS mental models to a small graph or tree-style problem.
+
+A) A queue (FIFO)  
+B) A stack (LIFO)  
+C) A hash set  
+D) A priority queue ordered by timestamp only once at insert  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Use data structures and algorithms pragmatically in real applications.  
-B) All work must be covered by **build + tests + static analysis in CI**.  
-C) Skipping input validation and assuming “happy path”.  
-D) Add or update documentation (README notes or ADR-style notes).  
+### Question 5: You have a list of 50,000 comparable IDs and need them sorted once before a report. What should you do first?
+**Checks outcome 3:** Decide when the language's built-in sort/search is enough versus writing a custom approach.
+
+A) Write a custom quicksort from scratch  
+B) Use the language's built-in sort unless you have a measured reason not to  
+C) Always switch to a hand-rolled linked-list sort for clarity  
+D) Sort with bubble sort so Big-O stays obvious  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
-C) Shipping without an automated test run in CI.  
-D) Write tests that prove correctness and prevent regressions.  
+### Question 6: A pure function is called repeatedly with the same arguments inside a hot loop. Which pattern helps first?
+**Checks outcome 4:** Apply memoization or an LRU cache when recomputation is the bottleneck.
+
+A) Delete the function and inline random values  
+B) Memoization or an LRU cache so repeated inputs reuse results  
+C) Replace the dict with a list scan  
+D) Disable tests to save time  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **DSA (Practical)**.  
-B) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) Measure the impact with a small benchmark or timing log.  
+### Question 7: An LRU cache is full and a new key arrives. What happens to the least recently used entry?
+**Checks outcome 4:** Apply memoization or an LRU cache when recomputation is the bottleneck.
+
+A) It stays forever  
+B) It is evicted to make room  
+C) It becomes the most recently used without eviction  
+D) All keys are wiped  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Big-O and tradeoffs in real code (45 min)  
-B) Making performance claims without measurements.  
-C) Ship changes without documentation.  
-D) Use tooling to keep quality high: ktlint + detekt.  
+### Question 8: You want a quick before/after timing of one helper function. Best first tool?
+**Checks outcome 5:** Measure a change with a micro-benchmark and explain when profiling is the better tool.
+
+A) A micro-benchmark / timing of that function  
+B) Only a full-cluster production profiler with no local measurement  
+C) Guessing from code review alone  
+D) Turning off tests so numbers look better  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Copy the starter pack from `languages/kotlin/intermediate/starter-pack` into a new working folder.  
-C) Jump to the next module without verifying results.  
-D) Tests must be deterministic (no flakes) and runnable by a reviewer.  
+### Question 9: When is profiling usually better than a micro-benchmark?
+**Checks outcome 5:** Measure a change with a micro-benchmark and explain when profiling is the better tool.
+
+A) When you already know the one-line hotspot with certainty  
+B) When you need to find where a whole program spends CPU or memory  
+C) When you want to skip measurements entirely  
+D) When sorting a 10-element list  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Use data structures and algorithms pragmatically in real applications.  
-B) Run: `kotlinc Main.kt -include-runtime -d main.jar && java -jar main.jar`  
-C) Skip testing and trust the first result.  
-D) Document decisions and constraints clearly for reviewers.  
+### Question 10: Looking up whether an id is in a large unsorted list of IDs is typically:
+**Checks outcome 1:** Choose list vs dict vs set for a given access pattern and justify the Big-O tradeoff.
+
+A) O(1) average  
+B) O(n)  
+C) O(log n) without sorting  
+D) O(n²) always  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

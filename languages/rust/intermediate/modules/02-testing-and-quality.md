@@ -6,11 +6,11 @@ Write maintainable tests and enforce quality gates in CI.
 This module uses **Rust stable (rustup)**, **Cargo**, and **cargo test**. When applicable, you’ll build or extend a small service using **axum (or actix-web) REST + tokio** and **PostgreSQL + migrations (sqlx migrate) + SQLx**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Testing and Quality**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: rustfmt + clippy.
-- Document decisions and constraints clearly for reviewers.
+- Place tests on the test pyramid and choose what to mock versus what to hit for real.
+- Write deterministic unit tests using fixtures/factories and meaningful assertions.
+- Add an integration test that crosses a real boundary (HTTP, DB, filesystem, or process).
+- Interpret coverage as a signal — not a substitute for strong assertions.
+- Use lint, format, and typecheck as automated quality gates.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Rust**.

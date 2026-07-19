@@ -1,77 +1,97 @@
 # AI — Module 05: Observability and Monitoring for LLM Apps Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: D** - Define SLIs/SLOs for an AI feature and map them to metrics.
+## Question 1: LLM SLIs often include…
+**Answer: B** — Success/groundedness proxies, safety hits, latency, cost
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Define SLIs/SLOs for quality, safety, cost, and latency.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: B** - Add a “quality sampling” plan (privacy-safe) and escalation steps.
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** User-visible and operational signals together.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: D** - Design an on-call playbook for “quality drop” and “cost spike” incidents.
+## Question 2: Mapping SLOs to metrics ensures…
+**Answer: B** — Error budgets and alerts attach to real targets
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Define SLIs/SLOs for quality, safety, cost, and latency.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: B** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** SLOs without metrics are slogans.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: C** - Monitoring validates fallbacks are working and not harming UX.
+## Question 3: Alert thresholds should be…
+**Answer: B** — Tied to user impact / budget burn and actionable
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Design dashboards and alert thresholds operators can act on.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: C** - Logging sensitive user data without redaction.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Hygiene beats noise.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: B** - Translate a vague request into a clear goal, constraints, and success criteria.
+## Question 4: A dashboard without owners…
+**Answer: B** — Tends to rot; assign responders per signal
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 2:** Design dashboards and alert thresholds operators can act on.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: D** - What to measure: quality, safety, cost, latency (50 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Observability needs operational ownership.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+## Question 5: Tracing retrieval → generation → tools shows…
+**Answer: B** — Where latency and failures occur in the LLM pipeline
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Trace multi-step LLM flows (retrieval, generation, tools).
+
+**Explanation:** Spans localize bottlenecks.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: D** - Instrument AI systems: quality metrics, cost/latency, tracing, and alerts tied to user impact.
+## Question 6: Missing trace context between retrieval and generation…
+**Answer: B** — Breaks end-to-end latency diagnosis
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 3:** Trace multi-step LLM flows (retrieval, generation, tools).
+
+**Explanation:** Propagate context across steps.
+
+---
+
+## Question 7: Privacy-safe quality sampling means…
+**Answer: B** — Redacting/minimizing content while still scoring subsets
+
+**Outcome 4:** Sample quality safely (privacy-preserving) with escalation paths.
+
+**Explanation:** Learn quality without leaking.
+
+---
+
+## Question 8: Escalation for quality drop should be documented so…
+**Answer: B** — Responders know when to flag/rollback/page specialists
+
+**Outcome 4:** Sample quality safely (privacy-preserving) with escalation paths.
+
+**Explanation:** Playbooks attach to signals.
+
+---
+
+## Question 9: Continuous canary eval…
+**Answer: B** — Detects live regressions early on a small cohort
+
+**Outcome 5:** Run continuous canary evaluation in production.
+
+**Explanation:** Always-on progressive checking.
+
+---
+
+## Question 10: Monitoring must verify fallbacks because…
+**Answer: B** — Broken fallbacks can silently degrade UX or safety
+
+**Outcome 5:** Run continuous canary evaluation in production.
+
+**Explanation:** Watch the safety nets too.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

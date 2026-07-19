@@ -7,11 +7,11 @@ Improve retrieval quality: hybrid search, metadata filters, reranking, and fresh
 - RAG-based Q&A over docs (advanced retrieval + eval)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Evaluate retrieval with hit-rate, groundedness, and abstention metrics.
+- Compare chunking strategies with measured tradeoffs.
+- Add reranking and quantify lift on a fixed question set.
+- Enforce access-control-aware retrieval to prevent leakage.
+- Test freshness so new docs become retrievable within a target window.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

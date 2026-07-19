@@ -6,11 +6,10 @@ Threat-model, harden, and protect secrets, data, and supply chain.
 This module uses **Python 3.12+**, **venv + pip (or uv/poetry)**, and **pytest**. When applicable, you’ll build or extend a small service using **FastAPI (or Flask) for REST APIs** and **PostgreSQL + migrations (Alembic)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Security (Advanced)**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ruff + black (or ruff format).
-- Document decisions and constraints clearly for reviewers.
+- Threat-model a feature including abuse cases and prioritised mitigations.
+- Apply encryption at rest/in transit with sound key management.
+- Enforce supply-chain controls for dependencies and build artifacts.
+- Execute a hardening checklist covering auth, config, and security tests.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Python**.

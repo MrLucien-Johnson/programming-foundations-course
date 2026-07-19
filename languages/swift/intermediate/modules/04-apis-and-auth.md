@@ -6,11 +6,11 @@ Design and secure REST APIs with authentication and authorization.
 This module uses **Swift 5.10+ (SwiftPM)**, **Swift Package Manager (swift build)**, and **XCTest (swift test)**. When applicable, you’ll build or extend a small service using **Vapor (server-side Swift) for REST APIs** and **PostgreSQL + migrations (Fluent)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **APIs and Auth**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: SwiftFormat + SwiftLint.
-- Document decisions and constraints clearly for reviewers.
+- Design REST endpoints with clear resources, status codes, and pagination.
+- Validate input and return consistent error envelopes for clients.
+- Distinguish authentication from authorization and apply sessions/JWT/roles appropriately.
+- Add basic rate limiting / abuse protections to sensitive endpoints.
+- Document the API with OpenAPI (or equivalent) including examples.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Swift**.

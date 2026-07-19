@@ -6,11 +6,10 @@ Reduce common vulnerabilities with safe defaults.
 This module uses **Node.js LTS**, **npm (or pnpm), TypeScript compiler (tsc)**, and **Vitest (or Jest)**. When applicable, you’ll build or extend a small service using **Fastify (or Express) for REST APIs** and **PostgreSQL + migrations (Prisma or Knex)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Security Basics**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ESLint + Prettier.
-- Document decisions and constraints clearly for reviewers.
+- Map real application risks to the OWASP Top 10 categories.
+- Store and load secrets via config/secret managers — never commit them.
+- Prevent injection using validation, encoding, and parameterized queries.
+- Enforce authorization checks with least privilege on every sensitive action.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **TypeScript**.

@@ -2,10 +2,10 @@
 
 Strengthen C# architecture and scalability skills.
 
-## Topics
-- API boundaries and layering
-- performance profiling and optimization
-- reliability, logging, and observability
+## Learning Outcomes
+- Design a service for expected scale with explicit bottlenecks and mitigations.
+- Document architecture tradeoffs and rejected alternatives clearly.
+- Define verification (tests, load checks, or probes) that match the design risks.
 
 ## Deliverables
 - design notes with trade-offs

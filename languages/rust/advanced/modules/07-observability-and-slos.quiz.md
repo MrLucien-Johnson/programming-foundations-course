@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Use tooling to keep quality high: rustfmt + clippy.  
-B) Tracing: spans, context propagation (45 min)  
-C) `cargo test`  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 1: An SLI is…
+**Checks outcome 1:** Define SLIs/SLOs and manage error budgets for a service.
+
+A) A motivational poster  
+B) A quantitative measure of user-visible reliability (e.g., success rate)  
+C) A CSS variable  
+D) A git branch name  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: You need to run lint checks. Which command should you use?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Run: `cargo test`  
-C) `cargo clippy`  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 2: An error budget is…
+**Checks outcome 1:** Define SLIs/SLOs and manage error budgets for a service.
+
+A) Unlimited downtime as a treat  
+B) Allowed unreliability derived from the SLO before you must slow feature work  
+C) A caching TTL  
+D) A threat model section  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) Making performance claims without measurements.  
-B) `cargo fmt`  
-C) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-D) Shipping without an automated test run in CI.  
+### Question 3: RED metrics stand for…
+**Checks outcome 2:** Apply RED/USE metrics while avoiding high-cardinality label explosions.
+
+A) Redact, Encrypt, Delete  
+B) Rate, Errors, Duration  
+C) Retry, Evict, Drop  
+D) Read, Edit, Deploy  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action best satisfies the Core requirements?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Use tooling to keep quality high: rustfmt + clippy.  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 4: High-cardinality labels (user_id on every metric) typically cause…
+**Checks outcome 2:** Apply RED/USE metrics while avoiding high-cardinality label explosions.
+
+A) Cheaper metrics forever  
+B) Metric store explosion and useless dashboards  
+C) Stronger consistency  
+D) Free tracing  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action upgrades the work to the Better level?
-A) `cargo fmt`  
-B) Ignore error handling for edge cases.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 5: Trace context propagation lets you…
+**Checks outcome 3:** Propagate trace context across services to diagnose latency.
+
+A) See one request across service spans  
+B) Delete logs forever  
+C) Skip SLOs  
+D) Avoid timeouts  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Over-mocking (tests assert implementation details instead of outcomes).  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Skip testing and trust the first result.  
-D) Ignore error handling for edge cases.  
+### Question 6: A span without parent linkage in a deep call chain usually means…
+**Checks outcome 3:** Propagate trace context across services to diagnose latency.
+
+A) Perfect observability  
+B) Broken context propagation at a boundary  
+C) CAP solved  
+D) Idempotency keys are wrong  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
-C) Ship changes without documentation.  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+### Question 7: A good alert is…
+**Checks outcome 4:** Design alerts that are actionable and kind to on-call.
+
+A) Triggered by every DEBUG log line  
+B) Tied to user impact / SLO burn and actionable for humans  
+C) Emailed hourly with no owner  
+D) Only a Slack emoji  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement must be satisfied to pass?
-A) All work must be covered by **fmt + clippy + tests in CI**.  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Add or update documentation (README notes or ADR-style notes).  
-D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+### Question 8: Pager fatigue usually comes from…
+**Checks outcome 4:** Design alerts that are actionable and kind to on-call.
+
+A) Too few actionable alerts  
+B) Noisy, non-actionable alerts that train people to ignore pages  
+C) Perfect SLOs  
+D) Too much tracing context  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option would be a common mistake to avoid?
-A) Review the module goals and plan how you will monitor, alert, and set service objectives.  
-B) Shipping without an automated test run in CI.  
-C) Ship changes without documentation.  
-D) `cargo clippy`  
+### Question 9: Burning the error budget quickly should trigger…
+**Checks outcome 1:** Define SLIs/SLOs and manage error budgets for a service.
+
+A) Ignoring reliability work  
+B) Prioritizing reliability fixes over risky feature launches  
+C) Deleting SLIs  
+D) Disabling canaries forever  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Add logs/metrics for visibility.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Explain the core concepts and tradeoffs for **Observability and SLOs**.  
-D) Instrument systems and run them with SLO-based operations.  
+### Question 10: USE metrics focus on…
+**Checks outcome 2:** Apply RED/USE metrics while avoiding high-cardinality label explosions.
+
+A) Utilization, Saturation, Errors for resources  
+B) Only user-facing request rates  
+C) Unrelated marketing KPIs  
+D) Git blame  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

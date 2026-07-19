@@ -6,11 +6,11 @@ Design schemas, write queries, and ship migrations safely.
 This module uses **Rust stable (rustup)**, **Cargo**, and **cargo test**. When applicable, you’ll build or extend a small service using **axum (or actix-web) REST + tokio** and **PostgreSQL + migrations (sqlx migrate) + SQLx**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Databases**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: rustfmt + clippy.
-- Document decisions and constraints clearly for reviewers.
+- Design schemas with constraints that protect data integrity.
+- Write forward/backwards-safe migrations and apply them carefully.
+- Use transactions and reason about basic isolation needs.
+- Choose indexes and read query plans to fix slow queries.
+- Avoid common ORM/query-builder pitfalls (N+1, lazy loads, unbounded queries).
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Rust**.

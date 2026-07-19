@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Update the README with setup, run, and test commands.  
-C) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 1: Two threads increment the same counter without synchronization. Result?
+**Checks outcome 1:** Identify race conditions and choose safe synchronization or ownership patterns.
+
+A) Always perfectly accurate counts  
+B) A race: lost updates are possible  
+C) Automatic database indexing  
+D) CAP becoming irrelevant  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Skipping input validation and assuming “happy path”.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Add a test for race conditions or timeouts.  
-D) Ignore error handling for edge cases.  
+### Question 2: Which approach often prevents races better than sprinkling locks everywhere?
+**Checks outcome 1:** Identify race conditions and choose safe synchronization or ownership patterns.
+
+A) Sharing more mutable globals  
+B) Owning data per task/actor and communicating by messages  
+C) Disabling tests  
+D) Sleeping randomly longer  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Ship changes without documentation.  
-B) Document decisions and constraints clearly for reviewers.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Add a test for race conditions or timeouts.  
+### Question 3: An unbounded in-memory queue under load typically causes…
+**Checks outcome 2:** Apply backpressure with bounded queues so producers cannot overwhelm consumers.
+
+A) Perfect backpressure  
+B) Memory growth and eventual collapse  
+C) Faster GC forever  
+D) Stronger consistency  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Making performance claims without measurements.  
-B) Run the module tests and confirm they pass.  
-C) Avoid measuring results or performance.  
-D) Skip testing and trust the first result.  
+### Question 4: Backpressure means…
+**Checks outcome 2:** Apply backpressure with bounded queues so producers cannot overwhelm consumers.
+
+A) Producers keep sending at full speed no matter what  
+B) Consumers/signals slow or block producers when buffers fill  
+C) Deleting metrics  
+D) Turning off timeouts  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Run: `psql -f queries.sql`  
-B) Explain the core concepts and tradeoffs for **Concurrency and Async**.  
-C) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
-D) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.  
+### Question 5: Why set timeouts on outbound calls?
+**Checks outcome 3:** Use timeouts, cancellation, and structured concurrency to bound work lifetimes.
+
+A) To guarantee success  
+B) To bound wait time when dependencies hang  
+C) Because retries are illegal  
+D) To increase cardinality of every metric  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Shipping without an automated test run in CI.  
-B) Skip testing and trust the first result.  
-C) Run the module tests and confirm they pass.  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 6: Structured concurrency encourages…
+**Checks outcome 3:** Use timeouts, cancellation, and structured concurrency to bound work lifetimes.
+
+A) Fire-and-forget tasks with no parent ownership  
+B) Parent scopes that cancel/wait for child tasks cleanly  
+C) Ignoring cancellation forever  
+D) Sharing one global mutable list for all jobs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Concurrency and Async**.  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Implement an async or concurrent workflow.  
-D) Treat every request as safe without review.  
+### Question 7: “Exactly-once delivery” across unreliable networks is…
+**Checks outcome 4:** Design for at-least-once delivery and idempotent handlers — not mythical exactly-once.
+
+A) Trivial if you enable a checkbox  
+B) Effectively achieved via idempotent processing of at-least-once deliveries  
+C) Guaranteed by UDP  
+D) Unnecessary if you use JSON  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Concurrency primitives + race conditions (45 min)  
-D) Skip testing and trust the first result.  
+### Question 8: An idempotency key on a payment create endpoint helps when…
+**Checks outcome 4:** Design for at-least-once delivery and idempotent handlers — not mythical exactly-once.
+
+A) The client retries after a timeout and might double-charge  
+B) You want to skip AuthZ  
+C) Caches should never expire  
+D) You delete audit logs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/sql/advanced/starter-pack` into a new working folder.  
-B) Create a short write-up: what changed, why, and how you verified it.  
-C) Run the module tests and confirm they pass.  
-D) Skipping input validation and assuming “happy path”.  
+### Question 9: A worker pool of size N with a bounded queue of size M is full. A good policy is…
+**Checks outcome 2:** Apply backpressure with bounded queues so producers cannot overwhelm consumers.
+
+A) Allocate infinite threads silently  
+B) Reject, block, or shed load with a clear signal  
+C) Drop ACLs  
+D) Disable health checks  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Identify shared state and define synchronization rules.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Build correct concurrent systems and manage backpressure.  
-D) Explain the core concepts and tradeoffs for **Concurrency and Async**.  
+### Question 10: A cancelled request should ideally…
+**Checks outcome 3:** Use timeouts, cancellation, and structured concurrency to bound work lifetimes.
+
+A) Keep running forever consuming CPU/DB  
+B) Propagate cancellation so downstream work stops promptly  
+C) Delete the database schema  
+D) Raise cardinality of user-id labels  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

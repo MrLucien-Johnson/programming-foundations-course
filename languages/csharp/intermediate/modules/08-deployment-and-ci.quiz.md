@@ -1,106 +1,127 @@
-# CIntermediate — Module 08: Deployment and CI Quiz: Test Your Understanding
+# C# Intermediate — Module 08: Deployment and CI Quiz: Test Your Understanding
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) `dotnet test`  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Skip testing and trust the first result.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+### Question 1: Why keep production config/secrets out of the container image?
+**Checks outcome 1:** Separate environments and configuration (dev/stage/prod) without baking secrets into images.
+
+A) Images are never stored anywhere  
+B) Images get copied widely — secrets belong in env/secret injection at runtime  
+C) Kubernetes forbids environment variables  
+D) Config never changes between environments  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: You need to format the code. Which command should you use?
-A) Document decisions and constraints clearly for reviewers.  
-B) Write tests that prove correctness and prevent regressions.  
-C) `dotnet format`  
-D) Deployments: health checks + migrations + rollback plan (45 min)  
+### Question 2: Dev and prod should differ mainly by…
+**Checks outcome 1:** Separate environments and configuration (dev/stage/prod) without baking secrets into images.
+
+A) Completely different undocumented codepaths with no parity  
+B) Configuration/data — not “works on my machine” snowflake setups  
+C) Disabling HTTPS only in prod  
+D) Skipping tests only in prod  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action best satisfies the Core requirements?
-A) Refactor one area for readability (without changing behavior) and prove it with tests.  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Write tests that prove correctness and prevent regressions.  
-D) All work must be covered by **build + tests + analyzers in CI**.  
+### Question 3: Containers help CI/local work by…
+**Checks outcome 2:** Use containers to make local and CI environments reproducible.
+
+A) Guaranteeing marketing copy is correct  
+B) Packaging dependencies so runs are more reproducible across machines  
+C) Removing the need for tests  
+D) Making rollbacks impossible  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Ignore error handling for edge cases.  
-C) Environments + configuration (35 min)  
-D) Add a performance or reliability improvement and **measure** the impact.  
+### Question 4: Why cache dependencies in CI?
+**Checks outcome 3:** Design CI pipelines with caching, matrices, and artifacts where they help.
+
+A) To hide failing tests  
+B) To speed pipelines by reusing downloaded packages between runs  
+C) To avoid ever updating libraries  
+D) To store production secrets in the cache  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Review the module goals and plan how you will ship safely with automation.  
-C) Run: `dotnet test`  
-D) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
+### Question 5: A CI matrix is useful when you need to…
+**Checks outcome 3:** Design CI pipelines with caching, matrices, and artifacts where they help.
+
+A) Run the same checks across versions/platforms (e.g., 3.11 and 3.12)  
+B) Deploy on every keystroke to production  
+C) Skip linting forever  
+D) Store passwords in artifacts  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Before submitting, which verification step must you complete?
-A) Shipping without an automated test run in CI.  
-B) Create a short write-up: what changed, why, and how you verified it.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Run the module tests and confirm they pass.  
+### Question 6: CI artifacts are typically used to…
+**Checks outcome 3:** Design CI pipelines with caching, matrices, and artifacts where they help.
+
+A) Publish build outputs (wheels, images metadata, coverage reports) for later jobs/humans  
+B) Replace git remotes  
+C) Bypass code review  
+D) Disable health checks  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement must be satisfied to pass?
-A) Update the README with setup, run, and test commands.  
-B) Run: `dotnet format`  
-C) All work must be covered by **build + tests + analyzers in CI**.  
-D) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
+### Question 7: What is a health check for in deployment?
+**Checks outcome 4:** Deploy with health checks, safe migrations, and a rollback plan.
+
+A) A cosmetic README badge only  
+B) Letting the platform know whether the new instance is ready to receive traffic  
+C) Deleting the database nightly  
+D) Formatting source files  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which option would be a common mistake to avoid?
-A) Jump to the next module without verifying results.  
-B) Shipping without an automated test run in CI.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 8: Before a migration that might fail in production, you should have…
+**Checks outcome 4:** Deploy with health checks, safe migrations, and a rollback plan.
+
+A) No plan  
+B) A tested forward path and a rollback/mitigation plan  
+C) Only a screenshot of local success  
+D) Force-push to main during peak traffic  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) All work must be covered by **build + tests + analyzers in CI**.  
-B) Copy the starter pack from `languages/csharp/intermediate/starter-pack` into a new working folder.  
-C) Explain the core concepts and tradeoffs for **Deployment and CI**.  
-D) Shipping without an automated test run in CI.  
+### Question 9: A bad deploy is live. What does a rollback plan enable?
+**Checks outcome 4:** Deploy with health checks, safe migrations, and a rollback plan.
+
+A) Faster return to a known-good version while you diagnose  
+B) Permanent data corruption as a feature  
+C) Skipping blameless review forever  
+D) Turning off monitoring  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which topic would you revisit to solve this module's core problem?
-A) Skipping input validation and assuming “happy path”.  
-B) Making performance claims without measurements.  
-C) Use tooling to keep quality high: dotnet format + analyzers.  
-D) Environments + configuration (35 min)  
+### Question 10: Why run the same container image in CI tests and staging when possible?
+**Checks outcome 2:** Use containers to make local and CI environments reproducible.
+
+A) To maximize environment drift  
+B) To test what you actually ship  
+C) Because registries reject tags  
+D) To avoid writing Dockerfiles with any base image  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

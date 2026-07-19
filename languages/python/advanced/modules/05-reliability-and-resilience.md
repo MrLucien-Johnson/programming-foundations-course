@@ -6,11 +6,10 @@ Design for failure using resilient patterns and operational readiness.
 This module uses **Python 3.12+**, **venv + pip (or uv/poetry)**, and **pytest**. When applicable, you’ll build or extend a small service using **FastAPI (or Flask) for REST APIs** and **PostgreSQL + migrations (Alembic)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Reliability and Resilience**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ruff + black (or ruff format).
-- Document decisions and constraints clearly for reviewers.
+- Configure retries with timeouts, budgets, and jitter for transient faults.
+- Apply circuit breakers, bulkheads, and rate limits to contain failures.
+- Use idempotency keys and dedupe to make retried writes safe.
+- Write and follow runbooks for common incident classes.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Python**.

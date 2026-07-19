@@ -1,77 +1,97 @@
 # Swift Advanced — Module 06: Security (Advanced) Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: C** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: Threat modeling starts by…
+**Answer: B** — Listing assets, entry points, threats, and mitigations for the feature
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: A** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Structured threat models drive prioritized defenses.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Add a performance or reliability improvement and **measure** the impact.
+## Question 2: An “abuse case” focuses on…
+**Answer: B** — How a motivated attacker or abusive user misuses the system
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: C** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Abuse cases complement functional requirements.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: A** - All work must be covered by **build + tests + lint/format in CI**.
+## Question 3: TLS primarily protects…
+**Answer: A** — Data in transit from eavesdropping/tampering
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Apply encryption at rest/in transit with sound key management.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: D** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** In-transit encryption ≠ at-rest encryption.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: B** - Explain the core concepts and tradeoffs for **Security (Advanced)**.
+## Question 4: Where should encryption keys live?
+**Answer: B** — In a managed KMS/HSM with rotation and access control
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 2:** Apply encryption at rest/in transit with sound key management.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: C** - Threat modeling + abuse cases (45 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Key management is the hard part of encryption.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: B** - Copy the starter pack from `languages/swift/advanced/starter-pack` into a new working folder.
+## Question 5: Pinning dependency versions and verifying checksums helps against…
+**Answer: B** — Malicious or swapped packages in the supply chain
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Enforce supply-chain controls for dependencies and build artifacts.
+
+**Explanation:** Supply-chain controls reduce dependency compromise risk.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: C** - Threat-model, harden, and protect secrets, data, and supply chain.
+## Question 6: A compromised build pipeline can…
+**Answer: B** — Inject malicious artifacts into what you ship
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 3:** Enforce supply-chain controls for dependencies and build artifacts.
+
+**Explanation:** Protect CI/CD like production — it produces production.
+
+---
+
+## Question 7: A hardening checklist should include…
+**Answer: B** — AuthZ reviews, secret hygiene, dependency updates, and security test gates
+
+**Outcome 4:** Execute a hardening checklist covering auth, config, and security tests.
+
+**Explanation:** Hardening is a repeatable checklist, not a one-off slogan.
+
+---
+
+## Question 8: Security tests in CI are valuable because they…
+**Answer: B** — Catch regressions in injection, authz, and dependency policy before release
+
+**Outcome 4:** Execute a hardening checklist covering auth, config, and security tests.
+
+**Explanation:** Automate what you can; still model new threats.
+
+---
+
+## Question 9: Prioritising mitigations should weigh…
+**Answer: B** — Likelihood × impact and exploitability of each threat
+
+**Outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
+
+**Explanation:** Risk-based prioritization beats checkbox theater.
+
+---
+
+## Question 10: Encrypting a database volume but logging raw PAN data means…
+**Answer: B** — Sensitive data still leaks via another channel
+
+**Outcome 2:** Apply encryption at rest/in transit with sound key management.
+
+**Explanation:** Encryption must cover actual sensitive data paths end-to-end.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

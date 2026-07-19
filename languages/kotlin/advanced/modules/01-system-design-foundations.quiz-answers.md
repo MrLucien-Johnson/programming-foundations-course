@@ -1,77 +1,97 @@
 # Kotlin Advanced — Module 01: System Design Foundations Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: A** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: A stakeholder says “make it scale.” What should you produce first?
+**Answer: B** — Measurable requirements, hard constraints, and rough capacity estimates
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Turn vague product goals into requirements, constraints, and rough capacity estimates.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Requirements and estimates bound the design; “scale” alone is not a design input.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: C** - Add a performance or reliability improvement and **measure** the impact.
+## Question 2: Which estimate is most useful early in a design?
+**Answer: B** — Order-of-magnitude QPS, storage, and payload size
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Turn vague product goals into requirements, constraints, and rough capacity estimates.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Rough capacity estimates drive caching, sharding, and hardware choices.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: C** - All work must be covered by **build + tests + static analysis in CI**.
+## Question 3: Read-heavy traffic with mostly identical responses. First lever?
+**Answer: B** — A cache in front of the origin with a clear TTL/invalidation story
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Choose caching, load balancing, and data partitioning approaches for a given load pattern.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: B** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Caching cuts origin load for hot reads when invalidation is planned.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: D** - Explain the core concepts and tradeoffs for **System Design Foundations**.
+## Question 4: Why partition (shard) a growing dataset?
+**Answer: B** — To keep each node’s data and query load within capacity
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 2:** Choose caching, load balancing, and data partitioning approaches for a given load pattern.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: D** - Requirements → constraints → estimates (45 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Partitions spread data and load; they also add operational complexity.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/kotlin/advanced/starter-pack` into a new working folder.
+## Question 5: CAP “partition tolerance” in practice means…
+**Answer: B** — The system keeps operating despite network splits between nodes
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Apply CAP/consistency tradeoffs to pick a consistency model for a use case.
+
+**Explanation:** Real distributed systems must tolerate partitions; you then trade C vs A.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: D** - Reason about scalability, data, and tradeoffs under constraints.
+## Question 6: A bank ledger needs strong correctness across accounts. Prefer…
+**Answer: B** — Strong consistency (or ACID transactions) for money movement
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 3:** Apply CAP/consistency tradeoffs to pick a consistency model for a use case.
+
+**Explanation:** Financial correctness usually needs strong consistency, not pure eventual.
+
+---
+
+## Question 7: When are queues/streams a better fit than sync request/response?
+**Answer: B** — When work is bursty, long-running, or must fan out asynchronously
+
+**Outcome 4:** Design async workflows with queues or streams when synchronous request paths are insufficient.
+
+**Explanation:** Async pipelines absorb spikes and decouple producers from slow consumers.
+
+---
+
+## Question 8: A stream consumer crashes mid-batch. What design concern appears?
+**Answer: B** — At-least-once delivery and idempotent processing
+
+**Outcome 4:** Design async workflows with queues or streams when synchronous request paths are insufficient.
+
+**Explanation:** Async systems retry; handlers must tolerate duplicates.
+
+---
+
+## Question 9: A load balancer’s primary job is to…
+**Answer: B** — Distribute traffic across healthy instances
+
+**Outcome 2:** Choose caching, load balancing, and data partitioning approaches for a given load pattern.
+
+**Explanation:** LBs spread load and route away from unhealthy nodes.
+
+---
+
+## Question 10: Which constraint most changes a chatty mobile API design?
+**Answer: B** — Bandwidth, battery, and high latency on poor networks
+
+**Outcome 1:** Turn vague product goals into requirements, constraints, and rough capacity estimates.
+
+**Explanation:** Mobile constraints push toward fewer round-trips and smaller payloads.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

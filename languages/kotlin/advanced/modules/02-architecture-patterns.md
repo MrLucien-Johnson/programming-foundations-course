@@ -6,11 +6,10 @@ Apply architectural patterns to keep systems evolvable.
 This module uses **JDK 21 + Kotlin**, **Gradle**, and **JUnit 5 + MockK**. When applicable, you’ll build or extend a small service using **Ktor (or Spring Boot) REST** and **PostgreSQL + migrations (Flyway) + Exposed (or JDBC)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Architecture Patterns**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ktlint + detekt.
-- Document decisions and constraints clearly for reviewers.
+- Compare layered, hexagonal, and clean architecture and place dependencies correctly.
+- Model domain concepts with entities, value objects, and aggregates.
+- Design event-driven flows and sagas for multi-step business processes.
+- Decide when CQRS helps — and when it adds unjustified complexity.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Kotlin**.

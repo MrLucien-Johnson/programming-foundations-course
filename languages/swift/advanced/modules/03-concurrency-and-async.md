@@ -6,11 +6,10 @@ Build correct concurrent systems and manage backpressure.
 This module uses **Swift 5.10+ (SwiftPM)**, **Swift Package Manager (swift build)**, and **XCTest (swift test)**. When applicable, you’ll build or extend a small service using **Vapor (server-side Swift) for REST APIs** and **PostgreSQL + migrations (Fluent)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Concurrency and Async**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: SwiftFormat + SwiftLint.
-- Document decisions and constraints clearly for reviewers.
+- Identify race conditions and choose safe synchronization or ownership patterns.
+- Apply backpressure with bounded queues so producers cannot overwhelm consumers.
+- Use timeouts, cancellation, and structured concurrency to bound work lifetimes.
+- Design for at-least-once delivery and idempotent handlers — not mythical exactly-once.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Swift**.

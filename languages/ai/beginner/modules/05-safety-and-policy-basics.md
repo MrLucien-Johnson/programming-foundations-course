@@ -7,11 +7,11 @@ Build safe defaults: handle sensitive data, refusals, and prompt injection attem
 - RAG-based Q&A over docs (how to answer only from provided sources)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Apply a safety checklist covering privacy, harm, and injection.
+- Design refuse/redirect behaviors for unsafe requests.
+- Use source-only answering to reduce hallucinations in doc Q&A.
+- Red-team prompts for injection and exfiltration attempts.
+- Define severity levels and escalation paths for high-risk cases.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

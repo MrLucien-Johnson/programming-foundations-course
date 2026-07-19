@@ -6,11 +6,11 @@ Write maintainable tests and enforce quality gates in CI.
 This module uses **JDK 21 + Kotlin**, **Gradle**, and **JUnit 5 + MockK**. When applicable, you’ll build or extend a small service using **Ktor (or Spring Boot) REST** and **PostgreSQL + migrations (Flyway) + Exposed (or JDBC)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Testing and Quality**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ktlint + detekt.
-- Document decisions and constraints clearly for reviewers.
+- Place tests on the test pyramid and choose what to mock versus what to hit for real.
+- Write deterministic unit tests using fixtures/factories and meaningful assertions.
+- Add an integration test that crosses a real boundary (HTTP, DB, filesystem, or process).
+- Interpret coverage as a signal — not a substitute for strong assertions.
+- Use lint, format, and typecheck as automated quality gates.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Kotlin**.

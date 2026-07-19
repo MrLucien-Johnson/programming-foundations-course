@@ -6,11 +6,10 @@ Ship safely with progressive delivery, rollbacks, and versioning.
 This module uses **JDK 21 + Kotlin**, **Gradle**, and **JUnit 5 + MockK**. When applicable, you’ll build or extend a small service using **Ktor (or Spring Boot) REST** and **PostgreSQL + migrations (Flyway) + Exposed (or JDBC)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **CI/CD and Release Strategies**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ktlint + detekt.
-- Document decisions and constraints clearly for reviewers.
+- Choose canary, blue-green, or rolling releases for a risk profile.
+- Use feature flags and safe config changes to control exposure.
+- Plan production database migrations that avoid downtime and lockouts.
+- Execute rollbacks with clear versioning and changelogs.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Kotlin**.

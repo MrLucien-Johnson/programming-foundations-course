@@ -6,11 +6,10 @@ Threat-model, harden, and protect secrets, data, and supply chain.
 This module uses **Go 1.22+**, **go mod**, and **testing + httptest**. When applicable, you’ll build or extend a small service using **net/http (or chi/gin) REST** and **PostgreSQL + migrations (goose) + database/sql (or sqlc)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Security (Advanced)**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: gofmt + golangci-lint.
-- Document decisions and constraints clearly for reviewers.
+- Threat-model a feature including abuse cases and prioritised mitigations.
+- Apply encryption at rest/in transit with sound key management.
+- Enforce supply-chain controls for dependencies and build artifacts.
+- Execute a hardening checklist covering auth, config, and security tests.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Go**.

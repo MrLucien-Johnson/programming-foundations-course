@@ -75,6 +75,9 @@ Phase 1: Expand outlines into full lessons (2 to 4 weeks)
 
 Phase 2: Practice and assessment upgrades (2 weeks)
 - Align each quiz to learning outcomes and add explanations.
+- Follow `docs/QUIZ-ALIGNMENT-STANDARD.md` (Codecademy-style: skill outcomes → tagged questions).
+- Reference implementation: all tracks under `languages/*/{beginner,intermediate,advanced}/`
+  with per-track `QUIZ-ALIGNMENT.md` sheets (generator: `scripts/align_all_language_quizzes.py`).
 - Add at least 1 practical checkpoint per lesson:
   - "You should be able to..." with a quick verification command.
 - Add structured "review tasks" at the end of each module.
@@ -94,7 +97,8 @@ Deliverables
 1) Module Quality Checklist (applies to every module).
 2) Standard Module Template (copy/paste for future modules).
 3) Expanded module content for every outline module.
-4) Assessment alignment sheet (outcomes -> quizzes).
+4) Assessment alignment sheet (outcomes -> quizzes) — see `docs/QUIZ-ALIGNMENT-STANDARD.md`
+   and per-track sheets such as `languages/python/intermediate/QUIZ-ALIGNMENT.md`.
 5) Starter code packs for intermediate/advanced modules.
 6) "Instructor review" checklist for final sign-off.
 

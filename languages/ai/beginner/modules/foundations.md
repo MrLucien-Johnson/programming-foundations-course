@@ -2,10 +2,10 @@
 
 Build confidence with prompt design and safe usage.
 
-## Topics
-- prompt structure and iteration
-- system, developer, and user roles
-- safety basics and refusal handling
+## Learning Outcomes
+- Structure prompts with roles, constraints, and iteration notes.
+- Demonstrate safe refuse/redirect behavior on risky inputs.
+- Keep a prompt journal showing what improved and what did not.
 
 ## Deliverables
 - prompt journal with iterations

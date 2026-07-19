@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-B) Making performance claims without measurements.  
-C) Skip testing and trust the first result.  
-D) `cargo test`  
+### Question 1: Threat modeling starts by…
+**Checks outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
+
+A) Buying a bigger WAF only  
+B) Listing assets, entry points, threats, and mitigations for the feature  
+C) Disabling logs  
+D) Skipping AuthN  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: You need to run lint checks. Which command should you use?
-A) Document decisions and constraints clearly for reviewers.  
-B) `cargo clippy`  
-C) Security testing and hardening checklist (40 min)  
-D) Model a threat scenario and document mitigations.  
+### Question 2: An “abuse case” focuses on…
+**Checks outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
+
+A) Happy-path UX copy  
+B) How a motivated attacker or abusive user misuses the system  
+C) Only unit test names  
+D) CDN cache hit ratios  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) Run: `cargo test`  
-B) Introduce a quality gate (pre-commit hook or CI step) that prevents common regressions.  
-C) Create a short write-up: what changed, why, and how you verified it.  
-D) `cargo fmt`  
+### Question 3: TLS primarily protects…
+**Checks outcome 2:** Apply encryption at rest/in transit with sound key management.
+
+A) Data in transit from eavesdropping/tampering  
+B) Disk sectors at rest by itself  
+C) Supply-chain commits  
+D) Error budgets  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action best satisfies the Core requirements?
-A) Run: `cargo fmt`  
-B) Avoid measuring results or performance.  
-C) Ignore error handling for edge cases.  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 4: Where should encryption keys live?
+**Checks outcome 2:** Apply encryption at rest/in transit with sound key management.
+
+A) Committed next to source  
+B) In a managed KMS/HSM with rotation and access control  
+C) In client-side JavaScript comments  
+D) In screenshots of the dashboard  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action upgrades the work to the Better level?
-A) `cargo clippy`  
-B) Shipping without an automated test run in CI.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Run: `cargo clippy`  
+### Question 5: Pinning dependency versions and verifying checksums helps against…
+**Checks outcome 3:** Enforce supply-chain controls for dependencies and build artifacts.
+
+A) UI alignment bugs  
+B) Malicious or swapped packages in the supply chain  
+C) Slow CSS  
+D) CAP tradeoffs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Run: `cargo clippy`  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Review the module goals and plan how you will harden systems against advanced threats.  
+### Question 6: A compromised build pipeline can…
+**Checks outcome 3:** Enforce supply-chain controls for dependencies and build artifacts.
+
+A) Only affect documentation typos  
+B) Inject malicious artifacts into what you ship  
+C) Improve SLO burn rates automatically  
+D) Replace threat models  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Review the module goals and plan how you will harden systems against advanced threats.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) Use tooling to keep quality high: rustfmt + clippy.  
+### Question 7: A hardening checklist should include…
+**Checks outcome 4:** Execute a hardening checklist covering auth, config, and security tests.
+
+A) Only choosing fonts  
+B) AuthZ reviews, secret hygiene, dependency updates, and security test gates  
+C) Disabling HTTPS in prod  
+D) Sharing root credentials in chat  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement must be satisfied to pass?
-A) `cargo fmt`  
-B) Copy the starter pack from `languages/rust/advanced/starter-pack` into a new working folder.  
-C) All work must be covered by **fmt + clippy + tests in CI**.  
-D) Review dependencies for vulnerabilities.  
+### Question 8: Security tests in CI are valuable because they…
+**Checks outcome 4:** Execute a hardening checklist covering auth, config, and security tests.
+
+A) Replace threat modeling forever  
+B) Catch regressions in injection, authz, and dependency policy before release  
+C) Make retries unnecessary  
+D) Guarantee zero incidents  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option would be a common mistake to avoid?
-A) Supply-chain security + dependency policies (35 min)  
-B) Treat every request as safe without review.  
-C) Add security logging or alerting for sensitive actions.  
-D) Shipping without an automated test run in CI.  
+### Question 9: Prioritising mitigations should weigh…
+**Checks outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
+
+A) Only how trendy the control is  
+B) Likelihood × impact and exploitability of each threat  
+C) Whether the control uses purple gradients  
+D) Commit message length  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) `cargo clippy`  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-D) Refactor one area for readability (without changing behavior) and prove it with tests.  
+### Question 10: Encrypting a database volume but logging raw PAN data means…
+**Checks outcome 2:** Apply encryption at rest/in transit with sound key management.
+
+A) You are fully safe  
+B) Sensitive data still leaks via another channel  
+C) TLS is unnecessary  
+D) Keys can be public  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

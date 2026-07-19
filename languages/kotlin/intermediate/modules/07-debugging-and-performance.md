@@ -6,11 +6,10 @@ Debug systematically and improve performance with evidence.
 This module uses **JDK 21 + Kotlin**, **Gradle**, and **JUnit 5 + MockK**. When applicable, you’ll build or extend a small service using **Ktor (or Spring Boot) REST** and **PostgreSQL + migrations (Flyway) + Exposed (or JDBC)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Debugging and Performance**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ktlint + detekt.
-- Document decisions and constraints clearly for reviewers.
+- Follow a reproduce → isolate → fix debugging workflow with evidence.
+- Use logging and basic tracing to locate failures in running systems.
+- Profile CPU and memory to find real hotspots before optimizing.
+- Improve database performance using slow-query analysis and indexes.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Kotlin**.

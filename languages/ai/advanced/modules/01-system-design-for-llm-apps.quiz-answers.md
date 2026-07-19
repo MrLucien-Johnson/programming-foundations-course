@@ -1,77 +1,97 @@
 # AI — Module 01: System Design for LLM Apps Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: B** - Create an architecture diagram and data flow for one LLM feature.
+## Question 1: An LLM feature architecture diagram should show…
+**Answer: B** — Request path, model/tools/retrieval, stores, and failure/fallback paths
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Draw architecture and data flow for an LLM feature including failure modes.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: B** - Add scaling considerations: caching layers, queues, and backpressure.
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Design for the real runtime and its failures.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: C** - Design a migration plan for changing schemas/prompts with backward compatibility.
+## Question 2: Listing failure modes early helps you…
+**Answer: B** — Attach mitigations before launch
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Draw architecture and data flow for an LLM feature including failure modes.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: C** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Failure modes drive resilience design.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: B** - Design includes test strategy across unit/integration/e2e + eval gates.
+## Question 3: Queues in front of expensive model calls provide…
+**Answer: B** — Smoothing and backpressure under bursty load
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Plan scaling with caches, queues, and backpressure for model/tool workloads.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: D** - Treating the model as a single black box without boundaries.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Absorb spikes; protect downstream.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: D** - Translate a vague request into a clear goal, constraints, and success criteria.
+## Question 4: Without backpressure, a viral traffic spike tends to…
+**Answer: B** — Overwhelm workers and blow cost/latency budgets
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 2:** Plan scaling with caches, queues, and backpressure for model/tool workloads.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: D** - Requirements → constraints → architecture (55 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Unbounded admission is a reliability bug.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+## Question 5: An error budget for quality SLO means…
+**Answer: B** — Allowed degradation before you must prioritize reliability work
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Define latency/quality SLOs and error budgets for the feature.
+
+**Explanation:** Budgets govern ship vs fix decisions.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: D** - Design end-to-end LLM application architectures: data flows, boundaries, scaling, and safety constraints.
+## Question 6: Latency SLO without a quality SLO risks…
+**Answer: B** — Optimizing speed while shipping junk answers
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 3:** Define latency/quality SLOs and error budgets for the feature.
+
+**Explanation:** Measure both dimensions users care about.
+
+---
+
+## Question 7: Backward-compatible prompt/schema migration means…
+**Answer: B** — Old and new versions coexist safely during rollout
+
+**Outcome 4:** Design prompt/schema migrations with backward compatibility.
+
+**Explanation:** Compatibility windows prevent cutover outages.
+
+---
+
+## Question 8: Changing a required JSON field name without a plan…
+**Answer: B** — Breaks consumers mid-flight
+
+**Outcome 4:** Design prompt/schema migrations with backward compatibility.
+
+**Explanation:** Treat schema like an API.
+
+---
+
+## Question 9: Privacy-by-design for prompts/outputs includes…
+**Answer: B** — Minimization, retention limits, and access controls
+
+**Outcome 5:** Apply privacy-by-design (minimization, retention, access control).
+
+**Explanation:** Collect less, keep less, restrict access.
+
+---
+
+## Question 10: Access controls on retrieved docs matter because…
+**Answer: B** — Otherwise users can read neighbors’ private content via the model
+
+**Outcome 5:** Apply privacy-by-design (minimization, retention, access control).
+
+**Explanation:** Retrieval must enforce authorization.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

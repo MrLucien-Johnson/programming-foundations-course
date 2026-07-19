@@ -1,77 +1,97 @@
 # AI — Module 06: Agentic Workflows Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: D** - Design an agent workflow spec for “triage support tickets and draft responses”.
+## Question 1: An agent workflow spec should state…
+**Answer: B** — Steps, allowed tools, stop conditions, and outputs
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Specify agent plans with tool boundaries and stop conditions.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: C** - Add a tool budget and stop conditions; show how it prevents runaway loops.
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Specs bound autonomy.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: D** - Add adversarial cases that try to make the agent leak secrets or ignore constraints.
+## Question 2: Tool boundaries exist to…
+**Answer: B** — Prevent actions outside the task’s privilege set
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Specify agent plans with tool boundaries and stop conditions.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: C** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Boundaries are safety and product constraints.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: D** - Agent tested with simulated failures (tool down, partial data, conflicting instructions).
+## Question 3: Verification before deliver means…
+**Answer: B** — Checking facts against provided sources
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Insert verification steps that check claims against sources.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: A** - No verification step—agent confidently ships wrong results.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Verify reduces hallucinated actions.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: B** - Translate a vague request into a clear goal, constraints, and success criteria.
+## Question 4: A tool budget of N calls stops…
+**Answer: B** — Runaway loops that burn cost and time
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 3:** Enforce tool budgets to prevent runaway loops.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: A** - Agent loop: plan → act → observe → verify (50 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Budgets are circuit breakers for agents.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: C** - Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
+## Question 5: Missing stop conditions typically cause…
+**Answer: B** — Endless plan/execute cycles
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Enforce tool budgets to prevent runaway loops.
+
+**Explanation:** Agents need explicit halting rules.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: D** - Design multi-step agents with explicit planning, tool boundaries, stop conditions, and verification.
+## Question 6: Human approval checkpoints belong on…
+**Answer: B** — High-risk side effects (refunds, emails, deletes)
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 4:** Require human approval for high-risk actions.
+
+**Explanation:** Match human gates to blast radius.
+
+---
+
+## Question 7: Adversarial cases that push secret leakage should…
+**Answer: B** — Be in the eval set with expected denials
+
+**Outcome 4:** Require human approval for high-risk actions.
+
+**Explanation:** Agents need red-team coverage.
+
+---
+
+## Question 8: A post-run report should include…
+**Answer: B** — Actions taken, evidence, and remaining uncertainties
+
+**Outcome 5:** Emit post-run reports covering actions, evidence, and uncertainties.
+
+**Explanation:** Reports make autonomy reviewable.
+
+---
+
+## Question 9: Listing uncertainties helps operators…
+**Answer: B** — Decide what needs human follow-up
+
+**Outcome 5:** Emit post-run reports covering actions, evidence, and uncertainties.
+
+**Explanation:** Uncertainty is an operational signal.
+
+---
+
+## Question 10: Simulating tool-down failures in tests checks…
+**Answer: B** — Whether the agent degrades safely (retry/stop/escalate)
+
+**Outcome 2:** Insert verification steps that check claims against sources.
+
+**Explanation:** Failure injection validates agent resilience.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

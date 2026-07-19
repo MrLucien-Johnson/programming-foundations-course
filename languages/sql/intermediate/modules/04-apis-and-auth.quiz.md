@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Skipping input validation and assuming “happy path”.  
-D) Implement a small feature tied to this module in an existing starter app.  
+### Question 1: A client successfully creates a new resource. Which status code is most appropriate?
+**Checks outcome 1:** Design REST endpoints with clear resources, status codes, and pagination.
+
+A) 500  
+B) 201 Created  
+C) 404 Not Found  
+D) 401 Unauthorized  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Use tooling to keep quality high: sqlfluff (lint + fix) + consistent naming conventions.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Avoid measuring results or performance.  
-D) Create a short write-up: what changed, why, and how you verified it.  
+### Question 2: Why paginate list endpoints?
+**Checks outcome 1:** Design REST endpoints with clear resources, status codes, and pagination.
+
+A) To hide errors from clients  
+B) To bound response size and keep latency predictable as data grows  
+C) Because REST forbids returning more than one item ever  
+D) To avoid using status codes  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Add a performance or reliability improvement and **measure** the impact.  
-C) API docs: OpenAPI + examples (35 min)  
-D) Update the README with setup, run, and test commands.  
+### Question 3: A client sends an invalid email format. What should the API do?
+**Checks outcome 2:** Validate input and return consistent error envelopes for clients.
+
+A) Store it anyway  
+B) Reject with 4xx and a clear, consistent error body  
+C) Return 200 with empty data and no message  
+D) Crash the worker process  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Skip testing and trust the first result.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) Input validation + error envelopes (40 min)  
+### Question 4: Authentication answers which question?
+**Checks outcome 3:** Distinguish authentication from authorization and apply sessions/JWT/roles appropriately.
+
+A) What is this user allowed to do?  
+B) Who is this user / is the identity proven?  
+C) How fast is the database?  
+D) Which CSS theme to use?  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.  
-B) Skip testing and trust the first result.  
-C) Implement one authenticated endpoint and validate error cases.  
-D) Document decisions and constraints clearly for reviewers.  
+### Question 5: A logged-in user tries to delete another user's private document. Which check failed if they are blocked?
+**Checks outcome 3:** Distinguish authentication from authorization and apply sessions/JWT/roles appropriately.
+
+A) Only DNS  
+B) Authorization (AuthZ) / permissions  
+C) Pagination  
+D) OpenAPI formatting  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Jump to the next module without verifying results.  
-B) Shipping without an automated test run in CI.  
-C) Rate limiting + basic abuse protections (35 min)  
-D) Run: `psql -f queries.sql`  
+### Question 6: JWTs are commonly used to…
+**Checks outcome 3:** Distinguish authentication from authorization and apply sessions/JWT/roles appropriately.
+
+A) Replace HTTPS  
+B) Carry a signed identity/claims token the API can verify without a server session store (depending on design)  
+C) Encrypt the entire database at rest by themselves  
+D) Format source code  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Over-mocking (tests assert implementation details instead of outcomes).  
-B) Avoid measuring results or performance.  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Explain the core concepts and tradeoffs for **APIs and Auth**.  
+### Question 7: Why rate-limit a login endpoint?
+**Checks outcome 4:** Add basic rate limiting / abuse protections to sensitive endpoints.
+
+A) To make UX worse for no reason  
+B) To slow brute-force and abuse attempts  
+C) Because HTTP forbids retries  
+D) To increase 500 errors intentionally  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Tests must be deterministic (no flakes) and runnable by a reviewer.  
-C) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-D) REST: resources, status codes, pagination (45 min)  
+### Question 8: What does OpenAPI documentation help API consumers do?
+**Checks outcome 5:** Document the API with OpenAPI (or equivalent) including examples.
+
+A) Guess endpoints from production outages only  
+B) See routes, schemas, status codes, and examples in one contract  
+C) Bypass authentication permanently  
+D) Avoid writing any server code  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Run: `psql -f queries.sql`  
-B) Copy the starter pack from `languages/sql/intermediate/starter-pack` into a new working folder.  
-C) Document decisions and constraints clearly for reviewers.  
-D) Skipping input validation and assuming “happy path”.  
+### Question 9: Which error response style is more client-friendly?
+**Checks outcome 2:** Validate input and return consistent error envelopes for clients.
+
+A) Random HTML stack traces with no structure  
+B) A consistent JSON envelope like `{ "error": { "code": "validation_error", "message": "..." } }`  
+C) Empty 200 OK for failures  
+D) Closing the TCP connection silently  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Design and secure REST APIs with authentication and authorization.  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+### Question 10: `GET /users/{id}` when the user does not exist should typically return:
+**Checks outcome 1:** Design REST endpoints with clear resources, status codes, and pagination.
+
+A) 201 Created  
+B) 404 Not Found  
+C) 100 Continue forever  
+D) 302 to a random site  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

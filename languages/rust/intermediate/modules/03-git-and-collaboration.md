@@ -6,11 +6,10 @@ Collaborate safely using branching, PRs, and reviews.
 This module uses **Rust stable (rustup)**, **Cargo**, and **cargo test**. When applicable, you’ll build or extend a small service using **axum (or actix-web) REST + tokio** and **PostgreSQL + migrations (sqlx migrate) + SQLx**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Git and Collaboration**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: rustfmt + clippy.
-- Document decisions and constraints clearly for reviewers.
+- Use a clear branching strategy and write commits that explain why a change happened.
+- Open and review pull requests using a practical checklist and actionable feedback.
+- Resolve merge conflicts and rebase safely without rewriting shared history carelessly.
+- Diagnose CI failures from logs and fix the underlying issue before merging.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Rust**.

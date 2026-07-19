@@ -6,11 +6,10 @@ Profile, measure, and optimize across app + database + network.
 This module uses **JDK 21 + Kotlin**, **Gradle**, and **JUnit 5 + MockK**. When applicable, you’ll build or extend a small service using **Ktor (or Spring Boot) REST** and **PostgreSQL + migrations (Flyway) + Exposed (or JDBC)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Performance and Profiling**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ktlint + detekt.
-- Document decisions and constraints clearly for reviewers.
+- Establish performance baselines before changing code.
+- Run load tests and locate bottlenecks with evidence.
+- Tune databases using indexes, query plans, and lock analysis.
+- Choose cache invalidation strategies that match correctness needs.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Kotlin**.

@@ -2,105 +2,102 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Before submitting, which verification step must you complete?
-A) List safety constraints that must not be violated.  
-B) Jump to the next module without verifying results.  
-C) Run a before/after comparison and document tradeoffs.  
-D) Run the module tests and confirm they pass.  
+### Question 1: Cutting tokens by removing safety instructions is…
+**Checks outcome 1:** Budget cost and latency without sacrificing required safety checks.
+
+A) A valid optimization  
+B) Unsafe — keep required policy checks even under budget pressure  
+C) Required for SLOs  
+D) Fine if latency improves  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which step appears in the guided walkthrough?
-A) Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.  
-B) Skip testing and trust the first result.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Verify the primary feature works with normal and edge-case inputs.  
+### Question 2: A cost plan should state…
+**Checks outcome 1:** Budget cost and latency without sacrificing required safety checks.
+
+A) Only vibes  
+B) Budgets, enforcement, and what quality/safety must not regress  
+C) Unlimited spend  
+D) No metrics  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which verification step is required before moving on?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Ignore error handling for edge cases.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) Identify the primary optimization goal (cost, latency, accuracy).  
+### Question 3: Caching model outputs is inappropriate when…
+**Checks outcome 2:** Apply caching/reuse only when correctness and privacy allow.
+
+A) Answers are identical and non-sensitive  
+B) Outputs are user-specific/sensitive or must reflect fresh private data  
+C) Prompt versions are keyed  
+D) TTLs are short and validated  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Update the README with setup, run, and test commands.  
-D) Ship changes without documentation.  
+### Question 4: Reuse strategies should document…
+**Checks outcome 2:** Apply caching/reuse only when correctness and privacy allow.
+
+A) Nothing  
+B) Cache keys, invalidation, and sensitivity rules  
+C) Only hit-rate dreams  
+D) How to skip red-teams  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action is listed as part of the guided walkthrough?
-A) Ignore error handling for edge cases.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Review the module goals and plan how you will balance optimization with safety constraints.  
-D) Jump to the next module without verifying results.  
+### Question 5: Performance work without safety evals risks…
+**Checks outcome 3:** Plan safety evaluations and red-teaming alongside performance work.
+
+A) Balanced launches  
+B) Faster, cheaper, more dangerous systems  
+C) Automatic threat models  
+D) Perfect groundedness  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which step appears in the guided walkthrough?
-A) Change multiple variables at once so you cannot compare outcomes.  
-B) Identify the primary optimization goal (cost, latency, accuracy).  
-C) Treat every request as safe without review.  
-D) Avoid measuring results or performance.  
+### Question 6: A safety assessment summary for optimization should include…
+**Checks outcome 3:** Plan safety evaluations and red-teaming alongside performance work.
+
+A) Only speedups  
+B) What was changed, residual risks, and eval evidence  
+C) API keys  
+D) Unrelated OKRs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which action is listed as part of the guided walkthrough?
-A) Ship changes without documentation.  
-B) List safety constraints that must not be violated.  
-C) Ignore error handling for edge cases.  
-D) Update the README with setup, run, and test commands.  
+### Question 7: Latency wins that increase jailbreak success should…
+**Checks outcome 1:** Budget cost and latency without sacrificing required safety checks.
+
+A) Ship immediately  
+B) Be rejected or redesigned until safety gates pass  
+C) Ignore red-teams  
+D) Disable abstention  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which step appears in the guided walkthrough?
-A) Update the README with setup, run, and test commands.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Run a before/after comparison and document tradeoffs.  
-D) Treat every request as safe without review.  
+### Question 8: Shared caches across tenants without isolation…
+**Checks outcome 2:** Apply caching/reuse only when correctness and privacy allow.
 
-**Your answer:** _______________
-
----
-
-### Question 9: Which action is listed as part of the guided walkthrough?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Treat every request as safe without review.  
-C) Skip testing and trust the first result.  
-D) Jump to the next module without verifying results.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: Which practice best supports reliable delivery?
-A) Update the README with setup, run, and test commands.  
-B) Review the module goals and plan how you will balance optimization with safety constraints.  
-C) Identify the primary optimization goal (cost, latency, accuracy).  
-D) Ship changes without documentation.  
+A) Are always fine  
+B) Risk cross-tenant data leakage  
+C) Improve ACLs  
+D) Replace encryption  
 
 **Your answer:** _______________
 
@@ -112,9 +109,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **8/8 correct:** Excellent — you can apply this module's outcomes.
+- **6-7 correct:** Strong — review the missed outcome(s).
+- **0-5 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

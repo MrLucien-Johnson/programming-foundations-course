@@ -2,105 +2,138 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Integration tests: HTTP + DB (45 min)  
-B) Shipping without an automated test run in CI.  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) `python -m pytest`  
+### Question 1: On the test pyramid, which layer should usually be the largest (most numerous)?
+**Checks outcome 1:** Place tests on the test pyramid and choose what to mock versus what to hit for real.
+
+A) Manual-only exploratory tests  
+B) Unit tests  
+C) Full production canaries only  
+D) UI screenshot tests for every line of code  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: You need to run lint checks. Which command should you use?
+### Question 2: You are unit-testing a pure pricing function. What should you usually avoid mocking?
+**Checks outcome 1:** Place tests on the test pyramid and choose what to mock versus what to hit for real.
+
+A) The function's own arithmetic  
+B) An external payment HTTP API used by a different module  
+C) A clock if the function under test does not use time  
+D) Nothing — mock every name in scope  
+
+**Your answer:** _______________
+
+---
+
+### Question 3: A test fails only when run after another test. What is the likely problem?
+**Checks outcome 2:** Write deterministic unit tests using fixtures/factories and meaningful assertions.
+
+A) The assertion is too meaningful  
+B) Shared mutable state — the suite is not deterministic/isolated  
+C) Coverage is above 90%  
+D) The linter is too strict  
+
+**Your answer:** _______________
+
+---
+
+### Question 4: Which assertion is stronger for `create_user(email)`?
+**Checks outcome 2:** Write deterministic unit tests using fixtures/factories and meaningful assertions.
+
+A) `assert result is not None`  
+B) `assert result.email == email and result.id is not None`  
+C) `assert True`  
+D) `assert result` with no further checks  
+
+**Your answer:** _______________
+
+---
+
+### Question 5: Which example is an integration test?
+**Checks outcome 3:** Add an integration test that crosses a real boundary (HTTP, DB, filesystem, or process).
+
+A) Calling a pure function with mocked everything including its own logic  
+B) Hitting a real test database or HTTP endpoint and asserting the response  
+C) Reading the source code without running it  
+D) Running the formatter alone  
+
+**Your answer:** _______________
+
+---
+
+### Question 6: Coverage reports 100%, but a bug still ships. What lesson fits?
+**Checks outcome 4:** Interpret coverage as a signal — not a substitute for strong assertions.
+
+A) Coverage guarantees correctness  
+B) Coverage without meaningful assertions can still miss behavior  
+C) You should delete all unit tests  
+D) Only E2E tests ever matter  
+
+**Your answer:** _______________
+
+---
+
+### Question 7: Why run lint/format/typecheck in CI as quality gates?
+**Checks outcome 5:** Use lint, format, and typecheck as automated quality gates.
+
+A) To replace unit tests entirely  
+B) To catch style, bug-prone patterns, and type issues before merge  
+C) To slow developers with no signal  
+D) Only to generate prettier README screenshots  
+
+**Your answer:** _______________
+
+---
+
+### Question 8: Your feature writes to Postgres. Which test strategy best proves the boundary works?
+**Checks outcome 3:** Add an integration test that crosses a real boundary (HTTP, DB, filesystem, or process).
+
+A) Mock the DB away and never talk to SQL  
+B) An integration test against an isolated test schema/database  
+C) Print SQL in a comment and skip running it  
+D) Only type-check the ORM models  
+
+**Your answer:** _______________
+
+---
+
+### Question 9: When is mocking an HTTP client appropriate in a unit test?
+**Checks outcome 1:** Place tests on the test pyramid and choose what to mock versus what to hit for real.
+
+A) Never  
+B) When the code under test calls an external service and you want a fast, deterministic unit test  
+C) When you want to avoid asserting anything  
+D) When replacing the test runner itself  
+
+**Your answer:** _______________
+
+---
+
+### Question 10: What is the main value of lint/format/typecheck gates in CI?
+**Checks outcome 5:** Use lint, format, and typecheck as automated quality gates.
+
+A) They replace all unit and integration tests  
+B) They catch style, bug-prone patterns, and type issues before merge  
+C) They exist only to slow developers with no signal  
+D) They only generate prettier README screenshots  
+
+**Your answer:** _______________
+
+---
+
+### Question 11: In this course's Python tooling, which command runs lint checks?
+**Checks outcome 5:** Use lint, format, and typecheck as automated quality gates.
+
 A) `ruff check .`  
-B) Run the module tests and confirm they pass.  
-C) Jump to the next module without verifying results.  
-D) Write tests that prove correctness and prevent regressions.  
-
-**Your answer:** _______________
-
----
-
-### Question 3: You need to format the code. Which command should you use?
-A) `ruff format .`  
-B) Update the README with setup, run, and test commands.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) `ruff check .`  
-
-**Your answer:** _______________
-
----
-
-### Question 4: Which action best satisfies the Core requirements?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Refactor one area for readability (without changing behavior) and prove it with tests.  
-C) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-D) Create a short write-up: what changed, why, and how you verified it.  
-
-**Your answer:** _______________
-
----
-
-### Question 5: Which action upgrades the work to the Better level?
-A) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-B) Ignore error handling for edge cases.  
-C) Copy the starter pack from `languages/python/intermediate/starter-pack` into a new working folder.  
-D) `python -m pytest`  
-
-**Your answer:** _______________
-
----
-
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Run: `ruff check .`  
-B) Skip testing and trust the first result.  
-C) Lint/format/typecheck as quality gates (40 min)  
-D) Add a performance or reliability improvement and **measure** the impact.  
-
-**Your answer:** _______________
-
----
-
-### Question 7: Before submitting, which verification step must you complete?
-A) Ignore error handling for edge cases.  
-B) Avoid measuring results or performance.  
-C) Run the module tests and confirm they pass.  
-D) Implement a small feature tied to this module in an existing starter app.  
-
-**Your answer:** _______________
-
----
-
-### Question 8: Which testing requirement must be satisfied to pass?
-A) Jump to the next module without verifying results.  
-B) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
-C) Document decisions and constraints clearly for reviewers.  
-D) `ruff format .`  
-
-**Your answer:** _______________
-
----
-
-### Question 9: Which option would be a common mistake to avoid?
-A) Shipping without an automated test run in CI.  
-B) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Explain the core concepts and tradeoffs for **Testing and Quality**.  
-
-**Your answer:** _______________
-
----
-
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Testing and Quality**.  
-B) Update the README with setup, run, and test commands.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) Copy the starter pack from `languages/python/intermediate/starter-pack` into a new working folder.  
+B) `ruff format .`  
+C) `python -m pytest`  
+D) `git push --force`  
 
 **Your answer:** _______________
 
@@ -112,9 +145,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **11/11 correct:** Excellent — you can apply this module's outcomes.
+- **9-10 correct:** Strong — review the missed outcome(s).
+- **0-8 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

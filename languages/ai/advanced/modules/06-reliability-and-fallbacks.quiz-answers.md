@@ -1,77 +1,97 @@
 # AI — Module 06: Reliability and Fallbacks Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: D** - Design a fallback strategy for each top failure mode (model down, retrieval empty, tool error).
+## Question 1: Model-down fallback might be…
+**Answer: B** — Cached answer, smaller model, or human handoff
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Define fallbacks per top failure mode (model, retrieval, tools).
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: C** - Add failure-injection tests to your harness (simulate outages/timeouts).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Degrade explicitly per mode.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: B** - Design a human-in-the-loop queue with SLA and escalation.
+## Question 2: Empty retrieval fallback should…
+**Answer: B** — Abstain/ask rather than fabricate
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Define fallbacks per top failure mode (model, retrieval, tools).
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** No evidence → no invented answer.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: A** - Harness includes simulated failures and verifies safe behavior.
+## Question 3: Retry budgets on tool errors prevent…
+**Answer: B** — Unbounded cost and delayed failure signals
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Set retry budgets and stop conditions for degraded paths.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: A** - Unlimited retries that amplify outages and cost spikes.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Bound recovery attempts.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Translate a vague request into a clear goal, constraints, and success criteria.
+## Question 4: Stop conditions in degraded mode…
+**Answer: B** — Ensure the system does not thrash forever
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 2:** Set retry budgets and stop conditions for degraded paths.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: A** - Reliability patterns: retries, timeouts, backoff, budgets (50 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Know when to quit.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: B** - Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.
+## Question 5: Failure injection in harnesses proves…
+**Answer: B** — Fallbacks actually trigger and behave safely
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Failure-inject outages/timeouts in the harness.
+
+**Explanation:** Test the dark paths.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: A** - Design resilient systems: retries, timeouts, idempotency, degraded modes, and human fallback.
+## Question 6: Simulating timeouts without assertions…
+**Answer: B** — Misses whether fallbacks ran correctly
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 3:** Failure-inject outages/timeouts in the harness.
+
+**Explanation:** Inject and assert.
+
+---
+
+## Question 7: Human-in-the-loop queues need…
+**Answer: B** — Clear routing, SLA, and escalation
+
+**Outcome 4:** Specify degraded modes: abstain, ask, cached answer, human queue.
+
+**Explanation:** Humans are a capacity-limited dependency.
+
+---
+
+## Question 8: Cached answers as degraded mode require…
+**Answer: B** — Freshness/validity rules so wrong cache is not “reliability”
+
+**Outcome 4:** Specify degraded modes: abstain, ask, cached answer, human queue.
+
+**Explanation:** Stale cache can be worse than abstain.
+
+---
+
+## Question 9: Post-incident reviews should update…
+**Answer: B** — Evals, guardrails, and runbooks to prevent repeats
+
+**Outcome 5:** Run post-incident reviews that harden evals and guardrails.
+
+**Explanation:** Convert pain into controls.
+
+---
+
+## Question 10: A fallback strategy tied to SLOs means…
+**Answer: B** — You know when degraded mode is acceptable vs stop-the-line
+
+**Outcome 5:** Run post-incident reviews that harden evals and guardrails.
+
+**Explanation:** Budgets frame degradation choices.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

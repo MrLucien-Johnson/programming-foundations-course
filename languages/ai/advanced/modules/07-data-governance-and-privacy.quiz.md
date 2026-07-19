@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: Which action best satisfies the Core requirements?
-A) Build a small evaluation loop: test cases, metrics, and iteration notes.  
-B) Privacy-by-design in prompts and evaluations (45 min)  
-C) Create a data handling policy for your app: what is stored, for how long, and why.  
-D) Add redaction rules and access controls.  
+### Question 1: A data handling policy should answer…
+**Checks outcome 1:** Write data-handling policies for what is stored, why, and how long.
+
+A) Only “we care about privacy”  
+B) What is stored, purpose, retention, and who can access  
+C) Preferred IDE themes  
+D) Canary math  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: Which action upgrades the work to the Better level?
-A) Add access-control-aware retrieval and test “no leakage” scenarios.  
-B) Add redaction rules and access controls.  
-C) Avoid measuring results or performance.  
-D) Handle data responsibly: minimization, retention, access control, consent, and auditability.  
+### Question 2: Purpose limitation means…
+**Checks outcome 1:** Write data-handling policies for what is stored, why, and how long.
+
+A) Reuse data for any future idea silently  
+B) Use collected data only for stated purposes  
+C) Log everything publicly  
+D) Skip retention  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action qualifies as a Beast Mode upgrade?
-A) Design audit queries/reports (who accessed what, when, and for what purpose).  
-B) Add redaction rules and access controls.  
-C) Translate a vague request into a clear goal, constraints, and success criteria.  
-D) Create a data handling policy for your app: what is stored, for how long, and why.  
+### Question 3: Redaction tests should include…
+**Checks outcome 2:** Implement and test PII redaction on inputs/outputs.
+
+A) Only empty strings  
+B) Samples where PII must not appear in outputs/logs  
+C) Only latency cases  
+D) Only schema braces  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Classify data types and retention rules.  
-C) Translate a vague request into a clear goal, constraints, and success criteria.  
-D) Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.  
+### Question 4: Redacting in the UI but logging raw text…
+**Checks outcome 2:** Implement and test PII redaction on inputs/outputs.
+
+A) Fully solves privacy  
+B) Leaves a major leak channel  
+C) Improves groundedness  
+D) Is required for traces  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which testing requirement must be satisfied to pass?
-A) Access control for RAG and multi-tenant data (50 min)  
-B) Tests include “data should not appear” negative cases.  
-C) Run the module tests and confirm they pass.  
-D) Create a data handling policy for your app: what is stored, for how long, and why.  
+### Question 5: No-leakage tests for RAG verify…
+**Checks outcome 3:** Enforce permission-aware retrieval and no-leakage tests.
+
+A) Users can read any tenant’s docs  
+B) Unauthorized docs never appear in context/answers  
+C) Embeddings are public  
+D) ACLs are optional  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which option would be a common mistake to avoid?
-A) Run the module tests and confirm they pass.  
-B) Skip testing and trust the first result.  
-C) Define a safe logging schema that avoids storing raw sensitive text.  
-D) Logging raw prompts/outputs indefinitely.  
+### Question 6: Permission metadata on chunks enables…
+**Checks outcome 3:** Enforce permission-aware retrieval and no-leakage tests.
+
+A) Slower disks only  
+B) Filtering retrieval by caller rights  
+C) Automatic encryption keys in prompts  
+D) Higher temperature  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Translate a vague request into a clear goal, constraints, and success criteria.  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Update the README with setup, run, and test commands.  
-D) Add redaction rules and access controls.  
+### Question 7: Safe logging schemas typically store…
+**Checks outcome 4:** Design safe logging schemas that avoid raw sensitive text.
+
+A) Full prompts with secrets  
+B) IDs, categories, hashes/redacted snippets — not raw secrets  
+C) PANs for convenience  
+D) Session cookies  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which topic would you revisit to solve this module's core problem?
-A) Data classification and minimization (45 min)  
-B) Verify the primary feature works with normal and edge-case inputs.  
-C) Review the module goals and plan how you will protect sensitive data and compliance.  
-D) Build a small evaluation loop: test cases, metrics, and iteration notes.  
+### Question 8: Audit queries (“who accessed what”) support…
+**Checks outcome 4:** Design safe logging schemas that avoid raw sensitive text.
+
+A) Only marketing  
+B) Accountability and incident investigation  
+C) Faster GPUs  
+D) Reranking  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which step appears in the guided walkthrough?
-A) Produce prompts/specs that are repeatable (not “one-off magic prompts”).  
-B) Jump to the next module without verifying results.  
-C) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
-D) Define a safe logging schema that avoids storing raw sensitive text.  
+### Question 9: Privacy review in releases catches…
+**Checks outcome 5:** Add privacy review checklists to release process.
+
+A) Font issues  
+B) New data flows that expand retention or exposure  
+C) Only unit test names  
+D) CDN TTLs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which statement best summarizes the module focus?
-A) Handle data responsibly: minimization, retention, access control, consent, and auditability.  
-B) Copy the starter pack from `languages/ai/advanced/starter-pack` into a new working folder.  
-C) Add access-control-aware retrieval and test “no leakage” scenarios.  
-D) Privacy-by-design in prompts and evaluations (45 min)  
+### Question 10: “Data should not appear” negative tests are critical because…
+**Checks outcome 5:** Add privacy review checklists to release process.
+
+A) Absence is hard to notice without assertions  
+B) Presence tests suffice always  
+C) Policies forbid tests  
+D) Redaction is optional  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

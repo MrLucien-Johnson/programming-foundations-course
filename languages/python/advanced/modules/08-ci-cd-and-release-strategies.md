@@ -6,11 +6,10 @@ Ship safely with progressive delivery, rollbacks, and versioning.
 This module uses **Python 3.12+**, **venv + pip (or uv/poetry)**, and **pytest**. When applicable, you’ll build or extend a small service using **FastAPI (or Flask) for REST APIs** and **PostgreSQL + migrations (Alembic)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **CI/CD and Release Strategies**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ruff + black (or ruff format).
-- Document decisions and constraints clearly for reviewers.
+- Choose canary, blue-green, or rolling releases for a risk profile.
+- Use feature flags and safe config changes to control exposure.
+- Plan production database migrations that avoid downtime and lockouts.
+- Execute rollbacks with clear versioning and changelogs.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Python**.

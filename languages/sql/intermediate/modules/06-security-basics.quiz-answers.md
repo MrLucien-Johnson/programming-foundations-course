@@ -1,77 +1,97 @@
 # SQL (PostgreSQL) Intermediate — Module 06: Security Basics Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: B** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: Broken access control in OWASP terms is closest to…
+**Answer: A** — Users performing actions outside their permissions
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Map real application risks to the OWASP Top 10 categories.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: B** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Access control failures let users act beyond their authorization.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: D** - Add a performance or reliability improvement and **measure** the impact.
+## Question 2: Where should a production database password live?
+**Answer: B** — In environment/config or a secret manager, not in source control
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 2:** Store and load secrets via config/secret managers — never commit them.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Secrets belong in env/secret stores — never in git.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: A** - All work must be covered by **migrations apply cleanly + pgTAP + SQL linting in CI**.
+## Question 3: Which query style best prevents SQL injection?
+**Answer: B** — Parameterized queries / bound parameters
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 3:** Prevent injection using validation, encoding, and parameterized queries.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: B** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Parameter binding keeps data from being interpreted as SQL code.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: D** - Explain the core concepts and tradeoffs for **Security Basics**.
+## Question 4: Showing user-provided HTML in a page without encoding risks…
+**Answer: A** — XSS (cross-site scripting)
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 3:** Prevent injection using validation, encoding, and parameterized queries.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: B** - OWASP Top 10: practical mapping (40 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Unencoded output enables XSS — validate/encode appropriately.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: D** - Copy the starter pack from `languages/sql/intermediate/starter-pack` into a new working folder.
+## Question 5: Least privilege means…
+**Answer: B** — Grant only the permissions required for a role/task — nothing more
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 4:** Enforce authorization checks with least privilege on every sensitive action.
+
+**Explanation:** Least privilege limits blast radius when accounts or tokens leak.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: D** - Reduce common vulnerabilities with safe defaults.
+## Question 6: After AuthN succeeds, what must still happen before deleting a billing record?
+**Answer: B** — An AuthZ check that this identity may delete that record
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 4:** Enforce authorization checks with least privilege on every sensitive action.
+
+**Explanation:** Authentication ≠ authorization. Sensitive actions need explicit AuthZ.
+
+---
+
+## Question 7: A secret was accidentally committed. Best immediate response?
+**Answer: B** — Rotate/revoke the secret, remove it from the tree, and treat history as compromised
+
+**Outcome 2:** Store and load secrets via config/secret managers — never commit them.
+
+**Explanation:** Assume exposure: rotate, purge from future commits, and audit usage.
+
+---
+
+## Question 8: Why map bugs to OWASP categories during review?
+**Answer: B** — To prioritize fixes using a shared language for common web risks
+
+**Outcome 1:** Map real application risks to the OWASP Top 10 categories.
+
+**Explanation:** OWASP gives a practical taxonomy for common vulnerabilities.
+
+---
+
+## Question 9: Server-side validation is still required when the UI already validates because…
+**Answer: A** — Clients can be bypassed; the server is the trust boundary
+
+**Outcome 3:** Prevent injection using validation, encoding, and parameterized queries.
+
+**Explanation:** Never trust the client. Validate again on the server.
+
+---
+
+## Question 10: A background worker token can drop production tables. What principle is violated?
+**Answer: A** — Least privilege
+
+**Outcome 4:** Enforce authorization checks with least privilege on every sensitive action.
+
+**Explanation:** Over-privileged tokens violate least privilege and are dangerous if leaked.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

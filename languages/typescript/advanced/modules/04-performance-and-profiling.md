@@ -6,11 +6,10 @@ Profile, measure, and optimize across app + database + network.
 This module uses **Node.js LTS**, **npm (or pnpm), TypeScript compiler (tsc)**, and **Vitest (or Jest)**. When applicable, you’ll build or extend a small service using **Fastify (or Express) for REST APIs** and **PostgreSQL + migrations (Prisma or Knex)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Performance and Profiling**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ESLint + Prettier.
-- Document decisions and constraints clearly for reviewers.
+- Establish performance baselines before changing code.
+- Run load tests and locate bottlenecks with evidence.
+- Tune databases using indexes, query plans, and lock analysis.
+- Choose cache invalidation strategies that match correctness needs.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **TypeScript**.

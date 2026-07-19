@@ -1,106 +1,127 @@
-# CAdvanced — Module 06: Security (Advanced) Quiz: Test Your Understanding
+# C# Advanced — Module 06: Security (Advanced) Quiz: Test Your Understanding
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) All work must be covered by **build + tests + analyzers in CI**.  
-B) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-C) Change multiple variables at once so you cannot compare outcomes.  
-D) `dotnet test`  
+### Question 1: Threat modeling starts by…
+**Checks outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
+
+A) Buying a bigger WAF only  
+B) Listing assets, entry points, threats, and mitigations for the feature  
+C) Disabling logs  
+D) Skipping AuthN  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: You need to format the code. Which command should you use?
-A) Threat modeling + abuse cases (45 min)  
-B) Run the module tests and confirm they pass.  
-C) Verify the primary feature works with normal and edge-case inputs.  
-D) `dotnet format`  
+### Question 2: An “abuse case” focuses on…
+**Checks outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
+
+A) Happy-path UX copy  
+B) How a motivated attacker or abusive user misuses the system  
+C) Only unit test names  
+D) CDN cache hit ratios  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: Which action best satisfies the Core requirements?
-A) `dotnet format`  
-B) Implement a small feature tied to this module in an existing starter app.  
-C) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-D) Threat-model, harden, and protect secrets, data, and supply chain.  
+### Question 3: TLS primarily protects…
+**Checks outcome 2:** Apply encryption at rest/in transit with sound key management.
+
+A) Data in transit from eavesdropping/tampering  
+B) Disk sectors at rest by itself  
+C) Supply-chain commits  
+D) Error budgets  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action upgrades the work to the Better level?
-A) If the module involves a database, tests must run against an isolated schema/database.  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Add or update documentation (README notes or ADR-style notes).  
-D) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
+### Question 4: Where should encryption keys live?
+**Checks outcome 2:** Apply encryption at rest/in transit with sound key management.
+
+A) Committed next to source  
+B) In a managed KMS/HSM with rotation and access control  
+C) In client-side JavaScript comments  
+D) In screenshots of the dashboard  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action qualifies as a Beast Mode upgrade?
-A) Add a performance or reliability improvement and **measure** the impact.  
-B) Security testing and hardening checklist (40 min)  
-C) Ignore error handling for edge cases.  
-D) Ship changes without documentation.  
+### Question 5: Pinning dependency versions and verifying checksums helps against…
+**Checks outcome 3:** Enforce supply-chain controls for dependencies and build artifacts.
+
+A) UI alignment bugs  
+B) Malicious or swapped packages in the supply chain  
+C) Slow CSS  
+D) CAP tradeoffs  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Before submitting, which verification step must you complete?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Threat-model, harden, and protect secrets, data, and supply chain.  
-C) Copy the starter pack from `languages/csharp/advanced/starter-pack` into a new working folder.  
-D) Run the module tests and confirm they pass.  
+### Question 6: A compromised build pipeline can…
+**Checks outcome 3:** Enforce supply-chain controls for dependencies and build artifacts.
+
+A) Only affect documentation typos  
+B) Inject malicious artifacts into what you ship  
+C) Improve SLO burn rates automatically  
+D) Replace threat models  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Which testing requirement must be satisfied to pass?
-A) Jump to the next module without verifying results.  
-B) All work must be covered by **build + tests + analyzers in CI**.  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) Encryption at rest/in transit + key management (45 min)  
+### Question 7: A hardening checklist should include…
+**Checks outcome 4:** Execute a hardening checklist covering auth, config, and security tests.
+
+A) Only choosing fonts  
+B) AuthZ reviews, secret hygiene, dependency updates, and security test gates  
+C) Disabling HTTPS in prod  
+D) Sharing root credentials in chat  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which option would be a common mistake to avoid?
-A) Shipping without an automated test run in CI.  
-B) Skip testing and trust the first result.  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Ignore error handling for edge cases.  
+### Question 8: Security tests in CI are valuable because they…
+**Checks outcome 4:** Execute a hardening checklist covering auth, config, and security tests.
+
+A) Replace threat modeling forever  
+B) Catch regressions in injection, authz, and dependency policy before release  
+C) Make retries unnecessary  
+D) Guarantee zero incidents  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Explain the core concepts and tradeoffs for **Security (Advanced)**.  
-C) Threat-model, harden, and protect secrets, data, and supply chain.  
-D) `dotnet format`  
+### Question 9: Prioritising mitigations should weigh…
+**Checks outcome 1:** Threat-model a feature including abuse cases and prioritised mitigations.
+
+A) Only how trendy the control is  
+B) Likelihood × impact and exploitability of each threat  
+C) Whether the control uses purple gradients  
+D) Commit message length  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: Which topic would you revisit to solve this module's core problem?
-A) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-B) Threat modeling + abuse cases (45 min)  
-C) Run the module tests and confirm they pass.  
-D) Change multiple variables at once so you cannot compare outcomes.  
+### Question 10: Encrypting a database volume but logging raw PAN data means…
+**Checks outcome 2:** Apply encryption at rest/in transit with sound key management.
+
+A) You are fully safe  
+B) Sensitive data still leaks via another channel  
+C) TLS is unnecessary  
+D) Keys can be public  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

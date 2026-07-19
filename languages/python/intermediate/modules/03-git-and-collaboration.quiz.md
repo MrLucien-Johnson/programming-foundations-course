@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
-C) `python -m pytest`  
-D) PRs: review checklists and feedback loops (40 min)  
+### Question 1: Which commit message is more useful in review history?
+**Checks outcome 1:** Use a clear branching strategy and write commits that explain why a change happened.
+
+A) `fix`  
+B) `asdf`  
+C) `Validate email before creating user to prevent duplicate accounts`  
+D) `Update file`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: You need to run lint checks. Which command should you use?
-A) Skipping input validation and assuming “happy path”.  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) `ruff check .`  
+### Question 2: You are starting a feature on a shared repo using short-lived feature branches. Where should the work begin?
+**Checks outcome 1:** Use a clear branching strategy and write commits that explain why a change happened.
+
+A) Commit directly to `main` with no review  
+B) A feature branch off an up-to-date `main`  
+C) A random orphan branch with no base  
+D) Rewriting `main` history on every save  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) `ruff format .`  
-B) Skip testing and trust the first result.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) `python -m pytest`  
+### Question 3: What belongs on a PR review checklist?
+**Checks outcome 2:** Open and review pull requests using a practical checklist and actionable feedback.
+
+A) Only whether the author used dark mode  
+B) Correctness, tests, risk, and clarity of the change  
+C) Rejecting any change that touches more than one file  
+D) Approving without reading if CI is green  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action best satisfies the Core requirements?
-A) Making performance claims without measurements.  
-B) If the module involves a database, tests must run against an isolated schema/database.  
-C) Implement a small feature tied to this module in an existing starter app.  
-D) `ruff check .`  
+### Question 4: Which review comment is more actionable?
+**Checks outcome 2:** Open and review pull requests using a practical checklist and actionable feedback.
+
+A) `This is bad.`  
+B) `Please fix.`  
+C) `Can we extract the retry loop into a helper and add a test for the timeout path?`  
+D) `👀`  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action upgrades the work to the Better level?
-A) Conflicts and rebasing safely (45 min)  
-B) Copy the starter pack from `languages/python/intermediate/starter-pack` into a new working folder.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) If the module involves a database, tests must run against an isolated schema/database.  
+### Question 5: You and a teammate both edited the same lines. Git stops with a conflict. What do you do?
+**Checks outcome 3:** Resolve merge conflicts and rebase safely without rewriting shared history carelessly.
+
+A) Delete the repository  
+B) Resolve the conflicting hunks, test, then continue the merge/rebase  
+C) Force-push without looking  
+D) Ignore the conflict markers and commit them as-is  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Update the README with setup, run, and test commands.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Jump to the next module without verifying results.  
+### Question 6: When is rewriting history with rebase riskiest?
+**Checks outcome 3:** Resolve merge conflicts and rebase safely without rewriting shared history carelessly.
+
+A) On a local branch only you use  
+B) On a shared branch others already pulled  
+C) Before the first commit exists  
+D) On a scratch file outside git  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) Run the module tests and confirm they pass.  
-B) Ignore error handling for edge cases.  
-C) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-D) `python -m pytest`  
+### Question 7: CI fails on your PR. Best next step?
+**Checks outcome 4:** Diagnose CI failures from logs and fix the underlying issue before merging.
+
+A) Merge anyway and hope  
+B) Open the failing job logs, reproduce locally if possible, fix, and push  
+C) Disable the workflow permanently  
+D) Blame the linter and skip review  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement must be satisfied to pass?
-A) PRs: review checklists and feedback loops (40 min)  
-B) All work must be covered by **ruff/format + unit tests + integration tests (HTTP + DB) in CI**.  
-C) Making performance claims without measurements.  
-D) Review the module goals and plan how you will work in branches, reviews, and clean history.  
+### Question 8: A CI job fails with a flaky timeout only sometimes. What is a professional response?
+**Checks outcome 4:** Diagnose CI failures from logs and fix the underlying issue before merging.
+
+A) Ignore flakes forever  
+B) Stabilize the test (determinism/timeouts/isolation) or quarantine with a tracked fix  
+C) Delete all tests  
+D) Only run CI on Fridays  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option would be a common mistake to avoid?
-A) Run: `python -m pytest`  
-B) Shipping without an automated test run in CI.  
-C) If the module involves a database, tests must run against an isolated schema/database.  
-D) Review the module goals and plan how you will work in branches, reviews, and clean history.  
+### Question 9: Why keep commits focused (one logical change) when collaborating?
+**Checks outcome 1:** Use a clear branching strategy and write commits that explain why a change happened.
+
+A) Git requires exactly one file per commit  
+B) Reviewers can understand, revert, and bisect more easily  
+C) It makes CI slower on purpose  
+D) It hides the real diff  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Git and Collaboration**.  
-B) Over-mocking (tests assert implementation details instead of outcomes).  
-C) Refactor one area for readability (without changing behavior) and prove it with tests.  
-D) Update the README with setup, run, and test commands.  
+### Question 10: A PR description should mainly help reviewers by…
+**Checks outcome 2:** Open and review pull requests using a practical checklist and actionable feedback.
+
+A) Listing every keystroke  
+B) Explaining intent, risk, test plan, and how to verify  
+C) Pasting unrelated stack traces only  
+D) Omitting context so review is a puzzle  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 

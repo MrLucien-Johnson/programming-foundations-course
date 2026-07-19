@@ -1,77 +1,97 @@
 # AI — Module 08: Deployment Basics Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: D** - Create a deployment checklist for one AI feature.
+## Question 1: Pre-deploy for an AI feature should include…
+**Answer: B** — Eval harness + safety tests passing gates
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Create a deployment checklist including eval and safety gates.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: D** - Design a prompt versioning scheme and a change log format.
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Gates before traffic.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: B** - Design a staged rollout with shadow evaluation and a rollback trigger.
+## Question 2: A deployment checklist exists to…
+**Answer: B** — Make release steps consistent and auditable
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Create a deployment checklist including eval and safety gates.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: B** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Checklists catch skipped critical steps.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: D** - Pre-deploy: run eval harness + safety tests; post-deploy: run smoke tests.
+## Question 3: Prompt versioning enables…
+**Answer: B** — Pinning, comparing, and rolling back specific behaviors
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Version prompts/schemas and keep a change log.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: B** - Deploying prompt changes without a version or rollback strategy.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Versions make releases reversible.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: D** - Translate a vague request into a clear goal, constraints, and success criteria.
+## Question 4: Schema version in a rollout matters when…
+**Answer: A** — Clients parse structured outputs
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 2:** Version prompts/schemas and keep a change log.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: A** - Environments: dev/stage/prod configs and secrets handling (45 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Breaking schemas break consumers.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: A** - Copy the starter pack from `languages/ai/intermediate/starter-pack` into a new working folder.
+## Question 5: Rollback triggers might include…
+**Answer: B** — Eval score drops, safety failures, or user-impact spikes
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Define rollback triggers from eval and user-impact signals.
+
+**Explanation:** Predefine what “bad” means.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: C** - Ship an AI feature safely: config, versioning, rollout, and operational readiness.
+## Question 6: User-impact signals complement offline evals because…
+**Answer: B** — Production can reveal gaps offline missed
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 3:** Define rollback triggers from eval and user-impact signals.
+
+**Explanation:** Online + offline together.
+
+---
+
+## Question 7: Smoke tests after deploy should hit…
+**Answer: B** — The most important user flows quickly
+
+**Outcome 4:** Run smoke tests on critical flows post-deploy.
+
+**Explanation:** Fast confidence on critical paths.
+
+---
+
+## Question 8: A failed smoke test should…
+**Answer: B** — Stop rollout / trigger rollback per playbook
+
+**Outcome 4:** Run smoke tests on critical flows post-deploy.
+
+**Explanation:** Smoke fails are stop-the-line signals.
+
+---
+
+## Question 9: Shadow evaluation means…
+**Answer: B** — Scoring a new version on live inputs without affecting users
+
+**Outcome 5:** Use staged rollout with shadow evaluation where appropriate.
+
+**Explanation:** Shadow = observe before expose.
+
+---
+
+## Question 10: Staged rollout without a rollback plan is risky because…
+**Answer: B** — You may lack a fast path back to known-good
+
+**Outcome 5:** Use staged rollout with shadow evaluation where appropriate.
+
+**Explanation:** Progressive delivery still needs an escape hatch.
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

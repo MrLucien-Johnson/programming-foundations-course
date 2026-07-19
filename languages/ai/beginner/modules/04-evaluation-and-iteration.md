@@ -7,11 +7,11 @@ Treat prompt work like engineering: define metrics, build test cases, run regres
 - Customer support summarisation (quality rubric + regression set)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Create a rubric scorers can apply consistently.
+- Build a regression set and compare baseline vs improved prompts.
+- Use golden answers for qualitative spot checks.
+- Prioritize fixes by failure-category frequency.
+- Add abstain/fallback rules tied to confidence thresholds.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

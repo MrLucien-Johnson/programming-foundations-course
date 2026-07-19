@@ -1,77 +1,79 @@
 # Systems and Design (Advanced) Quiz Answers
 
-## Question 1: Before submitting, which verification step must you complete?
-**Answer: C** - Run the module tests and confirm they pass.
+## Question 1: A scalable design doc should state…
+**Answer: B** — Expected load, bottlenecks, and how the design handles them
 
-**Explanation:** This item appears in the verification checklist.
+**Outcome 1:** Design a service for expected scale with explicit bottlenecks and mitigations.
 
----
-
-## Question 2: Which step appears in the guided walkthrough?
-**Answer: C** - Copy the starter pack from `languages/sql/advanced/starter-pack` into a new working folder.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** Scale claims need load assumptions and bottleneck thinking.
 
 ---
 
-## Question 3: Which verification step is required before moving on?
-**Answer: A** - Verify the primary feature works with normal and edge-case inputs.
+## Question 2: Vertical scaling alone becomes a problem when…
+**Answer: A** — A single machine’s limits or cost ceiling are hit
 
-**Explanation:** This item appears in the verification checklist.
+**Outcome 1:** Design a service for expected scale with explicit bottlenecks and mitigations.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: B** - Update the README with setup, run, and test commands.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Eventually you need horizontal strategies.
 
 ---
 
-## Question 5: Which verification step is required before moving on?
-**Answer: D** - Run: `psql -f queries.sql`
+## Question 3: Recording rejected alternatives in an ADR helps reviewers…
+**Answer: B** — Understand why this option won given constraints
 
-**Explanation:** This item appears in the verification checklist.
+**Outcome 2:** Document architecture tradeoffs and rejected alternatives clearly.
 
----
-
-## Question 6: Which action is listed as part of the guided walkthrough?
-**Answer: D** - Review the module goals and plan how you will synthesize architecture decisions.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** Tradeoff docs preserve decision rationale.
 
 ---
 
-## Question 7: Which step appears in the guided walkthrough?
-**Answer: A** - Draft a high-level system diagram.
+## Question 4: “We picked eventual consistency” without saying why is weak because…
+**Answer: B** — Reviewers cannot judge fitness without constraints and failure modes
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 2:** Document architecture tradeoffs and rejected alternatives clearly.
 
----
-
-## Question 8: Which action is listed as part of the guided walkthrough?
-**Answer: B** - Document data flow, dependencies, and risk points.
-
-**Explanation:** This step is listed in the guided walkthrough.
+**Explanation:** Name the constraint that forced the tradeoff.
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: D** - Review tradeoffs and capture in a decision log.
+## Question 5: If the design hinges on a cache hit rate, verification should include…
+**Answer: B** — A load or rehearsal that measures hit rate under realistic keys
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Define verification (tests, load checks, or probes) that match the design risks.
+
+**Explanation:** Validate the risky assumptions, not only happy-path code.
 
 ---
 
-## Question 10: Which action is listed as part of the guided walkthrough?
-**Answer: A** - Document decisions in a short README section (assumptions, tradeoffs, next steps).
+## Question 6: A design that adds many new failure domains should plan…
+**Answer: B** — Health checks, SLOs, and failure drills for those domains
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Define verification (tests, load checks, or probes) that match the design risks.
+
+**Explanation:** New complexity needs operable verification.
+
+---
+
+## Question 7: Sharding by user_id helps when…
+**Answer: A** — Traffic and data grow beyond one node fairly evenly by user
+
+**Outcome 1:** Design a service for expected scale with explicit bottlenecks and mitigations.
+
+**Explanation:** Key choice must match access patterns — cross-shard ops stay hard.
+
+---
+
+## Question 8: A good tradeoff write-up compares options on…
+**Answer: B** — Cost, complexity, consistency, and operability against requirements
+
+**Outcome 2:** Document architecture tradeoffs and rejected alternatives clearly.
+
+**Explanation:** Tradeoffs are multi-dimensional against real constraints.
 
 ---
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8/8 correct:** Excellent! You are ready to move on.
+- **6-7 correct:** Great work — review the missed outcomes.
+- **0-5 correct:** Revisit the module lessons, then try again.

@@ -6,11 +6,11 @@ Design and secure REST APIs with authentication and authorization.
 This module uses **Python 3.12+**, **venv + pip (or uv/poetry)**, and **pytest**. When applicable, you’ll build or extend a small service using **FastAPI (or Flask) for REST APIs** and **PostgreSQL + migrations (Alembic)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **APIs and Auth**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ruff + black (or ruff format).
-- Document decisions and constraints clearly for reviewers.
+- Design REST endpoints with clear resources, status codes, and pagination.
+- Validate input and return consistent error envelopes for clients.
+- Distinguish authentication from authorization and apply sessions/JWT/roles appropriately.
+- Add basic rate limiting / abuse protections to sensitive endpoints.
+- Document the API with OpenAPI (or equivalent) including examples.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Python**.

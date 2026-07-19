@@ -8,11 +8,11 @@ Design resilient systems: retries, timeouts, idempotency, degraded modes, and hu
 - Meeting notes → actions (validation + repair + human approval)
 
 ## Learning Outcomes
-- Translate a vague request into a clear goal, constraints, and success criteria.
-- Produce prompts/specs that are repeatable (not “one-off magic prompts”).
-- Build a small evaluation loop: test cases, metrics, and iteration notes.
-- Apply safety and policy basics: refuse/redirect, handle sensitive data, reduce hallucinations.
-- Document and version changes so improvements are explainable.
+- Define fallbacks per top failure mode (model, retrieval, tools).
+- Set retry budgets and stop conditions for degraded paths.
+- Failure-inject outages/timeouts in the harness.
+- Specify degraded modes: abstain, ask, cached answer, human queue.
+- Run post-incident reviews that harden evals and guardrails.
 
 ## Prerequisites
 - Comfort writing clear, structured English.

@@ -1,77 +1,97 @@
 # Go Intermediate — Module 01: DSA (Practical) Quiz Answers
 
-## Question 1: You need to run the test suite. Which command should you use?
-**Answer: D** - `go test ./...`
+## Question 1: You need average O(1) lookup of a user record by `user_id`. Which structure fits best?
+**Answer: B** — A hash map/dict keyed by `user_id`
 
-**Explanation:** This command runs the test suite.
+**Outcome 1:** Choose list vs dict vs set for a given access pattern and justify the Big-O tradeoff.
 
----
-
-## Question 2: You need to run lint checks. Which command should you use?
-**Answer: B** - `golangci-lint run`
-
-**Explanation:** This command runs lint checks.
+**Explanation:** Hash maps/dicts give average O(1) keyed lookup. Scanning a list is O(n). Sets are for membership of values, not fielded records.
 
 ---
 
-## Question 3: You need to format the code. Which command should you use?
-**Answer: C** - `gofmt -w .`
+## Question 2: You must enforce unique email addresses and only care whether an email already exists. Best choice?
+**Answer: C** — A set/hash set of emails
 
-**Explanation:** This command formats the code.
+**Outcome 1:** Choose list vs dict vs set for a given access pattern and justify the Big-O tradeoff.
 
----
-
-## Question 4: Which action best satisfies the Core requirements?
-**Answer: A** - Implement a small feature tied to this module in an existing starter app.
-
-**Explanation:** This task appears under Core exercises.
+**Explanation:** A set/hash set is ideal for unique membership checks. A dict works but stores unused values; a list makes uniqueness checks O(n).
 
 ---
 
-## Question 5: Which action upgrades the work to the Better level?
-**Answer: D** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
+## Question 3: You need to explore a graph level-by-level (nearest neighbors first). Which approach matches?
+**Answer: B** — Breadth-first search with a queue
 
-**Explanation:** This task appears under Better exercises.
+**Outcome 2:** Apply stack/queue and BFS/DFS mental models to a small graph or tree-style problem.
 
----
-
-## Question 6: Which action qualifies as a Beast Mode upgrade?
-**Answer: D** - Add a performance or reliability improvement and **measure** the impact.
-
-**Explanation:** This task appears under Beast Mode exercises.
+**Explanation:** BFS uses a queue and visits nodes by distance/level. DFS goes deep first. Binary search and LRU solve different problems.
 
 ---
 
-## Question 7: Before submitting, which verification step must you complete?
-**Answer: D** - Run the module tests and confirm they pass.
+## Question 4: Undo/redo history in an editor is best modeled with which structure?
+**Answer: B** — A stack (LIFO)
 
-**Explanation:** This item appears in the verification checklist.
+**Outcome 2:** Apply stack/queue and BFS/DFS mental models to a small graph or tree-style problem.
 
----
-
-## Question 8: Which testing requirement must be satisfied to pass?
-**Answer: C** - All work must be covered by **gofmt + lint + tests in CI**.
-
-**Explanation:** This requirement is listed under testing requirements.
+**Explanation:** Undo reverses the most recent action first — classic LIFO/stack behavior.
 
 ---
 
-## Question 9: Which option would be a common mistake to avoid?
-**Answer: D** - Shipping without an automated test run in CI.
+## Question 5: You have a list of 50,000 comparable IDs and need them sorted once before a report. What should you do first?
+**Answer: B** — Use the language's built-in sort unless you have a measured reason not to
 
-**Explanation:** This mistake is listed under common mistakes.
+**Outcome 3:** Decide when the language's built-in sort/search is enough versus writing a custom approach.
+
+**Explanation:** Built-in sorts are highly optimized; custom sorts need measured justification.
 
 ---
 
-## Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: C** - Explain the core concepts and tradeoffs for **DSA (Practical)**.
+## Question 6: A pure function is called repeatedly with the same arguments inside a hot loop. Which pattern helps first?
+**Answer: B** — Memoization or an LRU cache so repeated inputs reuse results
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 4:** Apply memoization or an LRU cache when recomputation is the bottleneck.
+
+**Explanation:** Memoization/LRU caching avoids recomputing identical inputs — exactly this module's caching lesson.
+
+---
+
+## Question 7: An LRU cache is full and a new key arrives. What happens to the least recently used entry?
+**Answer: B** — It is evicted to make room
+
+**Outcome 4:** Apply memoization or an LRU cache when recomputation is the bottleneck.
+
+**Explanation:** LRU evicts the least recently used entry when capacity is exceeded.
+
+---
+
+## Question 8: You want a quick before/after timing of one helper function. Best first tool?
+**Answer: A** — A micro-benchmark / timing of that function
+
+**Outcome 5:** Measure a change with a micro-benchmark and explain when profiling is the better tool.
+
+**Explanation:** Micro-benchmarks answer “is this function faster?” Profiling answers “where does the whole program spend time?” Start local and measured.
+
+---
+
+## Question 9: When is profiling usually better than a micro-benchmark?
+**Answer: B** — When you need to find where a whole program spends CPU or memory
+
+**Outcome 5:** Measure a change with a micro-benchmark and explain when profiling is the better tool.
+
+**Explanation:** Profilers locate hotspots across a running program. Micro-benchmarks compare a narrow slice you already suspect.
+
+---
+
+## Question 10: Looking up whether an id is in a large unsorted list of IDs is typically:
+**Answer: B** — O(n)
+
+**Outcome 1:** Choose list vs dict vs set for a given access pattern and justify the Big-O tradeoff.
+
+**Explanation:** Membership in an unsorted list scans elements — O(n). A set/dict membership check is average O(1).
 
 ---
 
 ## How Did You Do?
 
 - **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **8-9 correct:** Great work — review the missed outcomes.
+- **0-7 correct:** Revisit the module lessons, then try again.

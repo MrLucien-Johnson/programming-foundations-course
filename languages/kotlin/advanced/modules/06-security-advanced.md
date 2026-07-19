@@ -6,11 +6,10 @@ Threat-model, harden, and protect secrets, data, and supply chain.
 This module uses **JDK 21 + Kotlin**, **Gradle**, and **JUnit 5 + MockK**. When applicable, you’ll build or extend a small service using **Ktor (or Spring Boot) REST** and **PostgreSQL + migrations (Flyway) + Exposed (or JDBC)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Security (Advanced)**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ktlint + detekt.
-- Document decisions and constraints clearly for reviewers.
+- Threat-model a feature including abuse cases and prioritised mitigations.
+- Apply encryption at rest/in transit with sound key management.
+- Enforce supply-chain controls for dependencies and build artifacts.
+- Execute a hardening checklist covering auth, config, and security tests.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **Kotlin**.

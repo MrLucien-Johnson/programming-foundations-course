@@ -1,77 +1,106 @@
 # TypeScript Intermediate — Module 02: Testing and Quality Quiz Answers
 
-## Question 1: Which action best satisfies the Core requirements?
-**Answer: B** - Implement a small feature tied to this module in an existing starter app.
+## Question 1: On the test pyramid, which layer should usually be the largest (most numerous)?
+**Answer: B** — Unit tests
 
-**Explanation:** This task appears under Core exercises.
+**Outcome 1:** Place tests on the test pyramid and choose what to mock versus what to hit for real.
 
----
-
-## Question 2: Which action upgrades the work to the Better level?
-**Answer: C** - Add an integration test that hits a real boundary (HTTP, database, file system, or process).
-
-**Explanation:** This task appears under Better exercises.
+**Explanation:** Unit tests are fast and numerous; integration/E2E are fewer and slower.
 
 ---
 
-## Question 3: Which action qualifies as a Beast Mode upgrade?
-**Answer: A** - Add a performance or reliability improvement and **measure** the impact.
+## Question 2: You are unit-testing a pure pricing function. What should you usually avoid mocking?
+**Answer: A** — The function's own arithmetic
 
-**Explanation:** This task appears under Beast Mode exercises.
+**Outcome 1:** Place tests on the test pyramid and choose what to mock versus what to hit for real.
 
----
-
-## Question 4: Before submitting, which verification step must you complete?
-**Answer: C** - Run the module tests and confirm they pass.
-
-**Explanation:** This item appears in the verification checklist.
+**Explanation:** Don't mock the behavior you are trying to prove. Mock slow/external boundaries, not the subject itself.
 
 ---
 
-## Question 5: Which testing requirement must be satisfied to pass?
-**Answer: D** - All work must be covered by **typecheck + lint + unit tests + integration tests (HTTP + DB) in CI**.
+## Question 3: A test fails only when run after another test. What is the likely problem?
+**Answer: B** — Shared mutable state — the suite is not deterministic/isolated
 
-**Explanation:** This requirement is listed under testing requirements.
+**Outcome 2:** Write deterministic unit tests using fixtures/factories and meaningful assertions.
 
----
-
-## Question 6: Which option would be a common mistake to avoid?
-**Answer: B** - Shipping without an automated test run in CI.
-
-**Explanation:** This mistake is listed under common mistakes.
+**Explanation:** Order-dependent failures usually mean leaked global/DB/file state. Tests must isolate and reset fixtures.
 
 ---
 
-## Question 7: A reviewer asks what capability you demonstrated. Which outcome matches?
-**Answer: A** - Explain the core concepts and tradeoffs for **Testing and Quality**.
+## Question 4: Which assertion is stronger for `create_user(email)`?
+**Answer: B** — `assert result.email == email and result.id is not None`
 
-**Explanation:** This outcome is listed in the module's learning outcomes.
+**Outcome 2:** Write deterministic unit tests using fixtures/factories and meaningful assertions.
 
----
-
-## Question 8: Which topic would you revisit to solve this module's core problem?
-**Answer: B** - Test pyramid and what to mock (50 min)
-
-**Explanation:** This topic appears in the lesson list.
+**Explanation:** Meaningful assertions check observable outcomes, not merely “something happened.”
 
 ---
 
-## Question 9: Which step appears in the guided walkthrough?
-**Answer: B** - Copy the starter pack from `languages/typescript/intermediate/starter-pack` into a new working folder.
+## Question 5: Which example is an integration test?
+**Answer: B** — Hitting a real test database or HTTP endpoint and asserting the response
 
-**Explanation:** This step is listed in the guided walkthrough.
+**Outcome 3:** Add an integration test that crosses a real boundary (HTTP, DB, filesystem, or process).
+
+**Explanation:** Integration tests cross a real boundary (HTTP/DB/etc.), not just in-memory mocks of the unit.
 
 ---
 
-## Question 10: Which statement best summarizes the module focus?
-**Answer: A** - Write maintainable tests and enforce quality gates in CI.
+## Question 6: Coverage reports 100%, but a bug still ships. What lesson fits?
+**Answer: B** — Coverage without meaningful assertions can still miss behavior
 
-**Explanation:** This statement comes from the module overview.
+**Outcome 4:** Interpret coverage as a signal — not a substitute for strong assertions.
+
+**Explanation:** Coverage shows what ran, not whether you asserted the right outcomes.
+
+---
+
+## Question 7: Why run lint/format/typecheck in CI as quality gates?
+**Answer: B** — To catch style, bug-prone patterns, and type issues before merge
+
+**Outcome 5:** Use lint, format, and typecheck as automated quality gates.
+
+**Explanation:** Automated gates keep a consistent baseline so humans review design and behavior.
+
+---
+
+## Question 8: Your feature writes to Postgres. Which test strategy best proves the boundary works?
+**Answer: B** — An integration test against an isolated test schema/database
+
+**Outcome 3:** Add an integration test that crosses a real boundary (HTTP, DB, filesystem, or process).
+
+**Explanation:** DB behavior needs an isolated real (or close-to-real) boundary — not only mocks.
+
+---
+
+## Question 9: When is mocking an HTTP client appropriate in a unit test?
+**Answer: B** — When the code under test calls an external service and you want a fast, deterministic unit test
+
+**Outcome 1:** Place tests on the test pyramid and choose what to mock versus what to hit for real.
+
+**Explanation:** Mock external I/O for unit speed/determinism; still keep some integration tests that hit real boundaries.
+
+---
+
+## Question 10: What is the main value of lint/format/typecheck gates in CI?
+**Answer: B** — They catch style, bug-prone patterns, and type issues before merge
+
+**Outcome 5:** Use lint, format, and typecheck as automated quality gates.
+
+**Explanation:** Automated quality gates keep a consistent baseline so humans review design and behavior.
+
+---
+
+## Question 11: In this course's TypeScript tooling, which command commonly runs unit tests?
+**Answer: A** — `npm test` / `npx vitest` (or Jest)
+
+**Outcome 5:** Use lint, format, and typecheck as automated quality gates.
+
+**Explanation:** Vitest/Jest via npm scripts is the usual unit-test gate; ESLint/Prettier are separate.
 
 ---
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You are ready to move on.
-- **8-9 correct:** Great work! Review the missed concepts.
-- **0-7 correct:** Review the module and try again.
+- **11/11 correct:** Excellent! You are ready to move on.
+- **9-10 correct:** Great work — review the missed outcomes.
+- **0-8 correct:** Revisit the module lessons, then try again.

@@ -6,11 +6,10 @@ Apply architectural patterns to keep systems evolvable.
 This module uses **Node.js LTS**, **npm (or pnpm), TypeScript compiler (tsc)**, and **Vitest (or Jest)**. When applicable, you’ll build or extend a small service using **Fastify (or Express) for REST APIs** and **PostgreSQL + migrations (Prisma or Knex)**.
 
 ## Learning Outcomes
-- Explain the core concepts and tradeoffs for **Architecture Patterns**.
-- Apply the concepts to a realistic codebase (not just toy examples).
-- Write tests that prove correctness and prevent regressions.
-- Use tooling to keep quality high: ESLint + Prettier.
-- Document decisions and constraints clearly for reviewers.
+- Compare layered, hexagonal, and clean architecture and place dependencies correctly.
+- Model domain concepts with entities, value objects, and aggregates.
+- Design event-driven flows and sagas for multi-step business processes.
+- Decide when CQRS helps — and when it adds unjustified complexity.
 
 ## Prerequisites
 - Comfortable with the course’s beginner material in **TypeScript**.

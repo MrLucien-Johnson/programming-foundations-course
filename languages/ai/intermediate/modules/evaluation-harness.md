@@ -2,10 +2,10 @@
 
 Design repeatable evaluations for AI outputs.
 
-## Topics
-- test cases and golden sets
-- automated scoring or rubric checks
-- regression tracking
+## Learning Outcomes
+- Assemble golden/test sets for automated or rubric scoring.
+- Run the harness repeatedly and track regressions over time.
+- Produce evaluation reports that drive go/no-go decisions.
 
 ## Deliverables
 - evaluation harness or scripts

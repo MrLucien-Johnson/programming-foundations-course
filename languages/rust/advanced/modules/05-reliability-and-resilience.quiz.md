@@ -2,105 +2,126 @@
 
 ## Instructions
 
-Answer these questions about what you've learned. Try to answer from memory first!
+Answer these questions about the skills in this module's learning outcomes.
+Try from memory first — then check the answers file for explanations.
 
 ## Questions
 
-### Question 1: You need to run the test suite. Which command should you use?
-A) Document decisions in a short README section (assumptions, tradeoffs, next steps).  
-B) Write a test for a failure scenario.  
-C) Run: `cargo test`  
-D) `cargo test`  
+### Question 1: Retrying immediately forever without jitter tends to…
+**Checks outcome 1:** Configure retries with timeouts, budgets, and jitter for transient faults.
+
+A) Heal dependencies gently  
+B) Create synchronized retry storms that worsen outages  
+C) Guarantee exactly-once  
+D) Reduce error budgets automatically  
 
 **Your answer:** _______________
 
 ---
 
-### Question 2: You need to run lint checks. Which command should you use?
-A) Ship changes without documentation.  
-B) `cargo clippy`  
-C) Skipping input validation and assuming “happy path”.  
-D) Add a “failure mode” test (timeouts, invalid input, concurrency, or partial failure).  
+### Question 2: A timeout without a retry budget means…
+**Checks outcome 1:** Configure retries with timeouts, budgets, and jitter for transient faults.
+
+A) You may still hammer a sick dependency indefinitely via client loops  
+B) Reliability is solved  
+C) CAP is fixed  
+D) Caches never expire  
 
 **Your answer:** _______________
 
 ---
 
-### Question 3: You need to format the code. Which command should you use?
-A) Reliability in data: dedupe + idempotency keys (45 min)  
-B) Avoid measuring results or performance.  
-C) List possible failure modes and mitigations.  
-D) `cargo fmt`  
+### Question 3: A circuit breaker opens when…
+**Checks outcome 2:** Apply circuit breakers, bulkheads, and rate limits to contain failures.
+
+A) Error rates/latency cross a threshold, failing fast instead of calling the dependency  
+B) The logo changes  
+C) CI is green  
+D) A single log line appears  
 
 **Your answer:** _______________
 
 ---
 
-### Question 4: Which action best satisfies the Core requirements?
-A) Implement a small feature tied to this module in an existing starter app.  
-B) Ignore error handling for edge cases.  
-C) Runbooks and incident response basics (35 min)  
-D) Reliability in data: dedupe + idempotency keys (45 min)  
+### Question 4: Bulkheads help by…
+**Checks outcome 2:** Apply circuit breakers, bulkheads, and rate limits to contain failures.
+
+A) Sharing one thread pool for all workloads  
+B) Isolating resources so one failure domain cannot exhaust another  
+C) Removing rate limits  
+D) Disabling AuthZ  
 
 **Your answer:** _______________
 
 ---
 
-### Question 5: Which action upgrades the work to the Better level?
-A) Runbooks and incident response basics (35 min)  
-B) Add an integration test that hits a real boundary (HTTP, database, file system, or process).  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Add or update documentation (README notes or ADR-style notes).  
+### Question 5: Idempotency keys are most critical for…
+**Checks outcome 3:** Use idempotency keys and dedupe to make retried writes safe.
+
+A) Read-only GETs with no side effects  
+B) Create/payment operations that clients may retry  
+C) Static asset caching only  
+D) Choosing font families  
 
 **Your answer:** _______________
 
 ---
 
-### Question 6: Which action qualifies as a Beast Mode upgrade?
-A) Verify the primary feature works with normal and edge-case inputs.  
-B) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-C) Add a performance or reliability improvement and **measure** the impact.  
-D) Write a test for a failure scenario.  
+### Question 6: Deduping consumer messages by event ID prevents…
+**Checks outcome 3:** Use idempotency keys and dedupe to make retried writes safe.
+
+A) All network partitions  
+B) Double-applying the same business effect after redelivery  
+C) The need for schemas  
+D) On-call rotations  
 
 **Your answer:** _______________
 
 ---
 
-### Question 7: Before submitting, which verification step must you complete?
-A) `cargo fmt`  
-B) Apply the concepts to a realistic codebase (not just toy examples).  
-C) Add at least **3 focused unit tests** that cover normal cases and edge cases.  
-D) Run the module tests and confirm they pass.  
+### Question 7: A runbook should primarily contain…
+**Checks outcome 4:** Write and follow runbooks for common incident classes.
+
+A) Only motivational quotes  
+B) Detection signals, mitigation steps, owners, and escalation paths  
+C) Unrelated architecture trivia  
+D) Passwords in plaintext  
 
 **Your answer:** _______________
 
 ---
 
-### Question 8: Which testing requirement must be satisfied to pass?
-A) Add or update documentation (README notes or ADR-style notes).  
-B) Run: `cargo clippy`  
-C) Run the module tests and confirm they pass.  
-D) All work must be covered by **fmt + clippy + tests in CI**.  
+### Question 8: During an incident, the first reliability move is often…
+**Checks outcome 4:** Write and follow runbooks for common incident classes.
+
+A) Rewrite the platform  
+B) Mitigate user impact (rollback, feature flag, degrade) then diagnose  
+C) Delete metrics  
+D) Disable communication  
 
 **Your answer:** _______________
 
 ---
 
-### Question 9: Which option would be a common mistake to avoid?
-A) Apply the concepts to a realistic codebase (not just toy examples).  
-B) Change multiple variables at once so you cannot compare outcomes.  
-C) `cargo fmt`  
-D) Shipping without an automated test run in CI.  
+### Question 9: Rate limiting a dependency client protects…
+**Checks outcome 2:** Apply circuit breakers, bulkheads, and rate limits to contain failures.
+
+A) Only the marketing site fonts  
+B) Both your service and the dependency from overload  
+C) Nothing if retries exist  
+D) Only disk encryption  
 
 **Your answer:** _______________
 
 ---
 
-### Question 10: A reviewer asks what capability you demonstrated. Which outcome matches?
-A) Explain the core concepts and tradeoffs for **Reliability and Resilience**.  
-B) Making performance claims without measurements.  
-C) Over-mocking (tests assert implementation details instead of outcomes).  
-D) All work must be covered by **fmt + clippy + tests in CI**.  
+### Question 10: Which retry policy is safest for non-idempotent POSTs without keys?
+**Checks outcome 1:** Configure retries with timeouts, budgets, and jitter for transient faults.
+
+A) Blind unlimited retries  
+B) Fail clearly / get an idempotency key before retrying side effects  
+C) Retry every microsecond  
+D) Retry only on 200 OK  
 
 **Your answer:** _______________
 
@@ -112,9 +133,9 @@ Once you finish, check the answers file for explanations.
 
 ## How Did You Do?
 
-- **10/10 correct:** Excellent! You understand the module well.
-- **8-9 correct:** Great work! Review what you missed.
-- **0-7 correct:** Review the module and try again.
+- **10/10 correct:** Excellent — you can apply this module's outcomes.
+- **8-9 correct:** Strong — review the missed outcome(s).
+- **0-7 correct:** Revisit the lessons for those outcomes, then retry.
 
 ---
 
