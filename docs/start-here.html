@@ -27,9 +27,42 @@
         </p>
       </section>
 
-      <section class="section steps">
-        <div class="step">
-          <h3>Download the course</h3>
+      <section class="section path-viz" id="start-path-viz">
+        <div class="path-viz-header">
+          <h3 style="margin: 0;">Your progress</h3>
+          <div class="progress-bar" style="flex: 1; max-width: 240px;">
+            <div class="progress-fill" id="start-progress-fill"></div>
+          </div>
+        </div>
+        <div class="path-viz-track">
+          <div class="path-viz-progress-line" id="start-progress-line"></div>
+          <span class="path-node" data-step="0" aria-hidden="true">
+            <span class="path-node-circle">1</span>
+            <span class="path-node-label">Download</span>
+          </span>
+          <span class="path-node" data-step="1" aria-hidden="true">
+            <span class="path-node-circle">2</span>
+            <span class="path-node-label">Open folder</span>
+          </span>
+          <span class="path-node" data-step="2" aria-hidden="true">
+            <span class="path-node-circle">3</span>
+            <span class="path-node-label">Choose course</span>
+          </span>
+          <span class="path-node" data-step="3" aria-hidden="true">
+            <span class="path-node-circle">4</span>
+            <span class="path-node-label">Module 1</span>
+          </span>
+        </div>
+      </section>
+
+      <section class="section steps" id="start-steps">
+        <div class="step" data-step-id="download">
+          <div class="step-header">
+            <div>
+              <h3>Download the course</h3>
+            </div>
+            <button type="button" class="step-toggle" data-step-id="download" aria-pressed="false">Mark done</button>
+          </div>
           <p>
             Click the download button. This saves the course to your computer so you can open the
             lessons like normal files.
@@ -37,6 +70,7 @@
           <div class="button-row">
             <a
               class="btn btn-primary"
+              id="download-zip"
               href="https://github.com/MrLucien-Johnson/programming-foundations-course/archive/refs/heads/main.zip"
             >
               Download course ZIP
@@ -44,16 +78,26 @@
           </div>
         </div>
 
-        <div class="step">
-          <h3>Open the folder</h3>
+        <div class="step" data-step-id="open-folder">
+          <div class="step-header">
+            <div>
+              <h3>Open the folder</h3>
+            </div>
+            <button type="button" class="step-toggle" data-step-id="open-folder" aria-pressed="false">Mark done</button>
+          </div>
           <p>
             Find the ZIP file you downloaded, open it, and look for a folder named
             <strong>programming-foundations-course</strong>. Open that folder.
           </p>
         </div>
 
-        <div class="step">
-          <h3>Choose a course</h3>
+        <div class="step" data-step-id="choose-course">
+          <div class="step-header">
+            <div>
+              <h3>Choose a course</h3>
+            </div>
+            <button type="button" class="step-toggle" data-step-id="choose-course" aria-pressed="false">Mark done</button>
+          </div>
           <p>
             Pick one course to start. Python is recommended for absolute beginners. C# is great if
             you want Microsoft or game development. The AI Prompt course teaches prompt writing
@@ -64,8 +108,13 @@
           </div>
         </div>
 
-        <div class="step">
-          <h3>Open Module 1</h3>
+        <div class="step" data-step-id="module-1">
+          <div class="step-header">
+            <div>
+              <h3>Open Module 1</h3>
+            </div>
+            <button type="button" class="step-toggle" data-step-id="module-1" aria-pressed="false">Mark done</button>
+          </div>
           <p>
             Inside your chosen course, open Module 1. You can read it online here, or open it from
             the ZIP folder you downloaded.
@@ -100,5 +149,77 @@
         </p>
       </footer>
     </main>
+
+    <script>
+      (function () {
+        const STORAGE_KEY = "pf-start-steps";
+        const stepOrder = ["download", "open-folder", "choose-course", "module-1"];
+
+        const loadSteps = () => {
+          try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            return raw ? JSON.parse(raw) : {};
+          } catch {
+            return {};
+          }
+        };
+
+        const saveSteps = (state) => {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        };
+
+        const state = loadSteps();
+
+        const updateProgressViz = () => {
+          const completed = stepOrder.filter((id) => state[id]).length;
+          const pct = completed / stepOrder.length * 100;
+          const fill = document.getElementById("start-progress-fill");
+          const line = document.getElementById("start-progress-line");
+          if (fill) fill.style.width = pct + "%";
+          if (line) line.style.width = (pct * 0.8) + "%";
+
+          document.querySelectorAll("#start-path-viz .path-node").forEach((node, i) => {
+            const stepId = stepOrder[i];
+            const done = !!state[stepId];
+            node.classList.toggle("is-complete", done);
+            node.classList.toggle("is-active", !done && (i === 0 || state[stepOrder[i - 1]]));
+          });
+        };
+
+        const applyStepUI = (stepId, done) => {
+          const stepEl = document.querySelector(`.step[data-step-id="${stepId}"]`);
+          const toggle = document.querySelector(`.step-toggle[data-step-id="${stepId}"]`);
+          if (stepEl) stepEl.classList.toggle("is-complete", done);
+          if (toggle) {
+            toggle.classList.toggle("is-complete", done);
+            toggle.textContent = done ? "Done ✓" : "Mark done";
+            toggle.setAttribute("aria-pressed", done ? "true" : "false");
+          }
+        };
+
+        const setStepDone = (stepId, done) => {
+          state[stepId] = done;
+          saveSteps(state);
+          applyStepUI(stepId, done);
+          updateProgressViz();
+        };
+
+        stepOrder.forEach((id) => {
+          applyStepUI(id, !!state[id]);
+        });
+        updateProgressViz();
+
+        document.querySelectorAll(".step-toggle").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const stepId = btn.dataset.stepId;
+            setStepDone(stepId, !state[stepId]);
+          });
+        });
+
+        document.getElementById("download-zip")?.addEventListener("click", () => {
+          setStepDone("download", true);
+        });
+      })();
+    </script>
   </body>
 </html>

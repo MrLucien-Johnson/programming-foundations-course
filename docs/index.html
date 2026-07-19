@@ -18,16 +18,100 @@
       </nav>
     </header>
 
-    <main id="main" class="container">
-      <section class="hero">
-        <h2>Learn programming from zero, build real projects.</h2>
-        <p>
-          This course is designed for absolute beginners. It uses clear language, guided steps,
-          and hands-on projects so you can build real work you are proud to show.
-        </p>
-        <div class="button-row">
-          <a class="btn btn-primary" href="start-here.html">Start here (no experience needed)</a>
-          <a class="btn btn-secondary" href="courses.html">Choose a course</a>
+    <main id="main" class="container page-home">
+      <section class="hero-bleed" aria-labelledby="hero-heading">
+        <div class="hero-bleed-inner">
+          <div class="hero-copy">
+            <p class="brand-mark">Programming Foundations</p>
+            <h2 id="hero-heading">Learn from zero. Build real projects.</h2>
+            <p>
+              A free, beginner-first course with clear steps, hands-on practice, and portfolio-ready
+              projects you can show with confidence.
+            </p>
+            <div class="button-row">
+              <a class="btn btn-primary" href="start-here.html">Start here — no experience needed</a>
+              <a class="btn btn-ghost" href="courses.html">Browse courses</a>
+            </div>
+          </div>
+
+          <div class="terminal-widget" id="terminal-demo" aria-label="Code demo terminal">
+            <div class="terminal-widget-header">
+              <span class="terminal-dot red" aria-hidden="true"></span>
+              <span class="terminal-dot yellow" aria-hidden="true"></span>
+              <span class="terminal-dot green" aria-hidden="true"></span>
+              <span class="terminal-widget-title">first_script.py</span>
+            </div>
+            <div class="terminal-widget-body">
+              <div class="terminal-line" id="terminal-text"></div>
+              <span class="terminal-cursor" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="widget-section" id="course-matcher">
+        <h3>Not sure where to start?</h3>
+        <div class="matcher" id="matcher-widget">
+          <p>Pick what sounds most like you — we'll suggest a course.</p>
+          <div class="matcher-options" role="group" aria-label="Course preferences">
+            <button type="button" class="matcher-btn" data-pick="python">I want the easiest start</button>
+            <button type="button" class="matcher-btn" data-pick="csharp">I use Windows / .NET</button>
+            <button type="button" class="matcher-btn" data-pick="ai">I want to work with AI</button>
+          </div>
+          <div class="matcher-result" id="matcher-result" role="status"></div>
+        </div>
+      </section>
+
+      <section class="widget-section">
+        <h3>Try a mini playground</h3>
+        <p>Type simple Python-style code below. We parse <code>print()</code> and string variables — no eval.</p>
+        <div class="playground" id="playground">
+          <div class="playground-toolbar">
+            <span>Python mini runner</span>
+            <button type="button" class="btn btn-secondary" id="playground-run" style="min-width: auto; padding: 8px 16px;">Run</button>
+          </div>
+          <textarea class="playground-editor" id="playground-code" spellcheck="false" aria-label="Code editor">name = "Alex"
+print("Hello, " + name + "!")
+print("Ready to learn?")</textarea>
+          <div class="playground-output" id="playground-output"></div>
+        </div>
+      </section>
+
+      <section class="widget-section">
+        <h3>Your learning path</h3>
+        <div class="path-viz" id="path-viz-home">
+          <div class="path-viz-header">
+            <p style="margin: 0;">Five stages from download to your first project.</p>
+            <div class="progress-bar" style="flex: 1; max-width: 200px;">
+              <div class="progress-fill" id="path-progress-fill"></div>
+            </div>
+          </div>
+          <div class="path-viz-track">
+            <div class="path-viz-progress-line" id="path-progress-line"></div>
+            <button type="button" class="path-node is-active" data-stage="0">
+              <span class="path-node-circle">1</span>
+              <span class="path-node-label">Download</span>
+            </button>
+            <button type="button" class="path-node" data-stage="1">
+              <span class="path-node-circle">2</span>
+              <span class="path-node-label">Pick course</span>
+            </button>
+            <button type="button" class="path-node" data-stage="2">
+              <span class="path-node-circle">3</span>
+              <span class="path-node-label">Module 1</span>
+            </button>
+            <button type="button" class="path-node" data-stage="3">
+              <span class="path-node-circle">4</span>
+              <span class="path-node-label">Practice</span>
+            </button>
+            <button type="button" class="path-node" data-stage="4">
+              <span class="path-node-circle">5</span>
+              <span class="path-node-label">Project</span>
+            </button>
+          </div>
+          <p class="note" id="path-stage-desc" style="margin-top: 20px; margin-bottom: 0;">
+            Download the course ZIP and save it somewhere easy to find on your computer.
+          </p>
         </div>
       </section>
 
@@ -44,14 +128,35 @@
 
       <section class="section grid cols-3">
         <article class="card">
+          <div class="feature-visual" aria-hidden="true">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="28" cy="28" r="24" stroke="currentColor" stroke-width="2"/>
+              <path d="M18 32c2-6 8-10 10-10s8 4 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="22" cy="24" r="2" fill="currentColor"/>
+              <circle cx="34" cy="24" r="2" fill="currentColor"/>
+            </svg>
+          </div>
           <h4>Beginner friendly</h4>
           <p>Plain language, no jargon, and a clear path from the first lesson to your first app.</p>
         </article>
         <article class="card">
+          <div class="feature-visual" aria-hidden="true">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="14" width="36" height="28" rx="4" stroke="currentColor" stroke-width="2"/>
+              <path d="M18 38l8-10 6 6 10-14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h4>Hands-on learning</h4>
           <p>Every module ends with practice so you learn by doing, not just reading.</p>
         </article>
         <article class="card">
+          <div class="feature-visual" aria-hidden="true">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 44V20l16-8 16 8v24" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <rect x="22" y="30" width="12" height="14" stroke="currentColor" stroke-width="2"/>
+              <path d="M28 12v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
           <h4>Portfolio focused</h4>
           <p>You build real projects you can show employers or clients.</p>
         </article>
@@ -75,5 +180,192 @@
         </p>
       </footer>
     </main>
+
+    <script>
+      (function () {
+        /* Terminal typing demo */
+        const lines = [
+          '$ python first_script.py',
+          'Hello, world!',
+          'You wrote your first program.',
+          'Next: open Module 1 →',
+        ];
+        const terminalEl = document.getElementById("terminal-text");
+        let lineIdx = 0;
+        let charIdx = 0;
+        let current = "";
+
+        const typeNext = () => {
+          if (!terminalEl) return;
+          if (lineIdx >= lines.length) {
+            setTimeout(() => {
+              lineIdx = 0;
+              charIdx = 0;
+              current = "";
+              terminalEl.textContent = "";
+              typeNext();
+            }, 3000);
+            return;
+          }
+          const line = lines[lineIdx];
+          if (charIdx < line.length) {
+            current += line[charIdx];
+            charIdx += 1;
+            terminalEl.textContent = current;
+            setTimeout(typeNext, 35);
+          } else {
+            current += "\n";
+            terminalEl.textContent = current;
+            lineIdx += 1;
+            charIdx = 0;
+            setTimeout(typeNext, 400);
+          }
+        };
+        typeNext();
+
+        /* Course matcher */
+        const recommendations = {
+          python: {
+            title: "Python Course",
+            text: "Best for most beginners — friendly syntax, great for automation, data, and scripting.",
+            link: "python-course.html",
+          },
+          csharp: {
+            title: "C# Course",
+            text: "Ideal if you use Windows, want .NET jobs, or plan to build games with Unity.",
+            link: "csharp-course.html",
+          },
+          ai: {
+            title: "AI Prompt Creation Course",
+            text: "Learn reliable prompt systems, evaluation, and production-ready AI workflows.",
+            link: "ai-course.html",
+          },
+        };
+
+        const matcherBtns = document.querySelectorAll(".matcher-btn");
+        const matcherResult = document.getElementById("matcher-result");
+
+        matcherBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            matcherBtns.forEach((b) => b.classList.remove("is-selected"));
+            btn.classList.add("is-selected");
+            const pick = btn.dataset.pick;
+            const rec = recommendations[pick];
+            if (!rec || !matcherResult) return;
+            matcherResult.innerHTML =
+              "<strong>" +
+              rec.title +
+              "</strong><p style='margin:8px 0 12px'>" +
+              rec.text +
+              "</p><a class='btn btn-primary' href='" +
+              rec.link +
+              "' style='min-width:auto'>Start this course</a>";
+            matcherResult.classList.add("is-visible");
+          });
+        });
+
+        /* Mini playground — safe parser, no eval */
+        const runPlayground = () => {
+          const code = document.getElementById("playground-code").value;
+          const outputEl = document.getElementById("playground-output");
+          if (!outputEl) return;
+
+          const vars = {};
+          const outputs = [];
+          const codeLines = code.split("\n");
+
+          for (const raw of codeLines) {
+            const line = raw.trim();
+            if (!line || line.startsWith("#")) continue;
+
+            const assignMatch = line.match(/^(\w+)\s*=\s*(.+)$/);
+            if (assignMatch) {
+              const [, name, valRaw] = assignMatch;
+              vars[name] = parseValue(valRaw.trim(), vars);
+              continue;
+            }
+
+            const printMatch = line.match(/^print\s*\(\s*(.+)\s*\)$/);
+            if (printMatch) {
+              outputs.push(resolveExpr(printMatch[1].trim(), vars));
+            }
+          }
+
+          outputEl.textContent = outputs.length ? outputs.join("\n") : "(no output)";
+        };
+
+        function parseValue(raw, vars) {
+          if ((raw.startsWith('"') && raw.endsWith('"')) || (raw.startsWith("'") && raw.endsWith("'"))) {
+            return raw.slice(1, -1);
+          }
+          if (/^\d+$/.test(raw)) return Number(raw);
+          if (vars[raw] !== undefined) return vars[raw];
+          return resolveExpr(raw, vars);
+        }
+
+        function resolveExpr(expr, vars) {
+          const strRe = /(["'])(?:(?=(\\?))\2.)*?\1/g;
+          const parts = [];
+          let last = 0;
+          let m;
+          while ((m = strRe.exec(expr)) !== null) {
+            if (m.index > last) parts.push({ type: "expr", val: expr.slice(last, m.index) });
+            parts.push({ type: "str", val: m[0].slice(1, -1) });
+            last = m.index + m[0].length;
+          }
+          if (last < expr.length) parts.push({ type: "expr", val: expr.slice(last) });
+
+          let out = "";
+          for (const part of parts) {
+            if (part.type === "str") {
+              out += part.val;
+            } else {
+              out += part.val.split("+").map((seg) => {
+                const s = seg.trim();
+                if ((s.startsWith('"') && s.endsWith('"')) || (s.startsWith("'") && s.endsWith("'"))) {
+                  return s.slice(1, -1);
+                }
+                if (vars[s] !== undefined) return String(vars[s]);
+                return s;
+              }).join("");
+            }
+          }
+          return out;
+        }
+
+        document.getElementById("playground-run")?.addEventListener("click", runPlayground);
+
+        /* Path visualization */
+        const stageDescs = [
+          "Download the course ZIP and save it somewhere easy to find on your computer.",
+          "Choose Python, C#, or AI Prompt Creation — you can switch later.",
+          "Open Module 1 and read the first lesson at your own pace.",
+          "Complete the exercises and quizzes to lock in what you learned.",
+          "Build your capstone project and add it to your portfolio.",
+        ];
+        const pathNodes = document.querySelectorAll("#path-viz-home .path-node");
+        const pathDesc = document.getElementById("path-stage-desc");
+        const pathFill = document.getElementById("path-progress-fill");
+        const pathLine = document.getElementById("path-progress-line");
+
+        const updatePath = (stage) => {
+          pathNodes.forEach((node, i) => {
+            node.classList.toggle("is-active", i === stage);
+            node.classList.toggle("is-complete", i < stage);
+          });
+          const pct = stage / (pathNodes.length - 1) * 100;
+          if (pathFill) pathFill.style.width = pct + "%";
+          if (pathLine) pathLine.style.width = (pct * 0.8) + "%";
+          if (pathDesc) pathDesc.textContent = stageDescs[stage];
+        };
+
+        pathNodes.forEach((node) => {
+          node.addEventListener("click", () => {
+            updatePath(Number(node.dataset.stage));
+          });
+        });
+        updatePath(0);
+      })();
+    </script>
   </body>
 </html>

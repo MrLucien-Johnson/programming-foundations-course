@@ -37,42 +37,71 @@
       </section>
 
       <section class="section grid cols-3">
-        <article class="card">
-          <h3>Python Course</h3>
-          <p>
-            <strong>Best for:</strong> Career switchers who want a friendly first language for
-            automation, data, and everyday scripting.
-          </p>
-          <p><strong>What you will build:</strong> A Task Tracker application.</p>
-          <div class="button-row">
-            <a class="btn btn-primary" href="python-course.html">Start Python Course</a>
+        <article class="course-tile">
+          <div class="tile-art" aria-hidden="true">
+            <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M36 8L12 20v32l24 12 24-12V20L36 8z" stroke="#e2c15a" stroke-width="2" fill="rgba(201,162,39,0.15)"/>
+              <path d="M24 32h24M24 40h16" stroke="#e2c15a" stroke-width="2" stroke-linecap="round"/>
+              <text x="36" y="28" text-anchor="middle" fill="#e2c15a" font-family="monospace" font-size="10" font-weight="700">Py</text>
+            </svg>
+          </div>
+          <div class="course-tile-body">
+            <h3>Python Course</h3>
+            <p>
+              <strong>Best for:</strong> Career switchers who want a friendly first language for
+              automation, data, and everyday scripting.
+            </p>
+            <p><strong>What you will build:</strong> A Task Tracker application.</p>
+            <div class="button-row">
+              <a class="btn btn-primary" href="python-course.html">Start Python Course</a>
+            </div>
           </div>
         </article>
 
-        <article class="card">
-          <h3>C# Course</h3>
-          <p>
-            <strong>Best for:</strong> Learners targeting Windows, .NET, enterprise apps, or Unity
-            game development.
-          </p>
-          <p><strong>What you will build:</strong> A Task Tracker application.</p>
-          <div class="button-row">
-            <a class="btn btn-primary" href="csharp-course.html">Start C# Course</a>
+        <article class="course-tile">
+          <div class="tile-art" aria-hidden="true">
+            <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="14" y="14" width="44" height="44" rx="6" stroke="#e2c15a" stroke-width="2" fill="rgba(201,162,39,0.15)"/>
+              <path d="M26 28h20v4H26zM26 36h14v4H26z" fill="#e2c15a"/>
+              <text x="36" y="58" text-anchor="middle" fill="#e2c15a" font-family="monospace" font-size="9" font-weight="700">C#</text>
+            </svg>
+          </div>
+          <div class="course-tile-body">
+            <h3>C# Course</h3>
+            <p>
+              <strong>Best for:</strong> Learners targeting Windows, .NET, enterprise apps, or Unity
+              game development.
+            </p>
+            <p><strong>What you will build:</strong> A Task Tracker application.</p>
+            <div class="button-row">
+              <a class="btn btn-primary" href="csharp-course.html">Start C# Course</a>
+            </div>
           </div>
         </article>
 
-        <article class="card">
-          <h3>AI Prompt Creation Course</h3>
-          <p>
-            <strong>Best for:</strong> Builders who want reliable AI workflows, prompt systems, and
-            evaluation skills without guesswork.
-          </p>
-          <p>
-            <strong>What you will build:</strong> A prompt playbook, tested workflows, and a
-            production-ready system.
-          </p>
-          <div class="button-row">
-            <a class="btn btn-primary" href="ai-course.html">Start AI Prompt Course</a>
+        <article class="course-tile">
+          <div class="tile-art" aria-hidden="true">
+            <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="36" cy="36" r="22" stroke="#e2c15a" stroke-width="2" fill="rgba(201,162,39,0.15)"/>
+              <path d="M28 36c0-4 3.5-8 8-8s8 4 8 8-3.5 8-8 8" stroke="#e2c15a" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="30" cy="32" r="2" fill="#e2c15a"/>
+              <circle cx="42" cy="32" r="2" fill="#e2c15a"/>
+              <text x="36" y="54" text-anchor="middle" fill="#e2c15a" font-family="sans-serif" font-size="8" font-weight="700">AI</text>
+            </svg>
+          </div>
+          <div class="course-tile-body">
+            <h3>AI Prompt Creation Course</h3>
+            <p>
+              <strong>Best for:</strong> Builders who want reliable AI workflows, prompt systems, and
+              evaluation skills without guesswork.
+            </p>
+            <p>
+              <strong>What you will build:</strong> A prompt playbook, tested workflows, and a
+              production-ready system.
+            </p>
+            <div class="button-row">
+              <a class="btn btn-primary" href="ai-course.html">Start AI Prompt Course</a>
+            </div>
           </div>
         </article>
       </section>
@@ -86,6 +115,9 @@
         <p class="note">
           You can switch later. The learning steps are very similar in both courses.
         </p>
+        <div class="button-row">
+          <a class="btn btn-secondary" href="index.html#course-matcher">Try the course matcher</a>
+        </div>
       </section>
 
       <section class="section">
@@ -181,6 +213,26 @@
           "iOS/macOS developers creating production-ready apps and tooling.",
       };
 
+      const advancedIcons = {
+        "typescript-advanced": "TS",
+        "python-advanced": "Py",
+        "sql-advanced": "SQL",
+        "java-advanced": "Java",
+        "csharp-advanced": "C#",
+        "go-advanced": "Go",
+        "rust-advanced": "Rust",
+        "kotlin-advanced": "Kt",
+        "swift-advanced": "Swift",
+      };
+
+      const buildTileArt = (label) =>
+        `<div class="tile-art" aria-hidden="true">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="12" width="48" height="48" rx="8" stroke="#e2c15a" stroke-width="2" fill="rgba(201,162,39,0.12)"/>
+            <text x="36" y="42" text-anchor="middle" fill="#e2c15a" font-family="monospace" font-size="11" font-weight="700">${label}</text>
+          </svg>
+        </div>`;
+
       const buildEntries = (courses) =>
         courses.flatMap((course) =>
           course.modules.flatMap((module) => {
@@ -213,13 +265,17 @@
               const bestFor =
                 advancedBestFor[course.id] ||
                 "Learners ready to go deeper after the basics with real-world scenarios.";
+              const iconLabel = advancedIcons[course.id] || displayName.slice(0, 4);
               return `
-              <article class="card">
-                <p class="pill">${course.level}</p>
-                <h4>${displayName}</h4>
-                <p><strong>Best for:</strong> ${bestFor}</p>
-                <div class="button-row">
-                  <a class="btn btn-secondary" href="${course.page}">Open course</a>
+              <article class="course-tile">
+                ${buildTileArt(iconLabel)}
+                <div class="course-tile-body">
+                  <p class="pill">${course.level}</p>
+                  <h4>${displayName}</h4>
+                  <p><strong>Best for:</strong> ${bestFor}</p>
+                  <div class="button-row">
+                    <a class="btn btn-secondary" href="${course.page}">Open course</a>
+                  </div>
                 </div>
               </article>
             `;
