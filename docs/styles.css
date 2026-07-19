@@ -243,7 +243,7 @@ h4 {
 
 .hero-bleed .brand-mark {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 7vw, 4.4rem);
+  font-size: clamp(2.2rem, 5.5vw, 3.75rem);
   font-weight: 700;
   color: var(--gold-light);
   margin: 0 0 12px;
@@ -253,15 +253,194 @@ h4 {
 
 .hero-bleed .hero-copy > p:not(.brand-mark) {
   font-size: 1.15rem;
-  color: rgba(243, 239, 230, 0.85);
+  color: rgba(243, 239, 230, 0.88);
   margin: 0 0 24px;
-  max-width: 42ch;
+  max-width: 40ch;
 }
 
 .hero-bleed h2 {
   font-size: clamp(1.4rem, 3.5vw, 2rem);
   color: var(--paper);
   margin: 0 0 16px;
+}
+
+.hero-bleed .btn-primary {
+  background: var(--gold);
+  color: var(--ink);
+  border-color: var(--gold);
+}
+
+.hero-bleed .btn-primary:hover,
+.hero-bleed .btn-primary:focus-visible {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  color: var(--ink);
+}
+
+/* ── Hero learning journey ── */
+.hero-journey {
+  animation: riseIn 0.9s 0.12s ease both;
+  padding: 8px 0 8px 8px;
+}
+
+.hero-journey-kicker {
+  margin: 0 0 18px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--gold-light);
+  letter-spacing: 0.02em;
+}
+
+.hero-journey-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+  position: relative;
+}
+
+.hero-journey-list::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(226, 193, 90, 0.55),
+    rgba(226, 193, 90, 0.12)
+  );
+}
+
+.hero-journey-list > li {
+  position: relative;
+}
+
+.hero-journey-step {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 6px 12px 6px 0;
+  border: 0;
+  background: transparent;
+  color: rgba(243, 239, 230, 0.45);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.hero-journey-step:hover {
+  color: rgba(243, 239, 230, 0.85);
+}
+
+.hero-journey-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: rgba(226, 193, 90, 0.55);
+  background: #12161d;
+  border: 2px solid rgba(226, 193, 90, 0.25);
+  position: relative;
+  z-index: 1;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-journey-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.hero-journey-list > li.is-done .hero-journey-num {
+  color: var(--ink);
+  background: rgba(226, 193, 90, 0.75);
+  border-color: var(--gold);
+}
+
+.hero-journey-list > li.is-done .hero-journey-step {
+  color: rgba(243, 239, 230, 0.7);
+}
+
+.hero-journey-list > li.is-active .hero-journey-step {
+  color: var(--paper);
+  transform: translateX(4px);
+}
+
+.hero-journey-list > li.is-active .hero-journey-num {
+  color: var(--ink);
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  box-shadow: 0 0 0 4px rgba(226, 193, 90, 0.2);
+}
+
+.hero-journey-list > li.is-active .hero-journey-title {
+  font-weight: 700;
+}
+
+.hero-journey-detail {
+  margin: 14px 0 0;
+  min-height: 3.2em;
+  padding-left: 54px;
+  color: rgba(243, 239, 230, 0.78);
+  font-size: 1rem;
+  max-width: 36ch;
+}
+
+.hero-journey-detail.is-fresh {
+  animation: riseIn 0.35s ease both;
+}
+
+@media (max-width: 899px) {
+  .hero-journey {
+    padding-left: 0;
+  }
+
+  .hero-journey-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .hero-journey-list::before {
+    display: none;
+  }
+
+  .hero-journey-step {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 8px;
+    padding: 8px 4px;
+  }
+
+  .hero-journey-title {
+    font-size: 0.85rem;
+    line-height: 1.25;
+  }
+
+  .hero-journey-detail {
+    padding-left: 0;
+    text-align: center;
+    max-width: none;
+  }
+
+  .hero-journey-list > li.is-active .hero-journey-step {
+    transform: none;
+  }
 }
 
 /* ── Standard hero card ── */
@@ -453,92 +632,6 @@ h4 {
   margin: 0 0 24px;
   max-width: 52ch;
   color: var(--gray);
-}
-
-/* ── What you'll learn (curriculum stages) ── */
-.learn-stages {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 0;
-  border-left: 3px solid var(--light-gray);
-  margin-left: 14px;
-}
-
-.learn-stage {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 16px;
-  align-items: start;
-  padding: 0 0 28px 20px;
-  position: relative;
-  animation: riseIn 0.55s ease both;
-}
-
-.learn-stage:last-child {
-  padding-bottom: 0;
-}
-
-.learn-stage:nth-child(1) { animation-delay: 0.05s; }
-.learn-stage:nth-child(2) { animation-delay: 0.1s; }
-.learn-stage:nth-child(3) { animation-delay: 0.15s; }
-.learn-stage:nth-child(4) { animation-delay: 0.2s; }
-.learn-stage:nth-child(5) { animation-delay: 0.25s; }
-.learn-stage:nth-child(6) { animation-delay: 0.3s; }
-
-.learn-stage-num {
-  width: 32px;
-  height: 32px;
-  margin-left: -38px;
-  border-radius: 50%;
-  background: var(--ink);
-  color: var(--gold-light);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 0 0 4px var(--paper);
-}
-
-.learn-stage h4 {
-  margin: 2px 0 6px;
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-}
-
-.learn-stage p {
-  margin: 0;
-  color: var(--gray);
-  max-width: 48ch;
-}
-
-/* ── Who this is for ── */
-.audience-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 14px;
-}
-
-.audience-list li {
-  padding: 14px 0 14px 18px;
-  border-left: 4px solid var(--gold);
-  color: var(--gray);
-  animation: riseIn 0.5s ease both;
-}
-
-.audience-list li:nth-child(1) { animation-delay: 0.05s; }
-.audience-list li:nth-child(2) { animation-delay: 0.12s; }
-.audience-list li:nth-child(3) { animation-delay: 0.18s; }
-
-.audience-list strong {
-  color: var(--ink);
-  font-weight: 600;
 }
 
 /* ── Closing CTA ── */

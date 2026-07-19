@@ -25,8 +25,8 @@
             <p class="brand-mark">Programming Foundations</p>
             <h2 id="hero-heading">Learn from zero. Build real projects.</h2>
             <p>
-              No experience needed. We take you from your first “Hello, world” to apps you can put
-              on a CV — free, clear steps, at your own pace.
+              For beginners and career changers. A free path from your first program to a portfolio
+              app — clear steps, at your own pace.
             </p>
             <div class="button-row">
               <a class="btn btn-primary" href="start-here.html">Start here — no experience needed</a>
@@ -34,71 +34,51 @@
             </div>
           </div>
 
-          <div class="terminal-widget" id="terminal-demo" aria-label="Code demo terminal">
-            <div class="terminal-widget-header">
-              <span class="terminal-dot red" aria-hidden="true"></span>
-              <span class="terminal-dot yellow" aria-hidden="true"></span>
-              <span class="terminal-dot green" aria-hidden="true"></span>
-              <span class="terminal-widget-title">first_script.py</span>
-            </div>
-            <div class="terminal-widget-body">
-              <div class="terminal-line" id="terminal-text"></div>
-              <span class="terminal-cursor" aria-hidden="true"></span>
-            </div>
+          <div class="hero-journey" aria-label="What you will learn">
+            <p class="hero-journey-kicker">What you’ll learn</p>
+            <ol class="hero-journey-list" id="hero-journey-list">
+              <li class="is-active" data-stage="0">
+                <button type="button" class="hero-journey-step">
+                  <span class="hero-journey-num">01</span>
+                  <span class="hero-journey-title">Setup</span>
+                </button>
+              </li>
+              <li data-stage="1">
+                <button type="button" class="hero-journey-step">
+                  <span class="hero-journey-num">02</span>
+                  <span class="hero-journey-title">Basics</span>
+                </button>
+              </li>
+              <li data-stage="2">
+                <button type="button" class="hero-journey-step">
+                  <span class="hero-journey-num">03</span>
+                  <span class="hero-journey-title">Decisions &amp; loops</span>
+                </button>
+              </li>
+              <li data-stage="3">
+                <button type="button" class="hero-journey-step">
+                  <span class="hero-journey-num">04</span>
+                  <span class="hero-journey-title">Functions</span>
+                </button>
+              </li>
+              <li data-stage="4">
+                <button type="button" class="hero-journey-step">
+                  <span class="hero-journey-num">05</span>
+                  <span class="hero-journey-title">Objects</span>
+                </button>
+              </li>
+              <li data-stage="5">
+                <button type="button" class="hero-journey-step">
+                  <span class="hero-journey-num">06</span>
+                  <span class="hero-journey-title">Portfolio project</span>
+                </button>
+              </li>
+            </ol>
+            <p class="hero-journey-detail" id="hero-journey-detail" aria-live="polite">
+              Install your tools and run a real program on day one.
+            </p>
           </div>
         </div>
-      </section>
-
-      <section class="widget-section" id="what-youll-learn" aria-labelledby="learn-heading">
-        <h3 id="learn-heading">What you’ll learn</h3>
-        <p class="section-lead">
-          Six stages from setup to a portfolio project — then keep growing with AI and intermediate
-          tracks.
-        </p>
-        <ol class="learn-stages">
-          <li class="learn-stage">
-            <span class="learn-stage-num" aria-hidden="true">1</span>
-            <div>
-              <h4>Setup &amp; first script</h4>
-              <p>Install your tools and run a real program on day one.</p>
-            </div>
-          </li>
-          <li class="learn-stage">
-            <span class="learn-stage-num" aria-hidden="true">2</span>
-            <div>
-              <h4>Basics</h4>
-              <p>Variables, input, and calculations — make the computer work for you.</p>
-            </div>
-          </li>
-          <li class="learn-stage">
-            <span class="learn-stage-num" aria-hidden="true">3</span>
-            <div>
-              <h4>Decisions &amp; loops</h4>
-              <p>Build programs that choose, repeat, and respond like real apps.</p>
-            </div>
-          </li>
-          <li class="learn-stage">
-            <span class="learn-stage-num" aria-hidden="true">4</span>
-            <div>
-              <h4>Functions &amp; collections</h4>
-              <p>Organize code so it stays clear as your projects grow.</p>
-            </div>
-          </li>
-          <li class="learn-stage">
-            <span class="learn-stage-num" aria-hidden="true">5</span>
-            <div>
-              <h4>Objects &amp; structure</h4>
-              <p>Learn the patterns professionals use to build software.</p>
-            </div>
-          </li>
-          <li class="learn-stage">
-            <span class="learn-stage-num" aria-hidden="true">6</span>
-            <div>
-              <h4>Portfolio project</h4>
-              <p>Ship a Task Tracker you can show on a CV or LinkedIn.</p>
-            </div>
-          </li>
-        </ol>
       </section>
 
       <section class="widget-section" id="course-matcher">
@@ -165,28 +145,6 @@ print("Ready to learn?")</textarea>
             Download the course ZIP and save it somewhere easy to find on your computer.
           </p>
         </div>
-      </section>
-
-      <section class="section" id="who-its-for" aria-labelledby="audience-heading">
-        <h3 id="audience-heading">Who this is for</h3>
-        <p class="section-lead">
-          Built for adults and older teens (16+) who want practical skills — not a kids course, not
-          an advanced bootcamp dump.
-        </p>
-        <ul class="audience-list">
-          <li>
-            <strong>Complete beginners</strong>
-            — never written code? We start from absolute zero.
-          </li>
-          <li>
-            <strong>Career changers</strong>
-            — real skills and portfolio projects you can show employers.
-          </li>
-          <li>
-            <strong>Self-paced learners</strong>
-            — clear written lessons; go as fast or slow as you need.
-          </li>
-        </ul>
       </section>
 
       <section class="section">
@@ -268,45 +226,55 @@ print("Ready to learn?")</textarea>
 
     <script>
       (function () {
-        /* Terminal typing demo */
-        const lines = [
-          '$ python first_script.py',
-          'Hello, world!',
-          'You wrote your first program.',
-          'Next: open Module 1 →',
+        /* Hero journey — cycle stages */
+        const journeyDetails = [
+          "Install your tools and run a real program on day one.",
+          "Variables, input, and calculations — make the computer work for you.",
+          "Build programs that choose, repeat, and respond like real apps.",
+          "Organize code so it stays clear as your projects grow.",
+          "Learn the patterns professionals use to build software.",
+          "Ship a Task Tracker you can show on a CV or LinkedIn.",
         ];
-        const terminalEl = document.getElementById("terminal-text");
-        let lineIdx = 0;
-        let charIdx = 0;
-        let current = "";
+        const journeyItems = document.querySelectorAll("#hero-journey-list > li");
+        const journeyDetail = document.getElementById("hero-journey-detail");
+        let journeyStage = 0;
+        let journeyTimer;
 
-        const typeNext = () => {
-          if (!terminalEl) return;
-          if (lineIdx >= lines.length) {
-            setTimeout(() => {
-              lineIdx = 0;
-              charIdx = 0;
-              current = "";
-              terminalEl.textContent = "";
-              typeNext();
-            }, 3000);
-            return;
-          }
-          const line = lines[lineIdx];
-          if (charIdx < line.length) {
-            current += line[charIdx];
-            charIdx += 1;
-            terminalEl.textContent = current;
-            setTimeout(typeNext, 35);
-          } else {
-            current += "\n";
-            terminalEl.textContent = current;
-            lineIdx += 1;
-            charIdx = 0;
-            setTimeout(typeNext, 400);
+        const setJourneyStage = (stage) => {
+          journeyStage = stage;
+          journeyItems.forEach((item, i) => {
+            item.classList.toggle("is-active", i === stage);
+            item.classList.toggle("is-done", i < stage);
+          });
+          if (journeyDetail) {
+            journeyDetail.classList.remove("is-fresh");
+            void journeyDetail.offsetWidth;
+            journeyDetail.textContent = journeyDetails[stage];
+            journeyDetail.classList.add("is-fresh");
           }
         };
-        typeNext();
+
+        const advanceJourney = () => {
+          setJourneyStage((journeyStage + 1) % journeyDetails.length);
+        };
+
+        const startJourneyTimer = () => {
+          clearInterval(journeyTimer);
+          const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (!reduceMotion) journeyTimer = setInterval(advanceJourney, 3200);
+        };
+
+        journeyItems.forEach((item) => {
+          item.querySelector("button")?.addEventListener("click", () => {
+            setJourneyStage(Number(item.dataset.stage));
+            startJourneyTimer();
+          });
+        });
+
+        if (journeyItems.length) {
+          setJourneyStage(0);
+          startJourneyTimer();
+        }
 
         /* Course matcher */
         const recommendations = {
