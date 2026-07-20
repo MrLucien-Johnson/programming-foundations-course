@@ -28,9 +28,12 @@ If Root Directory is empty, Render tries to start the whole repo and the API nev
 | Key | Value |
 |-----|--------|
 | `NODE_ENV` | `production` |
+| `NODE_VERSION` | `20` |
 | `JWT_SECRET` | a long random string (create one; do not leave blank) |
 | `DATABASE_PATH` | `./data/pf.sqlite` |
 | `CORS_ORIGINS` | `https://mrlucien-johnson.github.io` |
+
+`NODE_VERSION=20` matters: Render otherwise picks Node 26, and older SQLite native builds fail.
 
 Important for **Free**:
 - Do **not** use `/data/pf.sqlite` unless you attached a disk
