@@ -20,8 +20,7 @@
 
   window.PF_CONFIG = {
     apiBaseUrl: isLocalHost ? "http://localhost:8787" : productionApiBaseUrl,
-    // Paste your public donate link here when ready (leave "" until then).
-    donateUrl: "",
-    donateLabel: "Donate",
+    donateUrl: "https://paypal.me/ProgrammingOfficial",
+    donateLabel: "Donate with PayPal",
   };
 })();
