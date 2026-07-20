@@ -2,13 +2,13 @@
 
 Your service URL is:
 
-`https://programming-foundations-course.onrender.com`
+`https://programming101.onrender.com`
 
 The site is already on GitHub Pages:
 
 `https://mrlucien-johnson.github.io/programming-foundations-course/`
 
-Right now the API URL times out, which usually means the service is **crashing on boot** or pointed at the wrong folder.
+Right now the API URL times out, which usually means the service is **crashing on boot**, pointed at the wrong folder, or the build command has a typo.
 
 ## Do this in the Render dashboard
 
@@ -16,8 +16,9 @@ Right now the API URL times out, which usually means the service is **crashing o
 
 | Setting | Value |
 |--------|--------|
+| Runtime | **Node** (not Go) |
 | Root Directory | `backend` |
-| Build Command | `npm install` |
+| Build Command | `npm install` (all lowercase — `Npm` will fail) |
 | Start Command | `npm start` |
 
 If Root Directory is empty, Render tries to start the whole repo and the API never comes up.
@@ -55,7 +56,7 @@ If you see errors about `/data`, switch `DATABASE_PATH` to `./data/pf.sqlite`.
 
 After deploy finishes, open:
 
-`https://programming-foundations-course.onrender.com/api/health`
+`https://programming101.onrender.com/api/health`
 
 Expected:
 
@@ -67,7 +68,7 @@ First request on Free can take ~30–60s while it wakes up.
 
 ## Then wire the website
 
-`docs/config.js` is already set to this API URL on this branch. After merge/deploy of the branch, open:
+`docs/config.js` should use `https://programming101.onrender.com`. After that is on `main`, open:
 
 `https://mrlucien-johnson.github.io/programming-foundations-course/account.html`
 
