@@ -112,7 +112,8 @@ Commit and push to `main` so GitHub Pages picks it up.
 If Account says it cannot reach the API:
 
 - Check `/api/health` on the API URL
-- Confirm `CORS_ORIGINS` matches the site origin exactly
+- Confirm `CORS_ORIGINS` matches the site origin exactly (no path, no trailing `/`, no quotes around the value)
+- A trailing slash is a common false “looks correct” setting — browsers send `https://yoursite.github.io`, not `…github.io/`
 - Confirm the site uses `https://…` for `apiBaseUrl` (never `http://` on a GitHub Pages site)
 
 ---
