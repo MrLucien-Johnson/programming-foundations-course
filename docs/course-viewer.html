@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Course Lesson Viewer</title>
-    <link rel="stylesheet" href="styles.css?v=bevel4" />
+    <link rel="stylesheet" href="styles.css?v=ux1" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <header class="site-header">
-      <h1>Lesson Viewer</h1>
+      <h1><a class="site-brand" href="index.html">Programming Foundations</a></h1>
       <nav class="nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="start-here.html">Start Here</a>
@@ -27,7 +27,7 @@
             <p class="pill" id="lesson-lang-pill" hidden></p>
             <h2 id="lesson-title">Loading lesson…</h2>
             <p class="note">
-              This lesson is displayed from the course repository, but you stay on the learning site.
+              Read the lesson below. Track progress when you are ready — it stays collapsed so you can focus.
             </p>
           </div>
           <div class="lesson-progress-widget" id="lesson-progress-widget" hidden aria-live="polite">
@@ -41,36 +41,32 @@
             </div>
           </div>
         </div>
-        <div class="module-track" id="module-track" hidden role="list" aria-label="Modules in this course"></div>
-      </section>
-
-      <section id="module-dashboard" class="section">
-        <div id="dashboard-grid" class="grid cols-2"></div>
       </section>
 
       <section id="lesson-content" class="section card lesson-content" aria-live="polite"></section>
 
-      <section class="section">
-        <div class="button-row" id="lesson-nav"></div>
-      </section>
-
-      <section class="section">
-        <div class="button-row">
+      <section class="section lesson-actions">
+        <div class="button-row" id="lesson-actions-row">
           <button class="btn btn-primary" id="mark-complete" type="button">
             Mark lesson complete
           </button>
+          <span id="lesson-nav" class="lesson-nav-inline"></span>
           <a class="btn btn-secondary" href="courses.html">Back to courses</a>
-          <a
-            class="btn btn-secondary"
-            href="https://github.com/MrLucien-Johnson/programming-foundations-course"
-          >
-            View repository
-          </a>
         </div>
         <p id="completion-status" class="note"></p>
       </section>
+
+      <details class="progress-drawer section" id="progress-drawer">
+        <summary>Track your progress</summary>
+        <p class="module-track-meta" id="module-track-meta" hidden></p>
+        <div class="module-track" id="module-track" hidden role="list" aria-label="Modules in this course"></div>
+        <section id="module-dashboard">
+          <div id="dashboard-grid" class="grid cols-2"></div>
+        </section>
+      </details>
     </main>
 
+    <script src="site.js?v=ux1"></script>
     <script>
       const params = new URLSearchParams(window.location.search);
       const repoPath = params.get("path");
@@ -111,6 +107,15 @@
         }
 
         moduleTrack.hidden = false;
+        const currentIndex = course.modules.findIndex((m) => m.path === currentPath);
+        const meta = document.getElementById("module-track-meta");
+        if (meta) {
+          meta.hidden = false;
+          meta.textContent =
+            currentIndex >= 0
+              ? `Module ${currentIndex + 1} of ${total} · ${done} complete`
+              : `${done} of ${total} modules complete`;
+        }
         moduleTrack.innerHTML = course.modules
           .map((module, i) => {
             const complete = isCompleted(module.path);
@@ -126,6 +131,10 @@
             `;
           })
           .join("");
+        const currentNode = moduleTrack.querySelector(".module-track-node.is-current");
+        if (currentNode && typeof currentNode.scrollIntoView === "function") {
+          currentNode.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+        }
       };
 
       const DEFAULT_COURSES = [
@@ -341,23 +350,30 @@
         },
       ];
 
-      const completedKey = "course-completions";
-
-      const getCompletions = () => {
-        try {
-          return JSON.parse(localStorage.getItem(completedKey)) || [];
-        } catch (error) {
-          return [];
-        }
-      };
+      const getCompletions = () =>
+        window.PF ? window.PF.getCompletions() : JSON.parse(localStorage.getItem("course-completions") || "[]");
 
       const saveCompletion = (path) => {
+        if (window.PF) return window.PF.saveCompletion(path);
         const completions = new Set(getCompletions());
         completions.add(path);
-        localStorage.setItem(completedKey, JSON.stringify([...completions]));
+        localStorage.setItem("course-completions", JSON.stringify([...completions]));
       };
 
-      const isCompleted = (path) => getCompletions().includes(path);
+      const isCompleted = (path) =>
+        window.PF ? window.PF.isCompleted(path) : getCompletions().includes(path);
+
+      const applyCompleteButtonState = () => {
+        if (!markCompleteBtn || !repoPath) return;
+        if (isCompleted(repoPath)) {
+          markCompleteBtn.textContent = "Completed ✓";
+          markCompleteBtn.disabled = true;
+          if (completionStatus) completionStatus.textContent = "Marked as complete.";
+        } else {
+          markCompleteBtn.textContent = "Mark lesson complete";
+          markCompleteBtn.disabled = false;
+        }
+      };
 
       const progressKey = (path) => `module-progress:${path}`;
 
@@ -704,6 +720,11 @@
         } else {
           dashboardSection.style.display = "block";
         }
+        const drawer = document.getElementById("progress-drawer");
+        if (drawer) {
+          const hasTrack = moduleTrack && !moduleTrack.hidden && moduleTrack.children.length;
+          drawer.hidden = !hasTrack && !dashboardGrid.children.length;
+        }
       };
 
       const enhanceStepHeadings = () => {
@@ -798,7 +819,7 @@
             <p>Short assessment · Passing score: 70% · Estimated time: 5-10 minutes</p>
             <a class="btn btn-primary" href="quiz-viewer.html?quiz=${encodeURIComponent(
               lessonInfo.module.quiz
-            )}">
+            )}&from=${encodeURIComponent(repoPath || "")}">
               Start quiz
             </a>
           </div>
@@ -890,11 +911,10 @@
             lessonNavEl.appendChild(nextLink);
           }
 
-          if (isCompleted(repoPath)) {
-            completionStatus.textContent = "Marked as complete.";
-          }
           window.__activeCourse = course;
+          window.__nextModule = course.modules[index + 1] || null;
           updateCourseProgressUI(course, repoPath);
+          applyCompleteButtonState();
         }
 
         fetch(rawUrl)
@@ -936,7 +956,7 @@
                     .replace(".quiz-answers.md", ".quiz.md");
                   link.setAttribute(
                     "href",
-                    `quiz-viewer.html?quiz=${encodeURIComponent(quizPath)}`
+                    `quiz-viewer.html?quiz=${encodeURIComponent(quizPath)}&from=${encodeURIComponent(repoPath || "")}`
                   );
                   return;
                 }
@@ -965,7 +985,7 @@
           })
           .catch((error) => {
             titleEl.textContent = "Lesson unavailable";
-            contentEl.innerHTML = `<p>${error.message}</p>`;
+            contentEl.innerHTML = `<p>${error.message}</p><p class="note">See <a href="help.html#lesson-load">Help: lesson would not load</a> for what to try next.</p>`;
           });
       };
 
@@ -974,9 +994,14 @@
       markCompleteBtn.addEventListener("click", () => {
         if (!repoPath) return;
         saveCompletion(repoPath);
-        completionStatus.textContent = "Marked as complete.";
+        applyCompleteButtonState();
         if (window.__activeCourse) {
           updateCourseProgressUI(window.__activeCourse, repoPath);
+        }
+        const next = window.__nextModule;
+        if (next && completionStatus) {
+          completionStatus.innerHTML =
+            `Marked as complete. <a href="course-viewer.html?path=${encodeURIComponent(next.path)}">Continue to ${next.title} →</a>`;
         }
       });
     </script>

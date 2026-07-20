@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Completion Certificate</title>
-    <link rel="stylesheet" href="styles.css?v=bevel4" />
+    <link rel="stylesheet" href="styles.css?v=ux1" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <header class="site-header">
-      <h1>Completion Certificate</h1>
+      <h1><a class="site-brand" href="index.html">Programming Foundations</a></h1>
       <nav class="nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="start-here.html">Start Here</a>
@@ -21,17 +21,28 @@
     <main id="main" class="container">
       <section class="hero">
         <h2>Generate your certificate</h2>
-        <p>Fill in your name and course, then print or save as PDF.</p>
+        <p>
+          Fill in your name and course, then print or save as PDF. Progress below is based on
+          lessons you marked complete in this browser.
+        </p>
       </section>
 
-      <section class="section card">
+      <section class="section panel-plain" id="cert-progress-panel">
+        <h3 style="margin-top: 0;">Your progress</h3>
+        <p id="cert-progress-summary" class="note">Checking completed modules…</p>
+        <div class="progress-bar" style="max-width: 320px;">
+          <div class="progress-fill" id="cert-progress-fill"></div>
+        </div>
+      </section>
+
+      <section class="section panel-plain">
         <label>
           Your name
-          <input id="cert-name" type="text" class="card" placeholder="Your name" />
+          <input id="cert-name" type="text" class="field-input" placeholder="Your name" />
         </label>
         <label>
           Course completed
-          <select id="cert-course" class="card">
+          <select id="cert-course" class="field-input">
             <option>Python Course</option>
             <option>C# Course</option>
             <option>AI Prompt Creation Course</option>
@@ -39,17 +50,18 @@
         </label>
         <label>
           Completion date
-          <input id="cert-date" type="date" class="card" />
+          <input id="cert-date" type="date" class="field-input" />
         </label>
         <div class="button-row">
           <button id="cert-update" class="btn btn-primary" type="button">Update certificate</button>
-          <button class="btn btn-secondary" type="button" onclick="window.print()">
+          <button class="btn btn-secondary" type="button" id="cert-print">
             Print / Save PDF
           </button>
         </div>
+        <p id="cert-gate-note" class="note" role="status" aria-live="polite"></p>
       </section>
 
-      <section class="section card" id="certificate-preview">
+      <section class="section certificate-preview" id="certificate-preview">
         <h2>Certificate of Completion</h2>
         <p>This certifies that</p>
         <h3 id="cert-preview-name">Your Name</h3>
@@ -61,25 +73,62 @@
       </section>
     </main>
 
+    <script src="site.js?v=ux1"></script>
     <script>
       const nameInput = document.getElementById("cert-name");
       const courseInput = document.getElementById("cert-course");
       const dateInput = document.getElementById("cert-date");
       const updateBtn = document.getElementById("cert-update");
+      const printBtn = document.getElementById("cert-print");
       const previewName = document.getElementById("cert-preview-name");
       const previewCourse = document.getElementById("cert-preview-course");
       const previewDate = document.getElementById("cert-preview-date");
+      const progressSummary = document.getElementById("cert-progress-summary");
+      const progressFill = document.getElementById("cert-progress-fill");
+      const gateNote = document.getElementById("cert-gate-note");
+
+      const refreshProgress = () => {
+        const progress = window.PF.courseProgress(courseInput.value);
+        if (progressSummary) {
+          progressSummary.textContent = `${progress.done} of ${progress.total} modules marked complete (${progress.percent}%).`;
+        }
+        if (progressFill) progressFill.style.width = `${progress.percent}%`;
+
+        const ready = progress.total > 0 && progress.done >= progress.total;
+        if (gateNote) {
+          gateNote.textContent = ready
+            ? "All tracked modules are complete — you are ready to print."
+            : "You can still print a keepsake certificate. Finish remaining modules to reflect full completion.";
+        }
+        return ready;
+      };
 
       const updatePreview = () => {
         previewName.textContent = nameInput.value || "Your Name";
         previewCourse.textContent = courseInput.value;
         previewDate.textContent = dateInput.value || "Date";
+        refreshProgress();
       };
 
+      // Prefer a course with the most progress
+      const ranked = [...courseInput.options].map((opt) => ({
+        name: opt.value,
+        ...window.PF.courseProgress(opt.value),
+      }));
+      ranked.sort((a, b) => b.percent - a.percent || b.done - a.done);
+      if (ranked[0] && ranked[0].done > 0) {
+        courseInput.value = ranked[0].name;
+      }
+
       updateBtn.addEventListener("click", updatePreview);
+      printBtn.addEventListener("click", () => {
+        updatePreview();
+        window.print();
+      });
       [nameInput, courseInput, dateInput].forEach((input) =>
         input.addEventListener("input", updatePreview)
       );
+      updatePreview();
     </script>
   </body>
 </html>

@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Programming Foundations - Start Learning</title>
-    <link rel="stylesheet" href="styles.css?v=bevel4" />
+    <link rel="stylesheet" href="styles.css?v=ux1" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <header class="site-header">
-      <h1>Programming Foundations</h1>
+      <h1><a class="site-brand" href="index.html">Programming Foundations</a></h1>
       <nav class="nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="start-here.html">Start Here</a>
@@ -106,6 +106,7 @@
 print("Hello, " + name + "!")
 print("Ready to learn?")</textarea>
           <div class="playground-output" id="playground-output"></div>
+          <div class="playground-followup" id="playground-followup" hidden></div>
         </div>
       </section>
 
@@ -113,37 +114,36 @@ print("Ready to learn?")</textarea>
         <h3>Your learning path</h3>
         <div class="path-viz" id="path-viz-home">
           <div class="path-viz-header">
-            <p style="margin: 0;">Five stages from download to your first project.</p>
+            <p style="margin: 0;">Four steps from your first lesson to coding on your computer. Progress syncs with Start Here.</p>
             <div class="progress-bar" style="flex: 1; max-width: 200px;">
               <div class="progress-fill" id="path-progress-fill"></div>
             </div>
           </div>
           <div class="path-viz-track">
             <div class="path-viz-progress-line" id="path-progress-line"></div>
-            <button type="button" class="path-node is-active" data-stage="0">
+            <a class="path-node" data-step-id="open-online" href="start-here.html#step-open-online">
               <span class="path-node-circle">1</span>
-              <span class="path-node-label">Download</span>
-            </button>
-            <button type="button" class="path-node" data-stage="1">
+              <span class="path-node-label">Start online</span>
+            </a>
+            <a class="path-node" data-step-id="choose-course" href="start-here.html#step-choose-course">
               <span class="path-node-circle">2</span>
               <span class="path-node-label">Pick course</span>
-            </button>
-            <button type="button" class="path-node" data-stage="2">
+            </a>
+            <a class="path-node" data-step-id="keep-learning" href="start-here.html#step-keep-learning">
               <span class="path-node-circle">3</span>
-              <span class="path-node-label">Module 1</span>
-            </button>
-            <button type="button" class="path-node" data-stage="3">
+              <span class="path-node-label">Keep learning</span>
+            </a>
+            <a class="path-node" data-step-id="download-local" href="start-here.html#step-download-local">
               <span class="path-node-circle">4</span>
-              <span class="path-node-label">Practice</span>
-            </button>
-            <button type="button" class="path-node" data-stage="4">
-              <span class="path-node-circle">5</span>
-              <span class="path-node-label">Project</span>
-            </button>
+              <span class="path-node-label">Code locally</span>
+            </a>
           </div>
           <p class="note" id="path-stage-desc" style="margin-top: 20px; margin-bottom: 0;">
-            Download the course ZIP and save it somewhere easy to find on your computer.
+            Open Module 1 in your browser — no download needed to begin.
           </p>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="btn btn-secondary" href="start-here.html">Continue in Start Here</a>
+          </div>
         </div>
       </section>
 
@@ -159,7 +159,7 @@ print("Ready to learn?")</textarea>
       </section>
 
       <section class="section grid cols-3">
-        <article class="card">
+        <article class="feature-card">
           <div class="feature-visual" aria-hidden="true">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="28" cy="28" r="24" stroke="currentColor" stroke-width="2"/>
@@ -171,7 +171,7 @@ print("Ready to learn?")</textarea>
           <h4>Beginner friendly</h4>
           <p>Plain language, no jargon, and a clear path from the first lesson to your first app.</p>
         </article>
-        <article class="card">
+        <article class="feature-card">
           <div class="feature-visual" aria-hidden="true">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="10" y="14" width="36" height="28" rx="4" stroke="currentColor" stroke-width="2"/>
@@ -181,7 +181,7 @@ print("Ready to learn?")</textarea>
           <h4>Hands-on learning</h4>
           <p>Every module ends with practice so you learn by doing, not just reading.</p>
         </article>
-        <article class="card">
+        <article class="feature-card">
           <div class="feature-visual" aria-hidden="true">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 44V20l16-8 16 8v24" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -224,6 +224,7 @@ print("Ready to learn?")</textarea>
       </footer>
     </main>
 
+    <script src="site.js?v=ux1"></script>
     <script>
       (function () {
         /* Hero journey — cycle stages */
@@ -321,11 +322,14 @@ print("Ready to learn?")</textarea>
         const runPlayground = () => {
           const code = document.getElementById("playground-code").value;
           const outputEl = document.getElementById("playground-output");
+          const followup = document.getElementById("playground-followup");
           if (!outputEl) return;
 
           const vars = {};
           const outputs = [];
           const codeLines = code.split("\n");
+          let recognized = 0;
+          let skipped = 0;
 
           for (const raw of codeLines) {
             const line = raw.trim();
@@ -335,16 +339,41 @@ print("Ready to learn?")</textarea>
             if (assignMatch) {
               const [, name, valRaw] = assignMatch;
               vars[name] = parseValue(valRaw.trim(), vars);
+              recognized += 1;
               continue;
             }
 
             const printMatch = line.match(/^print\s*\(\s*(.+)\s*\)$/);
             if (printMatch) {
               outputs.push(resolveExpr(printMatch[1].trim(), vars));
+              recognized += 1;
+              continue;
             }
+
+            skipped += 1;
           }
 
           outputEl.textContent = outputs.length ? outputs.join("\n") : "(no output)";
+
+          if (followup) {
+            followup.hidden = false;
+            if (outputs.length) {
+              followup.innerHTML =
+                "<p><strong>Nice — that ran.</strong> Ready for a real lesson?</p>" +
+                "<div class='button-row' style='margin-top:10px'>" +
+                "<a class='btn btn-primary' href='course-viewer.html?path=python-beginner-workbook%2Fmodule-01-setup%2FREADME.md' style='min-width:auto'>Open Python Module 1</a>" +
+                "</div>";
+            } else if (skipped && !recognized) {
+              followup.innerHTML =
+                "<p class='note' style='margin:0'>This mini runner only understands lines like <code>name = "Alex"</code> and <code>print(...)</code>. Try the starter code, then press Run.</p>";
+            } else if (!outputs.length) {
+              followup.innerHTML =
+                "<p class='note' style='margin:0'>Add a <code>print("Hello!")</code> line so you can see output here.</p>";
+            } else {
+              followup.hidden = true;
+              followup.innerHTML = "";
+            }
+          }
         };
 
         function parseValue(raw, vars) {
@@ -388,37 +417,45 @@ print("Ready to learn?")</textarea>
 
         document.getElementById("playground-run")?.addEventListener("click", runPlayground);
 
-        /* Path visualization */
-        const stageDescs = [
-          "Download the course ZIP and save it somewhere easy to find on your computer.",
-          "Choose Python, C#, or AI Prompt Creation — you can switch later.",
-          "Open Module 1 and read the first lesson at your own pace.",
-          "Complete the exercises and quizzes to lock in what you learned.",
-          "Build your capstone project and add it to your portfolio.",
-        ];
+        /* Path visualization — synced with Start Here */
+        const stepOrder = window.PF.START_STEP_ORDER;
+        const stageDescs = {
+          "open-online": "Open Module 1 in your browser — no download needed to begin.",
+          "choose-course": "Choose Python, C#, or AI Prompt Creation — you can switch later.",
+          "keep-learning": "Work through lessons, exercises, and quizzes. Mark lessons complete as you go.",
+          "download-local": "Optional: download the ZIP when you are ready to code on your computer.",
+        };
         const pathNodes = document.querySelectorAll("#path-viz-home .path-node");
         const pathDesc = document.getElementById("path-stage-desc");
         const pathFill = document.getElementById("path-progress-fill");
         const pathLine = document.getElementById("path-progress-line");
+        const steps = window.PF.getStartSteps();
 
-        const updatePath = (stage) => {
-          pathNodes.forEach((node, i) => {
-            node.classList.toggle("is-active", i === stage);
-            node.classList.toggle("is-complete", i < stage);
-          });
-          const pct = stage / (pathNodes.length - 1) * 100;
+        const syncPath = () => {
+          const completed = stepOrder.filter((id) => steps[id]).length;
+          const pct = (completed / stepOrder.length) * 100;
           if (pathFill) pathFill.style.width = pct + "%";
-          if (pathLine) pathLine.style.width = (pct * 0.8) + "%";
-          if (pathDesc) pathDesc.textContent = stageDescs[stage];
+          if (pathLine) pathLine.style.width = pct * 0.8 + "%";
+
+          let activeId = stepOrder.find((id, i) => !steps[id] && (i === 0 || steps[stepOrder[i - 1]])) || stepOrder[stepOrder.length - 1];
+          pathNodes.forEach((node) => {
+            const id = node.dataset.stepId;
+            const done = !!steps[id];
+            node.classList.toggle("is-complete", done);
+            node.classList.toggle("is-active", id === activeId && !done);
+          });
+          if (pathDesc) pathDesc.textContent = stageDescs[activeId] || stageDescs["open-online"];
         };
 
         pathNodes.forEach((node) => {
-          node.addEventListener("click", () => {
-            updatePath(Number(node.dataset.stage));
+          node.addEventListener("mouseenter", () => {
+            const id = node.dataset.stepId;
+            if (pathDesc && stageDescs[id]) pathDesc.textContent = stageDescs[id];
           });
+          node.addEventListener("mouseleave", syncPath);
         });
-        updatePath(0);
+        syncPath();
       })();
     </script>
-  </body>
+    </body>
 </html>

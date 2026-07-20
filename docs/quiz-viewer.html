@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Interactive Quiz</title>
-    <link rel="stylesheet" href="styles.css?v=bevel4" />
+    <link rel="stylesheet" href="styles.css?v=ux1" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <header class="site-header">
-      <h1>Interactive Quiz</h1>
+      <h1><a class="site-brand" href="index.html">Programming Foundations</a></h1>
       <nav class="nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="start-here.html">Start Here</a>
@@ -53,15 +53,31 @@
         <div class="button-row">
           <button class="btn btn-primary" id="check-answers" type="button">Check answers</button>
           <button class="btn btn-secondary" id="reset-quiz" type="button">Try again</button>
+          <a class="btn btn-secondary" id="quiz-return-lesson" href="courses.html">Return to lesson</a>
           <a class="btn btn-secondary" href="courses.html">Back to courses</a>
+          <a class="btn btn-secondary" href="help.html#quiz-load">Help</a>
         </div>
-        <p id="quiz-score" class="quiz-score"></p>
+        <p id="quiz-score" class="quiz-score" role="status" aria-live="polite"></p>
       </section>
     </main>
 
+    <script src="site.js?v=ux1"></script>
     <script>
       const params = new URLSearchParams(window.location.search);
       const quizPath = params.get("quiz");
+      const fromPath = params.get("from") || (window.PF ? window.PF.inferLessonFromQuiz(quizPath) : null);
+      const returnLessonLink = document.getElementById("quiz-return-lesson");
+      if (returnLessonLink) {
+        if (fromPath) {
+          returnLessonLink.href = `course-viewer.html?path=${encodeURIComponent(fromPath)}`;
+          returnLessonLink.textContent = "Return to lesson";
+        } else if (document.referrer && /course-viewer\.html/.test(document.referrer)) {
+          returnLessonLink.href = document.referrer;
+        } else {
+          returnLessonLink.href = "courses.html";
+          returnLessonLink.textContent = "Back to courses";
+        }
+      }
       const quizTitle = document.getElementById("quiz-title");
       const quizContainer = document.getElementById("quiz-container");
       const scoreEl = document.getElementById("quiz-score");
@@ -101,13 +117,24 @@
         return null;
       };
 
-      const setStatus = ({ state, title, message, showActions }) => {
+      const setStatus = ({ state, title, message, showActions, hidePanel }) => {
         if (!statusPanel) return;
         statusPanel.dataset.state = state;
+        statusPanel.hidden = !!hidePanel;
+        statusPanel.classList.toggle("is-compact", state === "Ready" || state === "Partial");
         if (statusPill) statusPill.textContent = state;
         if (statusTitle) statusTitle.textContent = title;
         if (statusMessage) statusMessage.textContent = message;
         if (statusActions) statusActions.hidden = !showActions;
+        // Offer help on failure states
+        if (showActions && statusActions && !statusActions.querySelector('[data-help-link]')) {
+          const help = document.createElement("a");
+          help.className = "btn btn-secondary";
+          help.href = "help.html#quiz-load";
+          help.textContent = "Get help";
+          help.dataset.helpLink = "1";
+          statusActions.appendChild(help);
+        }
       };
 
       const markUnavailable = (message) => {
@@ -355,16 +382,39 @@
             }
             const hasExplanation =
               explanationEl.textContent.trim() || explanationEl.innerHTML.trim();
-            explanationEl.style.display = hasExplanation ? "block" : "none";
+            // Keep explanations collapsed until the learner opens them
+            explanationEl.style.display = "none";
             if (toggleButton) {
               toggleButton.disabled = !hasExplanation;
-              toggleButton.textContent = hasExplanation ? "Hide explanation" : "Show explanation";
-              toggleButton.setAttribute("aria-expanded", hasExplanation ? "true" : "false");
+              toggleButton.textContent = "Show explanation";
+              toggleButton.setAttribute("aria-expanded", "false");
             }
           }
         });
 
-        scoreEl.textContent = `Score: ${correct}/${questions.length}`;
+        const total = questions.length;
+        const pct = total ? correct / total : 0;
+        const passed = pct >= (window.PF ? window.PF.PASS_THRESHOLD : 0.7);
+        if (window.PF && quizPath) {
+          window.PF.saveQuizResult(quizPath, { score: correct, total, passed });
+          if (passed) {
+            const lessonPath = fromPath || window.PF.inferLessonFromQuiz(quizPath);
+            if (lessonPath) window.PF.saveCompletion(lessonPath);
+          }
+        }
+
+        const nextHref = fromPath
+          ? `course-viewer.html?path=${encodeURIComponent(fromPath)}`
+          : "courses.html";
+        if (passed) {
+          scoreEl.innerHTML =
+            `<strong class="quiz-pass">Passed · ${correct}/${total} (${Math.round(pct * 100)}%)</strong>` +
+            `<span class="quiz-score-actions"> Great work. <a href="${nextHref}">Return to lesson</a> or keep practicing.</span>`;
+        } else {
+          scoreEl.innerHTML =
+            `<strong class="quiz-review">Needs review · ${correct}/${total} (${Math.round(pct * 100)}%)</strong>` +
+            `<span class="quiz-score-actions"> Passing score is 70%. Review the explanations, then try again.</span>`;
+        }
       };
 
       const resetQuiz = () => {
@@ -383,6 +433,7 @@
           button.setAttribute("aria-expanded", "false");
         });
         scoreEl.textContent = "";
+        scoreEl.innerHTML = "";
       };
 
       quizContainer.style.display = "none";
@@ -401,6 +452,9 @@
         quizContainer.style.display = "block";
         if (introSection) {
           introSection.style.display = "none";
+        }
+        if (statusPanel) {
+          statusPanel.hidden = true;
         }
         checkButton.disabled = false;
         if (actionsSection) {
@@ -487,12 +541,12 @@
               "<p>This quiz is not ready yet. Please try again later.</p>";
             checkButton.disabled = true;
             markUnavailable(
-              "We could not load the quiz file. It may still be publishing. Please try again later."
+              "We could not load the quiz file. It may still be publishing. See Help for what to try next."
             );
           });
       }
 
       checkButton.addEventListener("click", checkAnswers);
     </script>
-  </body>
+    </body>
 </html>
