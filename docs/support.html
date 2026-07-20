@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Support - Programming Foundations</title>
+    <link rel="stylesheet" href="styles.css?v=ux6" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div data-pf-header></div>
+    <script src="config.js"></script>
+    <script src="site.js?v=ux6"></script>
+
+    <main id="main" class="container">
+      <section class="hero">
+        <h2>Support this free course</h2>
+        <p>
+          Programming Foundations stays free to learn. Donations help cover hosting so accounts can
+          sync reliably and the materials keep improving.
+        </p>
+      </section>
+
+      <section class="section support-panel" aria-labelledby="donate-heading">
+        <h3 id="donate-heading">Donations</h3>
+        <p class="section-lead">
+          Every contribution goes toward keeping the site online and removing paid-hosting limits when
+          funds allow.
+        </p>
+        <div class="button-row" data-pf-donate-slot>
+          <a
+            class="btn btn-secondary"
+            href="https://www.instagram.com/abelsolutionslimited/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Message on Instagram
+          </a>
+        </div>
+        <p class="note" id="donate-status" role="status">
+          A public donate button will appear here once a Ko-fi, PayPal.Me, or similar link is added.
+          Until then, message on Instagram if you would like to support the project.
+        </p>
+      </section>
+
+      <section class="section">
+        <h3>Where money would go</h3>
+        <ul>
+          <li>Reliable cloud accounts (so progress is not wiped when free servers restart)</li>
+          <li>Keeping GitHub Pages + the learning materials free for everyone</li>
+          <li>Small tools and fixes that make the beginner path clearer</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h3>Keep learning for free</h3>
+        <p>
+          You never need to donate to use the course. Guest mode works offline in your browser.
+          Accounts are optional and, on free hosting, may reset after server restarts.
+        </p>
+        <div class="button-row">
+          <a class="btn btn-primary" href="start-here.html">Continue learning</a>
+          <a class="btn btn-secondary" href="account.html">Account</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Questions?
+          <a href="https://www.instagram.com/abelsolutionslimited/">Instagram @abelsolutionslimited</a>
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      (function () {
+        window.PF?.mountDonateSlots?.();
+      })();
+    </script>
+  </body>
+</html>

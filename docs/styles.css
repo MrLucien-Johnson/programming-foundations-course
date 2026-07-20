@@ -1750,6 +1750,29 @@ button.path-node {
   font-weight: 600;
 }
 
+/* ── Support / donate ── */
+.support-panel {
+  padding: 28px 28px 24px;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse 70% 80% at 100% 0%, rgba(201, 162, 39, 0.16), transparent 55%),
+    linear-gradient(165deg, #fffdf8 0%, var(--paper) 100%);
+  border: 1px solid rgba(154, 123, 26, 0.22);
+  border-top-color: rgba(255, 255, 255, 0.7);
+  border-left-color: rgba(255, 255, 255, 0.55);
+  border-bottom-color: rgba(14, 17, 22, 0.12);
+  box-shadow: var(--bevel-raised);
+  animation: riseIn 0.5s ease both;
+}
+
+.support-panel h3 {
+  margin-top: 0;
+}
+
+.support-panel .section-lead {
+  margin-bottom: 18px;
+}
+
 /* ── Responsive path viz ── */
 @media (max-width: 640px) {
   .path-viz-track {

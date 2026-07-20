@@ -19,8 +19,43 @@
     { href: "start-here.html", label: "Start Here" },
     { href: "courses.html", label: "Courses" },
     { href: "help.html", label: "Help" },
+    { href: "support.html", label: "Support" },
     { href: "account.html", label: "Account" },
   ];
+
+  const getDonateConfig = () => {
+    const cfg = global.PF_CONFIG || {};
+    const url = String(cfg.donateUrl || "").trim();
+    const label = String(cfg.donateLabel || "Donate").trim() || "Donate";
+    return { url, label, enabled: Boolean(url) };
+  };
+
+  /** Fill [data-pf-donate-slot] with a donate button when config.donateUrl is set. */
+  const mountDonateSlots = () => {
+    const { url, label, enabled } = getDonateConfig();
+    document.querySelectorAll("[data-pf-donate-slot]").forEach((slot) => {
+      if (!enabled) return;
+      const existing = slot.querySelector("[data-pf-donate-btn]");
+      if (existing) {
+        existing.href = url;
+        existing.textContent = label;
+        return;
+      }
+      const anchor = document.createElement("a");
+      anchor.className = "btn btn-primary";
+      anchor.href = url;
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      anchor.dataset.pfDonateBtn = "1";
+      anchor.textContent = label;
+      slot.prepend(anchor);
+    });
+    const status = document.getElementById("donate-status");
+    if (status && enabled) {
+      status.textContent =
+        "Thank you — donations help keep this course free and fund more reliable hosting when we can.";
+    }
+  };
 
   const COURSE_MODULE_MAP = {
     "Python Course": [
@@ -425,6 +460,7 @@
 
   const boot = () => {
     mountHeader();
+    mountDonateSlots();
     if (getToken()) {
       syncProgress().catch(() => {
         /* guest-capable offline */
@@ -454,6 +490,8 @@
     resetAllProgress,
     markNavCurrent,
     mountHeader,
+    mountDonateSlots,
+    getDonateConfig,
     getUser,
     getToken,
     signIn,

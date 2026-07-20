@@ -147,3 +147,5 @@ Link them to `account.html`.
 ## If you need $0 infra
 
 Keep guest mode (localStorage) as the default for everyone, and only enable cloud accounts after you attach a paid disk or move the database to a free hosted store (Turso / Neon). Do not put beta accounts on an ephemeral free instance.
+
+**Staying free for now?** That is fine. Keep learning as a guest, treat cloud accounts as best-effort, and use [Support](support.html) + `donateUrl` in `config.js` when you want to accept donations toward durable hosting.
