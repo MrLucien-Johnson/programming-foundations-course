@@ -35,7 +35,7 @@ GitHub Pages will publish from `docs/` after `main` updates.
    - **Runtime:** Node
    - **Build command:** `npm install`
    - **Start command:** `npm start`
-   - **Instance:** Free is fine for open beta
+   - **Instance:** **Starter** (not Free) so a disk can keep SQLite data
 
 ### Add a persistent disk (important)
 
@@ -139,9 +139,10 @@ Link them to `account.html`.
 ## Cost expectation
 
 - GitHub Pages: free
-- Render free web service: free (spins down when idle; first request may be slow)
-- Render disk: usually a few dollars/month — worth it so beta progress is not wiped on restart
+- Render **Starter** web service + 1 GB disk: typically a few dollars/month
+  - Needed so learner accounts are not wiped when the service restarts
+  - Free Render web services are fine for demos, but **not** for beta accounts (no durable disk)
 
-## If Render free spin-down is annoying
+## If you need $0 infra
 
-Upgrade the web service to a tiny always-on plan, or move the same `backend/` folder to Railway/Fly with a volume. The app code does not need to change—only env vars and `config.js`.
+Keep guest mode (localStorage) as the default for everyone, and only enable cloud accounts after you attach a paid disk or move the database to a free hosted store (Turso / Neon). Do not put beta accounts on an ephemeral free instance.

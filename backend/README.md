@@ -70,16 +70,19 @@ Progress payload shape:
 
 1. Set a strong `JWT_SECRET`.
 2. Set `CORS_ORIGINS` to your real site origin(s), e.g. `https://yourname.github.io`.
-3. Persist `DATABASE_PATH` on a volume.
-4. Put TLS in front (Railway, Render, Fly.io, Cloudflare Tunnel, nginx, etc.).
-5. Point `docs/config.js` `apiBaseUrl` at the public API URL.
+3. Persist `DATABASE_PATH` on a volume (`/data/pf.sqlite` on Render).
+4. Put TLS in front (Render/Railway/Fly provide HTTPS).
+5. Point `docs/config.js` `productionApiBaseUrl` at the public API URL.
 
-## Deploy notes (Render / Railway / Fly)
+Open-beta walkthrough: [`docs/OPEN-BETA-DEPLOY.md`](../docs/OPEN-BETA-DEPLOY.md)
 
+## Deploy notes (Render)
+
+- Blueprint file: [`render.yaml`](../render.yaml) at repo root
 - Root directory: `backend`
 - Start command: `npm start`
-- Environment variables: copy from `.env.example`
-- Attach a persistent disk for the SQLite file, **or** migrate later to Postgres if traffic grows
+- Use **Starter** + disk mount `/data` (Free instances lose SQLite on restart)
+- Set `CORS_ORIGINS` in the Render dashboard after first deploy
 
 ## Tests
 
