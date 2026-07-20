@@ -1064,7 +1064,44 @@ label .field-input {
   color: var(--ink);
 }
 
-.note {
+.maintenance-banner {
+  margin: 24px 0 8px;
+  padding: 22px 24px;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(165deg, #fff8e6 0%, #fff3d1 55%, #f7e7b0 100%);
+  border: 1px solid rgba(154, 123, 26, 0.35);
+  border-left: 5px solid var(--gold-dark);
+  box-shadow: var(--shadow-soft);
+  animation: riseIn 0.45s ease both;
+}
+
+.maintenance-banner-kicker {
+  margin: 0 0 6px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.maintenance-banner-title {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  color: var(--ink);
+}
+
+.maintenance-banner p {
+  margin: 0 0 14px;
+  color: var(--gray);
+  max-width: 60ch;
+}
+
+.account-disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
   background: linear-gradient(165deg, #fffcef 0%, #fff8e6 100%);
   border: 1px solid rgba(201, 162, 39, 0.4);
   border-top-color: #fffdf5;
