@@ -163,7 +163,7 @@ h4 {
     linear-gradient(180deg, #1a1f28 0%, rgba(14, 17, 22, 0.98) 100%);
   backdrop-filter: blur(12px);
   color: var(--gold-light);
-  padding: 16px 20px;
+  padding: 14px 20px;
   position: sticky;
   top: 0;
   z-index: 200;
@@ -174,10 +174,37 @@ h4 {
   border-bottom: 1px solid rgba(201, 162, 39, 0.28);
 }
 
+.site-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 .site-header h1 {
   margin: 0;
-  font-size: clamp(1.25rem, 3vw, 1.55rem);
+  font-size: clamp(1.15rem, 3vw, 1.55rem);
   letter-spacing: 0.02em;
+  min-width: 0;
+}
+
+.nav-toggle {
+  display: none;
+  flex-shrink: 0;
+  border: 1px solid rgba(226, 193, 90, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--gold-light);
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  background: rgba(201, 162, 39, 0.18);
 }
 
 .nav {
@@ -194,6 +221,18 @@ h4 {
   font-size: 0.95rem;
   position: relative;
   padding-bottom: 4px;
+}
+
+.nav a.nav-account.is-signed-in::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 6px;
+  margin-bottom: 1px;
+  border-radius: 50%;
+  background: var(--gold);
+  vertical-align: middle;
 }
 
 .nav a::after {
@@ -226,6 +265,39 @@ h4 {
 .site-brand:hover,
 .site-brand:focus-visible {
   color: var(--gold-light);
+}
+
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .nav {
+    display: none;
+    margin-top: 12px;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid rgba(226, 193, 90, 0.2);
+    padding-top: 8px;
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 10px 4px;
+    font-size: 1rem;
+  }
+
+  .nav a::after {
+    display: none;
+  }
+
+  .nav a[aria-current="page"] {
+    color: var(--gold);
+  }
 }
 
 /* ── Layout ── */
@@ -339,6 +411,12 @@ h4 {
   color: var(--gray);
 }
 
+.cert-remaining li {
+  margin: 0.45em 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 .cert-remaining a {
   color: var(--ink);
   font-weight: 600;
@@ -350,6 +428,7 @@ h4 {
   .panel-plain,
   .hero,
   .button-row,
+  .footer,
   #cert-progress-panel,
   #cert-gate-note {
     display: none !important;

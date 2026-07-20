@@ -211,42 +211,42 @@
       "level": "Intermediate + Advanced",
       "modules": [
         {
-          "title": "CIntermediate \u2014 Module 01: DSA (Practical)",
+          "title": "C# Intermediate \u2014 Module 01: DSA (Practical)",
           "path": "languages/csharp/intermediate/modules/01-dsa-practical.md",
           "quiz": "languages/csharp/intermediate/modules/01-dsa-practical.quiz.md"
         },
         {
-          "title": "CIntermediate \u2014 Module 02: Testing and Quality",
+          "title": "C# Intermediate \u2014 Module 02: Testing and Quality",
           "path": "languages/csharp/intermediate/modules/02-testing-and-quality.md",
           "quiz": "languages/csharp/intermediate/modules/02-testing-and-quality.quiz.md"
         },
         {
-          "title": "CIntermediate \u2014 Module 03: Git and Collaboration",
+          "title": "C# Intermediate \u2014 Module 03: Git and Collaboration",
           "path": "languages/csharp/intermediate/modules/03-git-and-collaboration.md",
           "quiz": "languages/csharp/intermediate/modules/03-git-and-collaboration.quiz.md"
         },
         {
-          "title": "CIntermediate \u2014 Module 04: APIs and Auth",
+          "title": "C# Intermediate \u2014 Module 04: APIs and Auth",
           "path": "languages/csharp/intermediate/modules/04-apis-and-auth.md",
           "quiz": "languages/csharp/intermediate/modules/04-apis-and-auth.quiz.md"
         },
         {
-          "title": "CIntermediate \u2014 Module 05: Databases",
+          "title": "C# Intermediate \u2014 Module 05: Databases",
           "path": "languages/csharp/intermediate/modules/05-databases.md",
           "quiz": "languages/csharp/intermediate/modules/05-databases.quiz.md"
         },
         {
-          "title": "CIntermediate \u2014 Module 06: Security Basics",
+          "title": "C# Intermediate \u2014 Module 06: Security Basics",
           "path": "languages/csharp/intermediate/modules/06-security-basics.md",
           "quiz": "languages/csharp/intermediate/modules/06-security-basics.quiz.md"
         },
         {
-          "title": "CIntermediate \u2014 Module 07: Debugging and Performance",
+          "title": "C# Intermediate \u2014 Module 07: Debugging and Performance",
           "path": "languages/csharp/intermediate/modules/07-debugging-and-performance.md",
           "quiz": "languages/csharp/intermediate/modules/07-debugging-and-performance.quiz.md"
         },
         {
-          "title": "CIntermediate \u2014 Module 08: Deployment and CI",
+          "title": "C# Intermediate \u2014 Module 08: Deployment and CI",
           "path": "languages/csharp/intermediate/modules/08-deployment-and-ci.md",
           "quiz": "languages/csharp/intermediate/modules/08-deployment-and-ci.quiz.md"
         },
@@ -256,42 +256,42 @@
           "quiz": "languages/csharp/intermediate/modules/core-concepts.quiz.md"
         },
         {
-          "title": "CAdvanced \u2014 Module 01: System Design Foundations",
+          "title": "C# Advanced \u2014 Module 01: System Design Foundations",
           "path": "languages/csharp/advanced/modules/01-system-design-foundations.md",
           "quiz": "languages/csharp/advanced/modules/01-system-design-foundations.quiz.md"
         },
         {
-          "title": "CAdvanced \u2014 Module 02: Architecture Patterns",
+          "title": "C# Advanced \u2014 Module 02: Architecture Patterns",
           "path": "languages/csharp/advanced/modules/02-architecture-patterns.md",
           "quiz": "languages/csharp/advanced/modules/02-architecture-patterns.quiz.md"
         },
         {
-          "title": "CAdvanced \u2014 Module 03: Concurrency and Async",
+          "title": "C# Advanced \u2014 Module 03: Concurrency and Async",
           "path": "languages/csharp/advanced/modules/03-concurrency-and-async.md",
           "quiz": "languages/csharp/advanced/modules/03-concurrency-and-async.quiz.md"
         },
         {
-          "title": "CAdvanced \u2014 Module 04: Performance and Profiling",
+          "title": "C# Advanced \u2014 Module 04: Performance and Profiling",
           "path": "languages/csharp/advanced/modules/04-performance-and-profiling.md",
           "quiz": "languages/csharp/advanced/modules/04-performance-and-profiling.quiz.md"
         },
         {
-          "title": "CAdvanced \u2014 Module 05: Reliability and Resilience",
+          "title": "C# Advanced \u2014 Module 05: Reliability and Resilience",
           "path": "languages/csharp/advanced/modules/05-reliability-and-resilience.md",
           "quiz": "languages/csharp/advanced/modules/05-reliability-and-resilience.quiz.md"
         },
         {
-          "title": "CAdvanced \u2014 Module 06: Security (Advanced)",
+          "title": "C# Advanced \u2014 Module 06: Security (Advanced)",
           "path": "languages/csharp/advanced/modules/06-security-advanced.md",
           "quiz": "languages/csharp/advanced/modules/06-security-advanced.quiz.md"
         },
         {
-          "title": "CAdvanced \u2014 Module 07: Observability and SLOs",
+          "title": "C# Advanced \u2014 Module 07: Observability and SLOs",
           "path": "languages/csharp/advanced/modules/07-observability-and-slos.md",
           "quiz": "languages/csharp/advanced/modules/07-observability-and-slos.quiz.md"
         },
         {
-          "title": "CAdvanced \u2014 Module 08: CI/CD and Release Strategies",
+          "title": "C# Advanced \u2014 Module 08: CI/CD and Release Strategies",
           "path": "languages/csharp/advanced/modules/08-ci-cd-and-release-strategies.md",
           "quiz": "languages/csharp/advanced/modules/08-ci-cd-and-release-strategies.quiz.md"
         },

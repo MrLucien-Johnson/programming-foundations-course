@@ -4,20 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Completion Certificate</title>
-    <link rel="stylesheet" href="styles.css?v=ux6" />
+    <link rel="stylesheet" href="styles.css?v=ux7" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux6"></script>
+    <script src="site.js?v=ux7"></script>
 
     <main id="main" class="container">
       <section class="hero">
         <h2>Generate your certificate</h2>
         <p>
-          Print opens only after every tracked module for the selected course is marked complete in
-          this browser.
+          Certificates are for the beginner tracks only: <strong>Python</strong>, <strong>C#</strong>,
+          and <strong>AI Prompt Creation</strong>. Print opens after every tracked module for the
+          selected course is marked complete in this browser.
         </p>
       </section>
 
@@ -68,6 +69,14 @@
       </section>
     </main>
 
+    <footer class="footer container">
+      <p>
+        <a href="courses.html">Back to courses</a>
+        ·
+        <a href="support.html">Support / donate</a>
+      </p>
+    </footer>
+
     <script>
       const nameInput = document.getElementById("cert-name");
       const courseInput = document.getElementById("cert-course");
@@ -102,7 +111,10 @@
               remaining
                 .slice(0, 8)
                 .map((path) => {
-                  const label = path.split("/").slice(-2).join("/");
+                  const parts = path.split("/");
+                  const file = parts[parts.length - 1] || path;
+                  const folder = parts[parts.length - 2] || "";
+                  const label = folder ? `${folder} / ${file}` : file;
                   return `<li><a href="course-viewer.html?path=${encodeURIComponent(path)}">${label}</a></li>`;
                 })
                 .join("") +

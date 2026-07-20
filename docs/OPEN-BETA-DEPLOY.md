@@ -144,8 +144,14 @@ Link them to `account.html`.
   - Needed so learner accounts are not wiped when the service restarts
   - Free Render web services are fine for demos, but **not** for beta accounts (no durable disk)
 
-## If you need $0 infra
+## If you need $0 infra (current open-beta path)
 
-Keep guest mode (localStorage) as the default for everyone, and only enable cloud accounts after you attach a paid disk or move the database to a free hosted store (Turso / Neon). Do not put beta accounts on an ephemeral free instance.
+This project is running on **Render Free + GitHub Pages** for now:
 
-**Staying free for now?** That is fine. Keep learning as a guest, treat cloud accounts as best-effort, and use [Support](support.html) + `donateUrl` in `config.js` when you want to accept donations toward durable hosting.
+- **Guest mode** (browser localStorage) is the reliable default for learners
+- **Cloud accounts** work when the Free API is awake, but SQLite data can wipe on restart/redeploy
+- **Donations** via [Support](support.html) / `donateUrl` in `config.js` fund a later upgrade to durable hosting (Starter + disk, or Turso / Neon)
+
+Do not promise permanent cloud progress while the API stays on ephemeral Free storage.
+
+When funds allow: upgrade to **Starter + disk** (see Step 2 above) or move the database to a free hosted store.

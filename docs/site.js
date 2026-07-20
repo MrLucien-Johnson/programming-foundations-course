@@ -134,7 +134,15 @@
   };
 
   const getToken = () => localStorage.getItem(KEYS.authToken) || "";
-  const getUser = () => safeParse(localStorage.getItem(KEYS.authUser), null);
+  const getUser = () => {
+    const user = safeParse(localStorage.getItem(KEYS.authUser), null);
+    // Stale user without a token should not look signed in.
+    if (user && !getToken()) {
+      localStorage.removeItem(KEYS.authUser);
+      return null;
+    }
+    return user;
+  };
 
   const setSession = (token, user) => {
     if (token) localStorage.setItem(KEYS.authToken, token);
@@ -259,7 +267,9 @@
 
   const syncProgress = async ({ force } = {}) => {
     if (!getToken()) {
-      if (force) throw new Error("Sign in to sync progress.");
+      if (force) {
+        throw new Error("Sign in again to sync — your session is missing or expired.");
+      }
       return null;
     }
     if (syncing) return null;
@@ -429,17 +439,38 @@
 
   const headerHTML = () => {
     const user = getUser();
-    const accountLabel = user ? "Account ✓" : "Account";
     const nav = NAV_LINKS.map((link) => {
-      const label = link.href === "account.html" ? accountLabel : link.label;
-      return `<a href="${link.href}">${label}</a>`;
+      const label = link.label;
+      const signedInClass =
+        link.href === "account.html" && user ? ' class="nav-account is-signed-in"' : "";
+      const accountTitle =
+        link.href === "account.html" && user
+          ? ` title="Signed in as ${String(user.displayName || user.email || "").replace(/"/g, "")}"`
+          : "";
+      return `<a href="${link.href}"${signedInClass}${accountTitle}>${label}</a>`;
     }).join("\n        ");
     return `<header class="site-header">
-      <h1><a class="site-brand" href="index.html">Programming Foundations</a></h1>
-      <nav class="nav" aria-label="Primary">
+      <div class="site-header-bar">
+        <h1><a class="site-brand" href="index.html">Programming Foundations</a></h1>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+      </div>
+      <nav class="nav" id="site-nav" aria-label="Primary">
         ${nav}
       </nav>
     </header>`;
+  };
+
+  const wireNavToggle = () => {
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("site-nav");
+    if (!toggle || !nav) return;
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", open ? "false" : "true");
+      nav.classList.toggle("is-open", !open);
+    });
   };
 
   const mountHeader = () => {
@@ -455,6 +486,7 @@
     document.querySelectorAll("[data-pf-header]").forEach((slot) => {
       slot.outerHTML = headerHTML();
     });
+    wireNavToggle();
     markNavCurrent();
   };
 

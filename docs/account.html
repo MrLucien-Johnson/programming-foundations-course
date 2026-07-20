@@ -4,22 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Account - Programming Foundations</title>
-    <link rel="stylesheet" href="styles.css?v=ux6" />
+    <link rel="stylesheet" href="styles.css?v=ux7" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux6"></script>
+    <script src="site.js?v=ux7"></script>
 
     <main id="main" class="container">
       <section class="hero">
         <h2>Your account</h2>
         <p>
-          Create a free account to sync progress across devices when the cloud is available. Guest
-          mode always works — progress stays on this browser. On free hosting, cloud accounts may
-          reset after server restarts; treat them as a bonus until durable hosting is funded.
-          <a href="support.html">Support this course</a> if you want to help with that.
+          Guest learning always works — progress stays in this browser. A free account can sync
+          across devices when the cloud API is up. On free hosting, cloud data may reset after
+          server restarts, so keep guest progress as your backup.
+          <a href="support.html">Donate</a> if you want to help fund durable hosting.
         </p>
       </section>
 
@@ -93,18 +93,25 @@
       <section class="section">
         <h3>How sync works</h3>
         <ul>
-          <li>Guest progress stays in this browser’s local storage.</li>
+          <li>Guest progress stays in this browser’s local storage (most reliable on free hosting).</li>
           <li>When you sign in, local and cloud progress are merged (completions are combined).</li>
-          <li>Later changes sync while you learn — and you can force a sync anytime.</li>
-          <li>Signing out keeps a copy on this device; it will not keep updating the cloud until you sign in again.</li>
+          <li>While signed in, changes sync when the API is reachable — you can also sync manually.</li>
+          <li>Signing out keeps a copy on this device; cloud updates pause until you sign in again.</li>
         </ul>
         <p class="note">
-          Need the API running locally? See <code>backend/README.md</code>.
           Prefer to help keep cloud sync reliable?
           <a href="support.html">Support / donate</a>.
         </p>
       </section>
     </main>
+
+    <footer class="footer container">
+      <p>
+        <a href="support.html">Support / donate</a>
+        ·
+        <a href="https://www.instagram.com/abelsolutionslimited/">Instagram @abelsolutionslimited</a>
+      </p>
+    </footer>
 
     <script>
       (async function () {
@@ -181,12 +188,13 @@
         });
 
         await refresh();
-        if (window.PF.getUser()) {
+        if (window.PF.getUser() && window.PF.getToken()) {
           try {
             await window.PF.syncProgress({ force: true });
             syncStatus.textContent = "Progress synced.";
           } catch (error) {
-            syncStatus.textContent = error.message || "Could not sync yet.";
+            syncStatus.textContent =
+              error.message || "Could not reach the cloud yet. Your local progress is still saved.";
           }
         }
       })();

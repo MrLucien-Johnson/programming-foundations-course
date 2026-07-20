@@ -81,10 +81,10 @@ First request on Free can take ~30–60s while it wakes up.
 
 Create a test account.
 
-## For real open beta (recommended next)
+## For real open beta (when funded)
 
 Upgrade this service to **Starter + disk**:
 - Disk mount: `/data`
 - `DATABASE_PATH=/data/pf.sqlite`
 
-Otherwise Free restarts will wipe accounts.
+Until then, treat Free-tier cloud accounts as best-effort and keep **guest mode** as the learner default. Donations on the Support page help fund that upgrade.
