@@ -21,6 +21,10 @@ if (process.env.NODE_ENV === "production" && JWT_SECRET.startsWith("dev-only")) 
   process.exit(1);
 }
 
+// On Free hosts without a mounted disk, prefer a writable relative path.
+// Example: DATABASE_PATH=./data/pf.sqlite
+// Warning: Free instances can wipe this file on restart/redeploy.
+
 const corsOrigins = (process.env.CORS_ORIGINS || "")
   .split(",")
   .map((value) => value.trim())
