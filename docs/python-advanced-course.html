@@ -4,19 +4,12 @@
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <title>Python Advanced Course</title>
-            <link rel="stylesheet" href="styles.css?v=ux1" />
+            <link rel="stylesheet" href="styles.css?v=ux2" />
           </head>
           <body>
             <a class="skip-link" href="#main">Skip to main content</a>
-            <header class="site-header">
-      <h1><a class="site-brand" href="index.html">Programming Foundations</a></h1>
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="start-here.html">Start Here</a>
-        <a href="courses.html">Courses</a>
-        <a href="help.html">Help</a>
-      </nav>
-    </header>
+            <div data-pf-header></div>
+    <script src="site.js?v=ux2"></script>
 
             <main id="main" class="container">
               <section class="hero">
@@ -50,17 +43,12 @@
             </main>
             <script>
               const modules = ["languages/python/intermediate/modules/01-dsa-practical.md", "languages/python/intermediate/modules/02-testing-and-quality.md", "languages/python/intermediate/modules/03-git-and-collaboration.md", "languages/python/intermediate/modules/04-apis-and-auth.md", "languages/python/intermediate/modules/05-databases.md", "languages/python/intermediate/modules/06-security-basics.md", "languages/python/intermediate/modules/07-debugging-and-performance.md", "languages/python/intermediate/modules/08-deployment-and-ci.md", "languages/python/intermediate/modules/core-concepts.md", "languages/python/advanced/modules/01-system-design-foundations.md", "languages/python/advanced/modules/02-architecture-patterns.md", "languages/python/advanced/modules/03-concurrency-and-async.md", "languages/python/advanced/modules/04-performance-and-profiling.md", "languages/python/advanced/modules/05-reliability-and-resilience.md", "languages/python/advanced/modules/06-security-advanced.md", "languages/python/advanced/modules/07-observability-and-slos.md", "languages/python/advanced/modules/08-ci-cd-and-release-strategies.md", "languages/python/advanced/modules/system-design.md"];
-              const completions = JSON.parse(localStorage.getItem('course-completions') || '[]');
-              const completedCount = modules.filter((path) => completions.includes(path)).length;
-              const percent = Math.round((completedCount / modules.length) * 100);
 
-              const textEl = document.getElementById('python-advanced-progress-text');
-              const fillEl = document.getElementById('python-advanced-progress-fill');
-              if (textEl && fillEl) {
-                textEl.textContent = `Progress: ${completedCount} of ${modules.length} complete`;
-                fillEl.style.width = `${percent}%`;
-              }
-            </script>
-              <script src="site.js?v=ux1"></script>
+              window.PF.bindProgressUI({
+                modules: modules,
+                textEl: "python-advanced-progress-text",
+                fillEl: "python-advanced-progress-fill",
+              });
+</script>
   </body>
         </html>

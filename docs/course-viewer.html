@@ -4,20 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Course Lesson Viewer</title>
-    <link rel="stylesheet" href="styles.css?v=ux1" />
+    <link rel="stylesheet" href="styles.css?v=ux2" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
-    <header class="site-header">
-      <h1><a class="site-brand" href="index.html">Programming Foundations</a></h1>
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="start-here.html">Start Here</a>
-        <a href="courses.html">Courses</a>
-        <a href="help.html">Help</a>
-      </nav>
-    </header>
+    <div data-pf-header></div>
+    <script src="site.js?v=ux2"></script>
 
     <main id="main" class="container">
       <div id="breadcrumb" class="breadcrumb"></div>
@@ -65,8 +58,6 @@
         </section>
       </details>
     </main>
-
-    <script src="site.js?v=ux1"></script>
     <script>
       const params = new URLSearchParams(window.location.search);
       const repoPath = params.get("path");
@@ -360,18 +351,29 @@
         localStorage.setItem("course-completions", JSON.stringify([...completions]));
       };
 
+      const clearCompletion = (path) => {
+        if (window.PF) return window.PF.clearCompletion(path);
+        const list = getCompletions().filter((item) => item !== path);
+        localStorage.setItem("course-completions", JSON.stringify(list));
+        return list;
+      };
+
       const isCompleted = (path) =>
         window.PF ? window.PF.isCompleted(path) : getCompletions().includes(path);
 
       const applyCompleteButtonState = () => {
         if (!markCompleteBtn || !repoPath) return;
         if (isCompleted(repoPath)) {
-          markCompleteBtn.textContent = "Completed ✓";
-          markCompleteBtn.disabled = true;
-          if (completionStatus) completionStatus.textContent = "Marked as complete.";
+          markCompleteBtn.textContent = "Completed ✓ — undo";
+          markCompleteBtn.disabled = false;
+          markCompleteBtn.setAttribute("aria-pressed", "true");
+          if (completionStatus && !completionStatus.querySelector("a")) {
+            completionStatus.textContent = "Marked as complete. Click again to undo.";
+          }
         } else {
           markCompleteBtn.textContent = "Mark lesson complete";
           markCompleteBtn.disabled = false;
+          markCompleteBtn.setAttribute("aria-pressed", "false");
         }
       };
 
@@ -993,15 +995,26 @@
 
       markCompleteBtn.addEventListener("click", () => {
         if (!repoPath) return;
-        saveCompletion(repoPath);
+        const nowComplete = !isCompleted(repoPath);
+        if (nowComplete) {
+          saveCompletion(repoPath);
+        } else {
+          clearCompletion(repoPath);
+        }
         applyCompleteButtonState();
         if (window.__activeCourse) {
           updateCourseProgressUI(window.__activeCourse, repoPath);
         }
         const next = window.__nextModule;
-        if (next && completionStatus) {
-          completionStatus.innerHTML =
-            `Marked as complete. <a href="course-viewer.html?path=${encodeURIComponent(next.path)}">Continue to ${next.title} →</a>`;
+        if (completionStatus) {
+          if (nowComplete && next) {
+            completionStatus.innerHTML =
+              `Marked as complete. <a href="course-viewer.html?path=${encodeURIComponent(next.path)}">Continue to ${next.title} →</a>`;
+          } else if (nowComplete) {
+            completionStatus.textContent = "Marked as complete.";
+          } else {
+            completionStatus.textContent = "Completion removed.";
+          }
         }
       });
     </script>

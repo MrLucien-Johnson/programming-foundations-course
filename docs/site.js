@@ -1,6 +1,6 @@
 /**
  * Shared helpers for Programming Foundations site UX.
- * Progress keys, nav state, and reset live here so pages stay in sync.
+ * Progress keys, shared header, nav state, and reset live here.
  */
 (function (global) {
   const PASS_THRESHOLD = 0.7;
@@ -11,6 +11,13 @@
   };
 
   const START_STEP_ORDER = ["open-online", "choose-course", "keep-learning", "download-local"];
+
+  const NAV_LINKS = [
+    { href: "index.html", label: "Home" },
+    { href: "start-here.html", label: "Start Here" },
+    { href: "courses.html", label: "Courses" },
+    { href: "help.html", label: "Help" },
+  ];
 
   const COURSE_MODULE_MAP = {
     "Python Course": [
@@ -57,6 +64,18 @@
     ],
   };
 
+  const ADVANCED_COURSES = [
+    { id: "python-advanced", name: "Python", page: "python-advanced-course.html", icon: "Py" },
+    { id: "typescript-advanced", name: "TypeScript", page: "typescript-advanced-course.html", icon: "TS" },
+    { id: "java-advanced", name: "Java", page: "java-advanced-course.html", icon: "Java" },
+    { id: "csharp-advanced", name: "C#", page: "csharp-advanced-course.html", icon: "C#" },
+    { id: "go-advanced", name: "Go", page: "go-advanced-course.html", icon: "Go" },
+    { id: "rust-advanced", name: "Rust", page: "rust-advanced-course.html", icon: "Rust" },
+    { id: "kotlin-advanced", name: "Kotlin", page: "kotlin-advanced-course.html", icon: "Kt" },
+    { id: "swift-advanced", name: "Swift", page: "swift-advanced-course.html", icon: "Swift" },
+    { id: "sql-advanced", name: "SQL", page: "sql-advanced-course.html", icon: "SQL" },
+  ];
+
   const safeParse = (raw, fallback) => {
     try {
       return raw ? JSON.parse(raw) : fallback;
@@ -64,6 +83,9 @@
       return fallback;
     }
   };
+
+  const currentFile = () =>
+    (location.pathname.split("/").pop() || "index.html").toLowerCase() || "index.html";
 
   const getCompletions = () =>
     safeParse(localStorage.getItem(KEYS.completions), []);
@@ -75,6 +97,23 @@
     const list = [...next];
     localStorage.setItem(KEYS.completions, JSON.stringify(list));
     return list;
+  };
+
+  const clearCompletion = (path) => {
+    if (!path) return getCompletions();
+    const list = getCompletions().filter((item) => item !== path);
+    localStorage.setItem(KEYS.completions, JSON.stringify(list));
+    return list;
+  };
+
+  const toggleCompletion = (path) => {
+    if (!path) return false;
+    if (isCompleted(path)) {
+      clearCompletion(path);
+      return false;
+    }
+    saveCompletion(path);
+    return true;
   };
 
   const isCompleted = (path) => getCompletions().includes(path);
@@ -114,14 +153,30 @@
     return null;
   };
 
-  const courseProgress = (courseName) => {
-    const modules = COURSE_MODULE_MAP[courseName] || [];
-    const done = modules.filter((path) => isCompleted(path)).length;
+  const progressForModules = (modules) => {
+    const list = Array.isArray(modules) ? modules : [];
+    const done = list.filter((path) => isCompleted(path)).length;
     return {
-      total: modules.length,
+      total: list.length,
       done,
-      percent: modules.length ? Math.round((done / modules.length) * 100) : 0,
+      percent: list.length ? Math.round((done / list.length) * 100) : 0,
     };
+  };
+
+  const courseProgress = (courseName) =>
+    progressForModules(COURSE_MODULE_MAP[courseName] || []);
+
+  const bindProgressUI = ({ modules, textEl, fillEl, label = "Progress" }) => {
+    const progress = progressForModules(modules);
+    const textNode =
+      typeof textEl === "string" ? document.getElementById(textEl) : textEl;
+    const fillNode =
+      typeof fillEl === "string" ? document.getElementById(fillEl) : fillEl;
+    if (textNode) {
+      textNode.textContent = `${label}: ${progress.done} of ${progress.total} complete`;
+    }
+    if (fillNode) fillNode.style.width = `${progress.percent}%`;
+    return progress;
   };
 
   const resetAllProgress = () => {
@@ -134,7 +189,7 @@
   };
 
   const markNavCurrent = () => {
-    const file = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    const file = currentFile();
     document.querySelectorAll(".nav a[href]").forEach((anchor) => {
       const href = (anchor.getAttribute("href") || "").split("?")[0].toLowerCase();
       const current =
@@ -149,29 +204,58 @@
     });
   };
 
+  const headerHTML = () => {
+    const nav = NAV_LINKS.map(
+      (link) => `<a href="${link.href}">${link.label}</a>`
+    ).join("\n        ");
+    return `<header class="site-header">
+      <h1><a class="site-brand" href="index.html">Programming Foundations</a></h1>
+      <nav class="nav" aria-label="Primary">
+        ${nav}
+      </nav>
+    </header>`;
+  };
+
+  const mountHeader = () => {
+    document.querySelectorAll("[data-pf-header]").forEach((slot) => {
+      slot.outerHTML = headerHTML();
+    });
+    markNavCurrent();
+  };
+
+  const boot = () => {
+    mountHeader();
+  };
+
   const PF = {
     PASS_THRESHOLD,
     KEYS,
     START_STEP_ORDER,
     COURSE_MODULE_MAP,
+    ADVANCED_COURSES,
     getCompletions,
     saveCompletion,
+    clearCompletion,
+    toggleCompletion,
     isCompleted,
     getQuizCompletions,
     saveQuizResult,
     getStartSteps,
     saveStartSteps,
     inferLessonFromQuiz,
+    progressForModules,
     courseProgress,
+    bindProgressUI,
     resetAllProgress,
     markNavCurrent,
+    mountHeader,
   };
 
   global.PF = PF;
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", markNavCurrent);
+    document.addEventListener("DOMContentLoaded", boot);
   } else {
-    markNavCurrent();
+    boot();
   }
 })(window);

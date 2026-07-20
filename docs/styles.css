@@ -298,6 +298,70 @@ h4 {
   animation: riseIn 0.8s ease both;
 }
 
+.hero-aside {
+  animation: riseIn 0.9s 0.1s ease both;
+  padding: 22px 24px;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, 0.08) 0%, rgba(14, 17, 22, 0.35) 100%);
+  border: 1px solid rgba(226, 193, 90, 0.28);
+  border-top-color: rgba(255, 255, 255, 0.14);
+  color: var(--paper);
+}
+
+.hero-aside-kicker {
+  margin: 0 0 12px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+.hero-aside-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 10px;
+  color: rgba(243, 239, 230, 0.92);
+  font-weight: 600;
+}
+
+.hero-aside-note {
+  margin: 16px 0 0;
+  color: rgba(243, 239, 230, 0.7);
+  font-size: 0.95rem;
+}
+
+.cert-remaining {
+  margin: 14px 0 0;
+  padding-left: 1.2rem;
+  color: var(--gray);
+}
+
+.cert-remaining a {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+@media print {
+  .site-header,
+  .skip-link,
+  .panel-plain,
+  .hero,
+  .button-row,
+  #cert-progress-panel,
+  #cert-gate-note {
+    display: none !important;
+  }
+
+  #certificate-preview {
+    display: block !important;
+    box-shadow: none !important;
+    border: 2px solid #c9a227 !important;
+  }
+}
+
 .hero-bleed .brand-mark {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 5.5vw, 3.75rem);

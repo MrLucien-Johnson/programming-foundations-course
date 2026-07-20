@@ -4,19 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Programming Foundations - Start Learning</title>
-    <link rel="stylesheet" href="styles.css?v=ux1" />
+    <link rel="stylesheet" href="styles.css?v=ux2" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
-    <header class="site-header">
-      <h1><a class="site-brand" href="index.html">Programming Foundations</a></h1>
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="start-here.html">Start Here</a>
-        <a href="courses.html">Courses</a>
-        <a href="help.html">Help</a>
-      </nav>
-    </header>
+    <div data-pf-header></div>
+    <script src="site.js?v=ux2"></script>
 
     <main id="main" class="container page-home">
       <section class="hero-bleed" aria-labelledby="hero-heading">
@@ -34,49 +27,14 @@
             </div>
           </div>
 
-          <div class="hero-journey" aria-label="What you will learn">
-            <p class="hero-journey-kicker">What you’ll learn</p>
-            <ol class="hero-journey-list" id="hero-journey-list">
-              <li class="is-active" data-stage="0">
-                <button type="button" class="hero-journey-step">
-                  <span class="hero-journey-num">01</span>
-                  <span class="hero-journey-title">Setup</span>
-                </button>
-              </li>
-              <li data-stage="1">
-                <button type="button" class="hero-journey-step">
-                  <span class="hero-journey-num">02</span>
-                  <span class="hero-journey-title">Basics</span>
-                </button>
-              </li>
-              <li data-stage="2">
-                <button type="button" class="hero-journey-step">
-                  <span class="hero-journey-num">03</span>
-                  <span class="hero-journey-title">Decisions &amp; loops</span>
-                </button>
-              </li>
-              <li data-stage="3">
-                <button type="button" class="hero-journey-step">
-                  <span class="hero-journey-num">04</span>
-                  <span class="hero-journey-title">Functions</span>
-                </button>
-              </li>
-              <li data-stage="4">
-                <button type="button" class="hero-journey-step">
-                  <span class="hero-journey-num">05</span>
-                  <span class="hero-journey-title">Objects</span>
-                </button>
-              </li>
-              <li data-stage="5">
-                <button type="button" class="hero-journey-step">
-                  <span class="hero-journey-num">06</span>
-                  <span class="hero-journey-title">Portfolio project</span>
-                </button>
-              </li>
+          <div class="hero-aside" aria-label="How learning works">
+            <p class="hero-aside-kicker">How it works</p>
+            <ol class="hero-aside-list">
+              <li>Start Module 1 in your browser</li>
+              <li>Practice with exercises and quizzes</li>
+              <li>Build a portfolio project</li>
             </ol>
-            <p class="hero-journey-detail" id="hero-journey-detail" aria-live="polite">
-              Install your tools and run a real program on day one.
-            </p>
+            <p class="hero-aside-note">One path — tracked in Start Here as you go.</p>
           </div>
         </div>
       </section>
@@ -223,60 +181,8 @@ print("Ready to learn?")</textarea>
         </p>
       </footer>
     </main>
-
-    <script src="site.js?v=ux1"></script>
     <script>
       (function () {
-        /* Hero journey — cycle stages */
-        const journeyDetails = [
-          "Install your tools and run a real program on day one.",
-          "Variables, input, and calculations — make the computer work for you.",
-          "Build programs that choose, repeat, and respond like real apps.",
-          "Organize code so it stays clear as your projects grow.",
-          "Learn the patterns professionals use to build software.",
-          "Ship a Task Tracker you can show on a CV or LinkedIn.",
-        ];
-        const journeyItems = document.querySelectorAll("#hero-journey-list > li");
-        const journeyDetail = document.getElementById("hero-journey-detail");
-        let journeyStage = 0;
-        let journeyTimer;
-
-        const setJourneyStage = (stage) => {
-          journeyStage = stage;
-          journeyItems.forEach((item, i) => {
-            item.classList.toggle("is-active", i === stage);
-            item.classList.toggle("is-done", i < stage);
-          });
-          if (journeyDetail) {
-            journeyDetail.classList.remove("is-fresh");
-            void journeyDetail.offsetWidth;
-            journeyDetail.textContent = journeyDetails[stage];
-            journeyDetail.classList.add("is-fresh");
-          }
-        };
-
-        const advanceJourney = () => {
-          setJourneyStage((journeyStage + 1) % journeyDetails.length);
-        };
-
-        const startJourneyTimer = () => {
-          clearInterval(journeyTimer);
-          const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-          if (!reduceMotion) journeyTimer = setInterval(advanceJourney, 3200);
-        };
-
-        journeyItems.forEach((item) => {
-          item.querySelector("button")?.addEventListener("click", () => {
-            setJourneyStage(Number(item.dataset.stage));
-            startJourneyTimer();
-          });
-        });
-
-        if (journeyItems.length) {
-          setJourneyStage(0);
-          startJourneyTimer();
-        }
-
         /* Course matcher */
         const recommendations = {
           python: {
