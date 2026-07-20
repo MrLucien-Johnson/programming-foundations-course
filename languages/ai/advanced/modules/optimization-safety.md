@@ -44,7 +44,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- Latency optimization: https://platform.openai.com/docs/guides/latency-optimization
-- OWASP LLM Top 10: https://owasp.org/www-project-top-10-for-large-language-model-applications/
-
+- [Cost, Latency & Ops](guide-viewer.html?path=guides/cost-latency-ops.md) — latency and cost tradeoffs
+- [AI Safety & Security](guide-viewer.html?path=guides/ai-safety-security.md) — safety while optimizing
+- Browse all docs in [Guides](guides.html)

@@ -96,7 +96,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- Production practices: https://platform.openai.com/docs/guides/production-best-practices
-- CI/CD overview: https://martinfowler.com/articles/continuousIntegration.html
-
+- [Deployment & CI](guide-viewer.html?path=guides/deployment-ci.md) — ship prompts like code
+- [Evaluation & Testing](guide-viewer.html?path=guides/evaluation-guide.md) — smoke evals in CI
+- Browse all docs in [Guides](guides.html)

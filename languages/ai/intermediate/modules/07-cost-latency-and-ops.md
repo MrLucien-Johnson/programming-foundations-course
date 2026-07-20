@@ -96,7 +96,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- Latency optimization: https://platform.openai.com/docs/guides/latency-optimization
-- Monitoring guide: https://opentelemetry.io/docs/
-
+- [Cost, Latency & Ops](guide-viewer.html?path=guides/cost-latency-ops.md) — budgets and monitoring
+- [Reliability & Fallbacks](guide-viewer.html?path=guides/reliability-fallbacks.md) — degrade gracefully
+- Browse all docs in [Guides](guides.html)

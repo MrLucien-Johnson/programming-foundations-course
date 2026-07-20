@@ -94,7 +94,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- Advanced retrieval: https://www.pinecone.io/learn/
-- RAG evals: https://github.com/openai/evals
-
+- [RAG & Retrieval](guide-viewer.html?path=guides/rag-guide.md) — advanced retrieval and evals
+- [Evaluation & Testing](guide-viewer.html?path=guides/evaluation-guide.md) — faithfulness and relevance
+- Browse all docs in [Guides](guides.html)

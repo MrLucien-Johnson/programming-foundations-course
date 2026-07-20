@@ -95,7 +95,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- RAG overview: https://www.pinecone.io/learn/retrieval-augmented-generation/
-- Vector search guide: https://www.pinecone.io/learn/vector-search/
-
+- [RAG & Retrieval](guide-viewer.html?path=guides/rag-guide.md) — grounding answers in your documents
+- [LLM System Design](guide-viewer.html?path=guides/llm-system-design.md) — where retrieval fits
+- Browse all docs in [Guides](guides.html)

@@ -94,7 +94,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- OWASP LLM Top 10: https://owasp.org/www-project-top-10-for-large-language-model-applications/
-- Threat modeling: https://learn.microsoft.com/en-us/security/engineering/threat-modeling
-
+- [AI Safety & Security](guide-viewer.html?path=guides/ai-safety-security.md) — LLM threat modeling
+- [Data Privacy & Governance](guide-viewer.html?path=guides/data-privacy-governance.md) — protect user data
+- Browse all docs in [Guides](guides.html)

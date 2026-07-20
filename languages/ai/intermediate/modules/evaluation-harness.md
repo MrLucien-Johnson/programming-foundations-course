@@ -44,7 +44,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- OpenAI evals: https://github.com/openai/evals
-- Prompting guide: https://www.promptingguide.ai/
-
+- [Evaluation & Testing](guide-viewer.html?path=guides/evaluation-guide.md) — build and run harnesses
+- [Prompting Guide](guide-viewer.html?path=guides/prompting-guide.md) — iterate with evidence
+- Browse all docs in [Guides](guides.html)

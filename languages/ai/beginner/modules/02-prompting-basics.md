@@ -93,6 +93,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-- Prompting guide: https://www.promptingguide.ai/
-- OpenAI guides: https://platform.openai.com/docs/guides
-
+- [Prompting Guide](guide-viewer.html?path=guides/prompting-guide.md) — core prompting skills
+- [Practical AI Workflows](guide-viewer.html?path=guides/practical-ai.md) — apply prompts to real tasks
+- Browse all docs in [Guides](guides.html)

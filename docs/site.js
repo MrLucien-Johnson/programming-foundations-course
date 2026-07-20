@@ -18,6 +18,7 @@
     { href: "index.html", label: "Home" },
     { href: "start-here.html", label: "Start Here" },
     { href: "courses.html", label: "Courses" },
+    { href: "guides.html", label: "Guides" },
     { href: "help.html", label: "Help" },
     { href: "support.html", label: "Support" },
     { href: "account.html", label: "Account" },

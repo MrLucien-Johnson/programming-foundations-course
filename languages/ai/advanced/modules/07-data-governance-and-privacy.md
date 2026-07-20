@@ -94,7 +94,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- NIST privacy framework: https://www.nist.gov/privacy-framework
-- Data governance intro: https://www.cio.com/article/220234/what-is-data-governance.html
-
+- [Data Privacy & Governance](guide-viewer.html?path=guides/data-privacy-governance.md) — retention and minimization
+- [AI Safety & Security](guide-viewer.html?path=guides/ai-safety-security.md) — leak and abuse risks
+- Browse all docs in [Guides](guides.html)

@@ -1,0 +1,34 @@
+{
+  "categories": [
+    {
+      "id": "ai",
+      "title": "AI & Prompting",
+      "description": "First-party guides for prompt engineering, RAG, evals, safety, and production LLM systems.",
+      "guides": [
+        { "slug": "prompting-guide", "title": "Prompting Guide", "blurb": "Clear prompts, patterns, and iteration loops." },
+        { "slug": "practical-ai", "title": "Practical AI Workflows", "blurb": "Specs, constraints, grounding, and everyday AI tasks." },
+        { "slug": "tools-and-function-calling", "title": "Tools & Function Calling", "blurb": "When and how to give models tools safely." },
+        { "slug": "structured-outputs", "title": "Structured Outputs & Schemas", "blurb": "Reliable JSON and schema-first results." },
+        { "slug": "rag-guide", "title": "RAG & Retrieval", "blurb": "Ground answers in your own documents." },
+        { "slug": "evaluation-guide", "title": "Evaluation & Testing", "blurb": "Build eval sets and measure improvements." },
+        { "slug": "ai-safety-security", "title": "AI Safety & Security", "blurb": "Guardrails, threat modeling, and LLM risks." },
+        { "slug": "agent-workflows", "title": "Agentic Workflows", "blurb": "Multi-step agents with control and checks." },
+        { "slug": "cost-latency-ops", "title": "Cost, Latency & Ops", "blurb": "Budgets, monitoring, and operational basics." },
+        { "slug": "deployment-ci", "title": "Deployment & CI", "blurb": "Ship prompt systems with CI and release checks." },
+        { "slug": "llm-system-design", "title": "LLM System Design", "blurb": "Architecture patterns for LLM-powered apps." },
+        { "slug": "reliability-fallbacks", "title": "Reliability & Fallbacks", "blurb": "Timeouts, retries, and graceful degradation." },
+        { "slug": "data-privacy-governance", "title": "Data Privacy & Governance", "blurb": "Handle user data responsibly in AI apps." },
+        { "slug": "incident-playbooks", "title": "Incident Playbooks", "blurb": "Respond when AI systems misbehave in production." }
+      ]
+    },
+    {
+      "id": "learning",
+      "title": "Learning on this site",
+      "description": "How to use Programming Foundations without leaving for other course platforms.",
+      "guides": [
+        { "slug": "how-to-learn-here", "title": "How to Learn Here", "blurb": "Courses, quizzes, progress, and staying on-site." },
+        { "slug": "reading-lessons", "title": "Reading Lessons & Stretch Guides", "blurb": "What Stretch Resources mean and where to go next." }
+      ]
+    }
+  ]
+}

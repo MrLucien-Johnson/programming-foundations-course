@@ -2022,3 +2022,70 @@ button.path-node {
   border-radius: 12px;
   border: 1px solid rgba(14, 17, 22, 0.08);
 }
+
+/* ── Guides & documentation ── */
+.guides-search-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.guides-catalog .guides-grid {
+  margin-top: 12px;
+}
+
+.guide-card {
+  animation: riseIn 0.45s ease both;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.guide-card .button-row {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.guide-content {
+  max-width: 52rem;
+}
+
+.guide-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.guide-content th,
+.guide-content td {
+  border: 1px solid #d5cfbf;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.guide-content th {
+  background: rgba(201, 162, 39, 0.12);
+  font-weight: 600;
+}
+
+.guide-content pre {
+  overflow-x: auto;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: #1a1e26;
+  color: #f3efe6;
+  box-shadow: var(--bevel-inset);
+}
+
+.guide-content code {
+  font-family: ui-monospace, "Cascadia Code", "SF Mono", Menlo, monospace;
+  font-size: 0.9em;
+}
+
+.guide-content :not(pre) > code {
+  background: rgba(14, 17, 22, 0.06);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}

@@ -94,7 +94,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- OpenAI evals: https://github.com/openai/evals
-- Evaluation guide: https://www.promptingguide.ai/
-
+- [Evaluation & Testing](guide-viewer.html?path=guides/evaluation-guide.md) — scale your eval practice
+- [Deployment & CI](guide-viewer.html?path=guides/deployment-ci.md) — wire evals into releases
+- Browse all docs in [Guides](guides.html)
