@@ -4,19 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Programming Foundations - Start Learning</title>
-    <link rel="stylesheet" href="styles.css?v=bevel4" />
+    <link rel="stylesheet" href="styles.css?v=ux3" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
-    <header class="site-header">
-      <h1>Programming Foundations</h1>
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="start-here.html">Start Here</a>
-        <a href="courses.html">Courses</a>
-        <a href="help.html">Help</a>
-      </nav>
-    </header>
+    <div data-pf-header></div>
+    <script src="config.js"></script>
+    <script src="site.js?v=ux3"></script>
 
     <main id="main" class="container page-home">
       <section class="hero-bleed" aria-labelledby="hero-heading">
@@ -34,49 +28,14 @@
             </div>
           </div>
 
-          <div class="hero-journey" aria-label="What you will learn">
-            <p class="hero-journey-kicker">What you’ll learn</p>
-            <ol class="hero-journey-list" id="hero-journey-list">
-              <li class="is-active" data-stage="0">
-                <button type="button" class="hero-journey-step">
-                  <span class="hero-journey-num">01</span>
-                  <span class="hero-journey-title">Setup</span>
-                </button>
-              </li>
-              <li data-stage="1">
-                <button type="button" class="hero-journey-step">
-                  <span class="hero-journey-num">02</span>
-                  <span class="hero-journey-title">Basics</span>
-                </button>
-              </li>
-              <li data-stage="2">
-                <button type="button" class="hero-journey-step">
-                  <span class="hero-journey-num">03</span>
-                  <span class="hero-journey-title">Decisions &amp; loops</span>
-                </button>
-              </li>
-              <li data-stage="3">
-                <button type="button" class="hero-journey-step">
-                  <span class="hero-journey-num">04</span>
-                  <span class="hero-journey-title">Functions</span>
-                </button>
-              </li>
-              <li data-stage="4">
-                <button type="button" class="hero-journey-step">
-                  <span class="hero-journey-num">05</span>
-                  <span class="hero-journey-title">Objects</span>
-                </button>
-              </li>
-              <li data-stage="5">
-                <button type="button" class="hero-journey-step">
-                  <span class="hero-journey-num">06</span>
-                  <span class="hero-journey-title">Portfolio project</span>
-                </button>
-              </li>
+          <div class="hero-aside" aria-label="How learning works">
+            <p class="hero-aside-kicker">How it works</p>
+            <ol class="hero-aside-list">
+              <li>Start Module 1 in your browser</li>
+              <li>Practice with exercises and quizzes</li>
+              <li>Build a portfolio project</li>
             </ol>
-            <p class="hero-journey-detail" id="hero-journey-detail" aria-live="polite">
-              Install your tools and run a real program on day one.
-            </p>
+            <p class="hero-aside-note">One path — tracked in Start Here as you go.</p>
           </div>
         </div>
       </section>
@@ -106,6 +65,7 @@
 print("Hello, " + name + "!")
 print("Ready to learn?")</textarea>
           <div class="playground-output" id="playground-output"></div>
+          <div class="playground-followup" id="playground-followup" hidden></div>
         </div>
       </section>
 
@@ -113,37 +73,36 @@ print("Ready to learn?")</textarea>
         <h3>Your learning path</h3>
         <div class="path-viz" id="path-viz-home">
           <div class="path-viz-header">
-            <p style="margin: 0;">Five stages from download to your first project.</p>
+            <p style="margin: 0;">Four steps from your first lesson to coding on your computer. Progress syncs with Start Here.</p>
             <div class="progress-bar" style="flex: 1; max-width: 200px;">
               <div class="progress-fill" id="path-progress-fill"></div>
             </div>
           </div>
           <div class="path-viz-track">
             <div class="path-viz-progress-line" id="path-progress-line"></div>
-            <button type="button" class="path-node is-active" data-stage="0">
+            <a class="path-node" data-step-id="open-online" href="start-here.html#step-open-online">
               <span class="path-node-circle">1</span>
-              <span class="path-node-label">Download</span>
-            </button>
-            <button type="button" class="path-node" data-stage="1">
+              <span class="path-node-label">Start online</span>
+            </a>
+            <a class="path-node" data-step-id="choose-course" href="start-here.html#step-choose-course">
               <span class="path-node-circle">2</span>
               <span class="path-node-label">Pick course</span>
-            </button>
-            <button type="button" class="path-node" data-stage="2">
+            </a>
+            <a class="path-node" data-step-id="keep-learning" href="start-here.html#step-keep-learning">
               <span class="path-node-circle">3</span>
-              <span class="path-node-label">Module 1</span>
-            </button>
-            <button type="button" class="path-node" data-stage="3">
+              <span class="path-node-label">Keep learning</span>
+            </a>
+            <a class="path-node" data-step-id="download-local" href="start-here.html#step-download-local">
               <span class="path-node-circle">4</span>
-              <span class="path-node-label">Practice</span>
-            </button>
-            <button type="button" class="path-node" data-stage="4">
-              <span class="path-node-circle">5</span>
-              <span class="path-node-label">Project</span>
-            </button>
+              <span class="path-node-label">Code locally</span>
+            </a>
           </div>
           <p class="note" id="path-stage-desc" style="margin-top: 20px; margin-bottom: 0;">
-            Download the course ZIP and save it somewhere easy to find on your computer.
+            Open Module 1 in your browser — no download needed to begin.
           </p>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="btn btn-secondary" href="start-here.html">Continue in Start Here</a>
+          </div>
         </div>
       </section>
 
@@ -159,7 +118,7 @@ print("Ready to learn?")</textarea>
       </section>
 
       <section class="section grid cols-3">
-        <article class="card">
+        <article class="feature-card">
           <div class="feature-visual" aria-hidden="true">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="28" cy="28" r="24" stroke="currentColor" stroke-width="2"/>
@@ -171,7 +130,7 @@ print("Ready to learn?")</textarea>
           <h4>Beginner friendly</h4>
           <p>Plain language, no jargon, and a clear path from the first lesson to your first app.</p>
         </article>
-        <article class="card">
+        <article class="feature-card">
           <div class="feature-visual" aria-hidden="true">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="10" y="14" width="36" height="28" rx="4" stroke="currentColor" stroke-width="2"/>
@@ -181,7 +140,7 @@ print("Ready to learn?")</textarea>
           <h4>Hands-on learning</h4>
           <p>Every module ends with practice so you learn by doing, not just reading.</p>
         </article>
-        <article class="card">
+        <article class="feature-card">
           <div class="feature-visual" aria-hidden="true">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 44V20l16-8 16 8v24" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -223,59 +182,8 @@ print("Ready to learn?")</textarea>
         </p>
       </footer>
     </main>
-
     <script>
       (function () {
-        /* Hero journey — cycle stages */
-        const journeyDetails = [
-          "Install your tools and run a real program on day one.",
-          "Variables, input, and calculations — make the computer work for you.",
-          "Build programs that choose, repeat, and respond like real apps.",
-          "Organize code so it stays clear as your projects grow.",
-          "Learn the patterns professionals use to build software.",
-          "Ship a Task Tracker you can show on a CV or LinkedIn.",
-        ];
-        const journeyItems = document.querySelectorAll("#hero-journey-list > li");
-        const journeyDetail = document.getElementById("hero-journey-detail");
-        let journeyStage = 0;
-        let journeyTimer;
-
-        const setJourneyStage = (stage) => {
-          journeyStage = stage;
-          journeyItems.forEach((item, i) => {
-            item.classList.toggle("is-active", i === stage);
-            item.classList.toggle("is-done", i < stage);
-          });
-          if (journeyDetail) {
-            journeyDetail.classList.remove("is-fresh");
-            void journeyDetail.offsetWidth;
-            journeyDetail.textContent = journeyDetails[stage];
-            journeyDetail.classList.add("is-fresh");
-          }
-        };
-
-        const advanceJourney = () => {
-          setJourneyStage((journeyStage + 1) % journeyDetails.length);
-        };
-
-        const startJourneyTimer = () => {
-          clearInterval(journeyTimer);
-          const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-          if (!reduceMotion) journeyTimer = setInterval(advanceJourney, 3200);
-        };
-
-        journeyItems.forEach((item) => {
-          item.querySelector("button")?.addEventListener("click", () => {
-            setJourneyStage(Number(item.dataset.stage));
-            startJourneyTimer();
-          });
-        });
-
-        if (journeyItems.length) {
-          setJourneyStage(0);
-          startJourneyTimer();
-        }
-
         /* Course matcher */
         const recommendations = {
           python: {
@@ -321,11 +229,14 @@ print("Ready to learn?")</textarea>
         const runPlayground = () => {
           const code = document.getElementById("playground-code").value;
           const outputEl = document.getElementById("playground-output");
+          const followup = document.getElementById("playground-followup");
           if (!outputEl) return;
 
           const vars = {};
           const outputs = [];
           const codeLines = code.split("\n");
+          let recognized = 0;
+          let skipped = 0;
 
           for (const raw of codeLines) {
             const line = raw.trim();
@@ -335,16 +246,41 @@ print("Ready to learn?")</textarea>
             if (assignMatch) {
               const [, name, valRaw] = assignMatch;
               vars[name] = parseValue(valRaw.trim(), vars);
+              recognized += 1;
               continue;
             }
 
             const printMatch = line.match(/^print\s*\(\s*(.+)\s*\)$/);
             if (printMatch) {
               outputs.push(resolveExpr(printMatch[1].trim(), vars));
+              recognized += 1;
+              continue;
             }
+
+            skipped += 1;
           }
 
           outputEl.textContent = outputs.length ? outputs.join("\n") : "(no output)";
+
+          if (followup) {
+            followup.hidden = false;
+            if (outputs.length) {
+              followup.innerHTML =
+                "<p><strong>Nice — that ran.</strong> Ready for a real lesson?</p>" +
+                "<div class='button-row' style='margin-top:10px'>" +
+                "<a class='btn btn-primary' href='course-viewer.html?path=python-beginner-workbook%2Fmodule-01-setup%2FREADME.md' style='min-width:auto'>Open Python Module 1</a>" +
+                "</div>";
+            } else if (skipped && !recognized) {
+              followup.innerHTML =
+                "<p class='note' style='margin:0'>This mini runner only understands lines like <code>name = "Alex"</code> and <code>print(...)</code>. Try the starter code, then press Run.</p>";
+            } else if (!outputs.length) {
+              followup.innerHTML =
+                "<p class='note' style='margin:0'>Add a <code>print("Hello!")</code> line so you can see output here.</p>";
+            } else {
+              followup.hidden = true;
+              followup.innerHTML = "";
+            }
+          }
         };
 
         function parseValue(raw, vars) {
@@ -388,37 +324,45 @@ print("Ready to learn?")</textarea>
 
         document.getElementById("playground-run")?.addEventListener("click", runPlayground);
 
-        /* Path visualization */
-        const stageDescs = [
-          "Download the course ZIP and save it somewhere easy to find on your computer.",
-          "Choose Python, C#, or AI Prompt Creation — you can switch later.",
-          "Open Module 1 and read the first lesson at your own pace.",
-          "Complete the exercises and quizzes to lock in what you learned.",
-          "Build your capstone project and add it to your portfolio.",
-        ];
+        /* Path visualization — synced with Start Here */
+        const stepOrder = window.PF.START_STEP_ORDER;
+        const stageDescs = {
+          "open-online": "Open Module 1 in your browser — no download needed to begin.",
+          "choose-course": "Choose Python, C#, or AI Prompt Creation — you can switch later.",
+          "keep-learning": "Work through lessons, exercises, and quizzes. Mark lessons complete as you go.",
+          "download-local": "Optional: download the ZIP when you are ready to code on your computer.",
+        };
         const pathNodes = document.querySelectorAll("#path-viz-home .path-node");
         const pathDesc = document.getElementById("path-stage-desc");
         const pathFill = document.getElementById("path-progress-fill");
         const pathLine = document.getElementById("path-progress-line");
+        const steps = window.PF.getStartSteps();
 
-        const updatePath = (stage) => {
-          pathNodes.forEach((node, i) => {
-            node.classList.toggle("is-active", i === stage);
-            node.classList.toggle("is-complete", i < stage);
-          });
-          const pct = stage / (pathNodes.length - 1) * 100;
+        const syncPath = () => {
+          const completed = stepOrder.filter((id) => steps[id]).length;
+          const pct = (completed / stepOrder.length) * 100;
           if (pathFill) pathFill.style.width = pct + "%";
-          if (pathLine) pathLine.style.width = (pct * 0.8) + "%";
-          if (pathDesc) pathDesc.textContent = stageDescs[stage];
+          if (pathLine) pathLine.style.width = pct * 0.8 + "%";
+
+          let activeId = stepOrder.find((id, i) => !steps[id] && (i === 0 || steps[stepOrder[i - 1]])) || stepOrder[stepOrder.length - 1];
+          pathNodes.forEach((node) => {
+            const id = node.dataset.stepId;
+            const done = !!steps[id];
+            node.classList.toggle("is-complete", done);
+            node.classList.toggle("is-active", id === activeId && !done);
+          });
+          if (pathDesc) pathDesc.textContent = stageDescs[activeId] || stageDescs["open-online"];
         };
 
         pathNodes.forEach((node) => {
-          node.addEventListener("click", () => {
-            updatePath(Number(node.dataset.stage));
+          node.addEventListener("mouseenter", () => {
+            const id = node.dataset.stepId;
+            if (pathDesc && stageDescs[id]) pathDesc.textContent = stageDescs[id];
           });
+          node.addEventListener("mouseleave", syncPath);
         });
-        updatePath(0);
+        syncPath();
       })();
     </script>
-  </body>
+    </body>
 </html>

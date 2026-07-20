@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Account - Programming Foundations</title>
+    <link rel="stylesheet" href="styles.css?v=ux3" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div data-pf-header></div>
+    <script src="config.js"></script>
+    <script src="site.js?v=ux3"></script>
+
+    <main id="main" class="container">
+      <section class="hero">
+        <h2>Your account</h2>
+        <p>
+          Create a free account to keep lesson progress, quizzes, and Start Here steps in sync across
+          devices. You can still learn as a guest — progress stays on this browser only.
+        </p>
+      </section>
+
+      <section class="section panel-plain" id="account-signed-in" hidden>
+        <h3 style="margin-top: 0;">Signed in</h3>
+        <p id="account-user-summary" class="note"></p>
+        <div class="button-row">
+          <button type="button" class="btn btn-primary" id="account-sync-now">Sync progress now</button>
+          <button type="button" class="btn btn-secondary" id="account-sign-out">Sign out</button>
+          <a class="btn btn-secondary" href="start-here.html">Continue learning</a>
+        </div>
+        <p id="account-sync-status" class="note" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="section grid cols-2" id="account-forms">
+        <article class="panel-plain">
+          <h3 style="margin-top: 0;">Sign in</h3>
+          <form id="sign-in-form">
+            <label>
+              Email
+              <input class="field-input" type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Password
+              <input
+                class="field-input"
+                type="password"
+                name="password"
+                autocomplete="current-password"
+                required
+                minlength="8"
+              />
+            </label>
+            <div class="button-row">
+              <button class="btn btn-primary" type="submit">Sign in</button>
+            </div>
+          </form>
+          <p id="sign-in-status" class="note" role="status" aria-live="polite"></p>
+        </article>
+
+        <article class="panel-plain">
+          <h3 style="margin-top: 0;">Create account</h3>
+          <form id="sign-up-form">
+            <label>
+              Display name (optional)
+              <input class="field-input" type="text" name="displayName" autocomplete="nickname" maxlength="80" />
+            </label>
+            <label>
+              Email
+              <input class="field-input" type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Password (at least 8 characters)
+              <input
+                class="field-input"
+                type="password"
+                name="password"
+                autocomplete="new-password"
+                required
+                minlength="8"
+              />
+            </label>
+            <div class="button-row">
+              <button class="btn btn-secondary" type="submit">Create account</button>
+            </div>
+          </form>
+          <p id="sign-up-status" class="note" role="status" aria-live="polite"></p>
+        </article>
+      </section>
+
+      <section class="section">
+        <h3>How sync works</h3>
+        <ul>
+          <li>Guest progress stays in this browser’s local storage.</li>
+          <li>When you sign in, local and cloud progress are merged (completions are combined).</li>
+          <li>Later changes sync while you learn — and you can force a sync anytime.</li>
+          <li>Signing out keeps a copy on this device; it will not keep updating the cloud until you sign in again.</li>
+        </ul>
+        <p class="note">
+          Need the API running locally? See <code>backend/README.md</code>.
+        </p>
+      </section>
+    </main>
+
+    <script>
+      (async function () {
+        const signedIn = document.getElementById("account-signed-in");
+        const forms = document.getElementById("account-forms");
+        const summary = document.getElementById("account-user-summary");
+        const syncStatus = document.getElementById("account-sync-status");
+        const signInStatus = document.getElementById("sign-in-status");
+        const signUpStatus = document.getElementById("sign-up-status");
+
+        const refresh = async () => {
+          const user = window.PF.getUser();
+          if (user) {
+            signedIn.hidden = false;
+            forms.hidden = true;
+            summary.textContent = user.displayName
+              ? `Signed in as ${user.displayName} (${user.email}).`
+              : `Signed in as ${user.email}.`;
+          } else {
+            signedIn.hidden = true;
+            forms.hidden = false;
+            summary.textContent = "";
+          }
+          window.PF.mountHeader();
+        };
+
+        document.getElementById("sign-in-form")?.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          signInStatus.textContent = "Signing in…";
+          const data = new FormData(event.target);
+          try {
+            await window.PF.signIn({
+              email: String(data.get("email") || ""),
+              password: String(data.get("password") || ""),
+            });
+            signInStatus.textContent = "Signed in. Progress synced.";
+            await refresh();
+          } catch (error) {
+            signInStatus.textContent = error.message || "Could not sign in.";
+          }
+        });
+
+        document.getElementById("sign-up-form")?.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          signUpStatus.textContent = "Creating account…";
+          const data = new FormData(event.target);
+          try {
+            await window.PF.signUp({
+              email: String(data.get("email") || ""),
+              password: String(data.get("password") || ""),
+              displayName: String(data.get("displayName") || ""),
+            });
+            signUpStatus.textContent = "Account created. Progress synced.";
+            await refresh();
+          } catch (error) {
+            signUpStatus.textContent = error.message || "Could not create account.";
+          }
+        });
+
+        document.getElementById("account-sign-out")?.addEventListener("click", async () => {
+          await window.PF.signOut();
+          syncStatus.textContent = "Signed out on this device.";
+          await refresh();
+        });
+
+        document.getElementById("account-sync-now")?.addEventListener("click", async () => {
+          syncStatus.textContent = "Syncing…";
+          try {
+            await window.PF.syncProgress({ force: true });
+            syncStatus.textContent = "Progress synced.";
+          } catch (error) {
+            syncStatus.textContent = error.message || "Sync failed. Is the API running?";
+          }
+        });
+
+        await refresh();
+        if (window.PF.getUser()) {
+          try {
+            await window.PF.syncProgress({ force: true });
+            syncStatus.textContent = "Progress synced.";
+          } catch (error) {
+            syncStatus.textContent = error.message || "Could not sync yet.";
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

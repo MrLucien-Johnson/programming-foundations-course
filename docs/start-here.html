@@ -4,26 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Start Here - Programming Foundations</title>
-    <link rel="stylesheet" href="styles.css?v=bevel4" />
+    <link rel="stylesheet" href="styles.css?v=ux3" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
-    <header class="site-header">
-      <h1>Start Here</h1>
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="start-here.html">Start Here</a>
-        <a href="courses.html">Courses</a>
-        <a href="help.html">Help</a>
-      </nav>
-    </header>
+    <div data-pf-header></div>
+    <script src="config.js"></script>
+    <script src="site.js?v=ux3"></script>
 
     <main id="main" class="container">
       <section class="hero">
         <h2>Your first steps</h2>
         <p>
-          Follow these steps in order. If you get stuck, open the Help page. You do not need to
-          know any programming to start.
+          Start learning in your browser — no download required. Follow these steps in order. If
+          you get stuck, open the Help page.
         </p>
       </section>
 
@@ -36,109 +30,108 @@
         </div>
         <div class="path-viz-track">
           <div class="path-viz-progress-line" id="start-progress-line"></div>
-          <span class="path-node" data-step="0" aria-hidden="true">
+          <a class="path-node" data-step="0" href="#step-open-online">
             <span class="path-node-circle">1</span>
-            <span class="path-node-label">Download</span>
-          </span>
-          <span class="path-node" data-step="1" aria-hidden="true">
+            <span class="path-node-label">Start online</span>
+          </a>
+          <a class="path-node" data-step="1" href="#step-choose-course">
             <span class="path-node-circle">2</span>
-            <span class="path-node-label">Open folder</span>
-          </span>
-          <span class="path-node" data-step="2" aria-hidden="true">
+            <span class="path-node-label">Pick course</span>
+          </a>
+          <a class="path-node" data-step="2" href="#step-keep-learning">
             <span class="path-node-circle">3</span>
-            <span class="path-node-label">Choose course</span>
-          </span>
-          <span class="path-node" data-step="3" aria-hidden="true">
+            <span class="path-node-label">Keep learning</span>
+          </a>
+          <a class="path-node" data-step="3" href="#step-download-local">
             <span class="path-node-circle">4</span>
-            <span class="path-node-label">Module 1</span>
-          </span>
+            <span class="path-node-label">Code locally</span>
+          </a>
         </div>
       </section>
 
       <section class="section steps" id="start-steps">
-        <div class="step" data-step-id="download">
+        <div class="step" data-step-id="open-online" id="step-open-online">
           <div class="step-header">
             <div>
-              <h3>Download the course</h3>
+              <h3>Open Module 1 online</h3>
             </div>
-            <button type="button" class="step-toggle" data-step-id="download" aria-pressed="false">Mark done</button>
+            <button type="button" class="step-toggle" data-step-id="open-online" aria-pressed="false">Mark done</button>
           </div>
           <p>
-            Click the download button. This saves the course to your computer so you can open the
-            lessons like normal files.
+            Start reading right away in your browser. Python is the easiest first language for most
+            beginners — open Module 1 and follow along.
           </p>
           <div class="button-row">
             <a
               class="btn btn-primary"
+              id="open-module-1"
+              href="course-viewer.html?path=python-beginner-workbook%2Fmodule-01-setup%2FREADME.md"
+            >
+              Open Python Module 1
+            </a>
+            <a class="btn btn-secondary" href="csharp-course.html">Prefer C#?</a>
+            <a class="btn btn-secondary" href="ai-course.html">Prefer AI prompts?</a>
+          </div>
+        </div>
+
+        <div class="step" data-step-id="choose-course" id="step-choose-course">
+          <div class="step-header">
+            <div>
+              <h3>Choose your course path</h3>
+            </div>
+            <button type="button" class="step-toggle" data-step-id="choose-course" aria-pressed="false">Mark done</button>
+          </div>
+          <p>
+            Stick with Python, or pick C# or AI Prompt Creation if that fits your goals better. You
+            can switch later — the learning steps are similar.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-secondary" href="courses.html">Browse all courses</a>
+            <a class="btn btn-secondary" href="index.html#course-matcher">Try the course matcher</a>
+          </div>
+        </div>
+
+        <div class="step" data-step-id="keep-learning" id="step-keep-learning">
+          <div class="step-header">
+            <div>
+              <h3>Keep learning and mark progress</h3>
+            </div>
+            <button type="button" class="step-toggle" data-step-id="keep-learning" aria-pressed="false">Mark done</button>
+          </div>
+          <p>
+            Work through each module, try the exercises, and take the quiz. Use
+            <strong>Mark lesson complete</strong> in the lesson viewer so your progress is saved on
+            this device.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-secondary" href="python-course.html">Python course outline</a>
+            <a class="btn btn-secondary" href="help.html">Need help?</a>
+          </div>
+        </div>
+
+        <div class="step" data-step-id="download-local" id="step-download-local">
+          <div class="step-header">
+            <div>
+              <h3>Optional: download to code on your computer</h3>
+            </div>
+            <button type="button" class="step-toggle" data-step-id="download-local" aria-pressed="false">Mark done</button>
+          </div>
+          <p>
+            When you are ready to write and run code locally, download the course pack. Open the ZIP,
+            then open the folder named <strong>programming-foundations-course</strong>.
+          </p>
+          <div class="button-row">
+            <a
+              class="btn btn-secondary"
               id="download-zip"
               href="https://github.com/MrLucien-Johnson/programming-foundations-course/archive/refs/heads/main.zip"
             >
               Download course ZIP
             </a>
           </div>
-        </div>
-
-        <div class="step" data-step-id="open-folder">
-          <div class="step-header">
-            <div>
-              <h3>Open the folder</h3>
-            </div>
-            <button type="button" class="step-toggle" data-step-id="open-folder" aria-pressed="false">Mark done</button>
-          </div>
-          <p>
-            Find the ZIP file you downloaded, open it, and look for a folder named
-            <strong>programming-foundations-course</strong>. Open that folder.
-          </p>
-        </div>
-
-        <div class="step" data-step-id="choose-course">
-          <div class="step-header">
-            <div>
-              <h3>Choose a course</h3>
-            </div>
-            <button type="button" class="step-toggle" data-step-id="choose-course" aria-pressed="false">Mark done</button>
-          </div>
-          <p>
-            Pick one course to start. Python is recommended for absolute beginners. C# is great if
-            you want Microsoft or game development. The AI Prompt course teaches prompt writing
-            from beginner to advanced.
-          </p>
-          <div class="button-row">
-            <a class="btn btn-secondary" href="courses.html">Pick a course</a>
-          </div>
-        </div>
-
-        <div class="step" data-step-id="module-1">
-          <div class="step-header">
-            <div>
-              <h3>Open Module 1</h3>
-            </div>
-            <button type="button" class="step-toggle" data-step-id="module-1" aria-pressed="false">Mark done</button>
-          </div>
-          <p>
-            Inside your chosen course, open Module 1. You can read it online here, or open it from
-            the ZIP folder you downloaded.
-          </p>
-          <div class="button-row">
-            <a class="btn btn-secondary" href="python-course.html">Open Python Module 1</a>
-            <a class="btn btn-secondary" href="csharp-course.html">Open C# Module 1</a>
-            <a class="btn btn-secondary" href="ai-course.html">Open AI Module 1</a>
-          </div>
           <p class="note">
-            If you downloaded the ZIP, open <strong>python-beginner-workbook/README.md</strong> or
-            <strong>csharp-beginner-workbook/README.md</strong>.
+            You can keep learning online without downloading. This step is only for local practice.
           </p>
-        </div>
-      </section>
-
-      <section class="section">
-        <h3>Prefer to preview online?</h3>
-        <p>
-          You can also read the files in your browser first. When you are ready to code, download
-          the ZIP and open the files on your computer.
-        </p>
-        <div class="button-row">
-          <a class="btn btn-secondary" href="courses.html">View the courses online</a>
         </div>
       </section>
 
@@ -149,34 +142,27 @@
         </p>
       </footer>
     </main>
-
     <script>
       (function () {
-        const STORAGE_KEY = "pf-start-steps";
-        const stepOrder = ["download", "open-folder", "choose-course", "module-1"];
+        const stepOrder = window.PF.START_STEP_ORDER;
+        const state = window.PF.getStartSteps();
 
-        const loadSteps = () => {
-          try {
-            const raw = localStorage.getItem(STORAGE_KEY);
-            return raw ? JSON.parse(raw) : {};
-          } catch {
-            return {};
-          }
-        };
-
-        const saveSteps = (state) => {
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-        };
-
-        const state = loadSteps();
+        // Migrate older step ids if present
+        if (state.download && !state["download-local"]) {
+          state["download-local"] = true;
+        }
+        if (state["module-1"] && !state["open-online"]) {
+          state["open-online"] = true;
+        }
+        window.PF.saveStartSteps(state);
 
         const updateProgressViz = () => {
           const completed = stepOrder.filter((id) => state[id]).length;
-          const pct = completed / stepOrder.length * 100;
+          const pct = (completed / stepOrder.length) * 100;
           const fill = document.getElementById("start-progress-fill");
           const line = document.getElementById("start-progress-line");
           if (fill) fill.style.width = pct + "%";
-          if (line) line.style.width = (pct * 0.8) + "%";
+          if (line) line.style.width = pct * 0.8 + "%";
 
           document.querySelectorAll("#start-path-viz .path-node").forEach((node, i) => {
             const stepId = stepOrder[i];
@@ -199,14 +185,12 @@
 
         const setStepDone = (stepId, done) => {
           state[stepId] = done;
-          saveSteps(state);
+          window.PF.saveStartSteps(state);
           applyStepUI(stepId, done);
           updateProgressViz();
         };
 
-        stepOrder.forEach((id) => {
-          applyStepUI(id, !!state[id]);
-        });
+        stepOrder.forEach((id) => applyStepUI(id, !!state[id]));
         updateProgressViz();
 
         document.querySelectorAll(".step-toggle").forEach((btn) => {
@@ -216,8 +200,12 @@
           });
         });
 
+        document.getElementById("open-module-1")?.addEventListener("click", () => {
+          setStepDone("open-online", true);
+        });
+
         document.getElementById("download-zip")?.addEventListener("click", () => {
-          setStepDone("download", true);
+          setStepDone("download-local", true);
         });
       })();
     </script>

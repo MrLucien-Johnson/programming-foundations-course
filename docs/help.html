@@ -4,28 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Help - Programming Foundations</title>
-    <link rel="stylesheet" href="styles.css?v=bevel4" />
+    <link rel="stylesheet" href="styles.css?v=ux3" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
-    <header class="site-header">
-      <h1>Help</h1>
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="start-here.html">Start Here</a>
-        <a href="courses.html">Courses</a>
-        <a href="help.html">Help</a>
-      </nav>
-    </header>
+    <div data-pf-header></div>
+    <script src="config.js"></script>
+    <script src="site.js?v=ux3"></script>
 
     <main id="main" class="container">
       <section class="hero">
         <h2>Quick answers for new learners</h2>
-        <p>These answers are written for people who are new to computers.</p>
+        <p>These answers are written for people who are new to computers and to this site.</p>
       </section>
 
       <section class="section grid cols-2">
-        <article class="card">
+        <article class="help-card">
           <h3>I do not know where my download went.</h3>
           <p>
             Look in your <strong>Downloads</strong> folder. On most computers, you can open
@@ -33,7 +27,7 @@
           </p>
         </article>
 
-        <article class="card">
+        <article class="help-card">
           <h3>What is a ZIP file?</h3>
           <p>
             A ZIP is a folder that is compressed to save space. Double-click it to open it, then
@@ -41,7 +35,7 @@
           </p>
         </article>
 
-        <article class="card">
+        <article class="help-card">
           <h3>How do I open a README file?</h3>
           <p>
             A README is a text file. Double-click it and it will open. If it does not, right-click
@@ -49,10 +43,68 @@
           </p>
         </article>
 
-        <article class="card">
+        <article class="help-card">
           <h3>Do I need to use Git or the command line?</h3>
-          <p>No. Download the ZIP and follow the steps. The course is made for beginners.</p>
+          <p>No. You can learn entirely in the browser. Download the ZIP only when you want to code locally.</p>
         </article>
+
+        <article class="help-card" id="lesson-load">
+          <h3>A lesson says “unavailable.”</h3>
+          <p>
+            Refresh the page and check your internet connection. Lessons load from GitHub, so a
+            temporary outage can block them. Then return to
+            <a href="courses.html">Courses</a> and open the lesson again.
+          </p>
+        </article>
+
+        <article class="help-card" id="quiz-load">
+          <h3>A quiz will not load or says Partial / Unavailable.</h3>
+          <p>
+            The quiz file may still be publishing, or answers are not ready yet. Try again in a few
+            minutes. You can still keep reading the lesson and come back to the quiz later.
+          </p>
+        </article>
+
+        <article class="help-card" id="account-sync">
+          <h3>Why create an account?</h3>
+          <p>
+            An account keeps your progress in the cloud so it follows you on another computer or
+            phone. Guest mode still works — it just stays on this browser. Open
+            <a href="account.html">Account</a> to sign in or create one.
+          </p>
+        </article>
+
+        <article class="help-card" id="progress-lost">
+          <h3>My progress disappeared.</h3>
+          <p>
+            Guest progress is saved in this browser on this device only. Clearing site data, using
+            private browsing, or switching browsers/devices will look like a fresh start. Sign in on
+            <a href="account.html">Account</a> to sync across devices.
+          </p>
+        </article>
+
+        <article class="help-card">
+          <h3>Matcher vs advanced courses</h3>
+          <p>
+            The homepage matcher suggests beginner paths (Python, C#, AI). Intermediate and advanced
+            language courses are listed lower on the
+            <a href="courses.html">Courses</a> page once you know the basics.
+          </p>
+        </article>
+      </section>
+
+      <section class="section" id="reset-progress">
+        <h3>Reset local progress</h3>
+        <p>
+          This clears lesson completions, quiz results, Start Here steps, and checklist ticks saved
+          in this browser. It cannot be undone.
+        </p>
+        <div class="button-row">
+          <button type="button" class="btn btn-secondary" id="reset-progress-btn">
+            Reset my progress on this device
+          </button>
+        </div>
+        <p id="reset-progress-status" class="note" role="status" aria-live="polite"></p>
       </section>
 
       <section class="section">
@@ -75,5 +127,16 @@
         <p>We want this to be easy. If something is unclear, we will improve it.</p>
       </footer>
     </main>
+    <script>
+      document.getElementById("reset-progress-btn")?.addEventListener("click", () => {
+        const status = document.getElementById("reset-progress-status");
+        const ok = window.confirm(
+          "Reset all local progress on this device? This cannot be undone."
+        );
+        if (!ok) return;
+        window.PF.resetAllProgress();
+        if (status) status.textContent = "Progress cleared. Refresh any open lesson pages to see the change.";
+      });
+    </script>
   </body>
 </html>

@@ -4,19 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Choose Your Course</title>
-    <link rel="stylesheet" href="styles.css?v=bevel4" />
+    <link rel="stylesheet" href="styles.css?v=ux3" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
-    <header class="site-header">
-      <h1>Choose Your Course</h1>
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="start-here.html">Start Here</a>
-        <a href="courses.html">Courses</a>
-        <a href="help.html">Help</a>
-      </nav>
-    </header>
+    <div data-pf-header></div>
+    <script src="config.js"></script>
+    <script src="site.js?v=ux3"></script>
 
     <main id="main" class="container">
       <section class="hero">
@@ -26,14 +20,14 @@
           to you.
         </p>
         <div class="button-row">
-          <a
-            class="btn btn-secondary"
-            href="https://github.com/MrLucien-Johnson/programming-foundations-course/archive/refs/heads/main.zip"
-          >
-            Download the course pack
-          </a>
-          <a class="btn btn-secondary" href="certificate.html">View certificate</a>
+          <a class="btn btn-primary" href="python-course.html">Start with Python</a>
+          <a class="btn btn-secondary" href="index.html#course-matcher">Not sure? Try the matcher</a>
         </div>
+      </section>
+
+      <section class="section">
+        <h3>Beginner courses</h3>
+        <p>Start here if you are new to programming or AI prompting.</p>
       </section>
 
       <section class="section grid cols-3">
@@ -126,10 +120,165 @@
           These courses are for learners who already know the basics and want to go deeper in a
           specific language.
         </p>
-        <div id="advanced-course-grid" class="grid cols-3"></div>
-        <noscript>
-          <p class="note">Enable JavaScript to see the full advanced course list.</p>
-        </noscript>
+        <div id="advanced-course-grid" class="grid cols-3">
+          <article class="course-tile" data-course-id="python-advanced">
+            <div class="tile-art" aria-hidden="true">
+              <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="12" width="48" height="48" rx="8" stroke="#e2c15a" stroke-width="2" fill="rgba(201,162,39,0.12)"/>
+                <text x="36" y="42" text-anchor="middle" fill="#e2c15a" font-family="monospace" font-size="11" font-weight="700">Py</text>
+              </svg>
+            </div>
+            <div class="course-tile-body">
+              <p class="pill">Intermediate + Advanced</p>
+              <h4>Python</h4>
+              <p><strong>Best for:</strong> Backend/data engineers improving performance, testing, and system design.</p>
+              <div class="button-row">
+                <a class="btn btn-secondary" href="python-advanced-course.html">Open course</a>
+              </div>
+            </div>
+          </article>
+          <article class="course-tile" data-course-id="typescript-advanced">
+            <div class="tile-art" aria-hidden="true">
+              <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="12" width="48" height="48" rx="8" stroke="#e2c15a" stroke-width="2" fill="rgba(201,162,39,0.12)"/>
+                <text x="36" y="42" text-anchor="middle" fill="#e2c15a" font-family="monospace" font-size="11" font-weight="700">TS</text>
+              </svg>
+            </div>
+            <div class="course-tile-body">
+              <p class="pill">Intermediate + Advanced</p>
+              <h4>TypeScript</h4>
+              <p><strong>Best for:</strong> Frontend + backend developers scaling large TypeScript codebases and APIs.</p>
+              <div class="button-row">
+                <a class="btn btn-secondary" href="typescript-advanced-course.html">Open course</a>
+              </div>
+            </div>
+          </article>
+          <article class="course-tile" data-course-id="java-advanced">
+            <div class="tile-art" aria-hidden="true">
+              <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="12" width="48" height="48" rx="8" stroke="#e2c15a" stroke-width="2" fill="rgba(201,162,39,0.12)"/>
+                <text x="36" y="42" text-anchor="middle" fill="#e2c15a" font-family="monospace" font-size="11" font-weight="700">Java</text>
+              </svg>
+            </div>
+            <div class="course-tile-body">
+              <p class="pill">Intermediate + Advanced</p>
+              <h4>Java</h4>
+              <p><strong>Best for:</strong> Enterprise developers building JVM services and distributed systems.</p>
+              <div class="button-row">
+                <a class="btn btn-secondary" href="java-advanced-course.html">Open course</a>
+              </div>
+            </div>
+          </article>
+          <article class="course-tile" data-course-id="csharp-advanced">
+            <div class="tile-art" aria-hidden="true">
+              <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="12" width="48" height="48" rx="8" stroke="#e2c15a" stroke-width="2" fill="rgba(201,162,39,0.12)"/>
+                <text x="36" y="42" text-anchor="middle" fill="#e2c15a" font-family="monospace" font-size="11" font-weight="700">C#</text>
+              </svg>
+            </div>
+            <div class="course-tile-body">
+              <p class="pill">Intermediate + Advanced</p>
+              <h4>C#</h4>
+              <p><strong>Best for:</strong> .NET engineers scaling services, APIs, and performance workloads.</p>
+              <div class="button-row">
+                <a class="btn btn-secondary" href="csharp-advanced-course.html">Open course</a>
+              </div>
+            </div>
+          </article>
+          <article class="course-tile" data-course-id="go-advanced">
+            <div class="tile-art" aria-hidden="true">
+              <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="12" width="48" height="48" rx="8" stroke="#e2c15a" stroke-width="2" fill="rgba(201,162,39,0.12)"/>
+                <text x="36" y="42" text-anchor="middle" fill="#e2c15a" font-family="monospace" font-size="11" font-weight="700">Go</text>
+              </svg>
+            </div>
+            <div class="course-tile-body">
+              <p class="pill">Intermediate + Advanced</p>
+              <h4>Go</h4>
+              <p><strong>Best for:</strong> Cloud engineers building high-performance services and tooling.</p>
+              <div class="button-row">
+                <a class="btn btn-secondary" href="go-advanced-course.html">Open course</a>
+              </div>
+            </div>
+          </article>
+          <article class="course-tile" data-course-id="rust-advanced">
+            <div class="tile-art" aria-hidden="true">
+              <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="12" width="48" height="48" rx="8" stroke="#e2c15a" stroke-width="2" fill="rgba(201,162,39,0.12)"/>
+                <text x="36" y="42" text-anchor="middle" fill="#e2c15a" font-family="monospace" font-size="11" font-weight="700">Rust</text>
+              </svg>
+            </div>
+            <div class="course-tile-body">
+              <p class="pill">Intermediate + Advanced</p>
+              <h4>Rust</h4>
+              <p><strong>Best for:</strong> Systems programmers focused on safety, concurrency, and performance.</p>
+              <div class="button-row">
+                <a class="btn btn-secondary" href="rust-advanced-course.html">Open course</a>
+              </div>
+            </div>
+          </article>
+          <article class="course-tile" data-course-id="kotlin-advanced">
+            <div class="tile-art" aria-hidden="true">
+              <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="12" width="48" height="48" rx="8" stroke="#e2c15a" stroke-width="2" fill="rgba(201,162,39,0.12)"/>
+                <text x="36" y="42" text-anchor="middle" fill="#e2c15a" font-family="monospace" font-size="11" font-weight="700">Kt</text>
+              </svg>
+            </div>
+            <div class="course-tile-body">
+              <p class="pill">Intermediate + Advanced</p>
+              <h4>Kotlin</h4>
+              <p><strong>Best for:</strong> Kotlin developers shipping Android or JVM backend services.</p>
+              <div class="button-row">
+                <a class="btn btn-secondary" href="kotlin-advanced-course.html">Open course</a>
+              </div>
+            </div>
+          </article>
+          <article class="course-tile" data-course-id="swift-advanced">
+            <div class="tile-art" aria-hidden="true">
+              <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="12" width="48" height="48" rx="8" stroke="#e2c15a" stroke-width="2" fill="rgba(201,162,39,0.12)"/>
+                <text x="36" y="42" text-anchor="middle" fill="#e2c15a" font-family="monospace" font-size="11" font-weight="700">Swift</text>
+              </svg>
+            </div>
+            <div class="course-tile-body">
+              <p class="pill">Intermediate + Advanced</p>
+              <h4>Swift</h4>
+              <p><strong>Best for:</strong> iOS/macOS developers creating production-ready apps and tooling.</p>
+              <div class="button-row">
+                <a class="btn btn-secondary" href="swift-advanced-course.html">Open course</a>
+              </div>
+            </div>
+          </article>
+          <article class="course-tile" data-course-id="sql-advanced">
+            <div class="tile-art" aria-hidden="true">
+              <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="12" width="48" height="48" rx="8" stroke="#e2c15a" stroke-width="2" fill="rgba(201,162,39,0.12)"/>
+                <text x="36" y="42" text-anchor="middle" fill="#e2c15a" font-family="monospace" font-size="11" font-weight="700">SQL</text>
+              </svg>
+            </div>
+            <div class="course-tile-body">
+              <p class="pill">Intermediate + Advanced</p>
+              <h4>SQL</h4>
+              <p><strong>Best for:</strong> Data analysts and engineers optimizing queries, warehouses, and reporting.</p>
+              <div class="button-row">
+                <a class="btn btn-secondary" href="sql-advanced-course.html">Open course</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        </div>
+            </article>
+          </noscript>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Finished a course?</h3>
+        <p>Generate a completion certificate once you have marked modules complete.</p>
+        <div class="button-row">
+          <a class="btn btn-secondary" href="certificate.html">View certificate</a>
+        </div>
       </section>
 
       <section class="section">
@@ -137,14 +286,14 @@
         <p>Type a keyword to find a lesson or quiz quickly.</p>
         <input
           id="course-search"
-          type="text"
+          type="search"
           placeholder="Search lessons (e.g., functions, prompt, loops)"
-          class="card"
+          class="field-input"
+          autocomplete="off"
         />
-        <div id="search-results" class="section card"></div>
+        <div id="search-results" class="section search-results" hidden></div>
       </section>
     </main>
-
     <script>
       const defaultEntries = [
         {
@@ -180,15 +329,18 @@
       const renderResults = (items) => {
         if (!resultsEl) return;
         if (!items.length) {
-          resultsEl.innerHTML = "<p>No results yet. Try a different keyword.</p>";
+          resultsEl.innerHTML =
+            "<p>No matching lessons found. Try another keyword, or browse beginner courses above.</p>";
+          resultsEl.hidden = false;
           return;
         }
         resultsEl.innerHTML =
           "<ul>" +
           items
-            .map((item) => `<li><a href=\"${item.link}\">${item.label}</a></li>`)
+            .map((item) => `<li><a href="${item.link}">${item.label}</a></li>`)
             .join("") +
           "</ul>";
+        resultsEl.hidden = false;
       };
 
       const courseGrid = document.getElementById("advanced-course-grid");
@@ -238,13 +390,13 @@
           course.modules.flatMap((module) => {
             const lessonEntry = {
               label: `${course.name}: ${module.title} (Lesson)`,
-              link: `course-viewer.html?path=${module.path}`,
+              link: `course-viewer.html?path=${encodeURIComponent(module.path)}`,
             };
             const entries = [lessonEntry];
             if (module.quiz) {
               entries.push({
                 label: `${course.name}: ${module.title} (Quiz)`,
-                link: `quiz-viewer.html?quiz=${module.quiz}`,
+                link: `quiz-viewer.html?quiz=${encodeURIComponent(module.quiz)}`,
               });
             }
             return entries;
@@ -253,21 +405,23 @@
 
       const renderAdvancedCourses = (courses) => {
         if (!courseGrid) return;
+        // Static HTML tiles are the source of truth for no-JS / first paint.
+        // Only rebuild if the grid was emptied by a previous failure.
+        if (courseGrid.querySelector(".course-tile")) return;
         const advancedCourses = courses.filter((course) => course.level === "Intermediate + Advanced");
         if (!advancedCourses.length) {
           courseGrid.innerHTML = "<p>No advanced courses found yet.</p>";
           return;
         }
         courseGrid.innerHTML = advancedCourses
-          .map(
-            (course) => {
-              const displayName = course.name.replace(" Advanced Course", "");
-              const bestFor =
-                advancedBestFor[course.id] ||
-                "Learners ready to go deeper after the basics with real-world scenarios.";
-              const iconLabel = advancedIcons[course.id] || displayName.slice(0, 4);
-              return `
-              <article class="course-tile">
+          .map((course) => {
+            const displayName = course.name.replace(" Advanced Course", "");
+            const bestFor =
+              advancedBestFor[course.id] ||
+              "Learners ready to go deeper after the basics with real-world scenarios.";
+            const iconLabel = advancedIcons[course.id] || displayName.slice(0, 4);
+            return `
+              <article class="course-tile" data-course-id="${course.id}">
                 ${buildTileArt(iconLabel)}
                 <div class="course-tile-body">
                   <p class="pill">${course.level}</p>
@@ -277,10 +431,8 @@
                     <a class="btn btn-secondary" href="${course.page}">Open course</a>
                   </div>
                 </div>
-              </article>
-            `;
-            }
-          )
+              </article>`;
+          })
           .join("");
       };
 
@@ -299,11 +451,11 @@
         }
 
         if (!searchInput) return;
-        renderResults(entries.slice(0, 8));
         searchInput.addEventListener("input", () => {
           const query = searchInput.value.toLowerCase().trim();
           if (!query) {
-            renderResults(entries.slice(0, 8));
+            resultsEl.hidden = true;
+            resultsEl.innerHTML = "";
             return;
           }
           const filtered = entries.filter((item) => item.label.toLowerCase().includes(query));
@@ -313,5 +465,5 @@
 
       loadCourses();
     </script>
-  </body>
+    </body>
 </html>
