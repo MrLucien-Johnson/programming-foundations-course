@@ -22,43 +22,39 @@
   --shadow-soft: 0 8px 28px rgba(14, 17, 22, 0.08);
   --shadow-deep: 0 18px 48px rgba(14, 17, 22, 0.14);
 
-  /* 3D bevel depth — subtle but readable */
+  /* 3D bevel depth — soft edge, low outline */
   --bevel-raised:
-    inset 1px 1px 0 rgba(255, 255, 255, 0.9),
-    inset -1px -1px 0 rgba(14, 17, 22, 0.1),
-    0 1px 0 rgba(255, 255, 255, 0.45),
-    0 3px 0 rgba(14, 17, 22, 0.04),
-    0 10px 26px rgba(14, 17, 22, 0.1);
+    inset 1px 1px 0 rgba(255, 255, 255, 0.7),
+    inset -1px -1px 0 rgba(14, 17, 22, 0.05),
+    0 1px 2px rgba(14, 17, 22, 0.04),
+    0 8px 22px rgba(14, 17, 22, 0.08);
   --bevel-raised-hover:
-    inset 1px 1px 0 rgba(255, 255, 255, 0.95),
-    inset -1px -1px 0 rgba(14, 17, 22, 0.14),
-    0 1px 0 rgba(255, 255, 255, 0.5),
-    0 4px 0 rgba(14, 17, 22, 0.05),
-    0 16px 36px rgba(14, 17, 22, 0.14);
+    inset 1px 1px 0 rgba(255, 255, 255, 0.85),
+    inset -1px -1px 0 rgba(14, 17, 22, 0.08),
+    0 2px 4px rgba(14, 17, 22, 0.05),
+    0 14px 32px rgba(14, 17, 22, 0.12);
   --bevel-inset:
-    inset 2px 2px 5px rgba(14, 17, 22, 0.1),
-    inset -1px -1px 0 rgba(255, 255, 255, 0.65);
+    inset 2px 2px 4px rgba(14, 17, 22, 0.07),
+    inset -1px -1px 0 rgba(255, 255, 255, 0.5);
   --bevel-btn:
-    inset 0 1px 0 rgba(255, 255, 255, 0.22),
-    inset 0 -2px 0 rgba(0, 0, 0, 0.25),
-    0 1px 0 rgba(255, 255, 255, 0.1),
-    0 3px 0 rgba(0, 0, 0, 0.12),
-    0 8px 16px rgba(14, 17, 22, 0.22);
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.16),
+    0 1px 2px rgba(14, 17, 22, 0.08),
+    0 6px 14px rgba(14, 17, 22, 0.16);
   --bevel-btn-gold:
-    inset 0 1px 0 rgba(255, 255, 255, 0.45),
-    inset 0 -2px 0 rgba(120, 90, 10, 0.3),
-    0 1px 0 rgba(255, 255, 255, 0.18),
-    0 3px 0 rgba(120, 90, 10, 0.2),
-    0 8px 18px rgba(154, 123, 26, 0.28);
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 0 rgba(120, 90, 10, 0.2),
+    0 1px 2px rgba(154, 123, 26, 0.12),
+    0 6px 16px rgba(154, 123, 26, 0.2);
   --bevel-btn-press:
-    inset 2px 3px 6px rgba(0, 0, 0, 0.35),
-    inset -1px -1px 0 rgba(255, 255, 255, 0.12);
+    inset 2px 2px 5px rgba(0, 0, 0, 0.28),
+    inset -1px -1px 0 rgba(255, 255, 255, 0.08);
   --bevel-dark:
-    inset 1px 1px 0 rgba(255, 255, 255, 0.12),
-    inset -1px -1px 0 rgba(0, 0, 0, 0.5),
-    0 3px 0 rgba(0, 0, 0, 0.22),
-    0 14px 36px rgba(0, 0, 0, 0.4),
-    0 1px 0 rgba(226, 193, 90, 0.15);
+    inset 1px 1px 0 rgba(255, 255, 255, 0.08),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.28),
+    0 1px 2px rgba(0, 0, 0, 0.18),
+    0 12px 28px rgba(0, 0, 0, 0.32),
+    0 1px 0 rgba(226, 193, 90, 0.1);
 
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
@@ -490,11 +486,11 @@ h4 {
 .hero {
   background:
     linear-gradient(165deg, #ffffff 0%, #faf7f0 55%, #f3efe6 100%);
-  border: 1px solid #d5cfbf;
-  border-top-color: #ffffff;
-  border-left-color: #f5f1e8;
-  border-right-color: #b8b09c;
-  border-bottom-color: #9a917c;
+  border: 1px solid rgba(14, 17, 22, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  border-left-color: rgba(255, 255, 255, 0.65);
+  border-right-color: rgba(14, 17, 22, 0.1);
+  border-bottom-color: rgba(14, 17, 22, 0.12);
   border-radius: var(--radius-lg);
   padding: 28px 32px;
   box-shadow: var(--bevel-raised);
@@ -528,7 +524,7 @@ h4 {
   border-radius: var(--radius-sm);
   font-weight: 700;
   font-family: var(--font-body);
-  border: 2px solid var(--ink);
+  border: 1px solid var(--ink);
   text-decoration: none;
   text-align: center;
   min-width: 160px;
@@ -589,9 +585,9 @@ h4 {
 .btn-ghost {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, transparent 100%);
   color: var(--paper);
-  border-color: rgba(226, 193, 90, 0.45);
-  border-top-color: rgba(255, 255, 255, 0.25);
-  border-bottom-color: rgba(0, 0, 0, 0.35);
+  border-color: rgba(226, 193, 90, 0.28);
+  border-top-color: rgba(255, 255, 255, 0.16);
+  border-bottom-color: rgba(0, 0, 0, 0.22);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.12),
     0 4px 12px rgba(0, 0, 0, 0.25);
@@ -636,11 +632,11 @@ h4 {
 .card {
   background:
     linear-gradient(165deg, #ffffff 0%, #fcfaf6 60%, #f7f3ea 100%);
-  border: 1px solid #d5cfbf;
-  border-top-color: #ffffff;
-  border-left-color: #f5f1e8;
-  border-right-color: #b8b09c;
-  border-bottom-color: #9a917c;
+  border: 1px solid rgba(14, 17, 22, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  border-left-color: rgba(255, 255, 255, 0.65);
+  border-right-color: rgba(14, 17, 22, 0.1);
+  border-bottom-color: rgba(14, 17, 22, 0.12);
   border-radius: var(--radius-md);
   padding: 22px;
   box-shadow: var(--bevel-raised);
@@ -662,11 +658,11 @@ h4 {
   gap: 14px;
   background:
     linear-gradient(180deg, #ffffff 0%, #faf7f0 100%);
-  border: 1px solid #d5cfbf;
-  border-top-color: #ffffff;
-  border-left-color: #f5f1e8;
-  border-right-color: #b8b09c;
-  border-bottom-color: #9a917c;
+  border: 1px solid rgba(14, 17, 22, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  border-left-color: rgba(255, 255, 255, 0.65);
+  border-right-color: rgba(14, 17, 22, 0.1);
+  border-bottom-color: rgba(14, 17, 22, 0.12);
   border-radius: var(--radius-lg);
   padding: 0;
   overflow: hidden;
@@ -731,10 +727,10 @@ h4 {
     linear-gradient(145deg, #2a303a 0%, var(--ink) 40%, #080a0d 100%);
   color: var(--paper);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(226, 193, 90, 0.28);
-  border-top-color: rgba(255, 255, 255, 0.14);
-  border-left-color: rgba(255, 255, 255, 0.1);
-  border-bottom-color: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(226, 193, 90, 0.18);
+  border-top-color: rgba(255, 255, 255, 0.1);
+  border-left-color: rgba(255, 255, 255, 0.06);
+  border-bottom-color: rgba(0, 0, 0, 0.35);
   box-shadow: var(--bevel-dark);
   animation: riseIn 0.6s ease both;
 }
@@ -766,9 +762,9 @@ h4 {
   background:
     linear-gradient(165deg, #ffffff 0%, #faf7f0 100%);
   border-radius: var(--radius-md);
-  border-top: 1px solid #fff;
-  border-right: 1px solid #d8d2c4;
-  border-bottom: 1px solid #cfc8b8;
+  border-top: 1px solid rgba(255, 255, 255, 0.95);
+  border-right: 1px solid rgba(14, 17, 22, 0.1);
+  border-bottom: 1px solid rgba(14, 17, 22, 0.12);
   box-shadow: var(--bevel-raised);
 }
 
@@ -781,11 +777,11 @@ h4 {
 .step {
   background:
     linear-gradient(165deg, #ffffff 0%, #faf7f0 100%);
-  border: 1px solid #d5cfbf;
-  border-top-color: #ffffff;
-  border-left-color: #f5f1e8;
-  border-right-color: #b8b09c;
-  border-bottom-color: #9a917c;
+  border: 1px solid rgba(14, 17, 22, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  border-left-color: rgba(255, 255, 255, 0.65);
+  border-right-color: rgba(14, 17, 22, 0.1);
+  border-bottom-color: rgba(14, 17, 22, 0.12);
   border-radius: var(--radius-md);
   padding: 22px;
   position: relative;
@@ -849,11 +845,11 @@ h4 {
 
 .note {
   background: linear-gradient(165deg, #fffcef 0%, #fff8e6 100%);
-  border: 1px solid rgba(201, 162, 39, 0.4);
-  border-top-color: #fffdf5;
-  border-left-color: #fff4cc;
-  border-right-color: rgba(154, 123, 26, 0.35);
-  border-bottom-color: rgba(120, 90, 10, 0.25);
+  border: 1px solid rgba(201, 162, 39, 0.22);
+  border-top-color: rgba(255, 253, 245, 0.95);
+  border-left-color: rgba(255, 244, 204, 0.8);
+  border-right-color: rgba(154, 123, 26, 0.18);
+  border-bottom-color: rgba(120, 90, 10, 0.14);
   padding: 14px 16px;
   border-radius: var(--radius-sm);
   box-shadow:
@@ -905,11 +901,11 @@ h4 {
 /* ── Terminal widget ── */
 .terminal-widget {
   background: #0a0d12;
-  border: 1px solid rgba(226, 193, 90, 0.28);
-  border-top-color: rgba(255, 255, 255, 0.16);
-  border-left-color: rgba(255, 255, 255, 0.1);
-  border-right-color: rgba(0, 0, 0, 0.6);
-  border-bottom-color: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(226, 193, 90, 0.16);
+  border-top-color: rgba(255, 255, 255, 0.1);
+  border-left-color: rgba(255, 255, 255, 0.06);
+  border-right-color: rgba(0, 0, 0, 0.35);
+  border-bottom-color: rgba(0, 0, 0, 0.45);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--bevel-dark);
@@ -967,11 +963,11 @@ h4 {
 .matcher {
   background:
     linear-gradient(165deg, #ffffff 0%, #faf7f0 100%);
-  border: 1px solid #d5cfbf;
-  border-top-color: #ffffff;
-  border-left-color: #f5f1e8;
-  border-right-color: #b8b09c;
-  border-bottom-color: #9a917c;
+  border: 1px solid rgba(14, 17, 22, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  border-left-color: rgba(255, 255, 255, 0.65);
+  border-right-color: rgba(14, 17, 22, 0.1);
+  border-bottom-color: rgba(14, 17, 22, 0.12);
   border-radius: var(--radius-lg);
   padding: 28px;
   box-shadow: var(--bevel-raised);
@@ -987,11 +983,11 @@ h4 {
 .matcher-btn {
   padding: 10px 18px;
   border-radius: 999px;
-  border: 2px solid var(--light-gray);
-  border-top-color: #fff;
-  border-left-color: #f5f1e8;
-  border-right-color: #cfc8b8;
-  border-bottom-color: #bdb5a4;
+  border: 1px solid rgba(14, 17, 22, 0.1);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  border-left-color: rgba(255, 255, 255, 0.7);
+  border-right-color: rgba(14, 17, 22, 0.12);
+  border-bottom-color: rgba(14, 17, 22, 0.14);
   background: linear-gradient(180deg, #fff 0%, var(--paper) 100%);
   font-weight: 600;
   font-family: var(--font-body);
@@ -1033,11 +1029,11 @@ h4 {
 /* ── Playground ── */
 .playground {
   background: var(--white);
-  border: 1px solid #d5cfbf;
-  border-top-color: #ffffff;
-  border-left-color: #f5f1e8;
-  border-right-color: #b8b09c;
-  border-bottom-color: #9a917c;
+  border: 1px solid rgba(14, 17, 22, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  border-left-color: rgba(255, 255, 255, 0.65);
+  border-right-color: rgba(14, 17, 22, 0.1);
+  border-bottom-color: rgba(14, 17, 22, 0.12);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--bevel-raised);
@@ -1104,11 +1100,11 @@ h4 {
 .path-viz {
   background:
     linear-gradient(165deg, #ffffff 0%, #faf7f0 100%);
-  border: 1px solid #d5cfbf;
-  border-top-color: #ffffff;
-  border-left-color: #f5f1e8;
-  border-right-color: #b8b09c;
-  border-bottom-color: #9a917c;
+  border: 1px solid rgba(14, 17, 22, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  border-left-color: rgba(255, 255, 255, 0.65);
+  border-right-color: rgba(14, 17, 22, 0.1);
+  border-bottom-color: rgba(14, 17, 22, 0.12);
   border-radius: var(--radius-lg);
   padding: 28px;
   box-shadow: var(--bevel-raised);
@@ -1671,9 +1667,9 @@ button.path-node {
   font-size: 0.8rem;
   font-weight: 800;
   background: linear-gradient(180deg, #fff 0%, var(--paper-deep, #e8e2d4) 100%);
-  border: 2px solid rgba(14, 17, 22, 0.1);
-  border-top-color: #fff;
-  border-bottom-color: #bdb5a4;
+  border: 1px solid rgba(14, 17, 22, 0.1);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  border-bottom-color: rgba(14, 17, 22, 0.14);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.9),
     0 3px 6px rgba(14, 17, 22, 0.12);
