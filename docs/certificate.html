@@ -4,21 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Completion Certificate</title>
-    <link rel="stylesheet" href="styles.css?v=ux7" />
+    <link rel="stylesheet" href="styles.css?v=ux8" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux7"></script>
+    <script src="site.js?v=ux8"></script>
 
     <main id="main" class="container">
       <section class="hero">
         <h2>Generate your certificate</h2>
         <p>
-          Certificates are for the beginner tracks only: <strong>Python</strong>, <strong>C#</strong>,
-          and <strong>AI Prompt Creation</strong>. Print opens after every tracked module for the
-          selected course is marked complete in this browser.
+          Earn a certificate for any course on this site — beginner tracks and intermediate /
+          advanced language tracks. Print unlocks after every tracked module for the selected
+          course is marked complete in this browser.
         </p>
       </section>
 
@@ -38,11 +38,7 @@
         </label>
         <label>
           Course completed
-          <select id="cert-course" class="field-input">
-            <option>Python Course</option>
-            <option>C# Course</option>
-            <option>AI Prompt Creation Course</option>
-          </select>
+          <select id="cert-course" class="field-input"></select>
         </label>
         <label>
           Completion date
@@ -62,7 +58,7 @@
         <p>This certifies that</p>
         <h3 id="cert-preview-name">Your Name</h3>
         <p>has successfully completed the</p>
-        <h3 id="cert-preview-course">Python Course</h3>
+        <h3 id="cert-preview-course">Course</h3>
         <p>on</p>
         <h3 id="cert-preview-date">Date</h3>
         <p class="note">Programming Foundations</p>
@@ -91,6 +87,16 @@
       const progressFill = document.getElementById("cert-progress-fill");
       const remainingList = document.getElementById("cert-remaining");
       const gateNote = document.getElementById("cert-gate-note");
+
+      const courseNames = Object.keys(window.PF.COURSE_MODULE_MAP || {});
+      const beginnerFirst = (name) => {
+        const advanced = /advanced/i.test(name);
+        return advanced ? 1 : 0;
+      };
+      courseNames.sort((a, b) => beginnerFirst(a) - beginnerFirst(b) || a.localeCompare(b));
+      courseInput.innerHTML = courseNames
+        .map((name) => `<option value="${name.replace(/"/g, "&quot;")}">${name}</option>`)
+        .join("");
 
       const refreshProgress = () => {
         const courseName = courseInput.value;
@@ -136,7 +142,9 @@
         if (preview) preview.hidden = !ready;
 
         if (gateNote) {
-          if (progress.done < progress.total) {
+          if (!progress.total) {
+            gateNote.textContent = "No modules found for this course.";
+          } else if (progress.done < progress.total) {
             gateNote.textContent =
               "Print stays locked until every module for this course is marked complete.";
           } else if (!(nameInput.value || "").trim()) {
@@ -155,9 +163,9 @@
         refreshProgress();
       };
 
-      const ranked = [...courseInput.options].map((opt) => ({
-        name: opt.value,
-        ...window.PF.courseProgress(opt.value),
+      const ranked = courseNames.map((name) => ({
+        name,
+        ...window.PF.courseProgress(name),
       }));
       ranked.sort((a, b) => b.percent - a.percent || b.done - a.done);
       if (ranked[0] && ranked[0].done > 0) {
