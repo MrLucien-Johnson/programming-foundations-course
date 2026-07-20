@@ -1,10 +1,16 @@
 /**
  * Runtime config for the Programming Foundations site.
- * Copy to config.js and set your API URL.
- *
- * Local API default: http://localhost:8787
- * Production example: https://your-api.example.com
+ * Copy values into config.js after you deploy the API.
  */
-window.PF_CONFIG = {
-  apiBaseUrl: "http://localhost:8787",
-};
+(function () {
+  const isLocalHost =
+    location.hostname === "localhost" ||
+    location.hostname === "127.0.0.1" ||
+    location.hostname === "";
+
+  const productionApiBaseUrl = "https://YOUR-SERVICE.onrender.com";
+
+  window.PF_CONFIG = {
+    apiBaseUrl: isLocalHost ? "http://localhost:8787" : productionApiBaseUrl,
+  };
+})();
