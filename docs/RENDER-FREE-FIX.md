@@ -33,6 +33,10 @@ If Root Directory is empty, Render tries to start the whole repo and the API nev
 | `DATABASE_PATH` | `./data/pf.sqlite` |
 | `CORS_ORIGINS` | `https://mrlucien-johnson.github.io` |
 
+**CORS gotcha:** use the origin only — no path, no trailing slash, no quotes.  
+Browsers send `https://mrlucien-johnson.github.io` (not `...github.io/` and not `.../programming-foundations-course`).  
+If the value has a trailing `/`, the Account page will get “origin is not allowed” even though the env var “looks right”. After changing it, use **Manual Deploy** so the service restarts.
+
 `NODE_VERSION=20` matters: Render otherwise picks Node 26, and older SQLite native builds fail.
 
 Important for **Free**:

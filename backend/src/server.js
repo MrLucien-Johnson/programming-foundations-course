@@ -25,9 +25,26 @@ if (process.env.NODE_ENV === "production" && JWT_SECRET.startsWith("dev-only")) 
 // Example: DATABASE_PATH=./data/pf.sqlite
 // Warning: Free instances can wipe this file on restart/redeploy.
 
+/** Strip quotes/whitespace and trailing slashes so env typos still match browsers. */
+function normalizeOrigin(value) {
+  if (value == null) return "";
+  let origin = String(value).trim();
+  if (
+    (origin.startsWith('"') && origin.endsWith('"')) ||
+    (origin.startsWith("'") && origin.endsWith("'"))
+  ) {
+    origin = origin.slice(1, -1).trim();
+  }
+  // Browsers never send a trailing slash on Origin; tolerate it in env values.
+  if (origin !== "null" && origin !== "*") {
+    origin = origin.replace(/\/+$/, "");
+  }
+  return origin;
+}
+
 const corsOrigins = (process.env.CORS_ORIGINS || "")
   .split(",")
-  .map((value) => value.trim())
+  .map(normalizeOrigin)
   .filter(Boolean);
 
 const db = openDatabase(DATABASE_PATH);
@@ -40,7 +57,8 @@ app.use(
     origin(origin, callback) {
       // Allow non-browser clients and configured origins.
       // "null" is included for local file:// testing when listed in CORS_ORIGINS.
-      if (!origin || corsOrigins.includes(origin) || corsOrigins.includes("*")) {
+      const normalized = normalizeOrigin(origin);
+      if (!normalized || corsOrigins.includes(normalized) || corsOrigins.includes("*")) {
         return callback(null, true);
       }
       return callback(new Error(`Origin not allowed: ${origin}`));
@@ -51,7 +69,12 @@ app.use(
 app.use(express.json({ limit: "256kb" }));
 
 app.get("/api/health", (_req, res) => {
-  res.json({ ok: true, service: "programming-foundations-api" });
+  res.json({
+    ok: true,
+    service: "programming-foundations-api",
+    corsConfigured: corsOrigins.length > 0,
+    corsOriginCount: corsOrigins.length,
+  });
 });
 
 const authLimiter = rateLimit({
@@ -79,4 +102,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { app, db, auth };
+module.exports = { app, db, auth, normalizeOrigin };
