@@ -1,0 +1,104 @@
+const crypto = require("crypto");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const { z } = require("zod");
+
+const emailSchema = z.string().trim().email().max(254);
+const passwordSchema = z.string().min(8).max(128);
+const nameSchema = z.string().trim().max(80).optional().default("");
+
+function createAuth({ db, jwtSecret }) {
+  const insertUser = db.prepare(`
+    INSERT INTO users (id, email, display_name, password_hash, created_at, updated_at)
+    VALUES (@id, @email, @display_name, @password_hash, @created_at, @updated_at)
+  `);
+
+  const findByEmail = db.prepare(`SELECT * FROM users WHERE email = ?`);
+  const findById = db.prepare(`SELECT * FROM users WHERE id = ?`);
+
+  const registerSchema = z.object({
+    email: emailSchema,
+    password: passwordSchema,
+    displayName: nameSchema,
+  });
+
+  const loginSchema = z.object({
+    email: emailSchema,
+    password: z.string().min(1).max(128),
+  });
+
+  function publicUser(row) {
+    return {
+      id: row.id,
+      email: row.email,
+      displayName: row.display_name || "",
+      createdAt: row.created_at,
+    };
+  }
+
+  function signToken(user) {
+    return jwt.sign(
+      { sub: user.id, email: user.email },
+      jwtSecret,
+      { expiresIn: "30d" }
+    );
+  }
+
+  function register(input) {
+    const data = registerSchema.parse(input);
+    const email = data.email.toLowerCase();
+    if (findByEmail.get(email)) {
+      const err = new Error("An account with that email already exists.");
+      err.status = 409;
+      throw err;
+    }
+
+    const now = new Date().toISOString();
+    const user = {
+      id: crypto.randomUUID(),
+      email,
+      display_name: data.displayName || "",
+      password_hash: bcrypt.hashSync(data.password, 10),
+      created_at: now,
+      updated_at: now,
+    };
+    insertUser.run(user);
+    const token = signToken(user);
+    return { token, user: publicUser(user) };
+  }
+
+  function login(input) {
+    const data = loginSchema.parse(input);
+    const email = data.email.toLowerCase();
+    const row = findByEmail.get(email);
+    if (!row || !bcrypt.compareSync(data.password, row.password_hash)) {
+      const err = new Error("Invalid email or password.");
+      err.status = 401;
+      throw err;
+    }
+    return { token: signToken(row), user: publicUser(row) };
+  }
+
+  function requireAuth(req, res, next) {
+    const header = req.headers.authorization || "";
+    const match = header.match(/^Bearer\s+(.+)$/i);
+    if (!match) {
+      return res.status(401).json({ error: "Sign in required." });
+    }
+    try {
+      const payload = jwt.verify(match[1], jwtSecret);
+      const row = findById.get(payload.sub);
+      if (!row) {
+        return res.status(401).json({ error: "Sign in required." });
+      }
+      req.user = publicUser(row);
+      return next();
+    } catch {
+      return res.status(401).json({ error: "Session expired. Please sign in again." });
+    }
+  }
+
+  return { register, login, requireAuth, publicUser };
+}
+
+module.exports = { createAuth };
