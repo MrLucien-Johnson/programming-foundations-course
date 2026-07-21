@@ -91,6 +91,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-- Prompting guide: https://www.promptingguide.ai/
-- OpenAI guides: https://platform.openai.com/docs/guides
-
+- [Evaluation & Testing](guide-viewer.html?path=guides/evaluation-guide.md) — build eval sets here
+- [Prompting Guide](guide-viewer.html?path=guides/prompting-guide.md) — iterate prompts with measurement
+- Browse all docs in [Guides](guides.html)

@@ -95,7 +95,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- Structured outputs: https://platform.openai.com/docs/guides/structured-outputs
-- JSON schema basics: https://json-schema.org/learn/getting-started-step-by-step
-
+- [Structured Outputs & Schemas](guide-viewer.html?path=guides/structured-outputs.md) — JSON and templates
+- [Evaluation & Testing](guide-viewer.html?path=guides/evaluation-guide.md) — validate outputs
+- Browse all docs in [Guides](guides.html)

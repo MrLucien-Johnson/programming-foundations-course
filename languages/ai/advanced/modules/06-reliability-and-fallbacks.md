@@ -94,7 +94,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- Resilience patterns: https://learn.microsoft.com/en-us/azure/architecture/patterns/
-- SRE book: https://sre.google/books/
-
+- [Reliability & Fallbacks](guide-viewer.html?path=guides/reliability-fallbacks.md) — timeouts, retries, degradation
+- [LLM System Design](guide-viewer.html?path=guides/llm-system-design.md) — resilient architectures
+- Browse all docs in [Guides](guides.html)

@@ -94,7 +94,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- OpenTelemetry: https://opentelemetry.io/docs/
-- SRE workbook: https://sre.google/workbook/
-
+- [Cost, Latency & Ops](guide-viewer.html?path=guides/cost-latency-ops.md) — signals and alerts
+- [Incident Playbooks](guide-viewer.html?path=guides/incident-playbooks.md) — respond when metrics spike
+- Browse all docs in [Guides](guides.html)

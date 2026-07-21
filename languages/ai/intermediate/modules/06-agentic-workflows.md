@@ -95,7 +95,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- Agent patterns: https://www.promptingguide.ai/
-- OpenAI tools guide: https://platform.openai.com/docs/guides/tools
-
+- [Agentic Workflows](guide-viewer.html?path=guides/agent-workflows.md) — controlled multi-step agents
+- [Tools & Function Calling](guide-viewer.html?path=guides/tools-and-function-calling.md) — tool allow-lists
+- Browse all docs in [Guides](guides.html)

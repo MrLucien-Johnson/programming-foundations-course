@@ -943,6 +943,17 @@
               if (!href || href.startsWith("#") || href.startsWith("mailto:")) {
                 return;
               }
+              // Keep learners on-site for our Guides hub and HTML pages.
+              if (
+                href.startsWith("guides.html") ||
+                href.startsWith("guide-viewer.html") ||
+                href.startsWith("courses.html") ||
+                href.startsWith("ai-course.html") ||
+                href.startsWith("help.html") ||
+                /\.html($|[?#])/.test(href)
+              ) {
+                return;
+              }
               if (href.startsWith("http")) {
                 link.setAttribute("target", "_blank");
                 link.setAttribute("rel", "noopener");

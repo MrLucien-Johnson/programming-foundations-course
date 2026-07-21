@@ -95,7 +95,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- Incident response: https://sre.google/workbook/incident-response/
-- Postmortems: https://sre.google/sre-book/postmortem-culture/
-
+- [Incident Playbooks](guide-viewer.html?path=guides/incident-playbooks.md) — contain, recover, postmortem
+- [Deployment & CI](guide-viewer.html?path=guides/deployment-ci.md) — rollback-friendly releases
+- Browse all docs in [Guides](guides.html)

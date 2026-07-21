@@ -92,6 +92,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-- Prompting guide: https://www.promptingguide.ai/
-- OpenAI guides: https://platform.openai.com/docs/guides
-
+- [AI Safety & Security](guide-viewer.html?path=guides/ai-safety-security.md) — risks, controls, red-team starters
+- [Practical AI Workflows](guide-viewer.html?path=guides/practical-ai.md) — reusable guardrail phrases
+- Browse all docs in [Guides](guides.html)

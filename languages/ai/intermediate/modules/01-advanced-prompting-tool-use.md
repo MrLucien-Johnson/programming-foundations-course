@@ -96,7 +96,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- Tools guide: https://platform.openai.com/docs/guides/tools
-- Prompting techniques: https://www.promptingguide.ai/techniques
-
+- [Tools & Function Calling](guide-viewer.html?path=guides/tools-and-function-calling.md) — safe tool design
+- [Prompting Guide](guide-viewer.html?path=guides/prompting-guide.md) — advanced prompting techniques
+- Browse all docs in [Guides](guides.html)

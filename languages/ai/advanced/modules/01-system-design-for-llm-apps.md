@@ -94,7 +94,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- System design primer: https://github.com/donnemartin/system-design-primer
-- LLM architecture: https://www.pinecone.io/learn/
-
+- [LLM System Design](guide-viewer.html?path=guides/llm-system-design.md) — architecture patterns
+- [RAG & Retrieval](guide-viewer.html?path=guides/rag-guide.md) — retrieval as a building block
+- Browse all docs in [Guides](guides.html)

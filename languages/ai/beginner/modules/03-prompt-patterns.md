@@ -92,6 +92,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-- Prompting guide: https://www.promptingguide.ai/
-- OpenAI guides: https://platform.openai.com/docs/guides
-
+- [Prompting Guide](guide-viewer.html?path=guides/prompting-guide.md) — pattern table and examples
+- [Practical AI Workflows](guide-viewer.html?path=guides/practical-ai.md) — critique-and-revise loops
+- Browse all docs in [Guides](guides.html)

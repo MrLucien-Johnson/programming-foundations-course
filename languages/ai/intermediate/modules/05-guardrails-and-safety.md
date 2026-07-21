@@ -96,7 +96,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- OWASP LLM Top 10: https://owasp.org/www-project-top-10-for-large-language-model-applications/
-- NIST AI RMF: https://www.nist.gov/itl/ai-risk-management-framework
-
+- [AI Safety & Security](guide-viewer.html?path=guides/ai-safety-security.md) — threat modeling and controls
+- [Data Privacy & Governance](guide-viewer.html?path=guides/data-privacy-governance.md) — handle data responsibly
+- Browse all docs in [Guides](guides.html)

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guide - Programming Foundations</title>
+    <link rel="stylesheet" href="styles.css?v=ux7" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div data-pf-header></div>
+    <script src="config.js"></script>
+    <script src="site.js?v=ux7"></script>
+
+    <main id="main" class="container">
+      <div id="breadcrumb" class="breadcrumb">
+        <a href="guides.html">Guides</a> / <span id="crumb-title">Loading…</span>
+      </div>
+
+      <section class="hero">
+        <h2 id="guide-title">Loading guide…</h2>
+        <p class="note">
+          First-party documentation on Programming Foundations — no redirect to other course sites.
+        </p>
+        <div class="button-row">
+          <a class="btn btn-secondary" href="guides.html">All guides</a>
+          <a class="btn btn-secondary" href="courses.html">Courses</a>
+        </div>
+      </section>
+
+      <article id="guide-content" class="section card lesson-content guide-content" aria-live="polite"></article>
+
+      <section class="section">
+        <div class="button-row" id="related-row"></div>
+      </section>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const guidePath = params.get("path") || "";
+      const contentEl = document.getElementById("guide-content");
+      const titleEl = document.getElementById("guide-title");
+      const crumbTitle = document.getElementById("crumb-title");
+      const relatedRow = document.getElementById("related-row");
+
+      const allowedPrefix = "guides/";
+      const isSafePath = (p) =>
+        p.startsWith(allowedPrefix) &&
+        !p.includes("..") &&
+        p.endsWith(".md") &&
+        /^guides\/[a-z0-9-]+\.md$/i.test(p);
+
+      const rewriteLinks = () => {
+        contentEl.querySelectorAll("a[href]").forEach((link) => {
+          const href = link.getAttribute("href");
+          if (!href || href.startsWith("#") || href.startsWith("mailto:")) return;
+
+          // Already site-local HTML (including guide-viewer / courses)
+          if (/\.html($|[?#])/.test(href) || href.startsWith("../")) {
+            if (href.startsWith("../")) {
+              link.setAttribute("href", href.replace(/^\.\.\//, ""));
+            }
+            return;
+          }
+
+          if (href.startsWith("http")) {
+            // Keep users on-site: rewrite known external course-doc hosts away is not needed
+            // for our first-party guides (we avoid those links). External http stays rare.
+            link.setAttribute("target", "_blank");
+            link.setAttribute("rel", "noopener noreferrer");
+            return;
+          }
+
+          if (href.startsWith("guide-viewer.html") || href.startsWith("guides/")) {
+            const path = href.startsWith("guides/")
+              ? href
+              : new URL(href, window.location.href).searchParams.get("path");
+            if (path && isSafePath(path)) {
+              link.setAttribute("href", `guide-viewer.html?path=${encodeURIComponent(path)}`);
+            }
+            return;
+          }
+
+          if (href.endsWith(".md") && href.startsWith("guides/")) {
+            link.setAttribute("href", `guide-viewer.html?path=${encodeURIComponent(href)}`);
+          }
+        });
+      };
+
+      if (!isSafePath(guidePath)) {
+        titleEl.textContent = "Guide not found";
+        crumbTitle.textContent = "Not found";
+        contentEl.innerHTML =
+          '<p>That guide path is missing or invalid. Return to <a href="guides.html">Guides</a>.</p>';
+      } else {
+        fetch(guidePath)
+          .then((r) => {
+            if (!r.ok) throw new Error("missing");
+            return r.text();
+          })
+          .then((markdown) => {
+            contentEl.innerHTML = marked.parse(markdown);
+            const h1 = contentEl.querySelector("h1");
+            if (h1) {
+              titleEl.textContent = h1.textContent;
+              crumbTitle.textContent = h1.textContent;
+              document.title = `${h1.textContent} - Guides`;
+              h1.remove();
+            }
+            rewriteLinks();
+            relatedRow.innerHTML = `
+              <a class="btn btn-primary" href="guides.html">More guides</a>
+              <a class="btn btn-secondary" href="ai-course.html">AI course</a>
+              <a class="btn btn-secondary" href="help.html">Help</a>
+            `;
+          })
+          .catch(() => {
+            titleEl.textContent = "Guide unavailable";
+            crumbTitle.textContent = "Unavailable";
+            contentEl.innerHTML =
+              '<p>We could not load this guide. Check your connection, then open <a href="guides.html">Guides</a> again.</p>';
+          });
+      }
+    </script>
+  </body>
+</html>

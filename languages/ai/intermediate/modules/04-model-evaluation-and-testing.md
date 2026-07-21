@@ -96,7 +96,6 @@ Before moving on, confirm the following:
 
 ## Stretch Resources
 
-
-- OpenAI evals: https://github.com/openai/evals
-- Evaluation guide: https://www.promptingguide.ai/
-
+- [Evaluation & Testing](guide-viewer.html?path=guides/evaluation-guide.md) — harnesses and metrics
+- [Prompting Guide](guide-viewer.html?path=guides/prompting-guide.md) — improve what you measure
+- Browse all docs in [Guides](guides.html)
