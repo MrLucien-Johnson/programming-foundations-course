@@ -1852,6 +1852,23 @@ button.path-node {
   margin-bottom: 18px;
 }
 
+/* ── Promo videos ── */
+.promo-clip {
+  margin-bottom: 8px;
+}
+
+.promo-video {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  aspect-ratio: 16 / 10;
+  background: #0e1116;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(14, 17, 22, 0.18);
+  box-shadow: var(--shadow-soft);
+  margin: 12px 0 16px;
+}
+
 /* ── Responsive path viz ── */
 @media (max-width: 640px) {
   .path-viz-track {
