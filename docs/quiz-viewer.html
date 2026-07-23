@@ -4,16 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Interactive Quiz</title>
-    <link rel="stylesheet" href="styles.css?v=ux9" />
+    <link rel="stylesheet" href="styles.css?v=ux13" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux9"></script>
+    <script src="site.js?v=ux13"></script>
 
     <main id="main" class="container">
+      <div id="pf-resume-host" hidden></div>
       <section class="hero">
         <h2 id="quiz-title">Loading quiz…</h2>
         <p class="note">Answer each question, then click “Check answers”.</p>
@@ -470,6 +471,9 @@
           .then((quizMarkdown) => {
             const questions = parseQuiz(quizMarkdown);
             quizTitle.textContent = quizMarkdown.split("\n")[0].replace(/^#\s+/, "") || "Quiz";
+            if (window.PF && typeof window.PF.setLastQuiz === "function") {
+              window.PF.setLastQuiz({ quiz: quizPath, title: quizTitle.textContent });
+            }
             if (metaEl) {
               const minutes = Math.max(2, Math.round(questions.length * 1.2));
               metaEl.textContent = `Questions: ${questions.length} · Passing score: 70% · Estimated time: ${minutes} minutes`;

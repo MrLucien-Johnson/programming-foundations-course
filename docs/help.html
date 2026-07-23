@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Help - Programming Foundations</title>
-    <link rel="stylesheet" href="styles.css?v=ux9" />
+    <link rel="stylesheet" href="styles.css?v=ux13" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux9"></script>
+    <script src="site.js?v=ux13"></script>
 
     <main id="main" class="container">
+      <div id="pf-resume-host" hidden></div>
       <section class="hero">
         <h2>Quick answers for new learners</h2>
         <p>These answers are written for people who are new to computers and to this site.</p>
@@ -94,6 +95,34 @@
           </p>
         </article>
 
+        <article class="help-card" id="org-persona">
+          <h3>What is Schools / Corporate / SaaS persona?</h3>
+          <p>
+            Most learners study from home. On Home, Start Here, or Account you can pick
+            <strong>Schools &amp; colleges</strong>, <strong>Corporate L&amp;D</strong>, or
+            <strong>Self-serve / SaaS builders</strong>. That choice only changes tips and emphasis —
+            the same free courses stay available. Clear it anytime or use Reset progress.
+          </p>
+        </article>
+
+        <article class="help-card" id="continue-learning">
+          <h3>How do I continue where I left off?</h3>
+          <p>
+            After you open a lesson or quiz, a <strong>Continue</strong> banner appears on Home,
+            Courses, Help, and other pages. Progress is saved in this browser only (or your account
+            when cloud sync is available).
+          </p>
+        </article>
+
+        <article class="help-card" id="standards-map">
+          <h3>Is this an official OCR / AQA / Edexcel course?</h3>
+          <p>
+            No — it is an independent path. The skills map to UK GCSE Computer Science programming
+            topics and NCCE / BCS-informed teaching practice. See the
+            <a href="standards.html">Standards map</a> for the full skill table.
+          </p>
+        </article>
+
         <article class="help-card">
           <h3>Matcher vs advanced courses</h3>
           <p>
@@ -107,8 +136,8 @@
       <section class="section" id="reset-progress">
         <h3>Reset local progress</h3>
         <p>
-          This clears lesson completions, quiz results, Start Here steps, and checklist ticks saved
-          in this browser. It cannot be undone.
+          This clears lesson completions, quiz results, Start Here steps, checklist ticks, and
+          “continue where you left off” memory saved in this browser. It cannot be undone.
         </p>
         <div class="button-row">
           <button type="button" class="btn btn-secondary" id="reset-progress-btn">

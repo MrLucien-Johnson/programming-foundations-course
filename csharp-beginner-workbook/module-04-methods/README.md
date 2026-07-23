@@ -41,6 +41,18 @@ This is where your code starts to look professional. Instead of copying and past
 - Easier to fix (change it once, fixes everywhere)
 - Less error-prone (test it once, works everywhere)
 
+### Design before you code (subroutines)
+
+Exam boards treat methods as **subroutines**: plan the name, inputs, and output before typing.
+
+```text
+FUNCTION CalculateTotal(price, quantity) RETURNS number
+  RETURN price * quantity
+ENDFUNCTION
+```
+
+Then implement the same idea in C#. Clear names + one job per method match OCR/AQA/Edexcel expectations.
+
 **Real-world impact:** Methods are used in:
 - Business applications (calculate prices, validate data)
 - Web applications (process forms, generate reports)

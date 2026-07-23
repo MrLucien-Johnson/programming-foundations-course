@@ -2309,3 +2309,104 @@ button.path-node {
 .continue-cta {
   margin-top: 14px;
 }
+
+/* ── Org persona picker ── */
+.persona-picker {
+  margin: 0;
+}
+
+.persona-picker-lead {
+  color: var(--gray);
+  margin: 8px 0 16px;
+}
+
+.persona-options {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 720px) {
+  .persona-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.persona-card {
+  appearance: none;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(14, 17, 22, 0.12);
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--ink);
+  box-shadow: var(--bevel-raised);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.persona-card strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.persona-card span {
+  color: var(--gray);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.persona-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--bevel-raised-hover);
+}
+
+.persona-card.is-selected {
+  border-color: var(--gold-dark);
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.18), rgba(255, 255, 255, 0.7));
+  box-shadow:
+    inset 0 0 0 1px rgba(201, 162, 39, 0.35),
+    var(--bevel-raised);
+}
+
+.persona-picker-status .linkish,
+.linkish {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Simple data table for the Teams admin console (roster, etc.). */
+.pf-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.pf-table th,
+.pf-table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  vertical-align: top;
+}
+
+.pf-table thead th {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pf-table tbody tr:hover {
+  background: rgba(201, 162, 39, 0.08);
+}

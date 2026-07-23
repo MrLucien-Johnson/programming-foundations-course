@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy &amp; your data - Programming Foundations</title>
+    <link rel="stylesheet" href="styles.css?v=ux13" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div data-pf-header></div>
+    <script src="config.js"></script>
+    <script src="site.js?v=ux13"></script>
+
+    <main id="main" class="container">
+      <section class="hero">
+        <h2>Privacy &amp; your data</h2>
+        <p>
+          We aim to collect the minimum needed to run courses and optional progress sync. You can
+          learn as a guest with no account at all — progress then stays only in your browser.
+        </p>
+      </section>
+
+      <section class="section">
+        <h3>What we store</h3>
+        <ul>
+          <li><strong>Guest mode:</strong> progress and quiz results live in your browser’s local storage only.</li>
+          <li><strong>With an account:</strong> your email, a hashed password, display name, and your learning progress and quiz attempts, so we can sync across devices.</li>
+          <li><strong>Organisations:</strong> if an admin adds you to an org, they can see your email, role, module completions, and quiz attempts for reporting.</li>
+          <li><strong>Certificates:</strong> if you issue a verifiable certificate, we store the name, course, issue date, and a public verification code.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h3>What we do not do</h3>
+        <ul>
+          <li>No advertising trackers or selling of personal data.</li>
+          <li>Passwords are stored only as salted hashes (bcrypt) — never in plain text.</li>
+          <li>Admins in your organisation see progress metrics, not your password or unrelated accounts.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h3>Data processing (DPA summary)</h3>
+        <p class="note">
+          For organisations, Programming Foundations acts as a data processor for learner progress
+          data on the organisation’s behalf. Data is stored in a SQLite database on our hosting
+          provider. Access is limited to organisation admins (for their own members) and platform
+          operators for support and maintenance. To request a formal Data Processing Agreement or a
+          data deletion for your whole organisation, contact us via the
+          <a href="support.html">Support</a> page.
+        </p>
+      </section>
+
+      <section class="section panel-plain" id="data-controls">
+        <h3 style="margin-top: 0;">Your data controls</h3>
+        <p id="data-signin-note" class="note" hidden>
+          <a href="account.html">Sign in</a> to export or delete your account data.
+        </p>
+        <div id="data-actions" class="button-row" hidden>
+          <button id="export-data" class="btn btn-secondary" type="button">Export my data (JSON)</button>
+          <button id="delete-data" class="btn btn-secondary" type="button">Delete my account</button>
+        </div>
+        <p id="data-status" class="note" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <p>
+        <a href="account.html">Account</a>
+        ·
+        <a href="teams.html">Teams</a>
+        ·
+        <a href="support.html">Support / donate</a>
+      </p>
+    </footer>
+
+    <script>
+      (function () {
+        const PF = window.PF;
+        const status = document.getElementById("data-status");
+        const isSignedIn = !!(PF.getUser() && PF.getToken());
+        document.getElementById("data-signin-note").hidden = isSignedIn;
+        document.getElementById("data-actions").hidden = !isSignedIn;
+        if (!isSignedIn) return;
+
+        document.getElementById("export-data").addEventListener("click", async () => {
+          status.textContent = "Preparing export…";
+          try {
+            const data = await PF.account.export();
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "programming-foundations-data.json";
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
+            status.textContent = "Export downloaded.";
+          } catch (error) {
+            status.textContent = error.message || "Could not export data.";
+          }
+        });
+
+        document.getElementById("delete-data").addEventListener("click", async () => {
+          const sure = window.confirm(
+            "Delete your account and all cloud data? This cannot be undone. Guest progress in this browser is kept."
+          );
+          if (!sure) return;
+          status.textContent = "Deleting…";
+          try {
+            await PF.account.remove();
+            await PF.signOut();
+            status.textContent = "Your account and cloud data were deleted.";
+            document.getElementById("data-actions").hidden = true;
+            document.getElementById("data-signin-note").hidden = false;
+          } catch (error) {
+            status.textContent = error.message || "Could not delete account.";
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

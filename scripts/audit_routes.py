@@ -28,9 +28,11 @@ PRIMARY_ROUTES = [
     "quiz-viewer.html",
     "certificate.html",
     "tracks.html",
+    "promo.html",
     "standards.html",
     "styles.css",
     "site.js",
+    "config.js",
     "course-index.json",
 ]
 
