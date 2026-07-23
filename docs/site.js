@@ -655,6 +655,11 @@
   const accountApi = {
     export: () => apiFetch("/api/account/export"),
     remove: () => apiFetch("/api/account", { method: "DELETE" }),
+    changePassword: (currentPassword, newPassword) =>
+      apiFetch("/api/auth/change-password", {
+        method: "POST",
+        body: JSON.stringify({ currentPassword, newPassword }),
+      }),
   };
 
   const getCompletions = () =>

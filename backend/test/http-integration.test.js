@@ -131,6 +131,45 @@ test("full org-grade HTTP flow", async () => {
   const forbidden = await api(`/api/orgs/${orgId}/members`, { token: other.json.token });
   assert.equal(forbidden.status, 403);
 
+  // Change password: wrong current password is rejected.
+  const badChange = await api("/api/auth/change-password", {
+    method: "POST",
+    token,
+    body: { currentPassword: "wrong-password", newPassword: "newpassword123" },
+  });
+  assert.equal(badChange.status, 401);
+
+  // Change password: validation failure (new password too short).
+  const shortChange = await api("/api/auth/change-password", {
+    method: "POST",
+    token,
+    body: { currentPassword: "password123", newPassword: "short" },
+  });
+  assert.equal(shortChange.status, 400);
+
+  // Change password: success.
+  const goodChange = await api("/api/auth/change-password", {
+    method: "POST",
+    token,
+    body: { currentPassword: "password123", newPassword: "newpassword123" },
+  });
+  assert.equal(goodChange.status, 200);
+  assert.equal(goodChange.json.user.email, email);
+
+  // Old password no longer works; the existing token remains valid until it expires.
+  const oldLoginFails = await api("/api/auth/login", {
+    method: "POST",
+    body: { email, password: "password123" },
+  });
+  assert.equal(oldLoginFails.status, 401);
+  const stillAuthed = await api("/api/auth/me", { token });
+  assert.equal(stillAuthed.status, 200);
+  const newLogin = await api("/api/auth/login", {
+    method: "POST",
+    body: { email, password: "newpassword123" },
+  });
+  assert.equal(newLogin.status, 200);
+
   // Delete account.
   const del = await api("/api/account", { method: "DELETE", token });
   assert.equal(del.status, 200);

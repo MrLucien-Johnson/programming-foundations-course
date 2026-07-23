@@ -36,6 +36,45 @@ test("register and login round trip", () => {
   fs.unlinkSync(process.env.DATABASE_PATH);
 });
 
+test("changePassword verifies current password and rotates the hash", () => {
+  const dbPath = path.join(os.tmpdir(), `pf-test-${Date.now()}-${Math.random()}.sqlite`);
+  const db = openDatabase(dbPath);
+  const auth = createAuth({ db, jwtSecret: process.env.JWT_SECRET });
+  const email = `changer-${Date.now()}@example.com`;
+  const { user } = auth.register({ email, password: "password123", displayName: "Changer" });
+
+  assert.throws(
+    () => auth.changePassword(user.id, { currentPassword: "wrong-password", newPassword: "newpassword123" }),
+    /Current password is incorrect/
+  );
+
+  assert.throws(
+    () => auth.changePassword(user.id, { currentPassword: "password123", newPassword: "short" }),
+    (error) => error.name === "ZodError"
+  );
+
+  assert.throws(
+    () => auth.changePassword(user.id, { currentPassword: "password123", newPassword: "password123" }),
+    /New password must be different/
+  );
+
+  const result = auth.changePassword(user.id, {
+    currentPassword: "password123",
+    newPassword: "newpassword123",
+  });
+  assert.equal(result.id, user.id);
+
+  assert.throws(
+    () => auth.login({ email, password: "password123" }),
+    /Invalid email or password/
+  );
+  const loggedIn = auth.login({ email, password: "newpassword123" });
+  assert.equal(loggedIn.user.id, user.id);
+
+  db.close();
+  fs.unlinkSync(dbPath);
+});
+
 test("mergeProgress unions completions and keeps true start steps", () => {
   const merged = mergeProgress(
     {

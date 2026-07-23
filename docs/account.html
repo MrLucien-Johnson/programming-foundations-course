@@ -40,6 +40,46 @@
           <a class="btn btn-secondary" href="start-here.html">Continue learning</a>
         </div>
         <p id="account-sync-status" class="note" role="status" aria-live="polite"></p>
+
+        <h4>Change password</h4>
+        <form id="change-password-form">
+          <label>
+            Current password
+            <input
+              class="field-input"
+              type="password"
+              name="currentPassword"
+              autocomplete="current-password"
+              required
+            />
+          </label>
+          <label>
+            New password (at least 8 characters)
+            <input
+              class="field-input"
+              type="password"
+              name="newPassword"
+              autocomplete="new-password"
+              required
+              minlength="8"
+            />
+          </label>
+          <label>
+            Confirm new password
+            <input
+              class="field-input"
+              type="password"
+              name="confirmPassword"
+              autocomplete="new-password"
+              required
+              minlength="8"
+            />
+          </label>
+          <div class="button-row">
+            <button class="btn btn-secondary" type="submit">Change password</button>
+          </div>
+        </form>
+        <p id="change-password-status" class="note" role="status" aria-live="polite"></p>
       </section>
 
       <section class="section grid cols-2" id="account-forms">
@@ -133,6 +173,7 @@
         const syncStatus = document.getElementById("account-sync-status");
         const signInStatus = document.getElementById("sign-in-status");
         const signUpStatus = document.getElementById("sign-up-status");
+        const changePasswordStatus = document.getElementById("change-password-status");
 
         const refresh = async () => {
           const user = window.PF.getUser();
@@ -187,6 +228,26 @@
           await window.PF.signOut();
           syncStatus.textContent = "Signed out on this device.";
           await refresh();
+        });
+
+        document.getElementById("change-password-form")?.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const data = new FormData(event.target);
+          const currentPassword = String(data.get("currentPassword") || "");
+          const newPassword = String(data.get("newPassword") || "");
+          const confirmPassword = String(data.get("confirmPassword") || "");
+          if (newPassword !== confirmPassword) {
+            changePasswordStatus.textContent = "New password and confirmation do not match.";
+            return;
+          }
+          changePasswordStatus.textContent = "Updating password…";
+          try {
+            await window.PF.account.changePassword(currentPassword, newPassword);
+            changePasswordStatus.textContent = "Password changed. Use your new password next time you sign in.";
+            event.target.reset();
+          } catch (error) {
+            changePasswordStatus.textContent = error.message || "Could not change password.";
+          }
         });
 
         document.getElementById("account-sync-now")?.addEventListener("click", async () => {

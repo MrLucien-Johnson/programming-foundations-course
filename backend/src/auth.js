@@ -24,6 +24,9 @@ function createAuth({ db, jwtSecret, onAuthenticated }) {
 
   const findByEmail = db.prepare(`SELECT * FROM users WHERE email = ?`);
   const findById = db.prepare(`SELECT * FROM users WHERE id = ?`);
+  const updatePasswordHash = db.prepare(`
+    UPDATE users SET password_hash = @password_hash, updated_at = @updated_at WHERE id = @id
+  `);
 
   const registerSchema = z.object({
     email: emailSchema,
@@ -34,6 +37,11 @@ function createAuth({ db, jwtSecret, onAuthenticated }) {
   const loginSchema = z.object({
     email: emailSchema,
     password: z.string().min(1).max(128),
+  });
+
+  const changePasswordSchema = z.object({
+    currentPassword: z.string().min(1).max(128),
+    newPassword: passwordSchema,
   });
 
   function publicUser(row) {
@@ -90,6 +98,37 @@ function createAuth({ db, jwtSecret, onAuthenticated }) {
     return { token: signToken(row), user: publicUser(row) };
   }
 
+  /**
+   * Verifies the caller's current password before rotating to a new hash.
+   * JWTs already issued stay valid until they expire (no server-side revocation
+   * list yet) — see routes/auth.js for the user-facing caveat.
+   */
+  function changePassword(userId, input) {
+    const data = changePasswordSchema.parse(input);
+    const row = findById.get(userId);
+    if (!row) {
+      const err = new Error("Sign in required.");
+      err.status = 401;
+      throw err;
+    }
+    if (!bcrypt.compareSync(data.currentPassword, row.password_hash)) {
+      const err = new Error("Current password is incorrect.");
+      err.status = 401;
+      throw err;
+    }
+    if (bcrypt.compareSync(data.newPassword, row.password_hash)) {
+      const err = new Error("New password must be different from your current password.");
+      err.status = 400;
+      throw err;
+    }
+    updatePasswordHash.run({
+      id: userId,
+      password_hash: bcrypt.hashSync(data.newPassword, 10),
+      updated_at: new Date().toISOString(),
+    });
+    return publicUser(row);
+  }
+
   function requireAuth(req, res, next) {
     const header = req.headers.authorization || "";
     const match = header.match(/^Bearer\s+(.+)$/i);
@@ -109,7 +148,7 @@ function createAuth({ db, jwtSecret, onAuthenticated }) {
     }
   }
 
-  return { register, login, requireAuth, publicUser };
+  return { register, login, changePassword, requireAuth, publicUser };
 }
 
 module.exports = { createAuth };
