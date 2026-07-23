@@ -109,7 +109,28 @@ else:
 3. If false, check third condition (score >= 70)
 4. If all false, do else
 
-### Logical Operators
+### Design before you code (algorithm habit)
+
+Exam boards expect you to **plan** before typing. For any decision, write 2–4 lines of
+pseudocode first, then translate:
+
+```text
+IF score >= 90 THEN
+  print "Grade: A"
+ELSE IF score >= 80 THEN
+  print "Grade: B"
+ELSE
+  print "Keep practising"
+ENDIF
+```
+
+Then implement the same logic in Python. This “design → code → test” loop matches OCR/AQA/Edexcel
+programming tasks.
+
+### Logical Operators (Boolean logic)
+
+In GCSE Computer Science this is often called **Boolean logic**: expressions that are only
+`True` or `False`. Python’s `and`, `or`, and `not` are the everyday tools for that.
 
 Combine multiple conditions:
 

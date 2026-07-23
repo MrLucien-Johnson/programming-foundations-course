@@ -1380,6 +1380,8 @@ label .field-input {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
   padding: 12px 16px;
   background: linear-gradient(180deg, #2a303a 0%, var(--ink) 100%);
   color: var(--gold-light);
@@ -2117,4 +2119,193 @@ button.path-node {
 .lesson-content img {
   border-radius: 12px;
   border: 1px solid rgba(14, 17, 22, 0.08);
+}
+
+/* ── Resume / active nav / standards (audit) ── */
+.nav a.is-current {
+  color: #fff;
+}
+
+.nav a.is-current::after {
+  transform: scaleX(1);
+}
+
+#pf-resume-host {
+  max-width: 980px;
+  margin: 0 auto 8px;
+  padding: 0 20px;
+}
+
+.page-home #pf-resume-host {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.resume-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 20px;
+  margin: 20px 0 8px;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.16), rgba(255, 255, 255, 0.55));
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  border-radius: var(--radius-md);
+  box-shadow: var(--bevel-raised);
+  animation: riseIn 0.45s ease both;
+}
+
+.resume-banner-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.resume-banner-copy strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.resume-banner-copy span {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+.resume-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.playground-challenges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.playground-challenges .chip-btn {
+  background: rgba(226, 193, 90, 0.12);
+  border-color: rgba(226, 193, 90, 0.35);
+  color: var(--gold-light);
+  box-shadow: none;
+}
+
+.chip-btn {
+  appearance: none;
+  border: 1px solid rgba(14, 17, 22, 0.12);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--bevel-raised);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.chip-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--bevel-raised-hover);
+}
+
+.chip-btn:active {
+  transform: translateY(1px);
+  box-shadow: var(--bevel-btn-press);
+}
+
+.standards-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 18px;
+}
+
+.standards-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--gold-light);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: var(--bevel-dark);
+}
+
+.standards-table-wrap {
+  overflow-x: auto;
+  padding: 0;
+}
+
+.standards-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.standards-table th,
+.standards-table td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(14, 17, 22, 0.08);
+  vertical-align: top;
+}
+
+.standards-table th {
+  font-family: var(--font-display);
+  background: rgba(14, 17, 22, 0.04);
+}
+
+.standards-table tr:last-child td {
+  border-bottom: none;
+}
+
+.faq details {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(14, 17, 22, 0.08);
+  border-radius: var(--radius-md);
+  box-shadow: var(--bevel-raised);
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: var(--font-display);
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1.2em;
+  color: var(--gold-dark);
+  font-weight: 700;
+}
+
+.faq details[open] summary::before {
+  content: "–";
+}
+
+.faq details p {
+  margin: 10px 0 0;
+  color: var(--gray);
+}
+
+.continue-cta {
+  margin-top: 14px;
 }

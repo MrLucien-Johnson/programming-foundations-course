@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Programming Foundations - Start Learning</title>
-    <link rel="stylesheet" href="styles.css?v=ux9" />
+    <link rel="stylesheet" href="styles.css?v=ux10" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux9"></script>
+    <script src="site.js?v=ux10"></script>
 
     <main id="main" class="container page-home">
+      <div id="pf-resume-host" hidden></div>
       <section class="hero-bleed" aria-labelledby="hero-heading">
         <div class="hero-bleed-inner">
           <div class="hero-copy">
@@ -324,6 +325,12 @@ print("Ready to learn?")</textarea>
         }
 
         document.getElementById("playground-run")?.addEventListener("click", runPlayground);
+        document.getElementById("playground-code")?.addEventListener("keydown", (e) => {
+          if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+            e.preventDefault();
+            runPlayground();
+          }
+        });
 
         /* Path visualization — synced with Start Here */
         const stepOrder = window.PF.START_STEP_ORDER;

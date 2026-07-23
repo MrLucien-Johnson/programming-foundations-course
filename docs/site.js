@@ -10,6 +10,8 @@
     startSteps: "pf-start-steps",
     authToken: "pf-auth-token",
     authUser: "pf-auth-user",
+    lastLesson: "pf-last-lesson",
+    lastQuiz: "pf-last-quiz",
   };
 
   const START_STEP_ORDER = ["open-online", "choose-course", "keep-learning", "download-local"];
@@ -18,6 +20,7 @@
     { href: "index.html", label: "Home" },
     { href: "start-here.html", label: "Start Here" },
     { href: "courses.html", label: "Courses" },
+    { href: "standards.html", label: "Standards" },
     { href: "help.html", label: "Help" },
     { href: "support.html", label: "Support" },
     { href: "account.html", label: "Account" },
@@ -670,9 +673,123 @@
     markNavCurrent();
   };
 
+  const getLastLesson = () => {
+    try {
+      return JSON.parse(localStorage.getItem(KEYS.lastLesson) || "null");
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const setLastLesson = (payload) => {
+    if (!payload || !payload.path) return;
+    try {
+      localStorage.setItem(
+        KEYS.lastLesson,
+        JSON.stringify({
+          path: payload.path,
+          title: payload.title || "Lesson",
+          course: payload.course || "",
+          page: payload.page || "",
+          ts: Date.now(),
+        })
+      );
+    } catch (error) {
+      /* quota / private mode */
+    }
+  };
+
+  const setLastQuiz = (payload) => {
+    if (!payload || !payload.quiz) return;
+    try {
+      localStorage.setItem(
+        KEYS.lastQuiz,
+        JSON.stringify({
+          quiz: payload.quiz,
+          title: payload.title || "Quiz",
+          ts: Date.now(),
+        })
+      );
+    } catch (error) {
+      /* ignore */
+    }
+  };
+
+  const escapeHtml = (str) =>
+    String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+
+  const mountResumeBanner = () => {
+    const host = document.getElementById("pf-resume-host");
+    if (!host) return;
+    const last = getLastLesson();
+    if (!last || !last.path) {
+      host.hidden = true;
+      host.innerHTML = "";
+      return;
+    }
+    const done = isCompleted(last.path);
+    const label = done ? "Review last lesson" : "Continue where you left off";
+    const courseBit = last.course ? ` · ${last.course}` : "";
+    host.hidden = false;
+    host.innerHTML = `
+      <div class="resume-banner" role="region" aria-label="Resume learning">
+        <div class="resume-banner-copy">
+          <strong>${label}</strong>
+          <span>${escapeHtml(last.title)}${escapeHtml(courseBit)}</span>
+        </div>
+        <div class="resume-banner-actions">
+          <a class="btn btn-primary" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Open lesson</a>
+          ${last.page ? `<a class="btn btn-ghost" href="${escapeHtml(last.page)}">Course home</a>` : ""}
+        </div>
+      </div>`;
+  };
+
+  const enhancePlaygroundChallenges = () => {
+    const toolbar = document.querySelector("#playground .playground-toolbar");
+    const editor = document.getElementById("playground-code");
+    if (!toolbar || !editor || toolbar.querySelector(".playground-challenges")) return;
+    const challenges = [
+      {
+        name: "Hello",
+        code: 'name = "Alex"\nprint("Hello, " + name + "!")\nprint("Ready to learn?")',
+      },
+      {
+        name: "Variables",
+        code: 'city = "London"\nyear = 2026\nprint("Learning in " + city)\nprint(year)',
+      },
+      {
+        name: "Join strings",
+        code: 'first = "Programming"\nsecond = "Foundations"\nprint(first + " " + second)',
+      },
+    ];
+    const wrap = document.createElement("div");
+    wrap.className = "playground-challenges";
+    wrap.setAttribute("role", "group");
+    wrap.setAttribute("aria-label", "Try a challenge");
+    challenges.forEach((ch) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "chip-btn";
+      btn.textContent = ch.name;
+      btn.addEventListener("click", () => {
+        editor.value = ch.code;
+        editor.focus();
+        document.getElementById("playground-run")?.click();
+      });
+      wrap.appendChild(btn);
+    });
+    toolbar.appendChild(wrap);
+  };
+
   const boot = () => {
     mountHeader();
     mountDonateSlots();
+    mountResumeBanner();
+    enhancePlaygroundChallenges();
     if (getToken()) {
       syncProgress().catch(() => {
         /* guest-capable offline */
@@ -695,6 +812,10 @@
     saveQuizResult,
     getStartSteps,
     saveStartSteps,
+    getLastLesson,
+    setLastLesson,
+    setLastQuiz,
+    mountResumeBanner,
     inferLessonFromQuiz,
     progressForModules,
     courseProgress,

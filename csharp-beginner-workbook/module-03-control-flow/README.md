@@ -160,7 +160,10 @@ if (isVip)
 
 **Real-world example:** Checking if a task is complete, if a user is logged in, if an item is in stock.
 
-### Logical Operators
+### Logical Operators (Boolean logic)
+
+In GCSE Computer Science this is often called **Boolean logic**: expressions that are only
+`true` or `false`. C#’s `&&`, `||`, and `!` are the everyday tools for that.
 
 Combine multiple conditions:
 
