@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Teams &amp; Organisations - Programming Foundations</title>
+    <link rel="stylesheet" href="styles.css?v=ux13" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div data-pf-header></div>
+    <script src="config.js"></script>
+    <script src="site.js?v=ux13"></script>
+
+    <main id="main" class="container">
+      <section class="hero">
+        <h2>Teams &amp; organisations</h2>
+        <p>
+          Create an organisation to manage learners, assign paths, track progress, and export a
+          gradebook. Great for schools, colleges, and workplace L&amp;D. Guest and self-serve
+          learning always keep working — this is an optional layer for admins.
+        </p>
+      </section>
+
+      <section class="section panel-plain" id="signed-out" hidden>
+        <h3 style="margin-top: 0;">Sign in to manage a team</h3>
+        <p class="note">
+          You need a free account to create or manage an organisation.
+          <a href="account.html">Go to Account</a> to sign in or create one, then come back here.
+        </p>
+      </section>
+
+      <div id="signed-in" hidden>
+        <section class="section grid cols-2">
+          <article class="panel-plain">
+            <h3 style="margin-top: 0;">Your organisations</h3>
+            <p id="org-list-status" class="note" role="status" aria-live="polite">Loading…</p>
+            <ul id="org-list" class="cert-remaining"></ul>
+          </article>
+          <article class="panel-plain">
+            <h3 style="margin-top: 0;">Create an organisation</h3>
+            <label>
+              Organisation name
+              <input id="new-org-name" class="field-input" type="text" maxlength="120" placeholder="e.g. Springfield High" />
+            </label>
+            <div class="button-row">
+              <button id="create-org" class="btn btn-primary" type="button">Create organisation</button>
+            </div>
+            <p id="create-org-status" class="note" role="status" aria-live="polite"></p>
+          </article>
+        </section>
+
+        <section id="org-detail" hidden>
+          <section class="section panel-plain">
+            <h3 style="margin-top: 0;">
+              <span id="org-detail-name">Organisation</span>
+              <span id="org-role-badge" class="note"></span>
+            </h3>
+            <div id="admin-analytics" class="grid cols-2" hidden>
+              <div>
+                <p class="note" id="analytics-summary">Loading analytics…</p>
+              </div>
+              <div class="button-row" id="admin-tools" hidden>
+                <button id="dl-roster" class="btn btn-secondary" type="button">Download roster CSV</button>
+                <button id="dl-gradebook" class="btn btn-secondary" type="button">Download gradebook CSV</button>
+              </div>
+            </div>
+            <div id="plan-row" class="button-row" hidden>
+              <label>
+                Plan (billing stub)
+                <select id="org-plan" class="field-input">
+                  <option value="free">Free</option>
+                  <option value="team">Team</option>
+                  <option value="school">School</option>
+                  <option value="enterprise">Enterprise</option>
+                </select>
+              </label>
+              <button id="save-plan" class="btn btn-secondary" type="button">Save plan</button>
+            </div>
+          </section>
+
+          <section class="section panel-plain" id="members-panel" hidden>
+            <h3 style="margin-top: 0;">Members</h3>
+            <div class="grid cols-2">
+              <label>
+                Email to add / invite
+                <input id="member-email" class="field-input" type="email" placeholder="learner@example.com" />
+              </label>
+              <label>
+                Role
+                <select id="member-role" class="field-input">
+                  <option value="learner">Learner</option>
+                  <option value="admin">Admin</option>
+                </select>
+              </label>
+            </div>
+            <div class="button-row">
+              <button id="add-member" class="btn btn-primary" type="button">Add / invite member</button>
+            </div>
+            <p id="member-status" class="note" role="status" aria-live="polite"></p>
+            <div style="overflow-x:auto;">
+              <table id="members-table" class="pf-table">
+                <thead>
+                  <tr>
+                    <th>Email</th><th>Name</th><th>Role</th><th>Status</th>
+                    <th>Modules</th><th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="section panel-plain" id="assign-panel" hidden>
+            <h3 style="margin-top: 0;">Assign learning paths</h3>
+            <p class="note">Assign a course to the whole organisation or to one member. Quick-assign a persona template below.</p>
+            <div class="grid cols-2">
+              <label>
+                Course
+                <select id="assign-course" class="field-input"></select>
+              </label>
+              <label>
+                Assign to
+                <select id="assign-user" class="field-input">
+                  <option value="">Whole organisation</option>
+                </select>
+              </label>
+            </div>
+            <div class="button-row">
+              <button id="assign-path" class="btn btn-primary" type="button">Assign path</button>
+            </div>
+            <div class="button-row" id="persona-templates"></div>
+            <p id="assign-status" class="note" role="status" aria-live="polite"></p>
+            <ul id="assign-list" class="cert-remaining"></ul>
+          </section>
+
+          <section class="section panel-plain" id="audit-panel" hidden>
+            <h3 style="margin-top: 0;">Recent activity (audit log)</h3>
+            <ul id="audit-list" class="cert-remaining"></ul>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer container">
+      <p>
+        <a href="courses.html">Courses</a>
+        ·
+        <a href="account.html">Account</a>
+        ·
+        <a href="privacy.html">Privacy &amp; data</a>
+        ·
+        <a href="support.html">Support / donate</a>
+      </p>
+    </footer>
+
+    <script>
+      (function () {
+        const PF = window.PF;
+        const el = (id) => document.getElementById(id);
+        const signedOut = el("signed-out");
+        const signedIn = el("signed-in");
+        let currentOrg = null;
+
+        const esc = (s) =>
+          String(s == null ? "" : s).replace(/[&<>"']/g, (c) =>
+            ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
+          );
+
+        const setStatus = (id, msg, ok) => {
+          const node = el(id);
+          if (!node) return;
+          node.textContent = msg || "";
+          node.style.color = ok === false ? "#b00020" : "";
+        };
+
+        async function loadOrgs() {
+          setStatus("org-list-status", "Loading…");
+          try {
+            const orgs = await PF.org.list();
+            const list = el("org-list");
+            if (!orgs.length) {
+              setStatus("org-list-status", "No organisations yet. Create one to get started.");
+              list.innerHTML = "";
+              return;
+            }
+            setStatus("org-list-status", "");
+            list.innerHTML = orgs
+              .map(
+                (o) =>
+                  `<li><button type="button" class="linkish" data-org="${esc(o.id)}">${esc(o.name)}</button> <span class="note">(${esc(o.role)}${o.plan ? " · " + esc(o.plan) : ""})</span></li>`
+              )
+              .join("");
+            list.querySelectorAll("[data-org]").forEach((btn) =>
+              btn.addEventListener("click", () => openOrg(btn.getAttribute("data-org")))
+            );
+          } catch (error) {
+            setStatus("org-list-status", error.message || "Could not load organisations.", false);
+          }
+        }
+
+        function fillCourseSelect() {
+          const select = el("assign-course");
+          const names = Object.keys(PF.COURSE_MODULE_MAP || {});
+          select.innerHTML = names
+            .map((n) => `<option value="${esc(n)}">${esc(n)}</option>`)
+            .join("");
+        }
+
+        function renderPersonaTemplates() {
+          const host = el("persona-templates");
+          const paths = PF.PERSONA_PATHS || {};
+          host.innerHTML = Object.keys(paths)
+            .map(
+              (id) =>
+                `<button type="button" class="btn btn-secondary" data-template="${esc(id)}" title="${esc(paths[id].note)}">Assign ${esc(paths[id].label)} path</button>`
+            )
+            .join("");
+          host.querySelectorAll("[data-template]").forEach((btn) =>
+            btn.addEventListener("click", () => assignTemplate(btn.getAttribute("data-template")))
+          );
+        }
+
+        async function assignTemplate(id) {
+          const tpl = (PF.PERSONA_PATHS || {})[id];
+          if (!tpl || !currentOrg) return;
+          setStatus("assign-status", `Assigning ${tpl.label} template…`);
+          try {
+            for (const course of tpl.courses) {
+              await PF.org.assignPath(currentOrg.id, course, null);
+            }
+            setStatus("assign-status", `Assigned ${tpl.courses.length} courses org-wide.`);
+            await loadAssignments();
+            await loadAnalytics();
+          } catch (error) {
+            setStatus("assign-status", error.message || "Could not assign template.", false);
+          }
+        }
+
+        async function openOrg(id) {
+          try {
+            currentOrg = await PF.org.get(id);
+          } catch (error) {
+            setStatus("org-list-status", error.message || "Could not open organisation.", false);
+            return;
+          }
+          el("org-detail").hidden = false;
+          el("org-detail-name").textContent = currentOrg.name;
+          el("org-role-badge").textContent = ` — you are ${currentOrg.role}`;
+          const isAdmin = currentOrg.role === "admin";
+
+          el("members-panel").hidden = !isAdmin;
+          el("assign-panel").hidden = false;
+          el("audit-panel").hidden = !isAdmin;
+          el("admin-analytics").hidden = !isAdmin;
+          el("admin-tools").hidden = !isAdmin;
+          el("plan-row").hidden = !isAdmin;
+          if (isAdmin) el("org-plan").value = currentOrg.plan || "free";
+
+          fillCourseSelect();
+          renderPersonaTemplates();
+          await loadAssignments();
+          if (isAdmin) {
+            await loadMembers();
+            await loadAnalytics();
+            await loadAudit();
+          }
+          el("org-detail").scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+
+        async function loadMembers() {
+          try {
+            const members = await PF.org.members(currentOrg.id);
+            const tbody = el("members-table").querySelector("tbody");
+            const userSelect = el("assign-user");
+            userSelect.innerHTML =
+              '<option value="">Whole organisation</option>' +
+              members
+                .filter((m) => m.userId)
+                .map((m) => `<option value="${esc(m.userId)}">${esc(m.email)}</option>`)
+                .join("");
+            tbody.innerHTML = members
+              .map((m) => {
+                const actions = m.userId
+                  ? `<button type="button" class="linkish" data-role="${esc(m.userId)}" data-current="${esc(m.role)}">${m.role === "admin" ? "Make learner" : "Make admin"}</button> · <button type="button" class="linkish" data-remove="${esc(m.userId)}">Remove</button>`
+                  : '<span class="note">pending</span>';
+                return `<tr>
+                  <td>${esc(m.email)}</td>
+                  <td>${esc(m.displayName)}</td>
+                  <td>${esc(m.role)}</td>
+                  <td>${esc(m.status)}</td>
+                  <td>${esc(m.completions)}</td>
+                  <td>${actions}</td>
+                </tr>`;
+              })
+              .join("");
+            tbody.querySelectorAll("[data-role]").forEach((btn) =>
+              btn.addEventListener("click", async () => {
+                const uid = btn.getAttribute("data-role");
+                const next = btn.getAttribute("data-current") === "admin" ? "learner" : "admin";
+                setStatus("member-status", "Updating role…");
+                try {
+                  await PF.org.setMemberRole(currentOrg.id, uid, next);
+                  setStatus("member-status", "Role updated.");
+                  await loadMembers();
+                } catch (e) {
+                  setStatus("member-status", e.message || "Could not update role.", false);
+                }
+              })
+            );
+            tbody.querySelectorAll("[data-remove]").forEach((btn) =>
+              btn.addEventListener("click", async () => {
+                const uid = btn.getAttribute("data-remove");
+                setStatus("member-status", "Removing…");
+                try {
+                  await PF.org.removeMember(currentOrg.id, uid);
+                  setStatus("member-status", "Member removed.");
+                  await loadMembers();
+                } catch (e) {
+                  setStatus("member-status", e.message || "Could not remove member.", false);
+                }
+              })
+            );
+          } catch (error) {
+            setStatus("member-status", error.message || "Could not load members.", false);
+          }
+        }
+
+        async function loadAssignments() {
+          try {
+            const assignments = await PF.org.assignments(currentOrg.id);
+            el("assign-list").innerHTML = assignments.length
+              ? "<li><strong>Assigned paths:</strong></li>" +
+                assignments
+                  .map(
+                    (a) =>
+                      `<li>${esc(a.courseName)} <span class="note">(${a.scope === "org" ? "whole org" : "member"})</span></li>`
+                  )
+                  .join("")
+              : '<li class="note">No paths assigned yet.</li>';
+          } catch (error) {
+            el("assign-list").innerHTML = `<li class="note">${esc(error.message || "Could not load assignments.")}</li>`;
+          }
+        }
+
+        async function loadAnalytics() {
+          try {
+            const a = await PF.org.analytics(currentOrg.id);
+            el("analytics-summary").innerHTML =
+              `Members: <strong>${a.members}</strong> (${a.activeMembers} active, ${a.invited} invited, ${a.admins} admins) · ` +
+              `Assignments: <strong>${a.assignments}</strong> · ` +
+              `Modules completed: <strong>${a.totalCompletions}</strong> · ` +
+              `Quiz attempts: <strong>${a.quizAttempts}</strong> · Pass rate: <strong>${a.quizPassRate}%</strong>`;
+          } catch (error) {
+            el("analytics-summary").textContent = error.message || "Could not load analytics.";
+          }
+        }
+
+        async function loadAudit() {
+          try {
+            const events = await PF.org.audit(currentOrg.id, 25);
+            el("audit-list").innerHTML = events.length
+              ? events
+                  .map(
+                    (e) =>
+                      `<li><span class="note">${esc(new Date(e.createdAt).toLocaleString())}</span> — ${esc(e.action)}</li>`
+                  )
+                  .join("")
+              : '<li class="note">No activity yet.</li>';
+          } catch (error) {
+            el("audit-list").innerHTML = `<li class="note">${esc(error.message || "Could not load audit log.")}</li>`;
+          }
+        }
+
+        function wire() {
+          el("create-org").addEventListener("click", async () => {
+            const name = el("new-org-name").value.trim();
+            if (!name) {
+              setStatus("create-org-status", "Enter an organisation name.", false);
+              return;
+            }
+            setStatus("create-org-status", "Creating…");
+            try {
+              const org = await PF.org.create(name);
+              el("new-org-name").value = "";
+              setStatus("create-org-status", `Created “${org.name}”.`);
+              await loadOrgs();
+              await openOrg(org.id);
+            } catch (error) {
+              setStatus("create-org-status", error.message || "Could not create organisation.", false);
+            }
+          });
+
+          el("add-member").addEventListener("click", async () => {
+            const email = el("member-email").value.trim();
+            const role = el("member-role").value;
+            if (!email) {
+              setStatus("member-status", "Enter an email.", false);
+              return;
+            }
+            setStatus("member-status", "Adding…");
+            try {
+              const m = await PF.org.addMember(currentOrg.id, email, role);
+              el("member-email").value = "";
+              setStatus("member-status", m.status === "invited" ? "Invite created — they join when they register." : "Member added.");
+              await loadMembers();
+              await loadAnalytics();
+            } catch (error) {
+              setStatus("member-status", error.message || "Could not add member.", false);
+            }
+          });
+
+          el("assign-path").addEventListener("click", async () => {
+            const course = el("assign-course").value;
+            const userId = el("assign-user").value || null;
+            setStatus("assign-status", "Assigning…");
+            try {
+              await PF.org.assignPath(currentOrg.id, course, userId);
+              setStatus("assign-status", "Path assigned.");
+              await loadAssignments();
+              await loadAnalytics();
+            } catch (error) {
+              setStatus("assign-status", error.message || "Could not assign path.", false);
+            }
+          });
+
+          el("save-plan").addEventListener("click", async () => {
+            try {
+              await PF.org.setPlan(currentOrg.id, el("org-plan").value);
+              currentOrg.plan = el("org-plan").value;
+              setStatus("create-org-status", "Plan saved.");
+              await loadOrgs();
+            } catch (error) {
+              setStatus("create-org-status", error.message || "Could not save plan.", false);
+            }
+          });
+
+          el("dl-roster").addEventListener("click", () =>
+            PF.downloadOrgCsv(currentOrg.id, "roster", `roster-${currentOrg.name}.csv`).catch((e) =>
+              setStatus("member-status", e.message || "Download failed.", false)
+            )
+          );
+          el("dl-gradebook").addEventListener("click", () =>
+            PF.downloadOrgCsv(currentOrg.id, "gradebook", `gradebook-${currentOrg.name}.csv`).catch((e) =>
+              setStatus("member-status", e.message || "Download failed.", false)
+            )
+          );
+        }
+
+        function boot() {
+          const isSignedIn = !!(PF.getUser() && PF.getToken());
+          signedOut.hidden = isSignedIn;
+          signedIn.hidden = !isSignedIn;
+          if (!isSignedIn) return;
+          wire();
+          loadOrgs();
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", boot);
+        } else {
+          boot();
+        }
+      })();
+    </script>
+  </body>
+</html>

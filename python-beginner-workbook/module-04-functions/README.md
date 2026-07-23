@@ -30,6 +30,18 @@ Think of functions like this:
 
 This makes your programs shorter, easier to fix, and less error-prone!
 
+### Design before you code (subroutines)
+
+Exam boards treat functions as **subroutines**: plan the name, inputs, and output before typing.
+
+```text
+FUNCTION calculate_total(price, quantity) RETURNS number
+  RETURN price * quantity
+ENDFUNCTION
+```
+
+Then implement the same idea in Python. Clear names + one job per function match OCR/AQA/Edexcel expectations.
+
 ## 📖 Part 1: Creating Functions
 
 ### Basic Function Syntax

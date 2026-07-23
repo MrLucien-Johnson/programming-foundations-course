@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Programming Foundations - Start Learning</title>
-    <link rel="stylesheet" href="styles.css?v=ux10" />
+    <link rel="stylesheet" href="styles.css?v=ux13" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux10"></script>
+    <script src="site.js?v=ux13"></script>
 
     <main id="main" class="container page-home">
       <div id="pf-resume-host" hidden></div>
@@ -39,6 +39,15 @@
             <p class="hero-aside-note">One path — tracked in Start Here as you go.</p>
           </div>
         </div>
+      </section>
+
+      <section class="widget-section" id="org-persona">
+        <div
+          id="pf-persona-host"
+          data-heading="Who are you learning for?"
+          data-lead="Most people study from home. Choose Schools, Corporate L&D, or Self-serve / SaaS — we’ll emphasise the tips that fit. Change anytime."
+        ></div>
+        <p class="note" data-pf-persona-copy="focus" data-pf-persona-fallback=""></p>
       </section>
 
       <section class="widget-section" id="course-matcher">
@@ -104,6 +113,17 @@ print("Ready to learn?")</textarea>
           <div class="button-row" style="margin-top: 16px;">
             <a class="btn btn-secondary" href="start-here.html">Continue in Start Here</a>
           </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Aligned to UK computing standards</h3>
+        <p>
+          Skills map to OCR, AQA, and Edexcel GCSE Computer Science programming topics, with
+          NCCE / BCS-informed teaching practice — free, practical, and beginner-friendly.
+        </p>
+        <div class="button-row">
+          <a class="btn btn-secondary" href="standards.html">See standards map</a>
         </div>
       </section>
 
@@ -215,16 +235,31 @@ print("Ready to learn?")</textarea>
             const pick = btn.dataset.pick;
             const rec = recommendations[pick];
             if (!rec || !matcherResult) return;
+            const persona = window.PF && window.PF.getPersona ? window.PF.getPersona() : null;
+            const personaLine = persona
+              ? "<p class='note' style='margin:0 0 12px'>For your <strong>" +
+                persona.label +
+                "</strong> path: " +
+                persona.focus +
+                "</p>"
+              : "";
             matcherResult.innerHTML =
               "<strong>" +
               rec.title +
               "</strong><p style='margin:8px 0 12px'>" +
               rec.text +
-              "</p><a class='btn btn-primary' href='" +
+              "</p>" +
+              personaLine +
+              "<a class='btn btn-primary' href='" +
               rec.link +
               "' style='min-width:auto'>Start this course</a>";
             matcherResult.classList.add("is-visible");
           });
+        });
+
+        document.addEventListener("pf:persona-changed", () => {
+          const selected = document.querySelector(".matcher-btn.is-selected");
+          if (selected) selected.click();
         });
 
         /* Mini playground — safe parser, no eval */

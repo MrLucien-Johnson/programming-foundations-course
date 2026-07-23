@@ -12,9 +12,69 @@
     authUser: "pf-auth-user",
     lastLesson: "pf-last-lesson",
     lastQuiz: "pf-last-quiz",
+    persona: "pf-org-persona",
+  };
+
+  /** Home learners pick which org framing fits them best. */
+  const PERSONAS = {
+    schools: {
+      id: "schools",
+      label: "Schools & colleges",
+      short: "School",
+      blurb:
+        "Structured modules, quizzes, and UK exam-board skill alignment for classroom or independent study.",
+      focus: "Follow modules in order, use Standards for GCSE-style skill mapping, earn a certificate.",
+      recommendCourse: "python",
+      standardsNote:
+        "Framed for school and college learners — skills map to OCR / AQA / Edexcel programming topics.",
+      heroHint: "Learn with classroom-ready structure and exam-board aligned skills.",
+    },
+    corporate: {
+      id: "corporate",
+      label: "Corporate L&D",
+      short: "Workplace",
+      blurb:
+        "Practical skills for career change or upskilling at work — portfolio projects and clear checkpoints.",
+      focus: "Prioritise portfolio projects, mark modules complete, sync progress across devices when signed in.",
+      recommendCourse: "python",
+      standardsNote:
+        "Framed for workplace learning — outcomes you can show managers and add to a CV.",
+      heroHint: "Build job-ready skills with projects you can show at work.",
+    },
+    saas: {
+      id: "saas",
+      label: "Self-serve / SaaS builders",
+      short: "Builder",
+      blurb:
+        "Self-paced path for indie builders and product-minded learners shipping real tools.",
+      focus: "Ship the Task Tracker, then branch into AI or advanced language tracks as you grow.",
+      recommendCourse: "ai",
+      standardsNote:
+        "Framed for builders — fundamentals first, then product/AI tracks at your own pace.",
+      heroHint: "Self-serve learning for people building products and side projects.",
+    },
   };
 
   const START_STEP_ORDER = ["open-online", "choose-course", "keep-learning", "download-local"];
+
+  /** Recommended path catalog per persona — used to seed org assignments. */
+  const PERSONA_PATHS = {
+    schools: {
+      label: "Schools & colleges",
+      courses: ["Python Course", "C# Course", "Python Advanced Course"],
+      note: "Structured, exam-board aligned progression from beginner to intermediate.",
+    },
+    corporate: {
+      label: "Corporate L&D",
+      courses: ["Python Course", "Python Advanced Course", "SQL Advanced Course"],
+      note: "Job-ready fundamentals plus data skills for workplace upskilling.",
+    },
+    saas: {
+      label: "Self-serve / SaaS builders",
+      courses: ["Python Course", "AI Prompt Creation Course", "TypeScript Advanced Course"],
+      note: "Ship fast: fundamentals, AI/prompting, then a modern web language track.",
+    },
+  };
 
   const NAV_LINKS = [
     { href: "index.html", label: "Home" },
@@ -23,6 +83,7 @@
     { href: "standards.html", label: "Standards" },
     { href: "help.html", label: "Help" },
     { href: "support.html", label: "Support" },
+    { href: "teams.html", label: "Teams" },
     { href: "account.html", label: "Account" },
   ];
 
@@ -498,6 +559,109 @@
     mountHeader();
   };
 
+  // --- Org-grade API helpers (organisations, gradebook, certificates, account) ---
+
+  const orgApi = {
+    list: () => apiFetch("/api/orgs").then((d) => d.orgs || []),
+    create: (name) =>
+      apiFetch("/api/orgs", { method: "POST", body: JSON.stringify({ name }) }).then((d) => d.org),
+    get: (id) => apiFetch(`/api/orgs/${encodeURIComponent(id)}`).then((d) => d.org),
+    setPlan: (id, plan) =>
+      apiFetch(`/api/orgs/${encodeURIComponent(id)}`, {
+        method: "PATCH",
+        body: JSON.stringify({ plan }),
+      }),
+    members: (id) => apiFetch(`/api/orgs/${encodeURIComponent(id)}/members`).then((d) => d.members || []),
+    addMember: (id, email, role) =>
+      apiFetch(`/api/orgs/${encodeURIComponent(id)}/members`, {
+        method: "POST",
+        body: JSON.stringify({ email, role }),
+      }).then((d) => d.member),
+    setMemberRole: (id, userId, role) =>
+      apiFetch(`/api/orgs/${encodeURIComponent(id)}/members/${encodeURIComponent(userId)}`, {
+        method: "PATCH",
+        body: JSON.stringify({ role }),
+      }),
+    removeMember: (id, userId) =>
+      apiFetch(`/api/orgs/${encodeURIComponent(id)}/members/${encodeURIComponent(userId)}`, {
+        method: "DELETE",
+      }),
+    assignments: (id) =>
+      apiFetch(`/api/orgs/${encodeURIComponent(id)}/assignments`).then((d) => d.assignments || []),
+    assignPath: (id, courseName, userId) =>
+      apiFetch(`/api/orgs/${encodeURIComponent(id)}/assignments`, {
+        method: "POST",
+        body: JSON.stringify({ courseName, userId: userId || null }),
+      }).then((d) => d.assignment),
+    analytics: (id) =>
+      apiFetch(`/api/orgs/${encodeURIComponent(id)}/analytics`).then((d) => d.analytics),
+    audit: (id, limit) =>
+      apiFetch(`/api/orgs/${encodeURIComponent(id)}/audit?limit=${Number(limit) || 100}`).then(
+        (d) => d.events || []
+      ),
+  };
+
+  /** Download a CSV export that requires an auth header, via blob. */
+  const downloadOrgCsv = async (orgId, kind, filename) => {
+    const base = apiBaseUrl();
+    if (!base) throw new Error("API is not configured.");
+    const token = getToken();
+    const response = await fetch(
+      `${base}/api/orgs/${encodeURIComponent(orgId)}/${kind}.csv`,
+      { headers: token ? { Authorization: `Bearer ${token}` } : {} }
+    );
+    if (!response.ok) {
+      throw new Error(`Could not download ${kind} (${response.status}).`);
+    }
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = filename || `${kind}.csv`;
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  };
+
+  const logQuizAttempt = (quizPath, result) => {
+    if (!getToken() || !quizPath) return Promise.resolve(null);
+    return apiFetch("/api/quiz-attempts", {
+      method: "POST",
+      body: JSON.stringify({
+        quizPath,
+        courseName: (result && result.courseName) || "",
+        score: Number(result && result.score) || 0,
+        total: Number(result && result.total) || 0,
+        passed: !!(result && result.passed),
+      }),
+    }).catch(() => null);
+  };
+
+  const listQuizAttempts = () =>
+    apiFetch("/api/quiz-attempts").then((d) => d.attempts || []);
+
+  const certApi = {
+    issue: (learnerName, courseName) =>
+      apiFetch("/api/certificates", {
+        method: "POST",
+        body: JSON.stringify({ learnerName, courseName }),
+      }).then((d) => d.certificate),
+    verify: (verifyId) =>
+      apiFetch(`/api/certificates/verify/${encodeURIComponent(verifyId)}`),
+    mine: () => apiFetch("/api/certificates").then((d) => d.certificates || []),
+  };
+
+  const accountApi = {
+    export: () => apiFetch("/api/account/export"),
+    remove: () => apiFetch("/api/account", { method: "DELETE" }),
+    changePassword: (currentPassword, newPassword) =>
+      apiFetch("/api/auth/change-password", {
+        method: "POST",
+        body: JSON.stringify({ currentPassword, newPassword }),
+      }),
+  };
+
   const getCompletions = () =>
     safeParse(localStorage.getItem(KEYS.completions), []);
 
@@ -545,6 +709,8 @@
     };
     localStorage.setItem(KEYS.quizCompletions, JSON.stringify(all));
     scheduleSync();
+    // Durable server-side attempt log powers org gradebooks (best-effort).
+    logQuizAttempt(quizPath, result);
     return all;
   };
 
@@ -598,9 +764,13 @@
     localStorage.removeItem(KEYS.completions);
     localStorage.removeItem(KEYS.quizCompletions);
     localStorage.removeItem(KEYS.startSteps);
+    localStorage.removeItem(KEYS.lastLesson);
+    localStorage.removeItem(KEYS.lastQuiz);
+    localStorage.removeItem(KEYS.persona);
     Object.keys(localStorage)
       .filter((key) => key.startsWith("module-progress:"))
       .forEach((key) => localStorage.removeItem(key));
+    mountResumeBanner();
     scheduleSync();
   };
 
@@ -722,13 +892,45 @@
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
 
+  const getLastQuiz = () => {
+    try {
+      return JSON.parse(localStorage.getItem(KEYS.lastQuiz) || "null");
+    } catch (error) {
+      return null;
+    }
+  };
+
   const mountResumeBanner = () => {
     const host = document.getElementById("pf-resume-host");
     if (!host) return;
     const last = getLastLesson();
-    if (!last || !last.path) {
+    const lastQuiz = getLastQuiz();
+    if ((!last || !last.path) && (!lastQuiz || !lastQuiz.quiz)) {
       host.hidden = true;
       host.innerHTML = "";
+      return;
+    }
+    const preferQuiz =
+      lastQuiz &&
+      lastQuiz.quiz &&
+      (!last || !last.path || (Number(lastQuiz.ts) || 0) > (Number(last?.ts) || 0));
+    if (preferQuiz) {
+      host.hidden = false;
+      host.innerHTML = `
+      <div class="resume-banner" role="region" aria-label="Resume learning">
+        <div class="resume-banner-copy">
+          <strong>Continue your last quiz</strong>
+          <span>${escapeHtml(lastQuiz.title || "Quiz")}</span>
+        </div>
+        <div class="resume-banner-actions">
+          <a class="btn btn-primary" href="quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}">Open quiz</a>
+          ${
+            last && last.path
+              ? `<a class="btn btn-ghost" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Last lesson</a>`
+              : ""
+          }
+        </div>
+      </div>`;
       return;
     }
     const done = isCompleted(last.path);
@@ -744,6 +946,11 @@
         <div class="resume-banner-actions">
           <a class="btn btn-primary" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Open lesson</a>
           ${last.page ? `<a class="btn btn-ghost" href="${escapeHtml(last.page)}">Course home</a>` : ""}
+          ${
+            lastQuiz && lastQuiz.quiz
+              ? `<a class="btn btn-ghost" href="quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}">Last quiz</a>`
+              : ""
+          }
         </div>
       </div>`;
   };
@@ -785,10 +992,111 @@
     toolbar.appendChild(wrap);
   };
 
+  const getPersonaId = () => {
+    try {
+      const id = localStorage.getItem(KEYS.persona) || "";
+      return PERSONAS[id] ? id : "";
+    } catch (error) {
+      return "";
+    }
+  };
+
+  const getPersona = () => PERSONAS[getPersonaId()] || null;
+
+  const setPersona = (id) => {
+    if (!PERSONAS[id]) return null;
+    try {
+      localStorage.setItem(KEYS.persona, id);
+    } catch (error) {
+      /* ignore */
+    }
+    applyPersonaCopy();
+    mountPersonaPicker();
+    document.dispatchEvent(
+      new CustomEvent("pf:persona-changed", { detail: { persona: PERSONAS[id] } })
+    );
+    return PERSONAS[id];
+  };
+
+  const clearPersona = () => {
+    try {
+      localStorage.removeItem(KEYS.persona);
+    } catch (error) {
+      /* ignore */
+    }
+    applyPersonaCopy();
+    mountPersonaPicker();
+    document.dispatchEvent(new CustomEvent("pf:persona-changed", { detail: { persona: null } }));
+  };
+
+  const applyPersonaCopy = () => {
+    const persona = getPersona();
+    document.querySelectorAll("[data-pf-persona-copy]").forEach((el) => {
+      const key = el.getAttribute("data-pf-persona-copy");
+      if (!persona) {
+        if (el.dataset.pfPersonaFallback !== undefined) {
+          el.textContent = el.dataset.pfPersonaFallback;
+        }
+        el.hidden = !String(el.textContent || "").trim();
+        return;
+      }
+      if (key && persona[key]) el.textContent = persona[key];
+      el.hidden = !String(el.textContent || "").trim();
+    });
+    document.querySelectorAll("[data-pf-persona-show]").forEach((el) => {
+      const want = el.getAttribute("data-pf-persona-show");
+      el.hidden = !persona || persona.id !== want;
+    });
+    document.documentElement.dataset.pfPersona = persona ? persona.id : "";
+  };
+
+  const mountPersonaPicker = () => {
+    const host = document.getElementById("pf-persona-host");
+    if (!host) return;
+    const selected = getPersonaId();
+    const heading = host.dataset.heading || "Who are you learning for?";
+    const lead =
+      host.dataset.lead ||
+      "Most people learn from home — pick the framing that fits you. You can change this anytime.";
+
+    host.innerHTML = `
+      <section class="persona-picker" aria-labelledby="persona-picker-heading">
+        <h3 id="persona-picker-heading">${escapeHtml(heading)}</h3>
+        <p class="persona-picker-lead">${escapeHtml(lead)}</p>
+        <div class="persona-options" role="radiogroup" aria-label="Organisation persona">
+          ${Object.values(PERSONAS)
+            .map((p) => {
+              const active = selected === p.id;
+              return `
+            <button type="button" class="persona-card${active ? " is-selected" : ""}"
+              role="radio" aria-checked="${active ? "true" : "false"}" data-persona="${p.id}">
+              <strong>${escapeHtml(p.label)}</strong>
+              <span>${escapeHtml(p.blurb)}</span>
+            </button>`;
+            })
+            .join("")}
+        </div>
+        <p class="note persona-picker-status" role="status">
+          ${
+            selected
+              ? `Saved: <strong>${escapeHtml(PERSONAS[selected].label)}</strong>. <button type="button" class="linkish" data-persona-clear>Clear choice</button>`
+              : "No persona saved yet — choose one to personalise tips and emphasis."
+          }
+        </p>
+      </section>`;
+
+    host.querySelectorAll("[data-persona]").forEach((btn) => {
+      btn.addEventListener("click", () => setPersona(btn.getAttribute("data-persona")));
+    });
+    host.querySelector("[data-persona-clear]")?.addEventListener("click", () => clearPersona());
+  };
+
   const boot = () => {
     mountHeader();
     mountDonateSlots();
     mountResumeBanner();
+    mountPersonaPicker();
+    applyPersonaCopy();
     enhancePlaygroundChallenges();
     if (getToken()) {
       syncProgress().catch(() => {
@@ -803,6 +1111,8 @@
     START_STEP_ORDER,
     COURSE_MODULE_MAP,
     ADVANCED_COURSES,
+    PERSONAS,
+    PERSONA_PATHS,
     getCompletions,
     saveCompletion,
     clearCompletion,
@@ -815,7 +1125,14 @@
     getLastLesson,
     setLastLesson,
     setLastQuiz,
+    getLastQuiz,
+    getPersonaId,
+    getPersona,
+    setPersona,
+    clearPersona,
     mountResumeBanner,
+    mountPersonaPicker,
+    applyPersonaCopy,
     inferLessonFromQuiz,
     progressForModules,
     courseProgress,
@@ -833,6 +1150,12 @@
     syncProgress,
     scheduleSync,
     apiBaseUrl,
+    org: orgApi,
+    downloadOrgCsv,
+    logQuizAttempt,
+    listQuizAttempts,
+    cert: certApi,
+    account: accountApi,
   };
 
   global.PF = PF;

@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Completion Certificate</title>
-    <link rel="stylesheet" href="styles.css?v=ux9" />
+    <link rel="stylesheet" href="styles.css?v=ux13" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux9"></script>
+    <script src="site.js?v=ux13"></script>
 
     <main id="main" class="container">
+      <div id="pf-resume-host" hidden></div>
       <section class="hero">
         <h2>Generate your certificate</h2>
         <p>
@@ -62,12 +63,29 @@
         <p>on</p>
         <h3 id="cert-preview-date">Date</h3>
         <p class="note">Programming Foundations</p>
+        <p class="note" id="cert-verify-line" hidden></p>
+      </section>
+
+      <section class="section panel-plain" id="verifiable-cert" hidden>
+        <h3 style="margin-top: 0;">Make it verifiable (optional)</h3>
+        <p class="note">
+          Signed in? Issue a verifiable certificate with a public code that employers or schools can
+          check on the <a href="verify.html">verify page</a>.
+        </p>
+        <div class="button-row">
+          <button id="cert-issue" class="btn btn-primary" type="button" disabled>
+            Issue verifiable certificate
+          </button>
+        </div>
+        <p id="cert-issue-status" class="note" role="status" aria-live="polite"></p>
       </section>
     </main>
 
     <footer class="footer container">
       <p>
         <a href="courses.html">Back to courses</a>
+        ·
+        <a href="standards.html">Standards map</a>
         ·
         <a href="support.html">Support / donate</a>
       </p>
@@ -182,6 +200,40 @@
         input.addEventListener("input", updatePreview)
       );
       updatePreview();
+
+      // Verifiable certificates (only meaningful when signed in and course complete).
+      const verifiableSection = document.getElementById("verifiable-cert");
+      const issueBtn = document.getElementById("cert-issue");
+      const issueStatus = document.getElementById("cert-issue-status");
+      const verifyLine = document.getElementById("cert-verify-line");
+      const signedIn = !!(window.PF.getUser && window.PF.getUser() && window.PF.getToken());
+
+      if (signedIn) {
+        verifiableSection.hidden = false;
+        const refreshIssueBtn = () => {
+          issueBtn.disabled = !refreshProgress() || !(nameInput.value || "").trim();
+        };
+        [nameInput, courseInput, dateInput].forEach((input) =>
+          input.addEventListener("input", refreshIssueBtn)
+        );
+        updateBtn.addEventListener("click", refreshIssueBtn);
+        refreshIssueBtn();
+
+        issueBtn.addEventListener("click", async () => {
+          issueStatus.textContent = "Issuing…";
+          try {
+            const cert = await window.PF.cert.issue(nameInput.value.trim(), courseInput.value);
+            const link = `${location.origin}${location.pathname.replace(/certificate\.html$/, "verify.html")}?code=${encodeURIComponent(cert.verifyId)}`;
+            issueStatus.innerHTML = `Issued. Verification code: <strong>${cert.verifyId}</strong> · <a href="${link}">verify link</a>`;
+            if (verifyLine) {
+              verifyLine.hidden = false;
+              verifyLine.textContent = `Verification code: ${cert.verifyId} — verify at ${location.host}/verify.html`;
+            }
+          } catch (error) {
+            issueStatus.textContent = error.message || "Could not issue certificate.";
+          }
+        });
+      }
     </script>
   </body>
 </html>

@@ -19,7 +19,7 @@ chartered computing education standards. Public learner view: `docs/standards.ht
 | --- | --- | --- |
 | 2.1 Algorithms (design, search/sort awareness, trace) | Control flow + functions; project design steps | Partial — add explicit pseudocode / trace practice |
 | 2.2 Programming fundamentals | Modules 2–5 (variables, operators, I/O, collections) | Strong |
-| 2.3 Producing robust programs | Exercises + Task Tracker validation | Partial — surface error handling & testing checkpoints |
+| 2.3 Producing robust programs | Exercises + Task Tracker validation | Improving — project modules call out validation / testing |
 | 2.4 Boolean logic | Module 3 logical operators | Strong — frame as Boolean logic explicitly |
 | 2.5 Languages & IDEs | Module 1 setup | Strong |
 
@@ -47,9 +47,9 @@ chartered computing education standards. Public learner view: `docs/standards.ht
 ## Known gaps (prioritized)
 
 1. **Algorithm design language** — short “design before code” blocks (pseudocode + trace tables) in Modules 3–4.
-2. **Robust programs** — validation / try-except (Python) and guard clauses (C#) callouts in project modules.
+2. **Robust programs** — validation / try-except (Python) and guard clauses (C#) callouts in project modules; Python Task Tracker now includes a robust-programs checkpoint.
 3. **Boolean logic naming** — add “Boolean logic” heading alias in control-flow modules.
-4. **Data representation (stretch)** — optional appendix for binary/ASCII for GCSE-curious learners.
+4. **Data representation (stretch)** — optional appendix for binary/ASCII for GCSE-curious learners (noted on `standards.html`).
 5. **Networks / systems theory** — out of scope for this programming track; link out on Standards page only.
 
 ## Acceptance for “exquisite alignment”

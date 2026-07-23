@@ -312,6 +312,14 @@ Task Tracker Application (Python)
 
 Before considering your project complete, make sure:
 
+### Robust programs checkpoint (exam-board habit)
+
+Prove the app is **robust** before you ship it:
+1. Enter blank or weird menu choices — it should not crash.
+2. Try invalid task numbers — show a clear message and continue.
+3. Add → list → complete → list again — confirm state stays correct.
+4. Exit cleanly and re-run once to confirm the flow still works.
+
 - [ ] Can add new tasks
 - [ ] Can view all tasks
 - [ ] Can mark tasks as complete
@@ -321,6 +329,7 @@ Before considering your project complete, make sure:
 - [ ] Code is organized into classes
 - [ ] Methods are clear and focused
 - [ ] Code has comments where helpful
+- [ ] Robust programs checkpoint above passed
 
 ## 🎉 Congratulations!
 

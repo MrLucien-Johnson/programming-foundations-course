@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Verify a certificate - Programming Foundations</title>
+    <link rel="stylesheet" href="styles.css?v=ux13" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div data-pf-header></div>
+    <script src="config.js"></script>
+    <script src="site.js?v=ux13"></script>
+
+    <main id="main" class="container">
+      <section class="hero">
+        <h2>Verify a certificate</h2>
+        <p>
+          Enter a certificate code (for example <code>PF-7QK2-9ZAM</code>) to confirm it was issued
+          by Programming Foundations. Employers and schools can use this to check authenticity.
+        </p>
+      </section>
+
+      <section class="section panel-plain">
+        <label>
+          Certificate code
+          <input id="verify-code" class="field-input" type="text" placeholder="PF-XXXX-XXXX" />
+        </label>
+        <div class="button-row">
+          <button id="verify-btn" class="btn btn-primary" type="button">Verify</button>
+        </div>
+        <div id="verify-result" class="section" role="status" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <p>
+        <a href="certificate.html">Get a certificate</a>
+        ·
+        <a href="courses.html">Courses</a>
+        ·
+        <a href="support.html">Support / donate</a>
+      </p>
+    </footer>
+
+    <script>
+      (function () {
+        const PF = window.PF;
+        const codeInput = document.getElementById("verify-code");
+        const result = document.getElementById("verify-result");
+        const esc = (s) =>
+          String(s == null ? "" : s).replace(/[&<>"']/g, (c) =>
+            ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
+          );
+
+        const params = new URLSearchParams(location.search);
+        if (params.get("code")) codeInput.value = params.get("code");
+
+        async function run() {
+          const code = codeInput.value.trim();
+          if (!code) {
+            result.innerHTML = '<p class="note">Enter a certificate code.</p>';
+            return;
+          }
+          result.innerHTML = '<p class="note">Checking…</p>';
+          try {
+            const data = await PF.cert.verify(code);
+            if (data && data.valid) {
+              const c = data.certificate;
+              result.innerHTML = `<div class="panel-plain">
+                <h3 style="margin-top:0;color:#0a7d2c;">✓ Valid certificate</h3>
+                <p><strong>${esc(c.learnerName)}</strong> completed <strong>${esc(c.courseName)}</strong>.</p>
+                <p class="note">Issued ${esc(new Date(c.issuedAt).toLocaleDateString())} · Code ${esc(c.verifyId)}</p>
+              </div>`;
+            } else {
+              result.innerHTML = '<div class="panel-plain"><h3 style="margin-top:0;color:#b00020;">✗ Not found</h3><p>No valid certificate matches that code.</p></div>';
+            }
+          } catch (error) {
+            result.innerHTML = `<p class="note">${esc(error.message || "Could not verify right now. Is the API reachable?")}</p>`;
+          }
+        }
+
+        document.getElementById("verify-btn").addEventListener("click", run);
+        codeInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") run();
+        });
+        if (params.get("code")) run();
+      })();
+    </script>
+  </body>
+</html>

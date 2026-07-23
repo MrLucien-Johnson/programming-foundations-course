@@ -596,6 +596,15 @@ Before considering your project complete, make sure:
 - [ ] Tested invalid input
 - [ ] Tested empty task list
 
+### Robust programs checkpoint (exam-board habit)
+
+Prove the app is **robust** before you ship it:
+1. Enter blank or weird menu choices — it should not crash.
+2. Try invalid task numbers — show a clear message and continue.
+3. Add → list → complete → list again — confirm state stays correct.
+4. Exit cleanly and re-run once to confirm the flow still works.
+- [ ] Robust programs checkpoint above passed
+
 ## 🎉 Congratulations!
 
 When you complete this project, you've:
