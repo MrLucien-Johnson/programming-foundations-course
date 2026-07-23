@@ -7,8 +7,15 @@ const path = require("path");
 
 const { openDatabase } = require("./db");
 const { createAuth } = require("./auth");
+const { createAudit } = require("./audit");
+const { createOrgStore } = require("./orgs");
+const { createCertificateStore } = require("./certificates");
 const { createAuthRouter } = require("./routes/auth");
 const { createProgressRouter } = require("./routes/progress");
+const { createOrgsRouter } = require("./routes/orgs");
+const { createQuizRouter } = require("./routes/quiz");
+const { createCertificatesRouter } = require("./routes/certificates");
+const { createAccountRouter } = require("./routes/account");
 
 const PORT = Number(process.env.PORT || 8787);
 const HOST = process.env.HOST || "0.0.0.0";
@@ -48,7 +55,15 @@ const corsOrigins = (process.env.CORS_ORIGINS || "")
   .filter(Boolean);
 
 const db = openDatabase(DATABASE_PATH);
-const auth = createAuth({ db, jwtSecret: JWT_SECRET });
+const audit = createAudit(db);
+const orgStore = createOrgStore({ db, audit });
+const certStore = createCertificateStore({ db, audit });
+const auth = createAuth({
+  db,
+  jwtSecret: JWT_SECRET,
+  // Claim any pending org invites addressed to this email on register/login.
+  onAuthenticated: (user) => orgStore.attachInvites(user.id, user.email),
+});
 
 const app = express();
 app.set("trust proxy", 1);
@@ -87,6 +102,10 @@ const authLimiter = rateLimit({
 
 app.use("/api/auth", authLimiter, createAuthRouter(auth));
 app.use("/api/progress", createProgressRouter({ db, requireAuth: auth.requireAuth }));
+app.use("/api/quiz-attempts", createQuizRouter({ db, requireAuth: auth.requireAuth }));
+app.use("/api/orgs", createOrgsRouter({ orgStore, requireAuth: auth.requireAuth }));
+app.use("/api/certificates", createCertificatesRouter({ certStore, requireAuth: auth.requireAuth }));
+app.use("/api/account", createAccountRouter({ db, requireAuth: auth.requireAuth, audit }));
 
 app.use((err, _req, res, _next) => {
   if (err && /Origin not allowed/.test(err.message || "")) {
@@ -102,4 +121,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { app, db, auth, normalizeOrigin };
+module.exports = { app, db, auth, orgStore, certStore, audit, normalizeOrigin };

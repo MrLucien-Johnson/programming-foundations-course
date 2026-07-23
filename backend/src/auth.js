@@ -7,7 +7,16 @@ const emailSchema = z.string().trim().email().max(254);
 const passwordSchema = z.string().min(8).max(128);
 const nameSchema = z.string().trim().max(80).optional().default("");
 
-function createAuth({ db, jwtSecret }) {
+function createAuth({ db, jwtSecret, onAuthenticated }) {
+  const notifyAuthenticated = (user) => {
+    if (typeof onAuthenticated === "function") {
+      try {
+        onAuthenticated(user);
+      } catch {
+        // Post-auth hooks (e.g. claiming invites) must not block sign-in.
+      }
+    }
+  };
   const insertUser = db.prepare(`
     INSERT INTO users (id, email, display_name, password_hash, created_at, updated_at)
     VALUES (@id, @email, @display_name, @password_hash, @created_at, @updated_at)
@@ -63,6 +72,7 @@ function createAuth({ db, jwtSecret }) {
       updated_at: now,
     };
     insertUser.run(user);
+    notifyAuthenticated(publicUser(user));
     const token = signToken(user);
     return { token, user: publicUser(user) };
   }
@@ -76,6 +86,7 @@ function createAuth({ db, jwtSecret }) {
       err.status = 401;
       throw err;
     }
+    notifyAuthenticated(publicUser(row));
     return { token: signToken(row), user: publicUser(row) };
   }
 
