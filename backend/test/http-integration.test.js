@@ -55,6 +55,8 @@ test("full org-grade HTTP flow", async () => {
   assert.equal(health.json.ok, true);
 
   const email = `owner-${Date.now()}@example.com`;
+  // Org creation is allowlisted (fail-closed); allow this test's own owner email.
+  process.env.ORG_CREATOR_EMAILS = email;
   const reg = await api("/api/auth/register", {
     method: "POST",
     body: { email, password: "password123", displayName: "Owner" },
@@ -130,6 +132,15 @@ test("full org-grade HTTP flow", async () => {
   });
   const forbidden = await api(`/api/orgs/${orgId}/members`, { token: other.json.token });
   assert.equal(forbidden.status, 403);
+
+  // Non-allowlisted user cannot create an org (fail-closed 403 with clear message).
+  const orgDenied = await api("/api/orgs", {
+    method: "POST",
+    token: other.json.token,
+    body: { name: "Rogue Org" },
+  });
+  assert.equal(orgDenied.status, 403);
+  assert.match(orgDenied.json.error, /approved platform admins/);
 
   // Change password: wrong current password is rejected.
   const badChange = await api("/api/auth/change-password", {

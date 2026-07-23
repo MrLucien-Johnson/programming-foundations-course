@@ -13,6 +13,25 @@ function normalizeEmail(value) {
 }
 
 /**
+ * Platform-admin allowlist, read fresh from env on every check (not cached at
+ * module load) so tests can set/change it at runtime. Comma-separated,
+ * case-insensitive emails. Fails closed: an empty/unset list allows no one,
+ * since only the site owner should be able to hold the `admin` role for now.
+ */
+function orgCreatorAllowlist() {
+  return String(process.env.ORG_CREATOR_EMAILS || "")
+    .split(",")
+    .map(normalizeEmail)
+    .filter(Boolean);
+}
+
+function isAllowedAdminEmail(email) {
+  const clean = normalizeEmail(email);
+  if (!clean) return false;
+  return orgCreatorAllowlist().includes(clean);
+}
+
+/**
  * Data access + rules for organisations, memberships, roles, and assignments.
  * Kept framework-free so it can be unit tested directly (see auth.js pattern).
  */
@@ -89,6 +108,13 @@ function createOrgStore({ db, audit }) {
   }
 
   function createOrg({ userId, name }) {
+    const creator = findUserById.get(userId);
+    if (!creator || !isAllowedAdminEmail(creator.email)) {
+      throw httpError(
+        "Creating an organisation is limited to approved platform admins right now. Contact the site owner to request access.",
+        403
+      );
+    }
     const trimmed = String(name || "").trim();
     if (trimmed.length < 2 || trimmed.length > 120) {
       throw httpError("Organisation name must be 2–120 characters.", 400);
@@ -168,6 +194,12 @@ function createOrgStore({ db, audit }) {
       throw httpError("A valid email is required to add a member.", 400);
     }
     if (!ROLES.includes(role)) throw httpError("Role must be admin or learner.", 400);
+    if (role === "admin" && !isAllowedAdminEmail(cleanEmail)) {
+      throw httpError(
+        "Only approved platform admins can be added with the admin role right now.",
+        403
+      );
+    }
 
     const existingUser = findUserByEmail.get(cleanEmail);
     if (existingUser) {
@@ -210,6 +242,16 @@ function createOrgStore({ db, audit }) {
     if (!ROLES.includes(role)) throw httpError("Role must be admin or learner.", 400);
     const target = getMembership.get(orgId, targetUserId);
     if (!target) throw httpError("Member not found.", 404);
+    if (role === "admin" && target.role !== "admin") {
+      const targetUser = target.user_id ? findUserById.get(target.user_id) : null;
+      const targetEmail = targetUser ? targetUser.email : target.invited_email;
+      if (!isAllowedAdminEmail(targetEmail)) {
+        throw httpError(
+          "Only approved platform admins can be promoted to admin right now.",
+          403
+        );
+      }
+    }
     if (target.role === "admin" && role !== "admin" && countAdmins.get(orgId).n <= 1) {
       throw httpError("An organisation must keep at least one admin.", 400);
     }
@@ -413,4 +455,4 @@ function toCsv(rows, columns) {
   return body ? `${header}\r\n${body}\r\n` : `${header}\r\n`;
 }
 
-module.exports = { createOrgStore, toCsv, ROLES };
+module.exports = { createOrgStore, toCsv, ROLES, isAllowedAdminEmail };

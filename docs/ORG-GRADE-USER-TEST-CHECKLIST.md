@@ -10,11 +10,22 @@ Nothing here breaks guest / self-serve learning — that path keeps working with
 ```bash
 cd backend
 npm install
-npm test        # should show 9 passing tests
+npm test        # should show 12 passing tests
 npm run dev     # starts API on http://localhost:8787
 ```
 
 Leave the API running in one terminal.
+
+**Creating an org requires an allowlisted email.** Org creation (and the
+`admin` role in general) is fail-closed and gated by `ORG_CREATOR_EMAILS` — a
+comma-separated, case-insensitive list of emails. Add your own test account's
+email to `backend/.env` before testing the steps below, e.g.:
+
+```bash
+ORG_CREATOR_EMAILS=you@example.com
+```
+
+Without it, **Create organisation** returns a 403 for everyone, by design.
 
 **Frontend (static site):** the site talks to `http://localhost:8787` automatically when opened
 from `localhost`/`127.0.0.1` (see `docs/config.js`). Serve `docs/` with any static server, e.g.:
@@ -38,10 +49,10 @@ curl http://localhost:8787/api/health
 
 - [ ] **Guest still works:** In a fresh browser, complete a module and take a quiz without signing in. Progress persists on reload.
 - [ ] **Create account:** Go to **Account**, create an account, confirm you’re signed in.
-- [ ] **Create an org:** Go to **Teams**, create an organisation. You become **admin**.
+- [ ] **Create an org:** Go to **Teams**, create an organisation with your allowlisted account. You become **admin**. If your email is not in `ORG_CREATOR_EMAILS`, you should see a clear 403 error instead.
 - [ ] **Add an existing user:** Register a second account (second browser/incognito). Back as admin, add that email — status shows **active** immediately.
 - [ ] **Invite a new email:** Add an email that has NOT registered — status shows **invited**. Register that email; it should auto-join the org (check the members list).
-- [ ] **Roles:** Promote a learner to admin and back. Confirm you **cannot demote/remove the last admin** (error shown).
+- [ ] **Roles:** Promote a learner to admin and back. Confirm you **cannot demote/remove the last admin** (error shown). Confirm promoting a **non-allowlisted** learner to admin is rejected with a 403.
 - [ ] **Assign paths:** Assign a course org-wide and a course to a single member. Confirm they appear under “Assigned paths”.
 - [ ] **Durable quiz log:** While signed in, take a quiz in **Courses → a quiz**. It’s recorded server-side (verified next in the gradebook).
 
