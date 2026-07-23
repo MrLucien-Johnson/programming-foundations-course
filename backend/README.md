@@ -66,13 +66,33 @@ Progress payload shape:
 }
 ```
 
+## Who can create an organisation / be an admin?
+
+Creating an organisation (and holding the `admin` membership role in general —
+including being invited or promoted to admin) is restricted to an allowlist of
+emails set via `ORG_CREATOR_EMAILS` (comma-separated, case-insensitive). This
+is **fail-closed**: if the variable is unset or empty, no one can create an
+org or hold the admin role, even in local dev. Everyone can still register,
+sign in, learn, and be invited/added as a `learner`.
+
+Set your own email so you can create your first org:
+
+```bash
+ORG_CREATOR_EMAILS=you@example.com
+```
+
+Do not commit real email addresses — set this in your local `.env` (already
+gitignored) and in your host's environment variables (e.g. the Render
+dashboard) instead.
+
 ## Production checklist
 
 1. Set a strong `JWT_SECRET`.
 2. Set `CORS_ORIGINS` to your real site origin(s), e.g. `https://yourname.github.io`.
-3. Persist `DATABASE_PATH` on a volume (`/data/pf.sqlite` on Render).
-4. Put TLS in front (Render/Railway/Fly provide HTTPS).
-5. Point `docs/config.js` `productionApiBaseUrl` at the public API URL.
+3. Set `ORG_CREATOR_EMAILS` to your own email (see above) — required to create an org.
+4. Persist `DATABASE_PATH` on a volume (`/data/pf.sqlite` on Render).
+5. Put TLS in front (Render/Railway/Fly provide HTTPS).
+6. Point `docs/config.js` `productionApiBaseUrl` at the public API URL.
 
 Open-beta walkthrough: [`docs/OPEN-BETA-DEPLOY.md`](../docs/OPEN-BETA-DEPLOY.md)
 

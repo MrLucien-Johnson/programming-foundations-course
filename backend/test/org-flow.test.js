@@ -11,6 +11,10 @@ const { createAudit } = require("../src/audit");
 const { createOrgStore, toCsv } = require("../src/orgs");
 const { createCertificateStore } = require("../src/certificates");
 
+// Org creation / admin role are allowlisted by email (fail-closed). Include the
+// fixed test admin emails used below so existing org-flow tests keep passing.
+process.env.ORG_CREATOR_EMAILS = "admin@example.com,teacher@example.com,solo@example.com,learner@example.com";
+
 function freshDb() {
   const file = path.join(os.tmpdir(), `pf-org-${crypto.randomUUID()}.sqlite`);
   const db = openDatabase(file);
@@ -174,6 +178,75 @@ test("certificates issue and publicly verify", () => {
   const mine = certStore.listForUser(user.id);
   assert.equal(mine.length, 1);
 
+  db.close();
+  fs.unlinkSync(file);
+});
+
+test("org creation is restricted to the ORG_CREATOR_EMAILS allowlist", () => {
+  const { db, file } = freshDb();
+  const orgStore = createOrgStore({ db, audit: createAudit(db) });
+  const auth = createAuth({ db, jwtSecret: "test" });
+
+  const original = process.env.ORG_CREATOR_EMAILS;
+  try {
+    process.env.ORG_CREATOR_EMAILS = "owner@example.com";
+
+    const outsider = makeUser(auth, "outsider@example.com");
+    assert.throws(
+      () => orgStore.createOrg({ userId: outsider.id, name: "Rogue Org" }),
+      /approved platform admins/
+    );
+
+    const owner = makeUser(auth, "owner@example.com");
+    const org = orgStore.createOrg({ userId: owner.id, name: "Owner Org" });
+    assert.equal(org.role, "admin");
+
+    // Unset/empty allowlist fails closed — no one can create an org.
+    process.env.ORG_CREATOR_EMAILS = "";
+    assert.throws(
+      () => orgStore.createOrg({ userId: owner.id, name: "Another Org" }),
+      /approved platform admins/
+    );
+  } finally {
+    process.env.ORG_CREATOR_EMAILS = original;
+  }
+  db.close();
+  fs.unlinkSync(file);
+});
+
+test("promoting or adding a member as admin is restricted to the allowlist", () => {
+  const { db, file } = freshDb();
+  const orgStore = createOrgStore({ db, audit: createAudit(db) });
+  const auth = createAuth({ db, jwtSecret: "test" });
+
+  const original = process.env.ORG_CREATOR_EMAILS;
+  try {
+    process.env.ORG_CREATOR_EMAILS = "owner@example.com";
+    const owner = makeUser(auth, "owner@example.com");
+    const org = orgStore.createOrg({ userId: owner.id, name: "Gate Org" });
+
+    const learner = makeUser(auth, "learner2@example.com");
+    orgStore.addMember({ orgId: org.id, actorId: owner.id, email: learner.email, role: "learner" });
+
+    // Non-allowlisted learner cannot be promoted to admin.
+    assert.throws(
+      () => orgStore.updateMemberRole({ orgId: org.id, actorId: owner.id, targetUserId: learner.id, role: "admin" }),
+      /approved platform admins/
+    );
+
+    // Non-allowlisted email cannot be added directly as admin either.
+    assert.throws(
+      () => orgStore.addMember({ orgId: org.id, actorId: owner.id, email: "new-admin@example.com", role: "admin" }),
+      /approved platform admins/
+    );
+
+    // Allowlisted second admin can be added and promoted.
+    process.env.ORG_CREATOR_EMAILS = "owner@example.com,second-admin@example.com";
+    const added = orgStore.addMember({ orgId: org.id, actorId: owner.id, email: "second-admin@example.com", role: "admin" });
+    assert.equal(added.role, "admin");
+  } finally {
+    process.env.ORG_CREATOR_EMAILS = original;
+  }
   db.close();
   fs.unlinkSync(file);
 });
