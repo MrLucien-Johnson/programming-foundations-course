@@ -578,3 +578,40 @@ Remote main had advanced (accounts API, Support, shared `site.js` header, promo 
 **Changes:** None.
 
 ---
+
+### 2026-07-27 — Weekly maintenance: times + UX feel (ux14)
+
+**Routes:** `audit_routes.py` → 0 errors / 0 warnings (27 HTML pages).
+
+**Findings**
+1. Resume banner showed no “when” context — learners could not tell how fresh progress was.
+2. Footers lacked a current-year / last-maintained stamp after prior audit rounds.
+3. Privacy page had no last-reviewed date.
+4. Site-wide interactivity felt static: no scroll reveals, no back-to-top, header never compacted for reading.
+
+**Changes**
+- `docs/site.js`: relative timestamps on Continue banner; footer © 2026 + “Last maintained July 2026”; compact sticky header; back-to-top; IntersectionObserver scroll reveals; matcher/playground success pulse.
+- `docs/styles.css`: motion, hover lift, back-to-top, reveal/page-enter, resume-when, site-meta, help filter (respects `prefers-reduced-motion`).
+- Homepage playground: Ctrl/⌘+Enter hint.
+- Help: live topic filter search.
+- Start Here: jump-to-step-1 CTA.
+- Teams: audit log shows relative + absolute times.
+- Privacy: “Last reviewed: 27 July 2026”.
+- Cache-bust assets to `?v=ux14` across docs HTML.
+
+**Files touched**
+- `docs/site.js`
+- `docs/styles.css`
+- `docs/index.html`
+- `docs/privacy.html`
+- `docs/help.html`
+- `docs/start-here.html`
+- `docs/teams.html`
+- `docs/*.html` (cache strings)
+- `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and HTML cache strings from prior commit; drop audit entry.
+
+**Route risk:** Low — additive chrome; primary routes unchanged.
+
+---
