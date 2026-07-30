@@ -29,6 +29,8 @@ You're about to learn programming from the ground up. Whether you're looking to 
 
 ### Step 4: Download or Clone the Course (10 minutes)
 
+Prefer a short video? Watch **[Get started — browser & download](docs/tutorials.html#get-started)** on the site, plus the [Python](docs/tutorials.html#python-setup) or [C#](docs/tutorials.html#csharp-setup) install tutorials when you set up tools.
+
 **Option A: Download ZIP (Easiest)**
 1. Click the green **"Code"** button on GitHub
 2. Select **"Download ZIP"**

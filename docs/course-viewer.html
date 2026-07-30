@@ -38,6 +38,22 @@
         </div>
       </section>
 
+      <aside class="section tutorial-callout" id="lesson-tutorial" hidden>
+        <h3 id="lesson-tutorial-title">Related tutorial</h3>
+        <p class="note" id="lesson-tutorial-note"></p>
+        <video
+          class="promo-video"
+          id="lesson-tutorial-video"
+          controls
+          playsinline
+          preload="metadata"
+        ></video>
+        <div class="button-row">
+          <a class="btn btn-secondary" id="lesson-tutorial-hub" href="tutorials.html">All tutorials</a>
+          <a class="btn btn-secondary" id="lesson-tutorial-transcript" href="#" download>Transcript</a>
+        </div>
+      </aside>
+
       <section id="lesson-content" class="section card lesson-content" aria-live="polite"></section>
 
       <section class="section lesson-actions">
@@ -78,6 +94,52 @@
       const moduleTrack = document.getElementById("module-track");
 
       const CIRCUMFERENCE = 2 * Math.PI * 52;
+
+      const TUTORIAL_BY_PATH = [
+        {
+          match: /python-beginner-workbook\/module-01-setup/i,
+          title: "Python install tutorial",
+          note: "Watch this before or while installing Python and your editor — then follow the written Module 1 steps below.",
+          src: "assets/tutorials/tutorial-02-python-setup.mp4",
+          transcript: "assets/tutorials/tutorial-02-python-setup-transcript.txt",
+          hub: "tutorials.html#python-setup",
+        },
+        {
+          match: /csharp-beginner-workbook\/module-01-setup/i,
+          title: "C# / .NET install tutorial",
+          note: "Watch this before or while installing the .NET SDK — then follow the written Module 1 steps below.",
+          src: "assets/tutorials/tutorial-03-csharp-setup.mp4",
+          transcript: "assets/tutorials/tutorial-03-csharp-setup-transcript.txt",
+          hub: "tutorials.html#csharp-setup",
+        },
+      ];
+
+      const mountLessonTutorial = (path) => {
+        const panel = document.getElementById("lesson-tutorial");
+        if (!panel) return;
+        const hit = TUTORIAL_BY_PATH.find((entry) => entry.match.test(path || ""));
+        if (!hit) {
+          panel.hidden = true;
+          return;
+        }
+        panel.hidden = false;
+        const title = document.getElementById("lesson-tutorial-title");
+        const note = document.getElementById("lesson-tutorial-note");
+        const video = document.getElementById("lesson-tutorial-video");
+        const hub = document.getElementById("lesson-tutorial-hub");
+        const transcript = document.getElementById("lesson-tutorial-transcript");
+        if (title) title.textContent = hit.title;
+        if (note) note.textContent = hit.note;
+        if (video) {
+          video.src = hit.src;
+          video.load();
+        }
+        if (hub) hub.href = hit.hub;
+        if (transcript) {
+          transcript.href = hit.transcript;
+          transcript.setAttribute("download", "");
+        }
+      };
 
       const updateCourseProgressUI = (course, currentPath) => {
         if (!course || !progressWidget || !moduleTrack) return;
@@ -885,6 +947,8 @@
           }
           return;
         }
+
+        mountLessonTutorial(repoPath);
 
         const rawRoot =
           "https://raw.githubusercontent.com/MrLucien-Johnson/programming-foundations-course/main/";

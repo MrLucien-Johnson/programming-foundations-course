@@ -1,0 +1,28 @@
+Programming Foundations — Tutorial: Get started — browser & download
+ID: 01-get-started-download
+Suggested placement: start-here, help, courses
+
+────────────────────────────────────────
+FULL VOICEOVER
+────────────────────────────────────────
+
+[Slide 1] Learn in your browser first
+Learn in your browser first. You do not need to install anything to start Module 1 online. Open Start Here, pick Python, C sharp, or A I, and mark steps done as you go.
+
+[Slide 2] When you want files on your computer
+When you want files on your computer, use GitHub’s Code menu and choose Download ZIP. Find the file in Downloads, then unzip it. Git is optional — beginners can use the ZIP.
+
+[Slide 3] Open the right folder
+Open the right folder for your course. Python lives in python-beginner-workbook. C sharp lives in csharp-beginner-workbook. Always start with Module 1 setup.
+
+[Slide 4] Quick tip
+Quick tip: if a download goes missing, check the Help page. You can keep learning online while installers run in the background.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+Learn in your browser first. You do not need to install anything to start Module 1 online. Open Start Here, pick Python, C sharp, or A I, and mark steps done as you go. When you want files on your computer, use GitHub’s Code menu and choose Download ZIP. Find the file in Downloads, then unzip it. Git is optional — beginners can use the ZIP. Open the right folder for your course. Python lives in python-beginner-workbook. C sharp lives in csharp-beginner-workbook. Always start with Module 1 setup. Quick tip: if a download goes missing, check the Help page. You can keep learning online while installers run in the background.
+
+Voice: en-US JennyNeural (edge-tts)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

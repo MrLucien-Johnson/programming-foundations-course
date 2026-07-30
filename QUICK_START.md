@@ -1,6 +1,7 @@
 # Quick Start: Your First C# Program in 5 Minutes
 
 This guide gets you running your first C# program quickly. For detailed instructions, see Module 1.
+Prefer a video? Watch the [C# / .NET install tutorial](docs/tutorials.html#csharp-setup).
 
 ## ⚡ Step 1: Install .NET SDK
 

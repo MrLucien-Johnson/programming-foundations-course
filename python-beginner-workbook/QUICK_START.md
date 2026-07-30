@@ -1,6 +1,7 @@
 # Quick Start: Your First Python Program in 5 Minutes
 
 This guide gets you running your first Python program quickly. For detailed instructions, see Module 1.
+Prefer a video? Watch the [Python install tutorial](../docs/tutorials.html#python-setup).
 
 ## ⚡ Step 1: Install Python
 

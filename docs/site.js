@@ -80,6 +80,7 @@
     { href: "index.html", label: "Home" },
     { href: "start-here.html", label: "Start Here" },
     { href: "courses.html", label: "Courses" },
+    { href: "tutorials.html", label: "Tutorials" },
     { href: "standards.html", label: "Standards" },
     { href: "help.html", label: "Help" },
     { href: "support.html", label: "Support" },

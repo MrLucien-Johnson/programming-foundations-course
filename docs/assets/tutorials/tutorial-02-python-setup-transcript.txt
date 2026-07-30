@@ -1,0 +1,31 @@
+Programming Foundations — Tutorial: Python — download, install, first script
+ID: 02-python-setup
+Suggested placement: python-course, module-01-setup
+
+────────────────────────────────────────
+FULL VOICEOVER
+────────────────────────────────────────
+
+[Slide 1] Install Python
+Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, use the installer or python 3.
+
+[Slide 2] Verify it worked
+Verify it worked. Open a terminal and run python dash dash version, or python 3 dash dash version. You should see a version number.
+
+[Slide 3] Install a code editor
+Install a code editor such as Cursor or Visual Studio Code. Add the Python extension, then open your python-beginner-workbook folder.
+
+[Slide 4] Your first script
+Create hello.py with a print hello message, then run python hello.py. Change the text — that is your first real program.
+
+[Slide 5] Python tips
+If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor terminal, finish Module 1 exercises, then take the quiz.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, use the installer or python 3. Verify it worked. Open a terminal and run python dash dash version, or python 3 dash dash version. You should see a version number. Install a code editor such as Cursor or Visual Studio Code. Add the Python extension, then open your python-beginner-workbook folder. Create hello.py with a print hello message, then run python hello.py. Change the text — that is your first real program. If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor terminal, finish Module 1 exercises, then take the quiz.
+
+Voice: en-US JennyNeural (edge-tts)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

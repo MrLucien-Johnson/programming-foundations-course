@@ -18,6 +18,7 @@ PRIMARY_ROUTES = [
     "index.html",
     "start-here.html",
     "courses.html",
+    "tutorials.html",
     "help.html",
     "support.html",
     "account.html",

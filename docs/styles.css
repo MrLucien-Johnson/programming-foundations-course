@@ -1889,6 +1889,23 @@ button.path-node {
   margin: 12px 0 16px;
 }
 
+.tutorial-callout {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(243, 239, 230, 0.9));
+  border: 1px solid rgba(14, 17, 22, 0.1);
+  border-radius: var(--radius-md);
+  padding: 18px 20px 8px;
+  box-shadow: var(--bevel-raised);
+}
+
+.tutorial-callout h3 {
+  margin-top: 0;
+}
+
+.tutorial-callout .promo-video {
+  aspect-ratio: 16 / 9;
+  max-width: 720px;
+}
+
 /* ── Responsive path viz ── */
 @media (max-width: 640px) {
   .path-viz-track {

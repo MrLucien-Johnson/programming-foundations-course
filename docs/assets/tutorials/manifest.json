@@ -1,0 +1,38 @@
+[
+  {
+    "id": "01-get-started-download",
+    "title": "Get started \u2014 browser & download",
+    "when": "start-here, help, courses",
+    "file": "tutorial-01-get-started-download.mp4",
+    "transcript": "tutorial-01-get-started-download-transcript.txt",
+    "audio": "tutorial-01-get-started-download-voiceover.m4a",
+    "durationSec": 46.6
+  },
+  {
+    "id": "02-python-setup",
+    "title": "Python \u2014 download, install, first script",
+    "when": "python-course, module-01-setup",
+    "file": "tutorial-02-python-setup.mp4",
+    "transcript": "tutorial-02-python-setup-transcript.txt",
+    "audio": "tutorial-02-python-setup-voiceover.m4a",
+    "durationSec": 53.2
+  },
+  {
+    "id": "03-csharp-setup",
+    "title": "C# \u2014 install .NET and first project",
+    "when": "csharp-course, module-01-setup",
+    "file": "tutorial-03-csharp-setup.mp4",
+    "transcript": "tutorial-03-csharp-setup-transcript.txt",
+    "audio": "tutorial-03-csharp-setup-voiceover.m4a",
+    "durationSec": 45.5
+  },
+  {
+    "id": "04-tips-tricks",
+    "title": "Tips & tricks for this site",
+    "when": "help, start-here, account",
+    "file": "tutorial-04-tips-tricks.mp4",
+    "transcript": "tutorial-04-tips-tricks-transcript.txt",
+    "audio": "tutorial-04-tips-tricks-voiceover.m4a",
+    "durationSec": 53.3
+  }
+]
