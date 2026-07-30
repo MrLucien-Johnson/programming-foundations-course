@@ -3,10 +3,14 @@
 /* ── Design tokens ── */
 :root {
   --ink: #0e1116;
-  --paper: #f3efe6;
+  --paper: #f1ebe0;
+  --paper-deep: #e6dfd2;
+  --paper-lift: #faf7f1;
   --gold: #c9a227;
   --gold-light: #e2c15a;
   --gold-dark: #9a7b1a;
+  --atmosphere-gold: rgba(201, 162, 39, 0.16);
+  --atmosphere-ink: rgba(14, 17, 22, 0.05);
 
   /* Compatibility aliases */
   --black: var(--ink);
@@ -84,8 +88,11 @@ body {
   font-size: 17px;
   position: relative;
   min-height: 100vh;
+  /* Calmer reading rhythm for long lessons */
+  text-rendering: optimizeLegibility;
 }
 
+/* Soft study-desk atmosphere: warm light, grounded base, focused center */
 body::before {
   content: "";
   position: fixed;
@@ -93,23 +100,25 @@ body::before {
   pointer-events: none;
   z-index: -2;
   background:
-    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(201, 162, 39, 0.12), transparent 55%),
-    radial-gradient(ellipse 70% 50% at 90% 10%, rgba(14, 17, 22, 0.06), transparent 50%),
-    linear-gradient(165deg, var(--paper) 0%, #ebe6da 45%, var(--paper) 100%);
+    radial-gradient(ellipse 90% 55% at 12% -5%, var(--atmosphere-gold), transparent 58%),
+    radial-gradient(ellipse 70% 45% at 92% 8%, rgba(226, 193, 90, 0.08), transparent 52%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, var(--atmosphere-ink), transparent 60%),
+    radial-gradient(ellipse 55% 40% at 50% 35%, rgba(250, 247, 241, 0.55), transparent 70%),
+    linear-gradient(168deg, var(--paper-lift) 0%, var(--paper) 42%, var(--paper-deep) 100%);
+  animation: atmosphereDrift 48s ease-in-out infinite alternate;
 }
 
+/* Fine paper grain — tactile, not technical grid */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: -1;
-  opacity: 0.35;
-  background-image:
-    linear-gradient(rgba(14, 17, 22, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(14, 17, 22, 0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
-  animation: gridDrift 60s linear infinite;
+  opacity: 0.42;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: multiply;
 }
 
 img,
@@ -304,7 +313,15 @@ h4 {
 .container {
   max-width: 980px;
   margin: 0 auto;
-  padding: 28px 20px 60px;
+  padding: 28px 20px 72px;
+  /* Soft reading lane — content feels held, not floating on noise */
+  position: relative;
+}
+
+.container > .hero,
+.container > .section,
+.container > .widget-section {
+  position: relative;
 }
 
 .page-home {
@@ -343,12 +360,13 @@ h4 {
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(226, 193, 90, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(226, 193, 90, 0.06) 1px, transparent 1px);
-  background-size: 56px 56px;
-  opacity: 0.5;
-  animation: gridDrift 80s linear infinite;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 30%, rgba(201, 162, 39, 0.12), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 85% 20%, rgba(255, 255, 255, 0.04), transparent 50%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  background-size: auto, auto, 160px 160px;
+  opacity: 0.55;
+  mix-blend-mode: soft-light;
 }
 
 .hero-bleed-inner {
@@ -646,7 +664,7 @@ h4 {
 /* ── Standard hero card ── */
 .hero {
   background:
-    linear-gradient(165deg, #ffffff 0%, #faf7f0 55%, #f3efe6 100%);
+    linear-gradient(165deg, #ffffff 0%, var(--paper-lift) 55%, var(--paper) 100%);
   border: 1px solid #d5cfbf;
   border-top-color: #ffffff;
   border-left-color: #f5f1e8;
@@ -1940,12 +1958,12 @@ button.path-node {
   }
 }
 
-@keyframes gridDrift {
+@keyframes atmosphereDrift {
   from {
-    background-position: 0 0;
+    filter: saturate(1) brightness(1);
   }
   to {
-    background-position: 48px 48px;
+    filter: saturate(1.05) brightness(1.015);
   }
 }
 
@@ -1962,9 +1980,9 @@ button.path-node {
     scroll-behavior: auto;
   }
 
-  body::after,
-  .hero-bleed::before {
-    animation: none;
+  body::before {
+    animation: none !important;
+    filter: none;
   }
 
   .terminal-widget {
