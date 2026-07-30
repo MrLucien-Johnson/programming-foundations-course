@@ -155,3 +155,20 @@ This project is running on **Render Free + GitHub Pages** for now:
 Do not promise permanent cloud progress while the API stays on ephemeral Free storage.
 
 When funds allow: upgrade to **Starter + disk** (see Step 2 above) or move the database to a free hosted store.
+
+---
+
+## Future iteration — social sign-in (deferred)
+
+OAuth code for **Google / GitHub / Microsoft / Apple** is already in the API (see PR for secure accounts + social login). **Do not configure provider apps yet** unless you are ready for that pass.
+
+When you pick this up later:
+
+1. Create free OAuth apps (Google / GitHub first; Microsoft optional; Apple needs a paid Apple Developer account)
+2. Set callback URLs to `{PUBLIC_API_BASE}/api/auth/oauth/{provider}/callback`
+3. Add client IDs/secrets in Render (never commit them) — see `backend/.env.example`
+4. Set `CORS_ORIGINS`, `PUBLIC_API_BASE`, and `FRONTEND_DEFAULT_RETURN`
+5. Restart the API and confirm `/api/health` → `oauthProviders` lists the ones you enabled
+6. Account page shows **Continue with …** buttons automatically
+
+Until then, email + password accounts are enough.

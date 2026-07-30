@@ -103,6 +103,7 @@ Or share these quick instructions:
 - [ ] Set pricing strategy (see `PRICING-STRATEGY.md`)
 - [ ] Plan public launch date
 - [ ] Change repository visibility to **Public** (when ready)
+- [ ] **Future:** turn on social sign-in (Google / GitHub / Microsoft / Apple) — code is ready; setup deferred. See `docs/OPEN-BETA-DEPLOY.md` → “Future iteration — social sign-in”
 
 ---
 
