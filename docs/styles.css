@@ -84,11 +84,7 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  /* Fallback wash before atmosphere JS mounts — still readable if JS is late */
-  background:
-    radial-gradient(ellipse 70% 50% at 10% -8%, rgba(201, 162, 39, 0.22), transparent 58%),
-    radial-gradient(ellipse 55% 40% at 50% 38%, rgba(255, 252, 245, 0.5), transparent 68%),
-    linear-gradient(165deg, #f4ebe0 0%, var(--paper) 42%, #e8dcc8 78%, var(--paper-deep) 100%);
+  background: transparent;
   color: var(--ink);
   line-height: 1.65;
   font-size: 17px;
@@ -97,27 +93,92 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* ── Site atmosphere: lamp-lit notebook desk ── */
+/*
+  Lamp-lit notebook atmosphere (CSS-first — no JS required).
+  body::before = parchment, lamp shaft, washes, motifs, rails, vignette
+  body::after  = paper grain + soft ruled lines
+*/
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    /* right study motif */
+    url("assets/atmosphere-motif.svg") right -2% top 8% / min(460px, 52vw) no-repeat,
+    /* left mirrored motif (approximate with opacity + placement) */
+    url("assets/atmosphere-motif.svg") left -4% bottom 2% / min(340px, 42vw) no-repeat,
+    /* lamp shaft */
+    linear-gradient(
+      122deg,
+      rgba(255, 246, 214, 0.7) 0%,
+      rgba(226, 193, 90, 0.2) 28%,
+      rgba(201, 162, 39, 0.05) 52%,
+      transparent 72%
+    ),
+    /* warm washes */
+    radial-gradient(ellipse 58% 50% at 6% -4%, rgba(201, 162, 39, 0.4), transparent 60%),
+    radial-gradient(ellipse 48% 42% at 96% 8%, rgba(226, 193, 90, 0.2), transparent 56%),
+    radial-gradient(ellipse 64% 48% at 82% 92%, rgba(58, 72, 88, 0.12), transparent 62%),
+    radial-gradient(ellipse 52% 38% at 14% 96%, rgba(14, 17, 22, 0.09), transparent 58%),
+    radial-gradient(ellipse 46% 36% at 48% 40%, rgba(255, 252, 245, 0.55), transparent 70%),
+    /* margin rails */
+    linear-gradient(90deg, rgba(154, 123, 26, 0.14), transparent 5%),
+    linear-gradient(270deg, rgba(14, 17, 22, 0.05), transparent 5%),
+    linear-gradient(
+      90deg,
+      transparent 0,
+      transparent calc(5% - 1px),
+      rgba(201, 162, 39, 0.14) calc(5% - 1px),
+      rgba(201, 162, 39, 0.14) 5%,
+      transparent 5.2%
+    ),
+    /* vignette */
+    radial-gradient(ellipse 72% 68% at 50% 38%, transparent 28%, rgba(88, 68, 36, 0.14) 100%),
+    /* parchment base */
+    linear-gradient(165deg, #f5ecdf 0%, var(--paper) 40%, #e6d9c4 76%, var(--paper-deep) 100%);
+  animation: atmosphereDrift 42s ease-in-out infinite alternate;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.55;
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 27px,
+      rgba(154, 123, 26, 0.1) 28px,
+      transparent 29px
+    ),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: auto, 150px 150px;
+  mix-blend-mode: multiply;
+  -webkit-mask-image: radial-gradient(ellipse 78% 72% at 50% 40%, black 25%, transparent 85%);
+  mask-image: radial-gradient(ellipse 78% 72% at 50% 40%, black 25%, transparent 85%);
+}
+
+/* Optional JS-enhanced layers (extra shaft pulse / floating motifs) */
 .pf-atmosphere {
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
   overflow: hidden;
-  background:
-    linear-gradient(165deg, #f5ecdf 0%, var(--paper) 40%, #e6d9c4 76%, var(--paper-deep) 100%);
+  background: transparent;
 }
 
-.pf-atmosphere__wash {
-  position: absolute;
-  inset: -14%;
-  background:
-    radial-gradient(ellipse 58% 50% at 6% -4%, rgba(201, 162, 39, 0.42), transparent 60%),
-    radial-gradient(ellipse 48% 42% at 96% 8%, rgba(226, 193, 90, 0.22), transparent 56%),
-    radial-gradient(ellipse 64% 48% at 82% 92%, rgba(58, 72, 88, 0.14), transparent 62%),
-    radial-gradient(ellipse 52% 38% at 14% 96%, rgba(14, 17, 22, 0.1), transparent 58%),
-    radial-gradient(ellipse 46% 36% at 48% 40%, rgba(255, 252, 245, 0.62), transparent 70%);
-  animation: atmosphereDrift 42s ease-in-out infinite alternate;
+.pf-atmosphere__wash,
+.pf-atmosphere__ruled,
+.pf-atmosphere__vignette,
+.pf-atmosphere__grain,
+.pf-atmosphere__rails {
+  display: none;
 }
 
 .pf-atmosphere__shaft {
@@ -128,30 +189,14 @@ body {
   height: 110%;
   background: linear-gradient(
     122deg,
-    rgba(255, 246, 214, 0.72) 0%,
-    rgba(226, 193, 90, 0.22) 32%,
-    rgba(201, 162, 39, 0.06) 55%,
-    transparent 74%
+    rgba(255, 246, 214, 0.45) 0%,
+    rgba(226, 193, 90, 0.14) 32%,
+    transparent 70%
   );
-  filter: blur(10px);
+  filter: blur(12px);
   transform-origin: top center;
-  opacity: 0.9;
+  opacity: 0.75;
   animation: shaftPulse 18s ease-in-out infinite alternate;
-}
-
-.pf-atmosphere__ruled {
-  position: absolute;
-  inset: 0;
-  opacity: 0.22;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 27px,
-    rgba(154, 123, 26, 0.14) 28px,
-    transparent 29px
-  );
-  mask-image: radial-gradient(ellipse 70% 65% at 50% 42%, black 20%, transparent 78%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 65% at 50% 42%, black 20%, transparent 78%);
 }
 
 .pf-atmosphere__motif {
@@ -161,7 +206,7 @@ body {
   width: min(460px, 52vw);
   height: min(460px, 52vw);
   background: url("assets/atmosphere-motif.svg") center / contain no-repeat;
-  opacity: 0.62;
+  opacity: 0.35;
   animation: motifFloat 28s ease-in-out infinite alternate;
 }
 
@@ -172,61 +217,10 @@ body {
   bottom: 2vh;
   width: min(360px, 44vw);
   height: min(360px, 44vw);
-  opacity: 0.32;
+  opacity: 0.2;
   transform: scaleX(-1) rotate(-8deg);
   animation-name: motifFloatLeft;
   animation-duration: 36s;
-}
-
-.pf-atmosphere__vignette {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 72% 68% at 50% 38%, transparent 28%, rgba(88, 68, 36, 0.16) 100%),
-    linear-gradient(180deg, rgba(255, 248, 230, 0.18) 0%, transparent 22%, transparent 78%, rgba(70, 54, 28, 0.1) 100%);
-}
-
-.pf-atmosphere__grain {
-  position: absolute;
-  inset: 0;
-  opacity: 0.48;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
-  background-size: 150px 150px;
-  mix-blend-mode: multiply;
-}
-
-/* Soft notebook margin rails — journal feel without broadsheet clutter */
-.pf-atmosphere__rails {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(154, 123, 26, 0.14), transparent 5%),
-    linear-gradient(270deg, rgba(14, 17, 22, 0.06), transparent 5%),
-    linear-gradient(90deg, transparent 0, transparent calc(5% - 1px), rgba(201, 162, 39, 0.12) calc(5% - 1px), rgba(201, 162, 39, 0.12) 5%, transparent 5.2%);
-  opacity: 0.85;
-}
-
-/* Keep content above the fixed atmosphere plane without breaking sticky header */
-body > *:not(.pf-atmosphere):not(.site-header) {
-  position: relative;
-  z-index: 1;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 200;
-}
-
-.skip-link {
-  z-index: 999;
-}
-
-/* Legacy body layers unused — atmosphere owns the scene */
-body::before,
-body::after {
-  content: none;
-  display: none;
 }
 
 img,
@@ -2068,33 +2062,21 @@ button.path-node {
 
 @keyframes atmosphereDrift {
   from {
-    background-position:
-      0% 0%,
-      100% 0%,
-      100% 100%,
-      0% 100%,
-      50% 40%;
     filter: saturate(1) brightness(1);
   }
   to {
-    background-position:
-      4% 3%,
-      96% 4%,
-      94% 96%,
-      3% 97%,
-      48% 44%;
-    filter: saturate(1.06) brightness(1.02);
+    filter: saturate(1.07) brightness(1.025);
   }
 }
 
 @keyframes shaftPulse {
   0%,
   100% {
-    opacity: 0.72;
+    opacity: 0.55;
     transform: rotate(7deg) scaleY(1);
   }
   50% {
-    opacity: 0.95;
+    opacity: 0.9;
     transform: rotate(9deg) scaleY(1.05);
   }
 }
@@ -2132,7 +2114,7 @@ button.path-node {
     scroll-behavior: auto;
   }
 
-  .pf-atmosphere__wash,
+  body::before,
   .pf-atmosphere__shaft,
   .pf-atmosphere__motif {
     animation: none !important;
