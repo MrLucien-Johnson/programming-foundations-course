@@ -158,7 +158,7 @@ test("full org-grade HTTP flow", async () => {
   });
   assert.equal(shortChange.status, 400);
 
-  // Change password: success.
+  // Change password: success — returns a fresh token and invalidates the old one.
   const goodChange = await api("/api/auth/change-password", {
     method: "POST",
     token,
@@ -166,14 +166,18 @@ test("full org-grade HTTP flow", async () => {
   });
   assert.equal(goodChange.status, 200);
   assert.equal(goodChange.json.user.email, email);
+  assert.ok(goodChange.json.token);
+  const newToken = goodChange.json.token;
 
-  // Old password no longer works; the existing token remains valid until it expires.
+  // Old password no longer works; old JWT is revoked via token_version.
   const oldLoginFails = await api("/api/auth/login", {
     method: "POST",
     body: { email, password: "password123" },
   });
   assert.equal(oldLoginFails.status, 401);
-  const stillAuthed = await api("/api/auth/me", { token });
+  const oldTokenRejected = await api("/api/auth/me", { token });
+  assert.equal(oldTokenRejected.status, 401);
+  const stillAuthed = await api("/api/auth/me", { token: newToken });
   assert.equal(stillAuthed.status, 200);
   const newLogin = await api("/api/auth/login", {
     method: "POST",
@@ -181,9 +185,26 @@ test("full org-grade HTTP flow", async () => {
   });
   assert.equal(newLogin.status, 200);
 
+  // Progress persists for the signed-in account.
+  const saveProgress = await api("/api/progress", {
+    method: "PUT",
+    token: newToken,
+    body: {
+      completions: ["python/module-01.md"],
+      quizCompletions: {},
+      startSteps: { "open-online": true },
+      moduleProgress: {},
+    },
+  });
+  assert.equal(saveProgress.status, 200);
+  const loadedProgress = await api("/api/progress", { token: newToken });
+  assert.equal(loadedProgress.status, 200);
+  assert.deepEqual(loadedProgress.json.progress.completions, ["python/module-01.md"]);
+  assert.equal(loadedProgress.json.progress.startSteps["open-online"], true);
+
   // Delete account.
-  const del = await api("/api/account", { method: "DELETE", token });
+  const del = await api("/api/account", { method: "DELETE", token: newToken });
   assert.equal(del.status, 200);
-  const afterDelete = await api("/api/auth/me", { token });
+  const afterDelete = await api("/api/auth/me", { token: newToken });
   assert.equal(afterDelete.status, 401);
 });

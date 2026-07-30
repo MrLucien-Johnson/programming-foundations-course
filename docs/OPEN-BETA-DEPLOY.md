@@ -155,3 +155,20 @@ This project is running on **Render Free + GitHub Pages** for now:
 Do not promise permanent cloud progress while the API stays on ephemeral Free storage.
 
 When funds allow: upgrade to **Starter + disk** (see Step 2 above) or move the database to a free hosted store.
+
+---
+
+## Future iteration — social sign-in (deferred)
+
+OAuth support for **Google / GitHub / Microsoft / Apple** is in the API backend. The **site UI does not show social buttons yet** — Account is email/password only until this pass.
+
+When you pick this up later:
+
+1. Re-enable Account page social buttons (see git history / PR for the deferred UI)
+2. Create free OAuth apps (Google / GitHub first; Microsoft optional; Apple needs a paid Apple Developer account)
+3. Set callback URLs to `{PUBLIC_API_BASE}/api/auth/oauth/{provider}/callback`
+4. Add client IDs/secrets in Render (never commit them) — see `backend/.env.example`
+5. Set `CORS_ORIGINS`, `PUBLIC_API_BASE`, and `FRONTEND_DEFAULT_RETURN`
+6. Restart the API and confirm `/api/health` → `oauthProviders` lists the ones you enabled
+
+Until then, email + password accounts are enough.

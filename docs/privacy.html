@@ -35,7 +35,7 @@
         <h3>What we do not do</h3>
         <ul>
           <li>No advertising trackers or selling of personal data.</li>
-          <li>Passwords are stored only as salted hashes (bcrypt) — never in plain text.</li>
+          <li>Passwords are stored only as salted Argon2id hashes (never in plain text). Older accounts may still verify with bcrypt until the next successful sign-in upgrades them.</li>
           <li>Admins in your organisation see progress metrics, not your password or unrelated accounts.</li>
         </ul>
       </section>

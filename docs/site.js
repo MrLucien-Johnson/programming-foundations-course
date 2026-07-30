@@ -655,11 +655,17 @@
   const accountApi = {
     export: () => apiFetch("/api/account/export"),
     remove: () => apiFetch("/api/account", { method: "DELETE" }),
-    changePassword: (currentPassword, newPassword) =>
-      apiFetch("/api/auth/change-password", {
+    changePassword: async (currentPassword, newPassword) => {
+      const data = await apiFetch("/api/auth/change-password", {
         method: "POST",
         body: JSON.stringify({ currentPassword, newPassword }),
-      }),
+      });
+      // Password change invalidates other sessions; keep this device signed in.
+      if (data.token && data.user) {
+        setSession(data.token, data.user);
+      }
+      return data;
+    },
   };
 
   const getCompletions = () =>
