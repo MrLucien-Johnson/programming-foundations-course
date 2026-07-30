@@ -19,12 +19,15 @@ Do **not** rely on GitHub’s file browser — it serves these as generic files 
 |------|--------|----------|
 | `promo-ad-1-start-here.mp4` | ~10s | Home → Start Here → mark first step done |
 | `promo-ad-2-courses-donate.mp4` | ~10s | Courses → Python → Support / PayPal donate |
-| `promo-45s-system-tour.mp4` | ~45s | Full tour: Start Here, Courses, Account, Support |
+| `promo-45s-system-tour.mp4` | ~45s | Full tour (silent) |
+| `promo-45s-system-tour-vo.mp4` | ~45s | Full tour **with AI voiceover** from the transcript |
+| `promo-45s-voiceover.m4a` | ~45s | Voiceover audio only |
 | `promo-45s-transcript.txt` | — | Voiceover / caption script for the 45s tour |
 
 Direct Pages links (content-type `video/mp4`):
 
 - https://mrlucien-johnson.github.io/programming-foundations-course/assets/promo/promo-45s-system-tour.mp4
+- https://mrlucien-johnson.github.io/programming-foundations-course/assets/promo/promo-45s-system-tour-vo.mp4
 - https://mrlucien-johnson.github.io/programming-foundations-course/assets/promo/promo-ad-1-start-here.mp4
 - https://mrlucien-johnson.github.io/programming-foundations-course/assets/promo/promo-ad-2-courses-donate.mp4
 
