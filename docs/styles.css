@@ -675,23 +675,6 @@ h4 {
   margin-top: 18px;
 }
 
-.oauth-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.oauth-btn {
-  min-width: 180px;
-}
-
-.oauth-divider {
-  margin: 1.25rem 0 0;
-  text-align: center;
-  opacity: 0.85;
-}
-
 /* ── Buttons ── */
 .btn {
   display: inline-flex;

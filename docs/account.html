@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Account - Programming Foundations</title>
-    <link rel="stylesheet" href="styles.css?v=ux14" />
+    <link rel="stylesheet" href="styles.css?v=ux15" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux14"></script>
+    <script src="site.js?v=ux15"></script>
 
     <main id="main" class="container">
       <div id="pf-resume-host" hidden></div>
@@ -31,17 +31,6 @@
         </p>
       </section>
 
-      <section class="section panel-plain" id="account-social" hidden>
-        <h3 style="margin-top: 0;">Continue with</h3>
-        <p class="note" style="margin-top: 0;">
-          One-click sign-in with a major account. We only receive your email and display name —
-          never your social password.
-        </p>
-        <div class="oauth-row" id="oauth-buttons" role="group" aria-label="Social sign-in"></div>
-        <p id="oauth-status" class="note" role="status" aria-live="polite"></p>
-        <p class="note oauth-divider">or use email</p>
-      </section>
-
       <section class="section panel-plain" id="account-signed-in" hidden>
         <h3 style="margin-top: 0;">Signed in</h3>
         <p id="account-user-summary" class="note"></p>
@@ -52,18 +41,16 @@
         </div>
         <p id="account-sync-status" class="note" role="status" aria-live="polite"></p>
 
-        <h4 id="password-form-heading">Change password</h4>
-        <p id="password-form-hint" class="note" hidden>
-          This account uses social sign-in. You can optionally set a password for email login.
-        </p>
+        <h4>Change password</h4>
         <form id="change-password-form">
-          <label id="current-password-label">
+          <label>
             Current password
             <input
               class="field-input"
               type="password"
               name="currentPassword"
               autocomplete="current-password"
+              required
             />
           </label>
           <label>
@@ -182,44 +169,20 @@
       (async function () {
         const signedIn = document.getElementById("account-signed-in");
         const forms = document.getElementById("account-forms");
-        const social = document.getElementById("account-social");
-        const oauthButtons = document.getElementById("oauth-buttons");
-        const oauthStatus = document.getElementById("oauth-status");
         const summary = document.getElementById("account-user-summary");
         const syncStatus = document.getElementById("account-sync-status");
         const signInStatus = document.getElementById("sign-in-status");
         const signUpStatus = document.getElementById("sign-up-status");
         const changePasswordStatus = document.getElementById("change-password-status");
-        const currentPasswordLabel = document.getElementById("current-password-label");
-        const passwordFormHeading = document.getElementById("password-form-heading");
-        const passwordFormHint = document.getElementById("password-form-hint");
-
-        const providerLabels = {
-          google: "Google",
-          apple: "Apple",
-          github: "GitHub",
-          microsoft: "Microsoft",
-        };
 
         const refresh = async () => {
           const user = window.PF.getUser();
           if (user) {
             signedIn.hidden = false;
             forms.hidden = true;
-            if (social) social.hidden = true;
-            const providerNote =
-              Array.isArray(user.providers) && user.providers.length
-                ? ` Linked: ${user.providers.map((p) => providerLabels[p] || p).join(", ")}.`
-                : "";
             summary.textContent = user.displayName
-              ? `Signed in as ${user.displayName} (${user.email}).${providerNote}`
-              : `Signed in as ${user.email}.${providerNote}`;
-            const needsPassword = user.hasPassword === false;
-            if (currentPasswordLabel) currentPasswordLabel.hidden = needsPassword;
-            if (passwordFormHeading) {
-              passwordFormHeading.textContent = needsPassword ? "Set a password" : "Change password";
-            }
-            if (passwordFormHint) passwordFormHint.hidden = !needsPassword;
+              ? `Signed in as ${user.displayName} (${user.email}).`
+              : `Signed in as ${user.email}.`;
           } else {
             signedIn.hidden = true;
             forms.hidden = false;
@@ -227,63 +190,6 @@
           }
           window.PF.mountHeader();
         };
-
-        const mountOAuthButtons = async () => {
-          if (!oauthButtons || !window.PF.listOAuthProviders) return;
-          try {
-            const providers = await window.PF.listOAuthProviders();
-            oauthButtons.innerHTML = "";
-            if (!providers.length) {
-              if (social) social.hidden = true;
-              return;
-            }
-            if (social && !window.PF.getUser()) social.hidden = false;
-            providers.forEach((provider) => {
-              const button = document.createElement("button");
-              button.type = "button";
-              button.className = `btn btn-secondary oauth-btn oauth-${provider.id}`;
-              button.textContent = `Continue with ${provider.label || providerLabels[provider.id] || provider.id}`;
-              button.addEventListener("click", () => {
-                oauthStatus.textContent = `Redirecting to ${provider.label || provider.id}…`;
-                window.PF.startOAuth(provider.id);
-              });
-              oauthButtons.appendChild(button);
-            });
-          } catch (error) {
-            if (social) social.hidden = true;
-            if (oauthStatus) {
-              oauthStatus.textContent = "";
-            }
-          }
-        };
-
-        // Complete social sign-in if redirected back with oauth_code / oauth_error.
-        const params = new URLSearchParams(window.location.search);
-        const oauthCode = params.get("oauth_code");
-        const oauthError = params.get("oauth_error");
-        if (oauthCode || oauthError) {
-          params.delete("oauth_code");
-          params.delete("oauth_error");
-          const clean =
-            window.location.pathname +
-            (params.toString() ? `?${params.toString()}` : "") +
-            window.location.hash;
-          window.history.replaceState({}, "", clean);
-        }
-        if (oauthError && oauthStatus) {
-          if (social) social.hidden = false;
-          oauthStatus.textContent = oauthError;
-        }
-        if (oauthCode) {
-          if (social) social.hidden = false;
-          oauthStatus.textContent = "Finishing sign-in…";
-          try {
-            await window.PF.completeOAuth(oauthCode);
-            oauthStatus.textContent = "Signed in. Progress synced.";
-          } catch (error) {
-            oauthStatus.textContent = error.message || "Social sign-in failed.";
-          }
-        }
 
         document.getElementById("sign-in-form")?.addEventListener("submit", async (event) => {
           event.preventDefault();
@@ -322,7 +228,6 @@
           await window.PF.signOut();
           syncStatus.textContent = "Signed out on this device.";
           await refresh();
-          await mountOAuthButtons();
         });
 
         document.getElementById("change-password-form")?.addEventListener("submit", async (event) => {
@@ -357,7 +262,6 @@
           }
         });
 
-        await mountOAuthButtons();
         await refresh();
         if (window.PF.getUser() && window.PF.getToken()) {
           try {

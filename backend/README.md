@@ -5,12 +5,13 @@ Accounts and cross-device progress sync for the static course site in `/docs`.
 ## Features
 
 - Email + password accounts (JWT sessions, 30 days)
-- Optional social sign-in: Google, Apple, GitHub, Microsoft (configure free OAuth apps; buttons appear automatically)
 - Passwords hashed with Argon2id (OWASP-recommended); legacy bcrypt hashes upgrade on next login
 - Password changes invalidate other sessions (token version bump)
 - Progress sync for lesson completions, quiz results, Start Here steps, and module checklists
 - SQLite storage (simple to run locally; swap the file for a persistent volume in production)
 - CORS allow-list for your published site origin
+
+Social sign-in (Google / Apple / GitHub / Microsoft) is implemented in the API for a later iteration; the site UI currently shows email/password only.
 
 ## Quick start
 
