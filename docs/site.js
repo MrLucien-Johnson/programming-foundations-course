@@ -1091,7 +1091,26 @@
     host.querySelector("[data-persona-clear]")?.addEventListener("click", () => clearPersona());
   };
 
+  const mountAtmosphere = () => {
+    if (document.querySelector(".pf-atmosphere")) return;
+    const root = document.createElement("div");
+    root.className = "pf-atmosphere";
+    root.setAttribute("aria-hidden", "true");
+    root.innerHTML = [
+      '<div class="pf-atmosphere__wash"></div>',
+      '<div class="pf-atmosphere__shaft"></div>',
+      '<div class="pf-atmosphere__ruled"></div>',
+      '<div class="pf-atmosphere__motif"></div>',
+      '<div class="pf-atmosphere__motif pf-atmosphere__motif--left"></div>',
+      '<div class="pf-atmosphere__vignette"></div>',
+      '<div class="pf-atmosphere__grain"></div>',
+      '<div class="pf-atmosphere__rails"></div>',
+    ].join("");
+    document.body.prepend(root);
+  };
+
   const boot = () => {
+    mountAtmosphere();
     mountHeader();
     mountDonateSlots();
     mountResumeBanner();

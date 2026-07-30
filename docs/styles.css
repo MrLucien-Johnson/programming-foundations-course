@@ -3,14 +3,15 @@
 /* ── Design tokens ── */
 :root {
   --ink: #0e1116;
-  --paper: #f1ebe0;
-  --paper-deep: #e6dfd2;
-  --paper-lift: #faf7f1;
+  --paper: #efe7d8;
+  --paper-deep: #e0d5c3;
+  --paper-lift: #f7f1e6;
   --gold: #c9a227;
   --gold-light: #e2c15a;
   --gold-dark: #9a7b1a;
-  --atmosphere-gold: rgba(201, 162, 39, 0.16);
-  --atmosphere-ink: rgba(14, 17, 22, 0.05);
+  --atmosphere-gold: rgba(201, 162, 39, 0.28);
+  --atmosphere-ink: rgba(14, 17, 22, 0.08);
+  --atmosphere-slate: rgba(58, 72, 88, 0.1);
 
   /* Compatibility aliases */
   --black: var(--ink);
@@ -77,48 +78,155 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--paper-deep);
 }
 
 body {
   margin: 0;
   font-family: var(--font-body);
-  background: var(--paper);
+  /* Fallback wash before atmosphere JS mounts — still readable if JS is late */
+  background:
+    radial-gradient(ellipse 70% 50% at 10% -8%, rgba(201, 162, 39, 0.22), transparent 58%),
+    radial-gradient(ellipse 55% 40% at 50% 38%, rgba(255, 252, 245, 0.5), transparent 68%),
+    linear-gradient(165deg, #f4ebe0 0%, var(--paper) 42%, #e8dcc8 78%, var(--paper-deep) 100%);
   color: var(--ink);
   line-height: 1.65;
   font-size: 17px;
   position: relative;
   min-height: 100vh;
-  /* Calmer reading rhythm for long lessons */
   text-rendering: optimizeLegibility;
 }
 
-/* Soft study-desk atmosphere: warm light, grounded base, focused center */
-body::before {
-  content: "";
+/* ── Site atmosphere: lamp-lit notebook desk ── */
+.pf-atmosphere {
   position: fixed;
   inset: 0;
+  z-index: 0;
   pointer-events: none;
-  z-index: -2;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse 90% 55% at 12% -5%, var(--atmosphere-gold), transparent 58%),
-    radial-gradient(ellipse 70% 45% at 92% 8%, rgba(226, 193, 90, 0.08), transparent 52%),
-    radial-gradient(ellipse 80% 50% at 50% 100%, var(--atmosphere-ink), transparent 60%),
-    radial-gradient(ellipse 55% 40% at 50% 35%, rgba(250, 247, 241, 0.55), transparent 70%),
-    linear-gradient(168deg, var(--paper-lift) 0%, var(--paper) 42%, var(--paper-deep) 100%);
-  animation: atmosphereDrift 48s ease-in-out infinite alternate;
+    linear-gradient(165deg, #f5ecdf 0%, var(--paper) 40%, #e6d9c4 76%, var(--paper-deep) 100%);
 }
 
-/* Fine paper grain — tactile, not technical grid */
-body::after {
-  content: "";
-  position: fixed;
+.pf-atmosphere__wash {
+  position: absolute;
+  inset: -14%;
+  background:
+    radial-gradient(ellipse 58% 50% at 6% -4%, rgba(201, 162, 39, 0.42), transparent 60%),
+    radial-gradient(ellipse 48% 42% at 96% 8%, rgba(226, 193, 90, 0.22), transparent 56%),
+    radial-gradient(ellipse 64% 48% at 82% 92%, rgba(58, 72, 88, 0.14), transparent 62%),
+    radial-gradient(ellipse 52% 38% at 14% 96%, rgba(14, 17, 22, 0.1), transparent 58%),
+    radial-gradient(ellipse 46% 36% at 48% 40%, rgba(255, 252, 245, 0.62), transparent 70%);
+  animation: atmosphereDrift 42s ease-in-out infinite alternate;
+}
+
+.pf-atmosphere__shaft {
+  position: absolute;
+  top: -28%;
+  left: 2%;
+  width: min(52vw, 560px);
+  height: 110%;
+  background: linear-gradient(
+    122deg,
+    rgba(255, 246, 214, 0.72) 0%,
+    rgba(226, 193, 90, 0.22) 32%,
+    rgba(201, 162, 39, 0.06) 55%,
+    transparent 74%
+  );
+  filter: blur(10px);
+  transform-origin: top center;
+  opacity: 0.9;
+  animation: shaftPulse 18s ease-in-out infinite alternate;
+}
+
+.pf-atmosphere__ruled {
+  position: absolute;
   inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.42;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-  background-size: 180px 180px;
+  opacity: 0.22;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 27px,
+    rgba(154, 123, 26, 0.14) 28px,
+    transparent 29px
+  );
+  mask-image: radial-gradient(ellipse 70% 65% at 50% 42%, black 20%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 65% at 50% 42%, black 20%, transparent 78%);
+}
+
+.pf-atmosphere__motif {
+  position: absolute;
+  right: max(-3vw, -28px);
+  top: 8vh;
+  width: min(460px, 52vw);
+  height: min(460px, 52vw);
+  background: url("assets/atmosphere-motif.svg") center / contain no-repeat;
+  opacity: 0.62;
+  animation: motifFloat 28s ease-in-out infinite alternate;
+}
+
+.pf-atmosphere__motif--left {
+  right: auto;
+  left: max(-5vw, -40px);
+  top: auto;
+  bottom: 2vh;
+  width: min(360px, 44vw);
+  height: min(360px, 44vw);
+  opacity: 0.32;
+  transform: scaleX(-1) rotate(-8deg);
+  animation-name: motifFloatLeft;
+  animation-duration: 36s;
+}
+
+.pf-atmosphere__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 72% 68% at 50% 38%, transparent 28%, rgba(88, 68, 36, 0.16) 100%),
+    linear-gradient(180deg, rgba(255, 248, 230, 0.18) 0%, transparent 22%, transparent 78%, rgba(70, 54, 28, 0.1) 100%);
+}
+
+.pf-atmosphere__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.48;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+  background-size: 150px 150px;
   mix-blend-mode: multiply;
+}
+
+/* Soft notebook margin rails — journal feel without broadsheet clutter */
+.pf-atmosphere__rails {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(154, 123, 26, 0.14), transparent 5%),
+    linear-gradient(270deg, rgba(14, 17, 22, 0.06), transparent 5%),
+    linear-gradient(90deg, transparent 0, transparent calc(5% - 1px), rgba(201, 162, 39, 0.12) calc(5% - 1px), rgba(201, 162, 39, 0.12) 5%, transparent 5.2%);
+  opacity: 0.85;
+}
+
+/* Keep content above the fixed atmosphere plane without breaking sticky header */
+body > *:not(.pf-atmosphere):not(.site-header) {
+  position: relative;
+  z-index: 1;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.skip-link {
+  z-index: 999;
+}
+
+/* Legacy body layers unused — atmosphere owns the scene */
+body::before,
+body::after {
+  content: none;
+  display: none;
 }
 
 img,
@@ -1960,10 +2068,54 @@ button.path-node {
 
 @keyframes atmosphereDrift {
   from {
+    background-position:
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%,
+      50% 40%;
     filter: saturate(1) brightness(1);
   }
   to {
-    filter: saturate(1.05) brightness(1.015);
+    background-position:
+      4% 3%,
+      96% 4%,
+      94% 96%,
+      3% 97%,
+      48% 44%;
+    filter: saturate(1.06) brightness(1.02);
+  }
+}
+
+@keyframes shaftPulse {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: rotate(7deg) scaleY(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: rotate(9deg) scaleY(1.05);
+  }
+}
+
+@keyframes motifFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+@keyframes motifFloatLeft {
+  0%,
+  100% {
+    transform: scaleX(-1) rotate(-8deg) translateY(0);
+  }
+  50% {
+    transform: scaleX(-1) rotate(-6deg) translateY(-10px);
   }
 }
 
@@ -1980,7 +2132,9 @@ button.path-node {
     scroll-behavior: auto;
   }
 
-  body::before {
+  .pf-atmosphere__wash,
+  .pf-atmosphere__shaft,
+  .pf-atmosphere__motif {
     animation: none !important;
     filter: none;
   }

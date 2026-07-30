@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 520 520" fill="none">
+  <!-- Decorative study motif: open notebook + soft lamp glow -->
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.2" r="0.55">
+      <stop offset="0%" stop-color="#e2c15a" stop-opacity="0.35"/>
+      <stop offset="55%" stop-color="#c9a227" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#c9a227" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="260" cy="120" r="160" fill="url(#glow)"/>
+  <!-- lamp shade -->
+  <path d="M210 78h100l-18 42H228L210 78Z" fill="#9a7b1a" fill-opacity="0.18" stroke="#9a7b1a" stroke-opacity="0.45" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M260 48v30" stroke="#9a7b1a" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="260" cy="44" r="5" fill="#c9a227" fill-opacity="0.35" stroke="#9a7b1a" stroke-opacity="0.5" stroke-width="1.2"/>
+  <!-- open book -->
+  <g stroke="#9a7b1a" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M90 190c48-36 96-36 146 0v232c-50-30-98-30-146 0V190Z" fill="#c9a227" fill-opacity="0.07"/>
+    <path d="M236 190c48-36 96-36 146 0v232c-50-30-98-30-146 0V190Z" fill="#c9a227" fill-opacity="0.05"/>
+    <path d="M236 190v232" stroke-opacity="0.55"/>
+    <path d="M122 228h88M122 262h74M122 296h82M122 330h64M122 364h86" stroke-opacity="0.55"/>
+    <path d="M262 228h88M262 262h74M262 296h82M262 330h64M262 364h86" stroke-opacity="0.4"/>
+  </g>
+  <!-- soft ink accents -->
+  <g fill="#0e1116" opacity="0.28">
+    <circle cx="420" cy="150" r="3"/>
+    <circle cx="448" cy="178" r="2"/>
+    <circle cx="400" cy="196" r="2.4"/>
+    <circle cx="70" cy="400" r="2.5"/>
+    <circle cx="102" cy="428" r="2"/>
+    <circle cx="134" cy="410" r="3"/>
+  </g>
+  <path d="M48 456c70-46 140-46 210 0" stroke="#c9a227" stroke-opacity="0.22" stroke-width="1.6" fill="none"/>
+  <path d="M310 70c48 34 96 34 144 0" stroke="#0e1116" stroke-opacity="0.1" stroke-width="1.5" fill="none"/>
+</svg>
