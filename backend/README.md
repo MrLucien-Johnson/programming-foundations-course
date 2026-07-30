@@ -94,15 +94,16 @@ Do not commit real email addresses — set this in your local `.env` (already
 gitignored) and in your host's environment variables (e.g. the Render
 dashboard) instead.
 
-## Social sign-in (optional)
+## Social sign-in (optional — deferred UI)
 
-Email/password always works. To offer one-click Google / GitHub / Microsoft / Apple:
+Email/password is what the site shows today. OAuth endpoints exist for a later iteration
+(Google / GitHub / Microsoft / Apple). When re-enabling the Account buttons:
 
 1. Create a free OAuth app at the provider.
 2. Set the callback URL to `{PUBLIC_API_BASE}/api/auth/oauth/{provider}/callback`.
 3. Put the client id/secret in env (see `.env.example`). Never commit secrets.
 4. Set `CORS_ORIGINS` to your site origin and `PUBLIC_API_BASE` to the public API URL.
-5. Restart the API — `/api/health` lists enabled `oauthProviders`, and the Account page shows matching buttons.
+5. Restore the Account social UI and confirm `/api/health` → `oauthProviders`.
 
 Apple Sign In also needs `APPLE_TEAM_ID`, `APPLE_KEY_ID`, and `APPLE_PRIVATE_KEY` (PEM). Linking is by email: if a learner already registered with that email, the social login attaches to the same account and keeps their progress.
 
