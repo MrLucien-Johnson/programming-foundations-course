@@ -15,6 +15,7 @@ function openDatabase(databasePath) {
       email TEXT NOT NULL UNIQUE,
       display_name TEXT NOT NULL DEFAULT '',
       password_hash TEXT NOT NULL,
+      token_version INTEGER NOT NULL DEFAULT 0,
       created_at TEXT NOT NULL,
       updated_at TEXT NOT NULL
     );
@@ -103,7 +104,17 @@ function openDatabase(databasePath) {
     CREATE INDEX IF NOT EXISTS idx_audit_org ON audit_events(org_id);
   `);
 
+  // Migrate existing databases created before token_version existed.
+  ensureColumn(db, "users", "token_version", "INTEGER NOT NULL DEFAULT 0");
+
   return db;
+}
+
+function ensureColumn(db, table, column, definition) {
+  const cols = db.prepare(`PRAGMA table_info(${table})`).all();
+  if (!cols.some((c) => c.name === column)) {
+    db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${definition}`);
+  }
 }
 
 module.exports = { openDatabase };

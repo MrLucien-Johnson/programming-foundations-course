@@ -10,7 +10,9 @@ const { createAuth } = require("./auth");
 const { createAudit } = require("./audit");
 const { createOrgStore } = require("./orgs");
 const { createCertificateStore } = require("./certificates");
+const { createOAuthStore, listConfiguredProviders } = require("./oauth");
 const { createAuthRouter } = require("./routes/auth");
+const { createOAuthRouter } = require("./routes/oauth");
 const { createProgressRouter } = require("./routes/progress");
 const { createOrgsRouter } = require("./routes/orgs");
 const { createQuizRouter } = require("./routes/quiz");
@@ -22,10 +24,23 @@ const HOST = process.env.HOST || "0.0.0.0";
 const JWT_SECRET = process.env.JWT_SECRET || "dev-only-change-me-before-production";
 const DATABASE_PATH =
   process.env.DATABASE_PATH || path.join(__dirname, "..", "data", "pf.sqlite");
+const PUBLIC_API_BASE = (
+  process.env.PUBLIC_API_BASE ||
+  process.env.RENDER_EXTERNAL_URL ||
+  `http://127.0.0.1:${PORT}`
+).replace(/\/$/, "");
+const FRONTEND_DEFAULT_RETURN = (
+  process.env.FRONTEND_DEFAULT_RETURN ||
+  "http://127.0.0.1:5500/docs/account.html"
+).trim();
 
-if (process.env.NODE_ENV === "production" && JWT_SECRET.startsWith("dev-only")) {
-  console.error("Refusing to start: set JWT_SECRET in production.");
-  process.exit(1);
+if (process.env.NODE_ENV === "production") {
+  if (!process.env.JWT_SECRET || JWT_SECRET.startsWith("dev-only") || JWT_SECRET.length < 32) {
+    console.error(
+      "Refusing to start: set JWT_SECRET in production to a random string of at least 32 characters."
+    );
+    process.exit(1);
+  }
 }
 
 // On Free hosts without a mounted disk, prefer a writable relative path.
@@ -58,9 +73,11 @@ const db = openDatabase(DATABASE_PATH);
 const audit = createAudit(db);
 const orgStore = createOrgStore({ db, audit });
 const certStore = createCertificateStore({ db, audit });
+const oauthStore = createOAuthStore(db);
 const auth = createAuth({
   db,
   jwtSecret: JWT_SECRET,
+  oauthStore,
   // Claim any pending org invites addressed to this email on register/login.
   onAuthenticated: (user) => orgStore.attachInvites(user.id, user.email),
 });
@@ -89,6 +106,7 @@ app.get("/api/health", (_req, res) => {
     service: "programming-foundations-api",
     corsConfigured: corsOrigins.length > 0,
     corsOriginCount: corsOrigins.length,
+    oauthProviders: listConfiguredProviders().map((p) => p.id),
   });
 });
 
@@ -100,6 +118,17 @@ const authLimiter = rateLimit({
   message: { error: "Too many auth attempts. Try again in a few minutes." },
 });
 
+app.use(
+  "/api/auth/oauth",
+  authLimiter,
+  createOAuthRouter({
+    auth,
+    oauthStore,
+    publicApiBase: PUBLIC_API_BASE,
+    allowedReturnOrigins: corsOrigins,
+    frontendDefaultReturn: FRONTEND_DEFAULT_RETURN,
+  })
+);
 app.use("/api/auth", authLimiter, createAuthRouter(auth));
 app.use("/api/progress", createProgressRouter({ db, requireAuth: auth.requireAuth }));
 app.use("/api/quiz-attempts", createQuizRouter({ db, requireAuth: auth.requireAuth }));
@@ -117,8 +146,23 @@ app.use((err, _req, res, _next) => {
 
 if (require.main === module) {
   app.listen(PORT, HOST, () => {
+    const providers = listConfiguredProviders().map((p) => p.id);
     console.log(`Programming Foundations API listening on http://${HOST}:${PORT}`);
+    console.log(
+      providers.length
+        ? `OAuth providers enabled: ${providers.join(", ")}`
+        : "OAuth providers: none configured (email/password still works)"
+    );
   });
 }
 
-module.exports = { app, db, auth, orgStore, certStore, audit, normalizeOrigin };
+module.exports = {
+  app,
+  db,
+  auth,
+  orgStore,
+  certStore,
+  audit,
+  oauthStore,
+  normalizeOrigin,
+};

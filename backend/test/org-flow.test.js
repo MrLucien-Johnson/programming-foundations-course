@@ -21,11 +21,16 @@ function freshDb() {
   return { db, file };
 }
 
-function makeUser(auth, email) {
-  return auth.register({ email, password: "password123", displayName: email.split("@")[0] }).user;
+async function makeUser(auth, email) {
+  const result = await auth.register({
+    email,
+    password: "password123",
+    displayName: email.split("@")[0],
+  });
+  return result.user;
 }
 
-test("org lifecycle: create, roles, invites, assignments", () => {
+test("org lifecycle: create, roles, invites, assignments", async () => {
   const { db, file } = freshDb();
   const audit = createAudit(db);
   const orgStore = createOrgStore({ db, audit });
@@ -35,8 +40,8 @@ test("org lifecycle: create, roles, invites, assignments", () => {
     onAuthenticated: (u) => orgStore.attachInvites(u.id, u.email),
   });
 
-  const admin = makeUser(auth, "admin@example.com");
-  const learner = makeUser(auth, "learner@example.com");
+  const admin = await makeUser(auth, "admin@example.com");
+  const learner = await makeUser(auth, "learner@example.com");
 
   const org = orgStore.createOrg({ userId: admin.id, name: "Acme School" });
   assert.equal(org.role, "admin");
@@ -69,7 +74,7 @@ test("org lifecycle: create, roles, invites, assignments", () => {
   assert.ok(members.find((m) => m.email === "new@example.com" && m.status === "invited"));
 
   // Registering the invited email claims the membership.
-  const claimed = makeUser(auth, "new@example.com");
+  const claimed = await makeUser(auth, "new@example.com");
   const claimedOrgs = orgStore.listOrgsForUser(claimed.id);
   assert.equal(claimedOrgs.length, 1);
 
@@ -103,11 +108,11 @@ test("org lifecycle: create, roles, invites, assignments", () => {
   fs.unlinkSync(file);
 });
 
-test("last admin cannot be removed or demoted", () => {
+test("last admin cannot be removed or demoted", async () => {
   const { db, file } = freshDb();
   const orgStore = createOrgStore({ db, audit: createAudit(db) });
   const auth = createAuth({ db, jwtSecret: "test" });
-  const admin = makeUser(auth, "solo@example.com");
+  const admin = await makeUser(auth, "solo@example.com");
   const org = orgStore.createOrg({ userId: admin.id, name: "Solo Org" });
 
   assert.throws(
@@ -122,13 +127,13 @@ test("last admin cannot be removed or demoted", () => {
   fs.unlinkSync(file);
 });
 
-test("quiz attempts feed analytics and gradebook", () => {
+test("quiz attempts feed analytics and gradebook", async () => {
   const { db, file } = freshDb();
   const orgStore = createOrgStore({ db, audit: createAudit(db) });
   const auth = createAuth({ db, jwtSecret: "test" });
-  const admin = makeUser(auth, "teacher@example.com");
+  const admin = await makeUser(auth, "teacher@example.com");
   const org = orgStore.createOrg({ userId: admin.id, name: "Analytics Org" });
-  const student = makeUser(auth, "student@example.com");
+  const student = await makeUser(auth, "student@example.com");
   orgStore.addMember({ orgId: org.id, actorId: admin.id, email: "student@example.com" });
 
   const insert = db.prepare(`
@@ -156,11 +161,11 @@ test("quiz attempts feed analytics and gradebook", () => {
   fs.unlinkSync(file);
 });
 
-test("certificates issue and publicly verify", () => {
+test("certificates issue and publicly verify", async () => {
   const { db, file } = freshDb();
   const certStore = createCertificateStore({ db, audit: createAudit(db) });
   const auth = createAuth({ db, jwtSecret: "test" });
-  const user = makeUser(auth, "grad@example.com");
+  const user = await makeUser(auth, "grad@example.com");
 
   const cert = certStore.issue({ userId: user.id, learnerName: "Ada Lovelace", courseName: "Python Course" });
   assert.match(cert.verifyId, /^PF-[A-Z0-9]{4}-[A-Z0-9]{4}$/);
@@ -182,7 +187,7 @@ test("certificates issue and publicly verify", () => {
   fs.unlinkSync(file);
 });
 
-test("org creation is restricted to the ORG_CREATOR_EMAILS allowlist", () => {
+test("org creation is restricted to the ORG_CREATOR_EMAILS allowlist", async () => {
   const { db, file } = freshDb();
   const orgStore = createOrgStore({ db, audit: createAudit(db) });
   const auth = createAuth({ db, jwtSecret: "test" });
@@ -191,13 +196,13 @@ test("org creation is restricted to the ORG_CREATOR_EMAILS allowlist", () => {
   try {
     process.env.ORG_CREATOR_EMAILS = "owner@example.com";
 
-    const outsider = makeUser(auth, "outsider@example.com");
+    const outsider = await makeUser(auth, "outsider@example.com");
     assert.throws(
       () => orgStore.createOrg({ userId: outsider.id, name: "Rogue Org" }),
       /approved platform admins/
     );
 
-    const owner = makeUser(auth, "owner@example.com");
+    const owner = await makeUser(auth, "owner@example.com");
     const org = orgStore.createOrg({ userId: owner.id, name: "Owner Org" });
     assert.equal(org.role, "admin");
 
@@ -214,7 +219,7 @@ test("org creation is restricted to the ORG_CREATOR_EMAILS allowlist", () => {
   fs.unlinkSync(file);
 });
 
-test("promoting or adding a member as admin is restricted to the allowlist", () => {
+test("promoting or adding a member as admin is restricted to the allowlist", async () => {
   const { db, file } = freshDb();
   const orgStore = createOrgStore({ db, audit: createAudit(db) });
   const auth = createAuth({ db, jwtSecret: "test" });
@@ -222,10 +227,10 @@ test("promoting or adding a member as admin is restricted to the allowlist", () 
   const original = process.env.ORG_CREATOR_EMAILS;
   try {
     process.env.ORG_CREATOR_EMAILS = "owner@example.com";
-    const owner = makeUser(auth, "owner@example.com");
+    const owner = await makeUser(auth, "owner@example.com");
     const org = orgStore.createOrg({ userId: owner.id, name: "Gate Org" });
 
-    const learner = makeUser(auth, "learner2@example.com");
+    const learner = await makeUser(auth, "learner2@example.com");
     orgStore.addMember({ orgId: org.id, actorId: owner.id, email: learner.email, role: "learner" });
 
     // Non-allowlisted learner cannot be promoted to admin.

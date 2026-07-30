@@ -20,6 +20,31 @@ services:
         generateValue: true
       - key: CORS_ORIGINS
         sync: false
+      - key: PUBLIC_API_BASE
+        sync: false
+      - key: FRONTEND_DEFAULT_RETURN
+        sync: false
+      # Optional social sign-in — set in the Render dashboard (never commit secrets).
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GITHUB_CLIENT_ID
+        sync: false
+      - key: GITHUB_CLIENT_SECRET
+        sync: false
+      - key: MICROSOFT_CLIENT_ID
+        sync: false
+      - key: MICROSOFT_CLIENT_SECRET
+        sync: false
+      - key: APPLE_CLIENT_ID
+        sync: false
+      - key: APPLE_TEAM_ID
+        sync: false
+      - key: APPLE_KEY_ID
+        sync: false
+      - key: APPLE_PRIVATE_KEY
+        sync: false
       # Comma-separated allowlist of emails permitted to create an org / hold
       # the admin role. Set your own email in the Render dashboard — never in git.
       - key: ORG_CREATOR_EMAILS

@@ -559,6 +559,38 @@
     mountHeader();
   };
 
+  const listOAuthProviders = async () => {
+    const base = apiBaseUrl();
+    if (!base) return [];
+    try {
+      const data = await apiFetch("/api/auth/oauth/providers");
+      return Array.isArray(data.providers) ? data.providers : [];
+    } catch {
+      return [];
+    }
+  };
+
+  const startOAuth = (provider) => {
+    const base = apiBaseUrl();
+    if (!base) {
+      throw new Error("API is not configured. Add docs/config.js with apiBaseUrl.");
+    }
+    const returnTo = `${window.location.origin}${window.location.pathname}`;
+    const url = `${base}/api/auth/oauth/${encodeURIComponent(provider)}?return_to=${encodeURIComponent(returnTo)}`;
+    window.location.assign(url);
+  };
+
+  const completeOAuth = async (code) => {
+    const data = await apiFetch("/api/auth/oauth/exchange", {
+      method: "POST",
+      body: JSON.stringify({ code }),
+    });
+    setSession(data.token, data.user);
+    await syncProgress({ force: true });
+    mountHeader();
+    return data.user;
+  };
+
   // --- Org-grade API helpers (organisations, gradebook, certificates, account) ---
 
   const orgApi = {
@@ -655,11 +687,17 @@
   const accountApi = {
     export: () => apiFetch("/api/account/export"),
     remove: () => apiFetch("/api/account", { method: "DELETE" }),
-    changePassword: (currentPassword, newPassword) =>
-      apiFetch("/api/auth/change-password", {
+    changePassword: async (currentPassword, newPassword) => {
+      const data = await apiFetch("/api/auth/change-password", {
         method: "POST",
         body: JSON.stringify({ currentPassword, newPassword }),
-      }),
+      });
+      // Password change invalidates other sessions; keep this device signed in.
+      if (data.token && data.user) {
+        setSession(data.token, data.user);
+      }
+      return data;
+    },
   };
 
   const getCompletions = () =>
@@ -1147,6 +1185,9 @@
     signIn,
     signUp,
     signOut,
+    listOAuthProviders,
+    startOAuth,
+    completeOAuth,
     syncProgress,
     scheduleSync,
     apiBaseUrl,

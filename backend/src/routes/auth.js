@@ -4,18 +4,18 @@ const { ZodError } = require("zod");
 function createAuthRouter(auth) {
   const router = express.Router();
 
-  router.post("/register", (req, res) => {
+  router.post("/register", async (req, res) => {
     try {
-      const result = auth.register(req.body || {});
+      const result = await auth.register(req.body || {});
       return res.status(201).json(result);
     } catch (error) {
       return sendAuthError(res, error);
     }
   });
 
-  router.post("/login", (req, res) => {
+  router.post("/login", async (req, res) => {
     try {
-      const result = auth.login(req.body || {});
+      const result = await auth.login(req.body || {});
       return res.json(result);
     } catch (error) {
       return sendAuthError(res, error);
@@ -26,13 +26,12 @@ function createAuthRouter(auth) {
     return res.json({ user: req.user });
   });
 
-  // Rotates the password hash only; existing JWTs stay valid until they expire
-  // (no server-side session/token revocation yet), so this does not sign the
-  // user out of other devices.
-  router.post("/change-password", auth.requireAuth, (req, res) => {
+  // Rotates the password hash (Argon2id) and bumps token_version so other
+  // devices' JWTs stop working. Response includes a fresh token for this session.
+  router.post("/change-password", auth.requireAuth, async (req, res) => {
     try {
-      const result = auth.changePassword(req.user.id, req.body || {});
-      return res.json({ user: result });
+      const result = await auth.changePassword(req.user.id, req.body || {});
+      return res.json(result);
     } catch (error) {
       return sendAuthError(
         res,
