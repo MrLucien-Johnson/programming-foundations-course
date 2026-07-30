@@ -58,3 +58,14 @@ CTA / LINKS
 
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/
 Donate: https://paypal.me/ProgrammingOfficial
+
+────────────────────────────────────────
+GENERATED VOICEOVER
+────────────────────────────────────────
+
+A timed AI voiceover (en-US Jenny, warm/friendly) is mixed into:
+  promo-45s-system-tour-vo.mp4
+Audio-only:
+  promo-45s-voiceover.m4a
+
+Play/download on: https://mrlucien-johnson.github.io/programming-foundations-course/promo.html
