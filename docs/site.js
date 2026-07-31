@@ -785,8 +785,10 @@
         (file === "/" && href === "index.html");
       if (current) {
         anchor.setAttribute("aria-current", "page");
+        anchor.classList.add("is-current");
       } else {
         anchor.removeAttribute("aria-current");
+        anchor.classList.remove("is-current");
       }
     });
   };
@@ -927,7 +929,7 @@
           <a class="btn btn-primary" href="quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}">Open quiz</a>
           ${
             last && last.path
-              ? `<a class="btn btn-ghost" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Last lesson</a>`
+              ? `<a class="btn btn-secondary" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Last lesson</a>`
               : ""
           }
         </div>
@@ -946,10 +948,10 @@
         </div>
         <div class="resume-banner-actions">
           <a class="btn btn-primary" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Open lesson</a>
-          ${last.page ? `<a class="btn btn-ghost" href="${escapeHtml(last.page)}">Course home</a>` : ""}
+          ${last.page ? `<a class="btn btn-secondary" href="${escapeHtml(last.page)}">Course home</a>` : ""}
           ${
             lastQuiz && lastQuiz.quiz
-              ? `<a class="btn btn-ghost" href="quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}">Last quiz</a>`
+              ? `<a class="btn btn-secondary" href="quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}">Last quiz</a>`
               : ""
           }
         </div>
