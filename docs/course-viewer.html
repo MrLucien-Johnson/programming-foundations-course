@@ -172,8 +172,9 @@
         const transcriptText = document.getElementById("lesson-tutorial-transcript-text");
         if (title) title.textContent = hit.title || "Voiceover lesson";
         if (note) {
+          const kindLabel = hit.kind === "lesson" ? "voiceover lesson" : "setup guide";
           note.textContent =
-            "Part of this learning path. Captions are available in the player; the full transcript is below for deaf and hard-of-hearing learners.";
+            `This ${kindLabel} matches the module. Open the transcript beside the video to read along, then continue with the written lesson below.`;
         }
         if (video) {
           video.innerHTML = "";

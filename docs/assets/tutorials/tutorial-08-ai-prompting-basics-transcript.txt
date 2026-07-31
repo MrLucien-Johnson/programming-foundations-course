@@ -1,4 +1,4 @@
-Programming Foundations — Tutorial: AI Module 2 — prompting basics
+Programming Foundations — Tutorial: AI Module 2 — prompting basics lesson
 ID: 08-ai-prompting-basics
 Suggested placement: ai-course, 02-prompting-basics
 
@@ -6,23 +6,32 @@ Suggested placement: ai-course, 02-prompting-basics
 FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
-[Slide 1] From vague to specific
-Move from vague to specific. A good prompt states role, goal, and format. Add constraints like length, tone, and what not to do, and give one short example when helpful.
+[Slide 1] Today’s lesson goal
+Today’s lesson goal: turn vague asks into clear prompts, separate role, task, constraints, and format, and test outputs before you trust them.
 
-[Slide 2] Structure beats clever wording
-Structure beats clever wording. Use headings for goal, inputs, and output format. Ask for checkable outputs, and prefer clear instructions over buzzwords.
+[Slide 2] The prompt recipe
+Use a prompt recipe. Role: who the model should act as. Goal: what success looks like. Then add constraints and an output shape you can check.
 
-[Slide 3] Test before you trust
-Test before you trust. Try good, bad, and ambiguous inputs. Note failures like missing steps or invented facts, tighten the prompt, then retest.
+[Slide 3] Vague vs specific
+Compare vague versus specific. Vague says summarise this meeting. Specific asks for actions, owners, deadlines, as a JSON list. Specific prompts fail loudly, and that is useful.
 
-[Slide 4] Your Module 2 next step
-Open Prompting Basics in the course viewer. Rewrite one vague request into a structured prompt, and save before and after notes in your starter pack.
+[Slide 4] Worked rewrite
+Worked rewrite: add role project assistant, require only using the notes provided, and return bullets in the shape action, owner, date.
+
+[Slide 5] Few-shot when it helps
+Use a few-shot example when it helps. Show one short correct example close to your real format, and remove examples that teach the wrong pattern.
+
+[Slide 6] Test before you trust
+Test before you trust. Try good, empty, and conflicting inputs. Score format, factuality, and helpfulness. Tighten the rules, then retest the same cases.
+
+[Slide 7] Practice checkpoint
+Practice checkpoint: rewrite one vague request from your day, save the before and after in the starter pack, then continue in the written Prompting Basics lesson for full exercises.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Move from vague to specific. A good prompt states role, goal, and format. Add constraints like length, tone, and what not to do, and give one short example when helpful. Structure beats clever wording. Use headings for goal, inputs, and output format. Ask for checkable outputs, and prefer clear instructions over buzzwords. Test before you trust. Try good, bad, and ambiguous inputs. Note failures like missing steps or invented facts, tighten the prompt, then retest. Open Prompting Basics in the course viewer. Rewrite one vague request into a structured prompt, and save before and after notes in your starter pack.
+Today’s lesson goal: turn vague asks into clear prompts, separate role, task, constraints, and format, and test outputs before you trust them. Use a prompt recipe. Role: who the model should act as. Goal: what success looks like. Then add constraints and an output shape you can check. Compare vague versus specific. Vague says summarise this meeting. Specific asks for actions, owners, deadlines, as a JSON list. Specific prompts fail loudly, and that is useful. Worked rewrite: add role project assistant, require only using the notes provided, and return bullets in the shape action, owner, date. Use a few-shot example when it helps. Show one short correct example close to your real format, and remove examples that teach the wrong pattern. Test before you trust. Try good, empty, and conflicting inputs. Score format, factuality, and helpfulness. Tighten the rules, then retest the same cases. Practice checkpoint: rewrite one vague request from your day, save the before and after in the starter pack, then continue in the written Prompting Basics lesson for full exercises.
 
 Voice: en-US JennyNeural (edge-tts)
 Captions: matching .vtt file (for deaf / hard-of-hearing users)

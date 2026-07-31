@@ -33,7 +33,7 @@ That's exactly what we're doing here. By the end, you'll have created a tiny pro
 
 ## 🛠️ Step 1: Installing .NET SDK
 
-> **Voiceover lesson (with captions & transcript):** [C# / .NET install tutorial](../../docs/tutorials.html#csharp-setup) (~1 min), then follow the written steps below.
+> **Setup guide (with captions & read-along transcript):** [C# / .NET install](../../docs/tutorials.html#csharp-setup) (~1 min), then follow the written steps below.
 
 The .NET SDK (Software Development Kit) is like a toolkit that lets you create and run C# programs.
 

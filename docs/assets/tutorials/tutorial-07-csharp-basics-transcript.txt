@@ -1,4 +1,4 @@
-Programming Foundations — Tutorial: C# Module 2 — variables & input
+Programming Foundations — Tutorial: C# Module 2 — variables & input lesson
 ID: 07-csharp-basics
 Suggested placement: csharp-course, module-02-basics
 
@@ -6,26 +6,32 @@ Suggested placement: csharp-course, module-02-basics
 FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
-[Slide 1] After your first console app
-After your first console app, Module 2 adds variables, input, and calculations. C sharp uses clear types like string, int, and double. You will build greeting and calculator programs.
+[Slide 1] Today’s lesson goal
+Today’s lesson goal: declare typed variables in C sharp, read input and convert numbers safely, and calculate totals people can understand.
 
 [Slide 2] Declare with a type
-Declare variables with a type. For example, string customer name equals Sarah, int quantity equals 3, double price equals 9.99. Choose names that describe the data.
+Declare with a type. String customer name equals Sarah. Int quantity equals 3. Double price equals 9.99. The type tells C sharp what kind of box you are creating.
 
-[Slide 3] Read input safely
-Read input with Console.ReadLine, which returns text. Parse numbers with int.Parse or double.Parse, and format output with string interpolation.
+[Slide 3] Why types help beginners
+Types help beginners because the compiler catches many mistakes early. You see what each value is meant to be, and names plus types document your intent.
 
-[Slide 4] Calculate real values
-Calculate real values for tax, totals, and wages with ordinary math operators. Keep units clear in variable names, and print results the user can understand.
+[Slide 4] Worked example: greeting
+Worked example: a greeting. Write a prompt, read the line into a string name, then write Hello name with string interpolation.
 
-[Slide 5] Practice path
-Follow the Module 2 examples in your project, complete the exercises, check the solutions, and take the Module 2 quiz to lock in the skills.
+[Slide 5] Worked example: tax total
+Worked example: a tax total. Read a line of text, parse it with double.Parse, then multiply by one point two. Print the total with clear wording.
+
+[Slide 6] Common mistakes
+Common mistakes include using the value before Parse succeeds, forgetting that ReadLine returns text, and opening a single file instead of the whole project folder.
+
+[Slide 7] Practice, then quiz
+Practice, then quiz. Complete the Module 2 exercises in your console app, compare with solutions after you try, and take the Module 2 quiz. The written lesson has the full walkthrough.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-After your first console app, Module 2 adds variables, input, and calculations. C sharp uses clear types like string, int, and double. You will build greeting and calculator programs. Declare variables with a type. For example, string customer name equals Sarah, int quantity equals 3, double price equals 9.99. Choose names that describe the data. Read input with Console.ReadLine, which returns text. Parse numbers with int.Parse or double.Parse, and format output with string interpolation. Calculate real values for tax, totals, and wages with ordinary math operators. Keep units clear in variable names, and print results the user can understand. Follow the Module 2 examples in your project, complete the exercises, check the solutions, and take the Module 2 quiz to lock in the skills.
+Today’s lesson goal: declare typed variables in C sharp, read input and convert numbers safely, and calculate totals people can understand. Declare with a type. String customer name equals Sarah. Int quantity equals 3. Double price equals 9.99. The type tells C sharp what kind of box you are creating. Types help beginners because the compiler catches many mistakes early. You see what each value is meant to be, and names plus types document your intent. Worked example: a greeting. Write a prompt, read the line into a string name, then write Hello name with string interpolation. Worked example: a tax total. Read a line of text, parse it with double.Parse, then multiply by one point two. Print the total with clear wording. Common mistakes include using the value before Parse succeeds, forgetting that ReadLine returns text, and opening a single file instead of the whole project folder. Practice, then quiz. Complete the Module 2 exercises in your console app, compare with solutions after you try, and take the Module 2 quiz. The written lesson has the full walkthrough.
 
 Voice: en-US JennyNeural (edge-tts)
 Captions: matching .vtt file (for deaf / hard-of-hearing users)

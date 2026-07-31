@@ -1,21 +1,29 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:13.344
-After your first script: After your first script, Module 2 makes programs interactive and useful. You will store values, ask for input, and calculate. These skills power forms, carts, and calculators.
+00:00:00.000 --> 00:00:08.352
+Today’s lesson goal: Today’s lesson goal: store values in variables, ask the user questions with input, and calculate and display clear results.
 
 2
-00:00:13.694 --> 00:00:26.510
-Variables are labeled boxes: Variables are labeled boxes. Write a name equals a value, for example customer underscore name equals Sarah. Python chooses the type for you, and you can update a variable anytime.
+00:00:08.702 --> 00:00:20.078
+Variables are labeled boxes: Variables are labeled boxes. Write customer underscore name equals Sarah. Python chooses the type for you, and you assign again whenever you want to update the value.
 
 3
-00:00:26.860 --> 00:00:34.948
-Talk to the user: Talk to the user with input. Store the answer in a variable, then combine text with f-strings, like hello name.
+00:00:20.428 --> 00:00:28.924
+Common types you will use: Common types you will use are text strings, whole numbers and decimals, and True or False values for yes or no decisions later.
 
 4
-00:00:35.298 --> 00:00:45.474
-Do useful math: Do useful math. Convert text numbers with float or int, calculate price, tax, or wages, and print clear results with f-strings.
+00:00:29.274 --> 00:00:40.194
+Worked example: greeting: Worked example: a greeting. Store input Your name in a variable called name, then print an f-string Hello name. Type it yourself — do not only read it.
 
 5
-00:00:45.824 --> 00:00:55.592
-Practice path: Type the examples instead of only reading them. Build the greeting and price calculator exercises, then take the Module 2 quiz when you feel ready.
+00:00:40.544 --> 00:00:52.736
+Worked example: price with tax: Worked example: price with tax. Read the price as text, convert it with float, multiply by one point two for example tax, and print the total with two decimal places.
+
+6
+00:00:53.086 --> 00:01:03.694
+Common mistakes: Common mistakes include forgetting float before math on input, mixing up one equals for assignment with two equals for comparison, and leaving quotes unclosed in strings.
+
+7
+00:01:04.044 --> 00:01:17.916
+Practice, then quiz: Practice, then quiz. Build the greeting and wage calculator exercises, check solutions only after your own attempt, and take the Module 2 quiz when ready. Use the written lesson for full detail.

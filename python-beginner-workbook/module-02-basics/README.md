@@ -1,6 +1,6 @@
 # Module 2: Python Basics
 
-> **Voiceover lesson (with captions & transcript):** [Python Module 2 — variables & input](../../docs/tutorials.html#python-basics)
+> **Voiceover lesson (with captions & read-along transcript):** [Python Module 2 — variables & input](../../docs/tutorials.html#python-basics) — then continue with the written lesson below.
 
 ## 🎯 What You'll Learn
 

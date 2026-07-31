@@ -10,7 +10,8 @@
     "captions": "tutorial-01-get-started-download.vtt",
     "audio": "tutorial-01-get-started-download-voiceover.m4a",
     "durationSec": 46.6,
-    "combinedTranscript": "Learn in your browser first. You do not need to install anything to start Module 1 online. Open Start Here, pick Python, C sharp, or A I, and mark steps done as you go. When you want files on your computer, use GitHub\u2019s Code menu and choose Download ZIP. Find the file in Downloads, then unzip it. Git is optional \u2014 beginners can use the ZIP. Open the right folder for your course. Python lives in python-beginner-workbook. C sharp lives in csharp-beginner-workbook. Always start with Module 1 setup. Quick tip: if a download goes missing, check the Help page. You can keep learning online while installers run in the background."
+    "combinedTranscript": "Learn in your browser first. You do not need to install anything to start Module 1 online. Open Start Here, pick Python, C sharp, or A I, and mark steps done as you go. When you want files on your computer, use GitHub\u2019s Code menu and choose Download ZIP. Find the file in Downloads, then unzip it. Git is optional \u2014 beginners can use the ZIP. Open the right folder for your course. Python lives in python-beginner-workbook. C sharp lives in csharp-beginner-workbook. Always start with Module 1 setup. Quick tip: if a download goes missing, check the Help page. You can keep learning online while installers run in the background.",
+    "kind": "setup"
   },
   {
     "id": "02-python-setup",
@@ -23,7 +24,8 @@
     "captions": "tutorial-02-python-setup.vtt",
     "audio": "tutorial-02-python-setup-voiceover.m4a",
     "durationSec": 53.2,
-    "combinedTranscript": "Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, use the installer or python 3. Verify it worked. Open a terminal and run python dash dash version, or python 3 dash dash version. You should see a version number. Install a code editor such as Cursor or Visual Studio Code. Add the Python extension, then open your python-beginner-workbook folder. Create hello.py with a print hello message, then run python hello.py. Change the text \u2014 that is your first real program. If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor terminal, finish Module 1 exercises, then take the quiz."
+    "combinedTranscript": "Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, use the installer or python 3. Verify it worked. Open a terminal and run python dash dash version, or python 3 dash dash version. You should see a version number. Install a code editor such as Cursor or Visual Studio Code. Add the Python extension, then open your python-beginner-workbook folder. Create hello.py with a print hello message, then run python hello.py. Change the text \u2014 that is your first real program. If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor terminal, finish Module 1 exercises, then take the quiz.",
+    "kind": "setup"
   },
   {
     "id": "03-csharp-setup",
@@ -36,7 +38,8 @@
     "captions": "tutorial-03-csharp-setup.vtt",
     "audio": "tutorial-03-csharp-setup-voiceover.m4a",
     "durationSec": 45.5,
-    "combinedTranscript": "Install the dot net S D K from dotnet.microsoft.com slash download. Get the latest S D K, run the installer, then finish. Open a terminal and run dotnet dash dash version. A number like 8 point 0 means you are ready. Install Cursor or Visual Studio Code, add the C sharp Dev Kit extension, and open the csharp-beginner-workbook folder. Create a console app with dotnet new console, move into the folder, and run dotnet run. Edit Program.cs to make it yours. Remember: C sharp is the language and dot net is the toolbox. Open the whole project folder, finish Module 1, then take the quiz."
+    "combinedTranscript": "Install the dot net S D K from dotnet.microsoft.com slash download. Get the latest S D K, run the installer, then finish. Open a terminal and run dotnet dash dash version. A number like 8 point 0 means you are ready. Install Cursor or Visual Studio Code, add the C sharp Dev Kit extension, and open the csharp-beginner-workbook folder. Create a console app with dotnet new console, move into the folder, and run dotnet run. Edit Program.cs to make it yours. Remember: C sharp is the language and dot net is the toolbox. Open the whole project folder, finish Module 1, then take the quiz.",
+    "kind": "setup"
   },
   {
     "id": "04-tips-tricks",
@@ -49,11 +52,12 @@
     "captions": "tutorial-04-tips-tricks.vtt",
     "audio": "tutorial-04-tips-tricks-voiceover.m4a",
     "durationSec": 53.3,
-    "combinedTranscript": "Follow Start Here in order. Open Module 1 online before installing tools, pick one course, and use Mark done so your path updates. Read each lesson, then take the module quiz. Continue banners bring you back where you left off, and certificates unlock when every module is complete. Guest progress stays in this browser. A free account can sync when the cloud is up. Keep guest progress as a backup on free hosting. Type the examples instead of only reading them. Break big tasks into tiny checkpoints. When stuck, re-read the tip boxes, then open Help. You are ready. Go Start Here, choose a course, and open Module 1. Watch the Python or C sharp install video when you code locally. Enjoy learning."
+    "combinedTranscript": "Follow Start Here in order. Open Module 1 online before installing tools, pick one course, and use Mark done so your path updates. Read each lesson, then take the module quiz. Continue banners bring you back where you left off, and certificates unlock when every module is complete. Guest progress stays in this browser. A free account can sync when the cloud is up. Keep guest progress as a backup on free hosting. Type the examples instead of only reading them. Break big tasks into tiny checkpoints. When stuck, re-read the tip boxes, then open Help. You are ready. Go Start Here, choose a course, and open Module 1. Watch the Python or C sharp install video when you code locally. Enjoy learning.",
+    "kind": "setup"
   },
   {
     "id": "05-ai-foundations",
-    "title": "AI Module 1 \u2014 foundations overview",
+    "title": "AI Module 1 \u2014 foundations lesson",
     "when": "ai-course, 01-ai-foundations",
     "pathMatch": "languages/ai/beginner/modules/01-ai-foundations",
     "hubAnchor": "ai-foundations",
@@ -61,12 +65,13 @@
     "transcript": "tutorial-05-ai-foundations-transcript.txt",
     "captions": "tutorial-05-ai-foundations.vtt",
     "audio": "tutorial-05-ai-foundations-voiceover.m4a",
-    "durationSec": 59.8,
-    "combinedTranscript": "This A I course teaches you to use language models like an engineer, not like magic. You do not need a coding install to start Module 1. Focus on clear goals, constraints, and tests. Language models are good at drafting, summarising, and transforming text. They follow structured formats when you specify them, and they speed up iteration when you check the output. They guess patterns; they do not know truth. They can invent facts, called hallucinations. Vague prompts produce vague, brittle results. Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a small evaluation set and rerun it after every change. Open A I Foundations in the course viewer, copy the beginner starter pack templates, and write a one-page summariser spec with ten evaluation cases."
+    "durationSec": 91.1,
+    "combinedTranscript": "Today\u2019s lesson goal: treat A I work as engineering, not magic. You will name what models do well and where they fail, and leave with a spec and evaluation habit you can reuse. A language model predicts likely next tokens from patterns. It can sound confident even when guessing, so it needs your constraints to stay useful. Strengths you can trust more include drafting and rewriting text you will review, summarising meeting notes into action lists, and transforming content into a format you define. Watch for failure modes. Hallucinations invent facts or owners. Brittleness means tiny wording changes break output. Injection risk means untrusted text tries to override your rules. Worked example: a support ticket. Goal: a summary and next steps from the ticket. Constraint: only use the provided text. Failure to avoid: inventing a refund promise. Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a ten-case evaluation set and rerun it after each change. Practice before you finish. Copy the beginner starter pack templates, write a one-page summariser spec, and build ten evaluation cases covering good, bad, and ambiguous inputs. Then continue in the written Module 1 lesson.",
+    "kind": "lesson"
   },
   {
     "id": "06-python-basics",
-    "title": "Python Module 2 \u2014 variables & input",
+    "title": "Python Module 2 \u2014 variables & input lesson",
     "when": "python-course, module-02-basics",
     "pathMatch": "python-beginner-workbook/module-02-basics",
     "hubAnchor": "python-basics",
@@ -74,12 +79,13 @@
     "transcript": "tutorial-06-python-basics-transcript.txt",
     "captions": "tutorial-06-python-basics.vtt",
     "audio": "tutorial-06-python-basics-voiceover.m4a",
-    "durationSec": 55.8,
-    "combinedTranscript": "After your first script, Module 2 makes programs interactive and useful. You will store values, ask for input, and calculate. These skills power forms, carts, and calculators. Variables are labeled boxes. Write a name equals a value, for example customer underscore name equals Sarah. Python chooses the type for you, and you can update a variable anytime. Talk to the user with input. Store the answer in a variable, then combine text with f-strings, like hello name. Do useful math. Convert text numbers with float or int, calculate price, tax, or wages, and print clear results with f-strings. Type the examples instead of only reading them. Build the greeting and price calculator exercises, then take the Module 2 quiz when you feel ready."
+    "durationSec": 78.2,
+    "combinedTranscript": "Today\u2019s lesson goal: store values in variables, ask the user questions with input, and calculate and display clear results. Variables are labeled boxes. Write customer underscore name equals Sarah. Python chooses the type for you, and you assign again whenever you want to update the value. Common types you will use are text strings, whole numbers and decimals, and True or False values for yes or no decisions later. Worked example: a greeting. Store input Your name in a variable called name, then print an f-string Hello name. Type it yourself \u2014 do not only read it. Worked example: price with tax. Read the price as text, convert it with float, multiply by one point two for example tax, and print the total with two decimal places. Common mistakes include forgetting float before math on input, mixing up one equals for assignment with two equals for comparison, and leaving quotes unclosed in strings. Practice, then quiz. Build the greeting and wage calculator exercises, check solutions only after your own attempt, and take the Module 2 quiz when ready. Use the written lesson for full detail.",
+    "kind": "lesson"
   },
   {
     "id": "07-csharp-basics",
-    "title": "C# Module 2 \u2014 variables & input",
+    "title": "C# Module 2 \u2014 variables & input lesson",
     "when": "csharp-course, module-02-basics",
     "pathMatch": "csharp-beginner-workbook/module-02-basics",
     "hubAnchor": "csharp-basics",
@@ -87,12 +93,13 @@
     "transcript": "tutorial-07-csharp-basics-transcript.txt",
     "captions": "tutorial-07-csharp-basics.vtt",
     "audio": "tutorial-07-csharp-basics-voiceover.m4a",
-    "durationSec": 59.3,
-    "combinedTranscript": "After your first console app, Module 2 adds variables, input, and calculations. C sharp uses clear types like string, int, and double. You will build greeting and calculator programs. Declare variables with a type. For example, string customer name equals Sarah, int quantity equals 3, double price equals 9.99. Choose names that describe the data. Read input with Console.ReadLine, which returns text. Parse numbers with int.Parse or double.Parse, and format output with string interpolation. Calculate real values for tax, totals, and wages with ordinary math operators. Keep units clear in variable names, and print results the user can understand. Follow the Module 2 examples in your project, complete the exercises, check the solutions, and take the Module 2 quiz to lock in the skills."
+    "durationSec": 79.2,
+    "combinedTranscript": "Today\u2019s lesson goal: declare typed variables in C sharp, read input and convert numbers safely, and calculate totals people can understand. Declare with a type. String customer name equals Sarah. Int quantity equals 3. Double price equals 9.99. The type tells C sharp what kind of box you are creating. Types help beginners because the compiler catches many mistakes early. You see what each value is meant to be, and names plus types document your intent. Worked example: a greeting. Write a prompt, read the line into a string name, then write Hello name with string interpolation. Worked example: a tax total. Read a line of text, parse it with double.Parse, then multiply by one point two. Print the total with clear wording. Common mistakes include using the value before Parse succeeds, forgetting that ReadLine returns text, and opening a single file instead of the whole project folder. Practice, then quiz. Complete the Module 2 exercises in your console app, compare with solutions after you try, and take the Module 2 quiz. The written lesson has the full walkthrough.",
+    "kind": "lesson"
   },
   {
     "id": "08-ai-prompting-basics",
-    "title": "AI Module 2 \u2014 prompting basics",
+    "title": "AI Module 2 \u2014 prompting basics lesson",
     "when": "ai-course, 02-prompting-basics",
     "pathMatch": "languages/ai/beginner/modules/02-prompting-basics",
     "hubAnchor": "ai-prompting",
@@ -100,7 +107,8 @@
     "transcript": "tutorial-08-ai-prompting-basics-transcript.txt",
     "captions": "tutorial-08-ai-prompting-basics.vtt",
     "audio": "tutorial-08-ai-prompting-basics-voiceover.m4a",
-    "durationSec": 47.4,
-    "combinedTranscript": "Move from vague to specific. A good prompt states role, goal, and format. Add constraints like length, tone, and what not to do, and give one short example when helpful. Structure beats clever wording. Use headings for goal, inputs, and output format. Ask for checkable outputs, and prefer clear instructions over buzzwords. Test before you trust. Try good, bad, and ambiguous inputs. Note failures like missing steps or invented facts, tighten the prompt, then retest. Open Prompting Basics in the course viewer. Rewrite one vague request into a structured prompt, and save before and after notes in your starter pack."
+    "durationSec": 82.2,
+    "combinedTranscript": "Today\u2019s lesson goal: turn vague asks into clear prompts, separate role, task, constraints, and format, and test outputs before you trust them. Use a prompt recipe. Role: who the model should act as. Goal: what success looks like. Then add constraints and an output shape you can check. Compare vague versus specific. Vague says summarise this meeting. Specific asks for actions, owners, deadlines, as a JSON list. Specific prompts fail loudly, and that is useful. Worked rewrite: add role project assistant, require only using the notes provided, and return bullets in the shape action, owner, date. Use a few-shot example when it helps. Show one short correct example close to your real format, and remove examples that teach the wrong pattern. Test before you trust. Try good, empty, and conflicting inputs. Score format, factuality, and helpfulness. Tighten the rules, then retest the same cases. Practice checkpoint: rewrite one vague request from your day, save the before and after in the starter pack, then continue in the written Prompting Basics lesson for full exercises.",
+    "kind": "lesson"
   }
 ]

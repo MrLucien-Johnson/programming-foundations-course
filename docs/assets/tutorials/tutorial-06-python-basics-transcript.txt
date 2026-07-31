@@ -1,4 +1,4 @@
-Programming Foundations — Tutorial: Python Module 2 — variables & input
+Programming Foundations — Tutorial: Python Module 2 — variables & input lesson
 ID: 06-python-basics
 Suggested placement: python-course, module-02-basics
 
@@ -6,26 +6,32 @@ Suggested placement: python-course, module-02-basics
 FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
-[Slide 1] After your first script
-After your first script, Module 2 makes programs interactive and useful. You will store values, ask for input, and calculate. These skills power forms, carts, and calculators.
+[Slide 1] Today’s lesson goal
+Today’s lesson goal: store values in variables, ask the user questions with input, and calculate and display clear results.
 
 [Slide 2] Variables are labeled boxes
-Variables are labeled boxes. Write a name equals a value, for example customer underscore name equals Sarah. Python chooses the type for you, and you can update a variable anytime.
+Variables are labeled boxes. Write customer underscore name equals Sarah. Python chooses the type for you, and you assign again whenever you want to update the value.
 
-[Slide 3] Talk to the user
-Talk to the user with input. Store the answer in a variable, then combine text with f-strings, like hello name.
+[Slide 3] Common types you will use
+Common types you will use are text strings, whole numbers and decimals, and True or False values for yes or no decisions later.
 
-[Slide 4] Do useful math
-Do useful math. Convert text numbers with float or int, calculate price, tax, or wages, and print clear results with f-strings.
+[Slide 4] Worked example: greeting
+Worked example: a greeting. Store input Your name in a variable called name, then print an f-string Hello name. Type it yourself — do not only read it.
 
-[Slide 5] Practice path
-Type the examples instead of only reading them. Build the greeting and price calculator exercises, then take the Module 2 quiz when you feel ready.
+[Slide 5] Worked example: price with tax
+Worked example: price with tax. Read the price as text, convert it with float, multiply by one point two for example tax, and print the total with two decimal places.
+
+[Slide 6] Common mistakes
+Common mistakes include forgetting float before math on input, mixing up one equals for assignment with two equals for comparison, and leaving quotes unclosed in strings.
+
+[Slide 7] Practice, then quiz
+Practice, then quiz. Build the greeting and wage calculator exercises, check solutions only after your own attempt, and take the Module 2 quiz when ready. Use the written lesson for full detail.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-After your first script, Module 2 makes programs interactive and useful. You will store values, ask for input, and calculate. These skills power forms, carts, and calculators. Variables are labeled boxes. Write a name equals a value, for example customer underscore name equals Sarah. Python chooses the type for you, and you can update a variable anytime. Talk to the user with input. Store the answer in a variable, then combine text with f-strings, like hello name. Do useful math. Convert text numbers with float or int, calculate price, tax, or wages, and print clear results with f-strings. Type the examples instead of only reading them. Build the greeting and price calculator exercises, then take the Module 2 quiz when you feel ready.
+Today’s lesson goal: store values in variables, ask the user questions with input, and calculate and display clear results. Variables are labeled boxes. Write customer underscore name equals Sarah. Python chooses the type for you, and you assign again whenever you want to update the value. Common types you will use are text strings, whole numbers and decimals, and True or False values for yes or no decisions later. Worked example: a greeting. Store input Your name in a variable called name, then print an f-string Hello name. Type it yourself — do not only read it. Worked example: price with tax. Read the price as text, convert it with float, multiply by one point two for example tax, and print the total with two decimal places. Common mistakes include forgetting float before math on input, mixing up one equals for assignment with two equals for comparison, and leaving quotes unclosed in strings. Practice, then quiz. Build the greeting and wage calculator exercises, check solutions only after your own attempt, and take the Module 2 quiz when ready. Use the written lesson for full detail.
 
 Voice: en-US JennyNeural (edge-tts)
 Captions: matching .vtt file (for deaf / hard-of-hearing users)

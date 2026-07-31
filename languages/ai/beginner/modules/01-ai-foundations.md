@@ -1,6 +1,6 @@
 # AI — Module 01: AI Foundations
 
-> **Voiceover lesson (with captions & transcript):** [AI Foundations overview](../../../../docs/tutorials.html#ai-foundations)
+> **Voiceover lesson (with captions & read-along transcript):** [AI Foundations](../../../../docs/tutorials.html#ai-foundations) — then continue with the written lesson below.
 
 ## Overview
 Understand what LLMs are good at, what they’re bad at, and how to frame AI work as engineering work.

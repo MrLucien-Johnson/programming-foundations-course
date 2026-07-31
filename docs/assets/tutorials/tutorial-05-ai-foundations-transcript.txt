@@ -1,4 +1,4 @@
-Programming Foundations — Tutorial: AI Module 1 — foundations overview
+Programming Foundations — Tutorial: AI Module 1 — foundations lesson
 ID: 05-ai-foundations
 Suggested placement: ai-course, 01-ai-foundations
 
@@ -6,26 +6,32 @@ Suggested placement: ai-course, 01-ai-foundations
 FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
-[Slide 1] What this AI course is
-This A I course teaches you to use language models like an engineer, not like magic. You do not need a coding install to start Module 1. Focus on clear goals, constraints, and tests.
+[Slide 1] Today’s lesson goal
+Today’s lesson goal: treat A I work as engineering, not magic. You will name what models do well and where they fail, and leave with a spec and evaluation habit you can reuse.
 
-[Slide 2] What LLMs are good at
-Language models are good at drafting, summarising, and transforming text. They follow structured formats when you specify them, and they speed up iteration when you check the output.
+[Slide 2] What an LLM actually does
+A language model predicts likely next tokens from patterns. It can sound confident even when guessing, so it needs your constraints to stay useful.
 
-[Slide 3] What they get wrong
-They guess patterns; they do not know truth. They can invent facts, called hallucinations. Vague prompts produce vague, brittle results.
+[Slide 3] Strengths you can trust more
+Strengths you can trust more include drafting and rewriting text you will review, summarising meeting notes into action lists, and transforming content into a format you define.
 
-[Slide 4] The engineering loop
-Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a small evaluation set and rerun it after every change.
+[Slide 4] Failure modes to watch
+Watch for failure modes. Hallucinations invent facts or owners. Brittleness means tiny wording changes break output. Injection risk means untrusted text tries to override your rules.
 
-[Slide 5] Your Module 1 next step
-Open A I Foundations in the course viewer, copy the beginner starter pack templates, and write a one-page summariser spec with ten evaluation cases.
+[Slide 5] Worked example: support ticket
+Worked example: a support ticket. Goal: a summary and next steps from the ticket. Constraint: only use the provided text. Failure to avoid: inventing a refund promise.
+
+[Slide 6] The engineering loop
+Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a ten-case evaluation set and rerun it after each change.
+
+[Slide 7] Practice before you finish
+Practice before you finish. Copy the beginner starter pack templates, write a one-page summariser spec, and build ten evaluation cases covering good, bad, and ambiguous inputs. Then continue in the written Module 1 lesson.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-This A I course teaches you to use language models like an engineer, not like magic. You do not need a coding install to start Module 1. Focus on clear goals, constraints, and tests. Language models are good at drafting, summarising, and transforming text. They follow structured formats when you specify them, and they speed up iteration when you check the output. They guess patterns; they do not know truth. They can invent facts, called hallucinations. Vague prompts produce vague, brittle results. Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a small evaluation set and rerun it after every change. Open A I Foundations in the course viewer, copy the beginner starter pack templates, and write a one-page summariser spec with ten evaluation cases.
+Today’s lesson goal: treat A I work as engineering, not magic. You will name what models do well and where they fail, and leave with a spec and evaluation habit you can reuse. A language model predicts likely next tokens from patterns. It can sound confident even when guessing, so it needs your constraints to stay useful. Strengths you can trust more include drafting and rewriting text you will review, summarising meeting notes into action lists, and transforming content into a format you define. Watch for failure modes. Hallucinations invent facts or owners. Brittleness means tiny wording changes break output. Injection risk means untrusted text tries to override your rules. Worked example: a support ticket. Goal: a summary and next steps from the ticket. Constraint: only use the provided text. Failure to avoid: inventing a refund promise. Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a ten-case evaluation set and rerun it after each change. Practice before you finish. Copy the beginner starter pack templates, write a one-page summariser spec, and build ten evaluation cases covering good, bad, and ambiguous inputs. Then continue in the written Module 1 lesson.
 
 Voice: en-US JennyNeural (edge-tts)
 Captions: matching .vtt file (for deaf / hard-of-hearing users)

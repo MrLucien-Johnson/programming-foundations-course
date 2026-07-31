@@ -195,6 +195,7 @@ TUTORIALS = [
     {
         "id": "01-get-started-download",
         "title": "Get started — browser & download",
+        "kind": "setup",
         "when": "start-here, help, courses",
         "footer": "tutorials.html · Start Here",
         "pathMatch": "",
@@ -241,6 +242,7 @@ TUTORIALS = [
     {
         "id": "02-python-setup",
         "title": "Python — download, install, first script",
+        "kind": "setup",
         "when": "python-course, module-01-setup",
         "footer": "tutorials.html · Python Module 1",
         "pathMatch": "python-beginner-workbook/module-01-setup",
@@ -296,6 +298,7 @@ TUTORIALS = [
     {
         "id": "03-csharp-setup",
         "title": "C# — install .NET and first project",
+        "kind": "setup",
         "when": "csharp-course, module-01-setup",
         "footer": "tutorials.html · C# Module 1",
         "pathMatch": "csharp-beginner-workbook/module-01-setup",
@@ -351,6 +354,7 @@ TUTORIALS = [
     {
         "id": "04-tips-tricks",
         "title": "Tips & tricks for this site",
+        "kind": "setup",
         "when": "help, start-here, account",
         "footer": "tutorials.html · Help",
         "pathMatch": "",
@@ -405,212 +409,297 @@ TUTORIALS = [
     },
     {
         "id": "05-ai-foundations",
-        "title": "AI Module 1 — foundations overview",
+        "title": "AI Module 1 — foundations lesson",
+        "kind": "lesson",
         "when": "ai-course, 01-ai-foundations",
         "footer": "tutorials.html · AI Beginner Module 1",
         "pathMatch": "languages/ai/beginner/modules/01-ai-foundations",
         "hubAnchor": "ai-foundations",
         "slides": [
             {
-                "title": "What this AI course is",
+                "title": "Today’s lesson goal",
                 "bullets": [
-                    "Learn to use AI like an engineer — not magic",
-                    "No coding install required to start Module 1",
-                    "Focus: clear goals, constraints, and tests",
+                    "Treat AI work as engineering, not magic",
+                    "Name what models do well — and where they fail",
+                    "Leave with a spec + eval habit you can reuse",
                 ],
-                "vo": "This A I course teaches you to use language models like an engineer, not like magic. You do not need a coding install to start Module 1. Focus on clear goals, constraints, and tests.",
+                "vo": "Today’s lesson goal: treat A I work as engineering, not magic. You will name what models do well and where they fail, and leave with a spec and evaluation habit you can reuse.",
             },
             {
-                "title": "What LLMs are good at",
+                "title": "What an LLM actually does",
                 "bullets": [
-                    "Drafting, summarising, transforming text",
-                    "Following structured formats when you specify them",
-                    "Speeding up iteration when you check the output",
+                    "Predicts likely next tokens from patterns",
+                    "Sounds confident even when guessing",
+                    "Needs your constraints to stay useful",
                 ],
-                "vo": "Language models are good at drafting, summarising, and transforming text. They follow structured formats when you specify them, and they speed up iteration when you check the output.",
+                "vo": "A language model predicts likely next tokens from patterns. It can sound confident even when guessing, so it needs your constraints to stay useful.",
             },
             {
-                "title": "What they get wrong",
+                "title": "Strengths you can trust more",
                 "bullets": [
-                    "They guess patterns — they do not “know” truth",
-                    "They can invent facts (hallucinations)",
-                    "Vague prompts produce vague, brittle results",
+                    "Drafting and rewriting text you will review",
+                    "Summarising meeting notes into action lists",
+                    "Transforming into a format you define",
                 ],
-                "vo": "They guess patterns; they do not know truth. They can invent facts, called hallucinations. Vague prompts produce vague, brittle results.",
+                "vo": "Strengths you can trust more include drafting and rewriting text you will review, summarising meeting notes into action lists, and transforming content into a format you define.",
+            },
+            {
+                "title": "Failure modes to watch",
+                "bullets": [
+                    "Hallucinations: invented facts or owners",
+                    "Brittleness: tiny wording changes break output",
+                    "Injection risk: untrusted text tries to override rules",
+                ],
+                "vo": "Watch for failure modes. Hallucinations invent facts or owners. Brittleness means tiny wording changes break output. Injection risk means untrusted text tries to override your rules.",
+            },
+            {
+                "title": "Worked example: support ticket",
+                "bullets": [
+                    "Goal: summary + next steps from a ticket",
+                    "Constraint: only use provided text",
+                    "Failure: inventing a refund promise",
+                ],
+                "vo": "Worked example: a support ticket. Goal: a summary and next steps from the ticket. Constraint: only use the provided text. Failure to avoid: inventing a refund promise.",
             },
             {
                 "title": "The engineering loop",
                 "bullets": [
                     "Spec → prompt → evaluate → iterate",
-                    "Write goal, inputs, outputs, and failure modes",
-                    "Keep a small eval set and rerun after changes",
+                    "Write goal, inputs, outputs, failure modes",
+                    "Keep a 10-case eval set and rerun it",
                 ],
-                "vo": "Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a small evaluation set and rerun it after every change.",
+                "vo": "Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a ten-case evaluation set and rerun it after each change.",
             },
             {
-                "title": "Your Module 1 next step",
+                "title": "Practice before you finish",
                 "bullets": [
-                    "Open AI Foundations in the course viewer",
-                    "Copy the beginner starter pack templates",
-                    "Write a one-page summariser spec + 10 eval cases",
+                    "Copy the beginner starter-pack templates",
+                    "Write a one-page summariser spec",
+                    "Build 10 eval cases: good, bad, ambiguous",
                 ],
-                "vo": "Open A I Foundations in the course viewer, copy the beginner starter pack templates, and write a one-page summariser spec with ten evaluation cases.",
+                "vo": "Practice before you finish. Copy the beginner starter pack templates, write a one-page summariser spec, and build ten evaluation cases covering good, bad, and ambiguous inputs. Then continue in the written Module 1 lesson.",
             },
         ],
     },
     {
         "id": "06-python-basics",
-        "title": "Python Module 2 — variables & input",
+        "title": "Python Module 2 — variables & input lesson",
+        "kind": "lesson",
         "when": "python-course, module-02-basics",
         "footer": "tutorials.html · Python Module 2",
         "pathMatch": "python-beginner-workbook/module-02-basics",
         "hubAnchor": "python-basics",
         "slides": [
             {
-                "title": "After your first script",
+                "title": "Today’s lesson goal",
                 "bullets": [
-                    "Module 2 makes programs interactive and useful",
-                    "You will store values, ask for input, and calculate",
-                    "These skills power forms, carts, and calculators",
+                    "Store values in variables",
+                    "Ask the user questions with input()",
+                    "Calculate and display clear results",
                 ],
-                "vo": "After your first script, Module 2 makes programs interactive and useful. You will store values, ask for input, and calculate. These skills power forms, carts, and calculators.",
+                "vo": "Today’s lesson goal: store values in variables, ask the user questions with input, and calculate and display clear results.",
             },
             {
                 "title": "Variables are labeled boxes",
                 "bullets": [
-                    "Name = value, for example customer_name = \"Sarah\"",
+                    "customer_name = \"Sarah\"",
                     "Python chooses the type for you",
-                    "Update a variable anytime by assigning again",
+                    "Assign again to update the value",
                 ],
-                "vo": "Variables are labeled boxes. Write a name equals a value, for example customer underscore name equals Sarah. Python chooses the type for you, and you can update a variable anytime.",
+                "vo": "Variables are labeled boxes. Write customer underscore name equals Sarah. Python chooses the type for you, and you assign again whenever you want to update the value.",
             },
             {
-                "title": "Talk to the user",
+                "title": "Common types you will use",
                 "bullets": [
-                    "Use input(\"Your name: \") to ask a question",
-                    "Store the answer in a variable",
-                    "Combine text with f-strings: f\"Hello, {name}\"",
+                    "Text strings: \"hello\"",
+                    "Whole numbers and decimals: 3, 9.99",
+                    "True or False for yes/no decisions later",
                 ],
-                "vo": "Talk to the user with input. Store the answer in a variable, then combine text with f-strings, like hello name.",
+                "vo": "Common types you will use are text strings, whole numbers and decimals, and True or False values for yes or no decisions later.",
             },
             {
-                "title": "Do useful math",
+                "title": "Worked example: greeting",
                 "bullets": [
-                    "Convert text numbers with float() or int()",
-                    "Calculate price, tax, or wages",
-                    "Print clear results with f-strings",
+                    "name = input(\"Your name: \")",
+                    "print(f\"Hello, {name}!\")",
+                    "Type it yourself — do not only read it",
                 ],
-                "vo": "Do useful math. Convert text numbers with float or int, calculate price, tax, or wages, and print clear results with f-strings.",
+                "vo": "Worked example: a greeting. Store input Your name in a variable called name, then print an f-string Hello name. Type it yourself — do not only read it.",
             },
             {
-                "title": "Practice path",
+                "title": "Worked example: price with tax",
                 "bullets": [
-                    "Type the examples — do not only read them",
-                    "Build the greeting and price calculator exercises",
-                    "Take the Module 2 quiz when you feel ready",
+                    "Read price text, then float(price_text)",
+                    "total = price * 1.2  # example tax",
+                    "print(f\"Total: £{total:.2f}\")",
                 ],
-                "vo": "Type the examples instead of only reading them. Build the greeting and price calculator exercises, then take the Module 2 quiz when you feel ready.",
+                "vo": "Worked example: price with tax. Read the price as text, convert it with float, multiply by one point two for example tax, and print the total with two decimal places.",
+            },
+            {
+                "title": "Common mistakes",
+                "bullets": [
+                    "Forgetting float() before math on input",
+                    "Mixing up = assignment and == comparison",
+                    "Unclosed quotes in strings or f-strings",
+                ],
+                "vo": "Common mistakes include forgetting float before math on input, mixing up one equals for assignment with two equals for comparison, and leaving quotes unclosed in strings.",
+            },
+            {
+                "title": "Practice, then quiz",
+                "bullets": [
+                    "Build the greeting and wage calculator exercises",
+                    "Check solutions only after your own attempt",
+                    "Take the Module 2 quiz when ready",
+                ],
+                "vo": "Practice, then quiz. Build the greeting and wage calculator exercises, check solutions only after your own attempt, and take the Module 2 quiz when ready. Use the written lesson for full detail.",
             },
         ],
     },
     {
         "id": "07-csharp-basics",
-        "title": "C# Module 2 — variables & input",
+        "title": "C# Module 2 — variables & input lesson",
+        "kind": "lesson",
         "when": "csharp-course, module-02-basics",
         "footer": "tutorials.html · C# Module 2",
         "pathMatch": "csharp-beginner-workbook/module-02-basics",
         "hubAnchor": "csharp-basics",
         "slides": [
             {
-                "title": "After your first console app",
+                "title": "Today’s lesson goal",
                 "bullets": [
-                    "Module 2 adds variables, input, and calculations",
-                    "C# uses clear types like string, int, and double",
-                    "You will build greeting and calculator programs",
+                    "Declare typed variables in C#",
+                    "Read input and convert numbers safely",
+                    "Calculate totals people can understand",
                 ],
-                "vo": "After your first console app, Module 2 adds variables, input, and calculations. C sharp uses clear types like string, int, and double. You will build greeting and calculator programs.",
+                "vo": "Today’s lesson goal: declare typed variables in C sharp, read input and convert numbers safely, and calculate totals people can understand.",
             },
             {
                 "title": "Declare with a type",
                 "bullets": [
                     "string customerName = \"Sarah\";",
-                    "int quantity = 3;  double price = 9.99;",
-                    "Names describe the data you store",
+                    "int quantity = 3;",
+                    "double price = 9.99;",
                 ],
-                "vo": "Declare variables with a type. For example, string customer name equals Sarah, int quantity equals 3, double price equals 9.99. Choose names that describe the data.",
+                "vo": "Declare with a type. String customer name equals Sarah. Int quantity equals 3. Double price equals 9.99. The type tells C sharp what kind of box you are creating.",
             },
             {
-                "title": "Read input safely",
+                "title": "Why types help beginners",
                 "bullets": [
-                    "Console.ReadLine() returns text",
-                    "Parse numbers with int.Parse or double.Parse",
-                    "Use string interpolation: $\"Hello, {name}\"",
+                    "The compiler catches many mistakes early",
+                    "You see what each value is meant to be",
+                    "Names plus types document your intent",
                 ],
-                "vo": "Read input with Console.ReadLine, which returns text. Parse numbers with int.Parse or double.Parse, and format output with string interpolation.",
+                "vo": "Types help beginners because the compiler catches many mistakes early. You see what each value is meant to be, and names plus types document your intent.",
             },
             {
-                "title": "Calculate real values",
+                "title": "Worked example: greeting",
                 "bullets": [
-                    "Tax, totals, and wages use ordinary math operators",
-                    "Keep units clear in variable names",
-                    "Print results the user can understand",
+                    "Console.Write(\"Your name: \");",
+                    "string name = Console.ReadLine();",
+                    "Console.WriteLine($\"Hello, {name}!\");",
                 ],
-                "vo": "Calculate real values for tax, totals, and wages with ordinary math operators. Keep units clear in variable names, and print results the user can understand.",
+                "vo": "Worked example: a greeting. Write a prompt, read the line into a string name, then write Hello name with string interpolation.",
             },
             {
-                "title": "Practice path",
+                "title": "Worked example: tax total",
                 "bullets": [
-                    "Follow Module 2 examples in your project",
-                    "Complete the exercises, then check solutions",
-                    "Take the Module 2 quiz to lock in the skills",
+                    "string text = Console.ReadLine();",
+                    "double price = double.Parse(text);",
+                    "double total = price * 1.2;",
                 ],
-                "vo": "Follow the Module 2 examples in your project, complete the exercises, check the solutions, and take the Module 2 quiz to lock in the skills.",
+                "vo": "Worked example: a tax total. Read a line of text, parse it with double.Parse, then multiply by one point two. Print the total with clear wording.",
+            },
+            {
+                "title": "Common mistakes",
+                "bullets": [
+                    "Using the value before Parse succeeds",
+                    "Forgetting that ReadLine returns text",
+                    "Opening a single file instead of the project folder",
+                ],
+                "vo": "Common mistakes include using the value before Parse succeeds, forgetting that ReadLine returns text, and opening a single file instead of the whole project folder.",
+            },
+            {
+                "title": "Practice, then quiz",
+                "bullets": [
+                    "Complete Module 2 exercises in your console app",
+                    "Compare with solutions after you try",
+                    "Take the Module 2 quiz to lock skills in",
+                ],
+                "vo": "Practice, then quiz. Complete the Module 2 exercises in your console app, compare with solutions after you try, and take the Module 2 quiz. The written lesson has the full walkthrough.",
             },
         ],
     },
     {
         "id": "08-ai-prompting-basics",
-        "title": "AI Module 2 — prompting basics",
+        "title": "AI Module 2 — prompting basics lesson",
+        "kind": "lesson",
         "when": "ai-course, 02-prompting-basics",
         "footer": "tutorials.html · AI Beginner Module 2",
         "pathMatch": "languages/ai/beginner/modules/02-prompting-basics",
         "hubAnchor": "ai-prompting",
         "slides": [
             {
-                "title": "From vague to specific",
+                "title": "Today’s lesson goal",
                 "bullets": [
-                    "A good prompt states role, goal, and format",
-                    "Add constraints: length, tone, what not to do",
-                    "Give one short example when helpful",
+                    "Turn vague asks into clear prompts",
+                    "Separate role, task, constraints, format",
+                    "Test outputs before you trust them",
                 ],
-                "vo": "Move from vague to specific. A good prompt states role, goal, and format. Add constraints like length, tone, and what not to do, and give one short example when helpful.",
+                "vo": "Today’s lesson goal: turn vague asks into clear prompts, separate role, task, constraints, and format, and test outputs before you trust them.",
             },
             {
-                "title": "Structure beats clever wording",
+                "title": "The prompt recipe",
                 "bullets": [
-                    "Use headings: Goal, Inputs, Output format",
-                    "Ask for checkable outputs (lists, JSON fields)",
-                    "Prefer clear instructions over buzzwords",
+                    "Role: who the model should act as",
+                    "Goal: what success looks like",
+                    "Constraints + output shape you can check",
                 ],
-                "vo": "Structure beats clever wording. Use headings for goal, inputs, and output format. Ask for checkable outputs, and prefer clear instructions over buzzwords.",
+                "vo": "Use a prompt recipe. Role: who the model should act as. Goal: what success looks like. Then add constraints and an output shape you can check.",
+            },
+            {
+                "title": "Vague vs specific",
+                "bullets": [
+                    "Vague: “Summarise this meeting”",
+                    "Specific: actions, owners, deadlines, JSON list",
+                    "Specific prompts fail loudly — that is useful",
+                ],
+                "vo": "Compare vague versus specific. Vague says summarise this meeting. Specific asks for actions, owners, deadlines, as a JSON list. Specific prompts fail loudly, and that is useful.",
+            },
+            {
+                "title": "Worked rewrite",
+                "bullets": [
+                    "Add: Role = project assistant",
+                    "Add: Only use the notes provided",
+                    "Add: Return bullets: action — owner — date",
+                ],
+                "vo": "Worked rewrite: add role project assistant, require only using the notes provided, and return bullets in the shape action, owner, date.",
+            },
+            {
+                "title": "Few-shot when it helps",
+                "bullets": [
+                    "Show one short correct example",
+                    "Keep examples close to your real format",
+                    "Remove examples that teach the wrong pattern",
+                ],
+                "vo": "Use a few-shot example when it helps. Show one short correct example close to your real format, and remove examples that teach the wrong pattern.",
             },
             {
                 "title": "Test before you trust",
                 "bullets": [
-                    "Try good, bad, and ambiguous inputs",
-                    "Note failures: missing steps, invented facts",
-                    "Tighten the prompt, then retest",
+                    "Try good, empty, and conflicting inputs",
+                    "Score format, factuality, helpfulness",
+                    "Tighten rules, then retest the same cases",
                 ],
-                "vo": "Test before you trust. Try good, bad, and ambiguous inputs. Note failures like missing steps or invented facts, tighten the prompt, then retest.",
+                "vo": "Test before you trust. Try good, empty, and conflicting inputs. Score format, factuality, and helpfulness. Tighten the rules, then retest the same cases.",
             },
             {
-                "title": "Your Module 2 next step",
+                "title": "Practice checkpoint",
                 "bullets": [
-                    "Open Prompting Basics in the course viewer",
-                    "Rewrite one vague request into a structured prompt",
-                    "Save before/after notes in your starter pack",
+                    "Rewrite one vague request from your day",
+                    "Save before/after in the starter pack",
+                    "Continue in the written Prompting Basics lesson",
                 ],
-                "vo": "Open Prompting Basics in the course viewer. Rewrite one vague request into a structured prompt, and save before and after notes in your starter pack.",
+                "vo": "Practice checkpoint: rewrite one vague request from your day, save the before and after in the starter pack, then continue in the written Prompting Basics lesson for full exercises.",
             },
         ],
     },
@@ -726,6 +815,7 @@ async def build_one(tutorial: dict, work: Path) -> dict:
     return {
         "id": tid,
         "title": tutorial["title"],
+        "kind": tutorial.get("kind", "setup"),
         "when": tutorial["when"],
         "pathMatch": tutorial.get("pathMatch", ""),
         "hubAnchor": tutorial.get("hubAnchor", tid.split("-", 1)[-1]),
@@ -763,13 +853,27 @@ async def main() -> None:
             prev[meta["id"]] = meta
             print(f"  → {meta['file']} ({meta['durationSec']}s)")
 
-    # Stable order by id
-    manifest = [prev[t["id"]] for t in TUTORIALS if t["id"] in prev]
+    # Stable order by id; refresh metadata for clips not rebuilt this run.
+    by_id = {t["id"]: t for t in TUTORIALS}
+    manifest = []
+    for t in TUTORIALS:
+        if t["id"] not in prev:
+            continue
+        item = dict(prev[t["id"]])
+        item["kind"] = t.get("kind", item.get("kind", "setup"))
+        item["title"] = t.get("title", item.get("title"))
+        item["when"] = t.get("when", item.get("when"))
+        item["pathMatch"] = t.get("pathMatch", item.get("pathMatch", ""))
+        item["hubAnchor"] = t.get("hubAnchor", item.get("hubAnchor", ""))
+        manifest.append(item)
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     readme = [
         "# Learner tutorial videos",
         "",
-        "Slide + voiceover lessons aligned to learning-path modules.",
+        "Two kinds of clips:",
+        "- **setup** — download/install/site orientation (kept short)",
+        "- **lesson** — teach module ideas with examples + practice prompts",
+        "",
         "Each clip includes: MP4, WebVTT captions, plain-text transcript, and audio.",
         "Voice: en-US JennyNeural. Rebuild with:",
         "",
@@ -780,12 +884,12 @@ async def main() -> None:
         "python3 scripts/tutorials/generate_tutorials.py 05-ai-foundations 06-python-basics",
         "```",
         "",
-        "| ID | Title | ~Length | Learning path |",
-        "|----|-------|---------|---------------|",
+        "| ID | Kind | Title | ~Length | Learning path |",
+        "|----|------|-------|---------|---------------|",
     ]
     for m in manifest:
         readme.append(
-            f"| `{m['id']}` | {m['title']} | ~{m['durationSec']:.0f}s | {m['when']} |"
+            f"| `{m['id']}` | {m.get('kind', 'setup')} | {m['title']} | ~{m['durationSec']:.0f}s | {m['when']} |"
         )
     readme.extend(
         [

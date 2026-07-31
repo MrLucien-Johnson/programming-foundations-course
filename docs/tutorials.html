@@ -15,16 +15,16 @@
     <main id="main" class="container">
       <div id="pf-resume-host" hidden></div>
       <section class="hero">
-        <h2>Learning-path tutorials</h2>
+        <h2>Setup guides &amp; voiceover lessons</h2>
         <p>
-          Voiceover lessons that match your course modules. Every video includes
-          <strong>captions</strong>, an <strong>on-page transcript</strong> for deaf and
-          hard-of-hearing learners, plus downloadable text and audio.
+          <strong>Setup guides</strong> help you download and install tools.
+          <strong>Lessons</strong> teach module ideas with examples and practice — then you continue
+          in the written lesson. Every video has captions, a read-along transcript, and downloads.
         </p>
         <div class="button-row">
-          <a class="btn btn-primary" href="start-here.html">Start Here</a>
+          <a class="btn btn-primary" href="#setup-guides">Setup guides</a>
+          <a class="btn btn-secondary" href="#voiceover-lessons">Voiceover lessons</a>
           <a class="btn btn-secondary" href="python-course.html">Python path</a>
-          <a class="btn btn-secondary" href="csharp-course.html">C# path</a>
           <a class="btn btn-secondary" href="ai-course.html">AI path</a>
         </div>
       </section>
@@ -62,57 +62,76 @@
           const res = await fetch("assets/tutorials/manifest.json", { cache: "no-cache" });
           if (!res.ok) throw new Error("Could not load tutorial list.");
           const items = await res.json();
-          host.innerHTML = items
-            .map((item) => {
-              const anchor = item.hubAnchor || item.id;
-              const src = `assets/tutorials/${item.file}`;
-              const vtt = item.captions ? `assets/tutorials/${item.captions}` : "";
-              const transcript = `assets/tutorials/${item.transcript}`;
-              const audio = item.audio ? `assets/tutorials/${item.audio}` : "";
-              const text = item.combinedTranscript || "Transcript available as a download.";
-              return `
-                <section class="section promo-clip" id="${anchor}">
-                  <h3>${item.title}</h3>
-                  <p class="note">Learning path: ${item.when || "general"} · ~${Math.round(item.durationSec || 0)}s</p>
-                  <div class="tutorial-media-row">
-                    <div class="tutorial-media-video">
-                      <video class="promo-video" controls playsinline preload="metadata" crossorigin="anonymous">
-                        <source src="${src}" type="video/mp4" />
-                        ${
-                          vtt
-                            ? `<track kind="captions" src="${vtt}" srclang="en" label="English captions" default />`
-                            : ""
-                        }
-                        Your browser does not support video playback.
-                      </video>
+          const renderItem = (item) => {
+            const anchor = item.hubAnchor || item.id;
+            const src = `assets/tutorials/${item.file}`;
+            const vtt = item.captions ? `assets/tutorials/${item.captions}` : "";
+            const transcript = `assets/tutorials/${item.transcript}`;
+            const audio = item.audio ? `assets/tutorials/${item.audio}` : "";
+            const text = item.combinedTranscript || "Transcript available as a download.";
+            const kind = item.kind === "lesson" ? "Lesson" : "Setup guide";
+            return `
+              <section class="section promo-clip" id="${anchor}">
+                <h3>${item.title}</h3>
+                <p class="note">
+                  <span class="pill">${kind}</span>
+                  ${item.when || "general"} · ~${Math.round(item.durationSec || 0)}s
+                </p>
+                <div class="tutorial-media-row">
+                  <div class="tutorial-media-video">
+                    <video class="promo-video" controls playsinline preload="metadata" crossorigin="anonymous">
+                      <source src="${src}" type="video/mp4" />
+                      ${
+                        vtt
+                          ? `<track kind="captions" src="${vtt}" srclang="en" label="English captions" default />`
+                          : ""
+                      }
+                      Your browser does not support video playback.
+                    </video>
+                  </div>
+                  <details class="transcript-panel tutorial-media-transcript">
+                    <summary>Read-along transcript</summary>
+                    <div class="transcript-scroll">
+                      <p>${text}</p>
                     </div>
-                    <details class="transcript-panel tutorial-media-transcript">
-                      <summary>Read-along transcript</summary>
-                      <div class="transcript-scroll">
-                        <p>${text}</p>
-                      </div>
-                    </details>
-                  </div>
-                  <div class="button-row">
-                    <a class="btn btn-primary" href="${src}" download>Download MP4</a>
-                    <a class="btn btn-secondary" href="${transcript}" download>Transcript .txt</a>
-                    ${audio ? `<a class="btn btn-secondary" href="${audio}" download>Audio only</a>` : ""}
-                    ${
-                      item.pathMatch
-                        ? `<a class="btn btn-secondary" href="course-viewer.html?path=${encodeURIComponent(
-                            item.pathMatch.endsWith(".md")
-                              ? item.pathMatch
-                              : item.pathMatch.includes("languages/")
-                                ? `${item.pathMatch}.md`
-                                : `${item.pathMatch}/README.md`
-                          )}">Open related lesson</a>`
-                        : ""
-                    }
-                  </div>
-                </section>
-              `;
-            })
-            .join("");
+                  </details>
+                </div>
+                <div class="button-row">
+                  <a class="btn btn-primary" href="${src}" download>Download MP4</a>
+                  <a class="btn btn-secondary" href="${transcript}" download>Transcript .txt</a>
+                  ${audio ? `<a class="btn btn-secondary" href="${audio}" download>Audio only</a>` : ""}
+                  ${
+                    item.pathMatch
+                      ? `<a class="btn btn-secondary" href="course-viewer.html?path=${encodeURIComponent(
+                          item.pathMatch.endsWith(".md")
+                            ? item.pathMatch
+                            : item.pathMatch.includes("languages/")
+                              ? `${item.pathMatch}.md`
+                              : `${item.pathMatch}/README.md`
+                        )}">Open written lesson</a>`
+                      : ""
+                  }
+                </div>
+              </section>
+            `;
+          };
+          const setup = items.filter((item) => item.kind !== "lesson");
+          const lessons = items.filter((item) => item.kind === "lesson");
+          host.innerHTML = `
+            <section class="section" id="setup-guides">
+              <h3>Setup guides</h3>
+              <p class="note">Download, install, and site orientation. Keep these short and practical.</p>
+            </section>
+            ${setup.map(renderItem).join("")}
+            <section class="section" id="voiceover-lessons">
+              <h3>Voiceover lessons</h3>
+              <p class="note">
+                Teach the module ideas with examples and practice. They complement — not replace —
+                the written lessons, exercises, and quizzes.
+              </p>
+            </section>
+            ${lessons.map(renderItem).join("")}
+          `;
 
           // Jump to hash after catalog renders.
           if (location.hash) {

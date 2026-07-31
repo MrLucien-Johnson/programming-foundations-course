@@ -1,6 +1,6 @@
 # Module 2: C# Basics
 
-> **Voiceover lesson (with captions & transcript):** [C# Module 2 — variables & input](../../docs/tutorials.html#csharp-basics)
+> **Voiceover lesson (with captions & read-along transcript):** [C# Module 2 — variables & input](../../docs/tutorials.html#csharp-basics) — then continue with the written lesson below.
 
 ## 🎯 What You'll Learn
 
