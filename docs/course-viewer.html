@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Course Lesson Viewer</title>
-    <link rel="stylesheet" href="styles.css?v=ux17" />
+    <link rel="stylesheet" href="styles.css?v=ux20" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux17"></script>
+    <script src="site.js?v=ux20"></script>
 
     <main id="main" class="container">
       <div id="pf-resume-host" hidden></div>
@@ -81,10 +81,14 @@
         <p id="completion-status" class="note"></p>
       </section>
 
+      <section class="section module-list-panel" id="lesson-modules-panel" hidden>
+        <h3>Course modules</h3>
+        <p class="module-track-meta" id="module-track-meta" hidden></p>
+        <div class="module-list module-track" id="module-track" hidden role="list" aria-label="Modules in this course"></div>
+      </section>
+
       <details class="progress-drawer section" id="progress-drawer">
         <summary>Track your progress</summary>
-        <p class="module-track-meta" id="module-track-meta" hidden></p>
-        <div class="module-track" id="module-track" hidden role="list" aria-label="Modules in this course"></div>
         <section id="module-dashboard">
           <div id="dashboard-grid" class="grid cols-2"></div>
         </section>
@@ -235,6 +239,8 @@
         }
 
         moduleTrack.hidden = false;
+        const modulesPanel = document.getElementById("lesson-modules-panel");
+        if (modulesPanel) modulesPanel.hidden = false;
         const currentIndex = course.modules.findIndex((m) => m.path === currentPath);
         const meta = document.getElementById("module-track-meta");
         if (meta) {
@@ -244,24 +250,50 @@
               ? `Module ${currentIndex + 1} of ${total} · ${done} complete`
               : `${done} of ${total} modules complete`;
         }
+        const escape = (value) =>
+          String(value || "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;");
         moduleTrack.innerHTML = course.modules
           .map((module, i) => {
             const complete = isCompleted(module.path);
             const current = module.path === currentPath;
-            const state = current ? "is-current" : complete ? "is-done" : "";
+            const state = [
+              "module-list__item",
+              current ? "is-current" : "",
+              complete ? "is-done" : "",
+            ]
+              .filter(Boolean)
+              .join(" ");
+            const num = String(i + 1).padStart(2, "0");
+            const indexLabel = complete && !current ? "✓" : num;
+            const quizHref = module.quiz
+              ? `quiz-viewer.html?quiz=${encodeURIComponent(module.quiz)}`
+              : "";
+            const actions = [
+              `<a class="module-list__action module-list__action--lesson" href="course-viewer.html?path=${encodeURIComponent(module.path)}">${current ? "Reading now" : "Lesson"}</a>`,
+            ];
+            if (quizHref) {
+              actions.push(
+                `<a class="module-list__action module-list__action--quiz" href="${quizHref}">Quiz</a>`
+              );
+            }
             return `
-              <a class="module-track-node ${state}" role="listitem"
-                 href="course-viewer.html?path=${encodeURIComponent(module.path)}"
-                 title="${module.title}">
-                <span class="module-track-dot">${complete && !current ? "✓" : i + 1}</span>
-                <span class="module-track-label">${module.title}</span>
-              </a>
+              <div class="${state}" role="listitem" data-module-path="${escape(module.path)}">
+                <div class="module-list__index" aria-hidden="true">${indexLabel}</div>
+                <div class="module-list__body">
+                  <p class="module-list__title">${escape(module.title)}</p>
+                  <div class="module-list__actions">${actions.join("")}</div>
+                </div>
+              </div>
             `;
           })
           .join("");
-        const currentNode = moduleTrack.querySelector(".module-track-node.is-current");
+        const currentNode = moduleTrack.querySelector(".module-list__item.is-current");
         if (currentNode && typeof currentNode.scrollIntoView === "function") {
-          currentNode.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+          currentNode.scrollIntoView({ block: "nearest", behavior: "smooth" });
         }
       };
 
@@ -864,8 +896,7 @@
         }
         const drawer = document.getElementById("progress-drawer");
         if (drawer) {
-          const hasTrack = moduleTrack && !moduleTrack.hidden && moduleTrack.children.length;
-          drawer.hidden = !hasTrack && !dashboardGrid.children.length;
+          drawer.hidden = !dashboardGrid.children.length;
         }
       };
 

@@ -758,7 +758,80 @@
       textNode.textContent = `${label}: ${progress.done} of ${progress.total} complete`;
     }
     if (fillNode) fillNode.style.width = `${progress.percent}%`;
+    enhanceModuleLists();
     return progress;
+  };
+
+  /** Turn plain module <ol class="card"> lists into structured module rows. */
+  const enhanceModuleLists = () => {
+    document.querySelectorAll("ol.card, ul.card, ol.module-list, ul.module-list").forEach((list) => {
+      if (list.dataset.moduleListReady === "1") return;
+      const items = Array.from(list.children).filter((el) => el.tagName === "LI");
+      if (!items.length) return;
+      const hasLessonLink = items.some((li) =>
+        Array.from(li.querySelectorAll("a")).some((a) =>
+          /course-viewer\.html/i.test(a.getAttribute("href") || "")
+        )
+      );
+      if (!hasLessonLink) return;
+
+      list.classList.remove("card");
+      list.classList.add("module-list");
+      list.setAttribute("role", "list");
+
+      items.forEach((li, index) => {
+        if (li.querySelector(".module-list__body")) return;
+        const anchors = Array.from(li.querySelectorAll("a"));
+        if (!anchors.length) return;
+
+        const actions = anchors.map((a) => {
+          const href = a.getAttribute("href") || "#";
+          const label = (a.textContent || "").trim() || "Open";
+          let kind = "more";
+          if (/course-viewer\.html/i.test(href) || /^lesson$/i.test(label)) kind = "lesson";
+          else if (/quiz-viewer\.html/i.test(href) || /^quiz$/i.test(label)) kind = "quiz";
+          else if (/tutorial/i.test(href) || /tutorial|setup|voiceover|guide|transcript/i.test(label))
+            kind = "tutorial";
+          return { href, label, kind };
+        });
+
+        const lessonHref = actions.find((a) => a.kind === "lesson")?.href || "";
+        const pathMatch = lessonHref.match(/[?&]path=([^&]+)/i);
+        const path = pathMatch ? decodeURIComponent(pathMatch[1]) : "";
+        const done = Boolean(path && isCompleted(path));
+
+        const clone = li.cloneNode(true);
+        clone.querySelectorAll("a").forEach((a) => a.remove());
+        let title = (clone.textContent || "")
+          .replace(/[·•|]+/g, " ")
+          .replace(/[—–-]+/g, "—")
+          .replace(/\s+/g, " ")
+          .replace(/^[\s—]+|[\s—]+$/g, "")
+          .trim();
+        if (!title) title = `Module ${index + 1}`;
+
+        const num = String(index + 1).padStart(2, "0");
+        li.className = `module-list__item${done ? " is-done" : ""}`;
+        li.setAttribute("role", "listitem");
+        if (path) li.setAttribute("data-module-path", path);
+        li.innerHTML = `
+          <div class="module-list__index" aria-hidden="true">${done ? "✓" : num}</div>
+          <div class="module-list__body">
+            <p class="module-list__title">${escapeHtml(title)}</p>
+            <div class="module-list__actions">
+              ${actions
+                .map(
+                  (a) =>
+                    `<a class="module-list__action module-list__action--${a.kind}" href="${escapeHtml(a.href)}">${escapeHtml(a.label)}</a>`
+                )
+                .join("")}
+            </div>
+          </div>
+        `;
+      });
+
+      list.dataset.moduleListReady = "1";
+    });
   };
 
   const resetAllProgress = () => {
@@ -1113,6 +1186,7 @@
     mountPersonaPicker();
     applyPersonaCopy();
     enhancePlaygroundChallenges();
+    enhanceModuleLists();
     if (getToken()) {
       syncProgress().catch(() => {
         /* guest-capable offline */
@@ -1152,6 +1226,7 @@
     progressForModules,
     courseProgress,
     bindProgressUI,
+    enhanceModuleLists,
     resetAllProgress,
     markNavCurrent,
     mountHeader,
