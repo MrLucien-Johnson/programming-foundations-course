@@ -2698,118 +2698,102 @@ button.path-node {
   background: rgba(201, 162, 39, 0.08);
 }
 
-/* ── Module lists (course pages + lesson navigator) ── */
+/* ── Module lists — slim notebook outline, not card stack ── */
 .module-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 10px;
+  gap: 0;
   background: transparent;
   border: none;
   box-shadow: none;
-  counter-reset: module-item;
+  border-top: 1px solid rgba(14, 17, 22, 0.1);
 }
 
 .module-list.card {
-  /* override shared .card when both classes briefly coexist */
   background: transparent;
   border: none;
+  border-top: 1px solid rgba(14, 17, 22, 0.1);
   box-shadow: none;
   padding: 0;
 }
 
 .module-list__item {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 14px 16px;
-  align-items: start;
-  padding: 14px 16px;
-  border-radius: var(--radius-md);
-  background:
-    linear-gradient(165deg, rgba(255, 255, 255, 0.92) 0%, rgba(252, 250, 246, 0.88) 100%);
-  border: 1px solid rgba(14, 17, 22, 0.08);
-  border-left: 3px solid rgba(201, 162, 39, 0.45);
-  box-shadow:
-    inset 1px 1px 0 rgba(255, 255, 255, 0.75),
-    0 4px 14px rgba(14, 17, 22, 0.05);
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.15s ease;
+  grid-template-columns: 2rem 1fr auto;
+  gap: 10px 14px;
+  align-items: baseline;
+  padding: 10px 2px 10px 0;
+  border: none;
+  border-bottom: 1px solid rgba(14, 17, 22, 0.08);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: background 0.15s ease;
 }
 
 .module-list__item:hover {
-  border-color: rgba(201, 162, 39, 0.35);
-  border-left-color: var(--gold);
-  box-shadow:
-    inset 1px 1px 0 rgba(255, 255, 255, 0.85),
-    0 8px 22px rgba(14, 17, 22, 0.08);
-  transform: translateY(-1px);
+  background: rgba(201, 162, 39, 0.06);
+  border-color: rgba(14, 17, 22, 0.1);
+  box-shadow: none;
+  transform: none;
 }
 
 .module-list__item.is-done {
-  border-left-color: var(--gold-dark);
-  background:
-    linear-gradient(165deg, rgba(255, 248, 230, 0.95) 0%, rgba(252, 246, 228, 0.9) 100%);
+  background: transparent;
+}
+
+.module-list__item.is-done .module-list__title {
+  color: var(--gray);
 }
 
 .module-list__item.is-current {
-  border-left-color: var(--ink);
-  border-color: rgba(201, 162, 39, 0.45);
-  box-shadow:
-    inset 1px 1px 0 rgba(255, 255, 255, 0.9),
-    0 0 0 2px rgba(201, 162, 39, 0.2),
-    0 10px 24px rgba(14, 17, 22, 0.1);
+  background: rgba(201, 162, 39, 0.1);
+  box-shadow: inset 3px 0 0 var(--gold);
+  padding-left: 8px;
 }
 
 .module-list__index {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  display: inline;
+  place-items: unset;
   font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
-  color: var(--ink);
-  background: linear-gradient(180deg, #fff 0%, var(--paper-deep) 100%);
-  border: 2px solid rgba(14, 17, 22, 0.1);
-  border-top-color: #fff;
-  border-bottom-color: #bdb5a4;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 3px 6px rgba(14, 17, 22, 0.1);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--gold-dark);
+  line-height: 1.4;
 }
 
-.module-list__item.is-done .module-list__index {
-  background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 55%, var(--gold-dark) 100%);
-  border-color: var(--gold-dark);
-  border-top-color: #f3dfa0;
-  color: var(--ink);
+.module-list__item.is-done .module-list__index,
+.module-list__item.is-current .module-list__index {
+  background: none;
+  border: none;
+  color: var(--gold-dark);
 }
 
 .module-list__item.is-current .module-list__index {
-  background: linear-gradient(180deg, #2a303a 0%, var(--ink) 100%);
-  border-color: #050607;
-  border-top-color: #3a414d;
-  color: var(--gold-light);
+  color: var(--ink);
+  font-weight: 700;
 }
 
 .module-list__body {
   min-width: 0;
-  display: grid;
-  gap: 10px;
+  display: contents;
 }
 
 .module-list__title {
   margin: 0;
   font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 1.02rem;
-  line-height: 1.35;
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.4;
   color: var(--ink);
 }
 
@@ -2820,65 +2804,75 @@ button.path-node {
 }
 
 .module-list__actions {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
-  gap: 8px;
+  align-items: baseline;
+  gap: 0;
+  justify-self: end;
 }
 
 .module-list__action {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 7px 12px;
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-decoration: none;
-  border: 1px solid rgba(14, 17, 22, 0.12);
-  background: rgba(255, 255, 255, 0.85);
+  display: inline;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   color: var(--ink);
-  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: color 0.15s ease;
+}
+
+.module-list__action + .module-list__action::before {
+  content: "·";
+  display: inline-block;
+  margin: 0 0.45em;
+  color: rgba(14, 17, 22, 0.35);
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .module-list__action:hover,
 .module-list__action:focus-visible {
-  border-color: var(--gold-dark);
-  background: rgba(201, 162, 39, 0.14);
-  color: var(--ink);
+  background: none;
+  border: none;
+  color: var(--gold-dark);
 }
 
-.module-list__action--lesson {
-  background: linear-gradient(180deg, #2a303a 0%, var(--ink) 100%);
-  border-color: #050607;
-  color: var(--gold-light);
+.module-list__action--lesson,
+.module-list__action--quiz,
+.module-list__action--tutorial,
+.module-list__action--more {
+  background: none;
+  border: none;
+  color: var(--ink);
 }
 
 .module-list__action--lesson:hover,
-.module-list__action--lesson:focus-visible {
-  background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 100%);
-  border-color: var(--gold-dark);
-  color: var(--ink);
-}
-
-.module-list__action--quiz {
-  background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 100%);
-  border-color: var(--gold-dark);
-  color: var(--ink);
-}
-
+.module-list__action--lesson:focus-visible,
 .module-list__action--quiz:hover,
 .module-list__action--quiz:focus-visible {
-  background: linear-gradient(180deg, #f0d878 0%, var(--gold-light) 100%);
+  background: none;
+  border: none;
+  color: var(--gold-dark);
 }
 
-/* Lesson viewer: use module-list layout instead of tiny horizontal dots */
+.module-list__item.is-current .module-list__action--lesson {
+  color: var(--gold-dark);
+  text-decoration-thickness: 2px;
+}
+
+/* Lesson viewer module outline */
 .module-track.module-list {
   overflow: visible;
-  margin-top: 12px;
+  margin-top: 8px;
   padding-bottom: 0;
   display: grid;
-  gap: 10px;
+  gap: 0;
+  mask-image: none;
 }
 
 .module-track.module-list .module-list__item {
@@ -2887,13 +2881,51 @@ button.path-node {
 }
 
 .module-list-panel {
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
-.module-list-panel > h3 {
-  margin-bottom: 8px;
+.module-list-panel > summary,
+details.module-list-panel > summary {
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  list-style: none;
+  color: var(--ink);
+}
+
+.module-list-panel > summary::-webkit-details-marker,
+details.module-list-panel > summary::-webkit-details-marker {
+  display: none;
+}
+
+.module-list-panel > summary::before,
+details.module-list-panel > summary::before {
+  content: "+ ";
+  color: var(--gold-dark);
+  font-weight: 700;
+}
+
+.module-list-panel[open] > summary::before,
+details.module-list-panel[open] > summary::before {
+  content: "– ";
 }
 
 .module-list-panel > .module-track-meta {
-  margin: 0 0 14px;
+  margin: 8px 0 4px;
+  font-size: 0.88rem;
+  color: var(--gray);
+}
+
+@media (max-width: 640px) {
+  .module-list__item {
+    grid-template-columns: 1.75rem 1fr;
+    gap: 4px 10px;
+  }
+
+  .module-list__actions {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 2px;
+  }
 }
