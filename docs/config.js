@@ -22,5 +22,8 @@
     apiBaseUrl: isLocalHost ? "http://localhost:8787" : productionApiBaseUrl,
     donateUrl: "https://paypal.me/ProgrammingOfficial",
     donateLabel: "Donate with PayPal",
+    /** Parent company site — shown as a quiet footer credit */
+    abelSolutionsUrl: "https://mrlucien-johnson.github.io/AbelSolutions/",
+    abelSolutionsLabel: "Abel Solutions",
   };
 })();

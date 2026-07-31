@@ -7,6 +7,8 @@
 **Start learning in your browser (no download required):**  
 **https://mrlucien-johnson.github.io/programming-foundations-course/**
 
+A project by [Abel Solutions](https://mrlucien-johnson.github.io/AbelSolutions/).
+
 - [Start Here](https://mrlucien-johnson.github.io/programming-foundations-course/start-here.html) — first steps for absolute beginners  
 - [Courses](https://mrlucien-johnson.github.io/programming-foundations-course/courses.html) — Python, C#, AI, and advanced tracks  
 - [Tutorials](https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html) — setup videos with captions  

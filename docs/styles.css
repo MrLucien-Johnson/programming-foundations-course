@@ -1978,6 +1978,27 @@ button.path-node {
   font-weight: 600;
 }
 
+.footer-credit {
+  margin: 0 0 12px;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(90, 95, 107, 0.92);
+}
+
+.footer-credit a {
+  color: rgba(90, 95, 107, 0.98);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.footer-credit a:hover,
+.footer-credit a:focus-visible {
+  color: var(--ink);
+}
+
 /* ── Support / donate ── */
 .support-panel {
   padding: 28px 28px 24px;

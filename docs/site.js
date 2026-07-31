@@ -95,6 +95,15 @@
     return { url, label, enabled: Boolean(url) };
   };
 
+  const getBrandConfig = () => {
+    const cfg = global.PF_CONFIG || {};
+    const url = String(
+      cfg.abelSolutionsUrl || "https://mrlucien-johnson.github.io/AbelSolutions/"
+    ).trim();
+    const label = String(cfg.abelSolutionsLabel || "Abel Solutions").trim() || "Abel Solutions";
+    return { url, label, enabled: Boolean(url) };
+  };
+
   /** Fill [data-pf-donate-slot] with a donate button when config.donateUrl is set. */
   const mountDonateSlots = () => {
     const { url, label, enabled } = getDonateConfig();
@@ -120,6 +129,36 @@
       status.textContent =
         "Thank you — donations help keep this course free and fund more reliable hosting when we can.";
     }
+  };
+
+  /** Quiet “A project by Abel Solutions” credit in page footers. */
+  const mountBrandCredit = () => {
+    const { url, label, enabled } = getBrandConfig();
+    if (!enabled) return;
+
+    let footers = Array.from(document.querySelectorAll("footer.footer"));
+    if (!footers.length) {
+      const main = document.querySelector("main");
+      if (!main) return;
+      const footer = document.createElement("footer");
+      footer.className = "footer";
+      main.appendChild(footer);
+      footers = [footer];
+    }
+
+    footers.forEach((footer) => {
+      if (footer.querySelector("[data-pf-brand-credit]")) return;
+      const credit = document.createElement("p");
+      credit.className = "footer-credit";
+      credit.dataset.pfBrandCredit = "1";
+      credit.append("A project by ");
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.rel = "noopener noreferrer";
+      anchor.textContent = label;
+      credit.appendChild(anchor);
+      footer.prepend(credit);
+    });
   };
 
   const COURSE_MODULE_MAP = {
@@ -1182,6 +1221,7 @@
     mountAtmosphere();
     mountHeader();
     mountDonateSlots();
+    mountBrandCredit();
     mountResumeBanner();
     mountPersonaPicker();
     applyPersonaCopy();
@@ -1231,6 +1271,7 @@
     markNavCurrent,
     mountHeader,
     mountDonateSlots,
+    mountBrandCredit,
     getDonateConfig,
     getUser,
     getToken,
