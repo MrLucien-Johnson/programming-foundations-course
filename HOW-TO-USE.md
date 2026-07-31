@@ -303,7 +303,7 @@ Before starting Module 7 (Task Tracker):
 4. **Join communities** - Online forums, local meetups
 5. **Be patient** - Learning to code takes time
 6. **Celebrate progress** - Every module completed is an achievement!
-7. **Watch the site tutorials** - [Get started](docs/tutorials.html#get-started), [Python setup](docs/tutorials.html#python-setup), [C# setup](docs/tutorials.html#csharp-setup), and [tips & tricks](docs/tutorials.html#tips)
+7. **Use learning-path tutorials** - Voiceovers with captions and on-page transcripts: [Tutorials hub](docs/tutorials.html) (Python/C#/AI Module 1–2 + get started / tips)
 
 ---
 
