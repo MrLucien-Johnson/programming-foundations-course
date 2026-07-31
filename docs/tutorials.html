@@ -32,8 +32,9 @@
       <section class="section" id="accessibility-note">
         <h3>Deaf &amp; hard-of-hearing access</h3>
         <p class="note">
-          Turn on captions in the video player (CC). Or expand <strong>Full transcript</strong>
-          under each clip — the same words as the voiceover, on the page, without needing audio.
+          Turn on captions in the video player (CC). Or open the
+          <strong>Read-along transcript</strong> box beside each video — same words as the
+          voiceover, so you can follow along without needing audio.
         </p>
       </section>
 
@@ -73,19 +74,25 @@
                 <section class="section promo-clip" id="${anchor}">
                   <h3>${item.title}</h3>
                   <p class="note">Learning path: ${item.when || "general"} · ~${Math.round(item.durationSec || 0)}s</p>
-                  <video class="promo-video" controls playsinline preload="metadata" crossorigin="anonymous">
-                    <source src="${src}" type="video/mp4" />
-                    ${
-                      vtt
-                        ? `<track kind="captions" src="${vtt}" srclang="en" label="English captions" default />`
-                        : ""
-                    }
-                    Your browser does not support video playback.
-                  </video>
-                  <details class="transcript-panel">
-                    <summary>Full transcript (text for deaf / hard-of-hearing users)</summary>
-                    <p>${text}</p>
-                  </details>
+                  <div class="tutorial-media-row">
+                    <div class="tutorial-media-video">
+                      <video class="promo-video" controls playsinline preload="metadata" crossorigin="anonymous">
+                        <source src="${src}" type="video/mp4" />
+                        ${
+                          vtt
+                            ? `<track kind="captions" src="${vtt}" srclang="en" label="English captions" default />`
+                            : ""
+                        }
+                        Your browser does not support video playback.
+                      </video>
+                    </div>
+                    <details class="transcript-panel tutorial-media-transcript">
+                      <summary>Read-along transcript</summary>
+                      <div class="transcript-scroll">
+                        <p>${text}</p>
+                      </div>
+                    </details>
+                  </div>
                   <div class="button-row">
                     <a class="btn btn-primary" href="${src}" download>Download MP4</a>
                     <a class="btn btn-secondary" href="${transcript}" download>Transcript .txt</a>

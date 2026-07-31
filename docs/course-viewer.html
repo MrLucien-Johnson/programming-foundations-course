@@ -41,20 +41,26 @@
       <aside class="section tutorial-callout" id="lesson-tutorial" hidden>
         <h3 id="lesson-tutorial-title">Voiceover lesson</h3>
         <p class="note" id="lesson-tutorial-note">
-          Captions are on by default. Expand the transcript if you prefer to read.
+          Captions are on by default. Open the transcript beside the video to read along.
         </p>
-        <video
-          class="promo-video"
-          id="lesson-tutorial-video"
-          controls
-          playsinline
-          preload="metadata"
-          crossorigin="anonymous"
-        ></video>
-        <details class="transcript-panel" id="lesson-tutorial-transcript-panel">
-          <summary>Full transcript (text for deaf / hard-of-hearing users)</summary>
-          <p id="lesson-tutorial-transcript-text"></p>
-        </details>
+        <div class="tutorial-media-row">
+          <div class="tutorial-media-video">
+            <video
+              class="promo-video"
+              id="lesson-tutorial-video"
+              controls
+              playsinline
+              preload="metadata"
+              crossorigin="anonymous"
+            ></video>
+          </div>
+          <details class="transcript-panel tutorial-media-transcript" id="lesson-tutorial-transcript-panel">
+            <summary>Read-along transcript</summary>
+            <div class="transcript-scroll">
+              <p id="lesson-tutorial-transcript-text"></p>
+            </div>
+          </details>
+        </div>
         <div class="button-row">
           <a class="btn btn-secondary" id="lesson-tutorial-hub" href="tutorials.html">All tutorials</a>
           <a class="btn btn-secondary" id="lesson-tutorial-transcript" href="#" download>Transcript .txt</a>
