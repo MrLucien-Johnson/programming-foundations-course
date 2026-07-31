@@ -2,6 +2,15 @@
 
 > **A complete beginner-friendly programming course that teaches you Python and C# through hands-on projects. Build real applications you can show employers.**
 
+### Live course website
+
+**Start learning in your browser (no download required):**  
+**https://mrlucien-johnson.github.io/programming-foundations-course/**
+
+- [Start Here](https://mrlucien-johnson.github.io/programming-foundations-course/start-here.html) — first steps for absolute beginners  
+- [Courses](https://mrlucien-johnson.github.io/programming-foundations-course/courses.html) — Python, C#, AI, and advanced tracks  
+- [Tutorials](https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html) — setup videos with captions  
+
 ---
 
 ## 🎯 What You'll Learn
@@ -22,7 +31,9 @@ This course takes you from **zero programming experience** to building **complet
 
 ## 🚀 Quick Start
 
-**New here?** Start with these guides:
+**Easiest path:** open the **[live course website →](https://mrlucien-johnson.github.io/programming-foundations-course/)** and follow **Start Here**.
+
+Prefer local files? Use these guides in this repo:
 
 1. **[Start Here →](START-HERE.md)** - Your orientation guide
 2. **[How to Use This Course →](HOW-TO-USE.md)** - Navigation and learning tips
@@ -124,23 +135,30 @@ Both projects are **portfolio-ready** and something you can show employers!
 
 ## 💻 How to Access This Course
 
-### Option 1: Download ZIP (Easiest)
+### Option 1: Learn online (recommended)
+
+Open the live site and start Module 1 in your browser:
+
+**https://mrlucien-johnson.github.io/programming-foundations-course/**
+
+### Option 2: Download ZIP
 
 1. Click the green **"Code"** button above
 2. Select **"Download ZIP"**
 3. Extract the ZIP file
 4. Open the workbook folder you want to start with
 
-### Option 2: Clone with Git
+### Option 3: Clone with Git
 
 ```bash
 git clone https://github.com/MrLucien-Johnson/programming-foundations-course
-cd BeginnersC#
+cd programming-foundations-course
 ```
 
-Then navigate to:
+Then open:
 - `python-beginner-workbook/` for the Python course
-- Root directory for the C# course (modules are here)
+- `csharp-beginner-workbook/` for the C# course
+- Or browse the site under `docs/` (served on GitHub Pages)
 
 ---
 
@@ -236,14 +254,17 @@ This course is provided for educational purposes. You may:
 
 ## 🎉 Ready to Begin?
 
-**Start here:** [Start Here →](START-HERE.md)
+**Live site:** [Open the course →](https://mrlucien-johnson.github.io/programming-foundations-course/)
+
+**In this repo:** [Start Here →](START-HERE.md)
 
 **Or choose your course:**
 - [Python Course →](python-beginner-workbook/README.md)
 - [C# Course →](csharp-beginner-workbook/README.md)
+- [AI Prompt Creation →](ai-prompt-creation-track/README.md)
 
-**Welcome to your programming journey!** 🚀
+**Welcome to your programming journey!**
 
 ---
 
-*Last updated: January 2024 | Version: 1.0*
+*Last updated: July 2026 | Version: 1.1*

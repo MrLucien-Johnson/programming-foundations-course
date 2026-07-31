@@ -4,6 +4,10 @@
 
 You're about to learn programming from the ground up. Whether you're looking to change careers, advance in your current role, or simply build new skills, this course is designed to take you from complete beginner to someone who can build real applications.
 
+**Prefer the browser?** Open the live course site and start without downloading:  
+**https://mrlucien-johnson.github.io/programming-foundations-course/**  
+→ [Start Here (web)](https://mrlucien-johnson.github.io/programming-foundations-course/start-here.html)
+
 **Take a deep breath.** You've got this. Let's get started!
 
 ---
@@ -260,5 +264,5 @@ You'll know you've succeeded when:
 
 ---
 
-*Last updated: January 2024 | Version: 1.0*
+*Last updated: July 2026 | Version: 1.1*
 

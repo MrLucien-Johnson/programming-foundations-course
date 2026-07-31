@@ -257,5 +257,5 @@ If you found the course helpful, we'd love a testimonial!
 
 ---
 
-*Last updated: January 2024 | Version: 1.0*
+*Last updated: July 2026 | Version: 1.1*
 

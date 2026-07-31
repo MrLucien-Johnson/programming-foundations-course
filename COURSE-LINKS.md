@@ -1,5 +1,18 @@
 # 🔗 Course Links: Quick Access to Everything
 
+## Live course website
+
+**https://mrlucien-johnson.github.io/programming-foundations-course/**
+
+- [Home](https://mrlucien-johnson.github.io/programming-foundations-course/)
+- [Start Here](https://mrlucien-johnson.github.io/programming-foundations-course/start-here.html)
+- [Courses](https://mrlucien-johnson.github.io/programming-foundations-course/courses.html)
+- [Tutorials](https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html)
+- [Help](https://mrlucien-johnson.github.io/programming-foundations-course/help.html)
+- [Support / Donate](https://mrlucien-johnson.github.io/programming-foundations-course/support.html)
+
+---
+
 ## 📚 Main Course Resources
 
 ### Getting Started
@@ -8,10 +21,10 @@
 - **[Main README →](README.md)** - Course homepage
 
 ### Web Course Pages (GitHub Pages)
-- **[Courses Home →](docs/courses.html)** - Online course picker
-- **[Python Course Page →](docs/python-course.html)** - Online module list
-- **[C# Course Page →](docs/csharp-course.html)** - Online module list
-- **[AI Prompt Course Page →](docs/ai-course.html)** - Online module list
+- **[Courses Home →](https://mrlucien-johnson.github.io/programming-foundations-course/courses.html)** - Online course picker
+- **[Python Course Page →](https://mrlucien-johnson.github.io/programming-foundations-course/python-course.html)** - Online module list
+- **[C# Course Page →](https://mrlucien-johnson.github.io/programming-foundations-course/csharp-course.html)** - Online module list
+- **[AI Prompt Course Page →](https://mrlucien-johnson.github.io/programming-foundations-course/ai-course.html)** - Online module list
 
 ---
 
@@ -172,5 +185,5 @@ cd BeginnersC#
 
 ---
 
-*Last updated: January 2024 | Version: 1.0*
+*Last updated: July 2026 | Version: 1.1*
 
