@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 520 520" fill="none">
+  <!-- Decorative study motif: open notebook + desk lamp glow -->
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.18" r="0.58">
+      <stop offset="0%" stop-color="#e2c15a" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#c9a227" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#c9a227" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="260" cy="118" r="175" fill="url(#glow)"/>
+  <!-- lamp shade -->
+  <path d="M208 76h104l-20 46H228L208 76Z" fill="#e2c15a" fill-opacity="0.28" stroke="#c9a227" stroke-opacity="0.7" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M260 44v32" stroke="#c9a227" stroke-opacity="0.65" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="260" cy="40" r="6" fill="#e2c15a" fill-opacity="0.55" stroke="#9a7b1a" stroke-opacity="0.7" stroke-width="1.3"/>
+  <!-- open book -->
+  <g stroke="#9a7b1a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M86 188c50-38 100-38 150 0v240c-50-32-100-32-150 0V188Z" fill="#c9a227" fill-opacity="0.12"/>
+    <path d="M236 188c50-38 100-38 150 0v240c-50-32-100-32-150 0V188Z" fill="#c9a227" fill-opacity="0.08"/>
+    <path d="M236 188v240" stroke-opacity="0.7"/>
+    <path d="M118 228h92M118 264h78M118 300h86M118 336h68M118 372h90" stroke-opacity="0.65"/>
+    <path d="M260 228h92M260 264h78M260 300h86M260 336h68M260 372h90" stroke-opacity="0.5"/>
+  </g>
+  <!-- soft ink accents -->
+  <g fill="#0e1116" opacity="0.32">
+    <circle cx="424" cy="148" r="3.2"/>
+    <circle cx="452" cy="176" r="2.2"/>
+    <circle cx="404" cy="194" r="2.6"/>
+    <circle cx="68" cy="404" r="2.8"/>
+    <circle cx="100" cy="432" r="2.2"/>
+    <circle cx="132" cy="414" r="3.2"/>
+  </g>
+  <path d="M44 460c74-48 148-48 222 0" stroke="#c9a227" stroke-opacity="0.32" stroke-width="1.8" fill="none"/>
+  <path d="M308 66c50 36 100 36 150 0" stroke="#0e1116" stroke-opacity="0.14" stroke-width="1.6" fill="none"/>
+</svg>
