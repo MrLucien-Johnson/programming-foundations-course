@@ -81,11 +81,11 @@
         <p id="completion-status" class="note"></p>
       </section>
 
-      <section class="section module-list-panel" id="lesson-modules-panel" hidden>
-        <h3>Course modules</h3>
+      <details class="section module-list-panel" id="lesson-modules-panel" hidden>
+        <summary>Course modules</summary>
         <p class="module-track-meta" id="module-track-meta" hidden></p>
         <div class="module-list module-track" id="module-track" hidden role="list" aria-label="Modules in this course"></div>
-      </section>
+      </details>
 
       <details class="progress-drawer section" id="progress-drawer">
         <summary>Track your progress</summary>
@@ -273,7 +273,7 @@
               ? `quiz-viewer.html?quiz=${encodeURIComponent(module.quiz)}`
               : "";
             const actions = [
-              `<a class="module-list__action module-list__action--lesson" href="course-viewer.html?path=${encodeURIComponent(module.path)}">${current ? "Reading now" : "Lesson"}</a>`,
+              `<a class="module-list__action module-list__action--lesson" href="course-viewer.html?path=${encodeURIComponent(module.path)}">${current ? "Now" : "Lesson"}</a>`,
             ];
             if (quizHref) {
               actions.push(
@@ -282,11 +282,9 @@
             }
             return `
               <div class="${state}" role="listitem" data-module-path="${escape(module.path)}">
-                <div class="module-list__index" aria-hidden="true">${indexLabel}</div>
-                <div class="module-list__body">
-                  <p class="module-list__title">${escape(module.title)}</p>
-                  <div class="module-list__actions">${actions.join("")}</div>
-                </div>
+                <span class="module-list__index" aria-hidden="true">${indexLabel}</span>
+                <p class="module-list__title">${escape(module.title)}</p>
+                <div class="module-list__actions">${actions.join("")}</div>
               </div>
             `;
           })

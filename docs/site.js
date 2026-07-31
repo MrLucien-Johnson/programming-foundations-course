@@ -780,7 +780,7 @@
       list.setAttribute("role", "list");
 
       items.forEach((li, index) => {
-        if (li.querySelector(".module-list__body")) return;
+        if (li.querySelector(".module-list__title")) return;
         const anchors = Array.from(li.querySelectorAll("a"));
         if (!anchors.length) return;
 
@@ -810,22 +810,20 @@
           .trim();
         if (!title) title = `Module ${index + 1}`;
 
-        const num = String(index + 1).padStart(2, "0");
+          const num = String(index + 1).padStart(2, "0");
         li.className = `module-list__item${done ? " is-done" : ""}`;
         li.setAttribute("role", "listitem");
         if (path) li.setAttribute("data-module-path", path);
         li.innerHTML = `
-          <div class="module-list__index" aria-hidden="true">${done ? "✓" : num}</div>
-          <div class="module-list__body">
-            <p class="module-list__title">${escapeHtml(title)}</p>
-            <div class="module-list__actions">
+          <span class="module-list__index" aria-hidden="true">${done ? "✓" : num}</span>
+          <p class="module-list__title">${escapeHtml(title)}</p>
+          <div class="module-list__actions">
               ${actions
                 .map(
                   (a) =>
                     `<a class="module-list__action module-list__action--${a.kind}" href="${escapeHtml(a.href)}">${escapeHtml(a.label)}</a>`
                 )
                 .join("")}
-            </div>
           </div>
         `;
       });
