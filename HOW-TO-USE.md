@@ -2,7 +2,11 @@
 
 ## 🗺️ Course Navigation
 
-This course is delivered via **GitHub**. You can read everything directly on GitHub or download/clone the repository to your computer.
+The easiest way to learn is on the **live course website** (no download required):
+
+**https://mrlucien-johnson.github.io/programming-foundations-course/**
+
+You can also read everything on GitHub or download/clone this repository to your computer.
 
 ---
 
