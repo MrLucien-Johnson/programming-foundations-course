@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:13.992
+After your first console app: After your first console app, Module 2 adds variables, input, and calculations. C sharp uses clear types like string, int, and double. You will build greeting and calculator programs.
+
+2
+00:00:14.342 --> 00:00:27.494
+Declare with a type: Declare variables with a type. For example, string customer name equals Sarah, int quantity equals 3, double price equals 9.99. Choose names that describe the data.
+
+3
+00:00:27.844 --> 00:00:37.972
+Read input safely: Read input with Console.ReadLine, which returns text. Parse numbers with int.Parse or double.Parse, and format output with string interpolation.
+
+4
+00:00:38.322 --> 00:00:49.458
+Calculate real values: Calculate real values for tax, totals, and wages with ordinary math operators. Keep units clear in variable names, and print results the user can understand.
+
+5
+00:00:49.808 --> 00:00:59.024
+Practice path: Follow the Module 2 examples in your project, complete the exercises, check the solutions, and take the Module 2 quiz to lock in the skills.

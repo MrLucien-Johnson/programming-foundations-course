@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:12.696
+From vague to specific: Move from vague to specific. A good prompt states role, goal, and format. Add constraints like length, tone, and what not to do, and give one short example when helpful.
+
+2
+00:00:13.046 --> 00:00:24.878
+Structure beats clever wording: Structure beats clever wording. Use headings for goal, inputs, and output format. Ask for checkable outputs, and prefer clear instructions over buzzwords.
+
+3
+00:00:25.228 --> 00:00:36.988
+Test before you trust: Test before you trust. Try good, bad, and ambiguous inputs. Note failures like missing steps or invented facts, tighten the prompt, then retest.
+
+4
+00:00:37.338 --> 00:00:47.154
+Your Module 2 next step: Open Prompting Basics in the course viewer. Rewrite one vague request into a structured prompt, and save before and after notes in your starter pack.

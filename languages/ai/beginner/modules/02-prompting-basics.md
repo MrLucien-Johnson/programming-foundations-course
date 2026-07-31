@@ -1,5 +1,7 @@
 # AI — Module 02: Prompting Basics
 
+> **Voiceover lesson (with captions & transcript):** [AI Prompting basics](../../../../docs/tutorials.html#ai-prompting)
+
 ## Overview
 Learn how to write prompts like specifications: define role, task, constraints, and output shape.
 

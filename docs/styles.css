@@ -2035,6 +2035,30 @@ button.path-node {
   max-width: 720px;
 }
 
+.transcript-panel {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border: 1px solid rgba(14, 17, 22, 0.12);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.transcript-panel summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.transcript-panel p {
+  margin: 10px 0 4px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.tutorial-catalog .promo-clip + .promo-clip {
+  margin-top: 8px;
+}
+
 /* ── Responsive path viz ── */
 @media (max-width: 640px) {
   .path-viz-track {

@@ -1,5 +1,7 @@
 # Module 2: C# Basics
 
+> **Voiceover lesson (with captions & transcript):** [C# Module 2 — variables & input](../../docs/tutorials.html#csharp-basics)
+
 ## 🎯 What You'll Learn
 
 By the end of this module, you will be able to:

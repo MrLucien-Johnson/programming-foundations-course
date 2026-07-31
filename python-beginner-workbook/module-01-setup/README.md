@@ -39,7 +39,7 @@ That's exactly what we're doing here. By the end, you'll have created a tiny pro
 
 ## 🛠️ Step 1: Installing Python
 
-> **Prefer a video?** Watch the [Python install tutorial](../../docs/tutorials.html#python-setup) (~1 min), then follow the written steps below.
+> **Voiceover lesson (with captions & transcript):** [Python install tutorial](../../docs/tutorials.html#python-setup) (~1 min), then follow the written steps below.
 
 Python is free and available for Windows, macOS, and Linux.
 

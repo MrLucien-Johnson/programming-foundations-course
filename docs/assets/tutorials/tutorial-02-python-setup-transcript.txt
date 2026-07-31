@@ -3,7 +3,7 @@ ID: 02-python-setup
 Suggested placement: python-course, module-01-setup
 
 ────────────────────────────────────────
-FULL VOICEOVER
+FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Install Python
@@ -28,4 +28,5 @@ COMBINED READ-ALOUD
 Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, use the installer or python 3. Verify it worked. Open a terminal and run python dash dash version, or python 3 dash dash version. You should see a version number. Install a code editor such as Cursor or Visual Studio Code. Add the Python extension, then open your python-beginner-workbook folder. Create hello.py with a print hello message, then run python hello.py. Change the text — that is your first real program. If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor terminal, finish Module 1 exercises, then take the quiz.
 
 Voice: en-US JennyNeural (edge-tts)
+Captions: matching .vtt file (for deaf / hard-of-hearing users)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

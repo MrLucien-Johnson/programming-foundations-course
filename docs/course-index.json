@@ -9,12 +9,16 @@
         {
           "title": "Setup & First Script",
           "path": "python-beginner-workbook/module-01-setup/README.md",
-          "quiz": "python-beginner-workbook/module-01-setup/exercises/quiz.md"
+          "quiz": "python-beginner-workbook/module-01-setup/exercises/quiz.md",
+          "tutorial": "tutorials.html#python-setup",
+          "tutorialId": "02-python-setup"
         },
         {
           "title": "Python Basics",
           "path": "python-beginner-workbook/module-02-basics/README.md",
-          "quiz": "python-beginner-workbook/module-02-basics/exercises/quiz.md"
+          "quiz": "python-beginner-workbook/module-02-basics/exercises/quiz.md",
+          "tutorial": "tutorials.html#python-basics",
+          "tutorialId": "06-python-basics"
         },
         {
           "title": "Control Flow",
@@ -52,12 +56,16 @@
         {
           "title": "Setup & First Program",
           "path": "csharp-beginner-workbook/module-01-setup/README.md",
-          "quiz": "csharp-beginner-workbook/module-01-setup/exercises/quiz.md"
+          "quiz": "csharp-beginner-workbook/module-01-setup/exercises/quiz.md",
+          "tutorial": "tutorials.html#csharp-setup",
+          "tutorialId": "03-csharp-setup"
         },
         {
           "title": "C# Basics",
           "path": "csharp-beginner-workbook/module-02-basics/README.md",
-          "quiz": "csharp-beginner-workbook/module-02-basics/exercises/quiz.md"
+          "quiz": "csharp-beginner-workbook/module-02-basics/exercises/quiz.md",
+          "tutorial": "tutorials.html#csharp-basics",
+          "tutorialId": "07-csharp-basics"
         },
         {
           "title": "Control Flow",
@@ -95,12 +103,16 @@
         {
           "title": "AI Foundations",
           "path": "languages/ai/beginner/modules/01-ai-foundations.md",
-          "quiz": "languages/ai/beginner/modules/01-ai-foundations.quiz.md"
+          "quiz": "languages/ai/beginner/modules/01-ai-foundations.quiz.md",
+          "tutorial": "tutorials.html#ai-foundations",
+          "tutorialId": "05-ai-foundations"
         },
         {
           "title": "Prompting Basics",
           "path": "languages/ai/beginner/modules/02-prompting-basics.md",
-          "quiz": "languages/ai/beginner/modules/02-prompting-basics.quiz.md"
+          "quiz": "languages/ai/beginner/modules/02-prompting-basics.quiz.md",
+          "tutorial": "tutorials.html#ai-prompting",
+          "tutorialId": "08-ai-prompting-basics"
         },
         {
           "title": "Prompt Patterns",

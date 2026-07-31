@@ -1,5 +1,7 @@
 # Module 2: Python Basics
 
+> **Voiceover lesson (with captions & transcript):** [Python Module 2 — variables & input](../../docs/tutorials.html#python-basics)
+
 ## 🎯 What You'll Learn
 
 By the end of this module, you will be able to:

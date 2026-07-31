@@ -39,18 +39,26 @@
       </section>
 
       <aside class="section tutorial-callout" id="lesson-tutorial" hidden>
-        <h3 id="lesson-tutorial-title">Related tutorial</h3>
-        <p class="note" id="lesson-tutorial-note"></p>
+        <h3 id="lesson-tutorial-title">Voiceover lesson</h3>
+        <p class="note" id="lesson-tutorial-note">
+          Captions are on by default. Expand the transcript if you prefer to read.
+        </p>
         <video
           class="promo-video"
           id="lesson-tutorial-video"
           controls
           playsinline
           preload="metadata"
+          crossorigin="anonymous"
         ></video>
+        <details class="transcript-panel" id="lesson-tutorial-transcript-panel">
+          <summary>Full transcript (text for deaf / hard-of-hearing users)</summary>
+          <p id="lesson-tutorial-transcript-text"></p>
+        </details>
         <div class="button-row">
           <a class="btn btn-secondary" id="lesson-tutorial-hub" href="tutorials.html">All tutorials</a>
-          <a class="btn btn-secondary" id="lesson-tutorial-transcript" href="#" download>Transcript</a>
+          <a class="btn btn-secondary" id="lesson-tutorial-transcript" href="#" download>Transcript .txt</a>
+          <a class="btn btn-secondary" id="lesson-tutorial-audio" href="#" download hidden>Audio only</a>
         </div>
       </aside>
 
@@ -95,29 +103,55 @@
 
       const CIRCUMFERENCE = 2 * Math.PI * 52;
 
-      const TUTORIAL_BY_PATH = [
+      const FALLBACK_TUTORIALS = [
         {
-          match: /python-beginner-workbook\/module-01-setup/i,
-          title: "Python install tutorial",
-          note: "Watch this before or while installing Python and your editor — then follow the written Module 1 steps below.",
-          src: "assets/tutorials/tutorial-02-python-setup.mp4",
-          transcript: "assets/tutorials/tutorial-02-python-setup-transcript.txt",
-          hub: "tutorials.html#python-setup",
+          pathMatch: "python-beginner-workbook/module-01-setup",
+          title: "Python — download, install, first script",
+          file: "tutorial-02-python-setup.mp4",
+          transcript: "tutorial-02-python-setup-transcript.txt",
+          captions: "tutorial-02-python-setup.vtt",
+          audio: "tutorial-02-python-setup-voiceover.m4a",
+          hubAnchor: "python-setup",
+          combinedTranscript: "",
         },
         {
-          match: /csharp-beginner-workbook\/module-01-setup/i,
-          title: "C# / .NET install tutorial",
-          note: "Watch this before or while installing the .NET SDK — then follow the written Module 1 steps below.",
-          src: "assets/tutorials/tutorial-03-csharp-setup.mp4",
-          transcript: "assets/tutorials/tutorial-03-csharp-setup-transcript.txt",
-          hub: "tutorials.html#csharp-setup",
+          pathMatch: "csharp-beginner-workbook/module-01-setup",
+          title: "C# — install .NET and first project",
+          file: "tutorial-03-csharp-setup.mp4",
+          transcript: "tutorial-03-csharp-setup-transcript.txt",
+          captions: "tutorial-03-csharp-setup.vtt",
+          audio: "tutorial-03-csharp-setup-voiceover.m4a",
+          hubAnchor: "csharp-setup",
+          combinedTranscript: "",
         },
       ];
 
-      const mountLessonTutorial = (path) => {
+      let tutorialManifest = null;
+
+      const loadTutorialManifest = async () => {
+        if (tutorialManifest) return tutorialManifest;
+        try {
+          const res = await fetch("assets/tutorials/manifest.json", { cache: "no-cache" });
+          if (!res.ok) throw new Error("manifest missing");
+          tutorialManifest = await res.json();
+        } catch {
+          tutorialManifest = FALLBACK_TUTORIALS;
+        }
+        return tutorialManifest;
+      };
+
+      const findTutorialForPath = (path, items) => {
+        const normalized = String(path || "");
+        return (items || []).find(
+          (entry) => entry.pathMatch && normalized.includes(entry.pathMatch)
+        );
+      };
+
+      const mountLessonTutorial = async (path) => {
         const panel = document.getElementById("lesson-tutorial");
         if (!panel) return;
-        const hit = TUTORIAL_BY_PATH.find((entry) => entry.match.test(path || ""));
+        const items = await loadTutorialManifest();
+        const hit = findTutorialForPath(path, items);
         if (!hit) {
           panel.hidden = true;
           return;
@@ -128,16 +162,48 @@
         const video = document.getElementById("lesson-tutorial-video");
         const hub = document.getElementById("lesson-tutorial-hub");
         const transcript = document.getElementById("lesson-tutorial-transcript");
-        if (title) title.textContent = hit.title;
-        if (note) note.textContent = hit.note;
+        const audio = document.getElementById("lesson-tutorial-audio");
+        const transcriptText = document.getElementById("lesson-tutorial-transcript-text");
+        if (title) title.textContent = hit.title || "Voiceover lesson";
+        if (note) {
+          note.textContent =
+            "Part of this learning path. Captions are available in the player; the full transcript is below for deaf and hard-of-hearing learners.";
+        }
         if (video) {
-          video.src = hit.src;
+          video.innerHTML = "";
+          const source = document.createElement("source");
+          source.src = `assets/tutorials/${hit.file}`;
+          source.type = "video/mp4";
+          video.appendChild(source);
+          if (hit.captions) {
+            const track = document.createElement("track");
+            track.kind = "captions";
+            track.src = `assets/tutorials/${hit.captions}`;
+            track.srclang = "en";
+            track.label = "English captions";
+            track.default = true;
+            video.appendChild(track);
+          }
           video.load();
         }
-        if (hub) hub.href = hit.hub;
-        if (transcript) {
-          transcript.href = hit.transcript;
+        if (hub) hub.href = `tutorials.html#${hit.hubAnchor || ""}`;
+        if (transcript && hit.transcript) {
+          transcript.href = `assets/tutorials/${hit.transcript}`;
           transcript.setAttribute("download", "");
+        }
+        if (audio) {
+          if (hit.audio) {
+            audio.hidden = false;
+            audio.href = `assets/tutorials/${hit.audio}`;
+            audio.setAttribute("download", "");
+          } else {
+            audio.hidden = true;
+          }
+        }
+        if (transcriptText) {
+          transcriptText.textContent =
+            hit.combinedTranscript ||
+            "Open the transcript download for the full voiceover text.";
         }
       };
 
@@ -948,7 +1014,7 @@
           return;
         }
 
-        mountLessonTutorial(repoPath);
+        await mountLessonTutorial(repoPath);
 
         const rawRoot =
           "https://raw.githubusercontent.com/MrLucien-Johnson/programming-foundations-course/main/";

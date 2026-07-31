@@ -1,0 +1,29 @@
+Programming Foundations — Tutorial: AI Module 2 — prompting basics
+ID: 08-ai-prompting-basics
+Suggested placement: ai-course, 02-prompting-basics
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] From vague to specific
+Move from vague to specific. A good prompt states role, goal, and format. Add constraints like length, tone, and what not to do, and give one short example when helpful.
+
+[Slide 2] Structure beats clever wording
+Structure beats clever wording. Use headings for goal, inputs, and output format. Ask for checkable outputs, and prefer clear instructions over buzzwords.
+
+[Slide 3] Test before you trust
+Test before you trust. Try good, bad, and ambiguous inputs. Note failures like missing steps or invented facts, tighten the prompt, then retest.
+
+[Slide 4] Your Module 2 next step
+Open Prompting Basics in the course viewer. Rewrite one vague request into a structured prompt, and save before and after notes in your starter pack.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+Move from vague to specific. A good prompt states role, goal, and format. Add constraints like length, tone, and what not to do, and give one short example when helpful. Structure beats clever wording. Use headings for goal, inputs, and output format. Ask for checkable outputs, and prefer clear instructions over buzzwords. Test before you trust. Try good, bad, and ambiguous inputs. Note failures like missing steps or invented facts, tighten the prompt, then retest. Open Prompting Basics in the course viewer. Rewrite one vague request into a structured prompt, and save before and after notes in your starter pack.
+
+Voice: en-US JennyNeural (edge-tts)
+Captions: matching .vtt file (for deaf / hard-of-hearing users)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

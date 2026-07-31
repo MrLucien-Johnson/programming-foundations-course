@@ -1,0 +1,32 @@
+Programming Foundations — Tutorial: C# Module 2 — variables & input
+ID: 07-csharp-basics
+Suggested placement: csharp-course, module-02-basics
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] After your first console app
+After your first console app, Module 2 adds variables, input, and calculations. C sharp uses clear types like string, int, and double. You will build greeting and calculator programs.
+
+[Slide 2] Declare with a type
+Declare variables with a type. For example, string customer name equals Sarah, int quantity equals 3, double price equals 9.99. Choose names that describe the data.
+
+[Slide 3] Read input safely
+Read input with Console.ReadLine, which returns text. Parse numbers with int.Parse or double.Parse, and format output with string interpolation.
+
+[Slide 4] Calculate real values
+Calculate real values for tax, totals, and wages with ordinary math operators. Keep units clear in variable names, and print results the user can understand.
+
+[Slide 5] Practice path
+Follow the Module 2 examples in your project, complete the exercises, check the solutions, and take the Module 2 quiz to lock in the skills.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+After your first console app, Module 2 adds variables, input, and calculations. C sharp uses clear types like string, int, and double. You will build greeting and calculator programs. Declare variables with a type. For example, string customer name equals Sarah, int quantity equals 3, double price equals 9.99. Choose names that describe the data. Read input with Console.ReadLine, which returns text. Parse numbers with int.Parse or double.Parse, and format output with string interpolation. Calculate real values for tax, totals, and wages with ordinary math operators. Keep units clear in variable names, and print results the user can understand. Follow the Module 2 examples in your project, complete the exercises, check the solutions, and take the Module 2 quiz to lock in the skills.
+
+Voice: en-US JennyNeural (edge-tts)
+Captions: matching .vtt file (for deaf / hard-of-hearing users)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:13.344
+After your first script: After your first script, Module 2 makes programs interactive and useful. You will store values, ask for input, and calculate. These skills power forms, carts, and calculators.
+
+2
+00:00:13.694 --> 00:00:26.510
+Variables are labeled boxes: Variables are labeled boxes. Write a name equals a value, for example customer underscore name equals Sarah. Python chooses the type for you, and you can update a variable anytime.
+
+3
+00:00:26.860 --> 00:00:34.948
+Talk to the user: Talk to the user with input. Store the answer in a variable, then combine text with f-strings, like hello name.
+
+4
+00:00:35.298 --> 00:00:45.474
+Do useful math: Do useful math. Convert text numbers with float or int, calculate price, tax, or wages, and print clear results with f-strings.
+
+5
+00:00:45.824 --> 00:00:55.592
+Practice path: Type the examples instead of only reading them. Build the greeting and price calculator exercises, then take the Module 2 quiz when you feel ready.

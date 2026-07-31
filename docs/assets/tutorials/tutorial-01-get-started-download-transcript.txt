@@ -3,7 +3,7 @@ ID: 01-get-started-download
 Suggested placement: start-here, help, courses
 
 ────────────────────────────────────────
-FULL VOICEOVER
+FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Learn in your browser first
@@ -25,4 +25,5 @@ COMBINED READ-ALOUD
 Learn in your browser first. You do not need to install anything to start Module 1 online. Open Start Here, pick Python, C sharp, or A I, and mark steps done as you go. When you want files on your computer, use GitHub’s Code menu and choose Download ZIP. Find the file in Downloads, then unzip it. Git is optional — beginners can use the ZIP. Open the right folder for your course. Python lives in python-beginner-workbook. C sharp lives in csharp-beginner-workbook. Always start with Module 1 setup. Quick tip: if a download goes missing, check the Help page. You can keep learning online while installers run in the background.
 
 Voice: en-US JennyNeural (edge-tts)
+Captions: matching .vtt file (for deaf / hard-of-hearing users)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

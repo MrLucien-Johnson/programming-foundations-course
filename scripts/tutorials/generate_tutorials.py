@@ -197,6 +197,8 @@ TUTORIALS = [
         "title": "Get started — browser & download",
         "when": "start-here, help, courses",
         "footer": "tutorials.html · Start Here",
+        "pathMatch": "",
+        "hubAnchor": "get-started",
         "slides": [
             {
                 "title": "Learn in your browser first",
@@ -241,6 +243,8 @@ TUTORIALS = [
         "title": "Python — download, install, first script",
         "when": "python-course, module-01-setup",
         "footer": "tutorials.html · Python Module 1",
+        "pathMatch": "python-beginner-workbook/module-01-setup",
+        "hubAnchor": "python-setup",
         "slides": [
             {
                 "title": "Install Python",
@@ -294,6 +298,8 @@ TUTORIALS = [
         "title": "C# — install .NET and first project",
         "when": "csharp-course, module-01-setup",
         "footer": "tutorials.html · C# Module 1",
+        "pathMatch": "csharp-beginner-workbook/module-01-setup",
+        "hubAnchor": "csharp-setup",
         "slides": [
             {
                 "title": "Install the .NET SDK",
@@ -347,6 +353,8 @@ TUTORIALS = [
         "title": "Tips & tricks for this site",
         "when": "help, start-here, account",
         "footer": "tutorials.html · Help",
+        "pathMatch": "",
+        "hubAnchor": "tips",
         "slides": [
             {
                 "title": "Follow Start Here in order",
@@ -395,7 +403,237 @@ TUTORIALS = [
             },
         ],
     },
+    {
+        "id": "05-ai-foundations",
+        "title": "AI Module 1 — foundations overview",
+        "when": "ai-course, 01-ai-foundations",
+        "footer": "tutorials.html · AI Beginner Module 1",
+        "pathMatch": "languages/ai/beginner/modules/01-ai-foundations",
+        "hubAnchor": "ai-foundations",
+        "slides": [
+            {
+                "title": "What this AI course is",
+                "bullets": [
+                    "Learn to use AI like an engineer — not magic",
+                    "No coding install required to start Module 1",
+                    "Focus: clear goals, constraints, and tests",
+                ],
+                "vo": "This A I course teaches you to use language models like an engineer, not like magic. You do not need a coding install to start Module 1. Focus on clear goals, constraints, and tests.",
+            },
+            {
+                "title": "What LLMs are good at",
+                "bullets": [
+                    "Drafting, summarising, transforming text",
+                    "Following structured formats when you specify them",
+                    "Speeding up iteration when you check the output",
+                ],
+                "vo": "Language models are good at drafting, summarising, and transforming text. They follow structured formats when you specify them, and they speed up iteration when you check the output.",
+            },
+            {
+                "title": "What they get wrong",
+                "bullets": [
+                    "They guess patterns — they do not “know” truth",
+                    "They can invent facts (hallucinations)",
+                    "Vague prompts produce vague, brittle results",
+                ],
+                "vo": "They guess patterns; they do not know truth. They can invent facts, called hallucinations. Vague prompts produce vague, brittle results.",
+            },
+            {
+                "title": "The engineering loop",
+                "bullets": [
+                    "Spec → prompt → evaluate → iterate",
+                    "Write goal, inputs, outputs, and failure modes",
+                    "Keep a small eval set and rerun after changes",
+                ],
+                "vo": "Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a small evaluation set and rerun it after every change.",
+            },
+            {
+                "title": "Your Module 1 next step",
+                "bullets": [
+                    "Open AI Foundations in the course viewer",
+                    "Copy the beginner starter pack templates",
+                    "Write a one-page summariser spec + 10 eval cases",
+                ],
+                "vo": "Open A I Foundations in the course viewer, copy the beginner starter pack templates, and write a one-page summariser spec with ten evaluation cases.",
+            },
+        ],
+    },
+    {
+        "id": "06-python-basics",
+        "title": "Python Module 2 — variables & input",
+        "when": "python-course, module-02-basics",
+        "footer": "tutorials.html · Python Module 2",
+        "pathMatch": "python-beginner-workbook/module-02-basics",
+        "hubAnchor": "python-basics",
+        "slides": [
+            {
+                "title": "After your first script",
+                "bullets": [
+                    "Module 2 makes programs interactive and useful",
+                    "You will store values, ask for input, and calculate",
+                    "These skills power forms, carts, and calculators",
+                ],
+                "vo": "After your first script, Module 2 makes programs interactive and useful. You will store values, ask for input, and calculate. These skills power forms, carts, and calculators.",
+            },
+            {
+                "title": "Variables are labeled boxes",
+                "bullets": [
+                    "Name = value, for example customer_name = \"Sarah\"",
+                    "Python chooses the type for you",
+                    "Update a variable anytime by assigning again",
+                ],
+                "vo": "Variables are labeled boxes. Write a name equals a value, for example customer underscore name equals Sarah. Python chooses the type for you, and you can update a variable anytime.",
+            },
+            {
+                "title": "Talk to the user",
+                "bullets": [
+                    "Use input(\"Your name: \") to ask a question",
+                    "Store the answer in a variable",
+                    "Combine text with f-strings: f\"Hello, {name}\"",
+                ],
+                "vo": "Talk to the user with input. Store the answer in a variable, then combine text with f-strings, like hello name.",
+            },
+            {
+                "title": "Do useful math",
+                "bullets": [
+                    "Convert text numbers with float() or int()",
+                    "Calculate price, tax, or wages",
+                    "Print clear results with f-strings",
+                ],
+                "vo": "Do useful math. Convert text numbers with float or int, calculate price, tax, or wages, and print clear results with f-strings.",
+            },
+            {
+                "title": "Practice path",
+                "bullets": [
+                    "Type the examples — do not only read them",
+                    "Build the greeting and price calculator exercises",
+                    "Take the Module 2 quiz when you feel ready",
+                ],
+                "vo": "Type the examples instead of only reading them. Build the greeting and price calculator exercises, then take the Module 2 quiz when you feel ready.",
+            },
+        ],
+    },
+    {
+        "id": "07-csharp-basics",
+        "title": "C# Module 2 — variables & input",
+        "when": "csharp-course, module-02-basics",
+        "footer": "tutorials.html · C# Module 2",
+        "pathMatch": "csharp-beginner-workbook/module-02-basics",
+        "hubAnchor": "csharp-basics",
+        "slides": [
+            {
+                "title": "After your first console app",
+                "bullets": [
+                    "Module 2 adds variables, input, and calculations",
+                    "C# uses clear types like string, int, and double",
+                    "You will build greeting and calculator programs",
+                ],
+                "vo": "After your first console app, Module 2 adds variables, input, and calculations. C sharp uses clear types like string, int, and double. You will build greeting and calculator programs.",
+            },
+            {
+                "title": "Declare with a type",
+                "bullets": [
+                    "string customerName = \"Sarah\";",
+                    "int quantity = 3;  double price = 9.99;",
+                    "Names describe the data you store",
+                ],
+                "vo": "Declare variables with a type. For example, string customer name equals Sarah, int quantity equals 3, double price equals 9.99. Choose names that describe the data.",
+            },
+            {
+                "title": "Read input safely",
+                "bullets": [
+                    "Console.ReadLine() returns text",
+                    "Parse numbers with int.Parse or double.Parse",
+                    "Use string interpolation: $\"Hello, {name}\"",
+                ],
+                "vo": "Read input with Console.ReadLine, which returns text. Parse numbers with int.Parse or double.Parse, and format output with string interpolation.",
+            },
+            {
+                "title": "Calculate real values",
+                "bullets": [
+                    "Tax, totals, and wages use ordinary math operators",
+                    "Keep units clear in variable names",
+                    "Print results the user can understand",
+                ],
+                "vo": "Calculate real values for tax, totals, and wages with ordinary math operators. Keep units clear in variable names, and print results the user can understand.",
+            },
+            {
+                "title": "Practice path",
+                "bullets": [
+                    "Follow Module 2 examples in your project",
+                    "Complete the exercises, then check solutions",
+                    "Take the Module 2 quiz to lock in the skills",
+                ],
+                "vo": "Follow the Module 2 examples in your project, complete the exercises, check the solutions, and take the Module 2 quiz to lock in the skills.",
+            },
+        ],
+    },
+    {
+        "id": "08-ai-prompting-basics",
+        "title": "AI Module 2 — prompting basics",
+        "when": "ai-course, 02-prompting-basics",
+        "footer": "tutorials.html · AI Beginner Module 2",
+        "pathMatch": "languages/ai/beginner/modules/02-prompting-basics",
+        "hubAnchor": "ai-prompting",
+        "slides": [
+            {
+                "title": "From vague to specific",
+                "bullets": [
+                    "A good prompt states role, goal, and format",
+                    "Add constraints: length, tone, what not to do",
+                    "Give one short example when helpful",
+                ],
+                "vo": "Move from vague to specific. A good prompt states role, goal, and format. Add constraints like length, tone, and what not to do, and give one short example when helpful.",
+            },
+            {
+                "title": "Structure beats clever wording",
+                "bullets": [
+                    "Use headings: Goal, Inputs, Output format",
+                    "Ask for checkable outputs (lists, JSON fields)",
+                    "Prefer clear instructions over buzzwords",
+                ],
+                "vo": "Structure beats clever wording. Use headings for goal, inputs, and output format. Ask for checkable outputs, and prefer clear instructions over buzzwords.",
+            },
+            {
+                "title": "Test before you trust",
+                "bullets": [
+                    "Try good, bad, and ambiguous inputs",
+                    "Note failures: missing steps, invented facts",
+                    "Tighten the prompt, then retest",
+                ],
+                "vo": "Test before you trust. Try good, bad, and ambiguous inputs. Note failures like missing steps or invented facts, tighten the prompt, then retest.",
+            },
+            {
+                "title": "Your Module 2 next step",
+                "bullets": [
+                    "Open Prompting Basics in the course viewer",
+                    "Rewrite one vague request into a structured prompt",
+                    "Save before/after notes in your starter pack",
+                ],
+                "vo": "Open Prompting Basics in the course viewer. Rewrite one vague request into a structured prompt, and save before and after notes in your starter pack.",
+            },
+        ],
+    },
 ]
+
+
+def fmt_vtt_time(seconds: float) -> str:
+    ms = int(round(seconds * 1000))
+    h, rem = divmod(ms, 3_600_000)
+    m, rem = divmod(rem, 60_000)
+    s, milli = divmod(rem, 1000)
+    return f"{h:02d}:{m:02d}:{s:02d}.{milli:03d}"
+
+
+def write_vtt(cues: list[tuple[float, float, str]], out_path: Path) -> None:
+    lines = ["WEBVTT", ""]
+    for i, (start, end, text) in enumerate(cues, start=1):
+        lines.append(str(i))
+        lines.append(f"{fmt_vtt_time(start)} --> {fmt_vtt_time(end)}")
+        # Keep captions readable: wrap long lines lightly
+        lines.append(text.strip())
+        lines.append("")
+    out_path.write_text("\n".join(lines), encoding="utf-8")
 
 
 async def build_one(tutorial: dict, work: Path) -> dict:
@@ -403,13 +641,16 @@ async def build_one(tutorial: dict, work: Path) -> dict:
     tdir = work / tid
     tdir.mkdir(parents=True, exist_ok=True)
     parts: list[Path] = []
+    cues: list[tuple[float, float, str]] = []
+    cursor = 0.0
+    pad = 0.35
     transcript_lines = [
         f"Programming Foundations — Tutorial: {tutorial['title']}",
         f"ID: {tid}",
         f"Suggested placement: {tutorial['when']}",
         "",
         "────────────────────────────────────────",
-        "FULL VOICEOVER",
+        "FULL VOICEOVER (also provided as captions / on-page transcript)",
         "────────────────────────────────────────",
         "",
     ]
@@ -424,6 +665,9 @@ async def build_one(tutorial: dict, work: Path) -> dict:
         still_to_video(png, dur, silent)
         mux(silent, mp3, voiced)
         parts.append(voiced)
+        slide_len = dur + pad
+        cues.append((cursor, cursor + max(dur, 0.8), f"{slide['title']}: {slide['vo']}"))
+        cursor += slide_len
         full_vo.append(slide["vo"])
         transcript_lines.append(f"[Slide {i}] {slide['title']}")
         transcript_lines.append(slide["vo"])
@@ -438,16 +682,18 @@ async def build_one(tutorial: dict, work: Path) -> dict:
             " ".join(full_vo),
             "",
             "Voice: en-US JennyNeural (edge-tts)",
+            "Captions: matching .vtt file (for deaf / hard-of-hearing users)",
             "Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html",
         ]
     )
 
     out_mp4 = OUT_DIR / f"tutorial-{tid}.mp4"
     out_txt = OUT_DIR / f"tutorial-{tid}-transcript.txt"
+    out_vtt = OUT_DIR / f"tutorial-{tid}.vtt"
     concat(parts, out_mp4)
     out_txt.write_text("\n".join(transcript_lines) + "\n", encoding="utf-8")
+    write_vtt(cues, out_vtt)
 
-    # Also export combined m4a for accessibility
     out_m4a = OUT_DIR / f"tutorial-{tid}-voiceover.m4a"
     subprocess.check_call(
         [
@@ -481,46 +727,75 @@ async def build_one(tutorial: dict, work: Path) -> dict:
         "id": tid,
         "title": tutorial["title"],
         "when": tutorial["when"],
+        "pathMatch": tutorial.get("pathMatch", ""),
+        "hubAnchor": tutorial.get("hubAnchor", tid.split("-", 1)[-1]),
         "file": out_mp4.name,
         "transcript": out_txt.name,
+        "captions": out_vtt.name,
         "audio": out_m4a.name,
         "durationSec": round(float(probe), 1),
+        "combinedTranscript": " ".join(full_vo),
     }
 
 
 async def main() -> None:
+    # Allow regenerating a subset: python3 generate_tutorials.py 05-ai-foundations
+    import sys
+
+    only = set(sys.argv[1:])
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    manifest = []
+    selected = [t for t in TUTORIALS if not only or t["id"] in only or any(t["id"].startswith(x) for x in only)]
+    # Load previous manifest so subset rebuilds keep other entries.
+    prev = {}
+    manifest_path = OUT_DIR / "manifest.json"
+    if manifest_path.exists():
+        try:
+            for item in json.loads(manifest_path.read_text(encoding="utf-8")):
+                prev[item["id"]] = item
+        except Exception:
+            prev = {}
+
     with tempfile.TemporaryDirectory(prefix="pf-tut-") as tmp:
         work = Path(tmp)
-        for tutorial in TUTORIALS:
+        for tutorial in selected:
             print(f"Building {tutorial['id']}…")
             meta = await build_one(tutorial, work)
-            manifest.append(meta)
+            prev[meta["id"]] = meta
             print(f"  → {meta['file']} ({meta['durationSec']}s)")
 
-    (OUT_DIR / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    # Stable order by id
+    manifest = [prev[t["id"]] for t in TUTORIALS if t["id"] in prev]
+    manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     readme = [
         "# Learner tutorial videos",
         "",
-        "Slide + voiceover tutorials aligned to course setup content.",
+        "Slide + voiceover lessons aligned to learning-path modules.",
+        "Each clip includes: MP4, WebVTT captions, plain-text transcript, and audio.",
         "Voice: en-US JennyNeural. Rebuild with:",
         "",
         "```bash",
         "pip install edge-tts Pillow",
         "python3 scripts/tutorials/generate_tutorials.py",
+        "# or a subset:",
+        "python3 scripts/tutorials/generate_tutorials.py 05-ai-foundations 06-python-basics",
         "```",
         "",
-        "| ID | Title | ~Length | Use when |",
-        "|----|-------|---------|----------|",
+        "| ID | Title | ~Length | Learning path |",
+        "|----|-------|---------|---------------|",
     ]
     for m in manifest:
         readme.append(
             f"| `{m['id']}` | {m['title']} | ~{m['durationSec']:.0f}s | {m['when']} |"
         )
-    readme.append("")
-    readme.append("Play on site: `docs/tutorials.html`")
-    readme.append("")
+    readme.extend(
+        [
+            "",
+            "Deaf / hard-of-hearing: enable captions on the video player, or open the on-page transcript / `.txt` download.",
+            "",
+            "Play on site: `docs/tutorials.html`",
+            "",
+        ]
+    )
     (OUT_DIR / "README.md").write_text("\n".join(readme) + "\n", encoding="utf-8")
     print("Done:", OUT_DIR)
 

@@ -1,0 +1,32 @@
+Programming Foundations — Tutorial: Python Module 2 — variables & input
+ID: 06-python-basics
+Suggested placement: python-course, module-02-basics
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] After your first script
+After your first script, Module 2 makes programs interactive and useful. You will store values, ask for input, and calculate. These skills power forms, carts, and calculators.
+
+[Slide 2] Variables are labeled boxes
+Variables are labeled boxes. Write a name equals a value, for example customer underscore name equals Sarah. Python chooses the type for you, and you can update a variable anytime.
+
+[Slide 3] Talk to the user
+Talk to the user with input. Store the answer in a variable, then combine text with f-strings, like hello name.
+
+[Slide 4] Do useful math
+Do useful math. Convert text numbers with float or int, calculate price, tax, or wages, and print clear results with f-strings.
+
+[Slide 5] Practice path
+Type the examples instead of only reading them. Build the greeting and price calculator exercises, then take the Module 2 quiz when you feel ready.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+After your first script, Module 2 makes programs interactive and useful. You will store values, ask for input, and calculate. These skills power forms, carts, and calculators. Variables are labeled boxes. Write a name equals a value, for example customer underscore name equals Sarah. Python chooses the type for you, and you can update a variable anytime. Talk to the user with input. Store the answer in a variable, then combine text with f-strings, like hello name. Do useful math. Convert text numbers with float or int, calculate price, tax, or wages, and print clear results with f-strings. Type the examples instead of only reading them. Build the greeting and price calculator exercises, then take the Module 2 quiz when you feel ready.
+
+Voice: en-US JennyNeural (edge-tts)
+Captions: matching .vtt file (for deaf / hard-of-hearing users)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

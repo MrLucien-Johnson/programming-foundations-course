@@ -1,0 +1,32 @@
+Programming Foundations — Tutorial: AI Module 1 — foundations overview
+ID: 05-ai-foundations
+Suggested placement: ai-course, 01-ai-foundations
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] What this AI course is
+This A I course teaches you to use language models like an engineer, not like magic. You do not need a coding install to start Module 1. Focus on clear goals, constraints, and tests.
+
+[Slide 2] What LLMs are good at
+Language models are good at drafting, summarising, and transforming text. They follow structured formats when you specify them, and they speed up iteration when you check the output.
+
+[Slide 3] What they get wrong
+They guess patterns; they do not know truth. They can invent facts, called hallucinations. Vague prompts produce vague, brittle results.
+
+[Slide 4] The engineering loop
+Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a small evaluation set and rerun it after every change.
+
+[Slide 5] Your Module 1 next step
+Open A I Foundations in the course viewer, copy the beginner starter pack templates, and write a one-page summariser spec with ten evaluation cases.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+This A I course teaches you to use language models like an engineer, not like magic. You do not need a coding install to start Module 1. Focus on clear goals, constraints, and tests. Language models are good at drafting, summarising, and transforming text. They follow structured formats when you specify them, and they speed up iteration when you check the output. They guess patterns; they do not know truth. They can invent facts, called hallucinations. Vague prompts produce vague, brittle results. Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a small evaluation set and rerun it after every change. Open A I Foundations in the course viewer, copy the beginner starter pack templates, and write a one-page summariser spec with ten evaluation cases.
+
+Voice: en-US JennyNeural (edge-tts)
+Captions: matching .vtt file (for deaf / hard-of-hearing users)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

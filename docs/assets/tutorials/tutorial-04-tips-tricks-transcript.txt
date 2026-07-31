@@ -3,7 +3,7 @@ ID: 04-tips-tricks
 Suggested placement: help, start-here, account
 
 ────────────────────────────────────────
-FULL VOICEOVER
+FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Follow Start Here in order
@@ -28,4 +28,5 @@ COMBINED READ-ALOUD
 Follow Start Here in order. Open Module 1 online before installing tools, pick one course, and use Mark done so your path updates. Read each lesson, then take the module quiz. Continue banners bring you back where you left off, and certificates unlock when every module is complete. Guest progress stays in this browser. A free account can sync when the cloud is up. Keep guest progress as a backup on free hosting. Type the examples instead of only reading them. Break big tasks into tiny checkpoints. When stuck, re-read the tip boxes, then open Help. You are ready. Go Start Here, choose a course, and open Module 1. Watch the Python or C sharp install video when you code locally. Enjoy learning.
 
 Voice: en-US JennyNeural (edge-tts)
+Captions: matching .vtt file (for deaf / hard-of-hearing users)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html
