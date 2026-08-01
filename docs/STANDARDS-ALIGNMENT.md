@@ -42,7 +42,7 @@ chartered computing education standards. Public learner view: `docs/standards.ht
 | PRIMM-style predict → run → modify | Mini playground challenges + exercises |
 | Make concrete before abstract | Real-world scenarios in each module |
 | Foster program comprehension | Quizzes check skills, not scavenger hunts |
-| Inclusive & accessible language | Plain English, Help page, large CTAs |
+| Clear, plain language | Plain English, Help page, large CTAs |
 
 ## Known gaps (prioritized)
 
