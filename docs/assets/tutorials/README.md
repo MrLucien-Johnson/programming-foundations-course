@@ -23,7 +23,7 @@ python3 scripts/tutorials/generate_tutorials.py
 | `07-csharp-basics` | lesson | C# Module 2 — variables & input lesson | ~79s | csharp-course, module-02-basics |
 | `08-ai-prompting-basics` | lesson | AI Module 2 — prompting basics lesson | ~82s | ai-course, 02-prompting-basics |
 
-Deaf / hard-of-hearing: enable captions on the video player, or open the on-page transcript / `.txt` download.
+Captions and a plain-text transcript ship with each clip — use CC in the player, or open the on-page transcript / `.txt` download.
 
 Play on site: `docs/tutorials.html`
 
