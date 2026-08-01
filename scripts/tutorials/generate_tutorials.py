@@ -109,7 +109,7 @@ async def synth(text: str, out_mp3: Path) -> float:
 
 
 def still_to_video(png: Path, seconds: float, out_mp4: Path) -> None:
-    # Pad a touch so VO never clips
+    # Pad a touch so VO never clips. Video-only — voiceover is muxed next.
     duration = seconds + 0.35
     subprocess.check_call(
         [
@@ -119,10 +119,6 @@ def still_to_video(png: Path, seconds: float, out_mp4: Path) -> None:
             "1",
             "-i",
             str(png),
-            "-f",
-            "lavfi",
-            "-i",
-            "anullsrc=channel_layout=stereo:sample_rate=44100",
             "-t",
             f"{duration:.3f}",
             "-c:v",
@@ -131,9 +127,7 @@ def still_to_video(png: Path, seconds: float, out_mp4: Path) -> None:
             "stillimage",
             "-pix_fmt",
             "yuv420p",
-            "-c:a",
-            "aac",
-            "-shortest",
+            "-an",
             "-r",
             "30",
             str(out_mp4),
@@ -144,6 +138,7 @@ def still_to_video(png: Path, seconds: float, out_mp4: Path) -> None:
 
 
 def mux(video: Path, audio: Path, out: Path) -> None:
+    # Explicit maps: keep slide video, use TTS audio (never a silent placeholder track).
     subprocess.check_call(
         [
             "ffmpeg",
@@ -152,10 +147,16 @@ def mux(video: Path, audio: Path, out: Path) -> None:
             str(video),
             "-i",
             str(audio),
+            "-map",
+            "0:v:0",
+            "-map",
+            "1:a:0",
             "-c:v",
             "copy",
             "-c:a",
             "aac",
+            "-b:a",
+            "128k",
             "-shortest",
             str(out),
         ],
@@ -183,6 +184,8 @@ def concat(parts: list[Path], out: Path) -> None:
             "yuv420p",
             "-c:a",
             "aac",
+            "-b:a",
+            "128k",
             "-movflags",
             "+faststart",
             str(out),
@@ -797,6 +800,8 @@ async def build_one(tutorial: dict, work: Path) -> dict:
             "-vn",
             "-c:a",
             "aac",
+            "-b:a",
+            "128k",
             str(out_m4a),
         ],
         stdout=subprocess.DEVNULL,

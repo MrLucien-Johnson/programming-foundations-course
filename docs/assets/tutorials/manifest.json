@@ -2,6 +2,7 @@
   {
     "id": "01-get-started-download",
     "title": "Get started \u2014 browser & download",
+    "kind": "setup",
     "when": "start-here, help, courses",
     "pathMatch": "",
     "hubAnchor": "get-started",
@@ -9,13 +10,13 @@
     "transcript": "tutorial-01-get-started-download-transcript.txt",
     "captions": "tutorial-01-get-started-download.vtt",
     "audio": "tutorial-01-get-started-download-voiceover.m4a",
-    "durationSec": 46.6,
-    "combinedTranscript": "Learn in your browser first. You do not need to install anything to start Module 1 online. Open Start Here, pick Python, C sharp, or A I, and mark steps done as you go. When you want files on your computer, use GitHub\u2019s Code menu and choose Download ZIP. Find the file in Downloads, then unzip it. Git is optional \u2014 beginners can use the ZIP. Open the right folder for your course. Python lives in python-beginner-workbook. C sharp lives in csharp-beginner-workbook. Always start with Module 1 setup. Quick tip: if a download goes missing, check the Help page. You can keep learning online while installers run in the background.",
-    "kind": "setup"
+    "durationSec": 45.3,
+    "combinedTranscript": "Learn in your browser first. You do not need to install anything to start Module 1 online. Open Start Here, pick Python, C sharp, or A I, and mark steps done as you go. When you want files on your computer, use GitHub\u2019s Code menu and choose Download ZIP. Find the file in Downloads, then unzip it. Git is optional \u2014 beginners can use the ZIP. Open the right folder for your course. Python lives in python-beginner-workbook. C sharp lives in csharp-beginner-workbook. Always start with Module 1 setup. Quick tip: if a download goes missing, check the Help page. You can keep learning online while installers run in the background."
   },
   {
     "id": "02-python-setup",
     "title": "Python \u2014 download, install, first script",
+    "kind": "setup",
     "when": "python-course, module-01-setup",
     "pathMatch": "python-beginner-workbook/module-01-setup",
     "hubAnchor": "python-setup",
@@ -23,13 +24,13 @@
     "transcript": "tutorial-02-python-setup-transcript.txt",
     "captions": "tutorial-02-python-setup.vtt",
     "audio": "tutorial-02-python-setup-voiceover.m4a",
-    "durationSec": 53.2,
-    "combinedTranscript": "Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, use the installer or python 3. Verify it worked. Open a terminal and run python dash dash version, or python 3 dash dash version. You should see a version number. Install a code editor such as Cursor or Visual Studio Code. Add the Python extension, then open your python-beginner-workbook folder. Create hello.py with a print hello message, then run python hello.py. Change the text \u2014 that is your first real program. If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor terminal, finish Module 1 exercises, then take the quiz.",
-    "kind": "setup"
+    "durationSec": 51.5,
+    "combinedTranscript": "Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, use the installer or python 3. Verify it worked. Open a terminal and run python dash dash version, or python 3 dash dash version. You should see a version number. Install a code editor such as Cursor or Visual Studio Code. Add the Python extension, then open your python-beginner-workbook folder. Create hello.py with a print hello message, then run python hello.py. Change the text \u2014 that is your first real program. If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor terminal, finish Module 1 exercises, then take the quiz."
   },
   {
     "id": "03-csharp-setup",
     "title": "C# \u2014 install .NET and first project",
+    "kind": "setup",
     "when": "csharp-course, module-01-setup",
     "pathMatch": "csharp-beginner-workbook/module-01-setup",
     "hubAnchor": "csharp-setup",
@@ -37,13 +38,13 @@
     "transcript": "tutorial-03-csharp-setup-transcript.txt",
     "captions": "tutorial-03-csharp-setup.vtt",
     "audio": "tutorial-03-csharp-setup-voiceover.m4a",
-    "durationSec": 45.5,
-    "combinedTranscript": "Install the dot net S D K from dotnet.microsoft.com slash download. Get the latest S D K, run the installer, then finish. Open a terminal and run dotnet dash dash version. A number like 8 point 0 means you are ready. Install Cursor or Visual Studio Code, add the C sharp Dev Kit extension, and open the csharp-beginner-workbook folder. Create a console app with dotnet new console, move into the folder, and run dotnet run. Edit Program.cs to make it yours. Remember: C sharp is the language and dot net is the toolbox. Open the whole project folder, finish Module 1, then take the quiz.",
-    "kind": "setup"
+    "durationSec": 44.0,
+    "combinedTranscript": "Install the dot net S D K from dotnet.microsoft.com slash download. Get the latest S D K, run the installer, then finish. Open a terminal and run dotnet dash dash version. A number like 8 point 0 means you are ready. Install Cursor or Visual Studio Code, add the C sharp Dev Kit extension, and open the csharp-beginner-workbook folder. Create a console app with dotnet new console, move into the folder, and run dotnet run. Edit Program.cs to make it yours. Remember: C sharp is the language and dot net is the toolbox. Open the whole project folder, finish Module 1, then take the quiz."
   },
   {
     "id": "04-tips-tricks",
     "title": "Tips & tricks for this site",
+    "kind": "setup",
     "when": "help, start-here, account",
     "pathMatch": "",
     "hubAnchor": "tips",
@@ -51,13 +52,13 @@
     "transcript": "tutorial-04-tips-tricks-transcript.txt",
     "captions": "tutorial-04-tips-tricks.vtt",
     "audio": "tutorial-04-tips-tricks-voiceover.m4a",
-    "durationSec": 53.3,
-    "combinedTranscript": "Follow Start Here in order. Open Module 1 online before installing tools, pick one course, and use Mark done so your path updates. Read each lesson, then take the module quiz. Continue banners bring you back where you left off, and certificates unlock when every module is complete. Guest progress stays in this browser. A free account can sync when the cloud is up. Keep guest progress as a backup on free hosting. Type the examples instead of only reading them. Break big tasks into tiny checkpoints. When stuck, re-read the tip boxes, then open Help. You are ready. Go Start Here, choose a course, and open Module 1. Watch the Python or C sharp install video when you code locally. Enjoy learning.",
-    "kind": "setup"
+    "durationSec": 51.8,
+    "combinedTranscript": "Follow Start Here in order. Open Module 1 online before installing tools, pick one course, and use Mark done so your path updates. Read each lesson, then take the module quiz. Continue banners bring you back where you left off, and certificates unlock when every module is complete. Guest progress stays in this browser. A free account can sync when the cloud is up. Keep guest progress as a backup on free hosting. Type the examples instead of only reading them. Break big tasks into tiny checkpoints. When stuck, re-read the tip boxes, then open Help. You are ready. Go Start Here, choose a course, and open Module 1. Watch the Python or C sharp install video when you code locally. Enjoy learning."
   },
   {
     "id": "05-ai-foundations",
     "title": "AI Module 1 \u2014 foundations lesson",
+    "kind": "lesson",
     "when": "ai-course, 01-ai-foundations",
     "pathMatch": "languages/ai/beginner/modules/01-ai-foundations",
     "hubAnchor": "ai-foundations",
@@ -65,13 +66,13 @@
     "transcript": "tutorial-05-ai-foundations-transcript.txt",
     "captions": "tutorial-05-ai-foundations.vtt",
     "audio": "tutorial-05-ai-foundations-voiceover.m4a",
-    "durationSec": 91.1,
-    "combinedTranscript": "Today\u2019s lesson goal: treat A I work as engineering, not magic. You will name what models do well and where they fail, and leave with a spec and evaluation habit you can reuse. A language model predicts likely next tokens from patterns. It can sound confident even when guessing, so it needs your constraints to stay useful. Strengths you can trust more include drafting and rewriting text you will review, summarising meeting notes into action lists, and transforming content into a format you define. Watch for failure modes. Hallucinations invent facts or owners. Brittleness means tiny wording changes break output. Injection risk means untrusted text tries to override your rules. Worked example: a support ticket. Goal: a summary and next steps from the ticket. Constraint: only use the provided text. Failure to avoid: inventing a refund promise. Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a ten-case evaluation set and rerun it after each change. Practice before you finish. Copy the beginner starter pack templates, write a one-page summariser spec, and build ten evaluation cases covering good, bad, and ambiguous inputs. Then continue in the written Module 1 lesson.",
-    "kind": "lesson"
+    "durationSec": 88.8,
+    "combinedTranscript": "Today\u2019s lesson goal: treat A I work as engineering, not magic. You will name what models do well and where they fail, and leave with a spec and evaluation habit you can reuse. A language model predicts likely next tokens from patterns. It can sound confident even when guessing, so it needs your constraints to stay useful. Strengths you can trust more include drafting and rewriting text you will review, summarising meeting notes into action lists, and transforming content into a format you define. Watch for failure modes. Hallucinations invent facts or owners. Brittleness means tiny wording changes break output. Injection risk means untrusted text tries to override your rules. Worked example: a support ticket. Goal: a summary and next steps from the ticket. Constraint: only use the provided text. Failure to avoid: inventing a refund promise. Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a ten-case evaluation set and rerun it after each change. Practice before you finish. Copy the beginner starter pack templates, write a one-page summariser spec, and build ten evaluation cases covering good, bad, and ambiguous inputs. Then continue in the written Module 1 lesson."
   },
   {
     "id": "06-python-basics",
     "title": "Python Module 2 \u2014 variables & input lesson",
+    "kind": "lesson",
     "when": "python-course, module-02-basics",
     "pathMatch": "python-beginner-workbook/module-02-basics",
     "hubAnchor": "python-basics",
@@ -79,13 +80,13 @@
     "transcript": "tutorial-06-python-basics-transcript.txt",
     "captions": "tutorial-06-python-basics.vtt",
     "audio": "tutorial-06-python-basics-voiceover.m4a",
-    "durationSec": 78.2,
-    "combinedTranscript": "Today\u2019s lesson goal: store values in variables, ask the user questions with input, and calculate and display clear results. Variables are labeled boxes. Write customer underscore name equals Sarah. Python chooses the type for you, and you assign again whenever you want to update the value. Common types you will use are text strings, whole numbers and decimals, and True or False values for yes or no decisions later. Worked example: a greeting. Store input Your name in a variable called name, then print an f-string Hello name. Type it yourself \u2014 do not only read it. Worked example: price with tax. Read the price as text, convert it with float, multiply by one point two for example tax, and print the total with two decimal places. Common mistakes include forgetting float before math on input, mixing up one equals for assignment with two equals for comparison, and leaving quotes unclosed in strings. Practice, then quiz. Build the greeting and wage calculator exercises, check solutions only after your own attempt, and take the Module 2 quiz when ready. Use the written lesson for full detail.",
-    "kind": "lesson"
+    "durationSec": 75.9,
+    "combinedTranscript": "Today\u2019s lesson goal: store values in variables, ask the user questions with input, and calculate and display clear results. Variables are labeled boxes. Write customer underscore name equals Sarah. Python chooses the type for you, and you assign again whenever you want to update the value. Common types you will use are text strings, whole numbers and decimals, and True or False values for yes or no decisions later. Worked example: a greeting. Store input Your name in a variable called name, then print an f-string Hello name. Type it yourself \u2014 do not only read it. Worked example: price with tax. Read the price as text, convert it with float, multiply by one point two for example tax, and print the total with two decimal places. Common mistakes include forgetting float before math on input, mixing up one equals for assignment with two equals for comparison, and leaving quotes unclosed in strings. Practice, then quiz. Build the greeting and wage calculator exercises, check solutions only after your own attempt, and take the Module 2 quiz when ready. Use the written lesson for full detail."
   },
   {
     "id": "07-csharp-basics",
     "title": "C# Module 2 \u2014 variables & input lesson",
+    "kind": "lesson",
     "when": "csharp-course, module-02-basics",
     "pathMatch": "csharp-beginner-workbook/module-02-basics",
     "hubAnchor": "csharp-basics",
@@ -93,13 +94,13 @@
     "transcript": "tutorial-07-csharp-basics-transcript.txt",
     "captions": "tutorial-07-csharp-basics.vtt",
     "audio": "tutorial-07-csharp-basics-voiceover.m4a",
-    "durationSec": 79.2,
-    "combinedTranscript": "Today\u2019s lesson goal: declare typed variables in C sharp, read input and convert numbers safely, and calculate totals people can understand. Declare with a type. String customer name equals Sarah. Int quantity equals 3. Double price equals 9.99. The type tells C sharp what kind of box you are creating. Types help beginners because the compiler catches many mistakes early. You see what each value is meant to be, and names plus types document your intent. Worked example: a greeting. Write a prompt, read the line into a string name, then write Hello name with string interpolation. Worked example: a tax total. Read a line of text, parse it with double.Parse, then multiply by one point two. Print the total with clear wording. Common mistakes include using the value before Parse succeeds, forgetting that ReadLine returns text, and opening a single file instead of the whole project folder. Practice, then quiz. Complete the Module 2 exercises in your console app, compare with solutions after you try, and take the Module 2 quiz. The written lesson has the full walkthrough.",
-    "kind": "lesson"
+    "durationSec": 76.9,
+    "combinedTranscript": "Today\u2019s lesson goal: declare typed variables in C sharp, read input and convert numbers safely, and calculate totals people can understand. Declare with a type. String customer name equals Sarah. Int quantity equals 3. Double price equals 9.99. The type tells C sharp what kind of box you are creating. Types help beginners because the compiler catches many mistakes early. You see what each value is meant to be, and names plus types document your intent. Worked example: a greeting. Write a prompt, read the line into a string name, then write Hello name with string interpolation. Worked example: a tax total. Read a line of text, parse it with double.Parse, then multiply by one point two. Print the total with clear wording. Common mistakes include using the value before Parse succeeds, forgetting that ReadLine returns text, and opening a single file instead of the whole project folder. Practice, then quiz. Complete the Module 2 exercises in your console app, compare with solutions after you try, and take the Module 2 quiz. The written lesson has the full walkthrough."
   },
   {
     "id": "08-ai-prompting-basics",
     "title": "AI Module 2 \u2014 prompting basics lesson",
+    "kind": "lesson",
     "when": "ai-course, 02-prompting-basics",
     "pathMatch": "languages/ai/beginner/modules/02-prompting-basics",
     "hubAnchor": "ai-prompting",
@@ -107,9 +108,8 @@
     "transcript": "tutorial-08-ai-prompting-basics-transcript.txt",
     "captions": "tutorial-08-ai-prompting-basics.vtt",
     "audio": "tutorial-08-ai-prompting-basics-voiceover.m4a",
-    "durationSec": 82.2,
-    "combinedTranscript": "Today\u2019s lesson goal: turn vague asks into clear prompts, separate role, task, constraints, and format, and test outputs before you trust them. Use a prompt recipe. Role: who the model should act as. Goal: what success looks like. Then add constraints and an output shape you can check. Compare vague versus specific. Vague says summarise this meeting. Specific asks for actions, owners, deadlines, as a JSON list. Specific prompts fail loudly, and that is useful. Worked rewrite: add role project assistant, require only using the notes provided, and return bullets in the shape action, owner, date. Use a few-shot example when it helps. Show one short correct example close to your real format, and remove examples that teach the wrong pattern. Test before you trust. Try good, empty, and conflicting inputs. Score format, factuality, and helpfulness. Tighten the rules, then retest the same cases. Practice checkpoint: rewrite one vague request from your day, save the before and after in the starter pack, then continue in the written Prompting Basics lesson for full exercises.",
-    "kind": "lesson"
+    "durationSec": 79.9,
+    "combinedTranscript": "Today\u2019s lesson goal: turn vague asks into clear prompts, separate role, task, constraints, and format, and test outputs before you trust them. Use a prompt recipe. Role: who the model should act as. Goal: what success looks like. Then add constraints and an output shape you can check. Compare vague versus specific. Vague says summarise this meeting. Specific asks for actions, owners, deadlines, as a JSON list. Specific prompts fail loudly, and that is useful. Worked rewrite: add role project assistant, require only using the notes provided, and return bullets in the shape action, owner, date. Use a few-shot example when it helps. Show one short correct example close to your real format, and remove examples that teach the wrong pattern. Test before you trust. Try good, empty, and conflicting inputs. Score format, factuality, and helpfulness. Tighten the rules, then retest the same cases. Practice checkpoint: rewrite one vague request from your day, save the before and after in the starter pack, then continue in the written Prompting Basics lesson for full exercises."
   },
   {
     "id": "09-python-control-flow",
@@ -122,7 +122,7 @@
     "transcript": "tutorial-09-python-control-flow-transcript.txt",
     "captions": "tutorial-09-python-control-flow.vtt",
     "audio": "tutorial-09-python-control-flow-voiceover.m4a",
-    "durationSec": 79.8,
+    "durationSec": 77.6,
     "combinedTranscript": "Today\u2019s lesson goal: make decisions with if, elif, and else, compare values and combine conditions, and repeat work with for and while loops. Why control flow matters: programs choose paths for discounts, menus, and checks. Loops process lists without copy-paste. This is the logic behind everyday apps. Decisions use if, elif, and else. Ask a true or false question, run one branch when the answer is true, use elif for more cases, and else for the rest. Worked example: a discount. If spend is over one hundred, apply ten percent. Else if spend is over fifty, apply five percent. Otherwise no discount, then print the final total. Loops: use for to walk through a known collection, and while to keep going until a condition changes. Avoid infinite loops by always updating the condition. Common mistakes: using a single equals instead of double equals in comparisons, forgetting indentation under if or for, and while true with no break or stop condition. Practice checkpoint: build a tiny menu or age check, loop through a short list and print each item, then continue in the written Module 3 lesson and quiz."
   },
   {
@@ -136,7 +136,7 @@
     "transcript": "tutorial-10-python-functions-transcript.txt",
     "captions": "tutorial-10-python-functions.vtt",
     "audio": "tutorial-10-python-functions-voiceover.m4a",
-    "durationSec": 71.3,
+    "durationSec": 69.0,
     "combinedTranscript": "Today\u2019s lesson goal: pack steps into named functions, pass inputs with parameters, and return results you can reuse. A function is a reusable recipe with a clear name. Call it whenever you need that work done. It keeps programs shorter and easier to test. Parameters are inputs the function receives. Return sends a value back to the caller. Prefer return over only printing when you need the result later. Worked example: define greet with a name parameter, return a friendly string, call it with different names, and reuse one function instead of copying print lines. Scope in plain words: names inside a function are local by default. Pass what you need in, return what you need out, and avoid relying on hidden global variables. Common mistakes: forgetting parentheses when calling, forgetting return and wondering why you get None, and functions that try to do five unrelated jobs. Practice checkpoint: write one function that calculates a total, call it twice with different inputs, then continue in the written Module 4 lesson and quiz."
   },
   {
@@ -150,7 +150,7 @@
     "transcript": "tutorial-11-python-collections-transcript.txt",
     "captions": "tutorial-11-python-collections.vtt",
     "audio": "tutorial-11-python-collections-voiceover.m4a",
-    "durationSec": 59.8,
+    "durationSec": 57.9,
     "combinedTranscript": "Today\u2019s lesson goal: store many values in lists, look up data with dictionaries, and choose the right collection for the job. Lists are ordered collections. Keep items in order, access by index, append or remove, and loop through items. Great for playlists, baskets, and queues. Dictionaries map a key to a value, like a labelled folder. Use them for fast lookups such as name to email or id to score. Keys must be unique. Worked example: keep a list of friend names and a dictionary of name to phone number, then loop the list and print each number from the dictionary. Common mistakes: off-by-one index errors, assuming a key exists without checking, and mixing up list order with dictionary keys. Practice checkpoint: build a tiny shopping list or contact book, add print and look up one item, then continue in the written Module 5 lesson and quiz."
   },
   {
@@ -164,7 +164,7 @@
     "transcript": "tutorial-12-python-oop-transcript.txt",
     "captions": "tutorial-12-python-oop.vtt",
     "audio": "tutorial-12-python-oop-voiceover.m4a",
-    "durationSec": 55.1,
+    "durationSec": 53.2,
     "combinedTranscript": "Today\u2019s lesson goal: model real things with classes, create objects with their own data, and call methods that use that data. A class is the blueprint. An object is one built example. Many objects can share the same class. Attributes store data on the object. Methods are functions tied to the object. Self means this particular object. Worked example: a Task class with a title and done flag, a mark done method that flips the flag, then create two tasks and mark one complete. Common mistakes: forgetting self in method definitions, calling methods incorrectly, and putting all logic in one giant class. Practice checkpoint: create a simple class for a book or student, add one method and call it, then continue in the written Module 6 lesson and quiz."
   },
   {
@@ -178,7 +178,7 @@
     "transcript": "tutorial-13-python-task-tracker-transcript.txt",
     "captions": "tutorial-13-python-task-tracker.vtt",
     "audio": "tutorial-13-python-task-tracker-voiceover.m4a",
-    "durationSec": 59.2,
+    "durationSec": 57.3,
     "combinedTranscript": "Today\u2019s lesson goal: build a small Task Tracker end to end, combine variables decisions loops and functions, and ship something you can show on a portfolio. Design before you code. List features like add, list, complete, and quit. Decide how tasks are stored, and sketch the menu loop on paper first. Use a core loop pattern: show a menu, read the user\u2019s choice, run the matching action, then show the menu again. Make it robust: handle empty input and bad menu choices, confirm before deleting if you add delete, and keep messages clear for beginners testing your app. Common mistakes: building every feature before the menu works, no way to quit the loop, and mixing storage format so list and complete disagree. Practice checkpoint: get add and list working first, then add complete and quit, and follow the written Module 7 project and acceptance checks."
   },
   {
@@ -192,7 +192,7 @@
     "transcript": "tutorial-14-csharp-control-flow-transcript.txt",
     "captions": "tutorial-14-csharp-control-flow.vtt",
     "audio": "tutorial-14-csharp-control-flow-voiceover.m4a",
-    "durationSec": 55.4,
+    "durationSec": 53.4,
     "combinedTranscript": "Today\u2019s lesson goal: use if, else if, and else in C sharp, compare values safely, and repeat work with for and while. Decisions in C sharp: conditions go in parentheses, blocks use curly braces, and else if chains handle multiple cases. Worked example: ticket price. Choose child, adult, or senior based on age, print the matching price, and otherwise ask for a valid age. Loops in C sharp: for when you know the count, while when you wait for a condition, and foreach when you walk a collection. Common mistakes: using a single equals instead of double equals, missing braces so only one line is conditional, and off-by-one errors in for loops. Practice checkpoint: write a small menu with three options, loop until the user quits, then continue in the written Module 3 lesson and quiz."
   },
   {
@@ -206,7 +206,7 @@
     "transcript": "tutorial-15-csharp-methods-transcript.txt",
     "captions": "tutorial-15-csharp-methods.vtt",
     "audio": "tutorial-15-csharp-methods-voiceover.m4a",
-    "durationSec": 50.4,
+    "durationSec": 48.8,
     "combinedTranscript": "Today\u2019s lesson goal: write methods that do one clear job, pass arguments and return values, and keep Main short by calling helpers. Methods are named actions. Declare return type, name, and parameters. Void means it returns nothing. Call methods to reuse logic. Worked example: a Total method that takes price and quantity, returns price times quantity, then print the result from Main. Common mistakes: wrong return type for the value you send back, forgetting return in non-void methods, and huge methods that mix input, math, and printing. Practice checkpoint: extract one repeated calculation into a method, call it twice from Main, then continue in the written Module 4 lesson and quiz."
   },
   {
@@ -220,7 +220,7 @@
     "transcript": "tutorial-16-csharp-collections-transcript.txt",
     "captions": "tutorial-16-csharp-collections.vtt",
     "audio": "tutorial-16-csharp-collections-voiceover.m4a",
-    "durationSec": 43.0,
+    "durationSec": 41.4,
     "combinedTranscript": "Today\u2019s lesson goal: use lists for ordered items, use dictionaries for key lookups, and loop collections with foreach. List stores items in sequence. Dictionary maps keys to values. Pick the structure that matches the problem. Worked example: a list of player names and a dictionary of name to score, then foreach name print the score. Common mistakes: using arrays when a List is easier to grow, KeyNotFound when a key is missing, and mutating a collection while foreach runs. Practice checkpoint: store three items and print them, look up one value by key, then continue in the written Module 5 lesson and quiz."
   },
   {
@@ -234,7 +234,7 @@
     "transcript": "tutorial-17-csharp-oop-transcript.txt",
     "captions": "tutorial-17-csharp-oop.vtt",
     "audio": "tutorial-17-csharp-oop-voiceover.m4a",
-    "durationSec": 35.0,
+    "durationSec": 33.7,
     "combinedTranscript": "Today\u2019s lesson goal: create a simple class in C sharp, add properties and a method, and construct objects and use them. A class defines fields or properties. New creates an instance. Methods act on that instance\u2019s data. Worked example: a Book with Title and IsRead properties, a MarkRead method, then create two books and mark one read. Practice checkpoint: model one real-world thing as a class, add one behaviour method, then continue in the written Module 6 lesson and quiz."
   },
   {
@@ -248,7 +248,7 @@
     "transcript": "tutorial-18-csharp-task-tracker-transcript.txt",
     "captions": "tutorial-18-csharp-task-tracker.vtt",
     "audio": "tutorial-18-csharp-task-tracker-voiceover.m4a",
-    "durationSec": 33.0,
+    "durationSec": 31.7,
     "combinedTranscript": "Today\u2019s lesson goal: assemble a console Task Tracker, use methods and a list of tasks, and deliver a portfolio-ready mini app. Build in thin slices: menu loop first, add and list next, complete and quit last. Robust behaviour: validate menu choices, ignore empty task titles, and show friendly messages for bad input. Practice checkpoint: ship a working add and list flow today, then complete the written project checks, and save a short README of how to run it."
   },
   {
@@ -262,7 +262,7 @@
     "transcript": "tutorial-19-ai-prompt-patterns-transcript.txt",
     "captions": "tutorial-19-ai-prompt-patterns.vtt",
     "audio": "tutorial-19-ai-prompt-patterns-voiceover.m4a",
-    "durationSec": 51.4,
+    "durationSec": 49.8,
     "combinedTranscript": "Today\u2019s lesson goal: reuse proven prompt patterns, extract structured fields reliably, and add a review pass that does not invent facts. Checklist pattern: list required fields explicitly, say what to do when data is missing, and reject guesses that are not in the source. Decompose then verify: break the job into clear steps, keep drafting separate from checking, and verify structure before you trust content. Worked example: extract name, account, issue, and urgency as JSON from an email. Only use the email text. A repair pass fixes invalid JSON without adding new facts. Practice checkpoint: apply two patterns to the same task, compare which fails less often, then continue in the written Module 3 lesson."
   },
   {
@@ -276,7 +276,7 @@
     "transcript": "tutorial-20-ai-evaluation-transcript.txt",
     "captions": "tutorial-20-ai-evaluation.vtt",
     "audio": "tutorial-20-ai-evaluation-voiceover.m4a",
-    "durationSec": 40.8,
+    "durationSec": 39.5,
     "combinedTranscript": "Today\u2019s lesson goal: build a small evaluation set, score outputs the same way each time, and iterate with evidence, not vibes. Good evaluation uses ten or more cases covering good, bad, and ambiguous inputs, a fixed rubric for format accuracy and safety, and reruns the same set after each prompt change. Worked example cases: empty input should refuse politely, a clear ticket should extract fields, and conflicting dates should ask, not invent. Practice checkpoint: write five eval cases for your prompt, score a before and after change, then continue in the written Module 4 lesson."
   },
   {
@@ -290,7 +290,7 @@
     "transcript": "tutorial-21-ai-safety-transcript.txt",
     "captions": "tutorial-21-ai-safety.vtt",
     "audio": "tutorial-21-ai-safety-voiceover.m4a",
-    "durationSec": 39.9,
+    "durationSec": 38.6,
     "combinedTranscript": "Today\u2019s lesson goal: spot risky prompts and outputs, add clear refusal and escalation rules, and keep user data out of places it should not go. Practical safety habits: do not paste secrets into prompts, refuse harmful or disallowed requests, and document what the system must never do. Worked example: a support bot may summarise tickets from provided text, must not invent refunds or legal advice, and must escalate threats to a human. Practice checkpoint: write a short safety checklist for your use case, add two refusal test prompts, then continue in the written Module 5 lesson."
   },
   {
@@ -304,7 +304,7 @@
     "transcript": "tutorial-22-ai-workflows-transcript.txt",
     "captions": "tutorial-22-ai-workflows.vtt",
     "audio": "tutorial-22-ai-workflows-voiceover.m4a",
-    "durationSec": 38.6,
+    "durationSec": 37.3,
     "combinedTranscript": "Today\u2019s lesson goal: chain steps into a simple workflow, keep humans in the loop where it matters, and log decisions so you can improve later. Workflow thinking: input, transform, check, output. Each step has a clear owner, model or human. Failures should stop or escalate, not silently invent. Worked example: draft a summary, validate required fields, then a human approves before send. Practice checkpoint: draw a three-step workflow for a real task, mark which steps need a human, then continue in the written Module 6 lesson."
   },
   {
@@ -318,7 +318,7 @@
     "transcript": "tutorial-23-intermediate-modules-guide-transcript.txt",
     "captions": "tutorial-23-intermediate-modules-guide.vtt",
     "audio": "tutorial-23-intermediate-modules-guide-voiceover.m4a",
-    "durationSec": 39.8,
+    "durationSec": 38.5,
     "combinedTranscript": "How these intermediate modules work: each one builds one practical skill. Read the lesson, try the examples, then take the quiz, and keep notes of decisions and tradeoffs. Use a steady study rhythm: skim goals first, type along with worked examples, and only then attempt Core and Better exercises. When you get stuck, re-read the common mistakes section, simplify the input and retry, or open Help and return to the previous module if needed. Next step: open the written lesson for this module, mark progress as you complete quizzes, and move on when Core exercises pass your own checks."
   },
   {
@@ -332,7 +332,7 @@
     "transcript": "tutorial-24-advanced-modules-guide-transcript.txt",
     "captions": "tutorial-24-advanced-modules-guide.vtt",
     "audio": "tutorial-24-advanced-modules-guide-voiceover.m4a",
-    "durationSec": 39.5,
+    "durationSec": 38.3,
     "combinedTranscript": "Advanced module expectations: assume beginner fundamentals are solid, focus on design tradeoffs and reliability, and treat each module like a professional brief. How to learn effectively: restate the problem in your own words, compare two approaches before coding, and write down failure modes you must avoid. Evidence of progress: complete the quiz to check understanding, keep a short change log of what you tried, and link your notes to the module acceptance criteria. Next step: open this module\u2019s written lesson now, work Core exercises before Beast Mode, and ask for help early on architecture questions."
   }
 ]

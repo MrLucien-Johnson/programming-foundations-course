@@ -34,5 +34,5 @@ COMBINED READ-ALOUD
 Today’s lesson goal: declare typed variables in C sharp, read input and convert numbers safely, and calculate totals people can understand. Declare with a type. String customer name equals Sarah. Int quantity equals 3. Double price equals 9.99. The type tells C sharp what kind of box you are creating. Types help beginners because the compiler catches many mistakes early. You see what each value is meant to be, and names plus types document your intent. Worked example: a greeting. Write a prompt, read the line into a string name, then write Hello name with string interpolation. Worked example: a tax total. Read a line of text, parse it with double.Parse, then multiply by one point two. Print the total with clear wording. Common mistakes include using the value before Parse succeeds, forgetting that ReadLine returns text, and opening a single file instead of the whole project folder. Practice, then quiz. Complete the Module 2 exercises in your console app, compare with solutions after you try, and take the Module 2 quiz. The written lesson has the full walkthrough.
 
 Voice: en-US JennyNeural (edge-tts)
-Captions: matching .vtt file (for deaf / hard-of-hearing users)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

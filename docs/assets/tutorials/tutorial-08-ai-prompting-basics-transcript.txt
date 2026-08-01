@@ -34,5 +34,5 @@ COMBINED READ-ALOUD
 Today’s lesson goal: turn vague asks into clear prompts, separate role, task, constraints, and format, and test outputs before you trust them. Use a prompt recipe. Role: who the model should act as. Goal: what success looks like. Then add constraints and an output shape you can check. Compare vague versus specific. Vague says summarise this meeting. Specific asks for actions, owners, deadlines, as a JSON list. Specific prompts fail loudly, and that is useful. Worked rewrite: add role project assistant, require only using the notes provided, and return bullets in the shape action, owner, date. Use a few-shot example when it helps. Show one short correct example close to your real format, and remove examples that teach the wrong pattern. Test before you trust. Try good, empty, and conflicting inputs. Score format, factuality, and helpfulness. Tighten the rules, then retest the same cases. Practice checkpoint: rewrite one vague request from your day, save the before and after in the starter pack, then continue in the written Prompting Basics lesson for full exercises.
 
 Voice: en-US JennyNeural (edge-tts)
-Captions: matching .vtt file (for deaf / hard-of-hearing users)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html
