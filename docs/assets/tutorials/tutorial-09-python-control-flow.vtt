@@ -1,0 +1,29 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:09.120
+Today’s lesson goal: Today’s lesson goal: make decisions with if, elif, and else, compare values and combine conditions, and repeat work with for and while loops.
+
+2
+00:00:09.470 --> 00:00:21.950
+Why control flow matters: Why control flow matters: programs choose paths for discounts, menus, and checks. Loops process lists without copy-paste. This is the logic behind everyday apps.
+
+3
+00:00:22.300 --> 00:00:33.484
+Decisions: if / elif / else: Decisions use if, elif, and else. Ask a true or false question, run one branch when the answer is true, use elif for more cases, and else for the rest.
+
+4
+00:00:33.834 --> 00:00:47.874
+Worked example: discount: Worked example: a discount. If spend is over one hundred, apply ten percent. Else if spend is over fifty, apply five percent. Otherwise no discount, then print the final total.
+
+5
+00:00:48.224 --> 00:00:58.280
+Loops: for and while: Loops: use for to walk through a known collection, and while to keep going until a condition changes. Avoid infinite loops by always updating the condition.
+
+6
+00:00:58.630 --> 00:01:09.334
+Common mistakes: Common mistakes: using a single equals instead of double equals in comparisons, forgetting indentation under if or for, and while true with no break or stop condition.
+
+7
+00:01:09.684 --> 00:01:19.620
+Practice checkpoint: Practice checkpoint: build a tiny menu or age check, loop through a short list and print each item, then continue in the written Module 3 lesson and quiz.

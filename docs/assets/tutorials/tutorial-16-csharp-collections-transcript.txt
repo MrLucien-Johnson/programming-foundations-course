@@ -1,0 +1,32 @@
+Programming Foundations — Tutorial: C# Module 5 — collections lesson
+ID: 16-csharp-collections
+Suggested placement: csharp-course, module-05-collections
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] Today’s lesson goal
+Today’s lesson goal: use lists for ordered items, use dictionaries for key lookups, and loop collections with foreach.
+
+[Slide 2] List and Dictionary
+List stores items in sequence. Dictionary maps keys to values. Pick the structure that matches the problem.
+
+[Slide 3] Worked example: scores
+Worked example: a list of player names and a dictionary of name to score, then foreach name print the score.
+
+[Slide 4] Common mistakes
+Common mistakes: using arrays when a List is easier to grow, KeyNotFound when a key is missing, and mutating a collection while foreach runs.
+
+[Slide 5] Practice checkpoint
+Practice checkpoint: store three items and print them, look up one value by key, then continue in the written Module 5 lesson and quiz.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+Today’s lesson goal: use lists for ordered items, use dictionaries for key lookups, and loop collections with foreach. List stores items in sequence. Dictionary maps keys to values. Pick the structure that matches the problem. Worked example: a list of player names and a dictionary of name to score, then foreach name print the score. Common mistakes: using arrays when a List is easier to grow, KeyNotFound when a key is missing, and mutating a collection while foreach runs. Practice checkpoint: store three items and print them, look up one value by key, then continue in the written Module 5 lesson and quiz.
+
+Voice: en-US JennyNeural (edge-tts)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

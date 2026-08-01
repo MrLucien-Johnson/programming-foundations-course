@@ -1,0 +1,29 @@
+Programming Foundations — Tutorial: AI Module 6 — workflows lesson
+ID: 22-ai-workflows
+Suggested placement: ai-course, 06-workflows-and-automation
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] Today’s lesson goal
+Today’s lesson goal: chain steps into a simple workflow, keep humans in the loop where it matters, and log decisions so you can improve later.
+
+[Slide 2] Workflow thinking
+Workflow thinking: input, transform, check, output. Each step has a clear owner, model or human. Failures should stop or escalate, not silently invent.
+
+[Slide 3] Worked example
+Worked example: draft a summary, validate required fields, then a human approves before send.
+
+[Slide 4] Practice checkpoint
+Practice checkpoint: draw a three-step workflow for a real task, mark which steps need a human, then continue in the written Module 6 lesson.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+Today’s lesson goal: chain steps into a simple workflow, keep humans in the loop where it matters, and log decisions so you can improve later. Workflow thinking: input, transform, check, output. Each step has a clear owner, model or human. Failures should stop or escalate, not silently invent. Worked example: draft a summary, validate required fields, then a human approves before send. Practice checkpoint: draw a three-step workflow for a real task, mark which steps need a human, then continue in the written Module 6 lesson.
+
+Voice: en-US JennyNeural (edge-tts)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

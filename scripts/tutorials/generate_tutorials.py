@@ -13,6 +13,8 @@ from pathlib import Path
 import edge_tts
 from PIL import Image, ImageDraw, ImageFont
 
+from lesson_bank import EXTRA_TUTORIALS
+
 ROOT = Path(__file__).resolve().parents[2]
 OUT_DIR = ROOT / "docs" / "assets" / "tutorials"
 VOICE = "en-US-JennyNeural"
@@ -705,6 +707,8 @@ TUTORIALS = [
     },
 ]
 
+TUTORIALS += EXTRA_TUTORIALS
+
 
 def fmt_vtt_time(seconds: float) -> str:
     ms = int(round(seconds * 1000))
@@ -771,7 +775,7 @@ async def build_one(tutorial: dict, work: Path) -> dict:
             " ".join(full_vo),
             "",
             "Voice: en-US JennyNeural (edge-tts)",
-            "Captions: matching .vtt file (for deaf / hard-of-hearing users)",
+            "Captions: matching .vtt file (enable captions or use the on-page transcript)",
             "Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html",
         ]
     )
@@ -894,7 +898,7 @@ async def main() -> None:
     readme.extend(
         [
             "",
-            "Deaf / hard-of-hearing: enable captions on the video player, or open the on-page transcript / `.txt` download.",
+            "Prefer text? Enable captions on the video player, or open the on-page transcript / `.txt` download.",
             "",
             "Play on site: `docs/tutorials.html`",
             "",

@@ -1,0 +1,29 @@
+Programming Foundations — Tutorial: How to study intermediate modules
+ID: 23-intermediate-modules-guide
+Suggested placement: advanced courses, intermediate modules
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] How these modules work
+How these intermediate modules work: each one builds one practical skill. Read the lesson, try the examples, then take the quiz, and keep notes of decisions and tradeoffs.
+
+[Slide 2] Study rhythm
+Use a steady study rhythm: skim goals first, type along with worked examples, and only then attempt Core and Better exercises.
+
+[Slide 3] When you get stuck
+When you get stuck, re-read the common mistakes section, simplify the input and retry, or open Help and return to the previous module if needed.
+
+[Slide 4] Next step
+Next step: open the written lesson for this module, mark progress as you complete quizzes, and move on when Core exercises pass your own checks.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+How these intermediate modules work: each one builds one practical skill. Read the lesson, try the examples, then take the quiz, and keep notes of decisions and tradeoffs. Use a steady study rhythm: skim goals first, type along with worked examples, and only then attempt Core and Better exercises. When you get stuck, re-read the common mistakes section, simplify the input and retry, or open Help and return to the previous module if needed. Next step: open the written lesson for this module, mark progress as you complete quizzes, and move on when Core exercises pass your own checks.
+
+Voice: en-US JennyNeural (edge-tts)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

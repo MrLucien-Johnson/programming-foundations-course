@@ -1,0 +1,25 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:09.816
+Today’s lesson goal: Today’s lesson goal: build a small Task Tracker end to end, combine variables decisions loops and functions, and ship something you can show on a portfolio.
+
+2
+00:00:10.166 --> 00:00:21.446
+Design before you code: Design before you code. List features like add, list, complete, and quit. Decide how tasks are stored, and sketch the menu loop on paper first.
+
+3
+00:00:21.796 --> 00:00:29.404
+Core loop pattern: Use a core loop pattern: show a menu, read the user’s choice, run the matching action, then show the menu again.
+
+4
+00:00:29.754 --> 00:00:39.858
+Make it robust: Make it robust: handle empty input and bad menu choices, confirm before deleting if you add delete, and keep messages clear for beginners testing your app.
+
+5
+00:00:40.208 --> 00:00:49.424
+Common mistakes: Common mistakes: building every feature before the menu works, no way to quit the loop, and mixing storage format so list and complete disagree.
+
+6
+00:00:49.774 --> 00:00:59.014
+Practice checkpoint: Practice checkpoint: get add and list working first, then add complete and quit, and follow the written Module 7 project and acceptance checks.

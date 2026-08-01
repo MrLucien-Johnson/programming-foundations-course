@@ -1,0 +1,25 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:08.112
+Today’s lesson goal: Today’s lesson goal: model real things with classes, create objects with their own data, and call methods that use that data.
+
+2
+00:00:08.462 --> 00:00:16.790
+Class vs object: A class is the blueprint. An object is one built example. Many objects can share the same class.
+
+3
+00:00:17.140 --> 00:00:26.140
+Attributes and methods: Attributes store data on the object. Methods are functions tied to the object. Self means this particular object.
+
+4
+00:00:26.490 --> 00:00:36.138
+Worked example: Task: Worked example: a Task class with a title and done flag, a mark done method that flips the flag, then create two tasks and mark one complete.
+
+5
+00:00:36.488 --> 00:00:45.104
+Common mistakes: Common mistakes: forgetting self in method definitions, calling methods incorrectly, and putting all logic in one giant class.
+
+6
+00:00:45.454 --> 00:00:54.910
+Practice checkpoint: Practice checkpoint: create a simple class for a book or student, add one method and call it, then continue in the written Module 6 lesson and quiz.

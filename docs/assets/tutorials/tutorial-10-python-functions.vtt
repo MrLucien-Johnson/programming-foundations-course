@@ -1,0 +1,29 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:07.800
+Today’s lesson goal: Today’s lesson goal: pack steps into named functions, pass inputs with parameters, and return results you can reuse.
+
+2
+00:00:08.150 --> 00:00:18.110
+What a function is: A function is a reusable recipe with a clear name. Call it whenever you need that work done. It keeps programs shorter and easier to test.
+
+3
+00:00:18.460 --> 00:00:28.804
+Parameters and return: Parameters are inputs the function receives. Return sends a value back to the caller. Prefer return over only printing when you need the result later.
+
+4
+00:00:29.154 --> 00:00:39.618
+Worked example: greeting: Worked example: define greet with a name parameter, return a friendly string, call it with different names, and reuse one function instead of copying print lines.
+
+5
+00:00:39.968 --> 00:00:50.696
+Scope in plain words: Scope in plain words: names inside a function are local by default. Pass what you need in, return what you need out, and avoid relying on hidden global variables.
+
+6
+00:00:51.046 --> 00:01:00.670
+Common mistakes: Common mistakes: forgetting parentheses when calling, forgetting return and wondering why you get None, and functions that try to do five unrelated jobs.
+
+7
+00:01:01.020 --> 00:01:11.052
+Practice checkpoint: Practice checkpoint: write one function that calculates a total, call it twice with different inputs, then continue in the written Module 4 lesson and quiz.

@@ -1,5 +1,7 @@
 # Module 4: Functions
 
+> **Voiceover lesson (with captions & read-along transcript):** [Python functions](../../docs/tutorials.html#python-functions) — then continue with the written lesson below.
+
 ## 🎯 What You'll Learn
 
 By the end of this module, you will be able to:

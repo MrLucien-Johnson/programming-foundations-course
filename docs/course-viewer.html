@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Course Lesson Viewer</title>
-    <link rel="stylesheet" href="styles.css?v=ux23" />
+    <link rel="stylesheet" href="styles.css?v=ux25" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux23"></script>
+    <script src="site.js?v=ux25"></script>
 
     <main id="main" class="container">
       <div id="pf-resume-host" hidden></div>
@@ -117,6 +117,7 @@
         {
           pathMatch: "python-beginner-workbook/module-01-setup",
           title: "Python — download, install, first script",
+          kind: "setup",
           file: "tutorial-02-python-setup.mp4",
           transcript: "tutorial-02-python-setup-transcript.txt",
           captions: "tutorial-02-python-setup.vtt",
@@ -127,11 +128,232 @@
         {
           pathMatch: "csharp-beginner-workbook/module-01-setup",
           title: "C# — install .NET and first project",
+          kind: "setup",
           file: "tutorial-03-csharp-setup.mp4",
           transcript: "tutorial-03-csharp-setup-transcript.txt",
           captions: "tutorial-03-csharp-setup.vtt",
           audio: "tutorial-03-csharp-setup-voiceover.m4a",
           hubAnchor: "csharp-setup",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "languages/ai/beginner/modules/01-ai-foundations",
+          title: "AI Module 1 — foundations lesson",
+          kind: "lesson",
+          file: "tutorial-05-ai-foundations.mp4",
+          transcript: "tutorial-05-ai-foundations-transcript.txt",
+          captions: "tutorial-05-ai-foundations.vtt",
+          audio: "tutorial-05-ai-foundations-voiceover.m4a",
+          hubAnchor: "ai-foundations",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "python-beginner-workbook/module-02-basics",
+          title: "Python Module 2 — variables & input lesson",
+          kind: "lesson",
+          file: "tutorial-06-python-basics.mp4",
+          transcript: "tutorial-06-python-basics-transcript.txt",
+          captions: "tutorial-06-python-basics.vtt",
+          audio: "tutorial-06-python-basics-voiceover.m4a",
+          hubAnchor: "python-basics",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "csharp-beginner-workbook/module-02-basics",
+          title: "C# Module 2 — variables & input lesson",
+          kind: "lesson",
+          file: "tutorial-07-csharp-basics.mp4",
+          transcript: "tutorial-07-csharp-basics-transcript.txt",
+          captions: "tutorial-07-csharp-basics.vtt",
+          audio: "tutorial-07-csharp-basics-voiceover.m4a",
+          hubAnchor: "csharp-basics",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "languages/ai/beginner/modules/02-prompting-basics",
+          title: "AI Module 2 — prompting basics lesson",
+          kind: "lesson",
+          file: "tutorial-08-ai-prompting-basics.mp4",
+          transcript: "tutorial-08-ai-prompting-basics-transcript.txt",
+          captions: "tutorial-08-ai-prompting-basics.vtt",
+          audio: "tutorial-08-ai-prompting-basics-voiceover.m4a",
+          hubAnchor: "ai-prompting",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "python-beginner-workbook/module-03-control-flow",
+          title: "Python Module 3 — decisions & loops lesson",
+          kind: "lesson",
+          file: "tutorial-09-python-control-flow.mp4",
+          transcript: "tutorial-09-python-control-flow-transcript.txt",
+          captions: "tutorial-09-python-control-flow.vtt",
+          audio: "tutorial-09-python-control-flow-voiceover.m4a",
+          hubAnchor: "python-control-flow",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "python-beginner-workbook/module-04-functions",
+          title: "Python Module 4 — functions lesson",
+          kind: "lesson",
+          file: "tutorial-10-python-functions.mp4",
+          transcript: "tutorial-10-python-functions-transcript.txt",
+          captions: "tutorial-10-python-functions.vtt",
+          audio: "tutorial-10-python-functions-voiceover.m4a",
+          hubAnchor: "python-functions",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "python-beginner-workbook/module-05-collections",
+          title: "Python Module 5 — collections lesson",
+          kind: "lesson",
+          file: "tutorial-11-python-collections.mp4",
+          transcript: "tutorial-11-python-collections-transcript.txt",
+          captions: "tutorial-11-python-collections.vtt",
+          audio: "tutorial-11-python-collections-voiceover.m4a",
+          hubAnchor: "python-collections",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "python-beginner-workbook/module-06-oop",
+          title: "Python Module 6 — OOP lesson",
+          kind: "lesson",
+          file: "tutorial-12-python-oop.mp4",
+          transcript: "tutorial-12-python-oop-transcript.txt",
+          captions: "tutorial-12-python-oop.vtt",
+          audio: "tutorial-12-python-oop-voiceover.m4a",
+          hubAnchor: "python-oop",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "python-beginner-workbook/module-07-task-tracker",
+          title: "Python Module 7 — task tracker lesson",
+          kind: "lesson",
+          file: "tutorial-13-python-task-tracker.mp4",
+          transcript: "tutorial-13-python-task-tracker-transcript.txt",
+          captions: "tutorial-13-python-task-tracker.vtt",
+          audio: "tutorial-13-python-task-tracker-voiceover.m4a",
+          hubAnchor: "python-task-tracker",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "csharp-beginner-workbook/module-03-control-flow",
+          title: "C# Module 3 — decisions & loops lesson",
+          kind: "lesson",
+          file: "tutorial-14-csharp-control-flow.mp4",
+          transcript: "tutorial-14-csharp-control-flow-transcript.txt",
+          captions: "tutorial-14-csharp-control-flow.vtt",
+          audio: "tutorial-14-csharp-control-flow-voiceover.m4a",
+          hubAnchor: "csharp-control-flow",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "csharp-beginner-workbook/module-04-methods",
+          title: "C# Module 4 — methods lesson",
+          kind: "lesson",
+          file: "tutorial-15-csharp-methods.mp4",
+          transcript: "tutorial-15-csharp-methods-transcript.txt",
+          captions: "tutorial-15-csharp-methods.vtt",
+          audio: "tutorial-15-csharp-methods-voiceover.m4a",
+          hubAnchor: "csharp-methods",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "csharp-beginner-workbook/module-05-collections",
+          title: "C# Module 5 — collections lesson",
+          kind: "lesson",
+          file: "tutorial-16-csharp-collections.mp4",
+          transcript: "tutorial-16-csharp-collections-transcript.txt",
+          captions: "tutorial-16-csharp-collections.vtt",
+          audio: "tutorial-16-csharp-collections-voiceover.m4a",
+          hubAnchor: "csharp-collections",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "csharp-beginner-workbook/module-06-oop-intro",
+          title: "C# Module 6 — OOP lesson",
+          kind: "lesson",
+          file: "tutorial-17-csharp-oop.mp4",
+          transcript: "tutorial-17-csharp-oop-transcript.txt",
+          captions: "tutorial-17-csharp-oop.vtt",
+          audio: "tutorial-17-csharp-oop-voiceover.m4a",
+          hubAnchor: "csharp-oop",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "csharp-beginner-workbook/module-07-task-tracker",
+          title: "C# Module 7 — task tracker lesson",
+          kind: "lesson",
+          file: "tutorial-18-csharp-task-tracker.mp4",
+          transcript: "tutorial-18-csharp-task-tracker-transcript.txt",
+          captions: "tutorial-18-csharp-task-tracker.vtt",
+          audio: "tutorial-18-csharp-task-tracker-voiceover.m4a",
+          hubAnchor: "csharp-task-tracker",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "languages/ai/beginner/modules/03-prompt-patterns",
+          title: "AI Module 3 — prompt patterns lesson",
+          kind: "lesson",
+          file: "tutorial-19-ai-prompt-patterns.mp4",
+          transcript: "tutorial-19-ai-prompt-patterns-transcript.txt",
+          captions: "tutorial-19-ai-prompt-patterns.vtt",
+          audio: "tutorial-19-ai-prompt-patterns-voiceover.m4a",
+          hubAnchor: "ai-prompt-patterns",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "languages/ai/beginner/modules/04-evaluation-and-iteration",
+          title: "AI Module 4 — evaluation lesson",
+          kind: "lesson",
+          file: "tutorial-20-ai-evaluation.mp4",
+          transcript: "tutorial-20-ai-evaluation-transcript.txt",
+          captions: "tutorial-20-ai-evaluation.vtt",
+          audio: "tutorial-20-ai-evaluation-voiceover.m4a",
+          hubAnchor: "ai-evaluation",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "languages/ai/beginner/modules/05-safety-and-policy-basics",
+          title: "AI Module 5 — safety lesson",
+          kind: "lesson",
+          file: "tutorial-21-ai-safety.mp4",
+          transcript: "tutorial-21-ai-safety-transcript.txt",
+          captions: "tutorial-21-ai-safety.vtt",
+          audio: "tutorial-21-ai-safety-voiceover.m4a",
+          hubAnchor: "ai-safety",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "languages/ai/beginner/modules/06-workflows-and-automation",
+          title: "AI Module 6 — workflows lesson",
+          kind: "lesson",
+          file: "tutorial-22-ai-workflows.mp4",
+          transcript: "tutorial-22-ai-workflows-transcript.txt",
+          captions: "tutorial-22-ai-workflows.vtt",
+          audio: "tutorial-22-ai-workflows-voiceover.m4a",
+          hubAnchor: "ai-workflows",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "/intermediate/modules/",
+          title: "How to study intermediate modules",
+          kind: "setup",
+          file: "tutorial-23-intermediate-modules-guide.mp4",
+          transcript: "tutorial-23-intermediate-modules-guide-transcript.txt",
+          captions: "tutorial-23-intermediate-modules-guide.vtt",
+          audio: "tutorial-23-intermediate-modules-guide-voiceover.m4a",
+          hubAnchor: "intermediate-guide",
+          combinedTranscript: "",
+        },
+        {
+          pathMatch: "/advanced/modules/",
+          title: "How to study advanced modules",
+          kind: "setup",
+          file: "tutorial-24-advanced-modules-guide.mp4",
+          transcript: "tutorial-24-advanced-modules-guide-transcript.txt",
+          captions: "tutorial-24-advanced-modules-guide.vtt",
+          audio: "tutorial-24-advanced-modules-guide-voiceover.m4a",
+          hubAnchor: "advanced-guide",
           combinedTranscript: "",
         },
       ];
@@ -152,9 +374,12 @@
 
       const findTutorialForPath = (path, items) => {
         const normalized = String(path || "");
-        return (items || []).find(
+        const matches = (items || []).filter(
           (entry) => entry.pathMatch && normalized.includes(entry.pathMatch)
         );
+        if (!matches.length) return null;
+        matches.sort((a, b) => String(b.pathMatch).length - String(a.pathMatch).length);
+        return matches[0];
       };
 
       const mountLessonTutorial = async (path) => {

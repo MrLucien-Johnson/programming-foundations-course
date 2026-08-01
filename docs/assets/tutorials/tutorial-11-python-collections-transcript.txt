@@ -1,0 +1,35 @@
+Programming Foundations — Tutorial: Python Module 5 — collections lesson
+ID: 11-python-collections
+Suggested placement: python-course, module-05-collections
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] Today’s lesson goal
+Today’s lesson goal: store many values in lists, look up data with dictionaries, and choose the right collection for the job.
+
+[Slide 2] Lists: ordered collections
+Lists are ordered collections. Keep items in order, access by index, append or remove, and loop through items. Great for playlists, baskets, and queues.
+
+[Slide 3] Dictionaries: keys to values
+Dictionaries map a key to a value, like a labelled folder. Use them for fast lookups such as name to email or id to score. Keys must be unique.
+
+[Slide 4] Worked example: contacts
+Worked example: keep a list of friend names and a dictionary of name to phone number, then loop the list and print each number from the dictionary.
+
+[Slide 5] Common mistakes
+Common mistakes: off-by-one index errors, assuming a key exists without checking, and mixing up list order with dictionary keys.
+
+[Slide 6] Practice checkpoint
+Practice checkpoint: build a tiny shopping list or contact book, add print and look up one item, then continue in the written Module 5 lesson and quiz.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+Today’s lesson goal: store many values in lists, look up data with dictionaries, and choose the right collection for the job. Lists are ordered collections. Keep items in order, access by index, append or remove, and loop through items. Great for playlists, baskets, and queues. Dictionaries map a key to a value, like a labelled folder. Use them for fast lookups such as name to email or id to score. Keys must be unique. Worked example: keep a list of friend names and a dictionary of name to phone number, then loop the list and print each number from the dictionary. Common mistakes: off-by-one index errors, assuming a key exists without checking, and mixing up list order with dictionary keys. Practice checkpoint: build a tiny shopping list or contact book, add print and look up one item, then continue in the written Module 5 lesson and quiz.
+
+Voice: en-US JennyNeural (edge-tts)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

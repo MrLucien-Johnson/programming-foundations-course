@@ -1,5 +1,7 @@
 # Module 4: Methods
 
+> **Voiceover lesson (with captions & read-along transcript):** [C# methods](../../docs/tutorials.html#csharp-methods) — then continue with the written lesson below.
+
 ## 🎯 What You'll Learn
 
 By the end of this module, you will be able to:

@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:08.064
+Today’s lesson goal: Today’s lesson goal: create a simple class in C sharp, add properties and a method, and construct objects and use them.
+
+2
+00:00:08.414 --> 00:00:16.838
+Classes and objects: A class defines fields or properties. New creates an instance. Methods act on that instance’s data.
+
+3
+00:00:17.188 --> 00:00:25.132
+Worked example: Book: Worked example: a Book with Title and IsRead properties, a MarkRead method, then create two books and mark one read.
+
+4
+00:00:25.482 --> 00:00:34.674
+Practice checkpoint: Practice checkpoint: model one real-world thing as a class, add one behaviour method, then continue in the written Module 6 lesson and quiz.

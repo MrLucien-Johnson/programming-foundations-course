@@ -1,5 +1,7 @@
 # Module 7: Task Tracker Application - Your Portfolio Project
 
+> **Voiceover lesson (with captions & read-along transcript):** [C# task tracker](../../docs/tutorials.html#csharp-task-tracker) — then continue with the written lesson below.
+
 ## 🎯 What You're Building
 
 You're going to build a **complete, working Task Tracker application** - a console program that lets you add, view, and manage tasks. This is your **portfolio project** - something you can show to employers to demonstrate your C# programming skills!

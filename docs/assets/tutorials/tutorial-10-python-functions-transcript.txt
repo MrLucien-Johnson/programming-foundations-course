@@ -1,0 +1,38 @@
+Programming Foundations — Tutorial: Python Module 4 — functions lesson
+ID: 10-python-functions
+Suggested placement: python-course, module-04-functions
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] Today’s lesson goal
+Today’s lesson goal: pack steps into named functions, pass inputs with parameters, and return results you can reuse.
+
+[Slide 2] What a function is
+A function is a reusable recipe with a clear name. Call it whenever you need that work done. It keeps programs shorter and easier to test.
+
+[Slide 3] Parameters and return
+Parameters are inputs the function receives. Return sends a value back to the caller. Prefer return over only printing when you need the result later.
+
+[Slide 4] Worked example: greeting
+Worked example: define greet with a name parameter, return a friendly string, call it with different names, and reuse one function instead of copying print lines.
+
+[Slide 5] Scope in plain words
+Scope in plain words: names inside a function are local by default. Pass what you need in, return what you need out, and avoid relying on hidden global variables.
+
+[Slide 6] Common mistakes
+Common mistakes: forgetting parentheses when calling, forgetting return and wondering why you get None, and functions that try to do five unrelated jobs.
+
+[Slide 7] Practice checkpoint
+Practice checkpoint: write one function that calculates a total, call it twice with different inputs, then continue in the written Module 4 lesson and quiz.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+Today’s lesson goal: pack steps into named functions, pass inputs with parameters, and return results you can reuse. A function is a reusable recipe with a clear name. Call it whenever you need that work done. It keeps programs shorter and easier to test. Parameters are inputs the function receives. Return sends a value back to the caller. Prefer return over only printing when you need the result later. Worked example: define greet with a name parameter, return a friendly string, call it with different names, and reuse one function instead of copying print lines. Scope in plain words: names inside a function are local by default. Pass what you need in, return what you need out, and avoid relying on hidden global variables. Common mistakes: forgetting parentheses when calling, forgetting return and wondering why you get None, and functions that try to do five unrelated jobs. Practice checkpoint: write one function that calculates a total, call it twice with different inputs, then continue in the written Module 4 lesson and quiz.
+
+Voice: en-US JennyNeural (edge-tts)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

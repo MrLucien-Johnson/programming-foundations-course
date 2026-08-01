@@ -1,5 +1,7 @@
 # Module 3: Control Flow
 
+> **Voiceover lesson (with captions & read-along transcript):** [C# control flow](../../docs/tutorials.html#csharp-control-flow) — then continue with the written lesson below.
+
 ## 🎯 What You'll Learn
 
 By the end of this module, you will be able to:

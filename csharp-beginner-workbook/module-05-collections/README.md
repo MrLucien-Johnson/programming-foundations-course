@@ -1,5 +1,7 @@
 # Module 5: Collections
 
+> **Voiceover lesson (with captions & read-along transcript):** [C# collections](../../docs/tutorials.html#csharp-collections) — then continue with the written lesson below.
+
 ## 🎯 What You'll Learn
 
 By the end of this module, you will be able to:

@@ -1,0 +1,29 @@
+Programming Foundations — Tutorial: AI Module 5 — safety basics lesson
+ID: 21-ai-safety
+Suggested placement: ai-course, 05-safety-and-policy-basics
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] Today’s lesson goal
+Today’s lesson goal: spot risky prompts and outputs, add clear refusal and escalation rules, and keep user data out of places it should not go.
+
+[Slide 2] Practical safety habits
+Practical safety habits: do not paste secrets into prompts, refuse harmful or disallowed requests, and document what the system must never do.
+
+[Slide 3] Worked example: support bot
+Worked example: a support bot may summarise tickets from provided text, must not invent refunds or legal advice, and must escalate threats to a human.
+
+[Slide 4] Practice checkpoint
+Practice checkpoint: write a short safety checklist for your use case, add two refusal test prompts, then continue in the written Module 5 lesson.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+Today’s lesson goal: spot risky prompts and outputs, add clear refusal and escalation rules, and keep user data out of places it should not go. Practical safety habits: do not paste secrets into prompts, refuse harmful or disallowed requests, and document what the system must never do. Worked example: a support bot may summarise tickets from provided text, must not invent refunds or legal advice, and must escalate threats to a human. Practice checkpoint: write a short safety checklist for your use case, add two refusal test prompts, then continue in the written Module 5 lesson.
+
+Voice: en-US JennyNeural (edge-tts)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

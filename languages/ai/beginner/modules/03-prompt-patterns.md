@@ -1,7 +1,9 @@
 # AI — Module 03: Prompt Patterns
 
+> **Voiceover lesson (with captions & read-along transcript):** [Prompt patterns](../../../../docs/tutorials.html#ai-prompt-patterns) — then continue with the written lesson below.
+
 ## Overview
-Use reusable prompt patterns to improve reliability: checklists, decomposition, critique, and verification.
+Reusable prompt patterns make AI work more reliable. Instead of inventing a new prompt every time, you apply proven structures: checklists, decomposition, critique-and-revise, and verification.
 
 **Included examples (tool-agnostic):**
 - Data extraction into JSON (free text → structured fields)
@@ -14,25 +16,95 @@ Use reusable prompt patterns to improve reliability: checklists, decomposition, 
 - Cover tricky cases with targeted few-shot examples.
 
 ## Prerequisites
-- Comfort writing clear, structured English.
-- Basic familiarity with APIs and JSON (helpful but not required in beginner).
-- Willingness to iterate: you’ll run tests, record failures, and improve.
+- Module 02 (Prompting Basics): role, task, constraints, and output format.
+- Willingness to iterate: run tests, record failures, and improve.
 
-## Lessons
-1) Decomposition: break tasks into steps without leaking chain-of-thought (45 min)
-2) Checklist pattern: “must include” fields + validation hints (40 min)
-3) Critique-and-revise: separate drafting from review (45 min)
-4) Self-consistency: multiple drafts + choose best via rubric (40 min)
+## Why patterns matter
+
+A one-off prompt can work once and fail the next day. Patterns give you a **repeatable recipe**:
+
+| Pattern | What it does | When to use it |
+|---|---|---|
+| Checklist | Forces required fields and “missing” rules | Extraction, forms, summaries with must-have items |
+| Decomposition | Breaks a big job into clear steps | Multi-part tasks, long documents |
+| Critique-and-revise | Separates drafting from review | Quality-sensitive writing or structured output |
+| Verify / repair | Checks format, then fixes without new facts | JSON, tables, anything that must parse |
+
+## Concept 1 — Checklist pattern
+
+**Idea:** Tell the model exactly which fields must appear, and what to do when the source does not contain them.
+
+**Weak prompt:**
+> Extract useful info from this email.
+
+**Stronger prompt (checklist):**
+> Extract these fields from the email only: `name`, `account_id`, `issue`, `urgency` (`low` / `medium` / `high`).  
+> If a field is missing, set it to `null` and add a note in `missing_fields`.  
+> Do not invent values that are not in the email.
+
+**Why it works:** The model cannot “helpfully guess” a name or urgency when your checklist forbids it.
+
+## Concept 2 — Decomposition (without leaking private chain-of-thought)
+
+**Idea:** Break the task into steps the model should follow, but keep the **output** clean for the user.
+
+Example steps for a support email:
+1. Identify the customer and account identifiers present in the text.
+2. Summarise the issue in one sentence.
+3. Assign urgency using only explicit cues (words like “urgent”, “asap”, or deadlines).
+4. Emit JSON matching the schema.
+
+Ask for the **final JSON**, not a long internal monologue. You want reliable structure, not noisy reasoning text.
+
+## Concept 3 — Critique-and-revise
+
+**Idea:** Do not ask one prompt to draft *and* perfectly validate itself in one breath. Use two passes:
+
+1. **Draft:** Produce the best first answer.
+2. **Review:** Given the draft + original source, flag missing fields, contradictions, or invented facts — then repair.
+
+This mirrors how humans write: draft, then edit.
+
+## Worked example — email → JSON
+
+**Source email (shortened):**
+> Hi, I'm Alex Chen on account A-4412. Our billing page shows the wrong plan since Monday. Please fix today if possible.
+
+**Target schema:**
+```json
+{
+  "name": "string or null",
+  "account_id": "string or null",
+  "issue": "string",
+  "urgency": "low|medium|high",
+  "missing_fields": []
+}
+```
+
+**Good output:**
+```json
+{
+  "name": "Alex Chen",
+  "account_id": "A-4412",
+  "issue": "Billing page shows the wrong plan since Monday",
+  "urgency": "high",
+  "missing_fields": []
+}
+```
+
+**Why `high`?** The email says “fix today if possible” — an explicit time pressure cue. If that phrase were absent, prefer `medium` or ask rather than guessing panic.
+
+**Repair pass example:** If the draft returns invalid JSON (trailing comma, markdown fences), a repair prompt should fix **syntax only** and refuse to invent a missing `account_id`.
 
 ## Guided Walkthrough
 Follow these steps to turn the lesson into a real, working deliverable.
 
 1. Copy the starter pack from `languages/ai/beginner/starter-pack` into a new working folder.
-2. Review the module goals and plan how you will apply prompt patterns to improve reliability.
-3. Select two prompt patterns and apply them to the same task.
-4. Compare outputs side by side and pick the best pattern.
-5. Document why the winning pattern works better.
-6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
+2. Write one checklist-style extraction prompt for customer emails.
+3. Apply a second pattern (critique-and-revise or repair) to the same task.
+4. Compare outputs side by side on the same 5 sample emails.
+5. Document why the winning pattern fails less often.
+6. Note assumptions, tradeoffs, and next steps in a short README section.
 
 ## Starter Pack
 
@@ -77,7 +149,6 @@ Build an “extract → validate → repair” workflow for JSON extraction.
 | Maintainability | Clear structure and docs | Modular prompts, versioning, and change notes |
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
-
 ## Verification Checklist
 Before moving on, confirm the following:
 
@@ -89,9 +160,9 @@ Before moving on, confirm the following:
 - Asking for JSON but not specifying schema/required fields.
 - Ignoring ambiguity and forcing made-up values.
 - No repair strategy for invalid outputs.
+- Putting draft and review in one vague prompt so failures are hard to debug.
 
 ## Stretch Resources
 
 - Prompting guide: https://www.promptingguide.ai/
 - OpenAI guides: https://platform.openai.com/docs/guides
-

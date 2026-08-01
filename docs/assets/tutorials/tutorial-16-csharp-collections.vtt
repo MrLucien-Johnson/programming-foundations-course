@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:07.632
+Today’s lesson goal: Today’s lesson goal: use lists for ordered items, use dictionaries for key lookups, and loop collections with foreach.
+
+2
+00:00:07.982 --> 00:00:16.526
+List and Dictionary: List stores items in sequence. Dictionary maps keys to values. Pick the structure that matches the problem.
+
+3
+00:00:16.876 --> 00:00:23.908
+Worked example: scores: Worked example: a list of player names and a dictionary of name to score, then foreach name print the score.
+
+4
+00:00:24.258 --> 00:00:33.282
+Common mistakes: Common mistakes: using arrays when a List is easier to grow, KeyNotFound when a key is missing, and mutating a collection while foreach runs.
+
+5
+00:00:33.632 --> 00:00:42.704
+Practice checkpoint: Practice checkpoint: store three items and print them, look up one value by key, then continue in the written Module 5 lesson and quiz.

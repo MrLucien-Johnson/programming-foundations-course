@@ -1,5 +1,7 @@
 # Module 3: Control Flow
 
+> **Voiceover lesson (with captions & read-along transcript):** [Python control flow](../../docs/tutorials.html#python-control-flow) — then continue with the written lesson below.
+
 ## 🎯 What You'll Learn
 
 By the end of this module, you will be able to:

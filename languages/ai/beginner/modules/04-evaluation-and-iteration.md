@@ -1,7 +1,9 @@
 # AI — Module 04: Evaluation and Iteration
 
+> **Voiceover lesson (with captions & read-along transcript):** [Evaluation & iteration](../../../../docs/tutorials.html#ai-evaluation) — then continue with the written lesson below.
+
 ## Overview
-Treat prompt work like engineering: define metrics, build test cases, run regressions, and keep an iteration log.
+Treat prompt work like engineering: define what “good” means, build test cases, score outputs the same way each time, and keep an iteration log. Without evaluation, you cannot tell if a prompt change helped or quietly broke something else.
 
 **Included examples (tool-agnostic):**
 - Customer support summarisation (quality rubric + regression set)
@@ -14,24 +16,79 @@ Treat prompt work like engineering: define metrics, build test cases, run regres
 - Add abstain/fallback rules tied to confidence thresholds.
 
 ## Prerequisites
-- Comfort writing clear, structured English.
-- Basic familiarity with APIs and JSON (helpful but not required in beginner).
-- Willingness to iterate: you’ll run tests, record failures, and improve.
+- Modules 01–03: foundations, prompting basics, and at least one prompt pattern.
+- Willingness to measure before and after a change.
 
-## Lessons
-1) Define success metrics: accuracy, format adherence, coverage (45 min)
-2) Build an eval set: represent real inputs + edge cases (45 min)
-3) Regression testing: don't trade one failure for another (40 min)
-4) Iteration discipline: one change at a time + notes (35 min)
+## Why evaluate?
+
+AI can sound confident while being wrong. Evaluation is your quality control.
+
+Ask three questions of every answer:
+1. **Accuracy** — Are the facts true and grounded in the input?
+2. **Completeness** — Did it answer the whole request?
+3. **Usefulness** — Could a teammate act on this without guessing?
+
+If you cannot score those consistently, you are guessing — not improving.
+
+## Concept 1 — Define success metrics
+
+Pick metrics that match the job. For a support summary:
+
+| Metric | Meets (example) |
+|---|---|
+| Factual | No invented order IDs, names, or policies |
+| Complete | Issue + next step both present |
+| Actionable | A human knows what to do next |
+| Tone | Professional, no blame language |
+| Format | Required headings or JSON fields present |
+
+Write the rubric so **two people would score similarly**. Vague rubrics (“be good”) fail.
+
+## Concept 2 — Build an evaluation set
+
+Aim for **at least 10–20 cases**, not just happy paths:
+
+- Clear, clean inputs (should succeed)
+- Empty or tiny inputs (should refuse or ask)
+- Ambiguous inputs (should clarify, not invent)
+- Adversarial / messy inputs (injection attempts, conflicting dates)
+
+Store each case with: input text, expected behaviour notes, and optional golden answer.
+
+## Concept 3 — Iterate with discipline
+
+Rules that keep you honest:
+1. Change **one** thing at a time (prompt wording *or* examples *or* temperature — not all three).
+2. Rerun the **same** eval set after every change.
+3. Log: what you changed, score before/after, and which failure categories moved.
+
+If accuracy rose but format collapsed, you traded one failure for another — catch that with regression.
+
+## Worked example — scoring a summary
+
+**Input ticket:** customer says the app crashes on login after the last update; they need a workaround before a client demo tomorrow.
+
+**Rubric (1–5 each):** factual, complete, actionable, tone.
+
+**Weak AI output:** “Sorry for the inconvenience. Please try again later.”  
+→ Low completeness and actionability. Sounds polite; helps nobody.
+
+**Stronger output:**
+- Restates the crash-on-login symptom
+- Notes the time pressure (demo tomorrow)
+- Suggests next steps: collect OS/app version, try safe-mode login, escalate if reproducible
+- Does **not** invent a bug ID that was never provided
+
+Score both. Then revise the prompt to require: symptom, impact, next steps, and “unknowns” list. Rescore. That is an iteration loop.
 
 ## Guided Walkthrough
 Follow these steps to turn the lesson into a real, working deliverable.
 
 1. Copy the starter pack from `languages/ai/beginner/starter-pack` into a new working folder.
-2. Review the module goals and plan how you will build an evaluation loop and track improvements.
-3. Define success metrics and failure categories.
-4. Run an eval set before and after an improvement.
-5. Summarize the delta and update your prompt spec.
+2. Define success metrics and failure categories for one task you care about.
+3. Build a small eval set (include at least one empty and one conflicting case).
+4. Run the set on your baseline prompt and record scores.
+5. Make one improvement, rerun, and summarise the delta.
 6. Document decisions in a short README section (assumptions, tradeoffs, next steps).
 
 ## Starter Pack
@@ -76,7 +133,6 @@ Produce a small evaluation harness spec and a 20-case dataset for one task.
 | Maintainability | Clear structure and docs | Modular prompts, versioning, and change notes |
 | Cost/Latency | Reasonable defaults | Measured costs/latency + optimizations + budgets |
 
-
 ## Verification Checklist
 Before moving on, confirm the following:
 
@@ -86,11 +142,11 @@ Before moving on, confirm the following:
 
 ## Common Mistakes
 - Only testing on “happy path” examples.
-- No baseline—can't prove improvement.
+- No baseline — can't prove improvement.
 - Changing prompt, temperature, and examples at once.
+- Accepting the first polished answer because it *sounds* right.
 
 ## Stretch Resources
 
 - Prompting guide: https://www.promptingguide.ai/
 - OpenAI guides: https://platform.openai.com/docs/guides
-

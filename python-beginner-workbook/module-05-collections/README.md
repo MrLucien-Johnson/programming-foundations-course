@@ -1,5 +1,7 @@
 # Module 5: Collections
 
+> **Voiceover lesson (with captions & read-along transcript):** [Python collections](../../docs/tutorials.html#python-collections) — then continue with the written lesson below.
+
 ## 🎯 What You'll Learn
 
 By the end of this module, you will be able to:

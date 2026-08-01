@@ -1,0 +1,29 @@
+Programming Foundations — Tutorial: C# Module 7 — Task Tracker project lesson
+ID: 18-csharp-task-tracker
+Suggested placement: csharp-course, module-07-task-tracker
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] Today’s lesson goal
+Today’s lesson goal: assemble a console Task Tracker, use methods and a list of tasks, and deliver a portfolio-ready mini app.
+
+[Slide 2] Build in thin slices
+Build in thin slices: menu loop first, add and list next, complete and quit last.
+
+[Slide 3] Robust behaviour
+Robust behaviour: validate menu choices, ignore empty task titles, and show friendly messages for bad input.
+
+[Slide 4] Practice checkpoint
+Practice checkpoint: ship a working add and list flow today, then complete the written project checks, and save a short README of how to run it.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+Today’s lesson goal: assemble a console Task Tracker, use methods and a list of tasks, and deliver a portfolio-ready mini app. Build in thin slices: menu loop first, add and list next, complete and quit last. Robust behaviour: validate menu choices, ignore empty task titles, and show friendly messages for bad input. Practice checkpoint: ship a working add and list flow today, then complete the written project checks, and save a short README of how to run it.
+
+Voice: en-US JennyNeural (edge-tts)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html
