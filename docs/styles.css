@@ -908,6 +908,48 @@ h4 {
   color: var(--gold-light);
 }
 
+/* Ghost buttons on light parchment (resume banner, secondary rows) */
+.resume-banner .btn-ghost,
+.panel-plain .btn-ghost,
+.section .btn-ghost:not(.home-cta .btn-ghost) {
+  background: linear-gradient(180deg, #fffdf6 0%, #f4ebda 100%);
+  color: var(--ink);
+  border-color: rgba(154, 123, 26, 0.45);
+  border-top-color: #fff8e8;
+  border-bottom-color: rgba(120, 90, 10, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 3px 10px rgba(154, 123, 26, 0.1);
+}
+
+.resume-banner .btn-ghost:hover,
+.resume-banner .btn-ghost:focus-visible,
+.panel-plain .btn-ghost:hover,
+.panel-plain .btn-ghost:focus-visible,
+.section .btn-ghost:not(.home-cta .btn-ghost):hover,
+.section .btn-ghost:not(.home-cta .btn-ghost):focus-visible {
+  background: linear-gradient(180deg, #fff8e0 0%, #efe0c0 100%);
+  border-color: var(--gold-dark);
+  color: var(--ink);
+}
+
+summary:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+  .btn {
+    min-width: 0;
+  }
+
+  .resume-banner-actions,
+  .lesson-actions .button-row,
+  .button-row {
+    flex-wrap: wrap;
+  }
+}
+
 /* ── Sections & grid ── */
 .section {
   margin-top: 40px;
@@ -1328,6 +1370,8 @@ label .field-input {
   opacity: 0.55;
   pointer-events: none;
 }
+
+.note {
   background: linear-gradient(165deg, #fffcef 0%, #fff8e6 100%);
   border: 1px solid rgba(201, 162, 39, 0.4);
   border-top-color: #fffdf5;

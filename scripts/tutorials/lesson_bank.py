@@ -817,7 +817,7 @@ EXTRA_TUTORIALS = [
     {
         "id": "23-intermediate-modules-guide",
         "title": "How to study intermediate modules",
-        "kind": "setup",
+        "kind": "guide",
         "when": "advanced courses, intermediate modules",
         "footer": "tutorials.html · Intermediate tracks",
         "pathMatch": "/intermediate/modules/",
@@ -864,7 +864,7 @@ EXTRA_TUTORIALS = [
     {
         "id": "24-advanced-modules-guide",
         "title": "How to study advanced modules",
-        "kind": "setup",
+        "kind": "guide",
         "when": "advanced courses, advanced modules",
         "footer": "tutorials.html · Advanced tracks",
         "pathMatch": "/advanced/modules/",

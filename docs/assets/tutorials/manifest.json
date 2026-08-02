@@ -332,7 +332,7 @@
   {
     "id": "23-intermediate-modules-guide",
     "title": "How to study intermediate modules",
-    "kind": "setup",
+    "kind": "guide",
     "when": "advanced courses, intermediate modules",
     "pathMatch": "/intermediate/modules/",
     "hubAnchor": "intermediate-guide",
@@ -347,7 +347,7 @@
   {
     "id": "24-advanced-modules-guide",
     "title": "How to study advanced modules",
-    "kind": "setup",
+    "kind": "guide",
     "when": "advanced courses, advanced modules",
     "pathMatch": "/advanced/modules/",
     "hubAnchor": "advanced-guide",

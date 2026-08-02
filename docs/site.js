@@ -400,6 +400,7 @@
 
   let syncTimer = null;
   let syncing = false;
+  let syncQueued = false;
 
   const safeParse = (raw, fallback) => {
     try {
@@ -556,7 +557,10 @@
       }
       return null;
     }
-    if (syncing) return null;
+    if (syncing) {
+      syncQueued = true;
+      return null;
+    }
     syncing = true;
     try {
       const remote = await apiFetch("/api/progress");
@@ -569,6 +573,10 @@
       return saved.progress;
     } finally {
       syncing = false;
+      if (syncQueued) {
+        syncQueued = false;
+        scheduleSync();
+      }
     }
   };
 
@@ -1018,6 +1026,14 @@
     if (!host) return;
     const last = getLastLesson();
     const lastQuiz = getLastQuiz();
+    const params = new URLSearchParams(window.location.search);
+    const currentLessonPath = params.get("path") || "";
+    const currentQuizPath = params.get("quiz") || "";
+    const onCurrentLesson =
+      currentLessonPath && last && last.path && currentLessonPath === last.path;
+    const onCurrentQuiz =
+      currentQuizPath && lastQuiz && lastQuiz.quiz && currentQuizPath === lastQuiz.quiz;
+
     if ((!last || !last.path) && (!lastQuiz || !lastQuiz.quiz)) {
       host.hidden = true;
       host.innerHTML = "";
@@ -1027,7 +1043,33 @@
       lastQuiz &&
       lastQuiz.quiz &&
       (!last || !last.path || (Number(lastQuiz.ts) || 0) > (Number(last?.ts) || 0));
-    if (preferQuiz) {
+
+    // Don't advertise "continue" for the page the learner is already viewing.
+    if (preferQuiz && onCurrentQuiz) {
+      if (last && last.path && !onCurrentLesson) {
+        // Fall through to lesson resume instead of hiding entirely.
+      } else {
+        host.hidden = true;
+        host.innerHTML = "";
+        return;
+      }
+    }
+    if (!preferQuiz && onCurrentLesson) {
+      if (lastQuiz && lastQuiz.quiz && !onCurrentQuiz) {
+        // Prefer showing last quiz when already on the lesson.
+      } else {
+        host.hidden = true;
+        host.innerHTML = "";
+        return;
+      }
+    }
+
+    const showQuiz =
+      preferQuiz && lastQuiz && lastQuiz.quiz && !onCurrentQuiz
+        ? true
+        : !preferQuiz && onCurrentLesson && lastQuiz && lastQuiz.quiz && !onCurrentQuiz;
+
+    if (showQuiz) {
       host.hidden = false;
       host.innerHTML = `
       <div class="resume-banner" role="region" aria-label="Resume learning">
@@ -1038,12 +1080,17 @@
         <div class="resume-banner-actions">
           <a class="btn btn-primary" href="quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}">Open quiz</a>
           ${
-            last && last.path
-              ? `<a class="btn btn-ghost" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Last lesson</a>`
+            last && last.path && !onCurrentLesson
+              ? `<a class="btn btn-secondary" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Last lesson</a>`
               : ""
           }
         </div>
       </div>`;
+      return;
+    }
+    if (!last || !last.path || onCurrentLesson) {
+      host.hidden = true;
+      host.innerHTML = "";
       return;
     }
     const done = isCompleted(last.path);
@@ -1058,10 +1105,10 @@
         </div>
         <div class="resume-banner-actions">
           <a class="btn btn-primary" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Open lesson</a>
-          ${last.page ? `<a class="btn btn-ghost" href="${escapeHtml(last.page)}">Course home</a>` : ""}
+          ${last.page ? `<a class="btn btn-secondary" href="${escapeHtml(last.page)}">Course home</a>` : ""}
           ${
             lastQuiz && lastQuiz.quiz
-              ? `<a class="btn btn-ghost" href="quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}">Last quiz</a>`
+              ? `<a class="btn btn-secondary" href="quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}">Last quiz</a>`
               : ""
           }
         </div>
