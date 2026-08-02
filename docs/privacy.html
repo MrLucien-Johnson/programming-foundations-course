@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Privacy &amp; your data - Programming Foundations</title>
-    <link rel="stylesheet" href="styles.css?v=ux32" />
+    <link rel="stylesheet" href="styles.css?v=ux33" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux32"></script>
+    <script src="site.js?v=ux33"></script>
 
     <main id="main" class="container">
       <div id="pf-resume-host" hidden></div>
@@ -25,11 +25,11 @@
       <section class="section" id="guest-progress">
         <h3>Guest progress on your device</h3>
         <p>
-          As a guest, you can allow this site to save learning progress in
-          <strong>this browser on your device only</strong>. That lets you continue after a reboot
-          without creating an account. Nothing is stored until you choose
-          <strong>Yes</strong> below (or in the site banner). Nothing in the list is uploaded unless
-          you later sign in and sync.
+          As a guest, this site can save learning progress in
+          <strong>this browser on your device only</strong> so you can continue after a reboot.
+          Progress is kept until you choose <strong>No</strong> (or clear site data). Nothing in
+          the list below is uploaded unless you later sign in and sync. You can also confirm
+          <strong>Yes</strong> to dismiss the banner.
         </p>
         <p><strong>What can be saved on your device</strong></p>
         <ul>
@@ -171,7 +171,7 @@
               "On-device guest progress is off. Learning still works; progress will not be kept.";
           } else {
             deviceStatus.textContent =
-              "Nothing is saved yet — choose Yes to keep guest progress on this device.";
+              "Progress is being kept on this device until you refuse it (or confirm Yes).";
           }
         };
         refreshDeviceStatus();

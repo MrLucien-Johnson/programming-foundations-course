@@ -762,9 +762,9 @@
   };
 
   const canPersistGuestProgress = () => {
-    // Signed-in users sync via account. Guests must opt in (UK PECR / clear choice).
+    // Signed-in users sync via account. Guests keep progress until they refuse.
     if (getToken()) return true;
-    return getDeviceProgressConsent() === "granted";
+    return getDeviceProgressConsent() !== "denied";
   };
 
   const writeProgressKey = (key, value) => {
@@ -1085,9 +1085,9 @@
         <div class="device-progress-notice__copy">
           <strong>Save your learning progress in this browser?</strong>
           <p>
-            If you say yes, this browser keeps course data on <em>your device only</em> so you can
-            continue after a reboot. It is not sent to our servers unless you create an account and
-            sync later.
+            This browser can keep course data on <em>your device only</em> so you can continue after
+            a reboot. It is not sent to our servers unless you create an account and sync later.
+            Progress is kept until you choose <strong>No</strong>.
           </p>
           <ul class="device-progress-notice__list">
             <li>Lessons you mark complete</li>
@@ -1425,7 +1425,7 @@
       const status = host?.querySelector(".persona-picker-status");
       if (status) {
         status.innerHTML =
-          "Progress isn’t saved on this device yet. Allow it in the banner or on <a href=\"privacy.html#guest-progress\">Privacy</a>, then choose again.";
+          "On-device progress is off. Turn it back on in <a href=\"privacy.html#guest-progress\">Privacy</a>, then choose again.";
       }
       return null;
     }
