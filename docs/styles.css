@@ -2550,33 +2550,54 @@ button.path-node {
 }
 
 .device-progress-notice__inner {
-  max-width: 960px;
+  max-width: 1040px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   gap: 14px 18px;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
 .device-progress-notice__copy {
-  flex: 1 1 280px;
+  flex: 1 1 320px;
   min-width: 0;
 }
 
 .device-progress-notice__copy strong {
   display: block;
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--gold-light);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .device-progress-notice__copy p {
-  margin: 0;
+  margin: 0 0 8px;
   font-size: 0.95rem;
   line-height: 1.45;
   color: rgba(247, 241, 230, 0.9);
+}
+
+.device-progress-notice__list {
+  margin: 0 0 10px;
+  padding-left: 1.2rem;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: rgba(247, 241, 230, 0.92);
+  columns: 1;
+}
+
+@media (min-width: 720px) {
+  .device-progress-notice__list {
+    columns: 2;
+    column-gap: 1.5rem;
+  }
+}
+
+.device-progress-notice__list li {
+  break-inside: avoid;
+  margin-bottom: 0.2rem;
 }
 
 .device-progress-notice__copy a {
@@ -2585,8 +2606,16 @@ button.path-node {
 
 .device-progress-notice__actions {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 10px;
+  flex: 0 1 260px;
+}
+
+.device-progress-notice__actions .btn {
+  width: 100%;
+  min-width: 0;
+  text-align: center;
 }
 
 .device-progress-notice .btn-secondary {
@@ -2598,10 +2627,11 @@ button.path-node {
 @media (max-width: 640px) {
   .device-progress-notice__actions {
     width: 100%;
+    flex: 1 1 auto;
   }
 
-  .device-progress-notice__actions .btn {
-    flex: 1 1 auto;
+  .device-progress-notice__list {
+    columns: 1;
   }
 }
 
