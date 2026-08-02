@@ -7,29 +7,29 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Today’s lesson goal
-Today’s lesson goal: build a small Task Tracker end to end, combine variables decisions loops and functions, and ship something you can show on a portfolio.
+Today’s lesson goal: build a small Task Tracker end to end. Combine variables, decisions, loops, and functions. Ship something you can show on a portfolio.
 
 [Slide 2] Design before you code
-Design before you code. List features like add, list, complete, and quit. Decide how tasks are stored, and sketch the menu loop on paper first.
+Design before you code. List features like add, list, complete, and quit. Decide how tasks are stored. Sketch the menu loop on paper first.
 
 [Slide 3] Core loop pattern
-Use a core loop pattern: show a menu, read the user’s choice, run the matching action, then show the menu again.
+Use a core loop pattern. Show a menu. Read the user’s choice. Run the matching action, then show the menu again.
 
 [Slide 4] Make it robust
-Make it robust: handle empty input and bad menu choices, confirm before deleting if you add delete, and keep messages clear for beginners testing your app.
+Make it robust. Handle empty input and bad menu choices. Confirm before deleting if you add delete. Keep messages clear for beginners testing your app.
 
 [Slide 5] Common mistakes
-Common mistakes: building every feature before the menu works, no way to quit the loop, and mixing storage format so list and complete disagree.
+Common mistakes: building every feature before the menu works. No way to quit the loop. Mixing storage format so list and complete disagree.
 
 [Slide 6] Practice checkpoint
-Practice checkpoint: get add and list working first, then add complete and quit, and follow the written Module 7 project and acceptance checks.
+Practice checkpoint: get add and list working first. Then add complete and quit. Then continue in the written Module 7 project and acceptance checks.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Today’s lesson goal: build a small Task Tracker end to end, combine variables decisions loops and functions, and ship something you can show on a portfolio. Design before you code. List features like add, list, complete, and quit. Decide how tasks are stored, and sketch the menu loop on paper first. Use a core loop pattern: show a menu, read the user’s choice, run the matching action, then show the menu again. Make it robust: handle empty input and bad menu choices, confirm before deleting if you add delete, and keep messages clear for beginners testing your app. Common mistakes: building every feature before the menu works, no way to quit the loop, and mixing storage format so list and complete disagree. Practice checkpoint: get add and list working first, then add complete and quit, and follow the written Module 7 project and acceptance checks.
+Today’s lesson goal: build a small Task Tracker end to end. Combine variables, decisions, loops, and functions. Ship something you can show on a portfolio. Design before you code. List features like add, list, complete, and quit. Decide how tasks are stored. Sketch the menu loop on paper first. Use a core loop pattern. Show a menu. Read the user’s choice. Run the matching action, then show the menu again. Make it robust. Handle empty input and bad menu choices. Confirm before deleting if you add delete. Keep messages clear for beginners testing your app. Common mistakes: building every feature before the menu works. No way to quit the loop. Mixing storage format so list and complete disagree. Practice checkpoint: get add and list working first. Then add complete and quit. Then continue in the written Module 7 project and acceptance checks.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

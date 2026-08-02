@@ -7,26 +7,26 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Install Python
-Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, use the installer or python 3.
+Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, run the installer or use python 3.
 
 [Slide 2] Verify it worked
-Verify it worked. Open a terminal and run python dash dash version, or python 3 dash dash version. You should see a version number.
+Verify it worked. Open Terminal or Command Prompt. Run python dash dash version, or python 3 dash dash version. You should see something like Python 3.11 or newer.
 
 [Slide 3] Install a code editor
-Install a code editor such as Cursor or Visual Studio Code. Add the Python extension, then open your python-beginner-workbook folder.
+Install a code editor such as Cursor or Visual Studio Code. Add the Python extension. Then open your python-beginner-workbook folder.
 
 [Slide 4] Your first script
-Create hello.py with a print hello message, then run python hello.py. Change the text — that is your first real program.
+Create hello.py with print Hello. Run python hello.py. Change the message — that is your first real program.
 
 [Slide 5] Python tips
-If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor terminal, finish Module 1 exercises, then take the quiz.
+If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor’s integrated terminal. Finish Module 1 exercises, then take the quiz.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, use the installer or python 3. Verify it worked. Open a terminal and run python dash dash version, or python 3 dash dash version. You should see a version number. Install a code editor such as Cursor or Visual Studio Code. Add the Python extension, then open your python-beginner-workbook folder. Create hello.py with a print hello message, then run python hello.py. Change the text — that is your first real program. If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor terminal, finish Module 1 exercises, then take the quiz.
+Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, run the installer or use python 3. Verify it worked. Open Terminal or Command Prompt. Run python dash dash version, or python 3 dash dash version. You should see something like Python 3.11 or newer. Install a code editor such as Cursor or Visual Studio Code. Add the Python extension. Then open your python-beginner-workbook folder. Create hello.py with print Hello. Run python hello.py. Change the message — that is your first real program. If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor’s integrated terminal. Finish Module 1 exercises, then take the quiz.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

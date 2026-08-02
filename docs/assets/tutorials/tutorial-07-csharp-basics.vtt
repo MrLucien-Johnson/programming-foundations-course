@@ -1,29 +1,29 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:09.384
-Today’s lesson goal: Today’s lesson goal: declare typed variables in C sharp, read input and convert numbers safely, and calculate totals people can understand.
+00:00:00.000 --> 00:00:11.832
+Today’s lesson goal: Today’s lesson goal: declare typed variables in C sharp. Read input and convert numbers safely. Calculate totals people can understand.
 
 2
-00:00:09.734 --> 00:00:23.774
+00:00:12.682 --> 00:00:28.642
 Declare with a type: Declare with a type. String customer name equals Sarah. Int quantity equals 3. Double price equals 9.99. The type tells C sharp what kind of box you are creating.
 
 3
-00:00:24.124 --> 00:00:34.060
-Why types help beginners: Types help beginners because the compiler catches many mistakes early. You see what each value is meant to be, and names plus types document your intent.
+00:00:29.492 --> 00:00:42.332
+Why types help beginners: Types help beginners. The compiler catches many mistakes early. You see what each value is meant to be. Names plus types document your intent.
 
 4
-00:00:34.410 --> 00:00:43.074
-Worked example: greeting: Worked example: a greeting. Write a prompt, read the line into a string name, then write Hello name with string interpolation.
+00:00:43.182 --> 00:00:54.630
+Worked example: greeting: Worked example: a greeting. Write a prompt. Read the line into a string name. Then write Hello name with string interpolation.
 
 5
-00:00:43.424 --> 00:00:54.584
-Worked example: tax total: Worked example: a tax total. Read a line of text, parse it with double.Parse, then multiply by one point two. Print the total with clear wording.
+00:00:55.480 --> 00:01:10.576
+Worked example: tax total: Worked example: a tax total. Read a line of text. Parse it with double dot Parse to get a number. Multiply by one point two. Print the total with clear wording.
 
 6
-00:00:54.934 --> 00:01:05.254
-Common mistakes: Common mistakes include using the value before Parse succeeds, forgetting that ReadLine returns text, and opening a single file instead of the whole project folder.
+00:01:11.426 --> 00:01:24.410
+Common mistakes: Common mistakes: using the value before Parse succeeds. Forgetting that ReadLine returns text. Opening a single file instead of the whole project folder.
 
 7
-00:01:05.604 --> 00:01:18.948
-Practice, then quiz: Practice, then quiz. Complete the Module 2 exercises in your console app, compare with solutions after you try, and take the Module 2 quiz. The written lesson has the full walkthrough.
+00:01:25.260 --> 00:01:41.484
+Practice, then quiz: Practice, then quiz. Complete the Module 2 exercises in your console app. Compare with solutions after you try. Take the Module 2 quiz. Then continue in the written lesson.

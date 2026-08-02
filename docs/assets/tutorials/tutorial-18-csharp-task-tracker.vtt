@@ -1,17 +1,17 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:08.592
-Today’s lesson goal: Today’s lesson goal: assemble a console Task Tracker, use methods and a list of tasks, and deliver a portfolio-ready mini app.
+00:00:00.000 --> 00:00:11.064
+Today’s lesson goal: Today’s lesson goal: assemble a console Task Tracker. Use methods and a list of tasks. Deliver a portfolio-ready mini app.
 
 2
-00:00:08.942 --> 00:00:15.254
-Build in thin slices: Build in thin slices: menu loop first, add and list next, complete and quit last.
+00:00:11.914 --> 00:00:21.754
+Build in thin slices: Build in thin slices. Menu loop first. Add and list next. Complete and quit last.
 
 3
-00:00:15.604 --> 00:00:23.572
-Robust behaviour: Robust behaviour: validate menu choices, ignore empty task titles, and show friendly messages for bad input.
+00:00:22.604 --> 00:00:33.188
+Robust behaviour: Robust behaviour: validate menu choices. Ignore empty task titles. Show friendly messages for bad input.
 
 4
-00:00:23.922 --> 00:00:32.706
-Practice checkpoint: Practice checkpoint: ship a working add and list flow today, then complete the written project checks, and save a short README of how to run it.
+00:00:34.038 --> 00:00:48.150
+Practice checkpoint: Practice checkpoint: ship a working add and list flow today. Complete the written project checks. Save a short README of how to run it. Then continue in the written lesson.

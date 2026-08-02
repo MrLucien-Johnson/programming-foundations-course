@@ -1,29 +1,29 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:08.352
-Today’s lesson goal: Today’s lesson goal: store values in variables, ask the user questions with input, and calculate and display clear results.
+00:00:00.000 --> 00:00:05.040
+Today’s lesson goal: Today’s lesson goal: store values in variables. Ask the user questions with input. Calculate and display clear results.
 
 2
-00:00:08.702 --> 00:00:20.078
-Variables are labeled boxes: Variables are labeled boxes. Write customer underscore name equals Sarah. Python chooses the type for you, and you assign again whenever you want to update the value.
+00:00:05.890 --> 00:00:19.258
+Variables are labeled boxes: Variables are labeled boxes. Write customer underscore name equals Sarah. Python picks the type for you. Assign again whenever you want to update the value.
 
 3
-00:00:20.428 --> 00:00:28.924
-Common types you will use: Common types you will use are text strings, whole numbers and decimals, and True or False values for yes or no decisions later.
+00:00:20.108 --> 00:00:32.924
+Common types you will use: Common types you will use: text strings like hello. Whole numbers and decimals like 3 and 9.99. True or False for yes or no decisions later.
 
 4
-00:00:29.274 --> 00:00:40.194
-Worked example: greeting: Worked example: a greeting. Store input Your name in a variable called name, then print an f-string Hello name. Type it yourself — do not only read it.
+00:00:33.774 --> 00:00:46.950
+Worked example: greeting: Worked example: a greeting. Store input Your name in a variable called name. Then print an f-string Hello name. Type it yourself — do not only read it.
 
 5
-00:00:40.544 --> 00:00:52.736
-Worked example: price with tax: Worked example: price with tax. Read the price as text, convert it with float, multiply by one point two for example tax, and print the total with two decimal places.
+00:00:47.800 --> 00:01:06.136
+Worked example: price with tax: Worked example: price with tax. Read the price as text. Convert it with float — that turns text into a number. Multiply by one point two for example tax. Print the total with two decimal places.
 
 6
-00:00:53.086 --> 00:01:03.694
-Common mistakes: Common mistakes include forgetting float before math on input, mixing up one equals for assignment with two equals for comparison, and leaving quotes unclosed in strings.
+00:01:06.986 --> 00:01:20.210
+Common mistakes: Common mistakes: forgetting float before math on input. Mixing up one equals for assignment with two equals for comparison. Leaving quotes unclosed in strings.
 
 7
-00:01:04.044 --> 00:01:17.916
-Practice, then quiz: Practice, then quiz. Build the greeting and wage calculator exercises, check solutions only after your own attempt, and take the Module 2 quiz when ready. Use the written lesson for full detail.
+00:01:21.060 --> 00:01:38.028
+Practice, then quiz: Practice, then quiz. Build the greeting and wage calculator exercises. Check solutions only after your own attempt. Take the Module 2 quiz when ready. Then continue in the written lesson.

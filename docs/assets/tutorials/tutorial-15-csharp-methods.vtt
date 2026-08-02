@@ -1,21 +1,21 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:09.144
-Today’s lesson goal: Today’s lesson goal: write methods that do one clear job, pass arguments and return values, and keep Main short by calling helpers.
+00:00:00.000 --> 00:00:11.448
+Today’s lesson goal: Today’s lesson goal: write methods that do one clear job. Pass arguments and return values. Keep Main short by calling helpers.
 
 2
-00:00:09.494 --> 00:00:20.750
+00:00:12.298 --> 00:00:25.090
 Methods are named actions: Methods are named actions. Declare return type, name, and parameters. Void means it returns nothing. Call methods to reuse logic.
 
 3
-00:00:21.100 --> 00:00:29.140
-Worked example: total: Worked example: a Total method that takes price and quantity, returns price times quantity, then print the result from Main.
+00:00:25.940 --> 00:00:36.332
+Worked example: total: Worked example: a Total method that takes price and quantity. Return price times quantity. Print the result from Main.
 
 4
-00:00:29.490 --> 00:00:40.026
-Common mistakes: Common mistakes: wrong return type for the value you send back, forgetting return in non-void methods, and huge methods that mix input, math, and printing.
+00:00:37.182 --> 00:00:50.358
+Common mistakes: Common mistakes: wrong return type for the value you send back. Forgetting return in non-void methods. Huge methods that mix input, math, and printing.
 
 5
-00:00:40.376 --> 00:00:50.168
-Practice checkpoint: Practice checkpoint: extract one repeated calculation into a method, call it twice from Main, then continue in the written Module 4 lesson and quiz.
+00:00:51.208 --> 00:01:03.784
+Practice checkpoint: Practice checkpoint: extract one repeated calculation into a method. Call it twice from Main. Then continue in the written Module 4 lesson and quiz.

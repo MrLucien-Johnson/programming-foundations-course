@@ -7,23 +7,23 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Today’s lesson goal
-Today’s lesson goal: build a small evaluation set, score outputs the same way each time, and iterate with evidence, not vibes.
+Today’s lesson goal: build a small evaluation set. Score outputs the same way each time. Iterate with evidence, not vibes.
 
 [Slide 2] What good eval looks like
-Good evaluation uses ten or more cases covering good, bad, and ambiguous inputs, a fixed rubric for format accuracy and safety, and reruns the same set after each prompt change.
+Good evaluation uses ten or more cases — good, bad, and ambiguous. Use a fixed rubric for format, accuracy, and safety. Rerun the same set after each prompt change.
 
 [Slide 3] Worked example
-Worked example cases: empty input should refuse politely, a clear ticket should extract fields, and conflicting dates should ask, not invent.
+Worked example cases: empty input should refuse politely. A clear ticket should extract fields. Conflicting dates should ask, not invent.
 
 [Slide 4] Practice checkpoint
-Practice checkpoint: write five eval cases for your prompt, score a before and after change, then continue in the written Module 4 lesson.
+Practice checkpoint: write five eval cases for your prompt. Score a before and after change. Then continue in the written Module 4 lesson.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Today’s lesson goal: build a small evaluation set, score outputs the same way each time, and iterate with evidence, not vibes. Good evaluation uses ten or more cases covering good, bad, and ambiguous inputs, a fixed rubric for format accuracy and safety, and reruns the same set after each prompt change. Worked example cases: empty input should refuse politely, a clear ticket should extract fields, and conflicting dates should ask, not invent. Practice checkpoint: write five eval cases for your prompt, score a before and after change, then continue in the written Module 4 lesson.
+Today’s lesson goal: build a small evaluation set. Score outputs the same way each time. Iterate with evidence, not vibes. Good evaluation uses ten or more cases — good, bad, and ambiguous. Use a fixed rubric for format, accuracy, and safety. Rerun the same set after each prompt change. Worked example cases: empty input should refuse politely. A clear ticket should extract fields. Conflicting dates should ask, not invent. Practice checkpoint: write five eval cases for your prompt. Score a before and after change. Then continue in the written Module 4 lesson.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

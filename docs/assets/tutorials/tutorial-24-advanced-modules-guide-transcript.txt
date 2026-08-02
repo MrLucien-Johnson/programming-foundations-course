@@ -7,23 +7,23 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Advanced module expectations
-Advanced module expectations: assume beginner fundamentals are solid, focus on design tradeoffs and reliability, and treat each module like a professional brief.
+Advanced module expectations: assume beginner fundamentals are solid. Focus on design, tradeoffs, and reliability. Treat each module like a professional brief.
 
 [Slide 2] How to learn effectively
-How to learn effectively: restate the problem in your own words, compare two approaches before coding, and write down failure modes you must avoid.
+How to learn effectively: restate the problem in your own words. Compare two approaches before coding. Write down failure modes you must avoid.
 
 [Slide 3] Evidence of progress
-Evidence of progress: complete the quiz to check understanding, keep a short change log of what you tried, and link your notes to the module acceptance criteria.
+Evidence of progress: complete the quiz to check understanding. Keep a short change log of what you tried. Link your notes to the module acceptance criteria.
 
 [Slide 4] Next step
-Next step: open this module’s written lesson now, work Core exercises before Beast Mode, and ask for help early on architecture questions.
+Next step: open this module’s written lesson now. Work Core exercises before Beast Mode. Ask for help early on architecture questions.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Advanced module expectations: assume beginner fundamentals are solid, focus on design tradeoffs and reliability, and treat each module like a professional brief. How to learn effectively: restate the problem in your own words, compare two approaches before coding, and write down failure modes you must avoid. Evidence of progress: complete the quiz to check understanding, keep a short change log of what you tried, and link your notes to the module acceptance criteria. Next step: open this module’s written lesson now, work Core exercises before Beast Mode, and ask for help early on architecture questions.
+Advanced module expectations: assume beginner fundamentals are solid. Focus on design, tradeoffs, and reliability. Treat each module like a professional brief. How to learn effectively: restate the problem in your own words. Compare two approaches before coding. Write down failure modes you must avoid. Evidence of progress: complete the quiz to check understanding. Keep a short change log of what you tried. Link your notes to the module acceptance criteria. Next step: open this module’s written lesson now. Work Core exercises before Beast Mode. Ask for help early on architecture questions.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

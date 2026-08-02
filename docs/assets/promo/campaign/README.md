@@ -1,26 +1,31 @@
 # Promo campaign pack
 
-Short site walkthrough ads (same visual style as the existing 10s/45s clips).
-Each angle includes: silent MP4, VO MP4, voiceover audio, and transcript.
+Short brand-matched slide ads with paced voiceover (same parchment / gold style as tutorials).
+
+Rebuild with:
+
+```bash
+python3 scripts/promo/generate_promo_slides.py
+```
 
 Play all on: https://mrlucien-johnson.github.io/programming-foundations-course/promo.html
 
-| ID | Angle | Real-life hook | ~Length |
-|----|-------|----------------|---------|
-| `01-from-zero` | Absolute beginners | “I have no coding background” | ~21s |
-| `02-guided-path` | Start Here checklist | Clear next steps instead of overwhelm | ~20s |
-| `03-choose-course` | Python / C# / AI | Pick a path that matches your goals | ~22s |
-| `04-real-skills` | Modules + projects | Portfolio / job / freelance skills | ~21s |
-| `05-prove-it` | Certificates | Show completion to employers/clients | ~17s |
-| `06-free-flexible` | Free + sync + donate | Learn anywhere without a paywall | ~20s |
+| ID | Angle | Real-life hook |
+|----|-------|----------------|
+| `01-from-zero` | Absolute beginners | “I have no coding background” |
+| `02-guided-path` | Start Here checklist | Clear next steps instead of overwhelm |
+| `03-choose-course` | Python / C# / AI | Pick a path that matches your goals |
+| `04-real-skills` | Modules + projects | Portfolio / job / freelance skills |
+| `05-prove-it` | Certificates | Show completion to employers/clients |
+| `06-free-flexible` | Free + sync + donate | Learn anywhere without a paywall |
 
 ## Files per angle
 
 For each `NN-name`:
 
-- `campaign-NN-name-vo.mp4` — video with AI voiceover (prefer this for ads)
-- `campaign-NN-name.mp4` — silent walkthrough
+- `campaign-NN-name-vo.mp4` — video with voiceover (prefer this for ads)
+- `campaign-NN-name.mp4` — silent picture track
 - `campaign-NN-name-voiceover.m4a` — audio only
-- `NN-name-transcript.txt` — full script + visual beats
+- `NN-name-transcript.txt` — full script
 
-Voice: warm US English (Jenny), generated from each transcript.
+Voice: warm US English (Jenny), slightly slowed for clarity. Audio is volume-checked on build.

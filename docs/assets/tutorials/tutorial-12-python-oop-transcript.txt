@@ -7,7 +7,7 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Today’s lesson goal
-Today’s lesson goal: model real things with classes, create objects with their own data, and call methods that use that data.
+Today’s lesson goal: model real things with classes. Create objects with their own data. Call methods that use that data.
 
 [Slide 2] Class vs object
 A class is the blueprint. An object is one built example. Many objects can share the same class.
@@ -16,20 +16,20 @@ A class is the blueprint. An object is one built example. Many objects can share
 Attributes store data on the object. Methods are functions tied to the object. Self means this particular object.
 
 [Slide 4] Worked example: Task
-Worked example: a Task class with a title and done flag, a mark done method that flips the flag, then create two tasks and mark one complete.
+Worked example: a Task class with a title and done flag. A mark done method flips the flag. Create two tasks and mark one complete.
 
 [Slide 5] Common mistakes
-Common mistakes: forgetting self in method definitions, calling methods incorrectly, and putting all logic in one giant class.
+Common mistakes: forgetting self in method definitions. Calling methods incorrectly on the class instead of an instance. Putting all logic in one giant class.
 
 [Slide 6] Practice checkpoint
-Practice checkpoint: create a simple class for a book or student, add one method and call it, then continue in the written Module 6 lesson and quiz.
+Practice checkpoint: create a simple class for a book or student. Add one method and call it. Then continue in the written Module 6 lesson and quiz.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Today’s lesson goal: model real things with classes, create objects with their own data, and call methods that use that data. A class is the blueprint. An object is one built example. Many objects can share the same class. Attributes store data on the object. Methods are functions tied to the object. Self means this particular object. Worked example: a Task class with a title and done flag, a mark done method that flips the flag, then create two tasks and mark one complete. Common mistakes: forgetting self in method definitions, calling methods incorrectly, and putting all logic in one giant class. Practice checkpoint: create a simple class for a book or student, add one method and call it, then continue in the written Module 6 lesson and quiz.
+Today’s lesson goal: model real things with classes. Create objects with their own data. Call methods that use that data. A class is the blueprint. An object is one built example. Many objects can share the same class. Attributes store data on the object. Methods are functions tied to the object. Self means this particular object. Worked example: a Task class with a title and done flag. A mark done method flips the flag. Create two tasks and mark one complete. Common mistakes: forgetting self in method definitions. Calling methods incorrectly on the class instead of an instance. Putting all logic in one giant class. Practice checkpoint: create a simple class for a book or student. Add one method and call it. Then continue in the written Module 6 lesson and quiz.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

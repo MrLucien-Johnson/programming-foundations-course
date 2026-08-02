@@ -7,23 +7,23 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Today’s lesson goal
-Today’s lesson goal: create a simple class in C sharp, add properties and a method, and construct objects and use them.
+Today’s lesson goal: create a simple class in C sharp. Add properties and a method. Construct objects and use them.
 
 [Slide 2] Classes and objects
 A class defines fields or properties. New creates an instance. Methods act on that instance’s data.
 
 [Slide 3] Worked example: Book
-Worked example: a Book with Title and IsRead properties, a MarkRead method, then create two books and mark one read.
+Worked example: a Book with Title and IsRead properties. A MarkRead method. Create two books and mark one read.
 
 [Slide 4] Practice checkpoint
-Practice checkpoint: model one real-world thing as a class, add one behaviour method, then continue in the written Module 6 lesson and quiz.
+Practice checkpoint: model one real-world thing as a class. Add one behaviour method. Then continue in the written Module 6 lesson and quiz.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Today’s lesson goal: create a simple class in C sharp, add properties and a method, and construct objects and use them. A class defines fields or properties. New creates an instance. Methods act on that instance’s data. Worked example: a Book with Title and IsRead properties, a MarkRead method, then create two books and mark one read. Practice checkpoint: model one real-world thing as a class, add one behaviour method, then continue in the written Module 6 lesson and quiz.
+Today’s lesson goal: create a simple class in C sharp. Add properties and a method. Construct objects and use them. A class defines fields or properties. New creates an instance. Methods act on that instance’s data. Worked example: a Book with Title and IsRead properties. A MarkRead method. Create two books and mark one read. Practice checkpoint: model one real-world thing as a class. Add one behaviour method. Then continue in the written Module 6 lesson and quiz.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

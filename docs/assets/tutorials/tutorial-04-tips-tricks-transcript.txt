@@ -7,26 +7,26 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Follow Start Here in order
-Follow Start Here in order. Open Module 1 online before installing tools, pick one course, and use Mark done so your path updates.
+Follow Start Here in order. Open Module 1 online before you install tools. Pick one course and stay with it. Use Mark done so your path updates.
 
 [Slide 2] Lessons, quizzes, and progress
-Read each lesson, then take the module quiz. Continue banners bring you back where you left off, and certificates unlock when every module is complete.
+Read each lesson, then take the module quiz. Continue banners bring you back where you left off. Certificates unlock when every module is complete.
 
 [Slide 3] Guest mode vs free account
 Guest progress stays in this browser. A free account can sync when the cloud is up. Keep guest progress as a backup on free hosting.
 
 [Slide 4] Practice habits that stick
-Type the examples instead of only reading them. Break big tasks into tiny checkpoints. When stuck, re-read the tip boxes, then open Help.
+Type the examples — do not only read them. Break big tasks into tiny checkpoints. When stuck, re-read the tip boxes, then open Help.
 
 [Slide 5] You are ready
-You are ready. Go Start Here, choose a course, and open Module 1. Watch the Python or C sharp install video when you code locally. Enjoy learning.
+You are ready. Go to Start Here, choose a course, and open Module 1. Watch the Python or C sharp install video when you code locally.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Follow Start Here in order. Open Module 1 online before installing tools, pick one course, and use Mark done so your path updates. Read each lesson, then take the module quiz. Continue banners bring you back where you left off, and certificates unlock when every module is complete. Guest progress stays in this browser. A free account can sync when the cloud is up. Keep guest progress as a backup on free hosting. Type the examples instead of only reading them. Break big tasks into tiny checkpoints. When stuck, re-read the tip boxes, then open Help. You are ready. Go Start Here, choose a course, and open Module 1. Watch the Python or C sharp install video when you code locally. Enjoy learning.
+Follow Start Here in order. Open Module 1 online before you install tools. Pick one course and stay with it. Use Mark done so your path updates. Read each lesson, then take the module quiz. Continue banners bring you back where you left off. Certificates unlock when every module is complete. Guest progress stays in this browser. A free account can sync when the cloud is up. Keep guest progress as a backup on free hosting. Type the examples — do not only read them. Break big tasks into tiny checkpoints. When stuck, re-read the tip boxes, then open Help. You are ready. Go to Start Here, choose a course, and open Module 1. Watch the Python or C sharp install video when you code locally.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

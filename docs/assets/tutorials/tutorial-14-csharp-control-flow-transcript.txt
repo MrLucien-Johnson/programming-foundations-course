@@ -7,29 +7,29 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Today’s lesson goal
-Today’s lesson goal: use if, else if, and else in C sharp, compare values safely, and repeat work with for and while.
+Today’s lesson goal: use if, else if, and else in C sharp. Compare values safely. Repeat work with for and while.
 
 [Slide 2] Decisions in C#
-Decisions in C sharp: conditions go in parentheses, blocks use curly braces, and else if chains handle multiple cases.
+Decisions in C sharp: conditions go in parentheses. Blocks use curly braces. Else if chains handle multiple cases.
 
 [Slide 3] Worked example: ticket price
-Worked example: ticket price. Choose child, adult, or senior based on age, print the matching price, and otherwise ask for a valid age.
+Worked example: ticket price. Choose child, adult, or senior based on age. Print the matching price. Otherwise ask for a valid age.
 
 [Slide 4] Loops in C#
-Loops in C sharp: for when you know the count, while when you wait for a condition, and foreach when you walk a collection.
+Loops in C sharp: for when you know the count. While when you wait for a condition. Foreach when you walk a collection.
 
 [Slide 5] Common mistakes
-Common mistakes: using a single equals instead of double equals, missing braces so only one line is conditional, and off-by-one errors in for loops.
+Common mistakes: using a single equals instead of double equals. Missing braces so only one line is conditional. Off-by-one errors in for loops.
 
 [Slide 6] Practice checkpoint
-Practice checkpoint: write a small menu with three options, loop until the user quits, then continue in the written Module 3 lesson and quiz.
+Practice checkpoint: write a small menu with three options. Loop until the user quits. Then continue in the written Module 3 lesson and quiz.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Today’s lesson goal: use if, else if, and else in C sharp, compare values safely, and repeat work with for and while. Decisions in C sharp: conditions go in parentheses, blocks use curly braces, and else if chains handle multiple cases. Worked example: ticket price. Choose child, adult, or senior based on age, print the matching price, and otherwise ask for a valid age. Loops in C sharp: for when you know the count, while when you wait for a condition, and foreach when you walk a collection. Common mistakes: using a single equals instead of double equals, missing braces so only one line is conditional, and off-by-one errors in for loops. Practice checkpoint: write a small menu with three options, loop until the user quits, then continue in the written Module 3 lesson and quiz.
+Today’s lesson goal: use if, else if, and else in C sharp. Compare values safely. Repeat work with for and while. Decisions in C sharp: conditions go in parentheses. Blocks use curly braces. Else if chains handle multiple cases. Worked example: ticket price. Choose child, adult, or senior based on age. Print the matching price. Otherwise ask for a valid age. Loops in C sharp: for when you know the count. While when you wait for a condition. Foreach when you walk a collection. Common mistakes: using a single equals instead of double equals. Missing braces so only one line is conditional. Off-by-one errors in for loops. Practice checkpoint: write a small menu with three options. Loop until the user quits. Then continue in the written Module 3 lesson and quiz.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

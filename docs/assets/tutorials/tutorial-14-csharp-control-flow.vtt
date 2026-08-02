@@ -1,25 +1,25 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:08.112
-Today’s lesson goal: Today’s lesson goal: use if, else if, and else in C sharp, compare values safely, and repeat work with for and while.
+00:00:00.000 --> 00:00:10.776
+Today’s lesson goal: Today’s lesson goal: use if, else if, and else in C sharp. Compare values safely. Repeat work with for and while.
 
 2
-00:00:08.462 --> 00:00:16.862
-Decisions in C#: Decisions in C sharp: conditions go in parentheses, blocks use curly braces, and else if chains handle multiple cases.
+00:00:11.626 --> 00:00:22.618
+Decisions in C#: Decisions in C sharp: conditions go in parentheses. Blocks use curly braces. Else if chains handle multiple cases.
 
 3
-00:00:17.212 --> 00:00:27.724
-Worked example: ticket price: Worked example: ticket price. Choose child, adult, or senior based on age, print the matching price, and otherwise ask for a valid age.
+00:00:23.468 --> 00:00:36.932
+Worked example: ticket price: Worked example: ticket price. Choose child, adult, or senior based on age. Print the matching price. Otherwise ask for a valid age.
 
 4
-00:00:28.074 --> 00:00:35.394
-Loops in C#: Loops in C sharp: for when you know the count, while when you wait for a condition, and foreach when you walk a collection.
+00:00:37.782 --> 00:00:47.526
+Loops in C#: Loops in C sharp: for when you know the count. While when you wait for a condition. Foreach when you walk a collection.
 
 5
-00:00:35.744 --> 00:00:45.584
-Common mistakes: Common mistakes: using a single equals instead of double equals, missing braces so only one line is conditional, and off-by-one errors in for loops.
+00:00:48.376 --> 00:01:00.976
+Common mistakes: Common mistakes: using a single equals instead of double equals. Missing braces so only one line is conditional. Off-by-one errors in for loops.
 
 6
-00:00:45.934 --> 00:00:55.102
-Practice checkpoint: Practice checkpoint: write a small menu with three options, loop until the user quits, then continue in the written Module 3 lesson and quiz.
+00:01:01.826 --> 00:01:13.898
+Practice checkpoint: Practice checkpoint: write a small menu with three options. Loop until the user quits. Then continue in the written Module 3 lesson and quiz.

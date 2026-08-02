@@ -7,26 +7,26 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Today’s lesson goal
-Today’s lesson goal: reuse proven prompt patterns, extract structured fields reliably, and add a review pass that does not invent facts.
+Today’s lesson goal: reuse proven prompt patterns. Extract structured fields reliably. Add a review pass that does not invent facts.
 
 [Slide 2] Pattern: checklist
-Checklist pattern: list required fields explicitly, say what to do when data is missing, and reject guesses that are not in the source.
+Checklist pattern: list required fields explicitly. Say what to do when data is missing. Reject guesses that are not in the source.
 
 [Slide 3] Pattern: decompose then verify
-Decompose then verify: break the job into clear steps, keep drafting separate from checking, and verify structure before you trust content.
+Decompose then verify: break the job into clear steps. Keep drafting separate from checking. Verify structure before you trust content.
 
 [Slide 4] Worked example: email extract
-Worked example: extract name, account, issue, and urgency as JSON from an email. Only use the email text. A repair pass fixes invalid JSON without adding new facts.
+Worked example: extract name, account, issue, and urgency as J S O N from an email. Only use the email text. A repair pass fixes invalid J S O N without adding new facts.
 
 [Slide 5] Practice checkpoint
-Practice checkpoint: apply two patterns to the same task, compare which fails less often, then continue in the written Module 3 lesson.
+Practice checkpoint: apply two patterns to the same task. Compare which fails less often. Then continue in the written Module 3 lesson.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Today’s lesson goal: reuse proven prompt patterns, extract structured fields reliably, and add a review pass that does not invent facts. Checklist pattern: list required fields explicitly, say what to do when data is missing, and reject guesses that are not in the source. Decompose then verify: break the job into clear steps, keep drafting separate from checking, and verify structure before you trust content. Worked example: extract name, account, issue, and urgency as JSON from an email. Only use the email text. A repair pass fixes invalid JSON without adding new facts. Practice checkpoint: apply two patterns to the same task, compare which fails less often, then continue in the written Module 3 lesson.
+Today’s lesson goal: reuse proven prompt patterns. Extract structured fields reliably. Add a review pass that does not invent facts. Checklist pattern: list required fields explicitly. Say what to do when data is missing. Reject guesses that are not in the source. Decompose then verify: break the job into clear steps. Keep drafting separate from checking. Verify structure before you trust content. Worked example: extract name, account, issue, and urgency as J S O N from an email. Only use the email text. A repair pass fixes invalid J S O N without adding new facts. Practice checkpoint: apply two patterns to the same task. Compare which fails less often. Then continue in the written Module 3 lesson.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

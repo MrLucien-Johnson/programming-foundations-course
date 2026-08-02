@@ -1,30 +1,7 @@
-Programming Foundations — Promo 03: Choose Your Path
-Target length: ~25s
-Angle: Match goals to a course
+Programming Foundations — campaign 03-choose-course
+Voice: en-US-JennyNeural @ -10%
 
-────────────────────────────────────────
-FULL VOICEOVER
-────────────────────────────────────────
+Pick what fits you. Python for an easy start. C sharp for Windows and dot net. A I for prompt skills.
+Then follow the modules. Lessons teach the idea. Quizzes check understanding. Projects make it real.
 
-Want the easiest start? Try Python.
-Building for Windows or games? Choose C Sharp.
-Curious about AI tools? Start the AI Prompt course.
-
-One site. Multiple paths.
-Pick what fits your life — then learn at your own pace.
-
-────────────────────────────────────────
-VISUAL BEATS
-────────────────────────────────────────
-
-[00:00–00:06]  Homepage course matcher (if visible) or Courses
-[00:06–00:16]  Courses page — Python, C#, AI tiles
-[00:16–00:22]  Open one course briefly
-[00:22–00:25]  Hold / CTA
-
-────────────────────────────────────────
-CTA
-────────────────────────────────────────
-
-Browse courses.
-https://mrlucien-johnson.github.io/programming-foundations-course/courses.html
+Pick what fits you. Python for an easy start. C sharp for Windows and dot net. A I for prompt skills. Then follow the modules. Lessons teach the idea. Quizzes check understanding. Projects make it real.

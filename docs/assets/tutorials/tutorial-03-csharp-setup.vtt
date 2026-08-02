@@ -1,21 +1,21 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:10.104
-Install the .NET SDK: Install the dot net S D K from dotnet.microsoft.com slash download. Get the latest S D K, run the installer, then finish.
+00:00:00.000 --> 00:00:14.232
+Install the .NET SDK: Install the dot net S D K from dotnet.microsoft.com slash download. Download the latest S D K — version 8 or newer. Run the installer, then finish.
 
 2
-00:00:10.454 --> 00:00:17.654
-Verify with the terminal: Open a terminal and run dotnet dash dash version. A number like 8 point 0 means you are ready.
+00:00:15.082 --> 00:00:25.162
+Verify with the terminal: Open Terminal or Command Prompt. Run dotnet dash dash version. A number like 8 point 0 means you are ready.
 
 3
-00:00:18.004 --> 00:00:25.780
-Editor + C# tools: Install Cursor or Visual Studio Code, add the C sharp Dev Kit extension, and open the csharp-beginner-workbook folder.
+00:00:26.012 --> 00:00:36.764
+Editor + C# tools: Install Cursor or Visual Studio Code. Add the C sharp Dev Kit extension. Open the csharp-beginner-workbook folder in the editor.
 
 4
-00:00:26.130 --> 00:00:35.466
-Create and run a console app: Create a console app with dotnet new console, move into the folder, and run dotnet run. Edit Program.cs to make it yours.
+00:00:37.614 --> 00:00:49.806
+Create and run a console app: Create a console app with dotnet new console. Move into the folder with cd. Run dotnet run, then edit Program.cs to make it yours.
 
 5
-00:00:35.816 --> 00:00:45.296
-C# tips: Remember: C sharp is the language and dot net is the toolbox. Open the whole project folder, finish Module 1, then take the quiz.
+00:00:50.656 --> 00:01:02.560
+C# tips: Remember: C sharp is the language. Dot net is the toolbox. Open the whole project folder, finish Module 1, then take the quiz.

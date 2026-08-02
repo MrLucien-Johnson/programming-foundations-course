@@ -1,25 +1,25 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:07.896
-Today’s lesson goal: Today’s lesson goal: store many values in lists, look up data with dictionaries, and choose the right collection for the job.
+00:00:00.000 --> 00:00:10.464
+Today’s lesson goal: Today’s lesson goal: store many values in lists. Look up data with dictionaries. Choose the right collection for the job.
 
 2
-00:00:08.246 --> 00:00:20.294
-Lists: ordered collections: Lists are ordered collections. Keep items in order, access by index, append or remove, and loop through items. Great for playlists, baskets, and queues.
+00:00:11.314 --> 00:00:26.266
+Lists: ordered collections: Lists are ordered collections. Keep items in order and access by index. Append, remove, and loop through items. Great for playlists, baskets, and queues.
 
 3
-00:00:20.644 --> 00:00:31.324
-Dictionaries: keys to values: Dictionaries map a key to a value, like a labelled folder. Use them for fast lookups such as name to email or id to score. Keys must be unique.
+00:00:27.116 --> 00:00:39.260
+Dictionaries: keys to values: Dictionaries map a key to a value — like a labelled folder. Use them for fast lookups such as name to email or id to score. Keys must be unique.
 
 4
-00:00:31.674 --> 00:00:40.314
-Worked example: contacts: Worked example: keep a list of friend names and a dictionary of name to phone number, then loop the list and print each number from the dictionary.
+00:00:40.110 --> 00:00:50.310
+Worked example: contacts: Worked example: keep a list of friend names and a dictionary of name to phone number. Loop the list and print each number from the dictionary.
 
 5
-00:00:40.664 --> 00:00:49.376
-Common mistakes: Common mistakes: off-by-one index errors, assuming a key exists without checking, and mixing up list order with dictionary keys.
+00:00:51.160 --> 00:01:04.288
+Common mistakes: Common mistakes: off-by-one index errors. Assuming a key exists without checking — use get or check first. Mixing up list order with dictionary keys.
 
 6
-00:00:49.726 --> 00:00:59.614
-Practice checkpoint: Practice checkpoint: build a tiny shopping list or contact book, add print and look up one item, then continue in the written Module 5 lesson and quiz.
+00:01:05.138 --> 00:01:18.410
+Practice checkpoint: Practice checkpoint: build a tiny shopping list or contact book. Add, print, and look up one item. Then continue in the written Module 5 lesson and quiz.

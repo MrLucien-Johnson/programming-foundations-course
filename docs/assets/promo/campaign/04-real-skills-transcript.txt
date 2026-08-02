@@ -1,32 +1,7 @@
-Programming Foundations — Promo 04: Real Skills
-Target length: ~25s
-Angle: Lessons → quizzes → portfolio projects
+Programming Foundations — campaign 04-real-skills
+Voice: en-US-JennyNeural @ -10%
 
-────────────────────────────────────────
-FULL VOICEOVER
-────────────────────────────────────────
+Build things you can show. Guided modules, hands-on exercises, and portfolio-ready projects.
+These are skills that transfer — for jobs, freelance work, school, or a career change.
 
-This isn’t random YouTube scrolling.
-It’s a structured path: lessons, practice quizzes, and projects you can show.
-
-Learn the basics.
-Prove them with quizzes.
-Build something real for your portfolio.
-
-Skills you can use in a job, a freelance gig, or your own ideas.
-
-────────────────────────────────────────
-VISUAL BEATS
-────────────────────────────────────────
-
-[00:00–00:06]  Open Python (or C#) course
-[00:06–00:16]  Scroll modules — lesson + quiz links
-[00:16–00:22]  Highlight project / later modules
-[00:22–00:25]  CTA
-
-────────────────────────────────────────
-CTA
-────────────────────────────────────────
-
-Open a course and start Module 1.
-https://mrlucien-johnson.github.io/programming-foundations-course/courses.html
+Build things you can show. Guided modules, hands-on exercises, and portfolio-ready projects. These are skills that transfer — for jobs, freelance work, school, or a career change.

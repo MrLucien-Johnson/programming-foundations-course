@@ -1,34 +1,30 @@
 # Promo videos
 
-Advertisement screen recordings of the live Programming Foundations site.
+Brand-matched slide films with paced voiceover (parchment / gold look).
 
-## Watch & download (recommended)
+Rebuild:
 
-Open the site page (plays in-browser as real MP4s):
+```bash
+pip install edge-tts Pillow
+python3 scripts/promo/generate_promo_slides.py
+```
+
+## Watch & download
 
 **https://mrlucien-johnson.github.io/programming-foundations-course/promo.html**
 
-On that page: press play, or use **Download MP4**.  
-(You can also right-click the video → **Save video as…**)
-
-Do **not** rely on GitHub’s file browser — it serves these as generic files and won’t play them.
-
 ## Files
 
-| File | Length | Contents |
-|------|--------|----------|
-| `promo-ad-1-start-here.mp4` | ~10s | Home → Start Here → mark first step done |
-| `promo-ad-2-courses-donate.mp4` | ~10s | Courses → Python → Support / PayPal donate |
-| `promo-45s-system-tour.mp4` | ~45s | Full tour (silent) |
-| `promo-45s-system-tour-vo.mp4` | ~45s | Full tour **with AI voiceover** from the transcript |
-| `promo-45s-voiceover.m4a` | ~45s | Voiceover audio only |
-| `promo-45s-transcript.txt` | — | Voiceover / caption script for the 45s tour |
+| File | Contents |
+|------|----------|
+| `promo-ad-1-start-here.mp4` | Start Here path (with VO) |
+| `promo-ad-2-courses-donate.mp4` | Courses + support (with VO) |
+| `promo-45s-system-tour-vo.mp4` | Full tour with voiceover |
+| `promo-45s-system-tour.mp4` | Full tour (silent picture) |
+| `promo-45s-voiceover.m4a` | Tour audio only |
+| `promo-45s-transcript.txt` | Tour script |
 
-Direct Pages links (content-type `video/mp4`):
-
-- https://mrlucien-johnson.github.io/programming-foundations-course/assets/promo/promo-45s-system-tour.mp4
-- https://mrlucien-johnson.github.io/programming-foundations-course/assets/promo/promo-45s-system-tour-vo.mp4
-- https://mrlucien-johnson.github.io/programming-foundations-course/assets/promo/promo-ad-1-start-here.mp4
-- https://mrlucien-johnson.github.io/programming-foundations-course/assets/promo/promo-ad-2-courses-donate.mp4
+Audio is volume-checked on build so silent tracks cannot ship.
+Voice: en-US JennyNeural (slightly slowed for clarity).
 
 Live site: https://mrlucien-johnson.github.io/programming-foundations-course/

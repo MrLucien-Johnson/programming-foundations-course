@@ -7,32 +7,32 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Today’s lesson goal
-Today’s lesson goal: declare typed variables in C sharp, read input and convert numbers safely, and calculate totals people can understand.
+Today’s lesson goal: declare typed variables in C sharp. Read input and convert numbers safely. Calculate totals people can understand.
 
 [Slide 2] Declare with a type
 Declare with a type. String customer name equals Sarah. Int quantity equals 3. Double price equals 9.99. The type tells C sharp what kind of box you are creating.
 
 [Slide 3] Why types help beginners
-Types help beginners because the compiler catches many mistakes early. You see what each value is meant to be, and names plus types document your intent.
+Types help beginners. The compiler catches many mistakes early. You see what each value is meant to be. Names plus types document your intent.
 
 [Slide 4] Worked example: greeting
-Worked example: a greeting. Write a prompt, read the line into a string name, then write Hello name with string interpolation.
+Worked example: a greeting. Write a prompt. Read the line into a string name. Then write Hello name with string interpolation.
 
 [Slide 5] Worked example: tax total
-Worked example: a tax total. Read a line of text, parse it with double.Parse, then multiply by one point two. Print the total with clear wording.
+Worked example: a tax total. Read a line of text. Parse it with double dot Parse to get a number. Multiply by one point two. Print the total with clear wording.
 
 [Slide 6] Common mistakes
-Common mistakes include using the value before Parse succeeds, forgetting that ReadLine returns text, and opening a single file instead of the whole project folder.
+Common mistakes: using the value before Parse succeeds. Forgetting that ReadLine returns text. Opening a single file instead of the whole project folder.
 
 [Slide 7] Practice, then quiz
-Practice, then quiz. Complete the Module 2 exercises in your console app, compare with solutions after you try, and take the Module 2 quiz. The written lesson has the full walkthrough.
+Practice, then quiz. Complete the Module 2 exercises in your console app. Compare with solutions after you try. Take the Module 2 quiz. Then continue in the written lesson.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Today’s lesson goal: declare typed variables in C sharp, read input and convert numbers safely, and calculate totals people can understand. Declare with a type. String customer name equals Sarah. Int quantity equals 3. Double price equals 9.99. The type tells C sharp what kind of box you are creating. Types help beginners because the compiler catches many mistakes early. You see what each value is meant to be, and names plus types document your intent. Worked example: a greeting. Write a prompt, read the line into a string name, then write Hello name with string interpolation. Worked example: a tax total. Read a line of text, parse it with double.Parse, then multiply by one point two. Print the total with clear wording. Common mistakes include using the value before Parse succeeds, forgetting that ReadLine returns text, and opening a single file instead of the whole project folder. Practice, then quiz. Complete the Module 2 exercises in your console app, compare with solutions after you try, and take the Module 2 quiz. The written lesson has the full walkthrough.
+Today’s lesson goal: declare typed variables in C sharp. Read input and convert numbers safely. Calculate totals people can understand. Declare with a type. String customer name equals Sarah. Int quantity equals 3. Double price equals 9.99. The type tells C sharp what kind of box you are creating. Types help beginners. The compiler catches many mistakes early. You see what each value is meant to be. Names plus types document your intent. Worked example: a greeting. Write a prompt. Read the line into a string name. Then write Hello name with string interpolation. Worked example: a tax total. Read a line of text. Parse it with double dot Parse to get a number. Multiply by one point two. Print the total with clear wording. Common mistakes: using the value before Parse succeeds. Forgetting that ReadLine returns text. Opening a single file instead of the whole project folder. Practice, then quiz. Complete the Module 2 exercises in your console app. Compare with solutions after you try. Take the Module 2 quiz. Then continue in the written lesson.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

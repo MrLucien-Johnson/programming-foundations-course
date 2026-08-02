@@ -1,21 +1,21 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:09.336
-Today’s lesson goal: Today’s lesson goal: reuse proven prompt patterns, extract structured fields reliably, and add a review pass that does not invent facts.
+00:00:00.000 --> 00:00:11.904
+Today’s lesson goal: Today’s lesson goal: reuse proven prompt patterns. Extract structured fields reliably. Add a review pass that does not invent facts.
 
 2
-00:00:09.686 --> 00:00:18.302
-Pattern: checklist: Checklist pattern: list required fields explicitly, say what to do when data is missing, and reject guesses that are not in the source.
+00:00:12.754 --> 00:00:23.962
+Pattern: checklist: Checklist pattern: list required fields explicitly. Say what to do when data is missing. Reject guesses that are not in the source.
 
 3
-00:00:18.652 --> 00:00:27.988
-Pattern: decompose then verify: Decompose then verify: break the job into clear steps, keep drafting separate from checking, and verify structure before you trust content.
+00:00:24.812 --> 00:00:36.836
+Pattern: decompose then verify: Decompose then verify: break the job into clear steps. Keep drafting separate from checking. Verify structure before you trust content.
 
 4
-00:00:28.338 --> 00:00:41.778
-Worked example: email extract: Worked example: extract name, account, issue, and urgency as JSON from an email. Only use the email text. A repair pass fixes invalid JSON without adding new facts.
+00:00:37.686 --> 00:00:53.958
+Worked example: email extract: Worked example: extract name, account, issue, and urgency as J S O N from an email. Only use the email text. A repair pass fixes invalid J S O N without adding new facts.
 
 5
-00:00:42.128 --> 00:00:51.152
-Practice checkpoint: Practice checkpoint: apply two patterns to the same task, compare which fails less often, then continue in the written Module 3 lesson.
+00:00:54.808 --> 00:01:06.472
+Practice checkpoint: Practice checkpoint: apply two patterns to the same task. Compare which fails less often. Then continue in the written Module 3 lesson.

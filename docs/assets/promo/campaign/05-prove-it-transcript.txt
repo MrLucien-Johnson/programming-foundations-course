@@ -1,30 +1,7 @@
-Programming Foundations — Promo 05: Prove It
-Target length: ~22s
-Angle: Certificates for completed courses
+Programming Foundations — campaign 05-prove-it
+Voice: en-US-JennyNeural @ -10%
 
-────────────────────────────────────────
-FULL VOICEOVER
-────────────────────────────────────────
+Finish modules with proof. Complete lessons and quizzes, track your progress, and earn completion certificates.
+Show your work to employers or clients — and keep a record for yourself.
 
-Finish the modules.
-Earn a certificate you can print and share.
-
-It’s a simple way to show progress —
-to yourself, a hiring manager, or a client.
-
-Complete a course. Claim your certificate.
-
-────────────────────────────────────────
-VISUAL BEATS
-────────────────────────────────────────
-
-[00:00–00:06]  Courses → certificate CTA
-[00:06–00:16]  Certificate page — course select + progress
-[00:16–00:22]  Preview / print area hold
-
-────────────────────────────────────────
-CTA
-────────────────────────────────────────
-
-View certificates.
-https://mrlucien-johnson.github.io/programming-foundations-course/certificate.html
+Finish modules with proof. Complete lessons and quizzes, track your progress, and earn completion certificates. Show your work to employers or clients — and keep a record for yourself.

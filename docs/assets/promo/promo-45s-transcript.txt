@@ -1,71 +1,14 @@
-Programming Foundations — 45-second ad
-Video: promo-45s-system-tour.mp4 (~45s)
-Suggested VO style: warm, clear, beginner-friendly. Not salesy.
+Programming Foundations — promo voiceover
+File: promo-45s-system-tour-vo.mp4
+Voice: en-US-JennyNeural @ -10%
 
 ────────────────────────────────────────
-FULL VOICEOVER TRANSCRIPT (read-aloud)
+FULL VOICEOVER
 ────────────────────────────────────────
 
-Start your programming journey from zero.
-Track your progress step by step as you build real projects.
+Start your programming journey from zero. Track your progress step by step as you build real projects.
+Choose a beginner-friendly path — Python, C sharp, or A I. Follow clear modules with lessons and quizzes.
+Create a free account to sync progress when you can. Or keep learning as a guest anytime.
+This course stays free. If you want to help keep it online, you can support us with a donation. Programming Foundations. Start learning today — no experience needed.
 
-Choose a beginner-friendly path — Python, C#, or AI —
-and follow clear modules with lessons and quizzes.
-
-Create a free account to sync your progress when you can,
-and keep learning as a guest anytime.
-
-This course stays free. If you want to help keep it online,
-you can support us with a donation.
-
-Programming Foundations.
-Start learning today — no experience needed.
-
-────────────────────────────────────────
-TIMED SCRIPT (for editing / VO sync)
-────────────────────────────────────────
-
-[00:00–00:09]  Homepage → Start Here → mark first step done
-VO: "Start your programming journey from zero. Track your progress step by step as you build real projects."
-
-[00:10–00:20]  Courses page → open Python
-VO: "Choose a beginner-friendly path — Python, C#, or AI — and follow clear modules with lessons and quizzes."
-
-[00:20–00:29]  Python course modules
-VO: "Follow structured modules designed for absolute beginners."
-
-[00:29–00:39]  Account → Support / Donate with PayPal
-VO: "Create a free account to sync your progress when you can. This course stays free — and you can support it with a donation."
-
-[00:39–00:45]  Return Home → outro
-VO: "Programming Foundations. Start learning today — no experience needed."
-
-────────────────────────────────────────
-ON-SCREEN TEXT / CAPTIONS (optional)
-────────────────────────────────────────
-
-00:00  Learn from zero
-00:05  Track your progress
-00:12  Pick your course
-00:22  Clear modules & quizzes
-00:30  Free account · guest mode
-00:35  Donations welcome
-00:42  Start here — no experience needed
-
-────────────────────────────────────────
-CTA / LINKS
-────────────────────────────────────────
-
-Site: https://mrlucien-johnson.github.io/programming-foundations-course/
-Donate: https://paypal.me/ProgrammingOfficial
-
-────────────────────────────────────────
-GENERATED VOICEOVER
-────────────────────────────────────────
-
-A timed AI voiceover (en-US Jenny, warm/friendly) is mixed into:
-  promo-45s-system-tour-vo.mp4
-Audio-only:
-  promo-45s-voiceover.m4a
-
-Play/download on: https://mrlucien-johnson.github.io/programming-foundations-course/promo.html
+Start your programming journey from zero. Track your progress step by step as you build real projects. Choose a beginner-friendly path — Python, C sharp, or A I. Follow clear modules with lessons and quizzes. Create a free account to sync progress when you can. Or keep learning as a guest anytime. This course stays free. If you want to help keep it online, you can support us with a donation. Programming Foundations. Start learning today — no experience needed.

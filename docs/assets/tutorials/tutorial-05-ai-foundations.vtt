@@ -1,29 +1,29 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:11.520
-Today’s lesson goal: Today’s lesson goal: treat A I work as engineering, not magic. You will name what models do well and where they fail, and leave with a spec and evaluation habit you can reuse.
+00:00:00.000 --> 00:00:14.040
+Today’s lesson goal: Today’s lesson goal: treat A I work as engineering, not magic. You will name what models do well and where they fail. You will leave with a spec and evaluation habit you can reuse.
 
 2
-00:00:11.870 --> 00:00:21.518
-What an LLM actually does: A language model predicts likely next tokens from patterns. It can sound confident even when guessing, so it needs your constraints to stay useful.
+00:00:14.890 --> 00:00:27.466
+What an LLM actually does: An L L M, or language model, predicts likely next tokens from patterns. It can sound confident even when guessing. Your constraints keep it useful.
 
 3
-00:00:21.868 --> 00:00:32.620
-Strengths you can trust more: Strengths you can trust more include drafting and rewriting text you will review, summarising meeting notes into action lists, and transforming content into a format you define.
+00:00:28.316 --> 00:00:41.828
+Strengths you can trust more: Strengths you can trust more: drafting and rewriting text you will review. Summarising meeting notes into action lists. Transforming content into a format you define.
 
 4
-00:00:32.970 --> 00:00:46.770
+00:00:42.678 --> 00:00:58.374
 Failure modes to watch: Watch for failure modes. Hallucinations invent facts or owners. Brittleness means tiny wording changes break output. Injection risk means untrusted text tries to override your rules.
 
 5
-00:00:47.120 --> 00:01:00.896
+00:00:59.224 --> 00:01:14.872
 Worked example: support ticket: Worked example: a support ticket. Goal: a summary and next steps from the ticket. Constraint: only use the provided text. Failure to avoid: inventing a refund promise.
 
 6
-00:01:01.246 --> 00:01:15.022
+00:01:15.722 --> 00:01:31.370
 The engineering loop: Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a ten-case evaluation set and rerun it after each change.
 
 7
-00:01:15.372 --> 00:01:30.900
-Practice before you finish: Practice before you finish. Copy the beginner starter pack templates, write a one-page summariser spec, and build ten evaluation cases covering good, bad, and ambiguous inputs. Then continue in the written Module 1 lesson.
+00:01:32.220 --> 00:01:51.060
+Practice before you finish: Practice before you finish. Copy the beginner starter pack templates. Write a one-page summariser spec. Build ten evaluation cases for good, bad, and ambiguous inputs. Then continue in the written Module 1 lesson.

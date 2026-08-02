@@ -7,26 +7,26 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Today’s lesson goal
-Today’s lesson goal: write methods that do one clear job, pass arguments and return values, and keep Main short by calling helpers.
+Today’s lesson goal: write methods that do one clear job. Pass arguments and return values. Keep Main short by calling helpers.
 
 [Slide 2] Methods are named actions
 Methods are named actions. Declare return type, name, and parameters. Void means it returns nothing. Call methods to reuse logic.
 
 [Slide 3] Worked example: total
-Worked example: a Total method that takes price and quantity, returns price times quantity, then print the result from Main.
+Worked example: a Total method that takes price and quantity. Return price times quantity. Print the result from Main.
 
 [Slide 4] Common mistakes
-Common mistakes: wrong return type for the value you send back, forgetting return in non-void methods, and huge methods that mix input, math, and printing.
+Common mistakes: wrong return type for the value you send back. Forgetting return in non-void methods. Huge methods that mix input, math, and printing.
 
 [Slide 5] Practice checkpoint
-Practice checkpoint: extract one repeated calculation into a method, call it twice from Main, then continue in the written Module 4 lesson and quiz.
+Practice checkpoint: extract one repeated calculation into a method. Call it twice from Main. Then continue in the written Module 4 lesson and quiz.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Today’s lesson goal: write methods that do one clear job, pass arguments and return values, and keep Main short by calling helpers. Methods are named actions. Declare return type, name, and parameters. Void means it returns nothing. Call methods to reuse logic. Worked example: a Total method that takes price and quantity, returns price times quantity, then print the result from Main. Common mistakes: wrong return type for the value you send back, forgetting return in non-void methods, and huge methods that mix input, math, and printing. Practice checkpoint: extract one repeated calculation into a method, call it twice from Main, then continue in the written Module 4 lesson and quiz.
+Today’s lesson goal: write methods that do one clear job. Pass arguments and return values. Keep Main short by calling helpers. Methods are named actions. Declare return type, name, and parameters. Void means it returns nothing. Call methods to reuse logic. Worked example: a Total method that takes price and quantity. Return price times quantity. Print the result from Main. Common mistakes: wrong return type for the value you send back. Forgetting return in non-void methods. Huge methods that mix input, math, and printing. Practice checkpoint: extract one repeated calculation into a method. Call it twice from Main. Then continue in the written Module 4 lesson and quiz.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

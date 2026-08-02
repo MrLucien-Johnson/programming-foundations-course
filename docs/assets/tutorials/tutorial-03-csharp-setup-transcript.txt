@@ -7,26 +7,26 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Install the .NET SDK
-Install the dot net S D K from dotnet.microsoft.com slash download. Get the latest S D K, run the installer, then finish.
+Install the dot net S D K from dotnet.microsoft.com slash download. Download the latest S D K — version 8 or newer. Run the installer, then finish.
 
 [Slide 2] Verify with the terminal
-Open a terminal and run dotnet dash dash version. A number like 8 point 0 means you are ready.
+Open Terminal or Command Prompt. Run dotnet dash dash version. A number like 8 point 0 means you are ready.
 
 [Slide 3] Editor + C# tools
-Install Cursor or Visual Studio Code, add the C sharp Dev Kit extension, and open the csharp-beginner-workbook folder.
+Install Cursor or Visual Studio Code. Add the C sharp Dev Kit extension. Open the csharp-beginner-workbook folder in the editor.
 
 [Slide 4] Create and run a console app
-Create a console app with dotnet new console, move into the folder, and run dotnet run. Edit Program.cs to make it yours.
+Create a console app with dotnet new console. Move into the folder with cd. Run dotnet run, then edit Program.cs to make it yours.
 
 [Slide 5] C# tips
-Remember: C sharp is the language and dot net is the toolbox. Open the whole project folder, finish Module 1, then take the quiz.
+Remember: C sharp is the language. Dot net is the toolbox. Open the whole project folder, finish Module 1, then take the quiz.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Install the dot net S D K from dotnet.microsoft.com slash download. Get the latest S D K, run the installer, then finish. Open a terminal and run dotnet dash dash version. A number like 8 point 0 means you are ready. Install Cursor or Visual Studio Code, add the C sharp Dev Kit extension, and open the csharp-beginner-workbook folder. Create a console app with dotnet new console, move into the folder, and run dotnet run. Edit Program.cs to make it yours. Remember: C sharp is the language and dot net is the toolbox. Open the whole project folder, finish Module 1, then take the quiz.
+Install the dot net S D K from dotnet.microsoft.com slash download. Download the latest S D K — version 8 or newer. Run the installer, then finish. Open Terminal or Command Prompt. Run dotnet dash dash version. A number like 8 point 0 means you are ready. Install Cursor or Visual Studio Code. Add the C sharp Dev Kit extension. Open the csharp-beginner-workbook folder in the editor. Create a console app with dotnet new console. Move into the folder with cd. Run dotnet run, then edit Program.cs to make it yours. Remember: C sharp is the language. Dot net is the toolbox. Open the whole project folder, finish Module 1, then take the quiz.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

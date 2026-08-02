@@ -7,32 +7,32 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Today’s lesson goal
-Today’s lesson goal: store values in variables, ask the user questions with input, and calculate and display clear results.
+Today’s lesson goal: store values in variables. Ask the user questions with input. Calculate and display clear results.
 
 [Slide 2] Variables are labeled boxes
-Variables are labeled boxes. Write customer underscore name equals Sarah. Python chooses the type for you, and you assign again whenever you want to update the value.
+Variables are labeled boxes. Write customer underscore name equals Sarah. Python picks the type for you. Assign again whenever you want to update the value.
 
 [Slide 3] Common types you will use
-Common types you will use are text strings, whole numbers and decimals, and True or False values for yes or no decisions later.
+Common types you will use: text strings like hello. Whole numbers and decimals like 3 and 9.99. True or False for yes or no decisions later.
 
 [Slide 4] Worked example: greeting
-Worked example: a greeting. Store input Your name in a variable called name, then print an f-string Hello name. Type it yourself — do not only read it.
+Worked example: a greeting. Store input Your name in a variable called name. Then print an f-string Hello name. Type it yourself — do not only read it.
 
 [Slide 5] Worked example: price with tax
-Worked example: price with tax. Read the price as text, convert it with float, multiply by one point two for example tax, and print the total with two decimal places.
+Worked example: price with tax. Read the price as text. Convert it with float — that turns text into a number. Multiply by one point two for example tax. Print the total with two decimal places.
 
 [Slide 6] Common mistakes
-Common mistakes include forgetting float before math on input, mixing up one equals for assignment with two equals for comparison, and leaving quotes unclosed in strings.
+Common mistakes: forgetting float before math on input. Mixing up one equals for assignment with two equals for comparison. Leaving quotes unclosed in strings.
 
 [Slide 7] Practice, then quiz
-Practice, then quiz. Build the greeting and wage calculator exercises, check solutions only after your own attempt, and take the Module 2 quiz when ready. Use the written lesson for full detail.
+Practice, then quiz. Build the greeting and wage calculator exercises. Check solutions only after your own attempt. Take the Module 2 quiz when ready. Then continue in the written lesson.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Today’s lesson goal: store values in variables, ask the user questions with input, and calculate and display clear results. Variables are labeled boxes. Write customer underscore name equals Sarah. Python chooses the type for you, and you assign again whenever you want to update the value. Common types you will use are text strings, whole numbers and decimals, and True or False values for yes or no decisions later. Worked example: a greeting. Store input Your name in a variable called name, then print an f-string Hello name. Type it yourself — do not only read it. Worked example: price with tax. Read the price as text, convert it with float, multiply by one point two for example tax, and print the total with two decimal places. Common mistakes include forgetting float before math on input, mixing up one equals for assignment with two equals for comparison, and leaving quotes unclosed in strings. Practice, then quiz. Build the greeting and wage calculator exercises, check solutions only after your own attempt, and take the Module 2 quiz when ready. Use the written lesson for full detail.
+Today’s lesson goal: store values in variables. Ask the user questions with input. Calculate and display clear results. Variables are labeled boxes. Write customer underscore name equals Sarah. Python picks the type for you. Assign again whenever you want to update the value. Common types you will use: text strings like hello. Whole numbers and decimals like 3 and 9.99. True or False for yes or no decisions later. Worked example: a greeting. Store input Your name in a variable called name. Then print an f-string Hello name. Type it yourself — do not only read it. Worked example: price with tax. Read the price as text. Convert it with float — that turns text into a number. Multiply by one point two for example tax. Print the total with two decimal places. Common mistakes: forgetting float before math on input. Mixing up one equals for assignment with two equals for comparison. Leaving quotes unclosed in strings. Practice, then quiz. Build the greeting and wage calculator exercises. Check solutions only after your own attempt. Take the Module 2 quiz when ready. Then continue in the written lesson.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

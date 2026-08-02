@@ -7,32 +7,32 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Today’s lesson goal
-Today’s lesson goal: make decisions with if, elif, and else, compare values and combine conditions, and repeat work with for and while loops.
+Today’s lesson goal: make decisions with if, elif, and else. Compare values and combine conditions. Repeat work with for and while loops.
 
 [Slide 2] Why control flow matters
-Why control flow matters: programs choose paths for discounts, menus, and checks. Loops process lists without copy-paste. This is the logic behind everyday apps.
+Why control flow matters. Programs choose paths for discounts, menus, and checks. Loops process lists without copy-paste. This is the logic behind everyday apps.
 
 [Slide 3] Decisions: if / elif / else
-Decisions use if, elif, and else. Ask a true or false question, run one branch when the answer is true, use elif for more cases, and else for the rest.
+Decisions use if, elif, and else. Ask a true or false question. Run one branch when the answer is true. Use elif for more cases, and else for the rest.
 
 [Slide 4] Worked example: discount
-Worked example: a discount. If spend is over one hundred, apply ten percent. Else if spend is over fifty, apply five percent. Otherwise no discount, then print the final total.
+Worked example: a discount. If spend is over one hundred, apply ten percent. Elif spend is over fifty, apply five percent. Otherwise no discount — print the final total.
 
 [Slide 5] Loops: for and while
-Loops: use for to walk through a known collection, and while to keep going until a condition changes. Avoid infinite loops by always updating the condition.
+Loops: use for to walk through a known collection. Use while to keep going until a condition changes. Avoid infinite loops — always update the condition.
 
 [Slide 6] Common mistakes
-Common mistakes: using a single equals instead of double equals in comparisons, forgetting indentation under if or for, and while true with no break or stop condition.
+Common mistakes: using a single equals instead of double equals in comparisons. Forgetting indentation under if or for. While true with no break or stop condition.
 
 [Slide 7] Practice checkpoint
-Practice checkpoint: build a tiny menu or age check, loop through a short list and print each item, then continue in the written Module 3 lesson and quiz.
+Practice checkpoint: build a tiny menu or age check. Loop through a short list and print each item. Then continue in the written Module 3 lesson and quiz.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Today’s lesson goal: make decisions with if, elif, and else, compare values and combine conditions, and repeat work with for and while loops. Why control flow matters: programs choose paths for discounts, menus, and checks. Loops process lists without copy-paste. This is the logic behind everyday apps. Decisions use if, elif, and else. Ask a true or false question, run one branch when the answer is true, use elif for more cases, and else for the rest. Worked example: a discount. If spend is over one hundred, apply ten percent. Else if spend is over fifty, apply five percent. Otherwise no discount, then print the final total. Loops: use for to walk through a known collection, and while to keep going until a condition changes. Avoid infinite loops by always updating the condition. Common mistakes: using a single equals instead of double equals in comparisons, forgetting indentation under if or for, and while true with no break or stop condition. Practice checkpoint: build a tiny menu or age check, loop through a short list and print each item, then continue in the written Module 3 lesson and quiz.
+Today’s lesson goal: make decisions with if, elif, and else. Compare values and combine conditions. Repeat work with for and while loops. Why control flow matters. Programs choose paths for discounts, menus, and checks. Loops process lists without copy-paste. This is the logic behind everyday apps. Decisions use if, elif, and else. Ask a true or false question. Run one branch when the answer is true. Use elif for more cases, and else for the rest. Worked example: a discount. If spend is over one hundred, apply ten percent. Elif spend is over fifty, apply five percent. Otherwise no discount — print the final total. Loops: use for to walk through a known collection. Use while to keep going until a condition changes. Avoid infinite loops — always update the condition. Common mistakes: using a single equals instead of double equals in comparisons. Forgetting indentation under if or for. While true with no break or stop condition. Practice checkpoint: build a tiny menu or age check. Loop through a short list and print each item. Then continue in the written Module 3 lesson and quiz.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

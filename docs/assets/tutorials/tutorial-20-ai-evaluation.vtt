@@ -1,17 +1,17 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:08.784
-Today’s lesson goal: Today’s lesson goal: build a small evaluation set, score outputs the same way each time, and iterate with evidence, not vibes.
+00:00:00.000 --> 00:00:11.448
+Today’s lesson goal: Today’s lesson goal: build a small evaluation set. Score outputs the same way each time. Iterate with evidence, not vibes.
 
 2
-00:00:09.134 --> 00:00:21.302
-What good eval looks like: Good evaluation uses ten or more cases covering good, bad, and ambiguous inputs, a fixed rubric for format accuracy and safety, and reruns the same set after each prompt change.
+00:00:12.298 --> 00:00:27.706
+What good eval looks like: Good evaluation uses ten or more cases — good, bad, and ambiguous. Use a fixed rubric for format, accuracy, and safety. Rerun the same set after each prompt change.
 
 3
-00:00:21.652 --> 00:00:31.156
-Worked example: Worked example cases: empty input should refuse politely, a clear ticket should extract fields, and conflicting dates should ask, not invent.
+00:00:28.556 --> 00:00:40.724
+Worked example: Worked example cases: empty input should refuse politely. A clear ticket should extract fields. Conflicting dates should ask, not invent.
 
 4
-00:00:31.506 --> 00:00:40.530
-Practice checkpoint: Practice checkpoint: write five eval cases for your prompt, score a before and after change, then continue in the written Module 4 lesson.
+00:00:41.574 --> 00:00:53.382
+Practice checkpoint: Practice checkpoint: write five eval cases for your prompt. Score a before and after change. Then continue in the written Module 4 lesson.

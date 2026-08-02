@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import asyncio
 import json
-import shutil
+import re
 import subprocess
 import tempfile
 from pathlib import Path
@@ -17,22 +17,40 @@ from lesson_bank import EXTRA_TUTORIALS
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT_DIR = ROOT / "docs" / "assets" / "tutorials"
+FONT_DIR = ROOT / "docs" / "assets" / "fonts"
 VOICE = "en-US-JennyNeural"
+# Slightly slower speech so learners can follow slides.
+VOICE_RATE = "-12%"
+# Quiet gap after each slide's narration before the next slide.
+SLIDE_TAIL_PAD = 0.85
+# Fail the build if muxed audio is effectively silent.
+MIN_MEAN_VOLUME_DB = -40.0
 W, H = 1280, 720
+
+# Brand tokens aligned with docs/styles.css (ink / parchment / gold).
 INK = (14, 17, 22)
-PAPER = (243, 239, 230)
+PAPER_TOP = (247, 239, 223)
+PAPER = (239, 231, 216)
+PAPER_DEEP = (224, 213, 188)
 GOLD = (201, 162, 39)
 GOLD_LIGHT = (226, 193, 90)
-MUTED = (90, 95, 107)
+GOLD_DARK = (154, 123, 26)
+MUTED = (74, 78, 88)
 WHITE = (255, 255, 255)
 
-FONT_REG = "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf"
-FONT_BOLD = "/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf"
-FONT_DISP = "/usr/share/fonts/truetype/noto/NotoSansDisplay-Bold.ttf"
+FONT_DISP = str(FONT_DIR / "fraunces.ttf")
+FONT_BODY = str(FONT_DIR / "figtree.ttf")
+# Fallbacks if brand fonts are missing locally.
+FONT_DISP_FALLBACK = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"
+FONT_BODY_FALLBACK = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+FONT_BODY_BOLD_FALLBACK = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
 
-def font(path: str, size: int) -> ImageFont.FreeTypeFont:
-    return ImageFont.truetype(path, size=size)
+def font(path: str, size: int, fallback: str | None = None) -> ImageFont.FreeTypeFont:
+    try:
+        return ImageFont.truetype(path, size=size)
+    except OSError:
+        return ImageFont.truetype(fallback or FONT_BODY_FALLBACK, size=size)
 
 
 def wrap(draw: ImageDraw.ImageDraw, text: str, fnt: ImageFont.ImageFont, max_width: int) -> list[str]:
@@ -52,46 +70,105 @@ def wrap(draw: ImageDraw.ImageDraw, text: str, fnt: ImageFont.ImageFont, max_wid
     return lines or [""]
 
 
-def render_slide(title: str, lines: list[str], footer: str, out_path: Path) -> None:
+def _parchment_base() -> Image.Image:
+    """Warm ruled parchment with lamp glow — matches the live site atmosphere."""
     img = Image.new("RGB", (W, H), PAPER)
     draw = ImageDraw.Draw(img)
+    for y in range(H):
+        t = y / max(H - 1, 1)
+        r = int(PAPER_TOP[0] * (1 - t) + PAPER_DEEP[0] * t)
+        g = int(PAPER_TOP[1] * (1 - t) + PAPER_DEEP[1] * t)
+        b = int(PAPER_TOP[2] * (1 - t) + PAPER_DEEP[2] * t)
+        # Soft vignette at edges
+        edge = min(y, H - 1 - y) / (H * 0.5)
+        shade = 1.0 - (0.08 * (1.0 - min(edge, 1.0)))
+        draw.line([(0, y), (W, y)], fill=(int(r * shade), int(g * shade), int(b * shade)))
 
-    # Top brand bar
-    draw.rectangle([0, 0, W, 12], fill=GOLD)
+    # Ruled notebook lines
+    for y in range(120, H - 70, 28):
+        draw.line([(56, y), (W - 48, y)], fill=(210, 190, 150))
+
+    # Lamp glow (upper-left wash)
+    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    gd = ImageDraw.Draw(glow)
+    for radius, alpha in ((420, 55), (280, 40), (160, 28), (80, 18)):
+        gd.ellipse(
+            [90 - radius, -100 - radius, 90 + radius, -100 + radius],
+            fill=(226, 193, 90, alpha),
+        )
+    # Soft motif glow on the right
+    for radius, alpha in ((260, 22), (140, 14)):
+        gd.ellipse(
+            [W - 40 - radius, 80 - radius, W - 40 + radius, 80 + radius],
+            fill=(201, 162, 39, alpha),
+        )
+    img = Image.alpha_composite(img.convert("RGBA"), glow).convert("RGB")
+    draw = ImageDraw.Draw(img)
+
+    # Gold margin rail (site notebook edge)
+    draw.rectangle([0, 0, 10, H], fill=GOLD)
+    draw.rectangle([10, 0, 14, H], fill=GOLD_DARK)
+    # Footer ink bar
     draw.rectangle([0, H - 56, W, H], fill=INK)
-    # Soft side accent
-    draw.rectangle([0, 12, 18, H - 56], fill=GOLD_LIGHT)
+    return img
 
-    brand = font(FONT_BOLD, 22)
-    title_f = font(FONT_DISP, 46)
-    body_f = font(FONT_REG, 28)
-    foot_f = font(FONT_REG, 18)
 
-    draw.text((48, 36), "Programming Foundations", fill=INK, font=brand)
-    draw.text((48, 78), "Tutorial", fill=GOLD, font=font(FONT_BOLD, 18))
+def render_slide(title: str, lines: list[str], footer: str, out_path: Path) -> None:
+    img = _parchment_base()
+    draw = ImageDraw.Draw(img)
 
-    y = 130
+    brand = font(FONT_DISP, 26, FONT_DISP_FALLBACK)
+    kicker = font(FONT_BODY, 17, FONT_BODY_FALLBACK)
+    title_f = font(FONT_DISP, 44, FONT_DISP_FALLBACK)
+    body_f = font(FONT_BODY, 27, FONT_BODY_FALLBACK)
+    foot_f = font(FONT_BODY, 17, FONT_BODY_FALLBACK)
+
+    draw.text((48, 28), "Programming Foundations", fill=INK, font=brand)
+    draw.text((48, 66), "VOICEOVER LESSON", fill=GOLD_DARK, font=kicker)
+
+    y = 108
     for tline in wrap(draw, title, title_f, W - 120):
         draw.text((48, y), tline, fill=INK, font=title_f)
-        y += 58
+        y += 52
 
-    y += 18
+    y += 16
     for bullet in lines:
-        for bline in wrap(draw, f"•  {bullet}", body_f, W - 140):
-            draw.text((56, y), bline, fill=MUTED if bline.startswith("•") is False else INK, font=body_f)
-            # Force ink for bullets
-            draw.text((56, y), bline, fill=INK, font=body_f)
-            y += 40
-        y += 10
+        for i, bline in enumerate(wrap(draw, bullet, body_f, W - 160)):
+            prefix = "•  " if i == 0 else "   "
+            draw.text((56, y), f"{prefix}{bline}", fill=INK, font=body_f)
+            y += 38
+        y += 8
+        if y > H - 100:
+            break
 
-    draw.text((48, H - 38), footer, fill=GOLD_LIGHT, font=foot_f)
+    draw.text((48, H - 36), footer, fill=GOLD_LIGHT, font=foot_f)
     img.save(out_path, "PNG")
 
 
+def mean_volume_db(media: Path) -> float:
+    out = subprocess.check_output(
+        [
+            "ffmpeg",
+            "-i",
+            str(media),
+            "-af",
+            "volumedetect",
+            "-f",
+            "null",
+            "-",
+        ],
+        stderr=subprocess.STDOUT,
+        text=True,
+    )
+    match = re.search(r"mean_volume:\s*([-\d.]+)\s*dB", out)
+    if not match:
+        raise RuntimeError(f"Could not measure volume for {media}")
+    return float(match.group(1))
+
+
 async def synth(text: str, out_mp3: Path) -> float:
-    communicate = edge_tts.Communicate(text, VOICE)
+    communicate = edge_tts.Communicate(text, VOICE, rate=VOICE_RATE)
     await communicate.save(str(out_mp3))
-    # Probe duration via ffprobe
     probe = subprocess.check_output(
         [
             "ffprobe",
@@ -109,8 +186,8 @@ async def synth(text: str, out_mp3: Path) -> float:
 
 
 def still_to_video(png: Path, seconds: float, out_mp4: Path) -> None:
-    # Pad a touch so VO never clips. Video-only — voiceover is muxed next.
-    duration = seconds + 0.35
+    # Video-only still — voiceover is muxed next (never attach a silent audio track).
+    duration = max(seconds, 1.2)
     subprocess.check_call(
         [
             "ffmpeg",
@@ -137,6 +214,29 @@ def still_to_video(png: Path, seconds: float, out_mp4: Path) -> None:
     )
 
 
+def pad_audio(src: Path, total_seconds: float, out: Path) -> None:
+    """Pad TTS audio with trailing silence so slide dwell time stays intact."""
+    subprocess.check_call(
+        [
+            "ffmpeg",
+            "-y",
+            "-i",
+            str(src),
+            "-af",
+            f"apad=whole_dur={total_seconds:.3f}",
+            "-t",
+            f"{total_seconds:.3f}",
+            "-c:a",
+            "aac",
+            "-b:a",
+            "128k",
+            str(out),
+        ],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+
+
 def mux(video: Path, audio: Path, out: Path) -> None:
     # Explicit maps: keep slide video, use TTS audio (never a silent placeholder track).
     subprocess.check_call(
@@ -154,9 +254,7 @@ def mux(video: Path, audio: Path, out: Path) -> None:
             "-c:v",
             "copy",
             "-c:a",
-            "aac",
-            "-b:a",
-            "128k",
+            "copy",
             "-shortest",
             str(out),
         ],
@@ -213,7 +311,7 @@ TUTORIALS = [
                     "Open Start Here, then pick Python, C#, or AI",
                     "Mark steps done as you go — progress stays in this browser",
                 ],
-                "vo": "Learn in your browser first. You do not need to install anything to start Module 1 online. Open Start Here, pick Python, C sharp, or A I, and mark steps done as you go.",
+                "vo": "Learn in your browser first. You do not need to install anything for Module 1 online. Open Start Here and pick Python, C sharp, or A I. Mark steps done as you go — progress stays in this browser.",
             },
             {
                 "title": "When you want files on your computer",
@@ -222,7 +320,7 @@ TUTORIALS = [
                     "Or clone the repo if you already use Git",
                     "Find the ZIP in your Downloads folder and unzip it",
                 ],
-                "vo": "When you want files on your computer, use GitHub’s Code menu and choose Download ZIP. Find the file in Downloads, then unzip it. Git is optional — beginners can use the ZIP.",
+                "vo": "When you want files on your computer, open GitHub’s Code menu. Choose Download ZIP. Find the file in Downloads and unzip it. Git is optional — the ZIP is fine for beginners.",
             },
             {
                 "title": "Open the right folder",
@@ -231,7 +329,7 @@ TUTORIALS = [
                     "C# path: csharp-beginner-workbook",
                     "Start with each track’s Module 1 setup guide",
                 ],
-                "vo": "Open the right folder for your course. Python lives in python-beginner-workbook. C sharp lives in csharp-beginner-workbook. Always start with Module 1 setup.",
+                "vo": "Open the right folder for your course. Python is in python-beginner-workbook. C sharp is in csharp-beginner-workbook. Start with each track’s Module 1 setup guide.",
             },
             {
                 "title": "Quick tip",
@@ -240,7 +338,7 @@ TUTORIALS = [
                     "You can keep learning online while tools install",
                     "Guest mode works offline in this browser after pages load",
                 ],
-                "vo": "Quick tip: if a download goes missing, check the Help page. You can keep learning online while installers run in the background.",
+                "vo": "Quick tip: if a download goes missing, check Help under Downloads. You can keep learning online while tools install. Guest mode works offline after pages load.",
             },
         ],
     },
@@ -260,7 +358,7 @@ TUTORIALS = [
                     "Windows: tick Add Python to PATH, then Install Now",
                     "macOS/Linux: run the installer or use python3",
                 ],
-                "vo": "Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, use the installer or python 3.",
+                "vo": "Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, run the installer or use python 3.",
             },
             {
                 "title": "Verify it worked",
@@ -269,7 +367,7 @@ TUTORIALS = [
                     "Run: python --version  (or python3 --version)",
                     "You should see a version like Python 3.11 or newer",
                 ],
-                "vo": "Verify it worked. Open a terminal and run python dash dash version, or python 3 dash dash version. You should see a version number.",
+                "vo": "Verify it worked. Open Terminal or Command Prompt. Run python dash dash version, or python 3 dash dash version. You should see something like Python 3.11 or newer.",
             },
             {
                 "title": "Install a code editor",
@@ -278,7 +376,7 @@ TUTORIALS = [
                     "Add the Python extension",
                     "Open the python-beginner-workbook folder",
                 ],
-                "vo": "Install a code editor such as Cursor or Visual Studio Code. Add the Python extension, then open your python-beginner-workbook folder.",
+                "vo": "Install a code editor such as Cursor or Visual Studio Code. Add the Python extension. Then open your python-beginner-workbook folder.",
             },
             {
                 "title": "Your first script",
@@ -287,7 +385,7 @@ TUTORIALS = [
                     "Run: python hello.py",
                     "Customize the message — that’s your first real program",
                 ],
-                "vo": "Create hello.py with a print hello message, then run python hello.py. Change the text — that is your first real program.",
+                "vo": "Create hello.py with print Hello. Run python hello.py. Change the message — that is your first real program.",
             },
             {
                 "title": "Python tips",
@@ -296,7 +394,7 @@ TUTORIALS = [
                     "Use the editor’s integrated terminal",
                     "Follow Module 1 exercises, then take the quiz",
                 ],
-                "vo": "If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor terminal, finish Module 1 exercises, then take the quiz.",
+                "vo": "If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor’s integrated terminal. Finish Module 1 exercises, then take the quiz.",
             },
         ],
     },
@@ -316,7 +414,7 @@ TUTORIALS = [
                     "Download the latest .NET SDK (8 or newer)",
                     "Run the installer, then Finish",
                 ],
-                "vo": "Install the dot net S D K from dotnet.microsoft.com slash download. Get the latest S D K, run the installer, then finish.",
+                "vo": "Install the dot net S D K from dotnet.microsoft.com slash download. Download the latest S D K — version 8 or newer. Run the installer, then finish.",
             },
             {
                 "title": "Verify with the terminal",
@@ -325,7 +423,7 @@ TUTORIALS = [
                     "Run: dotnet --version",
                     "A version like 8.0.x means you are ready",
                 ],
-                "vo": "Open a terminal and run dotnet dash dash version. A number like 8 point 0 means you are ready.",
+                "vo": "Open Terminal or Command Prompt. Run dotnet dash dash version. A number like 8 point 0 means you are ready.",
             },
             {
                 "title": "Editor + C# tools",
@@ -334,7 +432,7 @@ TUTORIALS = [
                     "Add the C# Dev Kit extension",
                     "Open csharp-beginner-workbook in the editor",
                 ],
-                "vo": "Install Cursor or Visual Studio Code, add the C sharp Dev Kit extension, and open the csharp-beginner-workbook folder.",
+                "vo": "Install Cursor or Visual Studio Code. Add the C sharp Dev Kit extension. Open the csharp-beginner-workbook folder in the editor.",
             },
             {
                 "title": "Create and run a console app",
@@ -343,7 +441,7 @@ TUTORIALS = [
                     "cd HelloWorld",
                     "dotnet run — then edit Program.cs",
                 ],
-                "vo": "Create a console app with dotnet new console, move into the folder, and run dotnet run. Edit Program.cs to make it yours.",
+                "vo": "Create a console app with dotnet new console. Move into the folder with cd. Run dotnet run, then edit Program.cs to make it yours.",
             },
             {
                 "title": "C# tips",
@@ -352,7 +450,7 @@ TUTORIALS = [
                     "Always open the project folder, not a single file",
                     "Do Module 1 exercises, then the quiz",
                 ],
-                "vo": "Remember: C sharp is the language and dot net is the toolbox. Open the whole project folder, finish Module 1, then take the quiz.",
+                "vo": "Remember: C sharp is the language. Dot net is the toolbox. Open the whole project folder, finish Module 1, then take the quiz.",
             },
         ],
     },
@@ -372,7 +470,7 @@ TUTORIALS = [
                     "Pick one course and stay with it",
                     "Use Mark done so your path updates",
                 ],
-                "vo": "Follow Start Here in order. Open Module 1 online before installing tools, pick one course, and use Mark done so your path updates.",
+                "vo": "Follow Start Here in order. Open Module 1 online before you install tools. Pick one course and stay with it. Use Mark done so your path updates.",
             },
             {
                 "title": "Lessons, quizzes, and progress",
@@ -381,7 +479,7 @@ TUTORIALS = [
                     "Continue banners bring you back where you left off",
                     "Certificates unlock when every module is complete",
                 ],
-                "vo": "Read each lesson, then take the module quiz. Continue banners bring you back where you left off, and certificates unlock when every module is complete.",
+                "vo": "Read each lesson, then take the module quiz. Continue banners bring you back where you left off. Certificates unlock when every module is complete.",
             },
             {
                 "title": "Guest mode vs free account",
@@ -399,7 +497,7 @@ TUTORIALS = [
                     "Break big tasks into tiny checkpoints",
                     "When stuck, re-read the tip boxes, then ask Help",
                 ],
-                "vo": "Type the examples instead of only reading them. Break big tasks into tiny checkpoints. When stuck, re-read the tip boxes, then open Help.",
+                "vo": "Type the examples — do not only read them. Break big tasks into tiny checkpoints. When stuck, re-read the tip boxes, then open Help.",
             },
             {
                 "title": "You are ready",
@@ -408,7 +506,7 @@ TUTORIALS = [
                     "Watch the Python or C# install video when coding locally",
                     "Support the project on the Support page if you can",
                 ],
-                "vo": "You are ready. Go Start Here, choose a course, and open Module 1. Watch the Python or C sharp install video when you code locally. Enjoy learning.",
+                "vo": "You are ready. Go to Start Here, choose a course, and open Module 1. Watch the Python or C sharp install video when you code locally.",
             },
         ],
     },
@@ -428,7 +526,7 @@ TUTORIALS = [
                     "Name what models do well — and where they fail",
                     "Leave with a spec + eval habit you can reuse",
                 ],
-                "vo": "Today’s lesson goal: treat A I work as engineering, not magic. You will name what models do well and where they fail, and leave with a spec and evaluation habit you can reuse.",
+                "vo": "Today’s lesson goal: treat A I work as engineering, not magic. You will name what models do well and where they fail. You will leave with a spec and evaluation habit you can reuse.",
             },
             {
                 "title": "What an LLM actually does",
@@ -437,7 +535,7 @@ TUTORIALS = [
                     "Sounds confident even when guessing",
                     "Needs your constraints to stay useful",
                 ],
-                "vo": "A language model predicts likely next tokens from patterns. It can sound confident even when guessing, so it needs your constraints to stay useful.",
+                "vo": "An L L M, or language model, predicts likely next tokens from patterns. It can sound confident even when guessing. Your constraints keep it useful.",
             },
             {
                 "title": "Strengths you can trust more",
@@ -446,7 +544,7 @@ TUTORIALS = [
                     "Summarising meeting notes into action lists",
                     "Transforming into a format you define",
                 ],
-                "vo": "Strengths you can trust more include drafting and rewriting text you will review, summarising meeting notes into action lists, and transforming content into a format you define.",
+                "vo": "Strengths you can trust more: drafting and rewriting text you will review. Summarising meeting notes into action lists. Transforming content into a format you define.",
             },
             {
                 "title": "Failure modes to watch",
@@ -482,7 +580,7 @@ TUTORIALS = [
                     "Write a one-page summariser spec",
                     "Build 10 eval cases: good, bad, ambiguous",
                 ],
-                "vo": "Practice before you finish. Copy the beginner starter pack templates, write a one-page summariser spec, and build ten evaluation cases covering good, bad, and ambiguous inputs. Then continue in the written Module 1 lesson.",
+                "vo": "Practice before you finish. Copy the beginner starter pack templates. Write a one-page summariser spec. Build ten evaluation cases for good, bad, and ambiguous inputs. Then continue in the written Module 1 lesson.",
             },
         ],
     },
@@ -502,7 +600,7 @@ TUTORIALS = [
                     "Ask the user questions with input()",
                     "Calculate and display clear results",
                 ],
-                "vo": "Today’s lesson goal: store values in variables, ask the user questions with input, and calculate and display clear results.",
+                "vo": "Today’s lesson goal: store values in variables. Ask the user questions with input. Calculate and display clear results.",
             },
             {
                 "title": "Variables are labeled boxes",
@@ -511,7 +609,7 @@ TUTORIALS = [
                     "Python chooses the type for you",
                     "Assign again to update the value",
                 ],
-                "vo": "Variables are labeled boxes. Write customer underscore name equals Sarah. Python chooses the type for you, and you assign again whenever you want to update the value.",
+                "vo": "Variables are labeled boxes. Write customer underscore name equals Sarah. Python picks the type for you. Assign again whenever you want to update the value.",
             },
             {
                 "title": "Common types you will use",
@@ -520,7 +618,7 @@ TUTORIALS = [
                     "Whole numbers and decimals: 3, 9.99",
                     "True or False for yes/no decisions later",
                 ],
-                "vo": "Common types you will use are text strings, whole numbers and decimals, and True or False values for yes or no decisions later.",
+                "vo": "Common types you will use: text strings like hello. Whole numbers and decimals like 3 and 9.99. True or False for yes or no decisions later.",
             },
             {
                 "title": "Worked example: greeting",
@@ -529,7 +627,7 @@ TUTORIALS = [
                     "print(f\"Hello, {name}!\")",
                     "Type it yourself — do not only read it",
                 ],
-                "vo": "Worked example: a greeting. Store input Your name in a variable called name, then print an f-string Hello name. Type it yourself — do not only read it.",
+                "vo": "Worked example: a greeting. Store input Your name in a variable called name. Then print an f-string Hello name. Type it yourself — do not only read it.",
             },
             {
                 "title": "Worked example: price with tax",
@@ -538,7 +636,7 @@ TUTORIALS = [
                     "total = price * 1.2  # example tax",
                     "print(f\"Total: £{total:.2f}\")",
                 ],
-                "vo": "Worked example: price with tax. Read the price as text, convert it with float, multiply by one point two for example tax, and print the total with two decimal places.",
+                "vo": "Worked example: price with tax. Read the price as text. Convert it with float — that turns text into a number. Multiply by one point two for example tax. Print the total with two decimal places.",
             },
             {
                 "title": "Common mistakes",
@@ -547,7 +645,7 @@ TUTORIALS = [
                     "Mixing up = assignment and == comparison",
                     "Unclosed quotes in strings or f-strings",
                 ],
-                "vo": "Common mistakes include forgetting float before math on input, mixing up one equals for assignment with two equals for comparison, and leaving quotes unclosed in strings.",
+                "vo": "Common mistakes: forgetting float before math on input. Mixing up one equals for assignment with two equals for comparison. Leaving quotes unclosed in strings.",
             },
             {
                 "title": "Practice, then quiz",
@@ -556,7 +654,7 @@ TUTORIALS = [
                     "Check solutions only after your own attempt",
                     "Take the Module 2 quiz when ready",
                 ],
-                "vo": "Practice, then quiz. Build the greeting and wage calculator exercises, check solutions only after your own attempt, and take the Module 2 quiz when ready. Use the written lesson for full detail.",
+                "vo": "Practice, then quiz. Build the greeting and wage calculator exercises. Check solutions only after your own attempt. Take the Module 2 quiz when ready. Then continue in the written lesson.",
             },
         ],
     },
@@ -576,7 +674,7 @@ TUTORIALS = [
                     "Read input and convert numbers safely",
                     "Calculate totals people can understand",
                 ],
-                "vo": "Today’s lesson goal: declare typed variables in C sharp, read input and convert numbers safely, and calculate totals people can understand.",
+                "vo": "Today’s lesson goal: declare typed variables in C sharp. Read input and convert numbers safely. Calculate totals people can understand.",
             },
             {
                 "title": "Declare with a type",
@@ -594,7 +692,7 @@ TUTORIALS = [
                     "You see what each value is meant to be",
                     "Names plus types document your intent",
                 ],
-                "vo": "Types help beginners because the compiler catches many mistakes early. You see what each value is meant to be, and names plus types document your intent.",
+                "vo": "Types help beginners. The compiler catches many mistakes early. You see what each value is meant to be. Names plus types document your intent.",
             },
             {
                 "title": "Worked example: greeting",
@@ -603,7 +701,7 @@ TUTORIALS = [
                     "string name = Console.ReadLine();",
                     "Console.WriteLine($\"Hello, {name}!\");",
                 ],
-                "vo": "Worked example: a greeting. Write a prompt, read the line into a string name, then write Hello name with string interpolation.",
+                "vo": "Worked example: a greeting. Write a prompt. Read the line into a string name. Then write Hello name with string interpolation.",
             },
             {
                 "title": "Worked example: tax total",
@@ -612,7 +710,7 @@ TUTORIALS = [
                     "double price = double.Parse(text);",
                     "double total = price * 1.2;",
                 ],
-                "vo": "Worked example: a tax total. Read a line of text, parse it with double.Parse, then multiply by one point two. Print the total with clear wording.",
+                "vo": "Worked example: a tax total. Read a line of text. Parse it with double dot Parse to get a number. Multiply by one point two. Print the total with clear wording.",
             },
             {
                 "title": "Common mistakes",
@@ -621,7 +719,7 @@ TUTORIALS = [
                     "Forgetting that ReadLine returns text",
                     "Opening a single file instead of the project folder",
                 ],
-                "vo": "Common mistakes include using the value before Parse succeeds, forgetting that ReadLine returns text, and opening a single file instead of the whole project folder.",
+                "vo": "Common mistakes: using the value before Parse succeeds. Forgetting that ReadLine returns text. Opening a single file instead of the whole project folder.",
             },
             {
                 "title": "Practice, then quiz",
@@ -630,7 +728,7 @@ TUTORIALS = [
                     "Compare with solutions after you try",
                     "Take the Module 2 quiz to lock skills in",
                 ],
-                "vo": "Practice, then quiz. Complete the Module 2 exercises in your console app, compare with solutions after you try, and take the Module 2 quiz. The written lesson has the full walkthrough.",
+                "vo": "Practice, then quiz. Complete the Module 2 exercises in your console app. Compare with solutions after you try. Take the Module 2 quiz. Then continue in the written lesson.",
             },
         ],
     },
@@ -650,7 +748,7 @@ TUTORIALS = [
                     "Separate role, task, constraints, format",
                     "Test outputs before you trust them",
                 ],
-                "vo": "Today’s lesson goal: turn vague asks into clear prompts, separate role, task, constraints, and format, and test outputs before you trust them.",
+                "vo": "Today’s lesson goal: turn vague asks into clear prompts. Separate role, task, constraints, and format. Test outputs before you trust them.",
             },
             {
                 "title": "The prompt recipe",
@@ -659,7 +757,7 @@ TUTORIALS = [
                     "Goal: what success looks like",
                     "Constraints + output shape you can check",
                 ],
-                "vo": "Use a prompt recipe. Role: who the model should act as. Goal: what success looks like. Then add constraints and an output shape you can check.",
+                "vo": "Use a prompt recipe. Role: who the model should act as. Goal: what success looks like. Add constraints and an output shape you can check.",
             },
             {
                 "title": "Vague vs specific",
@@ -668,7 +766,7 @@ TUTORIALS = [
                     "Specific: actions, owners, deadlines, JSON list",
                     "Specific prompts fail loudly — that is useful",
                 ],
-                "vo": "Compare vague versus specific. Vague says summarise this meeting. Specific asks for actions, owners, deadlines, as a JSON list. Specific prompts fail loudly, and that is useful.",
+                "vo": "Compare vague versus specific. Vague says summarise this meeting. Specific asks for actions, owners, and deadlines as a J S O N list. Specific prompts fail loudly — that is useful.",
             },
             {
                 "title": "Worked rewrite",
@@ -677,7 +775,7 @@ TUTORIALS = [
                     "Add: Only use the notes provided",
                     "Add: Return bullets: action — owner — date",
                 ],
-                "vo": "Worked rewrite: add role project assistant, require only using the notes provided, and return bullets in the shape action, owner, date.",
+                "vo": "Worked rewrite: add role project assistant. Require only using the notes provided. Return bullets in the shape action, owner, date.",
             },
             {
                 "title": "Few-shot when it helps",
@@ -686,7 +784,7 @@ TUTORIALS = [
                     "Keep examples close to your real format",
                     "Remove examples that teach the wrong pattern",
                 ],
-                "vo": "Use a few-shot example when it helps. Show one short correct example close to your real format, and remove examples that teach the wrong pattern.",
+                "vo": "Use a few-shot example when it helps. Show one short correct example close to your real format. Remove examples that teach the wrong pattern.",
             },
             {
                 "title": "Test before you trust",
@@ -704,7 +802,7 @@ TUTORIALS = [
                     "Save before/after in the starter pack",
                     "Continue in the written Prompting Basics lesson",
                 ],
-                "vo": "Practice checkpoint: rewrite one vague request from your day, save the before and after in the starter pack, then continue in the written Prompting Basics lesson for full exercises.",
+                "vo": "Practice checkpoint: rewrite one vague request from your day. Save the before and after in the starter pack. Then continue in the written Prompting Basics lesson.",
             },
         ],
     },
@@ -739,7 +837,6 @@ async def build_one(tutorial: dict, work: Path) -> dict:
     parts: list[Path] = []
     cues: list[tuple[float, float, str]] = []
     cursor = 0.0
-    pad = 0.35
     transcript_lines = [
         f"Programming Foundations — Tutorial: {tutorial['title']}",
         f"ID: {tid}",
@@ -757,11 +854,16 @@ async def build_one(tutorial: dict, work: Path) -> dict:
         silent = tdir / f"slide-{i:02d}-silent.mp4"
         voiced = tdir / f"slide-{i:02d}.mp4"
         render_slide(slide["title"], slide["bullets"], tutorial["footer"], png)
+        # Give denser slides a little extra on-screen time for reading + a calm beat after VO.
+        min_dwell = 2.2 + 0.55 * len(slide.get("bullets") or [])
         dur = await synth(slide["vo"], mp3)
-        still_to_video(png, dur, silent)
-        mux(silent, mp3, voiced)
+        hold = max(dur, min_dwell) + SLIDE_TAIL_PAD
+        padded = tdir / f"slide-{i:02d}-padded.m4a"
+        pad_audio(mp3, hold, padded)
+        still_to_video(png, hold, silent)
+        mux(silent, padded, voiced)
         parts.append(voiced)
-        slide_len = dur + pad
+        slide_len = hold
         cues.append((cursor, cursor + max(dur, 0.8), f"{slide['title']}: {slide['vo']}"))
         cursor += slide_len
         full_vo.append(slide["vo"])
@@ -777,7 +879,7 @@ async def build_one(tutorial: dict, work: Path) -> dict:
             "",
             " ".join(full_vo),
             "",
-            "Voice: en-US JennyNeural (edge-tts)",
+            f"Voice: en-US JennyNeural @ {VOICE_RATE} (edge-tts)",
             "Captions: matching .vtt file (enable captions or use the on-page transcript)",
             "Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html",
         ]
@@ -821,6 +923,13 @@ async def build_one(tutorial: dict, work: Path) -> dict:
         ],
         text=True,
     ).strip()
+    volume = mean_volume_db(out_mp4)
+    if volume < MIN_MEAN_VOLUME_DB:
+        raise RuntimeError(
+            f"Silent or near-silent audio in {out_mp4.name} "
+            f"(mean_volume={volume:.1f} dB; expected >= {MIN_MEAN_VOLUME_DB} dB). "
+            "Check mux mapping: video must use the TTS track, not a silent placeholder."
+        )
     return {
         "id": tid,
         "title": tutorial["title"],
@@ -833,6 +942,7 @@ async def build_one(tutorial: dict, work: Path) -> dict:
         "captions": out_vtt.name,
         "audio": out_m4a.name,
         "durationSec": round(float(probe), 1),
+        "meanVolumeDb": round(volume, 1),
         "combinedTranscript": " ".join(full_vo),
     }
 
@@ -860,7 +970,10 @@ async def main() -> None:
             print(f"Building {tutorial['id']}…")
             meta = await build_one(tutorial, work)
             prev[meta["id"]] = meta
-            print(f"  → {meta['file']} ({meta['durationSec']}s)")
+            print(
+                f"  → {meta['file']} ({meta['durationSec']}s, "
+                f"{meta.get('meanVolumeDb', '?')} dB)"
+            )
 
     # Stable order by id; refresh metadata for clips not rebuilt this run.
     by_id = {t["id"]: t for t in TUTORIALS}
@@ -884,7 +997,9 @@ async def main() -> None:
         "- **lesson** — teach module ideas with examples + practice prompts",
         "",
         "Each clip includes: MP4, WebVTT captions, plain-text transcript, and audio.",
-        "Voice: en-US JennyNeural. Rebuild with:",
+        f"Voice: en-US JennyNeural at {VOICE_RATE}. Slides use the live parchment/gold brand.",
+        "Audio is volume-checked after mux so silent tracks cannot ship.",
+        "Rebuild with:",
         "",
         "```bash",
         "pip install edge-tts Pillow",

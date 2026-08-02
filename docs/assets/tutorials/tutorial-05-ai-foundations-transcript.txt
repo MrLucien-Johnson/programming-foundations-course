@@ -7,13 +7,13 @@ FULL VOICEOVER (also provided as captions / on-page transcript)
 ────────────────────────────────────────
 
 [Slide 1] Today’s lesson goal
-Today’s lesson goal: treat A I work as engineering, not magic. You will name what models do well and where they fail, and leave with a spec and evaluation habit you can reuse.
+Today’s lesson goal: treat A I work as engineering, not magic. You will name what models do well and where they fail. You will leave with a spec and evaluation habit you can reuse.
 
 [Slide 2] What an LLM actually does
-A language model predicts likely next tokens from patterns. It can sound confident even when guessing, so it needs your constraints to stay useful.
+An L L M, or language model, predicts likely next tokens from patterns. It can sound confident even when guessing. Your constraints keep it useful.
 
 [Slide 3] Strengths you can trust more
-Strengths you can trust more include drafting and rewriting text you will review, summarising meeting notes into action lists, and transforming content into a format you define.
+Strengths you can trust more: drafting and rewriting text you will review. Summarising meeting notes into action lists. Transforming content into a format you define.
 
 [Slide 4] Failure modes to watch
 Watch for failure modes. Hallucinations invent facts or owners. Brittleness means tiny wording changes break output. Injection risk means untrusted text tries to override your rules.
@@ -25,14 +25,14 @@ Worked example: a support ticket. Goal: a summary and next steps from the ticket
 Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a ten-case evaluation set and rerun it after each change.
 
 [Slide 7] Practice before you finish
-Practice before you finish. Copy the beginner starter pack templates, write a one-page summariser spec, and build ten evaluation cases covering good, bad, and ambiguous inputs. Then continue in the written Module 1 lesson.
+Practice before you finish. Copy the beginner starter pack templates. Write a one-page summariser spec. Build ten evaluation cases for good, bad, and ambiguous inputs. Then continue in the written Module 1 lesson.
 
 ────────────────────────────────────────
 COMBINED READ-ALOUD
 ────────────────────────────────────────
 
-Today’s lesson goal: treat A I work as engineering, not magic. You will name what models do well and where they fail, and leave with a spec and evaluation habit you can reuse. A language model predicts likely next tokens from patterns. It can sound confident even when guessing, so it needs your constraints to stay useful. Strengths you can trust more include drafting and rewriting text you will review, summarising meeting notes into action lists, and transforming content into a format you define. Watch for failure modes. Hallucinations invent facts or owners. Brittleness means tiny wording changes break output. Injection risk means untrusted text tries to override your rules. Worked example: a support ticket. Goal: a summary and next steps from the ticket. Constraint: only use the provided text. Failure to avoid: inventing a refund promise. Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a ten-case evaluation set and rerun it after each change. Practice before you finish. Copy the beginner starter pack templates, write a one-page summariser spec, and build ten evaluation cases covering good, bad, and ambiguous inputs. Then continue in the written Module 1 lesson.
+Today’s lesson goal: treat A I work as engineering, not magic. You will name what models do well and where they fail. You will leave with a spec and evaluation habit you can reuse. An L L M, or language model, predicts likely next tokens from patterns. It can sound confident even when guessing. Your constraints keep it useful. Strengths you can trust more: drafting and rewriting text you will review. Summarising meeting notes into action lists. Transforming content into a format you define. Watch for failure modes. Hallucinations invent facts or owners. Brittleness means tiny wording changes break output. Injection risk means untrusted text tries to override your rules. Worked example: a support ticket. Goal: a summary and next steps from the ticket. Constraint: only use the provided text. Failure to avoid: inventing a refund promise. Use the engineering loop: spec, prompt, evaluate, iterate. Write the goal, inputs, outputs, and failure modes. Keep a ten-case evaluation set and rerun it after each change. Practice before you finish. Copy the beginner starter pack templates. Write a one-page summariser spec. Build ten evaluation cases for good, bad, and ambiguous inputs. Then continue in the written Module 1 lesson.
 
-Voice: en-US JennyNeural (edge-tts)
+Voice: en-US JennyNeural @ -12% (edge-tts)
 Captions: matching .vtt file (enable captions or use the on-page transcript)
 Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

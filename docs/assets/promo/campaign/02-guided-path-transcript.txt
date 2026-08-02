@@ -1,31 +1,7 @@
-Programming Foundations — Promo 02: Guided Path
-Target length: ~25s
-Angle: Overwhelm → clear checklist
+Programming Foundations — campaign 02-guided-path
+Voice: en-US-JennyNeural @ -10%
 
-────────────────────────────────────────
-FULL VOICEOVER
-────────────────────────────────────────
+Not sure what to do next? Open Start Here. Follow the checklist and mark each step done.
+Clear next steps mean less overwhelm. One path forward — and you can resume where you left off.
 
-Most beginners don’t fail because they’re not smart.
-They fail because they don’t know what to do next.
-
-Start Here gives you a simple path:
-open Module 1, pick a course, keep learning, then code locally when you’re ready.
-
-Tick steps as you go.
-Always know your next move.
-
-────────────────────────────────────────
-VISUAL BEATS
-────────────────────────────────────────
-
-[00:00–00:05]  Homepage → Start Here
-[00:05–00:18]  Progress tracker + mark a step done
-[00:18–00:25]  Show remaining steps / “Keep learning”
-
-────────────────────────────────────────
-CTA
-────────────────────────────────────────
-
-Follow Start Here.
-https://mrlucien-johnson.github.io/programming-foundations-course/start-here.html
+Not sure what to do next? Open Start Here. Follow the checklist and mark each step done. Clear next steps mean less overwhelm. One path forward — and you can resume where you left off.

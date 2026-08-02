@@ -1,21 +1,21 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:12.288
-Install Python: Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, use the installer or python 3.
+00:00:00.000 --> 00:00:14.328
+Install Python: Install Python from python.org slash downloads. On Windows, tick Add Python to PATH before you install. On Mac or Linux, run the installer or use python 3.
 
 2
-00:00:12.638 --> 00:00:22.862
-Verify it worked: Verify it worked. Open a terminal and run python dash dash version, or python 3 dash dash version. You should see a version number.
+00:00:15.178 --> 00:00:30.706
+Verify it worked: Verify it worked. Open Terminal or Command Prompt. Run python dash dash version, or python 3 dash dash version. You should see something like Python 3.11 or newer.
 
 3
-00:00:23.212 --> 00:00:32.164
-Install a code editor: Install a code editor such as Cursor or Visual Studio Code. Add the Python extension, then open your python-beginner-workbook folder.
+00:00:31.556 --> 00:00:42.620
+Install a code editor: Install a code editor such as Cursor or Visual Studio Code. Add the Python extension. Then open your python-beginner-workbook folder.
 
 4
-00:00:32.514 --> 00:00:42.282
-Your first script: Create hello.py with a print hello message, then run python hello.py. Change the text — that is your first real program.
+00:00:43.470 --> 00:00:54.486
+Your first script: Create hello.py with print Hello. Run python hello.py. Change the message — that is your first real program.
 
 5
-00:00:42.632 --> 00:00:52.856
-Python tips: If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor terminal, finish Module 1 exercises, then take the quiz.
+00:00:55.336 --> 00:01:08.536
+Python tips: If Windows cannot find Python, reinstall and tick Add to PATH. Use the editor’s integrated terminal. Finish Module 1 exercises, then take the quiz.

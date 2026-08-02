@@ -1,29 +1,29 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:09.120
-Today’s lesson goal: Today’s lesson goal: make decisions with if, elif, and else, compare values and combine conditions, and repeat work with for and while loops.
+00:00:00.000 --> 00:00:11.976
+Today’s lesson goal: Today’s lesson goal: make decisions with if, elif, and else. Compare values and combine conditions. Repeat work with for and while loops.
 
 2
-00:00:09.470 --> 00:00:21.950
-Why control flow matters: Why control flow matters: programs choose paths for discounts, menus, and checks. Loops process lists without copy-paste. This is the logic behind everyday apps.
+00:00:12.826 --> 00:00:27.802
+Why control flow matters: Why control flow matters. Programs choose paths for discounts, menus, and checks. Loops process lists without copy-paste. This is the logic behind everyday apps.
 
 3
-00:00:22.300 --> 00:00:33.484
-Decisions: if / elif / else: Decisions use if, elif, and else. Ask a true or false question, run one branch when the answer is true, use elif for more cases, and else for the rest.
+00:00:28.652 --> 00:00:42.884
+Decisions: if / elif / else: Decisions use if, elif, and else. Ask a true or false question. Run one branch when the answer is true. Use elif for more cases, and else for the rest.
 
 4
-00:00:33.834 --> 00:00:47.874
-Worked example: discount: Worked example: a discount. If spend is over one hundred, apply ten percent. Else if spend is over fifty, apply five percent. Otherwise no discount, then print the final total.
+00:00:43.734 --> 00:00:59.502
+Worked example: discount: Worked example: a discount. If spend is over one hundred, apply ten percent. Elif spend is over fifty, apply five percent. Otherwise no discount — print the final total.
 
 5
-00:00:48.224 --> 00:00:58.280
-Loops: for and while: Loops: use for to walk through a known collection, and while to keep going until a condition changes. Avoid infinite loops by always updating the condition.
+00:01:00.352 --> 00:01:12.496
+Loops: for and while: Loops: use for to walk through a known collection. Use while to keep going until a condition changes. Avoid infinite loops — always update the condition.
 
 6
-00:00:58.630 --> 00:01:09.334
-Common mistakes: Common mistakes: using a single equals instead of double equals in comparisons, forgetting indentation under if or for, and while true with no break or stop condition.
+00:01:13.346 --> 00:01:26.882
+Common mistakes: Common mistakes: using a single equals instead of double equals in comparisons. Forgetting indentation under if or for. While true with no break or stop condition.
 
 7
-00:01:09.684 --> 00:01:19.620
-Practice checkpoint: Practice checkpoint: build a tiny menu or age check, loop through a short list and print each item, then continue in the written Module 3 lesson and quiz.
+00:01:27.732 --> 00:01:40.500
+Practice checkpoint: Practice checkpoint: build a tiny menu or age check. Loop through a short list and print each item. Then continue in the written Module 3 lesson and quiz.

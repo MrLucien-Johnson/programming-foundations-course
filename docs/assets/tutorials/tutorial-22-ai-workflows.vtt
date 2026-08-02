@@ -1,17 +1,17 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:08.928
-Today’s lesson goal: Today’s lesson goal: chain steps into a simple workflow, keep humans in the loop where it matters, and log decisions so you can improve later.
+00:00:00.000 --> 00:00:11.448
+Today’s lesson goal: Today’s lesson goal: chain steps into a simple workflow. Keep humans in the loop where it matters. Log decisions so you can improve later.
 
 2
-00:00:09.278 --> 00:00:21.686
-Workflow thinking: Workflow thinking: input, transform, check, output. Each step has a clear owner, model or human. Failures should stop or escalate, not silently invent.
+00:00:12.298 --> 00:00:26.290
+Workflow thinking: Workflow thinking: input, transform, check, output. Each step has a clear owner — model or human. Failures should stop or escalate, not silently invent.
 
 3
-00:00:22.036 --> 00:00:28.900
-Worked example: Worked example: draft a summary, validate required fields, then a human approves before send.
+00:00:27.140 --> 00:00:36.380
+Worked example: Worked example: draft a summary. Validate required fields. A human approves before send.
 
 4
-00:00:29.250 --> 00:00:38.298
-Practice checkpoint: Practice checkpoint: draw a three-step workflow for a real task, mark which steps need a human, then continue in the written Module 6 lesson.
+00:00:37.230 --> 00:00:48.990
+Practice checkpoint: Practice checkpoint: draw a three-step workflow for a real task. Mark which steps need a human. Then continue in the written Module 6 lesson.
