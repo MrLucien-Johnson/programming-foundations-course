@@ -2534,6 +2534,77 @@ button.path-node {
   gap: 10px;
 }
 
+/* Guest device-progress consent (UK PECR/UK GDPR transparency) */
+.device-progress-notice {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 80;
+  padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px));
+  background:
+    linear-gradient(180deg, rgba(14, 17, 22, 0.92) 0%, rgba(14, 17, 22, 0.98) 100%);
+  border-top: 1px solid rgba(201, 162, 39, 0.45);
+  box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.35);
+  color: var(--paper);
+}
+
+.device-progress-notice__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.device-progress-notice__copy {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.device-progress-notice__copy strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--gold-light);
+  margin-bottom: 4px;
+}
+
+.device-progress-notice__copy p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: rgba(247, 241, 230, 0.9);
+}
+
+.device-progress-notice__copy a {
+  color: var(--gold-light);
+}
+
+.device-progress-notice__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.device-progress-notice .btn-secondary {
+  background: transparent;
+  color: var(--paper);
+  border-color: rgba(226, 193, 90, 0.45);
+}
+
+@media (max-width: 640px) {
+  .device-progress-notice__actions {
+    width: 100%;
+  }
+
+  .device-progress-notice__actions .btn {
+    flex: 1 1 auto;
+  }
+}
+
 .playground-challenges {
   display: flex;
   flex-wrap: wrap;

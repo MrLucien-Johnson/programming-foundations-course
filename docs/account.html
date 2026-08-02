@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Account - Programming Foundations</title>
-    <link rel="stylesheet" href="styles.css?v=ux28" />
+    <link rel="stylesheet" href="styles.css?v=ux29" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux28"></script>
+    <script src="site.js?v=ux29"></script>
 
     <main id="main" class="container">
       <div id="pf-resume-host" hidden></div>
@@ -24,11 +24,31 @@
       <section class="hero">
         <h2>Your account</h2>
         <p>
-          Guest learning always works — progress stays in this browser. A free account can sync
-          across devices when the cloud API is up. On free hosting, cloud data may reset after
-          server restarts, so keep guest progress as your backup.
+          Guest learning always works. With permission, progress stays in this browser after reboot.
+          Download a backup anytime from <a href="privacy.html#guest-progress">Privacy</a>. A free
+          account can sync across devices when the cloud API is up. On free hosting, cloud data may
+          reset after server restarts — keep a guest backup if that matters to you.
           <a href="support.html">Donate</a> if you want to help fund durable hosting.
         </p>
+      </section>
+
+      <section class="section panel-plain" id="guest-backup">
+        <h3 style="margin-top: 0;">Guest progress backup</h3>
+        <p class="note">
+          No account needed. Export a JSON file you control, or import one to restore progress on
+          this device.
+        </p>
+        <div class="button-row">
+          <button type="button" class="btn btn-secondary" id="account-guest-export">
+            Download progress backup
+          </button>
+          <label class="btn btn-secondary" style="cursor: pointer">
+            Import progress backup
+            <input id="account-guest-import" type="file" accept="application/json,.json" hidden />
+          </label>
+          <a class="btn btn-secondary" href="privacy.html#guest-progress">Privacy choices</a>
+        </div>
+        <p id="account-guest-backup-status" class="note" role="status" aria-live="polite"></p>
       </section>
 
       <section class="section panel-plain" id="account-signed-in" hidden>
@@ -258,6 +278,32 @@
           } catch (error) {
             syncStatus.textContent = error.message || "Sync failed. Is the API running?";
           }
+        });
+
+        document.getElementById("account-guest-export")?.addEventListener("click", () => {
+          const guestStatus = document.getElementById("account-guest-backup-status");
+          try {
+            window.PF.downloadGuestProgress();
+            if (guestStatus) guestStatus.textContent = "Progress backup downloaded.";
+          } catch (error) {
+            if (guestStatus) guestStatus.textContent = error.message || "Could not download backup.";
+          }
+        });
+
+        document.getElementById("account-guest-import")?.addEventListener("change", async (event) => {
+          const guestStatus = document.getElementById("account-guest-backup-status");
+          const file = event.target.files && event.target.files[0];
+          if (!file) return;
+          if (guestStatus) guestStatus.textContent = "Importing…";
+          try {
+            const text = await file.text();
+            window.PF.importGuestProgress(text);
+            if (guestStatus) guestStatus.textContent = "Progress imported onto this device.";
+            await refresh();
+          } catch (error) {
+            if (guestStatus) guestStatus.textContent = error.message || "Could not import that file.";
+          }
+          event.target.value = "";
         });
 
         await refresh();

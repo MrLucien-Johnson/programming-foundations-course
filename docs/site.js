@@ -13,6 +13,8 @@
     lastLesson: "pf-last-lesson",
     lastQuiz: "pf-last-quiz",
     persona: "pf-org-persona",
+    /** 'granted' | 'denied' — PECR/UK GDPR transparency for on-device guest progress */
+    deviceProgressConsent: "pf-device-progress-consent",
   };
 
   /** Home learners pick which org framing fits them best. */
@@ -713,20 +715,45 @@
   const getCompletions = () =>
     safeParse(localStorage.getItem(KEYS.completions), []);
 
+  const getDeviceProgressConsent = () =>
+    localStorage.getItem(KEYS.deviceProgressConsent) || "";
+
+  const setDeviceProgressConsent = (value) => {
+    if (value === "granted" || value === "denied") {
+      localStorage.setItem(KEYS.deviceProgressConsent, value);
+    } else {
+      localStorage.removeItem(KEYS.deviceProgressConsent);
+    }
+  };
+
+  const canPersistGuestProgress = () => {
+    // Signed-in users sync via account. Guests may save until they decline.
+    if (getToken()) return true;
+    return getDeviceProgressConsent() !== "denied";
+  };
+
+  const writeProgressKey = (key, value) => {
+    if (!canPersistGuestProgress()) return false;
+    localStorage.setItem(key, value);
+    return true;
+  };
+
   const saveCompletion = (path) => {
     if (!path) return getCompletions();
+    if (!canPersistGuestProgress()) return getCompletions();
     const next = new Set(getCompletions());
     next.add(path);
     const list = [...next];
-    localStorage.setItem(KEYS.completions, JSON.stringify(list));
+    writeProgressKey(KEYS.completions, JSON.stringify(list));
     scheduleSync();
     return list;
   };
 
   const clearCompletion = (path) => {
     if (!path) return getCompletions();
+    if (!canPersistGuestProgress()) return getCompletions();
     const list = getCompletions().filter((item) => item !== path);
-    localStorage.setItem(KEYS.completions, JSON.stringify(list));
+    writeProgressKey(KEYS.completions, JSON.stringify(list));
     scheduleSync();
     return list;
   };
@@ -748,6 +775,7 @@
 
   const saveQuizResult = (quizPath, result) => {
     if (!quizPath) return getQuizCompletions();
+    if (!canPersistGuestProgress()) return getQuizCompletions();
     const all = getQuizCompletions();
     all[quizPath] = {
       score: result.score,
@@ -755,7 +783,7 @@
       passed: !!result.passed,
       at: new Date().toISOString(),
     };
-    localStorage.setItem(KEYS.quizCompletions, JSON.stringify(all));
+    writeProgressKey(KEYS.quizCompletions, JSON.stringify(all));
     scheduleSync();
     // Durable server-side attempt log powers org gradebooks (best-effort).
     logQuizAttempt(quizPath, result);
@@ -766,7 +794,8 @@
     safeParse(localStorage.getItem(KEYS.startSteps), {});
 
   const saveStartSteps = (state) => {
-    localStorage.setItem(KEYS.startSteps, JSON.stringify(state || {}));
+    if (!canPersistGuestProgress()) return state;
+    writeProgressKey(KEYS.startSteps, JSON.stringify(state || {}));
     scheduleSync();
     return state;
   };
@@ -895,6 +924,140 @@
     scheduleSync();
   };
 
+  const exportGuestProgress = () => {
+    const moduleProgress = {};
+    Object.keys(localStorage)
+      .filter((key) => key.startsWith("module-progress:"))
+      .forEach((key) => {
+        moduleProgress[key] = safeParse(localStorage.getItem(key), {});
+      });
+    return {
+      format: "programming-foundations-guest-progress",
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      deviceOnly: true,
+      progress: {
+        completions: getCompletions(),
+        quizCompletions: getQuizCompletions(),
+        startSteps: getStartSteps(),
+        moduleProgress,
+        lastLesson: getLastLesson(),
+        lastQuiz: getLastQuiz(),
+        persona: getPersonaId() || null,
+      },
+    };
+  };
+
+  const downloadGuestProgress = () => {
+    const data = exportGuestProgress();
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `programming-foundations-progress-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    return data;
+  };
+
+  const importGuestProgress = (payload) => {
+    const data = typeof payload === "string" ? safeParse(payload, null) : payload;
+    if (!data || typeof data !== "object") {
+      throw new Error("That file does not look like a progress backup.");
+    }
+    const progress = data.progress && typeof data.progress === "object" ? data.progress : data;
+    const completions = Array.isArray(progress.completions) ? progress.completions : [];
+    const quizCompletions =
+      progress.quizCompletions && typeof progress.quizCompletions === "object"
+        ? progress.quizCompletions
+        : {};
+    const startSteps =
+      progress.startSteps && typeof progress.startSteps === "object" ? progress.startSteps : {};
+    const moduleProgress =
+      progress.moduleProgress && typeof progress.moduleProgress === "object"
+        ? progress.moduleProgress
+        : {};
+
+    localStorage.setItem(KEYS.completions, JSON.stringify(completions));
+    localStorage.setItem(KEYS.quizCompletions, JSON.stringify(quizCompletions));
+    localStorage.setItem(KEYS.startSteps, JSON.stringify(startSteps));
+
+    Object.keys(localStorage)
+      .filter((key) => key.startsWith("module-progress:"))
+      .forEach((key) => localStorage.removeItem(key));
+    Object.entries(moduleProgress).forEach(([key, value]) => {
+      if (String(key).startsWith("module-progress:")) {
+        localStorage.setItem(key, JSON.stringify(value || {}));
+      }
+    });
+
+    if (progress.lastLesson) {
+      localStorage.setItem(KEYS.lastLesson, JSON.stringify(progress.lastLesson));
+    }
+    if (progress.lastQuiz) {
+      localStorage.setItem(KEYS.lastQuiz, JSON.stringify(progress.lastQuiz));
+    }
+    if (progress.persona) {
+      localStorage.setItem(KEYS.persona, String(progress.persona));
+    }
+
+    // Importing a backup counts as choosing to keep progress on this device.
+    setDeviceProgressConsent("granted");
+    mountResumeBanner();
+    applyPersonaCopy();
+    scheduleSync();
+    return true;
+  };
+
+  const mountDeviceProgressNotice = () => {
+    if (getToken()) return;
+    if (getDeviceProgressConsent()) return;
+    if (document.getElementById("pf-device-progress-notice")) return;
+
+    const host = document.createElement("div");
+    host.id = "pf-device-progress-notice";
+    host.className = "device-progress-notice";
+    host.setAttribute("role", "region");
+    host.setAttribute("aria-label", "Save progress on this device");
+    host.innerHTML = `
+      <div class="device-progress-notice__inner">
+        <div class="device-progress-notice__copy">
+          <strong>Keep learning progress on this device?</strong>
+          <p>
+            With your permission we store completions and quiz results in this browser so they
+            survive reboot. No ads. No sale of data.
+            <a href="privacy.html#guest-progress">Privacy details</a>
+            ·
+            <a href="account.html">Free account for cloud sync</a>
+          </p>
+        </div>
+        <div class="device-progress-notice__actions">
+          <button type="button" class="btn btn-primary" data-consent="granted">Keep on this device</button>
+          <button type="button" class="btn btn-secondary" data-consent="denied">Not now</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(host);
+
+    host.addEventListener("click", (event) => {
+      const btn = event.target.closest("[data-consent]");
+      if (!btn) return;
+      const value = btn.getAttribute("data-consent");
+      setDeviceProgressConsent(value);
+      host.remove();
+      if (value === "denied") {
+        resetAllProgress();
+        const status = document.getElementById("pf-device-progress-status");
+        if (status) {
+          status.textContent =
+            "Progress will not be kept on this device. You can allow it later in Privacy, import a backup, or create a free account.";
+        }
+      }
+    });
+  };
+
   const markNavCurrent = () => {
     const file = currentFile();
     document.querySelectorAll(".nav a[href]").forEach((anchor) => {
@@ -974,8 +1137,9 @@
 
   const setLastLesson = (payload) => {
     if (!payload || !payload.path) return;
+    if (!canPersistGuestProgress()) return;
     try {
-      localStorage.setItem(
+      writeProgressKey(
         KEYS.lastLesson,
         JSON.stringify({
           path: payload.path,
@@ -992,8 +1156,9 @@
 
   const setLastQuiz = (payload) => {
     if (!payload || !payload.quiz) return;
+    if (!canPersistGuestProgress()) return;
     try {
-      localStorage.setItem(
+      writeProgressKey(
         KEYS.lastQuiz,
         JSON.stringify({
           quiz: payload.quiz,
@@ -1165,8 +1330,9 @@
 
   const setPersona = (id) => {
     if (!PERSONAS[id]) return null;
+    if (!canPersistGuestProgress()) return PERSONAS[id];
     try {
-      localStorage.setItem(KEYS.persona, id);
+      writeProgressKey(KEYS.persona, id);
     } catch (error) {
       /* ignore */
     }
@@ -1269,6 +1435,7 @@
     mountHeader();
     mountDonateSlots();
     mountBrandCredit();
+    mountDeviceProgressNotice();
     mountResumeBanner();
     mountPersonaPicker();
     applyPersonaCopy();
@@ -1315,6 +1482,13 @@
     bindProgressUI,
     enhanceModuleLists,
     resetAllProgress,
+    getDeviceProgressConsent,
+    setDeviceProgressConsent,
+    canPersistGuestProgress,
+    exportGuestProgress,
+    downloadGuestProgress,
+    importGuestProgress,
+    mountDeviceProgressNotice,
     markNavCurrent,
     mountHeader,
     mountDonateSlots,
