@@ -1066,6 +1066,41 @@
     return true;
   };
 
+  const DEVICE_PROGRESS_LOSS_WARNING =
+    "If this browser’s data is cleared or lost, guest progress cannot be recovered unless you accept on-device storage again (and rebuild it or import a backup) or you use an account.";
+
+  const dismissDeviceProgressAftermath = () => {
+    document.getElementById("pf-device-progress-aftermath")?.remove();
+  };
+
+  const mountDeviceProgressAftermath = (choice) => {
+    dismissDeviceProgressAftermath();
+    const host = document.createElement("div");
+    host.id = "pf-device-progress-aftermath";
+    host.className = "device-progress-aftermath";
+    host.setAttribute("role", "alert");
+    const lead =
+      choice === "denied"
+        ? "On-device progress is off and any guest progress on this device was cleared. That clear cannot be undone."
+        : "On-device progress is on for this browser.";
+    host.innerHTML = `
+      <div class="device-progress-aftermath__inner">
+        <p>
+          <strong>Important:</strong> ${lead}
+          ${DEVICE_PROGRESS_LOSS_WARNING}
+          <a href="privacy.html#guest-progress">Privacy &amp; backups</a>
+          ·
+          <a href="account.html">Free account</a>
+        </p>
+        <button type="button" class="btn btn-secondary" data-aftermath-dismiss>Got it</button>
+      </div>
+    `;
+    document.body.appendChild(host);
+    host.querySelector("[data-aftermath-dismiss]")?.addEventListener("click", () => {
+      dismissDeviceProgressAftermath();
+    });
+  };
+
   const dismissDeviceProgressNotice = () => {
     document.getElementById("pf-device-progress-notice")?.remove();
   };
@@ -1104,6 +1139,10 @@
             ·
             <a href="account.html">Free account for cloud sync</a>
           </p>
+          <p class="device-progress-notice__warn">
+            <strong>After you choose:</strong> if browser data is lost, progress is lost unless
+            on-device storage was accepted (and you still have a backup) or you use an account.
+          </p>
         </div>
         <div class="device-progress-notice__actions">
           <button type="button" class="btn btn-primary" data-consent="granted">
@@ -1121,15 +1160,26 @@
       const btn = event.target.closest("[data-consent]");
       if (!btn) return;
       const value = btn.getAttribute("data-consent");
+      if (value === "denied") {
+        const ok = window.confirm(
+          "Turn off on-device progress and clear guest progress on this device?\n\n" +
+            "Clearing cannot be undone.\n\n" +
+            DEVICE_PROGRESS_LOSS_WARNING
+        );
+        if (!ok) return;
+      }
       setDeviceProgressConsent(value);
       dismissDeviceProgressNotice();
       if (value === "denied") {
         resetAllProgress();
-        const status = document.getElementById("pf-device-progress-status");
-        if (status) {
-          status.textContent =
-            "Progress will not be kept on this device. You can allow it later in Privacy, import a backup, or create a free account.";
-        }
+      }
+      mountDeviceProgressAftermath(value);
+      const status = document.getElementById("pf-device-progress-status");
+      if (status) {
+        status.textContent =
+          value === "denied"
+            ? `On-device progress is off and guest progress was cleared. That clear cannot be undone. ${DEVICE_PROGRESS_LOSS_WARNING}`
+            : `On-device progress is on. ${DEVICE_PROGRESS_LOSS_WARNING}`;
       }
     });
   };
@@ -1588,6 +1638,8 @@
     importGuestProgress,
     mountDeviceProgressNotice,
     dismissDeviceProgressNotice,
+    mountDeviceProgressAftermath,
+    dismissDeviceProgressAftermath,
     markNavCurrent,
     mountHeader,
     mountDonateSlots,
