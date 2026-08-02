@@ -134,9 +134,43 @@
   };
 
   /** Quiet “A project by Abel Solutions” credit in page footers. */
+  const FOOTER_LINKS = [
+    { href: "privacy.html", label: "Privacy" },
+    { href: "help.html", label: "Help" },
+    { href: "support.html", label: "Support" },
+    { href: "certificate.html", label: "Certificate" },
+  ];
+
+  const ensureFooterLinks = (footer) => {
+    let nav = footer.querySelector("[data-pf-footer-links]");
+    if (!nav) {
+      nav = document.createElement("p");
+      nav.className = "footer-links";
+      nav.dataset.pfFooterLinks = "1";
+      footer.appendChild(nav);
+    }
+    const existingHrefs = new Set(
+      Array.from(footer.querySelectorAll("a[href]")).map((a) =>
+        (a.getAttribute("href") || "").split("#")[0].toLowerCase()
+      )
+    );
+    FOOTER_LINKS.forEach(({ href, label }) => {
+      if (existingHrefs.has(href.toLowerCase())) return;
+      if (nav.textContent.trim() && !nav.textContent.trim().endsWith("·")) {
+        nav.append(document.createTextNode(" · "));
+      } else if (nav.childNodes.length) {
+        nav.append(document.createTextNode(" · "));
+      }
+      const a = document.createElement("a");
+      a.href = href;
+      a.textContent = label;
+      nav.appendChild(a);
+      existingHrefs.add(href.toLowerCase());
+    });
+  };
+
   const mountBrandCredit = () => {
     const { url, label, enabled } = getBrandConfig();
-    if (!enabled) return;
 
     let footers = Array.from(document.querySelectorAll("footer.footer"));
     if (!footers.length) {
@@ -144,12 +178,13 @@
       if (!main) return;
       const footer = document.createElement("footer");
       footer.className = "footer";
-      main.appendChild(footer);
+      main.insertAdjacentElement("afterend", footer);
       footers = [footer];
     }
 
     footers.forEach((footer) => {
-      if (footer.querySelector("[data-pf-brand-credit]")) return;
+      ensureFooterLinks(footer);
+      if (!enabled || footer.querySelector("[data-pf-brand-credit]")) return;
       const credit = document.createElement("p");
       credit.className = "footer-credit";
       credit.dataset.pfBrandCredit = "1";
@@ -727,9 +762,9 @@
   };
 
   const canPersistGuestProgress = () => {
-    // Signed-in users sync via account. Guests may save until they decline.
+    // Signed-in users sync via account. Guests must opt in (UK PECR / clear choice).
     if (getToken()) return true;
-    return getDeviceProgressConsent() !== "denied";
+    return getDeviceProgressConsent() === "granted";
   };
 
   const writeProgressKey = (key, value) => {
@@ -759,13 +794,16 @@
   };
 
   const toggleCompletion = (path) => {
-    if (!path) return false;
+    if (!path) return { completed: false, persisted: false };
+    if (!canPersistGuestProgress()) {
+      return { completed: isCompleted(path), persisted: false };
+    }
     if (isCompleted(path)) {
       clearCompletion(path);
-      return false;
+      return { completed: false, persisted: true };
     }
     saveCompletion(path);
-    return true;
+    return { completed: true, persisted: true };
   };
 
   const isCompleted = (path) => getCompletions().includes(path);
@@ -910,6 +948,14 @@
     });
   };
 
+  const emptyProgressPayload = () => ({
+    completions: [],
+    quizCompletions: {},
+    startSteps: {},
+    moduleProgress: {},
+    updatedAt: new Date().toISOString(),
+  });
+
   const resetAllProgress = () => {
     localStorage.removeItem(KEYS.completions);
     localStorage.removeItem(KEYS.quizCompletions);
@@ -920,8 +966,17 @@
     Object.keys(localStorage)
       .filter((key) => key.startsWith("module-progress:"))
       .forEach((key) => localStorage.removeItem(key));
+    writeLocalProgress(emptyProgressPayload());
     mountResumeBanner();
-    scheduleSync();
+    // Push empty cloud state when signed in — merge-sync would restore remote progress.
+    if (getToken()) {
+      apiFetch("/api/progress", {
+        method: "PUT",
+        body: JSON.stringify(emptyProgressPayload()),
+      }).catch(() => {
+        /* offline / API down — local clear still applied */
+      });
+    }
   };
 
   const exportGuestProgress = () => {
@@ -1011,6 +1066,10 @@
     return true;
   };
 
+  const dismissDeviceProgressNotice = () => {
+    document.getElementById("pf-device-progress-notice")?.remove();
+  };
+
   const mountDeviceProgressNotice = () => {
     if (getToken()) return;
     if (getDeviceProgressConsent()) return;
@@ -1063,7 +1122,7 @@
       if (!btn) return;
       const value = btn.getAttribute("data-consent");
       setDeviceProgressConsent(value);
-      host.remove();
+      dismissDeviceProgressNotice();
       if (value === "denied") {
         resetAllProgress();
         const status = document.getElementById("pf-device-progress-status");
@@ -1116,6 +1175,14 @@
     </header>`;
   };
 
+  const closeNavMenu = () => {
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("site-nav");
+    if (!toggle || !nav) return;
+    toggle.setAttribute("aria-expanded", "false");
+    nav.classList.remove("is-open");
+  };
+
   const wireNavToggle = () => {
     const toggle = document.querySelector(".nav-toggle");
     const nav = document.getElementById("site-nav");
@@ -1124,6 +1191,12 @@
       const open = toggle.getAttribute("aria-expanded") === "true";
       toggle.setAttribute("aria-expanded", open ? "false" : "true");
       nav.classList.toggle("is-open", !open);
+    });
+    nav.querySelectorAll("a[href]").forEach((anchor) => {
+      anchor.addEventListener("click", () => closeNavMenu());
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeNavMenu();
     });
   };
 
@@ -1347,7 +1420,15 @@
 
   const setPersona = (id) => {
     if (!PERSONAS[id]) return null;
-    if (!canPersistGuestProgress()) return PERSONAS[id];
+    if (!canPersistGuestProgress()) {
+      const host = document.getElementById("pf-persona-host");
+      const status = host?.querySelector(".persona-picker-status");
+      if (status) {
+        status.innerHTML =
+          "Progress isn’t saved on this device yet. Allow it in the banner or on <a href=\"privacy.html#guest-progress\">Privacy</a>, then choose again.";
+      }
+      return null;
+    }
     try {
       writeProgressKey(KEYS.persona, id);
     } catch (error) {
@@ -1506,6 +1587,7 @@
     downloadGuestProgress,
     importGuestProgress,
     mountDeviceProgressNotice,
+    dismissDeviceProgressNotice,
     markNavCurrent,
     mountHeader,
     mountDonateSlots,

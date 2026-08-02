@@ -578,3 +578,25 @@ Remote main had advanced (accounts API, Support, shared `site.js` header, promo 
 **Changes:** None.
 
 ---
+
+### 2026-08-02 — Full sitewide audit
+
+**Routes:** 0 errors / 0 warnings (auditor now includes privacy, teams, verify, all advanced hubs).
+
+**Gaps found**
+1. Guest progress wrote before explicit Yes (soft gate vs banner copy).
+2. Signed-in Reset/Deny could be undone by merge-sync restoring remote progress.
+3. Privacy page consent left the sticky banner up; privacy assets still on `ux29`.
+4. Mark-complete / persona could appear to succeed when persistence was blocked.
+5. Consent list CSS missing; footers inconsistent; advanced hubs thinner than beginners.
+6. Mobile nav stayed open after navigate; empty quizzes still rendered.
+
+**Fixes**
+- Opt-in guest persistence (`granted` required); dismiss notice from Privacy; push empty cloud progress on reset.
+- Honest blocked-persist messaging in lesson viewer + persona picker.
+- Consent banner layout CSS; shared footer essential links; polished advanced course hubs.
+- Escape/link close for mobile nav; empty-quiz guard; tutorial panel a11y; cache `?v=ux32`.
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, advanced HTML hubs, `docs/privacy.html`, viewers, and `scripts/audit_routes.py` from pre-audit commit.
+
+**Route risk:** Low.

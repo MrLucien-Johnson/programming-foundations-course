@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Course Lesson Viewer</title>
-    <link rel="stylesheet" href="styles.css?v=ux30" />
+    <link rel="stylesheet" href="styles.css?v=ux32" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux30"></script>
+    <script src="site.js?v=ux32"></script>
 
     <main id="main" class="container">
       <div id="pf-resume-host" hidden></div>
@@ -38,7 +38,7 @@
         </div>
       </section>
 
-      <aside class="section tutorial-callout" id="lesson-tutorial" hidden>
+      <aside class="section tutorial-callout" id="lesson-tutorial" hidden aria-labelledby="lesson-tutorial-title">
         <h3 id="lesson-tutorial-title">Voiceover lesson</h3>
         <p class="note" id="lesson-tutorial-note">
           Captions and a read-along transcript are available if you prefer to follow in text.
@@ -52,6 +52,7 @@
               playsinline
               preload="metadata"
               crossorigin="anonymous"
+              aria-label="Lesson voiceover video"
             ></video>
           </div>
           <details class="transcript-panel tutorial-media-transcript" id="lesson-tutorial-transcript-panel">
@@ -389,6 +390,13 @@
         const hit = findTutorialForPath(path, items);
         if (!hit) {
           panel.hidden = true;
+          const transcript = document.getElementById("lesson-tutorial-transcript");
+          const audio = document.getElementById("lesson-tutorial-audio");
+          if (transcript) transcript.removeAttribute("href");
+          if (audio) {
+            audio.hidden = true;
+            audio.removeAttribute("href");
+          }
           return;
         }
         panel.hidden = false;
@@ -411,6 +419,10 @@
             `This ${kindLabel} matches the module. Captions and a transcript are available if you prefer text — then continue with the written lesson below.`;
         }
         if (video) {
+          video.setAttribute(
+            "aria-label",
+            `${hit.title || "Lesson"} voiceover video`
+          );
           video.innerHTML = "";
           const source = document.createElement("source");
           source.src = `assets/tutorials/${hit.file}`;
@@ -1416,6 +1428,18 @@
 
       markCompleteBtn.addEventListener("click", () => {
         if (!repoPath) return;
+        const canPersist =
+          !window.PF ||
+          typeof window.PF.canPersistGuestProgress !== "function" ||
+          window.PF.canPersistGuestProgress();
+        if (!canPersist) {
+          applyCompleteButtonState();
+          if (completionStatus) {
+            completionStatus.innerHTML =
+              'Progress isn’t saved on this device yet. Allow it in the banner or on <a href="privacy.html#guest-progress">Privacy</a>, or <a href="account.html">create a free account</a>.';
+          }
+          return;
+        }
         const nowComplete = !isCompleted(repoPath);
         if (nowComplete) {
           saveCompletion(repoPath);
