@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Privacy &amp; your data - Programming Foundations</title>
-    <link rel="stylesheet" href="styles.css?v=ux34" />
+    <link rel="stylesheet" href="styles.css?v=ux35" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux34"></script>
+    <script src="site.js?v=ux35"></script>
 
     <main id="main" class="container">
       <div id="pf-resume-host" hidden></div>
@@ -96,7 +96,9 @@
           </li>
           <li>
             <strong>With an account:</strong> email, hashed password, display name, and synced
-            progress/quiz attempts for cross-device learning.
+            progress/quiz attempts for cross-device learning. Optional free two-factor authentication
+            stores an encrypted authenticator secret and hashed one-time backup codes (never shown
+            again after setup).
           </li>
           <li>
             <strong>Organisations:</strong> if an admin adds you, they can see email, role, module
@@ -114,6 +116,10 @@
         <ul>
           <li>No advertising trackers or selling of personal data.</li>
           <li>Passwords are stored only as salted hashes (bcrypt) — never in plain text.</li>
+          <li>
+            Authenticator secrets for free 2FA are encrypted at rest; backup codes are stored only as
+            hashes.
+          </li>
           <li>Admins in your organisation see progress metrics, not your password or unrelated accounts.</li>
         </ul>
       </section>

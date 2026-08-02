@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Account - Programming Foundations</title>
-    <link rel="stylesheet" href="styles.css?v=ux34" />
+    <link rel="stylesheet" href="styles.css?v=ux35" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux34"></script>
+    <script src="site.js?v=ux35"></script>
 
     <main id="main" class="container">
       <div id="pf-resume-host" hidden></div>
@@ -26,8 +26,10 @@
         <p>
           Guest learning always works. With permission, progress stays in this browser after reboot.
           Download a backup anytime from <a href="privacy.html#guest-progress">Privacy</a>. A free
-          account can sync across devices when the cloud API is up. On free hosting, cloud data may
-          reset after server restarts — keep a guest backup if that matters to you.
+          account can sync across devices when the cloud API is up, and you can turn on free
+          two-factor authentication (authenticator app) under your signed-in Account settings. On free
+          hosting, cloud data may reset after server restarts — keep a guest backup if that matters
+          to you.
           <a href="support.html">Donate</a> if you want to help fund durable hosting.
         </p>
       </section>
@@ -100,6 +102,95 @@
           </div>
         </form>
         <p id="change-password-status" class="note" role="status" aria-live="polite"></p>
+
+        <h4 id="two-factor">Two-factor authentication (free)</h4>
+        <p class="note">
+          Add an authenticator app code at sign-in. Free for every working account — no paid plan.
+          Works with Google Authenticator, Authy, Microsoft Authenticator, and similar apps.
+        </p>
+        <div id="totp-off">
+          <div class="button-row">
+            <button type="button" class="btn btn-secondary" id="totp-start">
+              Set up 2FA
+            </button>
+          </div>
+          <div id="totp-setup-panel" hidden>
+            <p class="note">
+              Scan this QR code in your authenticator app, or enter the secret manually, then confirm
+              with a 6-digit code.
+            </p>
+            <p>
+              <img id="totp-qr" alt="Two-factor authentication QR code" width="220" height="220" />
+            </p>
+            <p class="note">
+              Manual secret:
+              <code id="totp-secret"></code>
+            </p>
+            <form id="totp-confirm-form">
+              <label>
+                Authenticator code
+                <input
+                  class="field-input"
+                  type="text"
+                  name="code"
+                  inputmode="numeric"
+                  autocomplete="one-time-code"
+                  pattern="[0-9]{6}"
+                  maxlength="6"
+                  required
+                />
+              </label>
+              <div class="button-row">
+                <button class="btn btn-primary" type="submit">Confirm and turn on 2FA</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="totp-on" hidden>
+          <p class="note" id="totp-on-status">Two-factor authentication is on for this account.</p>
+          <form id="totp-disable-form">
+            <label>
+              Password
+              <input
+                class="field-input"
+                type="password"
+                name="password"
+                autocomplete="current-password"
+                required
+              />
+            </label>
+            <label>
+              Authenticator or backup code
+              <input
+                class="field-input"
+                type="text"
+                name="code"
+                autocomplete="one-time-code"
+                required
+              />
+            </label>
+            <div class="button-row">
+              <button class="btn btn-secondary" type="submit">Turn off 2FA</button>
+            </div>
+          </form>
+        </div>
+        <div id="totp-backup-panel" hidden>
+          <h4>Save your backup codes</h4>
+          <p class="note">
+            These codes are shown once. Each code can be used once if you lose your authenticator.
+            Store them somewhere safe.
+          </p>
+          <pre id="totp-backup-codes" class="code-block"></pre>
+          <div class="button-row">
+            <button type="button" class="btn btn-secondary" id="totp-backup-copy">
+              Copy backup codes
+            </button>
+            <button type="button" class="btn btn-secondary" id="totp-backup-dismiss">
+              I’ve saved them
+            </button>
+          </div>
+        </div>
+        <p id="totp-status" class="note" role="status" aria-live="polite"></p>
       </section>
 
       <section class="section grid cols-2" id="account-forms">
@@ -121,8 +212,24 @@
                 minlength="8"
               />
             </label>
+            <div id="sign-in-totp-step" hidden>
+              <label>
+                Authenticator or backup code
+                <input
+                  class="field-input"
+                  type="text"
+                  name="totpCode"
+                  autocomplete="one-time-code"
+                  inputmode="text"
+                />
+              </label>
+              <p class="note">
+                This account has free 2FA enabled. Enter the 6-digit app code, or a one-time backup
+                code.
+              </p>
+            </div>
             <div class="button-row">
-              <button class="btn btn-primary" type="submit">Sign in</button>
+              <button class="btn btn-primary" type="submit" id="sign-in-submit">Sign in</button>
             </div>
           </form>
           <p id="sign-in-status" class="note" role="status" aria-live="polite"></p>
@@ -194,6 +301,49 @@
         const signInStatus = document.getElementById("sign-in-status");
         const signUpStatus = document.getElementById("sign-up-status");
         const changePasswordStatus = document.getElementById("change-password-status");
+        const totpStatus = document.getElementById("totp-status");
+        const totpOff = document.getElementById("totp-off");
+        const totpOn = document.getElementById("totp-on");
+        const totpSetupPanel = document.getElementById("totp-setup-panel");
+        const totpBackupPanel = document.getElementById("totp-backup-panel");
+        const signInTotpStep = document.getElementById("sign-in-totp-step");
+        let pendingTotpToken = "";
+
+        const showBackupCodes = (codes) => {
+          const list = Array.isArray(codes) ? codes : [];
+          const pre = document.getElementById("totp-backup-codes");
+          if (pre) pre.textContent = list.join("\n");
+          if (totpBackupPanel) totpBackupPanel.hidden = list.length === 0;
+        };
+
+        const refreshTotpUi = async () => {
+          if (!window.PF.getToken()) {
+            if (totpOff) totpOff.hidden = true;
+            if (totpOn) totpOn.hidden = true;
+            return;
+          }
+          let user = window.PF.getUser() || {};
+          try {
+            const fresh = await window.PF.account.me();
+            user = fresh;
+            const token = window.PF.getToken();
+            if (token) {
+              localStorage.setItem(
+                window.PF.KEYS.authUser,
+                JSON.stringify(Object.assign({}, window.PF.getUser() || {}, fresh))
+              );
+            }
+          } catch {
+            /* offline — use cached session */
+          }
+          const enabled = !!user.totpEnabled;
+          if (totpOff) totpOff.hidden = enabled;
+          if (totpOn) totpOn.hidden = !enabled;
+          if (!enabled && totpSetupPanel) {
+            /* keep setup panel state unless starting again */
+          }
+          if (enabled && totpSetupPanel) totpSetupPanel.hidden = true;
+        };
 
         const refresh = async () => {
           const user = window.PF.getUser();
@@ -203,10 +353,12 @@
             summary.textContent = user.displayName
               ? `Signed in as ${user.displayName} (${user.email}).`
               : `Signed in as ${user.email}.`;
+            await refreshTotpUi();
           } else {
             signedIn.hidden = true;
             forms.hidden = false;
             summary.textContent = "";
+            if (totpBackupPanel) totpBackupPanel.hidden = true;
           }
           window.PF.mountHeader();
         };
@@ -216,11 +368,41 @@
           signInStatus.textContent = "Signing in…";
           const data = new FormData(event.target);
           try {
-            await window.PF.signIn({
+            if (pendingTotpToken) {
+              const code = String(data.get("totpCode") || "").trim();
+              if (!code) {
+                signInStatus.textContent = "Enter your authenticator or backup code.";
+                return;
+              }
+              const result = await window.PF.signIn({
+                totpToken: pendingTotpToken,
+                code,
+              });
+              pendingTotpToken = "";
+              if (signInTotpStep) signInTotpStep.hidden = true;
+              signInStatus.textContent = result.usedBackup
+                ? `Signed in with a backup code (${result.remainingBackupCodes ?? 0} left). Progress synced.`
+                : "Signed in. Progress synced.";
+              event.target.reset();
+              await refresh();
+              return;
+            }
+
+            const result = await window.PF.signIn({
               email: String(data.get("email") || ""),
               password: String(data.get("password") || ""),
             });
+            if (result && result.requiresTotp) {
+              pendingTotpToken = result.totpToken || "";
+              if (signInTotpStep) signInTotpStep.hidden = false;
+              signInStatus.textContent =
+                "Password accepted. Enter your authenticator or backup code to finish.";
+              document.querySelector('#sign-in-form [name="totpCode"]')?.focus();
+              return;
+            }
             signInStatus.textContent = "Signed in. Progress synced.";
+            event.target.reset();
+            if (signInTotpStep) signInTotpStep.hidden = true;
             await refresh();
           } catch (error) {
             signInStatus.textContent = error.message || "Could not sign in.";
@@ -278,6 +460,72 @@
           } catch (error) {
             syncStatus.textContent = error.message || "Sync failed. Is the API running?";
           }
+        });
+
+        document.getElementById("totp-start")?.addEventListener("click", async () => {
+          totpStatus.textContent = "Starting 2FA setup…";
+          try {
+            const setup = await window.PF.account.totpSetup();
+            const qr = document.getElementById("totp-qr");
+            const secretEl = document.getElementById("totp-secret");
+            if (qr) qr.src = setup.qrDataUrl || "";
+            if (secretEl) secretEl.textContent = setup.secret || "";
+            if (totpSetupPanel) totpSetupPanel.hidden = false;
+            totpStatus.textContent =
+              "Scan the QR code (or enter the secret), then confirm with a 6-digit code.";
+          } catch (error) {
+            totpStatus.textContent = error.message || "Could not start 2FA setup.";
+          }
+        });
+
+        document.getElementById("totp-confirm-form")?.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const data = new FormData(event.target);
+          totpStatus.textContent = "Confirming…";
+          try {
+            const result = await window.PF.account.totpConfirm(String(data.get("code") || ""));
+            showBackupCodes(result.backupCodes || []);
+            if (totpSetupPanel) totpSetupPanel.hidden = true;
+            event.target.reset();
+            totpStatus.textContent =
+              result.message || "Two-factor authentication is on. Save your backup codes.";
+            await refresh();
+          } catch (error) {
+            totpStatus.textContent = error.message || "Could not confirm 2FA.";
+          }
+        });
+
+        document.getElementById("totp-disable-form")?.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const data = new FormData(event.target);
+          totpStatus.textContent = "Turning off 2FA…";
+          try {
+            await window.PF.account.totpDisable(
+              String(data.get("password") || ""),
+              String(data.get("code") || "")
+            );
+            event.target.reset();
+            showBackupCodes([]);
+            totpStatus.textContent = "Two-factor authentication is off.";
+            await refresh();
+          } catch (error) {
+            totpStatus.textContent = error.message || "Could not turn off 2FA.";
+          }
+        });
+
+        document.getElementById("totp-backup-copy")?.addEventListener("click", async () => {
+          const text = document.getElementById("totp-backup-codes")?.textContent || "";
+          try {
+            await navigator.clipboard.writeText(text);
+            totpStatus.textContent = "Backup codes copied.";
+          } catch {
+            totpStatus.textContent = "Could not copy automatically — select and copy the codes above.";
+          }
+        });
+
+        document.getElementById("totp-backup-dismiss")?.addEventListener("click", () => {
+          showBackupCodes([]);
+          totpStatus.textContent = "Keep those backup codes somewhere safe.";
         });
 
         document.getElementById("account-guest-export")?.addEventListener("click", () => {

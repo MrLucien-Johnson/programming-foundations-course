@@ -5,7 +5,9 @@ function createAccountRouter({ db, requireAuth, audit }) {
   const router = express.Router();
   router.use(requireAuth);
 
-  const getUser = db.prepare(`SELECT id, email, display_name, created_at FROM users WHERE id = ?`);
+  const getUser = db.prepare(
+    `SELECT id, email, display_name, created_at, totp_enabled FROM users WHERE id = ?`
+  );
   const getProgress = db.prepare(`SELECT payload, updated_at FROM progress WHERE user_id = ?`);
   const getAttempts = db.prepare(
     `SELECT quiz_path, course_name, score, total, passed, created_at FROM quiz_attempts WHERE user_id = ?`
@@ -34,7 +36,13 @@ function createAccountRouter({ db, requireAuth, audit }) {
     return res.json({
       exportedAt: new Date().toISOString(),
       account: user
-        ? { id: user.id, email: user.email, displayName: user.display_name, createdAt: user.created_at }
+        ? {
+            id: user.id,
+            email: user.email,
+            displayName: user.display_name,
+            createdAt: user.created_at,
+            totpEnabled: Number(user.totp_enabled) === 1,
+          }
         : null,
       progress,
       quizAttempts: getAttempts.all(uid),

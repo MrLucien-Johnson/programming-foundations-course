@@ -22,6 +22,19 @@ function createAuthRouter(auth) {
     }
   });
 
+  router.post("/login/totp", (req, res) => {
+    try {
+      const result = auth.loginWithTotp(req.body || {});
+      return res.json(result);
+    } catch (error) {
+      return sendAuthError(
+        res,
+        error,
+        "Enter a valid 6-digit authenticator code or a backup code."
+      );
+    }
+  });
+
   router.get("/me", auth.requireAuth, (req, res) => {
     return res.json({ user: req.user });
   });
@@ -38,6 +51,37 @@ function createAuthRouter(auth) {
         res,
         error,
         "Check your current and new password (new password must be at least 8 characters)."
+      );
+    }
+  });
+
+  router.post("/totp/setup", auth.requireAuth, async (req, res) => {
+    try {
+      const result = await auth.beginTotpSetup(req.user.id);
+      return res.json(result);
+    } catch (error) {
+      return sendAuthError(res, error);
+    }
+  });
+
+  router.post("/totp/confirm", auth.requireAuth, (req, res) => {
+    try {
+      const result = auth.confirmTotpSetup(req.user.id, req.body || {});
+      return res.json(result);
+    } catch (error) {
+      return sendAuthError(res, error, "Enter the 6-digit code from your authenticator app.");
+    }
+  });
+
+  router.post("/totp/disable", auth.requireAuth, (req, res) => {
+    try {
+      const result = auth.disableTotp(req.user.id, req.body || {});
+      return res.json(result);
+    } catch (error) {
+      return sendAuthError(
+        res,
+        error,
+        "Enter your password and a valid authenticator or backup code."
       );
     }
   });

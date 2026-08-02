@@ -103,7 +103,19 @@ function openDatabase(databasePath) {
     CREATE INDEX IF NOT EXISTS idx_audit_org ON audit_events(org_id);
   `);
 
+  // Additive columns for existing SQLite files (CREATE TABLE IF NOT EXISTS won't alter).
+  ensureColumn(db, "users", "totp_enabled", "INTEGER NOT NULL DEFAULT 0");
+  ensureColumn(db, "users", "totp_secret_enc", "TEXT");
+  ensureColumn(db, "users", "totp_pending_enc", "TEXT");
+  ensureColumn(db, "users", "totp_backup_hashes", "TEXT");
+
   return db;
+}
+
+function ensureColumn(db, table, column, definition) {
+  const cols = db.prepare(`PRAGMA table_info(${table})`).all();
+  if (cols.some((c) => c.name === column)) return;
+  db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${definition}`);
 }
 
 module.exports = { openDatabase };

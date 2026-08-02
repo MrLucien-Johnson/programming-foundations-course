@@ -617,15 +617,29 @@
     }
   };
 
-  const signIn = async ({ email, password }) => {
-    const data = await apiFetch("/api/auth/login", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-    });
+  const signIn = async ({ email, password, totpToken, code } = {}) => {
+    let data;
+    if (totpToken && code) {
+      data = await apiFetch("/api/auth/login/totp", {
+        method: "POST",
+        body: JSON.stringify({ totpToken, code }),
+      });
+    } else {
+      data = await apiFetch("/api/auth/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+      });
+      if (data.requiresTotp) {
+        return data;
+      }
+    }
+    if (!data.token || !data.user) {
+      throw new Error("Sign in did not return a session. Try again.");
+    }
     setSession(data.token, data.user);
     await syncProgress({ force: true });
     mountHeader();
-    return data.user;
+    return data;
   };
 
   const signUp = async ({ email, password, displayName }) => {
@@ -744,6 +758,19 @@
       apiFetch("/api/auth/change-password", {
         method: "POST",
         body: JSON.stringify({ currentPassword, newPassword }),
+      }),
+    me: () => apiFetch("/api/auth/me").then((d) => d.user),
+    totpSetup: () =>
+      apiFetch("/api/auth/totp/setup", { method: "POST", body: JSON.stringify({}) }),
+    totpConfirm: (code) =>
+      apiFetch("/api/auth/totp/confirm", {
+        method: "POST",
+        body: JSON.stringify({ code }),
+      }),
+    totpDisable: (password, code) =>
+      apiFetch("/api/auth/totp/disable", {
+        method: "POST",
+        body: JSON.stringify({ password, code }),
       }),
   };
 
