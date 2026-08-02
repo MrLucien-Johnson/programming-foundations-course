@@ -1020,22 +1020,39 @@
     host.id = "pf-device-progress-notice";
     host.className = "device-progress-notice";
     host.setAttribute("role", "region");
-    host.setAttribute("aria-label", "Save progress on this device");
+    host.setAttribute("aria-label", "Save learning progress on this device");
     host.innerHTML = `
       <div class="device-progress-notice__inner">
         <div class="device-progress-notice__copy">
-          <strong>Keep learning progress on this device?</strong>
+          <strong>Save your learning progress in this browser?</strong>
           <p>
-            With your permission we store completions and quiz results in this browser so they
-            survive reboot. No ads. No sale of data.
-            <a href="privacy.html#guest-progress">Privacy details</a>
+            If you say yes, this browser keeps course data on <em>your device only</em> so you can
+            continue after a reboot. It is not sent to our servers unless you create an account and
+            sync later.
+          </p>
+          <ul class="device-progress-notice__list">
+            <li>Lessons you mark complete</li>
+            <li>Quiz scores and pass/fail</li>
+            <li>Start Here checklist ticks</li>
+            <li>In-lesson checklist ticks</li>
+            <li>Last lesson / quiz so “Continue” works</li>
+            <li>Optional learning persona (Schools / Workplace / Self-serve)</li>
+          </ul>
+          <p>
+            We do <strong>not</strong> store your name, email, payment details, or browsing history
+            in guest mode — and we don’t use this for ads.
+            <a href="privacy.html#guest-progress">Full privacy details</a>
             ·
             <a href="account.html">Free account for cloud sync</a>
           </p>
         </div>
         <div class="device-progress-notice__actions">
-          <button type="button" class="btn btn-primary" data-consent="granted">Keep on this device</button>
-          <button type="button" class="btn btn-secondary" data-consent="denied">Not now</button>
+          <button type="button" class="btn btn-primary" data-consent="granted">
+            Yes — save progress on this device
+          </button>
+          <button type="button" class="btn btn-secondary" data-consent="denied">
+            No — don’t save progress
+          </button>
         </div>
       </div>
     `;
