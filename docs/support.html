@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Support - Programming Foundations</title>
-    <link rel="stylesheet" href="styles.css?v=ux35" />
+    <link rel="stylesheet" href="styles.css?v=ux36" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux35"></script>
+    <script src="site.js?v=ux36"></script>
 
     <main id="main" class="container">
       <div id="pf-resume-host" hidden></div>
@@ -18,11 +18,14 @@
         <h2>Support this free course</h2>
         <p>
           Programming Foundations stays free to learn. Donations help cover hosting so cloud
-          accounts can sync more reliably and the materials keep improving.
+          accounts sync more reliably — and the materials, voiceovers, and tools keep improving.
         </p>
         <p class="note">
           This course is a project by
           <a href="https://mrlucien-johnson.github.io/AbelSolutions/">Abel Solutions</a>.
+          For how-to answers, see <a href="help.html">Help</a> ·
+          <a href="privacy.html">Privacy</a> ·
+          <a href="account.html">Account</a>.
         </p>
       </section>
 
@@ -53,20 +56,112 @@
         <ul>
           <li>Reliable cloud accounts (so progress is not wiped when free servers restart)</li>
           <li>Keeping GitHub Pages + the learning materials free for everyone</li>
-          <li>Small tools and fixes that make the beginner path clearer</li>
+          <li>Voiceover lessons, setup guides, and small fixes that make the beginner path clearer</li>
         </ul>
       </section>
 
-      <section class="section">
-        <h3>Keep learning for free</h3>
-        <p>
-          You never need to donate to use the course. Guest mode works offline in your browser.
-          Accounts are optional and, on free hosting, may reset after server restarts.
+      <section class="section" id="how-progress-works">
+        <h3>How progress works (guest vs account)</h3>
+        <p class="section-lead">
+          You never need to donate — or create an account — to learn. Here is what stays where.
         </p>
+        <ul>
+          <li>
+            <strong>Guest (no account):</strong> progress can stay in <em>this browser</em> until you
+            refuse it. If browser data is cleared or lost, that progress cannot be recovered unless
+            you have a <a href="privacy.html#guest-progress">downloaded backup</a> or you rebuild it.
+          </li>
+          <li>
+            <strong>Free account:</strong> progress can sync to the cloud when the API is up, so you
+            can continue on another device. On free hosting, cloud data may still reset after a
+            server restart — keep a guest backup if that matters.
+          </li>
+          <li>
+            <strong>Backups:</strong> download or import a JSON progress file anytime from
+            <a href="account.html">Account</a> or
+            <a href="privacy.html#guest-progress">Privacy</a>.
+          </li>
+        </ul>
         <div class="button-row">
           <a class="btn btn-primary" href="start-here.html">Continue learning</a>
-          <a class="btn btn-secondary" href="account.html">Account</a>
+          <a class="btn btn-secondary" href="account.html">Account &amp; backups</a>
+          <a class="btn btn-secondary" href="help.html">Help FAQ</a>
         </div>
+      </section>
+
+      <section class="section" id="two-factor">
+        <h3>Free two-factor authentication (2FA)</h3>
+        <p class="section-lead">
+          Cloud accounts can turn on free authenticator-app 2FA. No paid plan — it is part of a
+          normal free account when the cloud API is working.
+        </p>
+        <p><strong>How it works</strong></p>
+        <ol>
+          <li>
+            Sign in on <a href="account.html">Account</a>, then open
+            <strong>Two-factor authentication</strong>.
+          </li>
+          <li>
+            Tap <strong>Set up 2FA</strong>. Scan the QR code with an authenticator app (Google
+            Authenticator, Authy, Microsoft Authenticator, or similar), or type the secret manually.
+          </li>
+          <li>
+            Enter the 6-digit code from the app to confirm. You will see
+            <strong>backup codes once</strong> — save them somewhere safe.
+          </li>
+          <li>
+            Next sign-in: enter email + password, then the current app code (or one unused backup
+            code).
+          </li>
+        </ol>
+        <p><strong>Useful to know</strong></p>
+        <ul>
+          <li>2FA protects the account password step — it does not replace a strong password.</li>
+          <li>
+            Each backup code works once. If you use one, the others still work until you turn 2FA
+            off or set it up again.
+          </li>
+          <li>
+            Lost your phone and your backup codes? You will not be able to sign in until support can
+            help verify ownership — message
+            <a href="https://www.instagram.com/abelsolutionslimited/">Instagram</a> and keep future
+            backup codes safe.
+          </li>
+          <li>
+            Turn 2FA off anytime on Account with your password plus a current app or backup code.
+          </li>
+          <li>
+            Guest learning never needs 2FA. 2FA only applies after you create and use a cloud
+            account.
+          </li>
+        </ul>
+        <div class="button-row">
+          <a class="btn btn-secondary" href="account.html#two-factor">Open Account 2FA</a>
+          <a class="btn btn-secondary" href="help.html#two-factor">Help: 2FA FAQ</a>
+          <a class="btn btn-secondary" href="privacy.html">Privacy details</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Get help or contact us</h3>
+        <ul>
+          <li>
+            <a href="help.html">Help</a> — beginner FAQ (lessons, quizzes, progress, certificates,
+            2FA)
+          </li>
+          <li>
+            <a href="privacy.html#guest-progress">Privacy</a> — what is stored on your device vs in
+            an account
+          </li>
+          <li>
+            <a href="tutorials.html">Tutorials</a> — setup guides and voiceover lessons with captions
+          </li>
+          <li>
+            Instagram
+            <a href="https://www.instagram.com/abelsolutionslimited/">@abelsolutionslimited</a> —
+            say where you got stuck
+          </li>
+        </ul>
       </section>
 
       <section class="section">
@@ -85,8 +180,9 @@
         <p>
           Questions?
           <a href="https://www.instagram.com/abelsolutionslimited/">Instagram @abelsolutionslimited</a>
-          · <a href="standards.html">Standards map</a>
           · <a href="help.html">Help</a>
+          · <a href="privacy.html">Privacy</a>
+          · <a href="standards.html">Standards map</a>
         </p>
       </footer>
     </main>

@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Help - Programming Foundations</title>
-    <link rel="stylesheet" href="styles.css?v=ux35" />
+    <link rel="stylesheet" href="styles.css?v=ux36" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux35"></script>
+    <script src="site.js?v=ux36"></script>
 
     <main id="main" class="container">
       <div id="pf-resume-host" hidden></div>
@@ -81,21 +81,35 @@
         <article class="help-card" id="account-sync">
           <h3>Why create an account?</h3>
           <p>
-            Guest mode works with your permission to keep progress in this browser. Download a
-            backup anytime from <a href="privacy.html#guest-progress">Privacy</a>. A free account can
-            sync across devices when the cloud is up, but on free hosting that data may reset after
-            a server restart. Open <a href="account.html">Account</a> to try sync, or
+            Guest mode can keep progress in this browser until you refuse it. Download a backup
+            anytime from <a href="privacy.html#guest-progress">Privacy</a>. A free account can sync
+            across devices when the cloud is up, and you can turn on free
+            <a href="help.html#two-factor">two-factor authentication</a>. On free hosting, cloud data
+            may reset after a server restart — keep a downloaded backup if that matters. Open
+            <a href="account.html">Account</a> to try sync, or
             <a href="support.html">Support</a> to help fund durable hosting.
+          </p>
+        </article>
+
+        <article class="help-card" id="two-factor">
+          <h3>How does free 2FA work?</h3>
+          <p>
+            After you sign in on <a href="account.html#two-factor">Account</a>, choose
+            <strong>Set up 2FA</strong>, scan the QR code with an authenticator app, and confirm with
+            a 6-digit code. Save the <strong>backup codes</strong> shown once. Next sign-in asks for
+            password, then the app code (or one backup code). Full walkthrough:
+            <a href="support.html#two-factor">Support → Free 2FA</a>.
           </p>
         </article>
 
         <article class="help-card" id="progress-lost">
           <h3>My progress disappeared.</h3>
           <p>
-            Guest progress stays only in this browser after you allow it. Clearing site data,
-            private browsing, or switching devices starts fresh unless you import a backup from
-            <a href="privacy.html#guest-progress">Privacy</a>. Cloud accounts on free hosting can
-            also reset after a server restart — keep a downloaded backup if that matters.
+            Guest progress stays only in this browser until you refuse it or clear site data. If
+            browser data is lost, it cannot be recovered unless you import a backup from
+            <a href="privacy.html#guest-progress">Privacy</a> or use a cloud account. Cloud accounts
+            on free hosting can also reset after a server restart — keep a downloaded backup if that
+            matters.
           </p>
         </article>
 
