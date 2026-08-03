@@ -777,14 +777,45 @@
   const getCompletions = () =>
     safeParse(localStorage.getItem(KEYS.completions), []);
 
-  const getDeviceProgressConsent = () =>
-    localStorage.getItem(KEYS.deviceProgressConsent) || "";
+  const getDeviceProgressConsent = () => {
+    try {
+      return localStorage.getItem(KEYS.deviceProgressConsent) || "";
+    } catch {
+      return "";
+    }
+  };
 
   const setDeviceProgressConsent = (value) => {
-    if (value === "granted" || value === "denied") {
-      localStorage.setItem(KEYS.deviceProgressConsent, value);
-    } else {
-      localStorage.removeItem(KEYS.deviceProgressConsent);
+    try {
+      if (value === "granted" || value === "denied") {
+        localStorage.setItem(KEYS.deviceProgressConsent, value);
+      } else {
+        localStorage.removeItem(KEYS.deviceProgressConsent);
+      }
+    } catch {
+      /* private mode / blocked storage */
+    }
+  };
+
+  const hasChosenDeviceProgressConsent = () => {
+    const value = getDeviceProgressConsent();
+    return value === "granted" || value === "denied";
+  };
+
+  /** If the learner already has on-device progress but never clicked Yes/No, treat that as granted so we stop re-asking. */
+  const adoptExistingGuestProgressConsent = () => {
+    if (getToken() || hasChosenDeviceProgressConsent()) return;
+    try {
+      const hasProgress =
+        getCompletions().length > 0 ||
+        Object.keys(getQuizCompletions()).length > 0 ||
+        Object.keys(getStartSteps()).some((key) => getStartSteps()[key]) ||
+        Boolean(getLastLesson()) ||
+        Boolean(getLastQuiz()) ||
+        Boolean(getPersonaId());
+      if (hasProgress) setDeviceProgressConsent("granted");
+    } catch {
+      /* ignore */
     }
   };
 
@@ -1115,9 +1146,11 @@
         <p>
           <strong>Important:</strong> ${lead}
           ${DEVICE_PROGRESS_LOSS_WARNING}
-          <a href="privacy.html#guest-progress">Privacy &amp; backups</a>
-          ·
-          <a href="account.html">Free account</a>
+            Change this anytime in
+            <a href="account.html#device-progress-settings">Account settings</a>.
+            <a href="privacy.html#guest-progress">Privacy &amp; backups</a>
+            ·
+            <a href="account.html">Free account</a>
         </p>
         <button type="button" class="btn btn-secondary" data-aftermath-dismiss>Got it</button>
       </div>
@@ -1134,7 +1167,9 @@
 
   const mountDeviceProgressNotice = () => {
     if (getToken()) return;
-    if (getDeviceProgressConsent()) return;
+    adoptExistingGuestProgressConsent();
+    // Ask once only. After Yes or No, change the choice in Account settings.
+    if (hasChosenDeviceProgressConsent()) return;
     if (document.getElementById("pf-device-progress-notice")) return;
 
     const host = document.createElement("div");
@@ -1149,7 +1184,8 @@
           <p>
             This browser can keep course data on <em>your device only</em> so you can continue after
             a reboot. It is not sent to our servers unless you create an account and sync later.
-            Progress is kept until you choose <strong>No</strong>.
+            Choose once — we will not ask again on every page. You can opt out later in
+            <a href="account.html#device-progress-settings">Account settings</a>.
           </p>
           <ul class="device-progress-notice__list">
             <li>Lessons you mark complete</li>
@@ -1196,6 +1232,15 @@
         if (!ok) return;
       }
       setDeviceProgressConsent(value);
+      // Re-read to confirm storage stuck; if it failed, keep the banner.
+      if (getDeviceProgressConsent() !== value) {
+        const status = document.getElementById("pf-device-progress-status");
+        if (status) {
+          status.textContent =
+            "This browser blocked saving your choice. Allow site data for this site, or use a free account.";
+        }
+        return;
+      }
       dismissDeviceProgressNotice();
       if (value === "denied") {
         resetAllProgress();
@@ -1205,8 +1250,8 @@
       if (status) {
         status.textContent =
           value === "denied"
-            ? `On-device progress is off and guest progress was cleared. That clear cannot be undone. ${DEVICE_PROGRESS_LOSS_WARNING}`
-            : `On-device progress is on. ${DEVICE_PROGRESS_LOSS_WARNING}`;
+            ? `On-device progress is off and guest progress was cleared. That clear cannot be undone. Change this anytime in Account settings. ${DEVICE_PROGRESS_LOSS_WARNING}`
+            : `On-device progress is on. We will not ask again on every page — change this anytime in Account settings. ${DEVICE_PROGRESS_LOSS_WARNING}`;
       }
     });
   };
@@ -1659,6 +1704,7 @@
     resetAllProgress,
     getDeviceProgressConsent,
     setDeviceProgressConsent,
+    hasChosenDeviceProgressConsent,
     canPersistGuestProgress,
     exportGuestProgress,
     downloadGuestProgress,

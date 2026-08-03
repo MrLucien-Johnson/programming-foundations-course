@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Account - Programming Foundations</title>
-    <link rel="stylesheet" href="styles.css?v=ux36" />
+    <link rel="stylesheet" href="styles.css?v=ux37" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux36"></script>
+    <script src="site.js?v=ux37"></script>
 
     <main id="main" class="container">
       <div id="pf-resume-host" hidden></div>
@@ -32,6 +32,25 @@
           to you.
           <a href="support.html">Donate</a> if you want to help fund durable hosting.
         </p>
+      </section>
+
+      <section class="section panel-plain" id="device-progress-settings">
+        <h3 style="margin-top: 0;">Device progress settings</h3>
+        <p class="note">
+          Guest progress can stay in <strong>this browser only</strong>. After you choose Yes once,
+          we will not ask on every page. Use the buttons below to change your mind (opt out clears
+          guest progress on this device).
+        </p>
+        <p id="account-device-progress-status" class="note" role="status" aria-live="polite"></p>
+        <div class="button-row">
+          <button type="button" class="btn btn-primary" id="account-device-allow">
+            Keep saving on this device
+          </button>
+          <button type="button" class="btn btn-secondary" id="account-device-deny">
+            Stop saving / clear on this device
+          </button>
+          <a class="btn btn-secondary" href="privacy.html#guest-progress">Privacy details</a>
+        </div>
       </section>
 
       <section class="section panel-plain" id="guest-backup">
@@ -355,6 +374,30 @@
           if (enabled && totpSetupPanel) totpSetupPanel.hidden = true;
         };
 
+        const deviceProgressStatus = document.getElementById("account-device-progress-status");
+        const LOSS_WARNING =
+          "If this browser’s data is cleared or lost, guest progress cannot be recovered unless you keep on-device storage (and still have a backup) or you use an account.";
+
+        const refreshDeviceProgressSettings = () => {
+          if (!deviceProgressStatus) return;
+          if (window.PF.getToken()) {
+            deviceProgressStatus.textContent =
+              "You are signed in — progress can sync to your account when the API is available. Guest device settings still apply if you sign out.";
+          }
+          const consent = window.PF.getDeviceProgressConsent();
+          if (consent === "granted") {
+            deviceProgressStatus.textContent =
+              "On-device guest progress is on. We will not ask again on every page. " + LOSS_WARNING;
+          } else if (consent === "denied") {
+            deviceProgressStatus.textContent =
+              "On-device guest progress is off. Learning still works; progress will not be kept. " +
+              LOSS_WARNING;
+          } else {
+            deviceProgressStatus.textContent =
+              "No choice saved yet. Progress may still be kept until you opt out. Choose below once — we will not keep asking on every page.";
+          }
+        };
+
         const refresh = async () => {
           const user = window.PF.getUser();
           if (user) {
@@ -370,8 +413,37 @@
             summary.textContent = "";
             if (totpBackupPanel) totpBackupPanel.hidden = true;
           }
+          refreshDeviceProgressSettings();
           window.PF.mountHeader();
         };
+
+        document.getElementById("account-device-allow")?.addEventListener("click", () => {
+          window.PF.setDeviceProgressConsent("granted");
+          if (typeof window.PF.dismissDeviceProgressNotice === "function") {
+            window.PF.dismissDeviceProgressNotice();
+          }
+          refreshDeviceProgressSettings();
+          if (deviceProgressStatus) {
+            deviceProgressStatus.textContent =
+              "Saved: keep progress on this device. We will not ask again on every page. " +
+              LOSS_WARNING;
+          }
+        });
+
+        document.getElementById("account-device-deny")?.addEventListener("click", () => {
+          const ok = window.confirm(
+            "Stop saving guest progress and clear it on this device?\n\n" +
+              "Clearing cannot be undone.\n\n" +
+              LOSS_WARNING
+          );
+          if (!ok) return;
+          window.PF.setDeviceProgressConsent("denied");
+          window.PF.resetAllProgress();
+          if (typeof window.PF.dismissDeviceProgressNotice === "function") {
+            window.PF.dismissDeviceProgressNotice();
+          }
+          refreshDeviceProgressSettings();
+        });
 
         document.getElementById("sign-in-form")?.addEventListener("submit", async (event) => {
           event.preventDefault();
