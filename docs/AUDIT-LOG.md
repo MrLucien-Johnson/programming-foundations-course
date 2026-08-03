@@ -600,3 +600,34 @@ Remote main had advanced (accounts API, Support, shared `site.js` header, promo 
 **Revert tip:** restore `docs/site.js`, `docs/styles.css`, advanced HTML hubs, `docs/privacy.html`, viewers, and `scripts/audit_routes.py` from pre-audit commit.
 
 **Route risk:** Low.
+
+---
+
+### 2026-08-03 — Weekly maintenance (UX feel + times)
+
+**Routes:** 0 errors / 0 warnings. Cache bumped to `?v=ux36`.
+
+**Findings**
+1. Prior weekly UX chrome (relative resume times, compact header, back-to-top, scroll reveals, footer maintenance stamp, help filter, playground keyboard hint) was missing from the current trunk after later merges.
+2. Privacy “Last reviewed” and footer maintenance month still needed an August refresh.
+3. Course hubs showed no live progress chips; lesson complete lacked a quick toast; deep links lacked sticky-header-aware highlight.
+
+**Changes**
+- Restored and refreshed sitewide motion chrome with `prefers-reduced-motion` support.
+- Footer meta: © 2026 · Last maintained August 2026; privacy last reviewed 3 August 2026.
+- Resume banners and Teams audit log use relative timestamps.
+- Help topic filter; Start Here jump CTAs; playground Ctrl/⌘+Enter hint.
+- New: reading progress bar, completion toast, course-tile progress chips, hash-target highlight with scroll margin.
+- Asset cache `styles.css?v=ux36` / `site.js?v=ux36` across HTML pages.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`
+- `docs/index.html`, `docs/help.html`, `docs/start-here.html`, `docs/privacy.html`, `docs/teams.html`, `docs/course-viewer.html`
+- All other `docs/*.html` (cache bump only)
+- `docs/AUDIT-LOG.md`
+
+**Revert tip:** `git checkout HEAD~1 -- docs/` (or restore listed files from the pre-ux36 commit).
+
+**Route risk:** Low — additive JS/CSS and content stamps; primary routes unchanged.
+
+---

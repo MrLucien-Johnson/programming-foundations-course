@@ -59,6 +59,10 @@
 
   const START_STEP_ORDER = ["open-online", "choose-course", "keep-learning", "download-local"];
 
+  /** Site maintenance stamp — keep year and month current on each audit. */
+  const SITE_YEAR = 2026;
+  const SITE_MAINTAINED_LABEL = "August 2026";
+
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
     schools: {
@@ -1345,6 +1349,36 @@
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
 
+  /** Human-friendly relative time for resume / activity stamps. */
+  const formatRelativeTime = (ts) => {
+    const ms = Number(ts) || 0;
+    if (!ms) return "";
+    const diff = Date.now() - ms;
+    if (diff < 0) return "just now";
+    const sec = Math.floor(diff / 1000);
+    if (sec < 45) return "just now";
+    const min = Math.floor(sec / 60);
+    if (min < 60) return min === 1 ? "1 minute ago" : `${min} minutes ago`;
+    const hr = Math.floor(min / 60);
+    if (hr < 24) return hr === 1 ? "1 hour ago" : `${hr} hours ago`;
+    const day = Math.floor(hr / 24);
+    if (day === 1) return "yesterday";
+    if (day < 14) return `${day} days ago`;
+    try {
+      return new Date(ms).toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+    } catch (error) {
+      return "";
+    }
+  };
+
+  const prefersReducedMotion = () =>
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   const getLastQuiz = () => {
     try {
       return JSON.parse(localStorage.getItem(KEYS.lastQuiz) || "null");
@@ -1402,12 +1436,15 @@
         : !preferQuiz && onCurrentLesson && lastQuiz && lastQuiz.quiz && !onCurrentQuiz;
 
     if (showQuiz) {
+      const when = formatRelativeTime(lastQuiz.ts);
       host.hidden = false;
       host.innerHTML = `
       <div class="resume-banner" role="region" aria-label="Resume learning">
         <div class="resume-banner-copy">
           <strong>Continue your last quiz</strong>
-          <span>${escapeHtml(lastQuiz.title || "Quiz")}</span>
+          <span>${escapeHtml(lastQuiz.title || "Quiz")}${
+            when ? ` <em class="resume-when">· ${escapeHtml(when)}</em>` : ""
+          }</span>
         </div>
         <div class="resume-banner-actions">
           <a class="btn btn-primary" href="quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}">Open quiz</a>
@@ -1428,12 +1465,15 @@
     const done = isCompleted(last.path);
     const label = done ? "Review last lesson" : "Continue where you left off";
     const courseBit = last.course ? ` · ${last.course}` : "";
+    const when = formatRelativeTime(last.ts);
     host.hidden = false;
     host.innerHTML = `
       <div class="resume-banner" role="region" aria-label="Resume learning">
         <div class="resume-banner-copy">
           <strong>${label}</strong>
-          <span>${escapeHtml(last.title)}${escapeHtml(courseBit)}</span>
+          <span>${escapeHtml(last.title)}${escapeHtml(courseBit)}${
+            when ? ` <em class="resume-when">· ${escapeHtml(when)}</em>` : ""
+          }</span>
         </div>
         <div class="resume-banner-actions">
           <a class="btn btn-primary" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Open lesson</a>
@@ -1592,6 +1632,190 @@
     host.querySelector("[data-persona-clear]")?.addEventListener("click", () => clearPersona());
   };
 
+  /** Stamp footers with current year + last maintenance month. */
+  const enhanceFooters = () => {
+    document.querySelectorAll("footer.footer").forEach((footer) => {
+      if (footer.querySelector(".site-meta")) return;
+      const meta = document.createElement("p");
+      meta.className = "site-meta";
+      meta.innerHTML = `© ${SITE_YEAR} Programming Foundations · Last maintained ${SITE_MAINTAINED_LABEL}`;
+      footer.appendChild(meta);
+    });
+  };
+
+  /** Compact sticky header after scroll for more reading space. */
+  const wireHeaderScroll = () => {
+    const header = document.querySelector(".site-header");
+    if (!header) return;
+    const onScroll = () => {
+      header.classList.toggle("is-compact", window.scrollY > 28);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  };
+
+  /** Floating back-to-top control once the learner scrolls past the fold. */
+  const mountBackToTop = () => {
+    if (document.getElementById("pf-back-top")) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.id = "pf-back-top";
+    btn.className = "back-to-top";
+    btn.setAttribute("aria-label", "Back to top");
+    btn.innerHTML = '<span aria-hidden="true">↑</span>';
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+    });
+    document.body.appendChild(btn);
+    const onScroll = () => {
+      btn.classList.toggle("is-visible", window.scrollY > 420);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  };
+
+  /** Thin reading progress bar under the sticky header. */
+  const mountReadingProgress = () => {
+    if (document.getElementById("pf-read-progress")) return;
+    const bar = document.createElement("div");
+    bar.id = "pf-read-progress";
+    bar.className = "read-progress";
+    bar.setAttribute("aria-hidden", "true");
+    bar.innerHTML = '<div class="read-progress__fill"></div>';
+    document.body.appendChild(bar);
+    const fill = bar.querySelector(".read-progress__fill");
+    const update = () => {
+      const doc = document.documentElement;
+      const max = Math.max(doc.scrollHeight - window.innerHeight, 1);
+      const pct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
+      if (fill) fill.style.width = `${pct}%`;
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+  };
+
+  /** Soft status toast for progress / interactive feedback. */
+  let toastTimer = null;
+  const showToast = (message, { tone = "info" } = {}) => {
+    const text = String(message || "").trim();
+    if (!text) return;
+    let host = document.getElementById("pf-toast");
+    if (!host) {
+      host = document.createElement("div");
+      host.id = "pf-toast";
+      host.className = "pf-toast";
+      host.setAttribute("role", "status");
+      host.setAttribute("aria-live", "polite");
+      document.body.appendChild(host);
+    }
+    host.dataset.tone = tone;
+    host.textContent = text;
+    host.classList.add("is-visible");
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      host.classList.remove("is-visible");
+    }, 2800);
+  };
+
+  /** Gentle scroll-reveal for section content across pages. */
+  const enhanceScrollReveal = () => {
+    const main = document.getElementById("main");
+    if (main) main.classList.add("page-enter");
+    if (prefersReducedMotion()) return;
+    const targets = document.querySelectorAll(
+      "main .section, main .widget-section, main .help-card, main .feature-card, main .course-tile, main .step, main .support-panel, main .persona-picker"
+    );
+    if (!targets.length || !("IntersectionObserver" in window)) return;
+    targets.forEach((el, i) => {
+      if (el.classList.contains("reveal") || el.closest(".hero-bleed")) return;
+      el.classList.add("reveal");
+      el.style.setProperty("--reveal-delay", `${Math.min(i % 6, 5) * 40}ms`);
+    });
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-inview");
+          io.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  };
+
+  /** Soft pulse on matcher / playground success for clearer feedback. */
+  const enhanceInteractiveSurfaces = () => {
+    const matcher = document.getElementById("matcher-result");
+    if (matcher) {
+      const pulse = () => {
+        matcher.classList.remove("is-fresh");
+        void matcher.offsetWidth;
+        matcher.classList.add("is-fresh");
+      };
+      const mo = new MutationObserver(pulse);
+      mo.observe(matcher, { childList: true, subtree: true });
+    }
+    const output = document.getElementById("playground-output");
+    if (output) {
+      const pulse = () => {
+        output.classList.remove("is-fresh");
+        void output.offsetWidth;
+        output.classList.add("is-fresh");
+      };
+      const mo = new MutationObserver(pulse);
+      mo.observe(output, { characterData: true, childList: true, subtree: true });
+    }
+  };
+
+  /** Show live progress chips on course tiles when progress exists. */
+  const enhanceCourseTiles = () => {
+    document.querySelectorAll(".course-tile").forEach((tile) => {
+      if (tile.querySelector(".course-tile-progress")) return;
+      const heading = tile.querySelector("h3");
+      const name = (heading?.textContent || "").trim();
+      if (!name || !COURSE_MODULE_MAP[name]) return;
+      const progress = courseProgress(name);
+      if (!progress.total) return;
+      const chip = document.createElement("p");
+      chip.className = "course-tile-progress";
+      chip.setAttribute("aria-label", `${name} progress`);
+      if (progress.done === 0) {
+        chip.textContent = `${progress.total} modules · not started`;
+      } else if (progress.done >= progress.total) {
+        chip.innerHTML = `<strong>Complete</strong> · ${progress.total} modules`;
+        tile.classList.add("is-complete");
+      } else {
+        chip.innerHTML = `<strong>${progress.percent}%</strong> · ${progress.done} of ${progress.total} modules`;
+        tile.classList.add("is-in-progress");
+      }
+      const body = tile.querySelector(".course-tile-body") || tile;
+      const buttons = body.querySelector(".button-row");
+      if (buttons) body.insertBefore(chip, buttons);
+      else body.appendChild(chip);
+    });
+  };
+
+  /** Highlight deep-linked steps (Start Here, Help anchors). */
+  const enhanceHashTargets = () => {
+    const apply = () => {
+      document.querySelectorAll(".is-hash-target").forEach((el) => {
+        el.classList.remove("is-hash-target");
+      });
+      const id = (location.hash || "").replace(/^#/, "");
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (!target) return;
+      target.classList.add("is-hash-target");
+      if (!prefersReducedMotion()) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+    apply();
+    window.addEventListener("hashchange", apply);
+  };
+
   const mountAtmosphere = () => {
     if (document.querySelector(".pf-atmosphere")) return;
     const root = document.createElement("div");
@@ -1608,14 +1832,22 @@
   const boot = () => {
     mountAtmosphere();
     mountHeader();
+    wireHeaderScroll();
     mountDonateSlots();
     mountBrandCredit();
+    enhanceFooters();
     mountDeviceProgressNotice();
     mountResumeBanner();
     mountPersonaPicker();
     applyPersonaCopy();
     enhancePlaygroundChallenges();
     enhanceModuleLists();
+    enhanceCourseTiles();
+    enhanceScrollReveal();
+    enhanceInteractiveSurfaces();
+    enhanceHashTargets();
+    mountBackToTop();
+    mountReadingProgress();
     if (getToken()) {
       syncProgress().catch(() => {
         /* guest-capable offline */
@@ -1656,6 +1888,9 @@
     courseProgress,
     bindProgressUI,
     enhanceModuleLists,
+    enhanceCourseTiles,
+    formatRelativeTime,
+    showToast,
     resetAllProgress,
     getDeviceProgressConsent,
     setDeviceProgressConsent,
