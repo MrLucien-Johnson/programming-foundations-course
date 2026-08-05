@@ -81,7 +81,7 @@ PROMOS = [
         "id": "promo-45s-system-tour",
         "out_dir": OUT_DIR,
         "file": "promo-45s-system-tour-vo.mp4",
-        "silent_file": "promo-45s-system-tour.mp4",
+        "alias_file": "promo-45s-system-tour.mp4",
         "audio_file": "promo-45s-voiceover.m4a",
         "transcript_file": "promo-45s-transcript.txt",
         "title": "System tour",
@@ -417,20 +417,37 @@ def concat(parts: list[Path], out: Path) -> None:
     listing.unlink(missing_ok=True)
 
 
-def strip_audio(src: Path, out: Path) -> None:
-    subprocess.check_call(
-        ["ffmpeg", "-y", "-i", str(src), "-an", "-c:v", "copy", str(out)],
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
-    )
-
-
 def extract_audio(src: Path, out: Path) -> None:
     subprocess.check_call(
         ["ffmpeg", "-y", "-i", str(src), "-vn", "-c:a", "aac", "-b:a", "128k", str(out)],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
     )
+
+
+def assert_muxed_audible(path: Path) -> float:
+    """Refuse to ship any final MP4 without an audible audio track."""
+    probe = subprocess.check_output(
+        [
+            "ffprobe",
+            "-v",
+            "error",
+            "-select_streams",
+            "a",
+            "-show_entries",
+            "stream=codec_type",
+            "-of",
+            "csv=p=0",
+            str(path),
+        ],
+        text=True,
+    ).strip()
+    if "audio" not in probe:
+        raise RuntimeError(f"{path.name} has no audio stream — all shipped MP4s must be muxed.")
+    volume = mean_volume_db(path)
+    if volume < MIN_MEAN_VOLUME_DB:
+        raise RuntimeError(f"Silent or near-silent audio in {path.name} ({volume:.1f} dB)")
+    return volume
 
 
 async def build_clip(slides: list[dict], footer: str, work: Path) -> tuple[Path, list[str], float]:
@@ -452,9 +469,7 @@ async def build_clip(slides: list[dict], footer: str, work: Path) -> tuple[Path,
         vos.append(slide["vo"])
     out = work / "final.mp4"
     concat(parts, out)
-    volume = mean_volume_db(out)
-    if volume < MIN_MEAN_VOLUME_DB:
-        raise RuntimeError(f"Silent promo audio ({volume:.1f} dB)")
+    volume = assert_muxed_audible(out)
     return out, vos, volume
 
 
@@ -475,8 +490,12 @@ async def main() -> None:
             )
             dest = promo["out_dir"] / promo["file"]
             dest.write_bytes(final.read_bytes())
-            if promo.get("silent_file"):
-                strip_audio(dest, promo["out_dir"] / promo["silent_file"])
+            assert_muxed_audible(dest)
+            # Optional alias path must also be muxed (never write a silent picture track).
+            if promo.get("alias_file"):
+                alias = promo["out_dir"] / promo["alias_file"]
+                alias.write_bytes(final.read_bytes())
+                assert_muxed_audible(alias)
             if promo.get("audio_file"):
                 extract_audio(dest, promo["out_dir"] / promo["audio_file"])
             if promo.get("transcript_file"):
@@ -507,11 +526,14 @@ async def main() -> None:
                 work,
             )
             vo_path = CAMPAIGN_DIR / f"campaign-{camp['id']}-vo.mp4"
-            silent_path = CAMPAIGN_DIR / f"campaign-{camp['id']}.mp4"
+            primary_path = CAMPAIGN_DIR / f"campaign-{camp['id']}.mp4"
             audio_path = CAMPAIGN_DIR / f"campaign-{camp['id']}-voiceover.m4a"
             transcript_path = CAMPAIGN_DIR / f"{camp['id']}-transcript.txt"
-            vo_path.write_bytes(final.read_bytes())
-            strip_audio(vo_path, silent_path)
+            payload = final.read_bytes()
+            vo_path.write_bytes(payload)
+            primary_path.write_bytes(payload)
+            assert_muxed_audible(vo_path)
+            assert_muxed_audible(primary_path)
             extract_audio(vo_path, audio_path)
             transcript_path.write_text(
                 "\n".join(
@@ -527,7 +549,7 @@ async def main() -> None:
                 ),
                 encoding="utf-8",
             )
-            print(f"  → {vo_path.name} ({volume:.1f} dB)")
+            print(f"  → {vo_path.name} + {primary_path.name} ({volume:.1f} dB)")
 
     print("Done:", OUT_DIR)
 

@@ -7,6 +7,7 @@ Two kinds of clips:
 Each clip includes: MP4, WebVTT captions, plain-text transcript, and audio.
 Voice: en-US JennyNeural at -12%. Slides use the live parchment/gold brand.
 Audio is volume-checked after mux so silent tracks cannot ship.
+**Policy:** every shipped tutorial MP4 must be muxed with audible voiceover.
 Rebuild with:
 
 ```bash
@@ -14,6 +15,7 @@ pip install edge-tts Pillow
 python3 scripts/tutorials/generate_tutorials.py
 # or a subset:
 python3 scripts/tutorials/generate_tutorials.py 05-ai-foundations 06-python-basics
+python3 scripts/assert_videos_muxed.py
 ```
 
 | ID | Kind | Title | ~Length | Learning path |

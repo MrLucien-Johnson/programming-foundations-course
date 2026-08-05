@@ -1,11 +1,14 @@
 # Promo campaign pack
 
-Short brand-matched slide ads with paced voiceover (same parchment / gold style as tutorials).
+Short brand-matched slide ads with paced **muxed** voiceover (same parchment / gold style as tutorials).
+
+**Policy:** every shipped `.mp4` must include audible audio. Silent picture tracks are not generated.
 
 Rebuild with:
 
 ```bash
 python3 scripts/promo/generate_promo_slides.py
+python3 scripts/assert_videos_muxed.py
 ```
 
 Play all on: https://mrlucien-johnson.github.io/programming-foundations-course/promo.html
@@ -23,8 +26,8 @@ Play all on: https://mrlucien-johnson.github.io/programming-foundations-course/p
 
 For each `NN-name`:
 
-- `campaign-NN-name-vo.mp4` — video with voiceover (prefer this for ads)
-- `campaign-NN-name.mp4` — silent picture track
+- `campaign-NN-name-vo.mp4` — muxed video + voiceover (primary)
+- `campaign-NN-name.mp4` — same muxed file (alias for older links)
 - `campaign-NN-name-voiceover.m4a` — audio only
 - `NN-name-transcript.txt` — full script
 
