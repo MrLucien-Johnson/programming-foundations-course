@@ -924,6 +924,23 @@ async def build_one(tutorial: dict, work: Path) -> dict:
         text=True,
     ).strip()
     volume = mean_volume_db(out_mp4)
+    audio_probe = subprocess.check_output(
+        [
+            "ffprobe",
+            "-v",
+            "error",
+            "-select_streams",
+            "a",
+            "-show_entries",
+            "stream=codec_type",
+            "-of",
+            "csv=p=0",
+            str(out_mp4),
+        ],
+        text=True,
+    ).strip()
+    if "audio" not in audio_probe:
+        raise RuntimeError(f"{out_mp4.name} has no audio stream — tutorials must be muxed.")
     if volume < MIN_MEAN_VOLUME_DB:
         raise RuntimeError(
             f"Silent or near-silent audio in {out_mp4.name} "
