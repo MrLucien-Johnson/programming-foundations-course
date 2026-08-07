@@ -10,6 +10,7 @@ const { createAuth } = require("./auth");
 const { createAudit } = require("./audit");
 const { createOrgStore } = require("./orgs");
 const { createCertificateStore } = require("./certificates");
+const { createPremiumStore } = require("./premium");
 const { createAuthRouter } = require("./routes/auth");
 const { createProgressRouter } = require("./routes/progress");
 const { createOrgsRouter } = require("./routes/orgs");
@@ -58,9 +59,11 @@ const db = openDatabase(DATABASE_PATH);
 const audit = createAudit(db);
 const orgStore = createOrgStore({ db, audit });
 const certStore = createCertificateStore({ db, audit });
+const premiumStore = createPremiumStore({ db, audit });
 const auth = createAuth({
   db,
   jwtSecret: JWT_SECRET,
+  premiumStore,
   // Claim any pending org invites addressed to this email on register/login.
   onAuthenticated: (user) => orgStore.attachInvites(user.id, user.email),
 });
@@ -105,7 +108,7 @@ app.use("/api/progress", createProgressRouter({ db, requireAuth: auth.requireAut
 app.use("/api/quiz-attempts", createQuizRouter({ db, requireAuth: auth.requireAuth }));
 app.use("/api/orgs", createOrgsRouter({ orgStore, requireAuth: auth.requireAuth }));
 app.use("/api/certificates", createCertificatesRouter({ certStore, requireAuth: auth.requireAuth }));
-app.use("/api/account", createAccountRouter({ db, requireAuth: auth.requireAuth, audit }));
+app.use("/api/account", createAccountRouter({ db, requireAuth: auth.requireAuth, audit, premiumStore }));
 
 app.use((err, _req, res, _next) => {
   if (err && /Origin not allowed/.test(err.message || "")) {

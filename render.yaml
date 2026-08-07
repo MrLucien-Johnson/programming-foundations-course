@@ -24,6 +24,11 @@ services:
       # the admin role. Set your own email in the Render dashboard — never in git.
       - key: ORG_CREATOR_EMAILS
         sync: false
+      # Extra emails that always unlock donor/premium courses and can grant
+      # donor access to other accounts. Owner emails in ORG_CREATOR_EMAILS are
+      # included automatically. Set in the Render dashboard — never in git.
+      - key: PREMIUM_ACCESS_EMAILS
+        sync: false
     disk:
       name: pf-data
       mountPath: /data

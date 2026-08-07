@@ -1,0 +1,26 @@
+Programming Foundations — Tutorial: Azure Cloud — study guide
+ID: 27-premium-azure
+Suggested placement: azure-course, donor
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] Azure Cloud path
+This is the Azure Cloud study guide. Learn Entra I D and R BAC, networking and App Service, then monitoring and governance.
+
+[Slide 2] How to study
+How to study: use a learning subscription. Prefer least-privilege roles. Clean up resource groups after labs so surprise cost stays low.
+
+[Slide 3] Access
+Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+This is the Azure Cloud study guide. Learn Entra I D and R BAC, networking and App Service, then monitoring and governance. How to study: use a learning subscription. Prefer least-privilege roles. Clean up resource groups after labs so surprise cost stays low. Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.
+
+Voice: en-US JennyNeural @ -12% (edge-tts)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

@@ -108,6 +108,8 @@ function openDatabase(databasePath) {
   ensureColumn(db, "users", "totp_secret_enc", "TEXT");
   ensureColumn(db, "users", "totp_pending_enc", "TEXT");
   ensureColumn(db, "users", "totp_backup_hashes", "TEXT");
+  ensureColumn(db, "users", "is_donor", "INTEGER NOT NULL DEFAULT 0");
+  ensureColumn(db, "users", "donor_note", "TEXT");
 
   return db;
 }

@@ -16,7 +16,7 @@ const totpCodeSchema = z
 const ISSUER = "Programming Foundations";
 const BACKUP_CODE_COUNT = 8;
 
-function createAuth({ db, jwtSecret, onAuthenticated }) {
+function createAuth({ db, jwtSecret, onAuthenticated, premiumStore }) {
   const notifyAuthenticated = (user) => {
     if (typeof onAuthenticated === "function") {
       try {
@@ -122,12 +122,29 @@ function createAuth({ db, jwtSecret, onAuthenticated }) {
   }
 
   function publicUser(row) {
+    const entitlements =
+      premiumStore && typeof premiumStore.entitlementsForRow === "function"
+        ? premiumStore.entitlementsForRow(row)
+        : {
+            premiumAccess: false,
+            isDonor: Number(row.is_donor) === 1,
+            allowlisted: false,
+            reason: "none",
+          };
     return {
       id: row.id,
       email: row.email,
       displayName: row.display_name || "",
       createdAt: row.created_at,
       totpEnabled: Number(row.totp_enabled) === 1,
+      isDonor: !!entitlements.isDonor,
+      premiumAccess: !!entitlements.premiumAccess,
+      premiumReason: entitlements.reason || "none",
+      canManagePremium: !!(
+        premiumStore &&
+        typeof premiumStore.canManagePremium === "function" &&
+        premiumStore.canManagePremium(row.email)
+      ),
     };
   }
 

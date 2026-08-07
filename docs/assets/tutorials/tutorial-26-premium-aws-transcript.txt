@@ -1,0 +1,23 @@
+Programming Foundations — Tutorial: AWS Cloud — study guide
+ID: 26-premium-aws
+Suggested placement: aws-course, donor
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] AWS Cloud path
+This is the A W S Cloud study guide. Cover IAM and secure accounts, VPC compute and storage, then serverless and cost awareness.
+
+[Slide 2] Study tip
+Study tip: use a learning account. Redact secrets in notes. Measure one metric per lab.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+This is the A W S Cloud study guide. Cover IAM and secure accounts, VPC compute and storage, then serverless and cost awareness. Study tip: use a learning account. Redact secrets in notes. Measure one metric per lab.
+
+Voice: en-US JennyNeural @ -12% (edge-tts)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

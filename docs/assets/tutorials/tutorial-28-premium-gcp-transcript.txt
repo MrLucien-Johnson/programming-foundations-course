@@ -1,0 +1,26 @@
+Programming Foundations — Tutorial: GCP Cloud — study guide
+ID: 28-premium-gcp
+Suggested placement: gcp-course, donor
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] Google Cloud path
+This is the Google Cloud study guide. Cover projects and IAM, compute and Cloud Run, then logging and billing alerts.
+
+[Slide 2] How to study
+How to study: use one project per lab theme. Set budget alerts early. Prefer Cloud Run before jumping into complex G K E.
+
+[Slide 3] Access
+Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+This is the Google Cloud study guide. Cover projects and IAM, compute and Cloud Run, then logging and billing alerts. How to study: use one project per lab theme. Set budget alerts early. Prefer Cloud Run before jumping into complex G K E. Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.
+
+Voice: en-US JennyNeural @ -12% (edge-tts)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

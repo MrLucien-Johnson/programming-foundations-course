@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Account - Programming Foundations</title>
-    <link rel="stylesheet" href="styles.css?v=ux38" />
+    <link rel="stylesheet" href="styles.css?v=ux39" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux38"></script>
+    <script src="site.js?v=ux39"></script>
 
     <main id="main" class="container">
       <div id="pf-resume-host" hidden></div>
@@ -210,6 +210,31 @@
           </div>
         </div>
         <p id="totp-status" class="note" role="status" aria-live="polite"></p>
+
+        <h4 id="donor-access">Donor / premium course access</h4>
+        <p class="note">
+          DevOps and cloud courses unlock for allowlisted emails and donor accounts. The site owner
+          (and emails in <code>PREMIUM_ACCESS_EMAILS</code>) always have access and can grant donors
+          here after a donation.
+        </p>
+        <p id="donor-access-status" class="note" role="status" aria-live="polite"></p>
+        <div id="donor-manage" hidden>
+          <form id="donor-grant-form">
+            <label>
+              Learner email to unlock
+              <input class="field-input" type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Note (optional)
+              <input class="field-input" type="text" name="note" maxlength="200" placeholder="PayPal donation — thank you" />
+            </label>
+            <div class="button-row">
+              <button class="btn btn-primary" type="submit">Grant donor access</button>
+              <button class="btn btn-secondary" type="button" id="donor-revoke-btn">Revoke donor access</button>
+            </div>
+          </form>
+          <p id="donor-manage-status" class="note" role="status" aria-live="polite"></p>
+        </div>
       </section>
 
       <section class="section grid cols-2" id="account-forms">
@@ -368,10 +393,21 @@
           const enabled = !!user.totpEnabled;
           if (totpOff) totpOff.hidden = enabled;
           if (totpOn) totpOn.hidden = !enabled;
-          if (!enabled && totpSetupPanel) {
-            /* keep setup panel state unless starting again */
-          }
           if (enabled && totpSetupPanel) totpSetupPanel.hidden = true;
+
+          const donorStatus = document.getElementById("donor-access-status");
+          const donorManage = document.getElementById("donor-manage");
+          if (donorStatus) {
+            if (user.premiumAccess) {
+              donorStatus.textContent = user.canManagePremium
+                ? "You can open donor courses and grant access to other emails."
+                : "Donor / allowlist access is on — you can open DevOps & cloud courses.";
+            } else {
+              donorStatus.textContent =
+                "Donor courses are locked on this account. Donate via Support, then ask the owner to grant your email — or use an allowlisted login.";
+            }
+          }
+          if (donorManage) donorManage.hidden = !user.canManagePremium;
         };
 
         const deviceProgressStatus = document.getElementById("account-device-progress-status");
@@ -608,6 +644,43 @@
         document.getElementById("totp-backup-dismiss")?.addEventListener("click", () => {
           showBackupCodes([]);
           totpStatus.textContent = "Keep those backup codes somewhere safe.";
+        });
+
+        document.getElementById("donor-grant-form")?.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const status = document.getElementById("donor-manage-status");
+          const data = new FormData(event.target);
+          if (status) status.textContent = "Granting…";
+          try {
+            await window.PF.account.grantPremium(
+              String(data.get("email") || ""),
+              String(data.get("note") || "")
+            );
+            if (status) {
+              status.textContent =
+                "Donor access granted. They can sign in and open DevOps & cloud courses.";
+            }
+            event.target.reset();
+          } catch (error) {
+            if (status) status.textContent = error.message || "Could not grant access.";
+          }
+        });
+
+        document.getElementById("donor-revoke-btn")?.addEventListener("click", async () => {
+          const status = document.getElementById("donor-manage-status");
+          const form = document.getElementById("donor-grant-form");
+          const email = form?.email?.value || "";
+          if (!email) {
+            if (status) status.textContent = "Enter the learner email first, then revoke.";
+            return;
+          }
+          if (status) status.textContent = "Revoking…";
+          try {
+            await window.PF.account.revokePremium(email);
+            if (status) status.textContent = "Donor access revoked for that email.";
+          } catch (error) {
+            if (status) status.textContent = error.message || "Could not revoke access.";
+          }
         });
 
         document.getElementById("account-guest-export")?.addEventListener("click", () => {

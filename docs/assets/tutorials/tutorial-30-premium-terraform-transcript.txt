@@ -1,0 +1,26 @@
+Programming Foundations — Tutorial: Terraform & IaC — study guide
+ID: 30-premium-terraform
+Suggested placement: terraform-course, donor
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] Terraform path
+This is the Terraform and infrastructure as code study guide. Learn providers and state, modules and environments, then plan apply and C I.
+
+[Slide 2] How to study
+How to study: always read the plan. Never commit secrets or local state casually. Destroy learning resources when done.
+
+[Slide 3] Access
+Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+This is the Terraform and infrastructure as code study guide. Learn providers and state, modules and environments, then plan apply and C I. How to study: always read the plan. Never commit secrets or local state casually. Destroy learning resources when done. Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.
+
+Voice: en-US JennyNeural @ -12% (edge-tts)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

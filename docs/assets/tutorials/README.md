@@ -7,7 +7,7 @@ Two kinds of clips:
 Each clip includes: MP4, WebVTT captions, plain-text transcript, and audio.
 Voice: en-US JennyNeural at -12%. Slides use the live parchment/gold brand.
 Audio is volume-checked after mux so silent tracks cannot ship.
-**Policy:** every shipped tutorial MP4 must be muxed with audible voiceover.
+Policy: every shipped tutorial MP4 must be muxed with audible voiceover.
 Rebuild with:
 
 ```bash
@@ -42,8 +42,14 @@ python3 scripts/assert_videos_muxed.py
 | `20-ai-evaluation` | lesson | AI Module 4 — evaluation lesson | ~54s | ai-course, 04-evaluation-and-iteration |
 | `21-ai-safety` | lesson | AI Module 5 — safety basics lesson | ~53s | ai-course, 05-safety-and-policy-basics |
 | `22-ai-workflows` | lesson | AI Module 6 — workflows lesson | ~50s | ai-course, 06-workflows-and-automation |
-| `23-intermediate-modules-guide` | setup | How to study intermediate modules | ~54s | advanced courses, intermediate modules |
-| `24-advanced-modules-guide` | setup | How to study advanced modules | ~52s | advanced courses, advanced modules |
+| `23-intermediate-modules-guide` | guide | How to study intermediate modules | ~54s | advanced courses, intermediate modules |
+| `24-advanced-modules-guide` | guide | How to study advanced modules | ~52s | advanced courses, advanced modules |
+| `25-premium-devops` | guide | DevOps Foundations — study guide | ~38s | devops-course, donor |
+| `26-premium-aws` | guide | AWS Cloud — study guide | ~22s | aws-course, donor |
+| `27-premium-azure` | guide | Azure Cloud — study guide | ~37s | azure-course, donor |
+| `28-premium-gcp` | guide | GCP Cloud — study guide | ~36s | gcp-course, donor |
+| `29-premium-kubernetes` | guide | Kubernetes — study guide | ~39s | kubernetes-course, donor |
+| `30-premium-terraform` | guide | Terraform & IaC — study guide | ~37s | terraform-course, donor |
 
 Prefer text? Enable captions on the video player, or open the on-page transcript / `.txt` download.
 

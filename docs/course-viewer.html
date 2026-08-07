@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Course Lesson Viewer</title>
-    <link rel="stylesheet" href="styles.css?v=ux38" />
+    <link rel="stylesheet" href="styles.css?v=ux39" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div data-pf-header></div>
     <script src="config.js"></script>
-    <script src="site.js?v=ux38"></script>
+    <script src="site.js?v=ux39"></script>
 
     <main id="main" class="container">
       <div id="pf-resume-host" hidden></div>
@@ -1296,6 +1296,31 @@
             dashboardSection.style.display = "none";
           }
           return;
+        }
+
+        if (
+          window.PF &&
+          typeof window.PF.isPremiumPath === "function" &&
+          window.PF.isPremiumPath(repoPath)
+        ) {
+          const allowed =
+            typeof window.PF.ensurePremiumAccess === "function"
+              ? await window.PF.ensurePremiumAccess({ soft: true })
+              : false;
+          if (!allowed) {
+            titleEl.textContent = "Donor course locked";
+            contentEl.innerHTML = `
+              <p>This lesson is part of a <strong>donor / allowlist</strong> course (DevOps &amp; cloud).</p>
+              <p>Sign in with an allowlisted email, or a free account the owner has marked as donor after a donation.</p>
+              <p class="note">
+                <a href="account.html">Account</a> ·
+                <a href="support.html#donor-courses">How donor access works</a> ·
+                <a href="courses.html#donor-courses">Donor courses</a>
+              </p>`;
+            markCompleteBtn.disabled = true;
+            if (dashboardSection) dashboardSection.style.display = "none";
+            return;
+          }
         }
 
         await mountLessonTutorial(repoPath);

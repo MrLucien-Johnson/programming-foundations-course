@@ -1,0 +1,26 @@
+Programming Foundations — Tutorial: Kubernetes — study guide
+ID: 29-premium-kubernetes
+Suggested placement: kubernetes-course, donor
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] Kubernetes path
+This is the Kubernetes study guide. Build a clear mental model and workloads, then services config and storage, then safe rollouts and security basics.
+
+[Slide 2] How to study
+How to study: use kind or minikube locally. Apply, describe, then delete. Practise rollouts and rollbacks before production habits.
+
+[Slide 3] Access
+Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+This is the Kubernetes study guide. Build a clear mental model and workloads, then services config and storage, then safe rollouts and security basics. How to study: use kind or minikube locally. Apply, describe, then delete. Practise rollouts and rollbacks before production habits. Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.
+
+Voice: en-US JennyNeural @ -12% (edge-tts)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

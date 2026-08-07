@@ -1,0 +1,26 @@
+Programming Foundations — Tutorial: DevOps Foundations — study guide
+ID: 25-premium-devops
+Suggested placement: devops-course, donor
+
+────────────────────────────────────────
+FULL VOICEOVER (also provided as captions / on-page transcript)
+────────────────────────────────────────
+
+[Slide 1] DevOps Foundations
+This is the DevOps Foundations study guide. You will practise CI/CD and delivery habits, containers and local environments, and observability with safer incident response.
+
+[Slide 2] How to study
+How to study: work modules in order. Keep a lab notebook. Use quizzes as checkpoints.
+
+[Slide 3] Access
+Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.
+
+────────────────────────────────────────
+COMBINED READ-ALOUD
+────────────────────────────────────────
+
+This is the DevOps Foundations study guide. You will practise CI/CD and delivery habits, containers and local environments, and observability with safer incident response. How to study: work modules in order. Keep a lab notebook. Use quizzes as checkpoints. Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.
+
+Voice: en-US JennyNeural @ -12% (edge-tts)
+Captions: matching .vtt file (enable captions or use the on-page transcript)
+Site: https://mrlucien-johnson.github.io/programming-foundations-course/tutorials.html

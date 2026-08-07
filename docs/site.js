@@ -421,7 +421,90 @@
       "languages/typescript/advanced/modules/08-ci-cd-and-release-strategies.md",
       "languages/typescript/advanced/modules/system-design.md",
     ],
+    "DevOps Foundations Course": [
+      "languages/devops/modules/01-devops-mindset.md",
+      "languages/devops/modules/02-git-branching-for-teams.md",
+      "languages/devops/modules/03-ci-pipelines.md",
+      "languages/devops/modules/04-cd-and-releases.md",
+      "languages/devops/modules/05-containers-basics.md",
+      "languages/devops/modules/06-compose-and-local-envs.md",
+      "languages/devops/modules/07-observability-basics.md",
+      "languages/devops/modules/08-incident-response.md",
+      "languages/devops/modules/09-security-in-the-pipeline.md",
+      "languages/devops/modules/10-capstone-delivery.md",
+    ],
+    "AWS Cloud Course": [
+      "languages/aws/modules/01-aws-foundations.md",
+      "languages/aws/modules/02-iam-and-security.md",
+      "languages/aws/modules/03-vpc-networking.md",
+      "languages/aws/modules/04-ec2-and-compute.md",
+      "languages/aws/modules/05-s3-and-storage.md",
+      "languages/aws/modules/06-rds-and-data.md",
+      "languages/aws/modules/07-lambda-serverless.md",
+      "languages/aws/modules/08-monitoring-cloudwatch.md",
+      "languages/aws/modules/09-cost-and-well-architected.md",
+      "languages/aws/modules/10-capstone-aws-app.md",
+    ],
+    "Azure Cloud Course": [
+      "languages/azure/modules/01-azure-foundations.md",
+      "languages/azure/modules/02-entra-id-and-rbac.md",
+      "languages/azure/modules/03-vnet-networking.md",
+      "languages/azure/modules/04-compute-options.md",
+      "languages/azure/modules/05-storage-and-blobs.md",
+      "languages/azure/modules/06-app-service.md",
+      "languages/azure/modules/07-azure-sql-and-data.md",
+      "languages/azure/modules/08-monitor-and-insights.md",
+      "languages/azure/modules/09-governance-and-cost.md",
+      "languages/azure/modules/10-capstone-azure-app.md",
+    ],
+    "GCP Cloud Course": [
+      "languages/gcp/modules/01-gcp-foundations.md",
+      "languages/gcp/modules/02-iam-and-org-policy.md",
+      "languages/gcp/modules/03-vpc-networking.md",
+      "languages/gcp/modules/04-compute-engine.md",
+      "languages/gcp/modules/05-gcs-and-data.md",
+      "languages/gcp/modules/06-cloud-run.md",
+      "languages/gcp/modules/07-gke-intro.md",
+      "languages/gcp/modules/08-ops-and-logging.md",
+      "languages/gcp/modules/09-billing-and-cost.md",
+      "languages/gcp/modules/10-capstone-gcp-service.md",
+    ],
+    "Kubernetes Course": [
+      "languages/kubernetes/modules/01-k8s-mental-model.md",
+      "languages/kubernetes/modules/02-pods-and-workloads.md",
+      "languages/kubernetes/modules/03-services-and-ingress.md",
+      "languages/kubernetes/modules/04-configmaps-secrets.md",
+      "languages/kubernetes/modules/05-storage-and-pv.md",
+      "languages/kubernetes/modules/06-deployments-rollouts.md",
+      "languages/kubernetes/modules/07-autoscaling-basics.md",
+      "languages/kubernetes/modules/08-observability-on-k8s.md",
+      "languages/kubernetes/modules/09-security-basics.md",
+      "languages/kubernetes/modules/10-capstone-k8s-app.md",
+    ],
+    "Terraform & IaC Course": [
+      "languages/terraform/modules/01-iac-why-terraform.md",
+      "languages/terraform/modules/02-providers-and-resources.md",
+      "languages/terraform/modules/03-state-and-backends.md",
+      "languages/terraform/modules/04-variables-outputs.md",
+      "languages/terraform/modules/05-modules.md",
+      "languages/terraform/modules/06-workspaces-environments.md",
+      "languages/terraform/modules/07-plan-apply-destroy.md",
+      "languages/terraform/modules/08-testing-and-policy.md",
+      "languages/terraform/modules/09-ci-for-terraform.md",
+      "languages/terraform/modules/10-capstone-module.md",
+    ],
   };
+
+  const PREMIUM_COURSES = [
+    { id: "devops", name: "DevOps Foundations Course", page: "devops-course.html", pathPrefix: "languages/devops/" },
+    { id: "aws", name: "AWS Cloud Course", page: "aws-course.html", pathPrefix: "languages/aws/" },
+    { id: "azure", name: "Azure Cloud Course", page: "azure-course.html", pathPrefix: "languages/azure/" },
+    { id: "gcp", name: "GCP Cloud Course", page: "gcp-course.html", pathPrefix: "languages/gcp/" },
+    { id: "kubernetes", name: "Kubernetes Course", page: "kubernetes-course.html", pathPrefix: "languages/kubernetes/" },
+    { id: "terraform", name: "Terraform & IaC Course", page: "terraform-course.html", pathPrefix: "languages/terraform/" },
+  ];
+
+  const PREMIUM_PATH_PREFIXES = PREMIUM_COURSES.map((c) => c.pathPrefix);
 
   const ADVANCED_COURSES = [
     { id: "python-advanced", name: "Python", page: "python-advanced-course.html", icon: "Py" },
@@ -760,6 +843,17 @@
         body: JSON.stringify({ currentPassword, newPassword }),
       }),
     me: () => apiFetch("/api/auth/me").then((d) => d.user),
+    entitlements: () => apiFetch("/api/account/entitlements"),
+    grantPremium: (email, note) =>
+      apiFetch("/api/account/premium/grant", {
+        method: "POST",
+        body: JSON.stringify({ email, note }),
+      }),
+    revokePremium: (email) =>
+      apiFetch("/api/account/premium/revoke", {
+        method: "POST",
+        body: JSON.stringify({ email }),
+      }),
     totpSetup: () =>
       apiFetch("/api/auth/totp/setup", { method: "POST", body: JSON.stringify({}) }),
     totpConfirm: (code) =>
@@ -772,6 +866,57 @@
         method: "POST",
         body: JSON.stringify({ password, code }),
       }),
+  };
+
+  const isPremiumPath = (path) => {
+    const clean = String(path || "");
+    return PREMIUM_PATH_PREFIXES.some((prefix) => clean.startsWith(prefix));
+  };
+
+  const isPremiumCourseName = (name) =>
+    PREMIUM_COURSES.some((c) => c.name === name || c.page === name);
+
+  const refreshPremiumEntitlements = async () => {
+    if (!getToken()) {
+      return { premiumAccess: false, isDonor: false, allowlisted: false, reason: "signed-out" };
+    }
+    try {
+      const data = await accountApi.entitlements();
+      const user = Object.assign({}, getUser() || {}, {
+        premiumAccess: !!data.premiumAccess,
+        isDonor: !!data.isDonor,
+        premiumReason: data.reason || "none",
+      });
+      setSession(getToken(), user);
+      return data;
+    } catch {
+      const user = getUser() || {};
+      return {
+        premiumAccess: !!user.premiumAccess,
+        isDonor: !!user.isDonor,
+        allowlisted: false,
+        reason: user.premiumReason || "cached",
+      };
+    }
+  };
+
+  const canAccessPremium = async () => {
+    const user = getUser();
+    if (user && user.premiumAccess) return true;
+    if (!getToken()) return false;
+    const entitlements = await refreshPremiumEntitlements();
+    return !!entitlements.premiumAccess;
+  };
+
+  const ensurePremiumAccess = async ({ soft } = {}) => {
+    const ok = await canAccessPremium();
+    if (ok) return true;
+    if (!soft) {
+      throw new Error(
+        "This donor course needs a signed-in allowlisted or donor account."
+      );
+    }
+    return false;
   };
 
   const getCompletions = () =>
@@ -1674,6 +1819,13 @@
     START_STEP_ORDER,
     COURSE_MODULE_MAP,
     ADVANCED_COURSES,
+    PREMIUM_COURSES,
+    PREMIUM_PATH_PREFIXES,
+    isPremiumPath,
+    isPremiumCourseName,
+    canAccessPremium,
+    ensurePremiumAccess,
+    refreshPremiumEntitlements,
     PERSONAS,
     PERSONA_PATHS,
     getCompletions,

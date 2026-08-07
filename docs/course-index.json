@@ -1097,6 +1097,480 @@
           "quiz": "languages/typescript/advanced/modules/system-design.quiz.md"
         }
       ]
+    },
+    {
+      "id": "devops",
+      "name": "DevOps Foundations Course",
+      "page": "devops-course.html",
+      "level": "Donor / cloud & DevOps",
+      "premium": true,
+      "modules": [
+        {
+          "title": "DevOps mindset & value stream",
+          "path": "languages/devops/modules/01-devops-mindset.md",
+          "quiz": "languages/devops/modules/01-devops-mindset.quiz.md",
+          "tutorial": "tutorials.html#premium-devops",
+          "tutorialId": "premium-devops"
+        },
+        {
+          "title": "Git branching for teams",
+          "path": "languages/devops/modules/02-git-branching-for-teams.md",
+          "quiz": "languages/devops/modules/02-git-branching-for-teams.quiz.md",
+          "tutorial": "tutorials.html#premium-devops",
+          "tutorialId": "premium-devops"
+        },
+        {
+          "title": "Continuous integration pipelines",
+          "path": "languages/devops/modules/03-ci-pipelines.md",
+          "quiz": "languages/devops/modules/03-ci-pipelines.quiz.md",
+          "tutorial": "tutorials.html#premium-devops",
+          "tutorialId": "premium-devops"
+        },
+        {
+          "title": "Continuous delivery & releases",
+          "path": "languages/devops/modules/04-cd-and-releases.md",
+          "quiz": "languages/devops/modules/04-cd-and-releases.quiz.md",
+          "tutorial": "tutorials.html#premium-devops",
+          "tutorialId": "premium-devops"
+        },
+        {
+          "title": "Containers basics",
+          "path": "languages/devops/modules/05-containers-basics.md",
+          "quiz": "languages/devops/modules/05-containers-basics.quiz.md",
+          "tutorial": "tutorials.html#premium-devops",
+          "tutorialId": "premium-devops"
+        },
+        {
+          "title": "Compose & local environments",
+          "path": "languages/devops/modules/06-compose-and-local-envs.md",
+          "quiz": "languages/devops/modules/06-compose-and-local-envs.quiz.md",
+          "tutorial": "tutorials.html#premium-devops",
+          "tutorialId": "premium-devops"
+        },
+        {
+          "title": "Observability basics",
+          "path": "languages/devops/modules/07-observability-basics.md",
+          "quiz": "languages/devops/modules/07-observability-basics.quiz.md",
+          "tutorial": "tutorials.html#premium-devops",
+          "tutorialId": "premium-devops"
+        },
+        {
+          "title": "Incident response habits",
+          "path": "languages/devops/modules/08-incident-response.md",
+          "quiz": "languages/devops/modules/08-incident-response.quiz.md",
+          "tutorial": "tutorials.html#premium-devops",
+          "tutorialId": "premium-devops"
+        },
+        {
+          "title": "Security in the pipeline",
+          "path": "languages/devops/modules/09-security-in-the-pipeline.md",
+          "quiz": "languages/devops/modules/09-security-in-the-pipeline.quiz.md",
+          "tutorial": "tutorials.html#premium-devops",
+          "tutorialId": "premium-devops"
+        },
+        {
+          "title": "Capstone: ship a small service",
+          "path": "languages/devops/modules/10-capstone-delivery.md",
+          "quiz": "languages/devops/modules/10-capstone-delivery.quiz.md",
+          "tutorial": "tutorials.html#premium-devops",
+          "tutorialId": "premium-devops"
+        }
+      ]
+    },
+    {
+      "id": "aws",
+      "name": "AWS Cloud Course",
+      "page": "aws-course.html",
+      "level": "Donor / cloud & DevOps",
+      "premium": true,
+      "modules": [
+        {
+          "title": "AWS foundations & accounts",
+          "path": "languages/aws/modules/01-aws-foundations.md",
+          "quiz": "languages/aws/modules/01-aws-foundations.quiz.md",
+          "tutorial": "tutorials.html#premium-aws",
+          "tutorialId": "premium-aws"
+        },
+        {
+          "title": "IAM & security basics",
+          "path": "languages/aws/modules/02-iam-and-security.md",
+          "quiz": "languages/aws/modules/02-iam-and-security.quiz.md",
+          "tutorial": "tutorials.html#premium-aws",
+          "tutorialId": "premium-aws"
+        },
+        {
+          "title": "VPC & networking",
+          "path": "languages/aws/modules/03-vpc-networking.md",
+          "quiz": "languages/aws/modules/03-vpc-networking.quiz.md",
+          "tutorial": "tutorials.html#premium-aws",
+          "tutorialId": "premium-aws"
+        },
+        {
+          "title": "EC2 & compute choices",
+          "path": "languages/aws/modules/04-ec2-and-compute.md",
+          "quiz": "languages/aws/modules/04-ec2-and-compute.quiz.md",
+          "tutorial": "tutorials.html#premium-aws",
+          "tutorialId": "premium-aws"
+        },
+        {
+          "title": "S3 & storage",
+          "path": "languages/aws/modules/05-s3-and-storage.md",
+          "quiz": "languages/aws/modules/05-s3-and-storage.quiz.md",
+          "tutorial": "tutorials.html#premium-aws",
+          "tutorialId": "premium-aws"
+        },
+        {
+          "title": "RDS & managed data",
+          "path": "languages/aws/modules/06-rds-and-data.md",
+          "quiz": "languages/aws/modules/06-rds-and-data.quiz.md",
+          "tutorial": "tutorials.html#premium-aws",
+          "tutorialId": "premium-aws"
+        },
+        {
+          "title": "Lambda & serverless",
+          "path": "languages/aws/modules/07-lambda-serverless.md",
+          "quiz": "languages/aws/modules/07-lambda-serverless.quiz.md",
+          "tutorial": "tutorials.html#premium-aws",
+          "tutorialId": "premium-aws"
+        },
+        {
+          "title": "Monitoring with CloudWatch",
+          "path": "languages/aws/modules/08-monitoring-cloudwatch.md",
+          "quiz": "languages/aws/modules/08-monitoring-cloudwatch.quiz.md",
+          "tutorial": "tutorials.html#premium-aws",
+          "tutorialId": "premium-aws"
+        },
+        {
+          "title": "Cost & Well-Architected",
+          "path": "languages/aws/modules/09-cost-and-well-architected.md",
+          "quiz": "languages/aws/modules/09-cost-and-well-architected.quiz.md",
+          "tutorial": "tutorials.html#premium-aws",
+          "tutorialId": "premium-aws"
+        },
+        {
+          "title": "Capstone: deploy a small AWS app",
+          "path": "languages/aws/modules/10-capstone-aws-app.md",
+          "quiz": "languages/aws/modules/10-capstone-aws-app.quiz.md",
+          "tutorial": "tutorials.html#premium-aws",
+          "tutorialId": "premium-aws"
+        }
+      ]
+    },
+    {
+      "id": "azure",
+      "name": "Azure Cloud Course",
+      "page": "azure-course.html",
+      "level": "Donor / cloud & DevOps",
+      "premium": true,
+      "modules": [
+        {
+          "title": "Azure foundations & subscriptions",
+          "path": "languages/azure/modules/01-azure-foundations.md",
+          "quiz": "languages/azure/modules/01-azure-foundations.quiz.md",
+          "tutorial": "tutorials.html#premium-azure",
+          "tutorialId": "premium-azure"
+        },
+        {
+          "title": "Entra ID & RBAC",
+          "path": "languages/azure/modules/02-entra-id-and-rbac.md",
+          "quiz": "languages/azure/modules/02-entra-id-and-rbac.quiz.md",
+          "tutorial": "tutorials.html#premium-azure",
+          "tutorialId": "premium-azure"
+        },
+        {
+          "title": "VNet & networking",
+          "path": "languages/azure/modules/03-vnet-networking.md",
+          "quiz": "languages/azure/modules/03-vnet-networking.quiz.md",
+          "tutorial": "tutorials.html#premium-azure",
+          "tutorialId": "premium-azure"
+        },
+        {
+          "title": "Compute options",
+          "path": "languages/azure/modules/04-compute-options.md",
+          "quiz": "languages/azure/modules/04-compute-options.quiz.md",
+          "tutorial": "tutorials.html#premium-azure",
+          "tutorialId": "premium-azure"
+        },
+        {
+          "title": "Storage & blobs",
+          "path": "languages/azure/modules/05-storage-and-blobs.md",
+          "quiz": "languages/azure/modules/05-storage-and-blobs.quiz.md",
+          "tutorial": "tutorials.html#premium-azure",
+          "tutorialId": "premium-azure"
+        },
+        {
+          "title": "App Service",
+          "path": "languages/azure/modules/06-app-service.md",
+          "quiz": "languages/azure/modules/06-app-service.quiz.md",
+          "tutorial": "tutorials.html#premium-azure",
+          "tutorialId": "premium-azure"
+        },
+        {
+          "title": "Azure SQL & data",
+          "path": "languages/azure/modules/07-azure-sql-and-data.md",
+          "quiz": "languages/azure/modules/07-azure-sql-and-data.quiz.md",
+          "tutorial": "tutorials.html#premium-azure",
+          "tutorialId": "premium-azure"
+        },
+        {
+          "title": "Monitor & Application Insights",
+          "path": "languages/azure/modules/08-monitor-and-insights.md",
+          "quiz": "languages/azure/modules/08-monitor-and-insights.quiz.md",
+          "tutorial": "tutorials.html#premium-azure",
+          "tutorialId": "premium-azure"
+        },
+        {
+          "title": "Governance & cost",
+          "path": "languages/azure/modules/09-governance-and-cost.md",
+          "quiz": "languages/azure/modules/09-governance-and-cost.quiz.md",
+          "tutorial": "tutorials.html#premium-azure",
+          "tutorialId": "premium-azure"
+        },
+        {
+          "title": "Capstone: host a small Azure app",
+          "path": "languages/azure/modules/10-capstone-azure-app.md",
+          "quiz": "languages/azure/modules/10-capstone-azure-app.quiz.md",
+          "tutorial": "tutorials.html#premium-azure",
+          "tutorialId": "premium-azure"
+        }
+      ]
+    },
+    {
+      "id": "gcp",
+      "name": "GCP Cloud Course",
+      "page": "gcp-course.html",
+      "level": "Donor / cloud & DevOps",
+      "premium": true,
+      "modules": [
+        {
+          "title": "GCP foundations & projects",
+          "path": "languages/gcp/modules/01-gcp-foundations.md",
+          "quiz": "languages/gcp/modules/01-gcp-foundations.quiz.md",
+          "tutorial": "tutorials.html#premium-gcp",
+          "tutorialId": "premium-gcp"
+        },
+        {
+          "title": "IAM & org policy",
+          "path": "languages/gcp/modules/02-iam-and-org-policy.md",
+          "quiz": "languages/gcp/modules/02-iam-and-org-policy.quiz.md",
+          "tutorial": "tutorials.html#premium-gcp",
+          "tutorialId": "premium-gcp"
+        },
+        {
+          "title": "VPC networking",
+          "path": "languages/gcp/modules/03-vpc-networking.md",
+          "quiz": "languages/gcp/modules/03-vpc-networking.quiz.md",
+          "tutorial": "tutorials.html#premium-gcp",
+          "tutorialId": "premium-gcp"
+        },
+        {
+          "title": "Compute Engine",
+          "path": "languages/gcp/modules/04-compute-engine.md",
+          "quiz": "languages/gcp/modules/04-compute-engine.quiz.md",
+          "tutorial": "tutorials.html#premium-gcp",
+          "tutorialId": "premium-gcp"
+        },
+        {
+          "title": "Cloud Storage & data",
+          "path": "languages/gcp/modules/05-gcs-and-data.md",
+          "quiz": "languages/gcp/modules/05-gcs-and-data.quiz.md",
+          "tutorial": "tutorials.html#premium-gcp",
+          "tutorialId": "premium-gcp"
+        },
+        {
+          "title": "Cloud Run",
+          "path": "languages/gcp/modules/06-cloud-run.md",
+          "quiz": "languages/gcp/modules/06-cloud-run.quiz.md",
+          "tutorial": "tutorials.html#premium-gcp",
+          "tutorialId": "premium-gcp"
+        },
+        {
+          "title": "GKE introduction",
+          "path": "languages/gcp/modules/07-gke-intro.md",
+          "quiz": "languages/gcp/modules/07-gke-intro.quiz.md",
+          "tutorial": "tutorials.html#premium-gcp",
+          "tutorialId": "premium-gcp"
+        },
+        {
+          "title": "Ops & Cloud Logging",
+          "path": "languages/gcp/modules/08-ops-and-logging.md",
+          "quiz": "languages/gcp/modules/08-ops-and-logging.quiz.md",
+          "tutorial": "tutorials.html#premium-gcp",
+          "tutorialId": "premium-gcp"
+        },
+        {
+          "title": "Billing & cost control",
+          "path": "languages/gcp/modules/09-billing-and-cost.md",
+          "quiz": "languages/gcp/modules/09-billing-and-cost.quiz.md",
+          "tutorial": "tutorials.html#premium-gcp",
+          "tutorialId": "premium-gcp"
+        },
+        {
+          "title": "Capstone: ship on Cloud Run",
+          "path": "languages/gcp/modules/10-capstone-gcp-service.md",
+          "quiz": "languages/gcp/modules/10-capstone-gcp-service.quiz.md",
+          "tutorial": "tutorials.html#premium-gcp",
+          "tutorialId": "premium-gcp"
+        }
+      ]
+    },
+    {
+      "id": "kubernetes",
+      "name": "Kubernetes Course",
+      "page": "kubernetes-course.html",
+      "level": "Donor / cloud & DevOps",
+      "premium": true,
+      "modules": [
+        {
+          "title": "Kubernetes mental model",
+          "path": "languages/kubernetes/modules/01-k8s-mental-model.md",
+          "quiz": "languages/kubernetes/modules/01-k8s-mental-model.quiz.md",
+          "tutorial": "tutorials.html#premium-kubernetes",
+          "tutorialId": "premium-kubernetes"
+        },
+        {
+          "title": "Pods & workloads",
+          "path": "languages/kubernetes/modules/02-pods-and-workloads.md",
+          "quiz": "languages/kubernetes/modules/02-pods-and-workloads.quiz.md",
+          "tutorial": "tutorials.html#premium-kubernetes",
+          "tutorialId": "premium-kubernetes"
+        },
+        {
+          "title": "Services & Ingress",
+          "path": "languages/kubernetes/modules/03-services-and-ingress.md",
+          "quiz": "languages/kubernetes/modules/03-services-and-ingress.quiz.md",
+          "tutorial": "tutorials.html#premium-kubernetes",
+          "tutorialId": "premium-kubernetes"
+        },
+        {
+          "title": "ConfigMaps & Secrets",
+          "path": "languages/kubernetes/modules/04-configmaps-secrets.md",
+          "quiz": "languages/kubernetes/modules/04-configmaps-secrets.quiz.md",
+          "tutorial": "tutorials.html#premium-kubernetes",
+          "tutorialId": "premium-kubernetes"
+        },
+        {
+          "title": "Storage & persistent volumes",
+          "path": "languages/kubernetes/modules/05-storage-and-pv.md",
+          "quiz": "languages/kubernetes/modules/05-storage-and-pv.quiz.md",
+          "tutorial": "tutorials.html#premium-kubernetes",
+          "tutorialId": "premium-kubernetes"
+        },
+        {
+          "title": "Deployments & rollouts",
+          "path": "languages/kubernetes/modules/06-deployments-rollouts.md",
+          "quiz": "languages/kubernetes/modules/06-deployments-rollouts.quiz.md",
+          "tutorial": "tutorials.html#premium-kubernetes",
+          "tutorialId": "premium-kubernetes"
+        },
+        {
+          "title": "Autoscaling basics",
+          "path": "languages/kubernetes/modules/07-autoscaling-basics.md",
+          "quiz": "languages/kubernetes/modules/07-autoscaling-basics.quiz.md",
+          "tutorial": "tutorials.html#premium-kubernetes",
+          "tutorialId": "premium-kubernetes"
+        },
+        {
+          "title": "Observability on Kubernetes",
+          "path": "languages/kubernetes/modules/08-observability-on-k8s.md",
+          "quiz": "languages/kubernetes/modules/08-observability-on-k8s.quiz.md",
+          "tutorial": "tutorials.html#premium-kubernetes",
+          "tutorialId": "premium-kubernetes"
+        },
+        {
+          "title": "Kubernetes security basics",
+          "path": "languages/kubernetes/modules/09-security-basics.md",
+          "quiz": "languages/kubernetes/modules/09-security-basics.quiz.md",
+          "tutorial": "tutorials.html#premium-kubernetes",
+          "tutorialId": "premium-kubernetes"
+        },
+        {
+          "title": "Capstone: deploy an app to a cluster",
+          "path": "languages/kubernetes/modules/10-capstone-k8s-app.md",
+          "quiz": "languages/kubernetes/modules/10-capstone-k8s-app.quiz.md",
+          "tutorial": "tutorials.html#premium-kubernetes",
+          "tutorialId": "premium-kubernetes"
+        }
+      ]
+    },
+    {
+      "id": "terraform",
+      "name": "Terraform & IaC Course",
+      "page": "terraform-course.html",
+      "level": "Donor / cloud & DevOps",
+      "premium": true,
+      "modules": [
+        {
+          "title": "Why IaC & Terraform",
+          "path": "languages/terraform/modules/01-iac-why-terraform.md",
+          "quiz": "languages/terraform/modules/01-iac-why-terraform.quiz.md",
+          "tutorial": "tutorials.html#premium-terraform",
+          "tutorialId": "premium-terraform"
+        },
+        {
+          "title": "Providers & resources",
+          "path": "languages/terraform/modules/02-providers-and-resources.md",
+          "quiz": "languages/terraform/modules/02-providers-and-resources.quiz.md",
+          "tutorial": "tutorials.html#premium-terraform",
+          "tutorialId": "premium-terraform"
+        },
+        {
+          "title": "State & backends",
+          "path": "languages/terraform/modules/03-state-and-backends.md",
+          "quiz": "languages/terraform/modules/03-state-and-backends.quiz.md",
+          "tutorial": "tutorials.html#premium-terraform",
+          "tutorialId": "premium-terraform"
+        },
+        {
+          "title": "Variables & outputs",
+          "path": "languages/terraform/modules/04-variables-outputs.md",
+          "quiz": "languages/terraform/modules/04-variables-outputs.quiz.md",
+          "tutorial": "tutorials.html#premium-terraform",
+          "tutorialId": "premium-terraform"
+        },
+        {
+          "title": "Modules",
+          "path": "languages/terraform/modules/05-modules.md",
+          "quiz": "languages/terraform/modules/05-modules.quiz.md",
+          "tutorial": "tutorials.html#premium-terraform",
+          "tutorialId": "premium-terraform"
+        },
+        {
+          "title": "Workspaces & environments",
+          "path": "languages/terraform/modules/06-workspaces-environments.md",
+          "quiz": "languages/terraform/modules/06-workspaces-environments.quiz.md",
+          "tutorial": "tutorials.html#premium-terraform",
+          "tutorialId": "premium-terraform"
+        },
+        {
+          "title": "Plan, apply, destroy",
+          "path": "languages/terraform/modules/07-plan-apply-destroy.md",
+          "quiz": "languages/terraform/modules/07-plan-apply-destroy.quiz.md",
+          "tutorial": "tutorials.html#premium-terraform",
+          "tutorialId": "premium-terraform"
+        },
+        {
+          "title": "Testing & policy",
+          "path": "languages/terraform/modules/08-testing-and-policy.md",
+          "quiz": "languages/terraform/modules/08-testing-and-policy.quiz.md",
+          "tutorial": "tutorials.html#premium-terraform",
+          "tutorialId": "premium-terraform"
+        },
+        {
+          "title": "CI for Terraform",
+          "path": "languages/terraform/modules/09-ci-for-terraform.md",
+          "quiz": "languages/terraform/modules/09-ci-for-terraform.quiz.md",
+          "tutorial": "tutorials.html#premium-terraform",
+          "tutorialId": "premium-terraform"
+        },
+        {
+          "title": "Capstone: ship a reusable module",
+          "path": "languages/terraform/modules/10-capstone-module.md",
+          "quiz": "languages/terraform/modules/10-capstone-module.quiz.md",
+          "tutorial": "tutorials.html#premium-terraform",
+          "tutorialId": "premium-terraform"
+        }
+      ]
     }
   ]
 }

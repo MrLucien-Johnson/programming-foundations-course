@@ -1,0 +1,9 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:11.304
+AWS Cloud path: This is the A W S Cloud study guide. Cover IAM and secure accounts, VPC compute and storage, then serverless and cost awareness.
+
+2
+00:00:12.154 --> 00:00:21.154
+Study tip: Study tip: use a learning account. Redact secrets in notes. Measure one metric per lab.

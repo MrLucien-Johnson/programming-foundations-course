@@ -908,4 +908,155 @@ EXTRA_TUTORIALS = [
             },
         ],
     },
+    {
+        "id": "25-premium-devops",
+        "title": "DevOps Foundations — study guide",
+        "kind": "guide",
+        "when": "devops-course, donor",
+        "footer": "tutorials.html · DevOps (donor)",
+        "pathMatch": "languages/devops/modules",
+        "hubAnchor": "premium-devops",
+        "slides": [
+            {
+                "title": "DevOps Foundations",
+                "bullets": ["CI/CD and delivery habits", "Containers and local environments", "Observability and safer incidents"],
+                "vo": "This is the DevOps Foundations study guide. You will practise CI/CD and delivery habits, containers and local environments, and observability with safer incident response.",
+            },
+            {
+                "title": "How to study",
+                "bullets": ["Work modules in order", "Keep a lab notebook", "Use quizzes as checkpoints"],
+                "vo": "How to study: work modules in order. Keep a lab notebook. Use quizzes as checkpoints.",
+            },
+            {
+                "title": "Access",
+                "bullets": ["Donor or allowlisted accounts", "Owner always has access", "Free courses stay open for everyone"],
+                "vo": "Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.",
+            },
+        ],
+    },
+    {
+        "id": "26-premium-aws",
+        "title": "AWS Cloud — study guide",
+        "kind": "guide",
+        "when": "aws-course, donor",
+        "footer": "tutorials.html · AWS (donor)",
+        "pathMatch": "languages/aws/modules",
+        "hubAnchor": "premium-aws",
+        "slides": [
+            {
+                "title": "AWS Cloud path",
+                "bullets": ["IAM and secure accounts", "VPC, compute, and storage", "Serverless and cost awareness"],
+                "vo": "This is the A W S Cloud study guide. Cover IAM and secure accounts, VPC compute and storage, then serverless and cost awareness.",
+            },
+            {
+                "title": "Study tip",
+                "bullets": ["Use a learning account", "Redact secrets in notes", "Measure one metric per lab"],
+                "vo": "Study tip: use a learning account. Redact secrets in notes. Measure one metric per lab.",
+            },
+        ],
+    },
+    {
+        "id": "27-premium-azure",
+        "title": "Azure Cloud — study guide",
+        "kind": "guide",
+        "when": "azure-course, donor",
+        "footer": "tutorials.html · Azure (donor)",
+        "pathMatch": "languages/azure/modules",
+        "hubAnchor": "premium-azure",
+        "slides": [
+            {
+                "title": "Azure Cloud path",
+                "bullets": ["Entra ID and RBAC", "Networking and App Service", "Monitor and governance"],
+                "vo": "This is the Azure Cloud study guide. Learn Entra I D and R BAC, networking and App Service, then monitoring and governance.",
+            },
+            {
+                "title": "How to study",
+                "bullets": ["Use a learning subscription", "Prefer least-privilege roles", "Clean up resource groups after labs"],
+                "vo": "How to study: use a learning subscription. Prefer least-privilege roles. Clean up resource groups after labs so surprise cost stays low.",
+            },
+            {
+                "title": "Access",
+                "bullets": ["Donor or allowlisted accounts", "Owner always has access", "Free courses stay open"],
+                "vo": "Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.",
+            },
+        ],
+    },
+    {
+        "id": "28-premium-gcp",
+        "title": "GCP Cloud — study guide",
+        "kind": "guide",
+        "when": "gcp-course, donor",
+        "footer": "tutorials.html · GCP (donor)",
+        "pathMatch": "languages/gcp/modules",
+        "hubAnchor": "premium-gcp",
+        "slides": [
+            {
+                "title": "Google Cloud path",
+                "bullets": ["Projects and IAM", "Compute and Cloud Run", "Logging and billing alerts"],
+                "vo": "This is the Google Cloud study guide. Cover projects and IAM, compute and Cloud Run, then logging and billing alerts.",
+            },
+            {
+                "title": "How to study",
+                "bullets": ["One project per lab theme", "Set budget alerts early", "Prefer Cloud Run before complex GKE"],
+                "vo": "How to study: use one project per lab theme. Set budget alerts early. Prefer Cloud Run before jumping into complex G K E.",
+            },
+            {
+                "title": "Access",
+                "bullets": ["Donor or allowlisted accounts", "Owner always has access", "Free courses stay open"],
+                "vo": "Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.",
+            },
+        ],
+    },
+    {
+        "id": "29-premium-kubernetes",
+        "title": "Kubernetes — study guide",
+        "kind": "guide",
+        "when": "kubernetes-course, donor",
+        "footer": "tutorials.html · Kubernetes (donor)",
+        "pathMatch": "languages/kubernetes/modules",
+        "hubAnchor": "premium-kubernetes",
+        "slides": [
+            {
+                "title": "Kubernetes path",
+                "bullets": ["Mental model and workloads", "Services, config, and storage", "Safe rollouts and security basics"],
+                "vo": "This is the Kubernetes study guide. Build a clear mental model and workloads, then services config and storage, then safe rollouts and security basics.",
+            },
+            {
+                "title": "How to study",
+                "bullets": ["Use kind or minikube locally", "Apply, describe, then delete", "Practise rollouts and rollbacks"],
+                "vo": "How to study: use kind or minikube locally. Apply, describe, then delete. Practise rollouts and rollbacks before production habits.",
+            },
+            {
+                "title": "Access",
+                "bullets": ["Donor or allowlisted accounts", "Owner always has access", "Free courses stay open"],
+                "vo": "Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.",
+            },
+        ],
+    },
+    {
+        "id": "30-premium-terraform",
+        "title": "Terraform & IaC — study guide",
+        "kind": "guide",
+        "when": "terraform-course, donor",
+        "footer": "tutorials.html · Terraform (donor)",
+        "pathMatch": "languages/terraform/modules",
+        "hubAnchor": "premium-terraform",
+        "slides": [
+            {
+                "title": "Terraform path",
+                "bullets": ["Providers and state", "Modules and environments", "Plan, apply, and CI"],
+                "vo": "This is the Terraform and infrastructure as code study guide. Learn providers and state, modules and environments, then plan apply and C I.",
+            },
+            {
+                "title": "How to study",
+                "bullets": ["Always read the plan", "Never commit secrets or local state casually", "Destroy learning resources when done"],
+                "vo": "How to study: always read the plan. Never commit secrets or local state casually. Destroy learning resources when done.",
+            },
+            {
+                "title": "Access",
+                "bullets": ["Donor or allowlisted accounts", "Owner always has access", "Free courses stay open"],
+                "vo": "Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.",
+            },
+        ],
+    },
 ]

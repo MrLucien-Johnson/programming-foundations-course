@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:11.016
+Terraform path: This is the Terraform and infrastructure as code study guide. Learn providers and state, modules and environments, then plan apply and C I.
+
+2
+00:00:11.866 --> 00:00:22.618
+How to study: How to study: always read the plan. Never commit secrets or local state casually. Destroy learning resources when done.
+
+3
+00:00:23.468 --> 00:00:35.828
+Access: Access: these modules unlock for donor or allowlisted accounts. The site owner always has access. Free beginner courses stay open for everyone.

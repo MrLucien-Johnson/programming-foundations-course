@@ -1,12 +1,12 @@
 const express = require("express");
 
-/** GDPR-friendly self-service: export my data, delete my account. */
-function createAccountRouter({ db, requireAuth, audit }) {
+/** GDPR-friendly self-service: export my data, delete my account + premium grants. */
+function createAccountRouter({ db, requireAuth, audit, premiumStore }) {
   const router = express.Router();
   router.use(requireAuth);
 
   const getUser = db.prepare(
-    `SELECT id, email, display_name, created_at, totp_enabled FROM users WHERE id = ?`
+    `SELECT id, email, display_name, created_at, totp_enabled, is_donor, donor_note FROM users WHERE id = ?`
   );
   const getProgress = db.prepare(`SELECT payload, updated_at FROM progress WHERE user_id = ?`);
   const getAttempts = db.prepare(
@@ -33,6 +33,9 @@ function createAccountRouter({ db, requireAuth, audit }) {
         progress = null;
       }
     }
+    const entitlements = premiumStore
+      ? premiumStore.entitlementsForRow(user)
+      : { premiumAccess: false, isDonor: false };
     return res.json({
       exportedAt: new Date().toISOString(),
       account: user
@@ -42,6 +45,8 @@ function createAccountRouter({ db, requireAuth, audit }) {
             displayName: user.display_name,
             createdAt: user.created_at,
             totpEnabled: Number(user.totp_enabled) === 1,
+            isDonor: !!entitlements.isDonor,
+            premiumAccess: !!entitlements.premiumAccess,
           }
         : null,
       progress,
@@ -49,6 +54,40 @@ function createAccountRouter({ db, requireAuth, audit }) {
       certificates: getCerts.all(uid),
       memberships: getMemberships.all(uid),
     });
+  });
+
+  router.get("/entitlements", (req, res) => {
+    if (!premiumStore) {
+      return res.json({ premiumAccess: false, isDonor: false, allowlisted: false, reason: "unavailable" });
+    }
+    return res.json(premiumStore.getEntitlements(req.user.id));
+  });
+
+  router.post("/premium/grant", (req, res) => {
+    try {
+      if (!premiumStore) {
+        return res.status(503).json({ error: "Premium access is not configured on this API." });
+      }
+      const email = req.body && req.body.email;
+      const note = req.body && req.body.note;
+      const result = premiumStore.grantDonor(req.user, email, note);
+      return res.json({ ok: true, entitlements: result, email: String(email || "").trim().toLowerCase() });
+    } catch (error) {
+      return res.status(error.status || 500).json({ error: error.message || "Could not grant access." });
+    }
+  });
+
+  router.post("/premium/revoke", (req, res) => {
+    try {
+      if (!premiumStore) {
+        return res.status(503).json({ error: "Premium access is not configured on this API." });
+      }
+      const email = req.body && req.body.email;
+      const result = premiumStore.revokeDonor(req.user, email);
+      return res.json({ ok: true, entitlements: result, email: String(email || "").trim().toLowerCase() });
+    } catch (error) {
+      return res.status(error.status || 500).json({ error: error.message || "Could not revoke access." });
+    }
   });
 
   router.delete("/", (req, res) => {
