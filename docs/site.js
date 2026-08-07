@@ -919,6 +919,33 @@
     return false;
   };
 
+  /**
+   * Load markdown for a course path.
+   * Donor/premium paths MUST go through the authenticated API (private content).
+   * Free paths still use public raw GitHub.
+   */
+  const fetchCourseText = async (repoPath) => {
+    const clean = String(repoPath || "").replace(/^\/+/, "");
+    if (!clean) throw new Error("Missing content path.");
+    if (isPremiumPath(clean)) {
+      if (!getToken()) {
+        throw new Error(
+          "Sign in with a donor / allowlisted account to open this lesson."
+        );
+      }
+      const data = await apiFetch(`/api/content?path=${encodeURIComponent(clean)}`);
+      if (!data || typeof data.content !== "string") {
+        throw new Error("Premium content response was empty.");
+      }
+      return data.content;
+    }
+    const rawRoot =
+      "https://raw.githubusercontent.com/MrLucien-Johnson/programming-foundations-course/main/";
+    const response = await fetch(new URL(clean, rawRoot).toString());
+    if (!response.ok) throw new Error("Lesson not available.");
+    return response.text();
+  };
+
   const getCompletions = () =>
     safeParse(localStorage.getItem(KEYS.completions), []);
 
@@ -1826,6 +1853,7 @@
     canAccessPremium,
     ensurePremiumAccess,
     refreshPremiumEntitlements,
+    fetchCourseText,
     PERSONAS,
     PERSONA_PATHS,
     getCompletions,
