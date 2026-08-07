@@ -212,11 +212,25 @@ def quiz_md(course_id: str, slug: str, title: str) -> str:
     spec = content_for(course_id, slug)
     if not spec:
         raise KeyError(f"Missing premium quiz for {course_id}/{slug}")
-    blocks = [f"# Quiz — {title}", ""]
+    blocks = [
+        f"# Quiz — {title}",
+        "",
+        "## Instructions",
+        "",
+        "Answer from memory first, then check explanations after you submit.",
+        "",
+        "## Questions",
+        "",
+    ]
     for i, (question, choices, _correct) in enumerate(spec["quiz"], start=1):
-        blocks.append(f"{i}. {question}")
+        blocks.append(f"### Question {i}: {question}")
+        blocks.append("")
         for letter, choice in zip(LETTERS, choices):
-            blocks.append(f"   - {letter}. {choice}")
+            blocks.append(f"{letter}) {choice}  ")
+        blocks.append("")
+        blocks.append("**Your answer:** _______________")
+        blocks.append("")
+        blocks.append("---")
         blocks.append("")
     return "\n".join(blocks).rstrip() + "\n"
 
@@ -226,9 +240,18 @@ def quiz_answers_md(course_id: str, slug: str, title: str) -> str:
     if not spec:
         raise KeyError(f"Missing premium answers for {course_id}/{slug}")
     lines = [f"# Answers — {title}", ""]
-    for i, (_q, _choices, correct) in enumerate(spec["quiz"], start=1):
-        lines.append(f"{i}. {LETTERS[correct]}")
-    lines.append("")
+    for i, (question, choices, correct) in enumerate(spec["quiz"], start=1):
+        letter = LETTERS[correct]
+        choice = choices[correct]
+        lines.append(f"## Question {i}: {question}")
+        lines.append(f"**Answer: {letter}** — {choice}")
+        lines.append("")
+        lines.append(
+            "**Explanation:** Prefer the option that shrinks blast radius, clarifies ownership, or matches the lab outcome for this module."
+        )
+        lines.append("")
+        lines.append("---")
+        lines.append("")
     lines.append(
         "**Teaching note:** Prefer reasoning about outcomes, blast radius, and evidence over trivia."
     )

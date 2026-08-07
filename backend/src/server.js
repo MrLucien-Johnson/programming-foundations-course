@@ -11,12 +11,14 @@ const { createAudit } = require("./audit");
 const { createOrgStore } = require("./orgs");
 const { createCertificateStore } = require("./certificates");
 const { createPremiumStore } = require("./premium");
+const { createPremiumContentStore } = require("./premiumContent");
 const { createAuthRouter } = require("./routes/auth");
 const { createProgressRouter } = require("./routes/progress");
 const { createOrgsRouter } = require("./routes/orgs");
 const { createQuizRouter } = require("./routes/quiz");
 const { createCertificatesRouter } = require("./routes/certificates");
 const { createAccountRouter } = require("./routes/account");
+const { createContentRouter } = require("./routes/content");
 
 const PORT = Number(process.env.PORT || 8787);
 const HOST = process.env.HOST || "0.0.0.0";
@@ -60,6 +62,8 @@ const audit = createAudit(db);
 const orgStore = createOrgStore({ db, audit });
 const certStore = createCertificateStore({ db, audit });
 const premiumStore = createPremiumStore({ db, audit });
+const premiumContent = createPremiumContentStore({ audit });
+const premiumContentStatus = premiumContent.init();
 const auth = createAuth({
   db,
   jwtSecret: JWT_SECRET,
@@ -92,6 +96,12 @@ app.get("/api/health", (_req, res) => {
     service: "programming-foundations-api",
     corsConfigured: corsOrigins.length > 0,
     corsOriginCount: corsOrigins.length,
+    premiumContent: {
+      ready: !!premiumContentStatus.ready,
+      mode: premiumContentStatus.mode,
+      // Do not leak filesystem paths or git errors with secrets to the public health probe.
+      configured: !!(process.env.PREMIUM_CONTENT_GIT_URL && process.env.PREMIUM_CONTENT_GIT_TOKEN),
+    },
   });
 });
 
@@ -109,6 +119,14 @@ app.use("/api/quiz-attempts", createQuizRouter({ db, requireAuth: auth.requireAu
 app.use("/api/orgs", createOrgsRouter({ orgStore, requireAuth: auth.requireAuth }));
 app.use("/api/certificates", createCertificatesRouter({ certStore, requireAuth: auth.requireAuth }));
 app.use("/api/account", createAccountRouter({ db, requireAuth: auth.requireAuth, audit, premiumStore }));
+app.use(
+  "/api/content",
+  createContentRouter({
+    requireAuth: auth.requireAuth,
+    premiumStore,
+    contentStore: premiumContent,
+  })
+);
 
 app.use((err, _req, res, _next) => {
   if (err && /Origin not allowed/.test(err.message || "")) {
@@ -121,7 +139,22 @@ app.use((err, _req, res, _next) => {
 if (require.main === module) {
   app.listen(PORT, HOST, () => {
     console.log(`Programming Foundations API listening on http://${HOST}:${PORT}`);
+    console.log(
+      `Premium content: mode=${premiumContentStatus.mode} ready=${premiumContentStatus.ready}`
+    );
+    if (premiumContentStatus.lastError) {
+      console.warn(`Premium content note: ${premiumContentStatus.lastError}`);
+    }
   });
 }
 
-module.exports = { app, db, auth, orgStore, certStore, audit, normalizeOrigin };
+module.exports = {
+  app,
+  db,
+  auth,
+  orgStore,
+  certStore,
+  audit,
+  normalizeOrigin,
+  premiumContent,
+};
