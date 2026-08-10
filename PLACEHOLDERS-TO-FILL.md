@@ -111,7 +111,7 @@ Before sharing the course:
 - [ ] Replace all `[GITHUB_REPO_URL]` with your actual repo URL
 - [ ] Replace all `[SUPPORT_EMAIL]` with your support email
 - [ ] (Optional) Replace `[GITHUB_RELEASE_URL]` if using releases
-- [ ] Replace `[YEAR]` in LICENSE with current year
+- [x] Replace `[YEAR]` in LICENSE with current year (2026)
 - [ ] Replace `[COPYRIGHT_HOLDER]` in LICENSE with your name/org
 
 ---
