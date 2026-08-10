@@ -600,3 +600,30 @@ Remote main had advanced (accounts API, Support, shared `site.js` header, promo 
 **Revert tip:** restore `docs/site.js`, `docs/styles.css`, advanced HTML hubs, `docs/privacy.html`, viewers, and `scripts/audit_routes.py` from pre-audit commit.
 
 **Route risk:** Low.
+
+---
+
+### 2026-08-10 — Weekly audit + UX modernization (ux40)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed: sitewide UX chrome from 3 Aug (`SITE_MAINTAINED_LABEL`, relative resume times, compact header, back-to-top, reading progress, scroll reveals, toasts, course-tile chips) was absent after premium/DevOps content landed on main.
+2. Privacy had no “Last reviewed” stamp; LICENSE still said 2025.
+3. Help lacked topic filter; Courses lacked live tile filter; Start Here lacked jump CTAs; playground had no keyboard tip.
+4. Quiz / lesson completion feedback was status-text only — easy to miss.
+
+**Changes**
+- Restored UX chrome in `docs/site.js` + `docs/styles.css` with maintenance stamp **10 August 2026**.
+- Relative resume times; footer © meta; compact sticky header; reading progress; back-to-top; scroll reveals; soft toasts; course-tile progress chips (including donor short titles).
+- Help topic filter; Courses tile filter; `/` quick-find shortcut; playground Ctrl/Cmd+Enter hint; Start Here jump CTAs.
+- Lesson-complete + quiz result toasts; Teams audit relative times; privacy reviewed **10 August 2026**; LICENSE → 2026.
+- Path-node alive pulse; focus-visible polish; cache `?v=ux40`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/*.html` (cache + page UX), `LICENSE`, `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux40 commit; or `git checkout HEAD~1 -- docs/ LICENSE` if this is the tip commit.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
