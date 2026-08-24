@@ -61,7 +61,7 @@
 
   /** Site maintenance stamp — keep year and month current on each audit. */
   const SITE_YEAR = 2026;
-  const SITE_MAINTAINED_LABEL = "10 August 2026";
+  const SITE_MAINTAINED_LABEL = "24 August 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -1153,6 +1153,43 @@
 
       list.dataset.moduleListReady = "1";
     });
+    highlightNextModules();
+  };
+
+  /** Flag the first incomplete module in each list as the clear “up next” step. */
+  const highlightNextModules = () => {
+    document.querySelectorAll(".module-list").forEach((list) => {
+      list.querySelectorAll(".module-list__item").forEach((li) => {
+        const path = li.getAttribute("data-module-path");
+        if (path) {
+          const done = isCompleted(path);
+          li.classList.toggle("is-done", done);
+          const index = li.querySelector(".module-list__index");
+          if (index) {
+            if (done) index.textContent = "✓";
+            else if (index.textContent === "✓") {
+              const siblings = Array.from(list.querySelectorAll(".module-list__item"));
+              const n = siblings.indexOf(li) + 1;
+              index.textContent = String(n).padStart(2, "0");
+            }
+          }
+        }
+        li.classList.remove("is-next");
+        li.querySelector(".module-list__next-badge")?.remove();
+      });
+      const next = Array.from(list.querySelectorAll(".module-list__item")).find(
+        (li) => !li.classList.contains("is-done")
+      );
+      if (!next) return;
+      next.classList.add("is-next");
+      const body = next.querySelector(".module-list__body");
+      if (body && !body.querySelector(".module-list__next-badge")) {
+        const badge = document.createElement("span");
+        badge.className = "module-list__next-badge";
+        badge.textContent = "Up next";
+        body.insertBefore(badge, body.firstChild);
+      }
+    });
   };
 
   const emptyProgressPayload = () => ({
@@ -2055,6 +2092,7 @@
     const candidates = [
       document.getElementById("course-tile-filter"),
       document.getElementById("help-filter"),
+      document.getElementById("tutorial-filter"),
       document.getElementById("course-search"),
     ].filter(Boolean);
     if (!candidates.length) return;
@@ -2089,6 +2127,215 @@
     window.setTimeout(apply, 120);
   };
 
+  const isTypingTarget = (target) => {
+    const tag = (target && target.tagName) || "";
+    return /^(INPUT|TEXTAREA|SELECT)$/i.test(tag) || Boolean(target?.isContentEditable);
+  };
+
+  /** Press “?” for a lightweight keyboard shortcuts sheet. */
+  const mountKeyboardShortcuts = () => {
+    if (document.getElementById("pf-shortcut-sheet")) return;
+    const sheet = document.createElement("div");
+    sheet.id = "pf-shortcut-sheet";
+    sheet.className = "shortcut-sheet";
+    sheet.hidden = true;
+    sheet.setAttribute("role", "dialog");
+    sheet.setAttribute("aria-modal", "true");
+    sheet.setAttribute("aria-label", "Keyboard shortcuts");
+    sheet.innerHTML = `
+      <div class="shortcut-sheet__panel">
+        <div class="shortcut-sheet__head">
+          <strong>Keyboard shortcuts</strong>
+          <button type="button" class="shortcut-sheet__close" aria-label="Close shortcuts">Close</button>
+        </div>
+        <ul class="shortcut-sheet__list">
+          <li><kbd>?</kbd> <span>Show or hide this help</span></li>
+          <li><kbd>/</kbd> <span>Jump to page search or filter</span></li>
+          <li><kbd>Ctrl</kbd> + <kbd>Enter</kbd> <span>Run playground (home)</span></li>
+          <li><kbd>Esc</kbd> <span>Close dialogs and this sheet</span></li>
+        </ul>
+        <p class="note">Shortcuts skip when you are typing in a field.</p>
+      </div>`;
+    document.body.appendChild(sheet);
+    const close = () => {
+      sheet.hidden = true;
+    };
+    const open = () => {
+      sheet.hidden = false;
+      sheet.querySelector(".shortcut-sheet__close")?.focus();
+    };
+    sheet.querySelector(".shortcut-sheet__close")?.addEventListener("click", close);
+    sheet.addEventListener("click", (event) => {
+      if (event.target === sheet) close();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !sheet.hidden) {
+        event.preventDefault();
+        close();
+        return;
+      }
+      if (event.key !== "?" || event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      event.preventDefault();
+      if (sheet.hidden) open();
+      else close();
+    });
+  };
+
+  /** Compact floating resume chip when the main banner scrolls out of view. */
+  const mountStickyResume = () => {
+    if (document.getElementById("pf-sticky-resume")) return;
+    const chip = document.createElement("a");
+    chip.id = "pf-sticky-resume";
+    chip.className = "sticky-resume";
+    chip.hidden = true;
+    document.body.appendChild(chip);
+
+    const sync = () => {
+      const host = document.getElementById("pf-resume-host");
+      const banner = host?.querySelector(".resume-banner");
+      const primary = banner?.querySelector(".resume-banner-actions .btn-primary");
+      if (!host || host.hidden || !banner || !primary) {
+        chip.hidden = true;
+        return;
+      }
+      const href = primary.getAttribute("href") || "";
+      const label =
+        banner.querySelector(".resume-banner-copy strong")?.textContent?.trim() || "Continue learning";
+      chip.href = href;
+      chip.textContent = label;
+      const rect = banner.getBoundingClientRect();
+      const outOfView = rect.bottom < 8;
+      chip.hidden = !outOfView || !href;
+    };
+
+    sync();
+    window.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync, { passive: true });
+    const host = document.getElementById("pf-resume-host");
+    if (host) {
+      const mo = new MutationObserver(sync);
+      mo.observe(host, { childList: true, subtree: true, attributes: true });
+    }
+  };
+
+  /** Estimate reading time for the open lesson. */
+  const enhanceLessonReadingMeta = () => {
+    const content = document.getElementById("lesson-content");
+    const title = document.getElementById("lesson-title");
+    if (!content || !title) return;
+    let meta = document.getElementById("lesson-reading-meta");
+    if (!meta) {
+      meta = document.createElement("p");
+      meta.id = "lesson-reading-meta";
+      meta.className = "lesson-reading-meta note";
+      title.insertAdjacentElement("afterend", meta);
+    }
+    const update = () => {
+      const text = (content.innerText || "").replace(/\s+/g, " ").trim();
+      if (!text || /loading|unavailable/i.test(title.textContent || "")) {
+        meta.hidden = true;
+        meta.textContent = "";
+        return;
+      }
+      const words = text.split(" ").filter(Boolean).length;
+      const minutes = Math.max(1, Math.round(words / 200));
+      meta.hidden = false;
+      meta.textContent = `About ${minutes} min read · ${words.toLocaleString()} words`;
+    };
+    update();
+    const mo = new MutationObserver(update);
+    mo.observe(content, { childList: true, subtree: true, characterData: true });
+  };
+
+  /** One-click copy of the current lesson/quiz URL. */
+  const mountCopyLinkButton = () => {
+    const row =
+      document.getElementById("lesson-actions-row") ||
+      document.querySelector("#quiz-actions .button-row");
+    if (!row || row.querySelector("[data-pf-copy-link]")) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-ghost";
+    btn.setAttribute("data-pf-copy-link", "1");
+    btn.textContent = "Copy link";
+    btn.addEventListener("click", async () => {
+      const url = window.location.href;
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(url);
+        } else {
+          const input = document.createElement("input");
+          input.value = url;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand("copy");
+          input.remove();
+        }
+        showToast("Link copied", { tone: "success" });
+        btn.textContent = "Copied";
+        window.setTimeout(() => {
+          btn.textContent = "Copy link";
+        }, 1600);
+      } catch (error) {
+        showToast("Could not copy — copy from the address bar", { tone: "info" });
+      }
+    });
+    row.appendChild(btn);
+  };
+
+  /** Live-filter tutorial clips once the catalog has rendered. */
+  const wireTutorialFilter = () => {
+    const input = document.getElementById("tutorial-filter");
+    const status = document.getElementById("tutorial-filter-status");
+    if (!input) return;
+    const apply = () => {
+      const clips = Array.from(document.querySelectorAll(".promo-clip"));
+      if (!clips.length) {
+        if (status) status.textContent = "";
+        return;
+      }
+      const q = input.value.trim().toLowerCase();
+      let shown = 0;
+      clips.forEach((clip) => {
+        const hay = clip.textContent.toLowerCase();
+        const match = !q || hay.includes(q);
+        clip.hidden = !match;
+        if (match) shown += 1;
+      });
+      if (status) {
+        status.textContent = q
+          ? shown
+            ? `${shown} tutorial${shown === 1 ? "" : "s"} match “${input.value.trim()}”.`
+            : "No tutorials match — try setup, Python, or captions."
+          : "";
+      }
+    };
+    input.addEventListener("input", apply);
+    const catalog = document.getElementById("tutorial-catalog");
+    if (catalog) {
+      const mo = new MutationObserver(apply);
+      mo.observe(catalog, { childList: true, subtree: true });
+    }
+    apply();
+  };
+
+  /** Clarify links that open a new tab. */
+  const enhanceExternalLinks = () => {
+    document.querySelectorAll('a[target="_blank"]').forEach((anchor) => {
+      if (!anchor.getAttribute("rel")) {
+        anchor.setAttribute("rel", "noopener noreferrer");
+      }
+      if (!anchor.classList.contains("is-external")) {
+        anchor.classList.add("is-external");
+      }
+      const label = (anchor.getAttribute("aria-label") || anchor.textContent || "").trim();
+      if (label && !/new (tab|window)/i.test(label) && !anchor.getAttribute("aria-label")) {
+        anchor.setAttribute("aria-label", `${label} (opens in a new tab)`);
+      }
+    });
+  };
+
   const mountAtmosphere = () => {
     if (document.querySelector(".pf-atmosphere")) return;
     const root = document.createElement("div");
@@ -2111,19 +2358,33 @@
     enhanceFooters();
     mountDeviceProgressNotice();
     mountResumeBanner();
+    mountStickyResume();
     mountPersonaPicker();
     applyPersonaCopy();
     enhancePlaygroundChallenges();
     enhanceModuleLists();
+    highlightNextModules();
     enhanceCourseTiles();
     enhanceScrollReveal();
     enhanceInteractiveSurfaces();
     enhanceHashTargets();
     enhancePathNodes();
+    enhanceExternalLinks();
+    enhanceLessonReadingMeta();
+    mountCopyLinkButton();
+    mountKeyboardShortcuts();
     wireCourseTileFilter();
+    wireTutorialFilter();
     wireQuickFindShortcut();
     mountBackToTop();
     mountReadingProgress();
+    // Lesson/module UIs often hydrate after boot.
+    window.setTimeout(() => {
+      highlightNextModules();
+      enhanceExternalLinks();
+      mountCopyLinkButton();
+    }, 200);
+    window.setTimeout(highlightNextModules, 800);
     if (getToken()) {
       syncProgress().catch(() => {
         /* guest-capable offline */
@@ -2173,9 +2434,13 @@
     courseProgress,
     bindProgressUI,
     enhanceModuleLists,
+    highlightNextModules,
     enhanceCourseTiles,
     formatRelativeTime,
     showToast,
+    mountKeyboardShortcuts,
+    mountStickyResume,
+    mountCopyLinkButton,
     resetAllProgress,
     getDeviceProgressConsent,
     setDeviceProgressConsent,
