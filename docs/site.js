@@ -59,6 +59,10 @@
 
   const START_STEP_ORDER = ["open-online", "choose-course", "keep-learning", "download-local"];
 
+  /** Site maintenance stamp — keep year and month current on each audit. */
+  const SITE_YEAR = 2026;
+  const SITE_MAINTAINED_LABEL = "24 August 2026";
+
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
     schools: {
@@ -1149,6 +1153,43 @@
 
       list.dataset.moduleListReady = "1";
     });
+    highlightNextModules();
+  };
+
+  /** Flag the first incomplete module in each list as the clear “up next” step. */
+  const highlightNextModules = () => {
+    document.querySelectorAll(".module-list").forEach((list) => {
+      list.querySelectorAll(".module-list__item").forEach((li) => {
+        const path = li.getAttribute("data-module-path");
+        if (path) {
+          const done = isCompleted(path);
+          li.classList.toggle("is-done", done);
+          const index = li.querySelector(".module-list__index");
+          if (index) {
+            if (done) index.textContent = "✓";
+            else if (index.textContent === "✓") {
+              const siblings = Array.from(list.querySelectorAll(".module-list__item"));
+              const n = siblings.indexOf(li) + 1;
+              index.textContent = String(n).padStart(2, "0");
+            }
+          }
+        }
+        li.classList.remove("is-next");
+        li.querySelector(".module-list__next-badge")?.remove();
+      });
+      const next = Array.from(list.querySelectorAll(".module-list__item")).find(
+        (li) => !li.classList.contains("is-done")
+      );
+      if (!next) return;
+      next.classList.add("is-next");
+      const body = next.querySelector(".module-list__body");
+      if (body && !body.querySelector(".module-list__next-badge")) {
+        const badge = document.createElement("span");
+        badge.className = "module-list__next-badge";
+        badge.textContent = "Up next";
+        body.insertBefore(badge, body.firstChild);
+      }
+    });
   };
 
   const emptyProgressPayload = () => ({
@@ -1535,6 +1576,36 @@
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
 
+  /** Human-friendly relative time for resume / activity stamps. */
+  const formatRelativeTime = (ts) => {
+    const ms = Number(ts) || 0;
+    if (!ms) return "";
+    const diff = Date.now() - ms;
+    if (diff < 0) return "just now";
+    const sec = Math.floor(diff / 1000);
+    if (sec < 45) return "just now";
+    const min = Math.floor(sec / 60);
+    if (min < 60) return min === 1 ? "1 minute ago" : `${min} minutes ago`;
+    const hr = Math.floor(min / 60);
+    if (hr < 24) return hr === 1 ? "1 hour ago" : `${hr} hours ago`;
+    const day = Math.floor(hr / 24);
+    if (day === 1) return "yesterday";
+    if (day < 14) return `${day} days ago`;
+    try {
+      return new Date(ms).toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+    } catch (error) {
+      return "";
+    }
+  };
+
+  const prefersReducedMotion = () =>
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   const getLastQuiz = () => {
     try {
       return JSON.parse(localStorage.getItem(KEYS.lastQuiz) || "null");
@@ -1592,12 +1663,15 @@
         : !preferQuiz && onCurrentLesson && lastQuiz && lastQuiz.quiz && !onCurrentQuiz;
 
     if (showQuiz) {
+      const when = formatRelativeTime(lastQuiz.ts);
       host.hidden = false;
       host.innerHTML = `
       <div class="resume-banner" role="region" aria-label="Resume learning">
         <div class="resume-banner-copy">
           <strong>Continue your last quiz</strong>
-          <span>${escapeHtml(lastQuiz.title || "Quiz")}</span>
+          <span>${escapeHtml(lastQuiz.title || "Quiz")}${
+            when ? ` <em class="resume-when">· ${escapeHtml(when)}</em>` : ""
+          }</span>
         </div>
         <div class="resume-banner-actions">
           <a class="btn btn-primary" href="quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}">Open quiz</a>
@@ -1618,12 +1692,15 @@
     const done = isCompleted(last.path);
     const label = done ? "Review last lesson" : "Continue where you left off";
     const courseBit = last.course ? ` · ${last.course}` : "";
+    const when = formatRelativeTime(last.ts);
     host.hidden = false;
     host.innerHTML = `
       <div class="resume-banner" role="region" aria-label="Resume learning">
         <div class="resume-banner-copy">
           <strong>${label}</strong>
-          <span>${escapeHtml(last.title)}${escapeHtml(courseBit)}</span>
+          <span>${escapeHtml(last.title)}${escapeHtml(courseBit)}${
+            when ? ` <em class="resume-when">· ${escapeHtml(when)}</em>` : ""
+          }</span>
         </div>
         <div class="resume-banner-actions">
           <a class="btn btn-primary" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Open lesson</a>
@@ -1706,6 +1783,7 @@
     document.dispatchEvent(
       new CustomEvent("pf:persona-changed", { detail: { persona: PERSONAS[id] } })
     );
+    showToast(`Learning focus: ${PERSONAS[id].label}`, { tone: "success" });
     return PERSONAS[id];
   };
 
@@ -1782,6 +1860,482 @@
     host.querySelector("[data-persona-clear]")?.addEventListener("click", () => clearPersona());
   };
 
+  /** Stamp footers with current year + last maintenance date. */
+  const enhanceFooters = () => {
+    document.querySelectorAll("footer.footer").forEach((footer) => {
+      if (footer.querySelector(".site-meta")) return;
+      const meta = document.createElement("p");
+      meta.className = "site-meta";
+      meta.innerHTML = `© ${SITE_YEAR} Programming Foundations · Last maintained ${SITE_MAINTAINED_LABEL}`;
+      footer.appendChild(meta);
+    });
+  };
+
+  /** Compact sticky header after scroll for more reading space. */
+  const wireHeaderScroll = () => {
+    const header = document.querySelector(".site-header");
+    if (!header) return;
+    const onScroll = () => {
+      header.classList.toggle("is-compact", window.scrollY > 28);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  };
+
+  /** Floating back-to-top control once the learner scrolls past the fold. */
+  const mountBackToTop = () => {
+    if (document.getElementById("pf-back-top")) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.id = "pf-back-top";
+    btn.className = "back-to-top";
+    btn.setAttribute("aria-label", "Back to top");
+    btn.innerHTML = '<span aria-hidden="true">↑</span>';
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+    });
+    document.body.appendChild(btn);
+    const onScroll = () => {
+      btn.classList.toggle("is-visible", window.scrollY > 420);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  };
+
+  /** Thin reading progress bar under the sticky header. */
+  const mountReadingProgress = () => {
+    if (document.getElementById("pf-read-progress")) return;
+    const bar = document.createElement("div");
+    bar.id = "pf-read-progress";
+    bar.className = "read-progress";
+    bar.setAttribute("aria-hidden", "true");
+    bar.innerHTML = '<div class="read-progress__fill"></div>';
+    document.body.appendChild(bar);
+    const fill = bar.querySelector(".read-progress__fill");
+    const update = () => {
+      const doc = document.documentElement;
+      const max = Math.max(doc.scrollHeight - window.innerHeight, 1);
+      const pct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
+      if (fill) fill.style.width = `${pct}%`;
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+  };
+
+  /** Soft status toast for progress / interactive feedback. */
+  let toastTimer = null;
+  const showToast = (message, { tone = "info" } = {}) => {
+    const text = String(message || "").trim();
+    if (!text) return;
+    let host = document.getElementById("pf-toast");
+    if (!host) {
+      host = document.createElement("div");
+      host.id = "pf-toast";
+      host.className = "pf-toast";
+      host.setAttribute("role", "status");
+      host.setAttribute("aria-live", "polite");
+      document.body.appendChild(host);
+    }
+    host.dataset.tone = tone;
+    host.textContent = text;
+    host.classList.add("is-visible");
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      host.classList.remove("is-visible");
+    }, 2800);
+  };
+
+  /** Gentle scroll-reveal for section content across pages. */
+  const enhanceScrollReveal = () => {
+    const main = document.getElementById("main");
+    if (main) main.classList.add("page-enter");
+    if (prefersReducedMotion()) return;
+    const targets = document.querySelectorAll(
+      "main .section, main .widget-section, main .help-card, main .feature-card, main .course-tile, main .step, main .support-panel, main .persona-picker"
+    );
+    if (!targets.length || !("IntersectionObserver" in window)) return;
+    targets.forEach((el, i) => {
+      if (el.classList.contains("reveal") || el.closest(".hero-bleed")) return;
+      el.classList.add("reveal");
+      el.style.setProperty("--reveal-delay", `${Math.min(i % 6, 5) * 40}ms`);
+    });
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-inview");
+          io.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  };
+
+  /** Soft pulse on matcher / playground success for clearer feedback. */
+  const enhanceInteractiveSurfaces = () => {
+    const matcher = document.getElementById("matcher-result");
+    if (matcher) {
+      const pulse = () => {
+        matcher.classList.remove("is-fresh");
+        void matcher.offsetWidth;
+        matcher.classList.add("is-fresh");
+      };
+      const mo = new MutationObserver(pulse);
+      mo.observe(matcher, { childList: true, subtree: true });
+    }
+    const output = document.getElementById("playground-output");
+    if (output) {
+      const pulse = () => {
+        output.classList.remove("is-fresh");
+        void output.offsetWidth;
+        output.classList.add("is-fresh");
+      };
+      const mo = new MutationObserver(pulse);
+      mo.observe(output, { characterData: true, childList: true, subtree: true });
+    }
+  };
+
+  /** Resolve COURSE_MODULE_MAP key from a tile heading. */
+  const resolveCourseMapKey = (label) => {
+    const name = String(label || "").trim();
+    if (!name) return "";
+    if (COURSE_MODULE_MAP[name]) return name;
+    const withCourse = `${name} Course`;
+    if (COURSE_MODULE_MAP[withCourse]) return withCourse;
+    const foundations = `${name} Foundations Course`;
+    if (COURSE_MODULE_MAP[foundations]) return foundations;
+    // Donor hubs use short titles like "AWS Cloud" → "AWS Cloud Course"
+    const found = Object.keys(COURSE_MODULE_MAP).find(
+      (key) => key === name || key.startsWith(`${name} `) || key.replace(/ Course$/, "") === name
+    );
+    return found || "";
+  };
+
+  /** Show live progress chips on course tiles when progress exists. */
+  const enhanceCourseTiles = () => {
+    document.querySelectorAll(".course-tile").forEach((tile) => {
+      if (tile.querySelector(".course-tile-progress")) return;
+      const heading = tile.querySelector("h3, h4");
+      const name = (heading?.textContent || "").trim();
+      const mapKey = resolveCourseMapKey(name);
+      if (!mapKey || !COURSE_MODULE_MAP[mapKey]) return;
+      const progress = courseProgress(mapKey);
+      if (!progress.total) return;
+      const chip = document.createElement("p");
+      chip.className = "course-tile-progress";
+      chip.setAttribute("aria-label", `${name} progress`);
+      if (progress.done === 0) {
+        chip.textContent = `${progress.total} modules · not started`;
+      } else if (progress.done >= progress.total) {
+        chip.innerHTML = `<strong>Complete</strong> · ${progress.total} modules`;
+        tile.classList.add("is-complete");
+      } else {
+        chip.innerHTML = `<strong>${progress.percent}%</strong> · ${progress.done} of ${progress.total} modules`;
+        tile.classList.add("is-in-progress");
+      }
+      const body = tile.querySelector(".course-tile-body") || tile;
+      const buttons = body.querySelector(".button-row");
+      if (buttons) body.insertBefore(chip, buttons);
+      else body.appendChild(chip);
+    });
+  };
+
+  /** Highlight deep-linked steps (Start Here, Help anchors). */
+  const enhanceHashTargets = () => {
+    const apply = () => {
+      document.querySelectorAll(".is-hash-target").forEach((el) => {
+        el.classList.remove("is-hash-target");
+      });
+      const id = (location.hash || "").replace(/^#/, "");
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (!target) return;
+      target.classList.add("is-hash-target");
+      if (!prefersReducedMotion()) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+    apply();
+    window.addEventListener("hashchange", apply);
+  };
+
+  /** Live-filter course tiles on the Courses page. */
+  const wireCourseTileFilter = () => {
+    const input = document.getElementById("course-tile-filter");
+    const status = document.getElementById("course-tile-filter-status");
+    const tiles = Array.from(document.querySelectorAll(".course-tile"));
+    if (!input || !tiles.length) return;
+    const apply = () => {
+      const q = input.value.trim().toLowerCase();
+      let shown = 0;
+      tiles.forEach((tile) => {
+        const hay = tile.textContent.toLowerCase();
+        const match = !q || hay.includes(q);
+        tile.hidden = !match;
+        if (match) shown += 1;
+      });
+      if (status) {
+        status.textContent = q
+          ? shown
+            ? `${shown} course${shown === 1 ? "" : "s"} match “${input.value.trim()}”.`
+            : "No courses match — try another word."
+          : "";
+      }
+    };
+    input.addEventListener("input", apply);
+  };
+
+  /** Press "/" to jump to the nearest page search/filter field. */
+  const wireQuickFindShortcut = () => {
+    const candidates = [
+      document.getElementById("course-tile-filter"),
+      document.getElementById("help-filter"),
+      document.getElementById("tutorial-filter"),
+      document.getElementById("course-search"),
+    ].filter(Boolean);
+    if (!candidates.length) return;
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "/" || event.metaKey || event.ctrlKey || event.altKey) return;
+      const tag = (event.target && event.target.tagName) || "";
+      if (/^(INPUT|TEXTAREA|SELECT)$/i.test(tag) || event.target?.isContentEditable) return;
+      event.preventDefault();
+      const field = candidates[0];
+      field.focus();
+      if (typeof field.select === "function") field.select();
+    });
+  };
+
+  /** Mark current path nodes for clearer progress feedback. */
+  const enhancePathNodes = () => {
+    const apply = () => {
+      document.querySelectorAll(".path-node").forEach((node) => {
+        const alive = node.classList.contains("is-complete") || node.classList.contains("is-active");
+        node.classList.toggle("path-node--alive", alive);
+      });
+    };
+    apply();
+    document.querySelectorAll(".path-viz").forEach((viz) => {
+      if (viz.dataset.pfPathObserved) return;
+      viz.dataset.pfPathObserved = "1";
+      const mo = new MutationObserver(apply);
+      mo.observe(viz, { attributes: true, subtree: true, attributeFilter: ["class"] });
+    });
+    // Page scripts sync path state after boot — catch the late update.
+    window.setTimeout(apply, 0);
+    window.setTimeout(apply, 120);
+  };
+
+  const isTypingTarget = (target) => {
+    const tag = (target && target.tagName) || "";
+    return /^(INPUT|TEXTAREA|SELECT)$/i.test(tag) || Boolean(target?.isContentEditable);
+  };
+
+  /** Press “?” for a lightweight keyboard shortcuts sheet. */
+  const mountKeyboardShortcuts = () => {
+    if (document.getElementById("pf-shortcut-sheet")) return;
+    const sheet = document.createElement("div");
+    sheet.id = "pf-shortcut-sheet";
+    sheet.className = "shortcut-sheet";
+    sheet.hidden = true;
+    sheet.setAttribute("role", "dialog");
+    sheet.setAttribute("aria-modal", "true");
+    sheet.setAttribute("aria-label", "Keyboard shortcuts");
+    sheet.innerHTML = `
+      <div class="shortcut-sheet__panel">
+        <div class="shortcut-sheet__head">
+          <strong>Keyboard shortcuts</strong>
+          <button type="button" class="shortcut-sheet__close" aria-label="Close shortcuts">Close</button>
+        </div>
+        <ul class="shortcut-sheet__list">
+          <li><kbd>?</kbd> <span>Show or hide this help</span></li>
+          <li><kbd>/</kbd> <span>Jump to page search or filter</span></li>
+          <li><kbd>Ctrl</kbd> + <kbd>Enter</kbd> <span>Run playground (home)</span></li>
+          <li><kbd>Esc</kbd> <span>Close dialogs and this sheet</span></li>
+        </ul>
+        <p class="note">Shortcuts skip when you are typing in a field.</p>
+      </div>`;
+    document.body.appendChild(sheet);
+    const close = () => {
+      sheet.hidden = true;
+    };
+    const open = () => {
+      sheet.hidden = false;
+      sheet.querySelector(".shortcut-sheet__close")?.focus();
+    };
+    sheet.querySelector(".shortcut-sheet__close")?.addEventListener("click", close);
+    sheet.addEventListener("click", (event) => {
+      if (event.target === sheet) close();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !sheet.hidden) {
+        event.preventDefault();
+        close();
+        return;
+      }
+      if (event.key !== "?" || event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      event.preventDefault();
+      if (sheet.hidden) open();
+      else close();
+    });
+  };
+
+  /** Compact floating resume chip when the main banner scrolls out of view. */
+  const mountStickyResume = () => {
+    if (document.getElementById("pf-sticky-resume")) return;
+    const chip = document.createElement("a");
+    chip.id = "pf-sticky-resume";
+    chip.className = "sticky-resume";
+    chip.hidden = true;
+    document.body.appendChild(chip);
+
+    const sync = () => {
+      const host = document.getElementById("pf-resume-host");
+      const banner = host?.querySelector(".resume-banner");
+      const primary = banner?.querySelector(".resume-banner-actions .btn-primary");
+      if (!host || host.hidden || !banner || !primary) {
+        chip.hidden = true;
+        return;
+      }
+      const href = primary.getAttribute("href") || "";
+      const label =
+        banner.querySelector(".resume-banner-copy strong")?.textContent?.trim() || "Continue learning";
+      chip.href = href;
+      chip.textContent = label;
+      const rect = banner.getBoundingClientRect();
+      const outOfView = rect.bottom < 8;
+      chip.hidden = !outOfView || !href;
+    };
+
+    sync();
+    window.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync, { passive: true });
+    const host = document.getElementById("pf-resume-host");
+    if (host) {
+      const mo = new MutationObserver(sync);
+      mo.observe(host, { childList: true, subtree: true, attributes: true });
+    }
+  };
+
+  /** Estimate reading time for the open lesson. */
+  const enhanceLessonReadingMeta = () => {
+    const content = document.getElementById("lesson-content");
+    const title = document.getElementById("lesson-title");
+    if (!content || !title) return;
+    let meta = document.getElementById("lesson-reading-meta");
+    if (!meta) {
+      meta = document.createElement("p");
+      meta.id = "lesson-reading-meta";
+      meta.className = "lesson-reading-meta note";
+      title.insertAdjacentElement("afterend", meta);
+    }
+    const update = () => {
+      const text = (content.innerText || "").replace(/\s+/g, " ").trim();
+      if (!text || /loading|unavailable/i.test(title.textContent || "")) {
+        meta.hidden = true;
+        meta.textContent = "";
+        return;
+      }
+      const words = text.split(" ").filter(Boolean).length;
+      const minutes = Math.max(1, Math.round(words / 200));
+      meta.hidden = false;
+      meta.textContent = `About ${minutes} min read · ${words.toLocaleString()} words`;
+    };
+    update();
+    const mo = new MutationObserver(update);
+    mo.observe(content, { childList: true, subtree: true, characterData: true });
+  };
+
+  /** One-click copy of the current lesson/quiz URL. */
+  const mountCopyLinkButton = () => {
+    const row =
+      document.getElementById("lesson-actions-row") ||
+      document.querySelector("#quiz-actions .button-row");
+    if (!row || row.querySelector("[data-pf-copy-link]")) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-ghost";
+    btn.setAttribute("data-pf-copy-link", "1");
+    btn.textContent = "Copy link";
+    btn.addEventListener("click", async () => {
+      const url = window.location.href;
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(url);
+        } else {
+          const input = document.createElement("input");
+          input.value = url;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand("copy");
+          input.remove();
+        }
+        showToast("Link copied", { tone: "success" });
+        btn.textContent = "Copied";
+        window.setTimeout(() => {
+          btn.textContent = "Copy link";
+        }, 1600);
+      } catch (error) {
+        showToast("Could not copy — copy from the address bar", { tone: "info" });
+      }
+    });
+    row.appendChild(btn);
+  };
+
+  /** Live-filter tutorial clips once the catalog has rendered. */
+  const wireTutorialFilter = () => {
+    const input = document.getElementById("tutorial-filter");
+    const status = document.getElementById("tutorial-filter-status");
+    if (!input) return;
+    const apply = () => {
+      const clips = Array.from(document.querySelectorAll(".promo-clip"));
+      if (!clips.length) {
+        if (status) status.textContent = "";
+        return;
+      }
+      const q = input.value.trim().toLowerCase();
+      let shown = 0;
+      clips.forEach((clip) => {
+        const hay = clip.textContent.toLowerCase();
+        const match = !q || hay.includes(q);
+        clip.hidden = !match;
+        if (match) shown += 1;
+      });
+      if (status) {
+        status.textContent = q
+          ? shown
+            ? `${shown} tutorial${shown === 1 ? "" : "s"} match “${input.value.trim()}”.`
+            : "No tutorials match — try setup, Python, or captions."
+          : "";
+      }
+    };
+    input.addEventListener("input", apply);
+    const catalog = document.getElementById("tutorial-catalog");
+    if (catalog) {
+      const mo = new MutationObserver(apply);
+      mo.observe(catalog, { childList: true, subtree: true });
+    }
+    apply();
+  };
+
+  /** Clarify links that open a new tab. */
+  const enhanceExternalLinks = () => {
+    document.querySelectorAll('a[target="_blank"]').forEach((anchor) => {
+      if (!anchor.getAttribute("rel")) {
+        anchor.setAttribute("rel", "noopener noreferrer");
+      }
+      if (!anchor.classList.contains("is-external")) {
+        anchor.classList.add("is-external");
+      }
+      const label = (anchor.getAttribute("aria-label") || anchor.textContent || "").trim();
+      if (label && !/new (tab|window)/i.test(label) && !anchor.getAttribute("aria-label")) {
+        anchor.setAttribute("aria-label", `${label} (opens in a new tab)`);
+      }
+    });
+  };
+
   const mountAtmosphere = () => {
     if (document.querySelector(".pf-atmosphere")) return;
     const root = document.createElement("div");
@@ -1798,14 +2352,39 @@
   const boot = () => {
     mountAtmosphere();
     mountHeader();
+    wireHeaderScroll();
     mountDonateSlots();
     mountBrandCredit();
+    enhanceFooters();
     mountDeviceProgressNotice();
     mountResumeBanner();
+    mountStickyResume();
     mountPersonaPicker();
     applyPersonaCopy();
     enhancePlaygroundChallenges();
     enhanceModuleLists();
+    highlightNextModules();
+    enhanceCourseTiles();
+    enhanceScrollReveal();
+    enhanceInteractiveSurfaces();
+    enhanceHashTargets();
+    enhancePathNodes();
+    enhanceExternalLinks();
+    enhanceLessonReadingMeta();
+    mountCopyLinkButton();
+    mountKeyboardShortcuts();
+    wireCourseTileFilter();
+    wireTutorialFilter();
+    wireQuickFindShortcut();
+    mountBackToTop();
+    mountReadingProgress();
+    // Lesson/module UIs often hydrate after boot.
+    window.setTimeout(() => {
+      highlightNextModules();
+      enhanceExternalLinks();
+      mountCopyLinkButton();
+    }, 200);
+    window.setTimeout(highlightNextModules, 800);
     if (getToken()) {
       syncProgress().catch(() => {
         /* guest-capable offline */
@@ -1817,6 +2396,8 @@
     PASS_THRESHOLD,
     KEYS,
     START_STEP_ORDER,
+    SITE_YEAR,
+    SITE_MAINTAINED_LABEL,
     COURSE_MODULE_MAP,
     ADVANCED_COURSES,
     PREMIUM_COURSES,
@@ -1853,6 +2434,13 @@
     courseProgress,
     bindProgressUI,
     enhanceModuleLists,
+    highlightNextModules,
+    enhanceCourseTiles,
+    formatRelativeTime,
+    showToast,
+    mountKeyboardShortcuts,
+    mountStickyResume,
+    mountCopyLinkButton,
     resetAllProgress,
     getDeviceProgressConsent,
     setDeviceProgressConsent,
