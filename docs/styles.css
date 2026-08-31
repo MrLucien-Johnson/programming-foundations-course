@@ -3319,6 +3319,9 @@ a.btn.is-disabled {
   font-size: 0.88rem;
   color: var(--gold-dark);
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .course-tile.is-in-progress {
@@ -3564,13 +3567,118 @@ a.is-external::after {
   .back-to-top,
   .pf-toast,
   .read-progress__fill,
-  .sticky-resume {
+  .sticky-resume,
+  .course-tile-ring {
     transition: none;
   }
 
   .course-tile:hover,
   .feature-card:hover,
   .help-card:hover {
+    transform: none;
+  }
+}
+
+/* ── ux42: progress rings, focus mode, course sort ── */
+.course-tile-ring {
+  --pct: 0;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--gold) calc(var(--pct) * 1%),
+    rgba(14, 17, 22, 0.12) 0
+  );
+  box-shadow: inset 0 0 0 3px var(--paper-lift);
+  position: relative;
+}
+
+.course-tile-ring::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: var(--paper-lift);
+}
+
+.course-tile.is-complete .course-tile-ring {
+  background: conic-gradient(var(--gold-dark) 100%, rgba(14, 17, 22, 0.12) 0);
+}
+
+.course-sort {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 4px;
+}
+
+.course-sort__label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.course-sort .chip-btn {
+  min-width: auto;
+  padding: 6px 12px;
+  font-size: 0.86rem;
+}
+
+.course-sort .chip-btn.is-active {
+  background: rgba(201, 162, 39, 0.22);
+  border-color: rgba(154, 123, 26, 0.55);
+  color: var(--ink);
+}
+
+body.is-focus-mode .site-header,
+body.is-focus-mode .pf-atmosphere,
+body.is-focus-mode .resume-banner,
+body.is-focus-mode .sticky-resume,
+body.is-focus-mode .module-list-panel,
+body.is-focus-mode .tutorial-callout,
+body.is-focus-mode .footer {
+  opacity: 0.28;
+  pointer-events: none;
+  filter: grayscale(0.15);
+}
+
+body.is-focus-mode .site-header {
+  transform: translateY(-8px);
+}
+
+body.is-focus-mode #main.container,
+body.is-focus-mode .lesson-content {
+  max-width: 46rem;
+}
+
+body.is-focus-mode .lesson-content {
+  box-shadow: var(--shadow-soft);
+  border-color: rgba(201, 162, 39, 0.28);
+}
+
+body.is-focus-mode #pf-focus-toggle,
+body.is-focus-mode .back-to-top,
+body.is-focus-mode .read-progress {
+  opacity: 1;
+  pointer-events: auto;
+  filter: none;
+}
+
+body.is-focus-mode .lesson-actions {
+  position: sticky;
+  bottom: 12px;
+  z-index: 5;
+  background: rgba(247, 241, 230, 0.92);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  box-shadow: var(--shadow-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.is-focus-mode .site-header {
     transform: none;
   }
 }
