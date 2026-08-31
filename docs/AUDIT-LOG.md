@@ -600,3 +600,81 @@ Remote main had advanced (accounts API, Support, shared `site.js` header, promo 
 **Revert tip:** restore `docs/site.js`, `docs/styles.css`, advanced HTML hubs, `docs/privacy.html`, viewers, and `scripts/audit_routes.py` from pre-audit commit.
 
 **Route risk:** Low.
+
+---
+
+### 2026-08-10 — Weekly audit + UX modernization (ux40)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed: sitewide UX chrome from 3 Aug (`SITE_MAINTAINED_LABEL`, relative resume times, compact header, back-to-top, reading progress, scroll reveals, toasts, course-tile chips) was absent after premium/DevOps content landed on main.
+2. Privacy had no “Last reviewed” stamp; LICENSE still said 2025.
+3. Help lacked topic filter; Courses lacked live tile filter; Start Here lacked jump CTAs; playground had no keyboard tip.
+4. Quiz / lesson completion feedback was status-text only — easy to miss.
+
+**Changes**
+- Restored UX chrome in `docs/site.js` + `docs/styles.css` with maintenance stamp **10 August 2026**.
+- Relative resume times; footer © meta; compact sticky header; reading progress; back-to-top; scroll reveals; soft toasts; course-tile progress chips (including donor short titles).
+- Help topic filter; Courses tile filter; `/` quick-find shortcut; playground Ctrl/Cmd+Enter hint; Start Here jump CTAs.
+- Lesson-complete + quiz result toasts; Teams audit relative times; privacy reviewed **10 August 2026**; LICENSE → 2026.
+- Path-node alive pulse; focus-visible polish; cache `?v=ux40`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/*.html` (cache + page UX), `LICENSE`, `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux40 commit; or `git checkout HEAD~1 -- docs/ LICENSE` if this is the tip commit.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
+
+---
+
+### 2026-08-24 — Weekly audit + UX modernization (ux41)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed again: weekly UX chrome (`SITE_MAINTAINED_LABEL`, relative resume times, compact header, back-to-top, reading progress, reveals, toasts, filters) was absent on `main` after later content merges — restored from the prior ux40 work.
+2. Maintenance stamp and privacy “Last reviewed” were still **10 August 2026**.
+3. Module lists lacked a clear “up next” cue; tutorials had no live filter; lesson/quiz pages had no one-click share link; no sitewide keyboard-help overlay.
+
+**Changes**
+- Restored ux40 chrome, then refreshed maintenance stamp to **24 August 2026**; privacy reviewed same day.
+- **Up next** badge on the first incomplete module; sticky mini-resume chip when the banner scrolls away.
+- Lesson **reading-time** estimate; **Copy link** on lesson/quiz action rows; keyboard shortcuts sheet via **`?`**.
+- Tutorials live filter (`/` focus); external-link affordance; cache `?v=ux41`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/*.html` (cache + page UX), `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux41 commit on this branch.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
+
+---
+
+### 2026-08-31 — Weekly audit + UX modernization (ux42 → ux43)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed again: weekly UX chrome was absent on `main` after later content merges — restored from the ux41 branch (`cursor/user-experience-modernization-eadd`).
+2. Maintenance stamp and privacy “Last reviewed” were still **24 August 2026**.
+3. Course tiles showed text progress only; lesson pages lacked focus reading, keyboard module hops, and scroll-place memory; Courses had filter but no progress sort.
+
+**Changes**
+- Restored ux41 chrome, then refreshed maintenance stamp to **31 August 2026**; privacy reviewed same day.
+- Course-tile **progress rings** + **In progress first** sort on Courses.
+- Lesson **Focus mode** (`f`), **`[` / `]`** prev/next module keys, **scroll-place restore**, richer welcome-back resume copy.
+- Hardened `getCompletions()` so object-shaped localStorage cannot break site boot; isolated boot steps so one enhancer failure no longer blanks the rest of the chrome.
+- Cache `?v=ux43`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/courses.html`, `docs/privacy.html`, `docs/*.html` (cache), `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux42 commit on this branch.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
