@@ -138,5 +138,5 @@ Get-ChildItem -Recurse -File | ForEach-Object {
 
 ---
 
-*Last updated: July 2026*
+*Last updated: 31 August 2026*
 
