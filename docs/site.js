@@ -61,7 +61,7 @@
 
   /** Site maintenance stamp — keep year and month current on each audit. */
   const SITE_YEAR = 2026;
-  const SITE_MAINTAINED_LABEL = "24 August 2026";
+  const SITE_MAINTAINED_LABEL = "31 August 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -923,8 +923,15 @@
     return false;
   };
 
-  const getCompletions = () =>
-    safeParse(localStorage.getItem(KEYS.completions), []);
+  const getCompletions = () => {
+    const raw = safeParse(localStorage.getItem(KEYS.completions), []);
+    if (Array.isArray(raw)) return raw.filter((item) => typeof item === "string" && item);
+    // Tolerate legacy/object-shaped storage ({ path: true }) from older experiments.
+    if (raw && typeof raw === "object") {
+      return Object.keys(raw).filter((key) => Boolean(raw[key]));
+    }
+    return [];
+  };
 
   const getDeviceProgressConsent = () => {
     try {
@@ -1662,13 +1669,21 @@
         ? true
         : !preferQuiz && onCurrentLesson && lastQuiz && lastQuiz.quiz && !onCurrentQuiz;
 
+    const welcomeBack = (ts) => {
+      const delta = Date.now() - (Number(ts) || 0);
+      if (!ts || delta < 18 * 60 * 60 * 1000) return "";
+      if (delta < 6 * 24 * 60 * 60 * 1000) return "Welcome back — ";
+      return "Good to see you again — ";
+    };
+
     if (showQuiz) {
       const when = formatRelativeTime(lastQuiz.ts);
+      const greet = welcomeBack(lastQuiz.ts);
       host.hidden = false;
       host.innerHTML = `
       <div class="resume-banner" role="region" aria-label="Resume learning">
         <div class="resume-banner-copy">
-          <strong>Continue your last quiz</strong>
+          <strong>${greet}Continue your last quiz</strong>
           <span>${escapeHtml(lastQuiz.title || "Quiz")}${
             when ? ` <em class="resume-when">· ${escapeHtml(when)}</em>` : ""
           }</span>
@@ -1690,7 +1705,10 @@
       return;
     }
     const done = isCompleted(last.path);
-    const label = done ? "Review last lesson" : "Continue where you left off";
+    const greet = welcomeBack(last.ts);
+    const label = done
+      ? `${greet}Review last lesson`
+      : `${greet}Continue where you left off`;
     const courseBit = last.course ? ` · ${last.course}` : "";
     const when = formatRelativeTime(last.ts);
     host.hidden = false;
@@ -2023,18 +2041,29 @@
       if (!mapKey || !COURSE_MODULE_MAP[mapKey]) return;
       const progress = courseProgress(mapKey);
       if (!progress.total) return;
+      tile.dataset.pfProgressPct = String(progress.percent || 0);
+      tile.dataset.pfProgressDone = String(progress.done || 0);
+      tile.dataset.pfProgressTotal = String(progress.total || 0);
       const chip = document.createElement("p");
       chip.className = "course-tile-progress";
       chip.setAttribute("aria-label", `${name} progress`);
+      const ring = document.createElement("span");
+      ring.className = "course-tile-ring";
+      ring.setAttribute("aria-hidden", "true");
+      ring.style.setProperty("--pct", String(progress.percent || 0));
+      const label = document.createElement("span");
+      label.className = "course-tile-progress__label";
       if (progress.done === 0) {
-        chip.textContent = `${progress.total} modules · not started`;
+        label.textContent = `${progress.total} modules · not started`;
       } else if (progress.done >= progress.total) {
-        chip.innerHTML = `<strong>Complete</strong> · ${progress.total} modules`;
+        label.innerHTML = `<strong>Complete</strong> · ${progress.total} modules`;
         tile.classList.add("is-complete");
       } else {
-        chip.innerHTML = `<strong>${progress.percent}%</strong> · ${progress.done} of ${progress.total} modules`;
+        label.innerHTML = `<strong>${progress.percent}%</strong> · ${progress.done} of ${progress.total} modules`;
         tile.classList.add("is-in-progress");
       }
+      chip.appendChild(ring);
+      chip.appendChild(label);
       const body = tile.querySelector(".course-tile-body") || tile;
       const buttons = body.querySelector(".button-row");
       if (buttons) body.insertBefore(chip, buttons);
@@ -2151,6 +2180,8 @@
         <ul class="shortcut-sheet__list">
           <li><kbd>?</kbd> <span>Show or hide this help</span></li>
           <li><kbd>/</kbd> <span>Jump to page search or filter</span></li>
+          <li><kbd>[</kbd> / <kbd>]</kbd> <span>Previous / next lesson</span></li>
+          <li><kbd>f</kbd> <span>Focus mode (lessons)</span></li>
           <li><kbd>Ctrl</kbd> + <kbd>Enter</kbd> <span>Run playground (home)</span></li>
           <li><kbd>Esc</kbd> <span>Close dialogs and this sheet</span></li>
         </ul>
@@ -2336,6 +2367,177 @@
     });
   };
 
+  /** Dim chrome and widen the lesson column for focused reading. */
+  const mountLessonFocusMode = () => {
+    const content = document.getElementById("lesson-content");
+    if (!content || document.getElementById("pf-focus-toggle")) return;
+    const row =
+      document.getElementById("lesson-actions-row") ||
+      document.querySelector(".lesson-actions .button-row");
+    if (!row) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.id = "pf-focus-toggle";
+    btn.className = "btn btn-ghost";
+    btn.setAttribute("aria-pressed", "false");
+    btn.textContent = "Focus mode";
+    const apply = (on) => {
+      document.body.classList.toggle("is-focus-mode", on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      btn.textContent = on ? "Exit focus" : "Focus mode";
+      try {
+        sessionStorage.setItem("pf-focus-mode", on ? "1" : "0");
+      } catch (error) {
+        /* ignore */
+      }
+    };
+    let on = false;
+    try {
+      on = sessionStorage.getItem("pf-focus-mode") === "1";
+    } catch (error) {
+      on = false;
+    }
+    apply(on);
+    btn.addEventListener("click", () => apply(!document.body.classList.contains("is-focus-mode")));
+    row.appendChild(btn);
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && document.body.classList.contains("is-focus-mode")) {
+        const sheet = document.getElementById("pf-shortcut-sheet");
+        if (sheet && !sheet.hidden) return;
+        apply(false);
+        return;
+      }
+      if (event.key !== "f" && event.key !== "F") return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      if (!document.getElementById("lesson-content")) return;
+      event.preventDefault();
+      apply(!document.body.classList.contains("is-focus-mode"));
+    });
+  };
+
+  /** Bracket keys jump previous / next lesson when nav links exist. */
+  const wireLessonNavKeys = () => {
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "[" && event.key !== "]") return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const nav = document.getElementById("lesson-nav");
+      if (!nav) return;
+      const links = Array.from(nav.querySelectorAll("a[href]"));
+      if (!links.length) return;
+      const target = event.key === "[" ? links[0] : links[links.length - 1];
+      if (!target?.href) return;
+      event.preventDefault();
+      window.location.href = target.href;
+    });
+  };
+
+  /** Remember scroll depth per lesson so returning learners land near where they stopped. */
+  const mountLessonScrollMemory = () => {
+    const content = document.getElementById("lesson-content");
+    if (!content) return;
+    const params = new URLSearchParams(window.location.search);
+    const path = params.get("path") || "";
+    if (!path) return;
+    const storageKey = `pf-lesson-scroll:${path}`;
+    let restored = false;
+    const save = () => {
+      try {
+        sessionStorage.setItem(
+          storageKey,
+          JSON.stringify({ y: Math.round(window.scrollY), ts: Date.now() })
+        );
+      } catch (error) {
+        /* ignore */
+      }
+    };
+    let timer = null;
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(save, 180);
+      },
+      { passive: true }
+    );
+    window.addEventListener("pagehide", save);
+    const tryRestore = () => {
+      if (restored) return;
+      let saved = null;
+      try {
+        saved = JSON.parse(sessionStorage.getItem(storageKey) || "null");
+      } catch (error) {
+        saved = null;
+      }
+      if (!saved || typeof saved.y !== "number" || saved.y < 120) return;
+      if (content.innerText.trim().length < 80) return;
+      restored = true;
+      const y = saved.y;
+      window.requestAnimationFrame(() => {
+        window.scrollTo({ top: y, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+        showToast("Restored your place in this lesson", { tone: "info" });
+      });
+    };
+    const mo = new MutationObserver(() => tryRestore());
+    mo.observe(content, { childList: true, subtree: true, characterData: true });
+    window.setTimeout(tryRestore, 400);
+    window.setTimeout(tryRestore, 1200);
+  };
+
+  /** Sort course tiles by progress (in-progress first, then % complete). */
+  const wireCourseProgressSort = () => {
+    const host = document.getElementById("course-sort-host");
+    if (!host || host.dataset.pfWired) return;
+    host.dataset.pfWired = "1";
+    const grids = Array.from(document.querySelectorAll("main .section.grid")).filter((grid) =>
+      grid.querySelector(".course-tile")
+    );
+    if (!grids.length) return;
+    const originals = new Map();
+    grids.forEach((grid) => {
+      originals.set(grid, Array.from(grid.children));
+    });
+    host.innerHTML = `
+      <div class="course-sort" role="group" aria-label="Sort courses">
+        <span class="course-sort__label">Sort</span>
+        <button type="button" class="chip-btn is-active" data-sort="default">Default</button>
+        <button type="button" class="chip-btn" data-sort="progress">In progress first</button>
+      </div>`;
+    const apply = (mode) => {
+      host.querySelectorAll("[data-sort]").forEach((btn) => {
+        btn.classList.toggle("is-active", btn.getAttribute("data-sort") === mode);
+      });
+      grids.forEach((grid) => {
+        const base = originals.get(grid) || Array.from(grid.children);
+        const tiles = base.filter((el) => el.classList?.contains("course-tile"));
+        const other = base.filter((el) => !el.classList?.contains("course-tile"));
+        if (mode === "default") {
+          base.forEach((el) => grid.appendChild(el));
+          return;
+        }
+        const ranked = tiles.slice().sort((a, b) => {
+          const aDone = Number(a.dataset.pfProgressDone || 0);
+          const bDone = Number(b.dataset.pfProgressDone || 0);
+          const aTotal = Number(a.dataset.pfProgressTotal || 0);
+          const bTotal = Number(b.dataset.pfProgressTotal || 0);
+          const aPct = Number(a.dataset.pfProgressPct || 0);
+          const bPct = Number(b.dataset.pfProgressPct || 0);
+          const aActive = aDone > 0 && aDone < aTotal ? 1 : 0;
+          const bActive = bDone > 0 && bDone < bTotal ? 1 : 0;
+          if (aActive !== bActive) return bActive - aActive;
+          if (aPct !== bPct) return bPct - aPct;
+          return 0;
+        });
+        ranked.forEach((el) => grid.appendChild(el));
+        other.forEach((el) => grid.appendChild(el));
+      });
+    };
+    host.querySelectorAll("[data-sort]").forEach((btn) => {
+      btn.addEventListener("click", () => apply(btn.getAttribute("data-sort") || "default"));
+    });
+  };
+
   const mountAtmosphere = () => {
     if (document.querySelector(".pf-atmosphere")) return;
     const root = document.createElement("div");
@@ -2350,41 +2552,54 @@
   };
 
   const boot = () => {
-    mountAtmosphere();
-    mountHeader();
-    wireHeaderScroll();
-    mountDonateSlots();
-    mountBrandCredit();
-    enhanceFooters();
-    mountDeviceProgressNotice();
-    mountResumeBanner();
-    mountStickyResume();
-    mountPersonaPicker();
-    applyPersonaCopy();
-    enhancePlaygroundChallenges();
-    enhanceModuleLists();
-    highlightNextModules();
-    enhanceCourseTiles();
-    enhanceScrollReveal();
-    enhanceInteractiveSurfaces();
-    enhanceHashTargets();
-    enhancePathNodes();
-    enhanceExternalLinks();
-    enhanceLessonReadingMeta();
-    mountCopyLinkButton();
-    mountKeyboardShortcuts();
-    wireCourseTileFilter();
-    wireTutorialFilter();
-    wireQuickFindShortcut();
-    mountBackToTop();
-    mountReadingProgress();
+    const run = (label, fn) => {
+      try {
+        fn();
+      } catch (error) {
+        console.warn(`[PF] ${label} failed`, error);
+      }
+    };
+    run("atmosphere", mountAtmosphere);
+    run("header", mountHeader);
+    run("headerScroll", wireHeaderScroll);
+    run("donate", mountDonateSlots);
+    run("brand", mountBrandCredit);
+    run("footers", enhanceFooters);
+    run("deviceProgress", mountDeviceProgressNotice);
+    run("resume", mountResumeBanner);
+    run("stickyResume", mountStickyResume);
+    run("persona", mountPersonaPicker);
+    run("personaCopy", applyPersonaCopy);
+    run("playground", enhancePlaygroundChallenges);
+    run("modules", enhanceModuleLists);
+    run("nextModules", highlightNextModules);
+    run("courseTiles", enhanceCourseTiles);
+    run("reveal", enhanceScrollReveal);
+    run("surfaces", enhanceInteractiveSurfaces);
+    run("hash", enhanceHashTargets);
+    run("pathNodes", enhancePathNodes);
+    run("externalLinks", enhanceExternalLinks);
+    run("readingMeta", enhanceLessonReadingMeta);
+    run("copyLink", mountCopyLinkButton);
+    run("focusMode", mountLessonFocusMode);
+    run("scrollMemory", mountLessonScrollMemory);
+    run("lessonNavKeys", wireLessonNavKeys);
+    run("shortcuts", mountKeyboardShortcuts);
+    run("courseFilter", wireCourseTileFilter);
+    run("courseSort", wireCourseProgressSort);
+    run("tutorialFilter", wireTutorialFilter);
+    run("quickFind", wireQuickFindShortcut);
+    run("backTop", mountBackToTop);
+    run("readProgress", mountReadingProgress);
     // Lesson/module UIs often hydrate after boot.
     window.setTimeout(() => {
-      highlightNextModules();
-      enhanceExternalLinks();
-      mountCopyLinkButton();
+      run("nextModules:deferred", highlightNextModules);
+      run("externalLinks:deferred", enhanceExternalLinks);
+      run("copyLink:deferred", mountCopyLinkButton);
+      run("focusMode:deferred", mountLessonFocusMode);
+      run("courseSort:deferred", wireCourseProgressSort);
     }, 200);
-    window.setTimeout(highlightNextModules, 800);
+    window.setTimeout(() => run("nextModules:late", highlightNextModules), 800);
     if (getToken()) {
       syncProgress().catch(() => {
         /* guest-capable offline */
@@ -2441,6 +2656,10 @@
     mountKeyboardShortcuts,
     mountStickyResume,
     mountCopyLinkButton,
+    mountLessonFocusMode,
+    mountLessonScrollMemory,
+    wireLessonNavKeys,
+    wireCourseProgressSort,
     resetAllProgress,
     getDeviceProgressConsent,
     setDeviceProgressConsent,
