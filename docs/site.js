@@ -61,7 +61,7 @@
 
   /** Site maintenance stamp — keep year and month current on each audit. */
   const SITE_YEAR = 2026;
-  const SITE_MAINTAINED_LABEL = "31 August 2026";
+  const SITE_MAINTAINED_LABEL = "7 September 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -2181,6 +2181,9 @@
           <li><kbd>?</kbd> <span>Show or hide this help</span></li>
           <li><kbd>/</kbd> <span>Jump to page search or filter</span></li>
           <li><kbd>[</kbd> / <kbd>]</kbd> <span>Previous / next lesson</span></li>
+          <li><kbd>n</kbd> <span>Open the “Up next” module</span></li>
+          <li><kbd>1</kbd>–<kbd>4</kbd> / <kbd>A</kbd>–<kbd>D</kbd> <span>Pick a quiz answer</span></li>
+          <li><kbd>Enter</kbd> <span>Check quiz answers</span></li>
           <li><kbd>f</kbd> <span>Focus mode (lessons)</span></li>
           <li><kbd>Ctrl</kbd> + <kbd>Enter</kbd> <span>Run playground (home)</span></li>
           <li><kbd>Esc</kbd> <span>Close dialogs and this sheet</span></li>
@@ -2485,6 +2488,190 @@
     window.setTimeout(tryRestore, 1200);
   };
 
+  /** Number keys / letters select the focused quiz question; Enter checks answers. */
+  const wireQuizKeyboard = () => {
+    if (document.documentElement.dataset.pfQuizKeys === "1") return;
+    document.documentElement.dataset.pfQuizKeys = "1";
+    const hintHost = () => {
+      const actions = document.getElementById("quiz-actions");
+      if (!actions || actions.querySelector(".quiz-key-hint")) return;
+      const hint = document.createElement("p");
+      hint.className = "quiz-key-hint note";
+      hint.innerHTML =
+        'Tip: press <kbd>1</kbd>–<kbd>4</kbd> or <kbd>A</kbd>–<kbd>D</kbd> to answer · <kbd>Enter</kbd> to check · <kbd>?</kbd> for more shortcuts.';
+      actions.prepend(hint);
+      enhancePressFeedback();
+    };
+    hintHost();
+    const moRoot = document.getElementById("quiz-container") || document.body;
+    const mo = new MutationObserver(hintHost);
+    mo.observe(moRoot, { childList: true, subtree: true });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const questions = Array.from(document.querySelectorAll(".quiz-question"));
+      if (!questions.length) return;
+
+      if (event.key === "Enter") {
+        const check = document.getElementById("check-answers");
+        if (!check || check.disabled || check.hidden) return;
+        event.preventDefault();
+        check.click();
+        return;
+      }
+
+      let index = -1;
+      if (/^[1-9]$/.test(event.key)) index = Number(event.key) - 1;
+      else if (/^[a-dA-D]$/.test(event.key)) index = event.key.toUpperCase().charCodeAt(0) - 65;
+      if (index < 0) return;
+
+      const active =
+        questions.find((q) => q.contains(document.activeElement)) ||
+        questions.find((q) => {
+          const checked = q.querySelector("input[type='radio']:checked");
+          return !checked;
+        }) ||
+        questions[0];
+      const options = Array.from(active.querySelectorAll(".quiz-option input[type='radio']"));
+      if (!options[index]) return;
+      event.preventDefault();
+      options[index].checked = true;
+      options[index].dispatchEvent(new Event("change", { bubbles: true }));
+      options[index].focus({ preventScroll: true });
+      active.classList.add("is-keyed");
+      window.setTimeout(() => active.classList.remove("is-keyed"), 420);
+    });
+  };
+
+  /** Compact progress rail above module lists on course hub pages. */
+  const mountCourseHubRail = () => {
+    const lists = Array.from(document.querySelectorAll(".module-list"));
+    if (!lists.length) return;
+    lists.forEach((list) => {
+      if (list.previousElementSibling?.classList?.contains("course-hub-rail")) return;
+      const items = Array.from(list.querySelectorAll(".module-list__item"));
+      if (!items.length) return;
+      const done = items.filter((li) => li.classList.contains("is-done")).length;
+      const total = items.length;
+      const next = items.find((li) => li.classList.contains("is-next"));
+      const nextLesson =
+        next?.querySelector(".module-list__action--lesson")?.getAttribute("href") || "";
+      const nextTitle =
+        next?.querySelector(".module-list__title")?.textContent?.trim() || "next module";
+      const rail = document.createElement("div");
+      rail.className = "course-hub-rail";
+      rail.setAttribute("role", "status");
+      const pct = total ? Math.round((done / total) * 100) : 0;
+      const remaining = Math.max(total - done, 0);
+      rail.innerHTML = `
+        <div class="course-hub-rail__copy">
+          <strong>${done} of ${total} modules</strong>
+          <span>${
+            remaining === 0
+              ? "Course complete — nice work."
+              : remaining === 1
+                ? "1 module left."
+                : `${remaining} modules left.`
+          }</span>
+        </div>
+        <div class="course-hub-rail__meter" aria-hidden="true"><span style="width:${pct}%"></span></div>
+        ${
+          nextLesson
+            ? `<a class="btn btn-secondary course-hub-rail__cta" href="${escapeHtml(nextLesson)}">Continue · ${escapeHtml(nextTitle)}</a>`
+            : ""
+        }`;
+      list.parentElement?.insertBefore(rail, list);
+    });
+  };
+
+  /** Refresh hub rails after module completion state syncs. */
+  const refreshCourseHubRails = () => {
+    document.querySelectorAll(".course-hub-rail").forEach((el) => el.remove());
+    mountCourseHubRail();
+  };
+
+  /** Sitewide learning momentum chip (home + start-here). */
+  const mountLearningMomentum = () => {
+    const host =
+      document.getElementById("pf-momentum-host") ||
+      document.getElementById("path-viz-home") ||
+      document.querySelector(".page-home #pf-resume-host");
+    if (!host || document.getElementById("pf-momentum")) return;
+    const completions = getCompletions();
+    const quizzes = getQuizCompletions();
+    const quizPass = Object.values(quizzes || {}).filter((q) => q && q.passed).length;
+    const lessonCount = Array.isArray(completions) ? completions.length : 0;
+    if (lessonCount === 0 && quizPass === 0) return;
+
+    const chip = document.createElement("div");
+    chip.id = "pf-momentum";
+    chip.className = "learning-momentum";
+    chip.setAttribute("role", "status");
+    const bits = [];
+    if (lessonCount) bits.push(`${lessonCount} lesson${lessonCount === 1 ? "" : "s"} done`);
+    if (quizPass) bits.push(`${quizPass} quiz${quizPass === 1 ? "" : "zes"} passed`);
+    const last = getLastLesson();
+    const when = last?.ts ? formatRelativeTime(last.ts) : "";
+    chip.innerHTML = `
+      <span class="learning-momentum__pulse" aria-hidden="true"></span>
+      <div class="learning-momentum__copy">
+        <strong>Your momentum</strong>
+        <span>${escapeHtml(bits.join(" · "))}${when ? ` · last active ${escapeHtml(when)}` : ""}</span>
+      </div>`;
+    if (host.id === "pf-resume-host") {
+      host.insertAdjacentElement("afterend", chip);
+    } else if (host.id === "path-viz-home") {
+      host.insertAdjacentElement("beforebegin", chip);
+    } else {
+      host.appendChild(chip);
+    }
+  };
+
+  /** Celebrate mark-complete with a brief button flourish. */
+  const wireCompletionCelebrate = () => {
+    const btn = document.getElementById("mark-complete");
+    if (!btn || btn.dataset.pfCelebrate === "1") return;
+    btn.dataset.pfCelebrate = "1";
+    btn.addEventListener("click", () => {
+      window.requestAnimationFrame(() => {
+        const pressed = /complete|done|✓/i.test(btn.textContent || "") || btn.getAttribute("aria-pressed") === "true";
+        btn.classList.remove("is-celebrating");
+        void btn.offsetWidth;
+        if (pressed || btn.classList.contains("is-complete")) {
+          btn.classList.add("is-celebrating");
+          window.setTimeout(() => btn.classList.remove("is-celebrating"), 900);
+        }
+      });
+    });
+  };
+
+  /** Press “n” to open the current Up next module lesson. */
+  const wireNextModuleHotkey = () => {
+    if (document.documentElement.dataset.pfNextKey === "1") return;
+    document.documentElement.dataset.pfNextKey = "1";
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "n" && event.key !== "N") return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const next =
+        document.querySelector(".module-list__item.is-next .module-list__action--lesson") ||
+        document.querySelector(".course-hub-rail__cta");
+      if (!next?.href) return;
+      event.preventDefault();
+      window.location.href = next.href;
+    });
+  };
+
+  /** Soft press feedback on primary interactive controls. */
+  const enhancePressFeedback = () => {
+    document.querySelectorAll(".btn, .chip-btn, .matcher-btn, .quiz-option").forEach((el) => {
+      if (el.dataset.pfPress === "1") return;
+      el.dataset.pfPress = "1";
+      el.classList.add("has-press");
+    });
+  };
+
   /** Sort course tiles by progress (in-progress first, then % complete). */
   const wireCourseProgressSort = () => {
     const host = document.getElementById("course-sort-host");
@@ -2573,9 +2760,12 @@
     run("playground", enhancePlaygroundChallenges);
     run("modules", enhanceModuleLists);
     run("nextModules", highlightNextModules);
+    run("hubRail", mountCourseHubRail);
+    run("momentum", mountLearningMomentum);
     run("courseTiles", enhanceCourseTiles);
     run("reveal", enhanceScrollReveal);
     run("surfaces", enhanceInteractiveSurfaces);
+    run("press", enhancePressFeedback);
     run("hash", enhanceHashTargets);
     run("pathNodes", enhancePathNodes);
     run("externalLinks", enhanceExternalLinks);
@@ -2584,6 +2774,9 @@
     run("focusMode", mountLessonFocusMode);
     run("scrollMemory", mountLessonScrollMemory);
     run("lessonNavKeys", wireLessonNavKeys);
+    run("nextModuleKey", wireNextModuleHotkey);
+    run("quizKeys", wireQuizKeyboard);
+    run("celebrate", wireCompletionCelebrate);
     run("shortcuts", mountKeyboardShortcuts);
     run("courseFilter", wireCourseTileFilter);
     run("courseSort", wireCourseProgressSort);
@@ -2594,12 +2787,19 @@
     // Lesson/module UIs often hydrate after boot.
     window.setTimeout(() => {
       run("nextModules:deferred", highlightNextModules);
+      run("hubRail:deferred", refreshCourseHubRails);
       run("externalLinks:deferred", enhanceExternalLinks);
       run("copyLink:deferred", mountCopyLinkButton);
       run("focusMode:deferred", mountLessonFocusMode);
       run("courseSort:deferred", wireCourseProgressSort);
+      run("celebrate:deferred", wireCompletionCelebrate);
+      run("press:deferred", enhancePressFeedback);
+      run("quizKeys:deferred", wireQuizKeyboard);
     }, 200);
-    window.setTimeout(() => run("nextModules:late", highlightNextModules), 800);
+    window.setTimeout(() => {
+      run("nextModules:late", highlightNextModules);
+      run("hubRail:late", refreshCourseHubRails);
+    }, 800);
     if (getToken()) {
       syncProgress().catch(() => {
         /* guest-capable offline */
@@ -2651,6 +2851,11 @@
     enhanceModuleLists,
     highlightNextModules,
     enhanceCourseTiles,
+    mountCourseHubRail,
+    refreshCourseHubRails,
+    mountLearningMomentum,
+    wireQuizKeyboard,
+    wireNextModuleHotkey,
     formatRelativeTime,
     showToast,
     mountKeyboardShortcuts,
