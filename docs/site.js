@@ -13,6 +13,8 @@
     lastLesson: "pf-last-lesson",
     lastQuiz: "pf-last-quiz",
     persona: "pf-org-persona",
+    /** YYYY-MM-DD activity days for study streak (local device) */
+    activityDays: "pf-activity-days",
     /** 'granted' | 'denied' — PECR/UK GDPR transparency for on-device guest progress */
     deviceProgressConsent: "pf-device-progress-consent",
   };
@@ -61,7 +63,7 @@
 
   /** Site maintenance stamp — keep year and month current on each audit. */
   const SITE_YEAR = 2026;
-  const SITE_MAINTAINED_LABEL = "7 September 2026";
+  const SITE_MAINTAINED_LABEL = "14 September 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -994,6 +996,7 @@
     next.add(path);
     const list = [...next];
     writeProgressKey(KEYS.completions, JSON.stringify(list));
+    recordActivityDay();
     scheduleSync();
     return list;
   };
@@ -1214,6 +1217,7 @@
     localStorage.removeItem(KEYS.lastLesson);
     localStorage.removeItem(KEYS.lastQuiz);
     localStorage.removeItem(KEYS.persona);
+    localStorage.removeItem(KEYS.activityDays);
     Object.keys(localStorage)
       .filter((key) => key.startsWith("module-progress:"))
       .forEach((key) => localStorage.removeItem(key));
@@ -1554,6 +1558,7 @@
           ts: Date.now(),
         })
       );
+      recordActivityDay();
     } catch (error) {
       /* quota / private mode */
     }
@@ -1571,9 +1576,60 @@
           ts: Date.now(),
         })
       );
+      recordActivityDay();
     } catch (error) {
       /* ignore */
     }
+  };
+
+  /** Local calendar day key (YYYY-MM-DD) for streak tracking. */
+  const activityDayKey = (date = new Date()) => {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, "0");
+    const d = String(date.getDate()).padStart(2, "0");
+    return `${y}-${m}-${d}`;
+  };
+
+  const getActivityDays = () => {
+    const raw = safeParse(localStorage.getItem(KEYS.activityDays), []);
+    return Array.isArray(raw) ? raw.filter((d) => typeof d === "string") : [];
+  };
+
+  /** Record today as an active study day (kept for ~90 days). */
+  const recordActivityDay = () => {
+    if (!canPersistGuestProgress()) return getActivityDays();
+    try {
+      const today = activityDayKey();
+      const next = new Set(getActivityDays());
+      next.add(today);
+      const pruned = [...next]
+        .filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d))
+        .sort()
+        .slice(-90);
+      writeProgressKey(KEYS.activityDays, JSON.stringify(pruned));
+      return pruned;
+    } catch (error) {
+      return getActivityDays();
+    }
+  };
+
+  /** Consecutive active days ending today or yesterday. */
+  const getStudyStreak = () => {
+    const days = new Set(getActivityDays());
+    if (!days.size) return 0;
+    const cursor = new Date();
+    const today = activityDayKey(cursor);
+    if (!days.has(today)) {
+      cursor.setDate(cursor.getDate() - 1);
+      if (!days.has(activityDayKey(cursor))) return 0;
+    }
+    let streak = 0;
+    while (days.has(activityDayKey(cursor))) {
+      streak += 1;
+      cursor.setDate(cursor.getDate() - 1);
+      if (streak > 365) break;
+    }
+    return streak;
   };
 
   const escapeHtml = (str) =>
@@ -1954,6 +2010,16 @@
       host.setAttribute("role", "status");
       host.setAttribute("aria-live", "polite");
       document.body.appendChild(host);
+      if (!document.documentElement.dataset.pfToastEsc) {
+        document.documentElement.dataset.pfToastEsc = "1";
+        document.addEventListener("keydown", (event) => {
+          if (event.key !== "Escape") return;
+          const toast = document.getElementById("pf-toast");
+          if (!toast?.classList.contains("is-visible")) return;
+          toast.classList.remove("is-visible");
+          if (toastTimer) window.clearTimeout(toastTimer);
+        });
+      }
     }
     host.dataset.tone = tone;
     host.textContent = text;
@@ -2182,11 +2248,12 @@
           <li><kbd>/</kbd> <span>Jump to page search or filter</span></li>
           <li><kbd>[</kbd> / <kbd>]</kbd> <span>Previous / next lesson</span></li>
           <li><kbd>n</kbd> <span>Open the “Up next” module</span></li>
+          <li><kbd>j</kbd> / <kbd>k</kbd> <span>Next / previous module in the list</span></li>
           <li><kbd>1</kbd>–<kbd>4</kbd> / <kbd>A</kbd>–<kbd>D</kbd> <span>Pick a quiz answer</span></li>
-          <li><kbd>Enter</kbd> <span>Check quiz answers</span></li>
+          <li><kbd>Enter</kbd> <span>Check quiz answers or open focused module</span></li>
           <li><kbd>f</kbd> <span>Focus mode (lessons)</span></li>
           <li><kbd>Ctrl</kbd> + <kbd>Enter</kbd> <span>Run playground (home)</span></li>
-          <li><kbd>Esc</kbd> <span>Close dialogs and this sheet</span></li>
+          <li><kbd>Esc</kbd> <span>Close dialogs, toast, and this sheet</span></li>
         </ul>
         <p class="note">Shortcuts skip when you are typing in a field.</p>
       </div>`;
@@ -2564,6 +2631,15 @@
       rail.setAttribute("role", "status");
       const pct = total ? Math.round((done / total) * 100) : 0;
       const remaining = Math.max(total - done, 0);
+      const etaMins = remaining * 12;
+      const etaLabel =
+        remaining === 0
+          ? ""
+          : etaMins < 60
+            ? `About ${etaMins} min left`
+            : etaMins % 60 === 0
+              ? `About ${etaMins / 60} hr left`
+              : `About ${Math.floor(etaMins / 60)} hr ${etaMins % 60} min left`;
       rail.innerHTML = `
         <div class="course-hub-rail__copy">
           <strong>${done} of ${total} modules</strong>
@@ -2573,7 +2649,7 @@
               : remaining === 1
                 ? "1 module left."
                 : `${remaining} modules left.`
-          }</span>
+          }${etaLabel ? ` · ${etaLabel}` : ""}</span>
         </div>
         <div class="course-hub-rail__meter" aria-hidden="true"><span style="width:${pct}%"></span></div>
         ${
@@ -2611,6 +2687,9 @@
     const bits = [];
     if (lessonCount) bits.push(`${lessonCount} lesson${lessonCount === 1 ? "" : "s"} done`);
     if (quizPass) bits.push(`${quizPass} quiz${quizPass === 1 ? "" : "zes"} passed`);
+    const streak = getStudyStreak();
+    if (streak >= 2) bits.push(`${streak}-day streak`);
+    else if (streak === 1) bits.push("studied today");
     const last = getLastLesson();
     const when = last?.ts ? formatRelativeTime(last.ts) : "";
     chip.innerHTML = `
@@ -2660,6 +2739,115 @@
       if (!next?.href) return;
       event.preventDefault();
       window.location.href = next.href;
+    });
+  };
+
+  /** j/k moves focus through module list items; Enter opens the lesson. */
+  const wireModuleListKeys = () => {
+    if (document.documentElement.dataset.pfModuleKeys === "1") return;
+    if (!document.querySelector(".module-list__item")) return;
+    document.documentElement.dataset.pfModuleKeys = "1";
+    let index = -1;
+    const items = () => Array.from(document.querySelectorAll(".module-list__item:not([hidden])"));
+    const paint = (list, idx) => {
+      list.forEach((el, i) => el.classList.toggle("is-kbd-focus", i === idx));
+      const active = list[idx];
+      if (active) {
+        active.scrollIntoView({ block: "nearest", behavior: prefersReducedMotion() ? "auto" : "smooth" });
+      }
+    };
+    document.addEventListener("keydown", (event) => {
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const list = items();
+      if (!list.length) return;
+      const key = event.key;
+      if (key === "j" || key === "J" || key === "k" || key === "K") {
+        event.preventDefault();
+        if (index < 0) {
+          const nextIdx = list.findIndex((el) => el.classList.contains("is-next"));
+          index = nextIdx >= 0 ? nextIdx : 0;
+        } else if (key === "j" || key === "J") {
+          index = Math.min(list.length - 1, index + 1);
+        } else {
+          index = Math.max(0, index - 1);
+        }
+        paint(list, index);
+        return;
+      }
+      if (key === "Enter" && index >= 0) {
+        const lesson = list[index]?.querySelector(".module-list__action--lesson");
+        if (!lesson?.href) return;
+        // Avoid stealing Enter from quiz check when both exist on page.
+        if (document.getElementById("check-answers") && document.activeElement?.closest?.(".quiz-question")) {
+          return;
+        }
+        event.preventDefault();
+        window.location.href = lesson.href;
+      }
+    });
+  };
+
+  /** Soft pulse on playground output after Run. */
+  const wirePlaygroundFeel = () => {
+    const runBtn = document.getElementById("playground-run");
+    const output = document.getElementById("playground-output");
+    if (!runBtn || !output || runBtn.dataset.pfFeel === "1") return;
+    runBtn.dataset.pfFeel = "1";
+    runBtn.addEventListener("click", () => {
+      output.classList.remove("is-fresh");
+      void output.offsetWidth;
+      output.classList.add("is-fresh");
+      window.setTimeout(() => output.classList.remove("is-fresh"), 700);
+    });
+  };
+
+  /** Celebrate when the learning path viz reaches full completion (once per session). */
+  const wirePathCompleteCelebrate = () => {
+    const viz = document.getElementById("path-viz-home");
+    if (!viz || viz.dataset.pfPathCelebrate === "1") return;
+    viz.dataset.pfPathCelebrate = "1";
+    const check = () => {
+      const nodes = Array.from(viz.querySelectorAll(".path-node"));
+      if (nodes.length < 4) return;
+      const allDone = nodes.every((n) => n.classList.contains("is-complete"));
+      if (!allDone) return;
+      try {
+        if (sessionStorage.getItem("pf-path-celebrated") === "1") return;
+        sessionStorage.setItem("pf-path-celebrated", "1");
+      } catch {
+        /* private mode */
+      }
+      viz.classList.add("is-path-complete");
+      showToast("Learning path complete — brilliant work.", { tone: "success" });
+    };
+    check();
+    const mo = new MutationObserver(check);
+    mo.observe(viz, { attributes: true, subtree: true, attributeFilter: ["class"] });
+    window.setTimeout(check, 250);
+  };
+
+  /** Soft page-ready class for first-paint entrance (respects reduced motion via CSS). */
+  const markPageReady = () => {
+    document.documentElement.classList.add("pf-ready");
+  };
+
+  /** Soft selected state on course matcher buttons. */
+  const wireMatcherFeel = () => {
+    const root = document.getElementById("matcher-widget");
+    if (!root || root.dataset.pfFeel === "1") return;
+    root.dataset.pfFeel = "1";
+    root.querySelectorAll(".matcher-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        root.querySelectorAll(".matcher-btn").forEach((b) => b.classList.remove("is-selected"));
+        btn.classList.add("is-selected");
+        const result = document.getElementById("matcher-result");
+        if (result) {
+          result.classList.remove("is-revealed");
+          void result.offsetWidth;
+          result.classList.add("is-revealed");
+        }
+      });
     });
   };
 
@@ -2775,8 +2963,12 @@
     run("scrollMemory", mountLessonScrollMemory);
     run("lessonNavKeys", wireLessonNavKeys);
     run("nextModuleKey", wireNextModuleHotkey);
+    run("moduleKeys", wireModuleListKeys);
     run("quizKeys", wireQuizKeyboard);
     run("celebrate", wireCompletionCelebrate);
+    run("pathCelebrate", wirePathCompleteCelebrate);
+    run("playgroundFeel", wirePlaygroundFeel);
+    run("matcherFeel", wireMatcherFeel);
     run("shortcuts", mountKeyboardShortcuts);
     run("courseFilter", wireCourseTileFilter);
     run("courseSort", wireCourseProgressSort);
@@ -2795,11 +2987,14 @@
       run("celebrate:deferred", wireCompletionCelebrate);
       run("press:deferred", enhancePressFeedback);
       run("quizKeys:deferred", wireQuizKeyboard);
+      run("moduleKeys:deferred", wireModuleListKeys);
+      run("pathCelebrate:deferred", wirePathCompleteCelebrate);
     }, 200);
     window.setTimeout(() => {
       run("nextModules:late", highlightNextModules);
       run("hubRail:late", refreshCourseHubRails);
     }, 800);
+    run("pageReady", markPageReady);
     if (getToken()) {
       syncProgress().catch(() => {
         /* guest-capable offline */
@@ -2856,6 +3051,9 @@
     mountLearningMomentum,
     wireQuizKeyboard,
     wireNextModuleHotkey,
+    wireModuleListKeys,
+    getStudyStreak,
+    recordActivityDay,
     formatRelativeTime,
     showToast,
     mountKeyboardShortcuts,
