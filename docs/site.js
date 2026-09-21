@@ -63,7 +63,7 @@
 
   /** Site maintenance stamp — keep year and month current on each audit. */
   const SITE_YEAR = 2026;
-  const SITE_MAINTAINED_LABEL = "14 September 2026";
+  const SITE_MAINTAINED_LABEL = "21 September 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -1725,9 +1725,16 @@
         ? true
         : !preferQuiz && onCurrentLesson && lastQuiz && lastQuiz.quiz && !onCurrentQuiz;
 
+    const dayPartGreeting = () => {
+      const hour = new Date().getHours();
+      if (hour < 12) return "Good morning";
+      if (hour < 17) return "Good afternoon";
+      return "Good evening";
+    };
+
     const welcomeBack = (ts) => {
       const delta = Date.now() - (Number(ts) || 0);
-      if (!ts || delta < 18 * 60 * 60 * 1000) return "";
+      if (!ts || delta < 18 * 60 * 60 * 1000) return `${dayPartGreeting()} — `;
       if (delta < 6 * 24 * 60 * 60 * 1000) return "Welcome back — ";
       return "Good to see you again — ";
     };
@@ -1979,18 +1986,33 @@
   /** Thin reading progress bar under the sticky header. */
   const mountReadingProgress = () => {
     if (document.getElementById("pf-read-progress")) return;
+    const onLesson = Boolean(document.getElementById("lesson-content"));
     const bar = document.createElement("div");
     bar.id = "pf-read-progress";
     bar.className = "read-progress";
-    bar.setAttribute("aria-hidden", "true");
-    bar.innerHTML = '<div class="read-progress__fill"></div>';
+    bar.setAttribute("role", "progressbar");
+    bar.setAttribute("aria-valuemin", "0");
+    bar.setAttribute("aria-valuemax", "100");
+    bar.setAttribute("aria-valuenow", "0");
+    bar.setAttribute("aria-label", "Page reading progress");
+    bar.innerHTML =
+      '<div class="read-progress__fill"></div>' +
+      (onLesson ? '<span class="read-progress__label" hidden>0%</span>' : "");
     document.body.appendChild(bar);
     const fill = bar.querySelector(".read-progress__fill");
+    const label = bar.querySelector(".read-progress__label");
     const update = () => {
       const doc = document.documentElement;
       const max = Math.max(doc.scrollHeight - window.innerHeight, 1);
       const pct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
+      const rounded = Math.round(pct);
       if (fill) fill.style.width = `${pct}%`;
+      bar.setAttribute("aria-valuenow", String(rounded));
+      if (label) {
+        label.textContent = `${rounded}%`;
+        label.hidden = rounded < 4;
+        label.classList.toggle("is-near-end", rounded >= 92);
+      }
     };
     update();
     window.addEventListener("scroll", update, { passive: true });
@@ -2099,6 +2121,8 @@
 
   /** Show live progress chips on course tiles when progress exists. */
   const enhanceCourseTiles = () => {
+    const last = getLastLesson();
+    const lastCourse = String(last?.course || "").trim().toLowerCase();
     document.querySelectorAll(".course-tile").forEach((tile) => {
       if (tile.querySelector(".course-tile-progress")) return;
       const heading = tile.querySelector("h3, h4");
@@ -2134,6 +2158,24 @@
       const buttons = body.querySelector(".button-row");
       if (buttons) body.insertBefore(chip, buttons);
       else body.appendChild(chip);
+
+      // Soft “last opened” cue for the course matching the learner’s last lesson.
+      if (
+        lastCourse &&
+        !tile.querySelector(".course-tile-last") &&
+        (mapKey.toLowerCase() === lastCourse ||
+          mapKey.toLowerCase().startsWith(lastCourse) ||
+          lastCourse.startsWith(name.toLowerCase()) ||
+          name.toLowerCase().includes(lastCourse.replace(/ course$/, "")))
+      ) {
+        tile.classList.add("is-last-opened");
+        const badge = document.createElement("span");
+        badge.className = "course-tile-last";
+        badge.textContent = "Last opened";
+        const titleRow = heading?.parentElement || body;
+        if (heading) heading.insertAdjacentElement("afterend", badge);
+        else titleRow.prepend(badge);
+      }
     });
   };
 
@@ -2177,6 +2219,26 @@
             ? `${shown} course${shown === 1 ? "" : "s"} match “${input.value.trim()}”.`
             : "No courses match — try another word."
           : "";
+        status.classList.toggle("is-empty", Boolean(q) && shown === 0);
+      }
+      let empty = document.getElementById("course-tile-filter-empty");
+      if (q && shown === 0) {
+        if (!empty) {
+          empty = document.createElement("p");
+          empty.id = "course-tile-filter-empty";
+          empty.className = "course-filter-empty note";
+          empty.innerHTML =
+            'Nothing matched. <button type="button" class="chip-btn" data-clear-filter>Clear filter</button>';
+          input.parentElement?.appendChild(empty);
+          empty.querySelector("[data-clear-filter]")?.addEventListener("click", () => {
+            input.value = "";
+            input.dispatchEvent(new Event("input", { bubbles: true }));
+            input.focus();
+          });
+        }
+        empty.hidden = false;
+      } else if (empty) {
+        empty.hidden = true;
       }
     };
     input.addEventListener("input", apply);
@@ -2246,6 +2308,7 @@
         <ul class="shortcut-sheet__list">
           <li><kbd>?</kbd> <span>Show or hide this help</span></li>
           <li><kbd>/</kbd> <span>Jump to page search or filter</span></li>
+          <li><kbd>g</kbd> then <kbd>h</kbd> / <kbd>c</kbd> / <kbd>s</kbd> / <kbd>a</kbd> <span>Go Home / Courses / Start Here / Account</span></li>
           <li><kbd>[</kbd> / <kbd>]</kbd> <span>Previous / next lesson</span></li>
           <li><kbd>n</kbd> <span>Open the “Up next” module</span></li>
           <li><kbd>j</kbd> / <kbd>k</kbd> <span>Next / previous module in the list</span></li>
@@ -2653,9 +2716,11 @@
         </div>
         <div class="course-hub-rail__meter" aria-hidden="true"><span style="width:${pct}%"></span></div>
         ${
-          nextLesson
-            ? `<a class="btn btn-secondary course-hub-rail__cta" href="${escapeHtml(nextLesson)}">Continue · ${escapeHtml(nextTitle)}</a>`
-            : ""
+          remaining === 0
+            ? `<a class="btn btn-primary course-hub-rail__cta" href="certificate.html">Claim certificate</a>`
+            : nextLesson
+              ? `<a class="btn btn-secondary course-hub-rail__cta" href="${escapeHtml(nextLesson)}">Continue · ${escapeHtml(nextTitle)}</a>`
+              : ""
         }`;
       list.parentElement?.insertBefore(rail, list);
     });
@@ -2832,6 +2897,100 @@
     document.documentElement.classList.add("pf-ready");
   };
 
+  /** Quiz answered-progress strip (dots + count) above the question list. */
+  const mountQuizProgressStrip = () => {
+    const container = document.getElementById("quiz-container");
+    if (!container) return;
+    const sync = () => {
+      const questions = Array.from(container.querySelectorAll(".quiz-question"));
+      if (!questions.length) {
+        document.getElementById("pf-quiz-progress")?.remove();
+        return;
+      }
+      let strip = document.getElementById("pf-quiz-progress");
+      if (!strip) {
+        strip = document.createElement("div");
+        strip.id = "pf-quiz-progress";
+        strip.className = "quiz-progress-strip";
+        strip.setAttribute("role", "status");
+        strip.setAttribute("aria-live", "polite");
+        const actions = document.getElementById("quiz-actions");
+        if (actions) actions.insertAdjacentElement("beforebegin", strip);
+        else container.insertAdjacentElement("beforebegin", strip);
+      }
+      const answered = questions.filter((q) => q.querySelector("input[type='radio']:checked")).length;
+      const total = questions.length;
+      const dots = questions
+        .map((q, i) => {
+          const done = Boolean(q.querySelector("input[type='radio']:checked"));
+          return `<button type="button" class="quiz-progress-strip__dot${done ? " is-answered" : ""}" data-q="${i}" aria-label="Question ${i + 1}${done ? ", answered" : ""}"></button>`;
+        })
+        .join("");
+      strip.innerHTML = `
+        <div class="quiz-progress-strip__copy">
+          <strong>${answered} of ${total} answered</strong>
+          <span>${answered === total ? "Ready to check" : "Pick an answer for each question"}</span>
+        </div>
+        <div class="quiz-progress-strip__dots" aria-hidden="true">${dots}</div>`;
+      strip.querySelectorAll("[data-q]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const idx = Number(btn.getAttribute("data-q"));
+          const target = questions[idx];
+          if (!target) return;
+          target.scrollIntoView({ block: "center", behavior: prefersReducedMotion() ? "auto" : "smooth" });
+          const first = target.querySelector("input[type='radio']");
+          first?.focus({ preventScroll: true });
+        });
+      });
+    };
+    sync();
+    if (container.dataset.pfQuizStrip === "1") return;
+    container.dataset.pfQuizStrip = "1";
+    container.addEventListener("change", sync);
+    const mo = new MutationObserver(sync);
+    mo.observe(container, { childList: true, subtree: true });
+  };
+
+  /** Chord navigation: press g, then h/c/s/a within ~1s. */
+  const wireGoChords = () => {
+    if (document.documentElement.dataset.pfGoChords === "1") return;
+    document.documentElement.dataset.pfGoChords = "1";
+    let armed = false;
+    let timer = null;
+    const routes = {
+      h: "index.html",
+      c: "courses.html",
+      s: "start-here.html",
+      a: "account.html",
+    };
+    const disarm = () => {
+      armed = false;
+      if (timer) {
+        clearTimeout(timer);
+        timer = null;
+      }
+      document.documentElement.classList.remove("pf-go-armed");
+    };
+    document.addEventListener("keydown", (event) => {
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const key = event.key.toLowerCase();
+      if (!armed) {
+        if (key !== "g") return;
+        event.preventDefault();
+        armed = true;
+        document.documentElement.classList.add("pf-go-armed");
+        timer = window.setTimeout(disarm, 1100);
+        return;
+      }
+      const href = routes[key];
+      disarm();
+      if (!href) return;
+      event.preventDefault();
+      window.location.href = href;
+    });
+  };
+
   /** Soft selected state on course matcher buttons. */
   const wireMatcherFeel = () => {
     const root = document.getElementById("matcher-widget");
@@ -2969,6 +3128,8 @@
     run("pathCelebrate", wirePathCompleteCelebrate);
     run("playgroundFeel", wirePlaygroundFeel);
     run("matcherFeel", wireMatcherFeel);
+    run("quizStrip", mountQuizProgressStrip);
+    run("goChords", wireGoChords);
     run("shortcuts", mountKeyboardShortcuts);
     run("courseFilter", wireCourseTileFilter);
     run("courseSort", wireCourseProgressSort);
@@ -2989,6 +3150,7 @@
       run("quizKeys:deferred", wireQuizKeyboard);
       run("moduleKeys:deferred", wireModuleListKeys);
       run("pathCelebrate:deferred", wirePathCompleteCelebrate);
+      run("quizStrip:deferred", mountQuizProgressStrip);
     }, 200);
     window.setTimeout(() => {
       run("nextModules:late", highlightNextModules);
@@ -3052,6 +3214,8 @@
     wireQuizKeyboard,
     wireNextModuleHotkey,
     wireModuleListKeys,
+    mountQuizProgressStrip,
+    wireGoChords,
     getStudyStreak,
     recordActivityDay,
     formatRelativeTime,
