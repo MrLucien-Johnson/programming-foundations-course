@@ -1781,7 +1781,6 @@ button.path-node {
 }
 
 .breadcrumb a:hover {
-  text-decoration: underline;
   color: var(--ink);
 }
 
@@ -4103,11 +4102,115 @@ html.pf-go-armed body::after {
   box-shadow: 0 6px 18px rgba(184, 146, 46, 0.28);
 }
 
+.resume-cta-pulse {
+  animation: resumeCtaPulse 2.4s ease-in-out 2;
+}
+
+@keyframes resumeCtaPulse {
+  0%,
+  100% {
+    box-shadow: 0 4px 14px rgba(184, 146, 46, 0.18);
+  }
+  50% {
+    box-shadow: 0 8px 22px rgba(184, 146, 46, 0.36);
+  }
+}
+
+.study-session-chip {
+  position: fixed;
+  bottom: 18px;
+  left: 18px;
+  z-index: 55;
+  padding: 6px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(226, 193, 90, 0.35);
+  background: rgba(26, 32, 40, 0.9);
+  color: var(--gold-light, #e2c15a);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  box-shadow: var(--shadow-soft, 0 6px 18px rgba(0, 0, 0, 0.2));
+  opacity: 0.92;
+}
+
+html.pf-go-armed .study-session-chip {
+  opacity: 0;
+}
+
+.lesson-finish-nudge {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px dashed rgba(184, 146, 46, 0.45);
+  background: linear-gradient(135deg, rgba(226, 193, 90, 0.12), rgba(255, 255, 255, 0.35));
+  transform: translateY(4px);
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.lesson-finish-nudge.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.saved-flash {
+  position: fixed;
+  top: 72px;
+  right: 18px;
+  z-index: 80;
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(184, 146, 46, 0.4);
+  background: rgba(26, 32, 40, 0.94);
+  color: var(--gold-light, #e2c15a);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.saved-flash.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.breadcrumb a {
+  position: relative;
+  text-decoration: none;
+}
+
+.breadcrumb a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+  opacity: 0.55;
+}
+
+.breadcrumb a:hover::after,
+.breadcrumb a:focus-visible::after {
+  transform: scaleX(1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .read-progress__label,
   .quiz-progress-strip__dot,
-  .btn-primary {
+  .btn-primary,
+  .resume-cta-pulse,
+  .lesson-finish-nudge,
+  .saved-flash,
+  .breadcrumb a::after {
     transition: none !important;
+    animation: none !important;
   }
 
   html.pf-go-armed body::after {
@@ -4119,6 +4222,9 @@ html.pf-go-armed body::after {
   .read-progress__label,
   .quiz-progress-strip,
   .course-tile-last,
+  .study-session-chip,
+  .lesson-finish-nudge,
+  .saved-flash,
   html.pf-go-armed body::after {
     display: none !important;
   }
