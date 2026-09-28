@@ -13,6 +13,8 @@
     lastLesson: "pf-last-lesson",
     lastQuiz: "pf-last-quiz",
     persona: "pf-org-persona",
+    /** YYYY-MM-DD activity days for study streak (local device) */
+    activityDays: "pf-activity-days",
     /** 'granted' | 'denied' — PECR/UK GDPR transparency for on-device guest progress */
     deviceProgressConsent: "pf-device-progress-consent",
   };
@@ -58,6 +60,10 @@
   };
 
   const START_STEP_ORDER = ["open-online", "choose-course", "keep-learning", "download-local"];
+
+  /** Site maintenance stamp — keep year and month current on each audit. */
+  const SITE_YEAR = 2026;
+  const SITE_MAINTAINED_LABEL = "28 September 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -919,8 +925,15 @@
     return false;
   };
 
-  const getCompletions = () =>
-    safeParse(localStorage.getItem(KEYS.completions), []);
+  const getCompletions = () => {
+    const raw = safeParse(localStorage.getItem(KEYS.completions), []);
+    if (Array.isArray(raw)) return raw.filter((item) => typeof item === "string" && item);
+    // Tolerate legacy/object-shaped storage ({ path: true }) from older experiments.
+    if (raw && typeof raw === "object") {
+      return Object.keys(raw).filter((key) => Boolean(raw[key]));
+    }
+    return [];
+  };
 
   const getDeviceProgressConsent = () => {
     try {
@@ -983,6 +996,7 @@
     next.add(path);
     const list = [...next];
     writeProgressKey(KEYS.completions, JSON.stringify(list));
+    recordActivityDay();
     scheduleSync();
     return list;
   };
@@ -1149,6 +1163,43 @@
 
       list.dataset.moduleListReady = "1";
     });
+    highlightNextModules();
+  };
+
+  /** Flag the first incomplete module in each list as the clear “up next” step. */
+  const highlightNextModules = () => {
+    document.querySelectorAll(".module-list").forEach((list) => {
+      list.querySelectorAll(".module-list__item").forEach((li) => {
+        const path = li.getAttribute("data-module-path");
+        if (path) {
+          const done = isCompleted(path);
+          li.classList.toggle("is-done", done);
+          const index = li.querySelector(".module-list__index");
+          if (index) {
+            if (done) index.textContent = "✓";
+            else if (index.textContent === "✓") {
+              const siblings = Array.from(list.querySelectorAll(".module-list__item"));
+              const n = siblings.indexOf(li) + 1;
+              index.textContent = String(n).padStart(2, "0");
+            }
+          }
+        }
+        li.classList.remove("is-next");
+        li.querySelector(".module-list__next-badge")?.remove();
+      });
+      const next = Array.from(list.querySelectorAll(".module-list__item")).find(
+        (li) => !li.classList.contains("is-done")
+      );
+      if (!next) return;
+      next.classList.add("is-next");
+      const body = next.querySelector(".module-list__body");
+      if (body && !body.querySelector(".module-list__next-badge")) {
+        const badge = document.createElement("span");
+        badge.className = "module-list__next-badge";
+        badge.textContent = "Up next";
+        body.insertBefore(badge, body.firstChild);
+      }
+    });
   };
 
   const emptyProgressPayload = () => ({
@@ -1166,6 +1217,7 @@
     localStorage.removeItem(KEYS.lastLesson);
     localStorage.removeItem(KEYS.lastQuiz);
     localStorage.removeItem(KEYS.persona);
+    localStorage.removeItem(KEYS.activityDays);
     Object.keys(localStorage)
       .filter((key) => key.startsWith("module-progress:"))
       .forEach((key) => localStorage.removeItem(key));
@@ -1506,6 +1558,7 @@
           ts: Date.now(),
         })
       );
+      recordActivityDay();
     } catch (error) {
       /* quota / private mode */
     }
@@ -1523,9 +1576,60 @@
           ts: Date.now(),
         })
       );
+      recordActivityDay();
     } catch (error) {
       /* ignore */
     }
+  };
+
+  /** Local calendar day key (YYYY-MM-DD) for streak tracking. */
+  const activityDayKey = (date = new Date()) => {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, "0");
+    const d = String(date.getDate()).padStart(2, "0");
+    return `${y}-${m}-${d}`;
+  };
+
+  const getActivityDays = () => {
+    const raw = safeParse(localStorage.getItem(KEYS.activityDays), []);
+    return Array.isArray(raw) ? raw.filter((d) => typeof d === "string") : [];
+  };
+
+  /** Record today as an active study day (kept for ~90 days). */
+  const recordActivityDay = () => {
+    if (!canPersistGuestProgress()) return getActivityDays();
+    try {
+      const today = activityDayKey();
+      const next = new Set(getActivityDays());
+      next.add(today);
+      const pruned = [...next]
+        .filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d))
+        .sort()
+        .slice(-90);
+      writeProgressKey(KEYS.activityDays, JSON.stringify(pruned));
+      return pruned;
+    } catch (error) {
+      return getActivityDays();
+    }
+  };
+
+  /** Consecutive active days ending today or yesterday. */
+  const getStudyStreak = () => {
+    const days = new Set(getActivityDays());
+    if (!days.size) return 0;
+    const cursor = new Date();
+    const today = activityDayKey(cursor);
+    if (!days.has(today)) {
+      cursor.setDate(cursor.getDate() - 1);
+      if (!days.has(activityDayKey(cursor))) return 0;
+    }
+    let streak = 0;
+    while (days.has(activityDayKey(cursor))) {
+      streak += 1;
+      cursor.setDate(cursor.getDate() - 1);
+      if (streak > 365) break;
+    }
+    return streak;
   };
 
   const escapeHtml = (str) =>
@@ -1534,6 +1638,36 @@
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
+
+  /** Human-friendly relative time for resume / activity stamps. */
+  const formatRelativeTime = (ts) => {
+    const ms = Number(ts) || 0;
+    if (!ms) return "";
+    const diff = Date.now() - ms;
+    if (diff < 0) return "just now";
+    const sec = Math.floor(diff / 1000);
+    if (sec < 45) return "just now";
+    const min = Math.floor(sec / 60);
+    if (min < 60) return min === 1 ? "1 minute ago" : `${min} minutes ago`;
+    const hr = Math.floor(min / 60);
+    if (hr < 24) return hr === 1 ? "1 hour ago" : `${hr} hours ago`;
+    const day = Math.floor(hr / 24);
+    if (day === 1) return "yesterday";
+    if (day < 14) return `${day} days ago`;
+    try {
+      return new Date(ms).toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+    } catch (error) {
+      return "";
+    }
+  };
+
+  const prefersReducedMotion = () =>
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const getLastQuiz = () => {
     try {
@@ -1591,16 +1725,39 @@
         ? true
         : !preferQuiz && onCurrentLesson && lastQuiz && lastQuiz.quiz && !onCurrentQuiz;
 
+    const dayPartGreeting = () => {
+      const now = new Date();
+      const hour = now.getHours();
+      const weekday = now.getDay(); // 0 Sun … 6 Sat
+      if (weekday === 1 && hour < 12) return "Fresh week ahead";
+      if ((weekday === 0 || weekday === 6) && hour < 12) return "Easy weekend morning";
+      if ((weekday === 0 || weekday === 6) && hour < 17) return "Weekend pace";
+      if (hour < 12) return "Good morning";
+      if (hour < 17) return "Good afternoon";
+      return "Good evening";
+    };
+
+    const welcomeBack = (ts) => {
+      const delta = Date.now() - (Number(ts) || 0);
+      if (!ts || delta < 18 * 60 * 60 * 1000) return `${dayPartGreeting()} — `;
+      if (delta < 6 * 24 * 60 * 60 * 1000) return "Welcome back — ";
+      return "Good to see you again — ";
+    };
+
     if (showQuiz) {
+      const when = formatRelativeTime(lastQuiz.ts);
+      const greet = welcomeBack(lastQuiz.ts);
       host.hidden = false;
       host.innerHTML = `
       <div class="resume-banner" role="region" aria-label="Resume learning">
         <div class="resume-banner-copy">
-          <strong>Continue your last quiz</strong>
-          <span>${escapeHtml(lastQuiz.title || "Quiz")}</span>
+          <strong>${greet}Continue your last quiz</strong>
+          <span>${escapeHtml(lastQuiz.title || "Quiz")}${
+            when ? ` <em class="resume-when">· ${escapeHtml(when)}</em>` : ""
+          }</span>
         </div>
         <div class="resume-banner-actions">
-          <a class="btn btn-primary" href="quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}">Open quiz</a>
+          <a class="btn btn-primary resume-cta-pulse" href="quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}">Open quiz</a>
           ${
             last && last.path && !onCurrentLesson
               ? `<a class="btn btn-secondary" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Last lesson</a>`
@@ -1616,17 +1773,23 @@
       return;
     }
     const done = isCompleted(last.path);
-    const label = done ? "Review last lesson" : "Continue where you left off";
+    const greet = welcomeBack(last.ts);
+    const label = done
+      ? `${greet}Review last lesson`
+      : `${greet}Continue where you left off`;
     const courseBit = last.course ? ` · ${last.course}` : "";
+    const when = formatRelativeTime(last.ts);
     host.hidden = false;
     host.innerHTML = `
       <div class="resume-banner" role="region" aria-label="Resume learning">
         <div class="resume-banner-copy">
           <strong>${label}</strong>
-          <span>${escapeHtml(last.title)}${escapeHtml(courseBit)}</span>
+          <span>${escapeHtml(last.title)}${escapeHtml(courseBit)}${
+            when ? ` <em class="resume-when">· ${escapeHtml(when)}</em>` : ""
+          }</span>
         </div>
         <div class="resume-banner-actions">
-          <a class="btn btn-primary" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Open lesson</a>
+          <a class="btn btn-primary resume-cta-pulse" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Open lesson</a>
           ${last.page ? `<a class="btn btn-secondary" href="${escapeHtml(last.page)}">Course home</a>` : ""}
           ${
             lastQuiz && lastQuiz.quiz
@@ -1706,6 +1869,7 @@
     document.dispatchEvent(
       new CustomEvent("pf:persona-changed", { detail: { persona: PERSONAS[id] } })
     );
+    showToast(`Learning focus: ${PERSONAS[id].label}`, { tone: "success" });
     return PERSONAS[id];
   };
 
@@ -1782,6 +1946,1276 @@
     host.querySelector("[data-persona-clear]")?.addEventListener("click", () => clearPersona());
   };
 
+  /** Stamp footers with current year + last maintenance date. */
+  const enhanceFooters = () => {
+    document.querySelectorAll("footer.footer").forEach((footer) => {
+      if (footer.querySelector(".site-meta")) return;
+      const meta = document.createElement("p");
+      meta.className = "site-meta";
+      meta.innerHTML = `© ${SITE_YEAR} Programming Foundations · Last maintained ${SITE_MAINTAINED_LABEL}`;
+      footer.appendChild(meta);
+    });
+  };
+
+  /** Compact sticky header after scroll for more reading space. */
+  const wireHeaderScroll = () => {
+    const header = document.querySelector(".site-header");
+    if (!header) return;
+    const onScroll = () => {
+      header.classList.toggle("is-compact", window.scrollY > 28);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  };
+
+  /** Floating back-to-top control once the learner scrolls past the fold. */
+  const mountBackToTop = () => {
+    if (document.getElementById("pf-back-top")) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.id = "pf-back-top";
+    btn.className = "back-to-top";
+    btn.setAttribute("aria-label", "Back to top");
+    btn.innerHTML = '<span aria-hidden="true">↑</span>';
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+    });
+    document.body.appendChild(btn);
+    const onScroll = () => {
+      btn.classList.toggle("is-visible", window.scrollY > 420);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  };
+
+  /** Thin reading progress bar under the sticky header. */
+  const mountReadingProgress = () => {
+    if (document.getElementById("pf-read-progress")) return;
+    const onLesson = Boolean(document.getElementById("lesson-content"));
+    const bar = document.createElement("div");
+    bar.id = "pf-read-progress";
+    bar.className = "read-progress";
+    bar.setAttribute("role", "progressbar");
+    bar.setAttribute("aria-valuemin", "0");
+    bar.setAttribute("aria-valuemax", "100");
+    bar.setAttribute("aria-valuenow", "0");
+    bar.setAttribute("aria-label", "Page reading progress");
+    bar.innerHTML =
+      '<div class="read-progress__fill"></div>' +
+      (onLesson ? '<span class="read-progress__label" hidden>0%</span>' : "");
+    document.body.appendChild(bar);
+    const fill = bar.querySelector(".read-progress__fill");
+    const label = bar.querySelector(".read-progress__label");
+    const update = () => {
+      const doc = document.documentElement;
+      const max = Math.max(doc.scrollHeight - window.innerHeight, 1);
+      const pct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
+      const rounded = Math.round(pct);
+      if (fill) fill.style.width = `${pct}%`;
+      bar.setAttribute("aria-valuenow", String(rounded));
+      if (label) {
+        label.textContent = `${rounded}%`;
+        label.hidden = rounded < 4;
+        label.classList.toggle("is-near-end", rounded >= 92);
+      }
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+  };
+
+  /** Soft status toast for progress / interactive feedback. */
+  let toastTimer = null;
+  const showToast = (message, { tone = "info" } = {}) => {
+    const text = String(message || "").trim();
+    if (!text) return;
+    let host = document.getElementById("pf-toast");
+    if (!host) {
+      host = document.createElement("div");
+      host.id = "pf-toast";
+      host.className = "pf-toast";
+      host.setAttribute("role", "status");
+      host.setAttribute("aria-live", "polite");
+      document.body.appendChild(host);
+      if (!document.documentElement.dataset.pfToastEsc) {
+        document.documentElement.dataset.pfToastEsc = "1";
+        document.addEventListener("keydown", (event) => {
+          if (event.key !== "Escape") return;
+          const toast = document.getElementById("pf-toast");
+          if (!toast?.classList.contains("is-visible")) return;
+          toast.classList.remove("is-visible");
+          if (toastTimer) window.clearTimeout(toastTimer);
+        });
+      }
+    }
+    host.dataset.tone = tone;
+    host.textContent = text;
+    host.classList.add("is-visible");
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      host.classList.remove("is-visible");
+    }, 2800);
+  };
+
+  /** Gentle scroll-reveal for section content across pages. */
+  const enhanceScrollReveal = () => {
+    const main = document.getElementById("main");
+    if (main) main.classList.add("page-enter");
+    if (prefersReducedMotion()) return;
+    const targets = document.querySelectorAll(
+      "main .section, main .widget-section, main .help-card, main .feature-card, main .course-tile, main .step, main .support-panel, main .persona-picker"
+    );
+    if (!targets.length || !("IntersectionObserver" in window)) return;
+    targets.forEach((el, i) => {
+      if (el.classList.contains("reveal") || el.closest(".hero-bleed")) return;
+      el.classList.add("reveal");
+      el.style.setProperty("--reveal-delay", `${Math.min(i % 6, 5) * 40}ms`);
+    });
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-inview");
+          io.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  };
+
+  /** Soft pulse on matcher / playground success for clearer feedback. */
+  const enhanceInteractiveSurfaces = () => {
+    const matcher = document.getElementById("matcher-result");
+    if (matcher) {
+      const pulse = () => {
+        matcher.classList.remove("is-fresh");
+        void matcher.offsetWidth;
+        matcher.classList.add("is-fresh");
+      };
+      const mo = new MutationObserver(pulse);
+      mo.observe(matcher, { childList: true, subtree: true });
+    }
+    const output = document.getElementById("playground-output");
+    if (output) {
+      const pulse = () => {
+        output.classList.remove("is-fresh");
+        void output.offsetWidth;
+        output.classList.add("is-fresh");
+      };
+      const mo = new MutationObserver(pulse);
+      mo.observe(output, { characterData: true, childList: true, subtree: true });
+    }
+  };
+
+  /** Resolve COURSE_MODULE_MAP key from a tile heading. */
+  const resolveCourseMapKey = (label) => {
+    const name = String(label || "").trim();
+    if (!name) return "";
+    if (COURSE_MODULE_MAP[name]) return name;
+    const withCourse = `${name} Course`;
+    if (COURSE_MODULE_MAP[withCourse]) return withCourse;
+    const foundations = `${name} Foundations Course`;
+    if (COURSE_MODULE_MAP[foundations]) return foundations;
+    // Donor hubs use short titles like "AWS Cloud" → "AWS Cloud Course"
+    const found = Object.keys(COURSE_MODULE_MAP).find(
+      (key) => key === name || key.startsWith(`${name} `) || key.replace(/ Course$/, "") === name
+    );
+    return found || "";
+  };
+
+  /** Show live progress chips on course tiles when progress exists. */
+  const enhanceCourseTiles = () => {
+    const last = getLastLesson();
+    const lastCourse = String(last?.course || "").trim().toLowerCase();
+    document.querySelectorAll(".course-tile").forEach((tile) => {
+      if (tile.querySelector(".course-tile-progress")) return;
+      const heading = tile.querySelector("h3, h4");
+      const name = (heading?.textContent || "").trim();
+      const mapKey = resolveCourseMapKey(name);
+      if (!mapKey || !COURSE_MODULE_MAP[mapKey]) return;
+      const progress = courseProgress(mapKey);
+      if (!progress.total) return;
+      tile.dataset.pfProgressPct = String(progress.percent || 0);
+      tile.dataset.pfProgressDone = String(progress.done || 0);
+      tile.dataset.pfProgressTotal = String(progress.total || 0);
+      const chip = document.createElement("p");
+      chip.className = "course-tile-progress";
+      chip.setAttribute("aria-label", `${name} progress`);
+      const ring = document.createElement("span");
+      ring.className = "course-tile-ring";
+      ring.setAttribute("aria-hidden", "true");
+      ring.style.setProperty("--pct", String(progress.percent || 0));
+      const label = document.createElement("span");
+      label.className = "course-tile-progress__label";
+      if (progress.done === 0) {
+        label.textContent = `${progress.total} modules · not started`;
+      } else if (progress.done >= progress.total) {
+        label.innerHTML = `<strong>Complete</strong> · ${progress.total} modules`;
+        tile.classList.add("is-complete");
+      } else {
+        label.innerHTML = `<strong>${progress.percent}%</strong> · ${progress.done} of ${progress.total} modules`;
+        tile.classList.add("is-in-progress");
+      }
+      chip.appendChild(ring);
+      chip.appendChild(label);
+      const body = tile.querySelector(".course-tile-body") || tile;
+      const buttons = body.querySelector(".button-row");
+      if (buttons) body.insertBefore(chip, buttons);
+      else body.appendChild(chip);
+
+      // Soft “last opened” cue for the course matching the learner’s last lesson.
+      if (
+        lastCourse &&
+        !tile.querySelector(".course-tile-last") &&
+        (mapKey.toLowerCase() === lastCourse ||
+          mapKey.toLowerCase().startsWith(lastCourse) ||
+          lastCourse.startsWith(name.toLowerCase()) ||
+          name.toLowerCase().includes(lastCourse.replace(/ course$/, "")))
+      ) {
+        tile.classList.add("is-last-opened");
+        const badge = document.createElement("span");
+        badge.className = "course-tile-last";
+        badge.textContent = "Last opened";
+        const titleRow = heading?.parentElement || body;
+        if (heading) heading.insertAdjacentElement("afterend", badge);
+        else titleRow.prepend(badge);
+      }
+    });
+  };
+
+  /** Highlight deep-linked steps (Start Here, Help anchors). */
+  const enhanceHashTargets = () => {
+    const apply = () => {
+      document.querySelectorAll(".is-hash-target").forEach((el) => {
+        el.classList.remove("is-hash-target");
+      });
+      const id = (location.hash || "").replace(/^#/, "");
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (!target) return;
+      target.classList.add("is-hash-target");
+      if (!prefersReducedMotion()) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+    apply();
+    window.addEventListener("hashchange", apply);
+  };
+
+  /** Live-filter course tiles on the Courses page. */
+  const wireCourseTileFilter = () => {
+    const input = document.getElementById("course-tile-filter");
+    const status = document.getElementById("course-tile-filter-status");
+    const tiles = Array.from(document.querySelectorAll(".course-tile"));
+    if (!input || !tiles.length) return;
+    const apply = () => {
+      const q = input.value.trim().toLowerCase();
+      let shown = 0;
+      tiles.forEach((tile) => {
+        const hay = tile.textContent.toLowerCase();
+        const match = !q || hay.includes(q);
+        tile.hidden = !match;
+        if (match) shown += 1;
+      });
+      if (status) {
+        status.textContent = q
+          ? shown
+            ? `${shown} course${shown === 1 ? "" : "s"} match “${input.value.trim()}”.`
+            : "No courses match — try another word."
+          : "";
+        status.classList.toggle("is-empty", Boolean(q) && shown === 0);
+      }
+      let empty = document.getElementById("course-tile-filter-empty");
+      if (q && shown === 0) {
+        if (!empty) {
+          empty = document.createElement("p");
+          empty.id = "course-tile-filter-empty";
+          empty.className = "course-filter-empty note";
+          empty.innerHTML =
+            'Nothing matched. <button type="button" class="chip-btn" data-clear-filter>Clear filter</button>';
+          input.parentElement?.appendChild(empty);
+          empty.querySelector("[data-clear-filter]")?.addEventListener("click", () => {
+            input.value = "";
+            input.dispatchEvent(new Event("input", { bubbles: true }));
+            input.focus();
+          });
+        }
+        empty.hidden = false;
+      } else if (empty) {
+        empty.hidden = true;
+      }
+    };
+    input.addEventListener("input", apply);
+  };
+
+  /** Press "/" to jump to the nearest page search/filter field. */
+  const wireQuickFindShortcut = () => {
+    const candidates = [
+      document.getElementById("course-tile-filter"),
+      document.getElementById("help-filter"),
+      document.getElementById("tutorial-filter"),
+      document.getElementById("course-search"),
+    ].filter(Boolean);
+    if (!candidates.length) return;
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "/" || event.metaKey || event.ctrlKey || event.altKey) return;
+      const tag = (event.target && event.target.tagName) || "";
+      if (/^(INPUT|TEXTAREA|SELECT)$/i.test(tag) || event.target?.isContentEditable) return;
+      event.preventDefault();
+      const field = candidates[0];
+      field.focus();
+      if (typeof field.select === "function") field.select();
+    });
+  };
+
+  /** Mark current path nodes for clearer progress feedback. */
+  const enhancePathNodes = () => {
+    const apply = () => {
+      document.querySelectorAll(".path-node").forEach((node) => {
+        const alive = node.classList.contains("is-complete") || node.classList.contains("is-active");
+        node.classList.toggle("path-node--alive", alive);
+      });
+    };
+    apply();
+    document.querySelectorAll(".path-viz").forEach((viz) => {
+      if (viz.dataset.pfPathObserved) return;
+      viz.dataset.pfPathObserved = "1";
+      const mo = new MutationObserver(apply);
+      mo.observe(viz, { attributes: true, subtree: true, attributeFilter: ["class"] });
+    });
+    // Page scripts sync path state after boot — catch the late update.
+    window.setTimeout(apply, 0);
+    window.setTimeout(apply, 120);
+  };
+
+  const isTypingTarget = (target) => {
+    const tag = (target && target.tagName) || "";
+    return /^(INPUT|TEXTAREA|SELECT)$/i.test(tag) || Boolean(target?.isContentEditable);
+  };
+
+  /** Press “?” for a lightweight keyboard shortcuts sheet. */
+  const mountKeyboardShortcuts = () => {
+    if (document.getElementById("pf-shortcut-sheet")) return;
+    const sheet = document.createElement("div");
+    sheet.id = "pf-shortcut-sheet";
+    sheet.className = "shortcut-sheet";
+    sheet.hidden = true;
+    sheet.setAttribute("role", "dialog");
+    sheet.setAttribute("aria-modal", "true");
+    sheet.setAttribute("aria-label", "Keyboard shortcuts");
+    sheet.innerHTML = `
+      <div class="shortcut-sheet__panel">
+        <div class="shortcut-sheet__head">
+          <strong>Keyboard shortcuts</strong>
+          <button type="button" class="shortcut-sheet__close" aria-label="Close shortcuts">Close</button>
+        </div>
+        <ul class="shortcut-sheet__list">
+          <li><kbd>?</kbd> <span>Show or hide this help</span></li>
+          <li><kbd>/</kbd> <span>Jump to page search or filter</span></li>
+          <li><kbd>g</kbd> then <kbd>h</kbd> / <kbd>c</kbd> / <kbd>s</kbd> / <kbd>a</kbd> / <kbd>t</kbd> / <kbd>e</kbd> <span>Go Home / Courses / Start Here / Account / Tutorials / Help</span></li>
+          <li><kbd>[</kbd> / <kbd>]</kbd> <span>Previous / next lesson</span></li>
+          <li><kbd>n</kbd> <span>Open the “Up next” module</span></li>
+          <li><kbd>j</kbd> / <kbd>k</kbd> <span>Next / previous module in the list</span></li>
+          <li><kbd>1</kbd>–<kbd>4</kbd> / <kbd>A</kbd>–<kbd>D</kbd> <span>Pick a quiz answer</span></li>
+          <li><kbd>Enter</kbd> <span>Check quiz answers or open focused module</span></li>
+          <li><kbd>f</kbd> <span>Focus mode (lessons)</span></li>
+          <li><kbd>Ctrl</kbd> + <kbd>Enter</kbd> <span>Run playground (home)</span></li>
+          <li><kbd>Esc</kbd> <span>Close dialogs, toast, go-chord, and this sheet</span></li>
+        </ul>
+        <p class="note">Shortcuts skip when you are typing in a field.</p>
+      </div>`;
+    document.body.appendChild(sheet);
+    const close = () => {
+      sheet.hidden = true;
+    };
+    const open = () => {
+      sheet.hidden = false;
+      sheet.querySelector(".shortcut-sheet__close")?.focus();
+    };
+    sheet.querySelector(".shortcut-sheet__close")?.addEventListener("click", close);
+    sheet.addEventListener("click", (event) => {
+      if (event.target === sheet) close();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !sheet.hidden) {
+        event.preventDefault();
+        close();
+        return;
+      }
+      if (event.key !== "?" || event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      event.preventDefault();
+      if (sheet.hidden) open();
+      else close();
+    });
+  };
+
+  /** Compact floating resume chip when the main banner scrolls out of view. */
+  const mountStickyResume = () => {
+    if (document.getElementById("pf-sticky-resume")) return;
+    const chip = document.createElement("a");
+    chip.id = "pf-sticky-resume";
+    chip.className = "sticky-resume";
+    chip.hidden = true;
+    document.body.appendChild(chip);
+
+    const sync = () => {
+      const host = document.getElementById("pf-resume-host");
+      const banner = host?.querySelector(".resume-banner");
+      const primary = banner?.querySelector(".resume-banner-actions .btn-primary");
+      if (!host || host.hidden || !banner || !primary) {
+        chip.hidden = true;
+        return;
+      }
+      const href = primary.getAttribute("href") || "";
+      const label =
+        banner.querySelector(".resume-banner-copy strong")?.textContent?.trim() || "Continue learning";
+      chip.href = href;
+      chip.textContent = label;
+      const rect = banner.getBoundingClientRect();
+      const outOfView = rect.bottom < 8;
+      chip.hidden = !outOfView || !href;
+    };
+
+    sync();
+    window.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync, { passive: true });
+    const host = document.getElementById("pf-resume-host");
+    if (host) {
+      const mo = new MutationObserver(sync);
+      mo.observe(host, { childList: true, subtree: true, attributes: true });
+    }
+  };
+
+  /** Estimate reading time for the open lesson. */
+  const enhanceLessonReadingMeta = () => {
+    const content = document.getElementById("lesson-content");
+    const title = document.getElementById("lesson-title");
+    if (!content || !title) return;
+    let meta = document.getElementById("lesson-reading-meta");
+    if (!meta) {
+      meta = document.createElement("p");
+      meta.id = "lesson-reading-meta";
+      meta.className = "lesson-reading-meta note";
+      title.insertAdjacentElement("afterend", meta);
+    }
+    const update = () => {
+      const text = (content.innerText || "").replace(/\s+/g, " ").trim();
+      if (!text || /loading|unavailable/i.test(title.textContent || "")) {
+        meta.hidden = true;
+        meta.textContent = "";
+        return;
+      }
+      const words = text.split(" ").filter(Boolean).length;
+      const minutes = Math.max(1, Math.round(words / 200));
+      meta.hidden = false;
+      meta.textContent = `About ${minutes} min read · ${words.toLocaleString()} words`;
+    };
+    update();
+    const mo = new MutationObserver(update);
+    mo.observe(content, { childList: true, subtree: true, characterData: true });
+  };
+
+  /** One-click copy of the current lesson/quiz URL. */
+  const mountCopyLinkButton = () => {
+    const row =
+      document.getElementById("lesson-actions-row") ||
+      document.querySelector("#quiz-actions .button-row");
+    if (!row || row.querySelector("[data-pf-copy-link]")) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-ghost";
+    btn.setAttribute("data-pf-copy-link", "1");
+    btn.textContent = "Copy link";
+    btn.addEventListener("click", async () => {
+      const url = window.location.href;
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(url);
+        } else {
+          const input = document.createElement("input");
+          input.value = url;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand("copy");
+          input.remove();
+        }
+        showToast("Link copied", { tone: "success" });
+        btn.textContent = "Copied";
+        window.setTimeout(() => {
+          btn.textContent = "Copy link";
+        }, 1600);
+      } catch (error) {
+        showToast("Could not copy — copy from the address bar", { tone: "info" });
+      }
+    });
+    row.appendChild(btn);
+  };
+
+  /** Live-filter tutorial clips once the catalog has rendered. */
+  const wireTutorialFilter = () => {
+    const input = document.getElementById("tutorial-filter");
+    const status = document.getElementById("tutorial-filter-status");
+    if (!input) return;
+    const apply = () => {
+      const clips = Array.from(document.querySelectorAll(".promo-clip"));
+      if (!clips.length) {
+        if (status) status.textContent = "";
+        return;
+      }
+      const q = input.value.trim().toLowerCase();
+      let shown = 0;
+      clips.forEach((clip) => {
+        const hay = clip.textContent.toLowerCase();
+        const match = !q || hay.includes(q);
+        clip.hidden = !match;
+        if (match) shown += 1;
+      });
+      if (status) {
+        status.textContent = q
+          ? shown
+            ? `${shown} tutorial${shown === 1 ? "" : "s"} match “${input.value.trim()}”.`
+            : "No tutorials match — try setup, Python, or captions."
+          : "";
+      }
+    };
+    input.addEventListener("input", apply);
+    const catalog = document.getElementById("tutorial-catalog");
+    if (catalog) {
+      const mo = new MutationObserver(apply);
+      mo.observe(catalog, { childList: true, subtree: true });
+    }
+    apply();
+  };
+
+  /** Clarify links that open a new tab. */
+  const enhanceExternalLinks = () => {
+    document.querySelectorAll('a[target="_blank"]').forEach((anchor) => {
+      if (!anchor.getAttribute("rel")) {
+        anchor.setAttribute("rel", "noopener noreferrer");
+      }
+      if (!anchor.classList.contains("is-external")) {
+        anchor.classList.add("is-external");
+      }
+      const label = (anchor.getAttribute("aria-label") || anchor.textContent || "").trim();
+      if (label && !/new (tab|window)/i.test(label) && !anchor.getAttribute("aria-label")) {
+        anchor.setAttribute("aria-label", `${label} (opens in a new tab)`);
+      }
+    });
+  };
+
+  /** Dim chrome and widen the lesson column for focused reading. */
+  const mountLessonFocusMode = () => {
+    const content = document.getElementById("lesson-content");
+    if (!content || document.getElementById("pf-focus-toggle")) return;
+    const row =
+      document.getElementById("lesson-actions-row") ||
+      document.querySelector(".lesson-actions .button-row");
+    if (!row) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.id = "pf-focus-toggle";
+    btn.className = "btn btn-ghost";
+    btn.setAttribute("aria-pressed", "false");
+    btn.textContent = "Focus mode";
+    const apply = (on) => {
+      document.body.classList.toggle("is-focus-mode", on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      btn.textContent = on ? "Exit focus" : "Focus mode";
+      try {
+        sessionStorage.setItem("pf-focus-mode", on ? "1" : "0");
+      } catch (error) {
+        /* ignore */
+      }
+    };
+    let on = false;
+    try {
+      on = sessionStorage.getItem("pf-focus-mode") === "1";
+    } catch (error) {
+      on = false;
+    }
+    apply(on);
+    btn.addEventListener("click", () => apply(!document.body.classList.contains("is-focus-mode")));
+    row.appendChild(btn);
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && document.body.classList.contains("is-focus-mode")) {
+        const sheet = document.getElementById("pf-shortcut-sheet");
+        if (sheet && !sheet.hidden) return;
+        apply(false);
+        return;
+      }
+      if (event.key !== "f" && event.key !== "F") return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      if (!document.getElementById("lesson-content")) return;
+      event.preventDefault();
+      apply(!document.body.classList.contains("is-focus-mode"));
+    });
+  };
+
+  /** Bracket keys jump previous / next lesson when nav links exist. */
+  const wireLessonNavKeys = () => {
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "[" && event.key !== "]") return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const nav = document.getElementById("lesson-nav");
+      if (!nav) return;
+      const links = Array.from(nav.querySelectorAll("a[href]"));
+      if (!links.length) return;
+      const target = event.key === "[" ? links[0] : links[links.length - 1];
+      if (!target?.href) return;
+      event.preventDefault();
+      window.location.href = target.href;
+    });
+  };
+
+  /** Remember scroll depth per lesson so returning learners land near where they stopped. */
+  const mountLessonScrollMemory = () => {
+    const content = document.getElementById("lesson-content");
+    if (!content) return;
+    const params = new URLSearchParams(window.location.search);
+    const path = params.get("path") || "";
+    if (!path) return;
+    const storageKey = `pf-lesson-scroll:${path}`;
+    let restored = false;
+    const save = () => {
+      try {
+        sessionStorage.setItem(
+          storageKey,
+          JSON.stringify({ y: Math.round(window.scrollY), ts: Date.now() })
+        );
+      } catch (error) {
+        /* ignore */
+      }
+    };
+    let timer = null;
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(save, 180);
+      },
+      { passive: true }
+    );
+    window.addEventListener("pagehide", save);
+    const tryRestore = () => {
+      if (restored) return;
+      let saved = null;
+      try {
+        saved = JSON.parse(sessionStorage.getItem(storageKey) || "null");
+      } catch (error) {
+        saved = null;
+      }
+      if (!saved || typeof saved.y !== "number" || saved.y < 120) return;
+      if (content.innerText.trim().length < 80) return;
+      restored = true;
+      const y = saved.y;
+      window.requestAnimationFrame(() => {
+        window.scrollTo({ top: y, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+        showToast("Restored your place in this lesson", { tone: "info" });
+      });
+    };
+    const mo = new MutationObserver(() => tryRestore());
+    mo.observe(content, { childList: true, subtree: true, characterData: true });
+    window.setTimeout(tryRestore, 400);
+    window.setTimeout(tryRestore, 1200);
+  };
+
+  /** Number keys / letters select the focused quiz question; Enter checks answers. */
+  const wireQuizKeyboard = () => {
+    if (document.documentElement.dataset.pfQuizKeys === "1") return;
+    document.documentElement.dataset.pfQuizKeys = "1";
+    const hintHost = () => {
+      const actions = document.getElementById("quiz-actions");
+      if (!actions || actions.querySelector(".quiz-key-hint")) return;
+      const hint = document.createElement("p");
+      hint.className = "quiz-key-hint note";
+      hint.innerHTML =
+        'Tip: press <kbd>1</kbd>–<kbd>4</kbd> or <kbd>A</kbd>–<kbd>D</kbd> to answer · <kbd>Enter</kbd> to check · <kbd>?</kbd> for more shortcuts.';
+      actions.prepend(hint);
+      enhancePressFeedback();
+    };
+    hintHost();
+    const moRoot = document.getElementById("quiz-container") || document.body;
+    const mo = new MutationObserver(hintHost);
+    mo.observe(moRoot, { childList: true, subtree: true });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const questions = Array.from(document.querySelectorAll(".quiz-question"));
+      if (!questions.length) return;
+
+      if (event.key === "Enter") {
+        const check = document.getElementById("check-answers");
+        if (!check || check.disabled || check.hidden) return;
+        event.preventDefault();
+        check.click();
+        return;
+      }
+
+      let index = -1;
+      if (/^[1-9]$/.test(event.key)) index = Number(event.key) - 1;
+      else if (/^[a-dA-D]$/.test(event.key)) index = event.key.toUpperCase().charCodeAt(0) - 65;
+      if (index < 0) return;
+
+      const active =
+        questions.find((q) => q.contains(document.activeElement)) ||
+        questions.find((q) => {
+          const checked = q.querySelector("input[type='radio']:checked");
+          return !checked;
+        }) ||
+        questions[0];
+      const options = Array.from(active.querySelectorAll(".quiz-option input[type='radio']"));
+      if (!options[index]) return;
+      event.preventDefault();
+      options[index].checked = true;
+      options[index].dispatchEvent(new Event("change", { bubbles: true }));
+      options[index].focus({ preventScroll: true });
+      active.classList.add("is-keyed");
+      window.setTimeout(() => active.classList.remove("is-keyed"), 420);
+    });
+  };
+
+  /** Compact progress rail above module lists on course hub pages. */
+  const mountCourseHubRail = () => {
+    const lists = Array.from(document.querySelectorAll(".module-list"));
+    if (!lists.length) return;
+    lists.forEach((list) => {
+      if (list.previousElementSibling?.classList?.contains("course-hub-rail")) return;
+      const items = Array.from(list.querySelectorAll(".module-list__item"));
+      if (!items.length) return;
+      const done = items.filter((li) => li.classList.contains("is-done")).length;
+      const total = items.length;
+      const next = items.find((li) => li.classList.contains("is-next"));
+      const nextLesson =
+        next?.querySelector(".module-list__action--lesson")?.getAttribute("href") || "";
+      const nextTitle =
+        next?.querySelector(".module-list__title")?.textContent?.trim() || "next module";
+      const rail = document.createElement("div");
+      rail.className = "course-hub-rail";
+      rail.setAttribute("role", "status");
+      const pct = total ? Math.round((done / total) * 100) : 0;
+      const remaining = Math.max(total - done, 0);
+      const etaMins = remaining * 12;
+      const etaLabel =
+        remaining === 0
+          ? ""
+          : etaMins < 60
+            ? `About ${etaMins} min left`
+            : etaMins % 60 === 0
+              ? `About ${etaMins / 60} hr left`
+              : `About ${Math.floor(etaMins / 60)} hr ${etaMins % 60} min left`;
+      rail.innerHTML = `
+        <div class="course-hub-rail__copy">
+          <strong>${done} of ${total} modules</strong>
+          <span>${
+            remaining === 0
+              ? "Course complete — nice work."
+              : remaining === 1
+                ? "1 module left."
+                : `${remaining} modules left.`
+          }${etaLabel ? ` · ${etaLabel}` : ""}</span>
+        </div>
+        <div class="course-hub-rail__meter" aria-hidden="true"><span style="width:${pct}%"></span></div>
+        ${
+          remaining === 0
+            ? `<a class="btn btn-primary course-hub-rail__cta" href="certificate.html">Claim certificate</a>`
+            : nextLesson
+              ? `<a class="btn btn-secondary course-hub-rail__cta" href="${escapeHtml(nextLesson)}">Continue · ${escapeHtml(nextTitle)}</a>`
+              : ""
+        }`;
+      list.parentElement?.insertBefore(rail, list);
+    });
+  };
+
+  /** Refresh hub rails after module completion state syncs. */
+  const refreshCourseHubRails = () => {
+    document.querySelectorAll(".course-hub-rail").forEach((el) => el.remove());
+    mountCourseHubRail();
+  };
+
+  /** Sitewide learning momentum chip (home + start-here). */
+  const mountLearningMomentum = () => {
+    const host =
+      document.getElementById("pf-momentum-host") ||
+      document.getElementById("path-viz-home") ||
+      document.querySelector(".page-home #pf-resume-host");
+    if (!host || document.getElementById("pf-momentum")) return;
+    const completions = getCompletions();
+    const quizzes = getQuizCompletions();
+    const quizPass = Object.values(quizzes || {}).filter((q) => q && q.passed).length;
+    const lessonCount = Array.isArray(completions) ? completions.length : 0;
+    if (lessonCount === 0 && quizPass === 0) return;
+
+    const chip = document.createElement("div");
+    chip.id = "pf-momentum";
+    chip.className = "learning-momentum";
+    chip.setAttribute("role", "status");
+    const bits = [];
+    if (lessonCount) bits.push(`${lessonCount} lesson${lessonCount === 1 ? "" : "s"} done`);
+    if (quizPass) bits.push(`${quizPass} quiz${quizPass === 1 ? "" : "zes"} passed`);
+    const streak = getStudyStreak();
+    if (streak >= 2) bits.push(`${streak}-day streak`);
+    else if (streak === 1) bits.push("studied today");
+    const last = getLastLesson();
+    const when = last?.ts ? formatRelativeTime(last.ts) : "";
+    chip.innerHTML = `
+      <span class="learning-momentum__pulse" aria-hidden="true"></span>
+      <div class="learning-momentum__copy">
+        <strong>Your momentum</strong>
+        <span>${escapeHtml(bits.join(" · "))}${when ? ` · last active ${escapeHtml(when)}` : ""}</span>
+      </div>`;
+    if (host.id === "pf-resume-host") {
+      host.insertAdjacentElement("afterend", chip);
+    } else if (host.id === "path-viz-home") {
+      host.insertAdjacentElement("beforebegin", chip);
+    } else {
+      host.appendChild(chip);
+    }
+  };
+
+  /** Celebrate mark-complete with a brief button flourish. */
+  const wireCompletionCelebrate = () => {
+    const btn = document.getElementById("mark-complete");
+    if (!btn || btn.dataset.pfCelebrate === "1") return;
+    btn.dataset.pfCelebrate = "1";
+    btn.addEventListener("click", () => {
+      window.requestAnimationFrame(() => {
+        const pressed = /complete|done|✓/i.test(btn.textContent || "") || btn.getAttribute("aria-pressed") === "true";
+        btn.classList.remove("is-celebrating");
+        void btn.offsetWidth;
+        if (pressed || btn.classList.contains("is-complete")) {
+          btn.classList.add("is-celebrating");
+          window.setTimeout(() => btn.classList.remove("is-celebrating"), 900);
+        }
+      });
+    });
+  };
+
+  /** Press “n” to open the current Up next module lesson. */
+  const wireNextModuleHotkey = () => {
+    if (document.documentElement.dataset.pfNextKey === "1") return;
+    document.documentElement.dataset.pfNextKey = "1";
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "n" && event.key !== "N") return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const next =
+        document.querySelector(".module-list__item.is-next .module-list__action--lesson") ||
+        document.querySelector(".course-hub-rail__cta");
+      if (!next?.href) return;
+      event.preventDefault();
+      window.location.href = next.href;
+    });
+  };
+
+  /** j/k moves focus through module list items; Enter opens the lesson. */
+  const wireModuleListKeys = () => {
+    if (document.documentElement.dataset.pfModuleKeys === "1") return;
+    if (!document.querySelector(".module-list__item")) return;
+    document.documentElement.dataset.pfModuleKeys = "1";
+    let index = -1;
+    const items = () => Array.from(document.querySelectorAll(".module-list__item:not([hidden])"));
+    const paint = (list, idx) => {
+      list.forEach((el, i) => el.classList.toggle("is-kbd-focus", i === idx));
+      const active = list[idx];
+      if (active) {
+        active.scrollIntoView({ block: "nearest", behavior: prefersReducedMotion() ? "auto" : "smooth" });
+      }
+    };
+    document.addEventListener("keydown", (event) => {
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const list = items();
+      if (!list.length) return;
+      const key = event.key;
+      if (key === "j" || key === "J" || key === "k" || key === "K") {
+        event.preventDefault();
+        if (index < 0) {
+          const nextIdx = list.findIndex((el) => el.classList.contains("is-next"));
+          index = nextIdx >= 0 ? nextIdx : 0;
+        } else if (key === "j" || key === "J") {
+          index = Math.min(list.length - 1, index + 1);
+        } else {
+          index = Math.max(0, index - 1);
+        }
+        paint(list, index);
+        return;
+      }
+      if (key === "Enter" && index >= 0) {
+        const lesson = list[index]?.querySelector(".module-list__action--lesson");
+        if (!lesson?.href) return;
+        // Avoid stealing Enter from quiz check when both exist on page.
+        if (document.getElementById("check-answers") && document.activeElement?.closest?.(".quiz-question")) {
+          return;
+        }
+        event.preventDefault();
+        window.location.href = lesson.href;
+      }
+    });
+  };
+
+  /** Soft pulse on playground output after Run. */
+  const wirePlaygroundFeel = () => {
+    const runBtn = document.getElementById("playground-run");
+    const output = document.getElementById("playground-output");
+    if (!runBtn || !output || runBtn.dataset.pfFeel === "1") return;
+    runBtn.dataset.pfFeel = "1";
+    runBtn.addEventListener("click", () => {
+      output.classList.remove("is-fresh");
+      void output.offsetWidth;
+      output.classList.add("is-fresh");
+      window.setTimeout(() => output.classList.remove("is-fresh"), 700);
+    });
+  };
+
+  /** Celebrate when the learning path viz reaches full completion (once per session). */
+  const wirePathCompleteCelebrate = () => {
+    const viz = document.getElementById("path-viz-home");
+    if (!viz || viz.dataset.pfPathCelebrate === "1") return;
+    viz.dataset.pfPathCelebrate = "1";
+    const check = () => {
+      const nodes = Array.from(viz.querySelectorAll(".path-node"));
+      if (nodes.length < 4) return;
+      const allDone = nodes.every((n) => n.classList.contains("is-complete"));
+      if (!allDone) return;
+      try {
+        if (sessionStorage.getItem("pf-path-celebrated") === "1") return;
+        sessionStorage.setItem("pf-path-celebrated", "1");
+      } catch {
+        /* private mode */
+      }
+      viz.classList.add("is-path-complete");
+      showToast("Learning path complete — brilliant work.", { tone: "success" });
+    };
+    check();
+    const mo = new MutationObserver(check);
+    mo.observe(viz, { attributes: true, subtree: true, attributeFilter: ["class"] });
+    window.setTimeout(check, 250);
+  };
+
+  /** Soft page-ready class for first-paint entrance (respects reduced motion via CSS). */
+  const markPageReady = () => {
+    document.documentElement.classList.add("pf-ready");
+  };
+
+  /** Quiz answered-progress strip (dots + count) above the question list. */
+  const mountQuizProgressStrip = () => {
+    const container = document.getElementById("quiz-container");
+    if (!container) return;
+    const sync = () => {
+      const questions = Array.from(container.querySelectorAll(".quiz-question"));
+      if (!questions.length) {
+        document.getElementById("pf-quiz-progress")?.remove();
+        return;
+      }
+      let strip = document.getElementById("pf-quiz-progress");
+      if (!strip) {
+        strip = document.createElement("div");
+        strip.id = "pf-quiz-progress";
+        strip.className = "quiz-progress-strip";
+        strip.setAttribute("role", "status");
+        strip.setAttribute("aria-live", "polite");
+        const actions = document.getElementById("quiz-actions");
+        if (actions) actions.insertAdjacentElement("beforebegin", strip);
+        else container.insertAdjacentElement("beforebegin", strip);
+      }
+      const answered = questions.filter((q) => q.querySelector("input[type='radio']:checked")).length;
+      const total = questions.length;
+      const dots = questions
+        .map((q, i) => {
+          const done = Boolean(q.querySelector("input[type='radio']:checked"));
+          return `<button type="button" class="quiz-progress-strip__dot${done ? " is-answered" : ""}" data-q="${i}" aria-label="Question ${i + 1}${done ? ", answered" : ""}"></button>`;
+        })
+        .join("");
+      strip.innerHTML = `
+        <div class="quiz-progress-strip__copy">
+          <strong>${answered} of ${total} answered</strong>
+          <span>${answered === total ? "Ready to check" : "Pick an answer for each question"}</span>
+        </div>
+        <div class="quiz-progress-strip__dots" aria-hidden="true">${dots}</div>`;
+      strip.querySelectorAll("[data-q]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const idx = Number(btn.getAttribute("data-q"));
+          const target = questions[idx];
+          if (!target) return;
+          target.scrollIntoView({ block: "center", behavior: prefersReducedMotion() ? "auto" : "smooth" });
+          const first = target.querySelector("input[type='radio']");
+          first?.focus({ preventScroll: true });
+        });
+      });
+    };
+    sync();
+    if (container.dataset.pfQuizStrip === "1") return;
+    container.dataset.pfQuizStrip = "1";
+    container.addEventListener("change", sync);
+    const mo = new MutationObserver(sync);
+    mo.observe(container, { childList: true, subtree: true });
+  };
+
+  /** Chord navigation: press g, then h/c/s/a/t/e within ~1s. */
+  const wireGoChords = () => {
+    if (document.documentElement.dataset.pfGoChords === "1") return;
+    document.documentElement.dataset.pfGoChords = "1";
+    let armed = false;
+    let timer = null;
+    const routes = {
+      h: "index.html",
+      c: "courses.html",
+      s: "start-here.html",
+      a: "account.html",
+      t: "tutorials.html",
+      e: "help.html",
+    };
+    const disarm = () => {
+      armed = false;
+      if (timer) {
+        clearTimeout(timer);
+        timer = null;
+      }
+      document.documentElement.classList.remove("pf-go-armed");
+    };
+    document.addEventListener("keydown", (event) => {
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const key = event.key.toLowerCase();
+      if (!armed) {
+        if (key !== "g") return;
+        event.preventDefault();
+        armed = true;
+        document.documentElement.classList.add("pf-go-armed");
+        timer = window.setTimeout(disarm, 1100);
+        return;
+      }
+      if (event.key === "Escape") {
+        event.preventDefault();
+        disarm();
+        return;
+      }
+      const href = routes[key];
+      disarm();
+      if (!href) return;
+      event.preventDefault();
+      window.location.href = href;
+    });
+  };
+
+  /** Soft same-page anchor scrolling for in-page links. */
+  const wireInPageAnchors = () => {
+    if (document.documentElement.dataset.pfInPageAnchors === "1") return;
+    document.documentElement.dataset.pfInPageAnchors = "1";
+    document.addEventListener("click", (event) => {
+      const link = event.target?.closest?.("a[href^='#']");
+      if (!link) return;
+      const href = link.getAttribute("href") || "";
+      if (!href || href === "#") return;
+      const id = decodeURIComponent(href.slice(1));
+      const target = document.getElementById(id);
+      if (!target) return;
+      event.preventDefault();
+      const reduce = prefersReducedMotion();
+      target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+      try {
+        history.pushState(null, "", `#${id}`);
+      } catch {
+        location.hash = id;
+      }
+      target.classList.add("is-hash-target");
+      window.setTimeout(() => target.classList.remove("is-hash-target"), 1600);
+      if (typeof target.focus === "function") {
+        const prevTab = target.getAttribute("tabindex");
+        if (prevTab === null) target.setAttribute("tabindex", "-1");
+        target.focus({ preventScroll: true });
+        if (prevTab === null) {
+          target.addEventListener(
+            "blur",
+            () => target.removeAttribute("tabindex"),
+            { once: true }
+          );
+        }
+      }
+    });
+  };
+
+  /** Session study timer chip on lesson and quiz pages. */
+  const mountStudySessionChip = () => {
+    const onLesson = Boolean(document.getElementById("lesson-content"));
+    const onQuiz = Boolean(document.getElementById("quiz-container"));
+    if (!onLesson && !onQuiz) return;
+    if (document.getElementById("pf-session-chip")) return;
+    const started = Date.now();
+    const chip = document.createElement("div");
+    chip.id = "pf-session-chip";
+    chip.className = "study-session-chip";
+    chip.setAttribute("role", "status");
+    chip.setAttribute("aria-live", "off");
+    chip.hidden = true;
+    document.body.appendChild(chip);
+    const format = (ms) => {
+      const mins = Math.floor(ms / 60000);
+      if (mins < 1) return "Session · just started";
+      if (mins === 1) return "Session · 1 min";
+      if (mins < 60) return `Session · ${mins} min`;
+      const hrs = Math.floor(mins / 60);
+      const rem = mins % 60;
+      return rem ? `Session · ${hrs}h ${rem}m` : `Session · ${hrs}h`;
+    };
+    const sync = () => {
+      const elapsed = Date.now() - started;
+      chip.textContent = format(elapsed);
+      chip.hidden = elapsed < 45 * 1000;
+    };
+    sync();
+    window.setInterval(sync, 15000);
+  };
+
+  /** Near the end of a lesson, gently nudge mark-complete when unfinished. */
+  const mountLessonFinishNudge = () => {
+    const btn = document.getElementById("mark-complete");
+    const content = document.getElementById("lesson-content");
+    if (!btn || !content) return;
+    if (document.getElementById("pf-finish-nudge")) return;
+    const nudge = document.createElement("p");
+    nudge.id = "pf-finish-nudge";
+    nudge.className = "lesson-finish-nudge note";
+    nudge.hidden = true;
+    nudge.innerHTML =
+      'Nearly there — <button type="button" class="linkish" data-finish-nudge>mark this lesson complete</button> when you are ready.';
+    btn.insertAdjacentElement("afterend", nudge);
+    nudge.querySelector("[data-finish-nudge]")?.addEventListener("click", () => {
+      btn.click();
+    });
+    const sync = () => {
+      const bar = document.getElementById("pf-read-progress");
+      const pct = Number(bar?.getAttribute("aria-valuenow") || 0);
+      const done =
+        btn.classList.contains("is-complete") ||
+        /complete|done|✓/i.test(btn.textContent || "") ||
+        btn.getAttribute("aria-pressed") === "true";
+      const show = !done && pct >= 88;
+      nudge.hidden = !show;
+      nudge.classList.toggle("is-visible", show);
+    };
+    sync();
+    window.addEventListener("scroll", sync, { passive: true });
+    btn.addEventListener("click", () => window.setTimeout(sync, 80));
+    const mo = new MutationObserver(sync);
+    mo.observe(btn, { attributes: true, childList: true, characterData: true, subtree: true });
+  };
+
+  /** Brief “Saved” flash when progress is written from mark-complete. */
+  const wireSavedFlash = () => {
+    const btn = document.getElementById("mark-complete");
+    if (!btn || btn.dataset.pfSavedFlash === "1") return;
+    btn.dataset.pfSavedFlash = "1";
+    btn.addEventListener("click", () => {
+      window.setTimeout(() => {
+        const done =
+          btn.classList.contains("is-complete") ||
+          /complete|done|✓/i.test(btn.textContent || "") ||
+          btn.getAttribute("aria-pressed") === "true";
+        if (!done) return;
+        let flash = document.getElementById("pf-saved-flash");
+        if (!flash) {
+          flash = document.createElement("div");
+          flash.id = "pf-saved-flash";
+          flash.className = "saved-flash";
+          flash.setAttribute("aria-hidden", "true");
+          flash.textContent = "Saved";
+          document.body.appendChild(flash);
+        }
+        flash.classList.remove("is-visible");
+        void flash.offsetWidth;
+        flash.classList.add("is-visible");
+        window.setTimeout(() => flash.classList.remove("is-visible"), 1400);
+      }, 60);
+    });
+  };
+
+  /** Soft selected state on course matcher buttons. */
+  const wireMatcherFeel = () => {
+    const root = document.getElementById("matcher-widget");
+    if (!root || root.dataset.pfFeel === "1") return;
+    root.dataset.pfFeel = "1";
+    root.querySelectorAll(".matcher-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        root.querySelectorAll(".matcher-btn").forEach((b) => b.classList.remove("is-selected"));
+        btn.classList.add("is-selected");
+        const result = document.getElementById("matcher-result");
+        if (result) {
+          result.classList.remove("is-revealed");
+          void result.offsetWidth;
+          result.classList.add("is-revealed");
+        }
+      });
+    });
+  };
+
+  /** Soft press feedback on primary interactive controls. */
+  const enhancePressFeedback = () => {
+    document.querySelectorAll(".btn, .chip-btn, .matcher-btn, .quiz-option").forEach((el) => {
+      if (el.dataset.pfPress === "1") return;
+      el.dataset.pfPress = "1";
+      el.classList.add("has-press");
+    });
+  };
+
+  /** Sort course tiles by progress (in-progress first, then % complete). */
+  const wireCourseProgressSort = () => {
+    const host = document.getElementById("course-sort-host");
+    if (!host || host.dataset.pfWired) return;
+    host.dataset.pfWired = "1";
+    const grids = Array.from(document.querySelectorAll("main .section.grid")).filter((grid) =>
+      grid.querySelector(".course-tile")
+    );
+    if (!grids.length) return;
+    const originals = new Map();
+    grids.forEach((grid) => {
+      originals.set(grid, Array.from(grid.children));
+    });
+    host.innerHTML = `
+      <div class="course-sort" role="group" aria-label="Sort courses">
+        <span class="course-sort__label">Sort</span>
+        <button type="button" class="chip-btn is-active" data-sort="default">Default</button>
+        <button type="button" class="chip-btn" data-sort="progress">In progress first</button>
+      </div>`;
+    const apply = (mode) => {
+      host.querySelectorAll("[data-sort]").forEach((btn) => {
+        btn.classList.toggle("is-active", btn.getAttribute("data-sort") === mode);
+      });
+      grids.forEach((grid) => {
+        const base = originals.get(grid) || Array.from(grid.children);
+        const tiles = base.filter((el) => el.classList?.contains("course-tile"));
+        const other = base.filter((el) => !el.classList?.contains("course-tile"));
+        if (mode === "default") {
+          base.forEach((el) => grid.appendChild(el));
+          return;
+        }
+        const ranked = tiles.slice().sort((a, b) => {
+          const aDone = Number(a.dataset.pfProgressDone || 0);
+          const bDone = Number(b.dataset.pfProgressDone || 0);
+          const aTotal = Number(a.dataset.pfProgressTotal || 0);
+          const bTotal = Number(b.dataset.pfProgressTotal || 0);
+          const aPct = Number(a.dataset.pfProgressPct || 0);
+          const bPct = Number(b.dataset.pfProgressPct || 0);
+          const aActive = aDone > 0 && aDone < aTotal ? 1 : 0;
+          const bActive = bDone > 0 && bDone < bTotal ? 1 : 0;
+          if (aActive !== bActive) return bActive - aActive;
+          if (aPct !== bPct) return bPct - aPct;
+          return 0;
+        });
+        ranked.forEach((el) => grid.appendChild(el));
+        other.forEach((el) => grid.appendChild(el));
+      });
+    };
+    host.querySelectorAll("[data-sort]").forEach((btn) => {
+      btn.addEventListener("click", () => apply(btn.getAttribute("data-sort") || "default"));
+    });
+  };
+
   const mountAtmosphere = () => {
     if (document.querySelector(".pf-atmosphere")) return;
     const root = document.createElement("div");
@@ -1796,16 +3230,83 @@
   };
 
   const boot = () => {
-    mountAtmosphere();
-    mountHeader();
-    mountDonateSlots();
-    mountBrandCredit();
-    mountDeviceProgressNotice();
-    mountResumeBanner();
-    mountPersonaPicker();
-    applyPersonaCopy();
-    enhancePlaygroundChallenges();
-    enhanceModuleLists();
+    const run = (label, fn) => {
+      try {
+        fn();
+      } catch (error) {
+        console.warn(`[PF] ${label} failed`, error);
+      }
+    };
+    run("atmosphere", mountAtmosphere);
+    run("header", mountHeader);
+    run("headerScroll", wireHeaderScroll);
+    run("donate", mountDonateSlots);
+    run("brand", mountBrandCredit);
+    run("footers", enhanceFooters);
+    run("deviceProgress", mountDeviceProgressNotice);
+    run("resume", mountResumeBanner);
+    run("stickyResume", mountStickyResume);
+    run("persona", mountPersonaPicker);
+    run("personaCopy", applyPersonaCopy);
+    run("playground", enhancePlaygroundChallenges);
+    run("modules", enhanceModuleLists);
+    run("nextModules", highlightNextModules);
+    run("hubRail", mountCourseHubRail);
+    run("momentum", mountLearningMomentum);
+    run("courseTiles", enhanceCourseTiles);
+    run("reveal", enhanceScrollReveal);
+    run("surfaces", enhanceInteractiveSurfaces);
+    run("press", enhancePressFeedback);
+    run("hash", enhanceHashTargets);
+    run("pathNodes", enhancePathNodes);
+    run("externalLinks", enhanceExternalLinks);
+    run("readingMeta", enhanceLessonReadingMeta);
+    run("copyLink", mountCopyLinkButton);
+    run("focusMode", mountLessonFocusMode);
+    run("scrollMemory", mountLessonScrollMemory);
+    run("lessonNavKeys", wireLessonNavKeys);
+    run("nextModuleKey", wireNextModuleHotkey);
+    run("moduleKeys", wireModuleListKeys);
+    run("quizKeys", wireQuizKeyboard);
+    run("celebrate", wireCompletionCelebrate);
+    run("pathCelebrate", wirePathCompleteCelebrate);
+    run("playgroundFeel", wirePlaygroundFeel);
+    run("matcherFeel", wireMatcherFeel);
+    run("quizStrip", mountQuizProgressStrip);
+    run("goChords", wireGoChords);
+    run("inPageAnchors", wireInPageAnchors);
+    run("sessionChip", mountStudySessionChip);
+    run("finishNudge", mountLessonFinishNudge);
+    run("savedFlash", wireSavedFlash);
+    run("shortcuts", mountKeyboardShortcuts);
+    run("courseFilter", wireCourseTileFilter);
+    run("courseSort", wireCourseProgressSort);
+    run("tutorialFilter", wireTutorialFilter);
+    run("quickFind", wireQuickFindShortcut);
+    run("backTop", mountBackToTop);
+    run("readProgress", mountReadingProgress);
+    // Lesson/module UIs often hydrate after boot.
+    window.setTimeout(() => {
+      run("nextModules:deferred", highlightNextModules);
+      run("hubRail:deferred", refreshCourseHubRails);
+      run("externalLinks:deferred", enhanceExternalLinks);
+      run("copyLink:deferred", mountCopyLinkButton);
+      run("focusMode:deferred", mountLessonFocusMode);
+      run("courseSort:deferred", wireCourseProgressSort);
+      run("celebrate:deferred", wireCompletionCelebrate);
+      run("press:deferred", enhancePressFeedback);
+      run("quizKeys:deferred", wireQuizKeyboard);
+      run("moduleKeys:deferred", wireModuleListKeys);
+      run("pathCelebrate:deferred", wirePathCompleteCelebrate);
+      run("quizStrip:deferred", mountQuizProgressStrip);
+      run("finishNudge:deferred", mountLessonFinishNudge);
+      run("savedFlash:deferred", wireSavedFlash);
+    }, 200);
+    window.setTimeout(() => {
+      run("nextModules:late", highlightNextModules);
+      run("hubRail:late", refreshCourseHubRails);
+    }, 800);
+    run("pageReady", markPageReady);
     if (getToken()) {
       syncProgress().catch(() => {
         /* guest-capable offline */
@@ -1817,6 +3318,8 @@
     PASS_THRESHOLD,
     KEYS,
     START_STEP_ORDER,
+    SITE_YEAR,
+    SITE_MAINTAINED_LABEL,
     COURSE_MODULE_MAP,
     ADVANCED_COURSES,
     PREMIUM_COURSES,
@@ -1853,6 +3356,31 @@
     courseProgress,
     bindProgressUI,
     enhanceModuleLists,
+    highlightNextModules,
+    enhanceCourseTiles,
+    mountCourseHubRail,
+    refreshCourseHubRails,
+    mountLearningMomentum,
+    wireQuizKeyboard,
+    wireNextModuleHotkey,
+    wireModuleListKeys,
+    mountQuizProgressStrip,
+    wireGoChords,
+    wireInPageAnchors,
+    mountStudySessionChip,
+    mountLessonFinishNudge,
+    wireSavedFlash,
+    getStudyStreak,
+    recordActivityDay,
+    formatRelativeTime,
+    showToast,
+    mountKeyboardShortcuts,
+    mountStickyResume,
+    mountCopyLinkButton,
+    mountLessonFocusMode,
+    mountLessonScrollMemory,
+    wireLessonNavKeys,
+    wireCourseProgressSort,
     resetAllProgress,
     getDeviceProgressConsent,
     setDeviceProgressConsent,
