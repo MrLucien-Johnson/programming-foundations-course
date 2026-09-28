@@ -63,7 +63,7 @@
 
   /** Site maintenance stamp — keep year and month current on each audit. */
   const SITE_YEAR = 2026;
-  const SITE_MAINTAINED_LABEL = "21 September 2026";
+  const SITE_MAINTAINED_LABEL = "28 September 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -1726,7 +1726,12 @@
         : !preferQuiz && onCurrentLesson && lastQuiz && lastQuiz.quiz && !onCurrentQuiz;
 
     const dayPartGreeting = () => {
-      const hour = new Date().getHours();
+      const now = new Date();
+      const hour = now.getHours();
+      const weekday = now.getDay(); // 0 Sun … 6 Sat
+      if (weekday === 1 && hour < 12) return "Fresh week ahead";
+      if ((weekday === 0 || weekday === 6) && hour < 12) return "Easy weekend morning";
+      if ((weekday === 0 || weekday === 6) && hour < 17) return "Weekend pace";
       if (hour < 12) return "Good morning";
       if (hour < 17) return "Good afternoon";
       return "Good evening";
@@ -1752,7 +1757,7 @@
           }</span>
         </div>
         <div class="resume-banner-actions">
-          <a class="btn btn-primary" href="quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}">Open quiz</a>
+          <a class="btn btn-primary resume-cta-pulse" href="quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}">Open quiz</a>
           ${
             last && last.path && !onCurrentLesson
               ? `<a class="btn btn-secondary" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Last lesson</a>`
@@ -1784,7 +1789,7 @@
           }</span>
         </div>
         <div class="resume-banner-actions">
-          <a class="btn btn-primary" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Open lesson</a>
+          <a class="btn btn-primary resume-cta-pulse" href="course-viewer.html?path=${encodeURIComponent(last.path)}">Open lesson</a>
           ${last.page ? `<a class="btn btn-secondary" href="${escapeHtml(last.page)}">Course home</a>` : ""}
           ${
             lastQuiz && lastQuiz.quiz
@@ -2308,7 +2313,7 @@
         <ul class="shortcut-sheet__list">
           <li><kbd>?</kbd> <span>Show or hide this help</span></li>
           <li><kbd>/</kbd> <span>Jump to page search or filter</span></li>
-          <li><kbd>g</kbd> then <kbd>h</kbd> / <kbd>c</kbd> / <kbd>s</kbd> / <kbd>a</kbd> <span>Go Home / Courses / Start Here / Account</span></li>
+          <li><kbd>g</kbd> then <kbd>h</kbd> / <kbd>c</kbd> / <kbd>s</kbd> / <kbd>a</kbd> / <kbd>t</kbd> / <kbd>e</kbd> <span>Go Home / Courses / Start Here / Account / Tutorials / Help</span></li>
           <li><kbd>[</kbd> / <kbd>]</kbd> <span>Previous / next lesson</span></li>
           <li><kbd>n</kbd> <span>Open the “Up next” module</span></li>
           <li><kbd>j</kbd> / <kbd>k</kbd> <span>Next / previous module in the list</span></li>
@@ -2316,7 +2321,7 @@
           <li><kbd>Enter</kbd> <span>Check quiz answers or open focused module</span></li>
           <li><kbd>f</kbd> <span>Focus mode (lessons)</span></li>
           <li><kbd>Ctrl</kbd> + <kbd>Enter</kbd> <span>Run playground (home)</span></li>
-          <li><kbd>Esc</kbd> <span>Close dialogs, toast, and this sheet</span></li>
+          <li><kbd>Esc</kbd> <span>Close dialogs, toast, go-chord, and this sheet</span></li>
         </ul>
         <p class="note">Shortcuts skip when you are typing in a field.</p>
       </div>`;
@@ -2951,7 +2956,7 @@
     mo.observe(container, { childList: true, subtree: true });
   };
 
-  /** Chord navigation: press g, then h/c/s/a within ~1s. */
+  /** Chord navigation: press g, then h/c/s/a/t/e within ~1s. */
   const wireGoChords = () => {
     if (document.documentElement.dataset.pfGoChords === "1") return;
     document.documentElement.dataset.pfGoChords = "1";
@@ -2962,6 +2967,8 @@
       c: "courses.html",
       s: "start-here.html",
       a: "account.html",
+      t: "tutorials.html",
+      e: "help.html",
     };
     const disarm = () => {
       armed = false;
@@ -2983,11 +2990,148 @@
         timer = window.setTimeout(disarm, 1100);
         return;
       }
+      if (event.key === "Escape") {
+        event.preventDefault();
+        disarm();
+        return;
+      }
       const href = routes[key];
       disarm();
       if (!href) return;
       event.preventDefault();
       window.location.href = href;
+    });
+  };
+
+  /** Soft same-page anchor scrolling for in-page links. */
+  const wireInPageAnchors = () => {
+    if (document.documentElement.dataset.pfInPageAnchors === "1") return;
+    document.documentElement.dataset.pfInPageAnchors = "1";
+    document.addEventListener("click", (event) => {
+      const link = event.target?.closest?.("a[href^='#']");
+      if (!link) return;
+      const href = link.getAttribute("href") || "";
+      if (!href || href === "#") return;
+      const id = decodeURIComponent(href.slice(1));
+      const target = document.getElementById(id);
+      if (!target) return;
+      event.preventDefault();
+      const reduce = prefersReducedMotion();
+      target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+      try {
+        history.pushState(null, "", `#${id}`);
+      } catch {
+        location.hash = id;
+      }
+      target.classList.add("is-hash-target");
+      window.setTimeout(() => target.classList.remove("is-hash-target"), 1600);
+      if (typeof target.focus === "function") {
+        const prevTab = target.getAttribute("tabindex");
+        if (prevTab === null) target.setAttribute("tabindex", "-1");
+        target.focus({ preventScroll: true });
+        if (prevTab === null) {
+          target.addEventListener(
+            "blur",
+            () => target.removeAttribute("tabindex"),
+            { once: true }
+          );
+        }
+      }
+    });
+  };
+
+  /** Session study timer chip on lesson and quiz pages. */
+  const mountStudySessionChip = () => {
+    const onLesson = Boolean(document.getElementById("lesson-content"));
+    const onQuiz = Boolean(document.getElementById("quiz-container"));
+    if (!onLesson && !onQuiz) return;
+    if (document.getElementById("pf-session-chip")) return;
+    const started = Date.now();
+    const chip = document.createElement("div");
+    chip.id = "pf-session-chip";
+    chip.className = "study-session-chip";
+    chip.setAttribute("role", "status");
+    chip.setAttribute("aria-live", "off");
+    chip.hidden = true;
+    document.body.appendChild(chip);
+    const format = (ms) => {
+      const mins = Math.floor(ms / 60000);
+      if (mins < 1) return "Session · just started";
+      if (mins === 1) return "Session · 1 min";
+      if (mins < 60) return `Session · ${mins} min`;
+      const hrs = Math.floor(mins / 60);
+      const rem = mins % 60;
+      return rem ? `Session · ${hrs}h ${rem}m` : `Session · ${hrs}h`;
+    };
+    const sync = () => {
+      const elapsed = Date.now() - started;
+      chip.textContent = format(elapsed);
+      chip.hidden = elapsed < 45 * 1000;
+    };
+    sync();
+    window.setInterval(sync, 15000);
+  };
+
+  /** Near the end of a lesson, gently nudge mark-complete when unfinished. */
+  const mountLessonFinishNudge = () => {
+    const btn = document.getElementById("mark-complete");
+    const content = document.getElementById("lesson-content");
+    if (!btn || !content) return;
+    if (document.getElementById("pf-finish-nudge")) return;
+    const nudge = document.createElement("p");
+    nudge.id = "pf-finish-nudge";
+    nudge.className = "lesson-finish-nudge note";
+    nudge.hidden = true;
+    nudge.innerHTML =
+      'Nearly there — <button type="button" class="linkish" data-finish-nudge>mark this lesson complete</button> when you are ready.';
+    btn.insertAdjacentElement("afterend", nudge);
+    nudge.querySelector("[data-finish-nudge]")?.addEventListener("click", () => {
+      btn.click();
+    });
+    const sync = () => {
+      const bar = document.getElementById("pf-read-progress");
+      const pct = Number(bar?.getAttribute("aria-valuenow") || 0);
+      const done =
+        btn.classList.contains("is-complete") ||
+        /complete|done|✓/i.test(btn.textContent || "") ||
+        btn.getAttribute("aria-pressed") === "true";
+      const show = !done && pct >= 88;
+      nudge.hidden = !show;
+      nudge.classList.toggle("is-visible", show);
+    };
+    sync();
+    window.addEventListener("scroll", sync, { passive: true });
+    btn.addEventListener("click", () => window.setTimeout(sync, 80));
+    const mo = new MutationObserver(sync);
+    mo.observe(btn, { attributes: true, childList: true, characterData: true, subtree: true });
+  };
+
+  /** Brief “Saved” flash when progress is written from mark-complete. */
+  const wireSavedFlash = () => {
+    const btn = document.getElementById("mark-complete");
+    if (!btn || btn.dataset.pfSavedFlash === "1") return;
+    btn.dataset.pfSavedFlash = "1";
+    btn.addEventListener("click", () => {
+      window.setTimeout(() => {
+        const done =
+          btn.classList.contains("is-complete") ||
+          /complete|done|✓/i.test(btn.textContent || "") ||
+          btn.getAttribute("aria-pressed") === "true";
+        if (!done) return;
+        let flash = document.getElementById("pf-saved-flash");
+        if (!flash) {
+          flash = document.createElement("div");
+          flash.id = "pf-saved-flash";
+          flash.className = "saved-flash";
+          flash.setAttribute("aria-hidden", "true");
+          flash.textContent = "Saved";
+          document.body.appendChild(flash);
+        }
+        flash.classList.remove("is-visible");
+        void flash.offsetWidth;
+        flash.classList.add("is-visible");
+        window.setTimeout(() => flash.classList.remove("is-visible"), 1400);
+      }, 60);
     });
   };
 
@@ -3130,6 +3274,10 @@
     run("matcherFeel", wireMatcherFeel);
     run("quizStrip", mountQuizProgressStrip);
     run("goChords", wireGoChords);
+    run("inPageAnchors", wireInPageAnchors);
+    run("sessionChip", mountStudySessionChip);
+    run("finishNudge", mountLessonFinishNudge);
+    run("savedFlash", wireSavedFlash);
     run("shortcuts", mountKeyboardShortcuts);
     run("courseFilter", wireCourseTileFilter);
     run("courseSort", wireCourseProgressSort);
@@ -3151,6 +3299,8 @@
       run("moduleKeys:deferred", wireModuleListKeys);
       run("pathCelebrate:deferred", wirePathCompleteCelebrate);
       run("quizStrip:deferred", mountQuizProgressStrip);
+      run("finishNudge:deferred", mountLessonFinishNudge);
+      run("savedFlash:deferred", wireSavedFlash);
     }, 200);
     window.setTimeout(() => {
       run("nextModules:late", highlightNextModules);
@@ -3216,6 +3366,10 @@
     wireModuleListKeys,
     mountQuizProgressStrip,
     wireGoChords,
+    wireInPageAnchors,
+    mountStudySessionChip,
+    mountLessonFinishNudge,
+    wireSavedFlash,
     getStudyStreak,
     recordActivityDay,
     formatRelativeTime,
