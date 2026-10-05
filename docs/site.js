@@ -63,7 +63,7 @@
 
   /** Site maintenance stamp — keep year and month current on each audit. */
   const SITE_YEAR = 2026;
-  const SITE_MAINTAINED_LABEL = "28 September 2026";
+  const SITE_MAINTAINED_LABEL = "5 October 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -1607,10 +1607,47 @@
         .sort()
         .slice(-90);
       writeProgressKey(KEYS.activityDays, JSON.stringify(pruned));
+      window.setTimeout(() => {
+        try {
+          celebrateStreakMilestones();
+        } catch (error) {
+          /* ignore */
+        }
+      }, 0);
       return pruned;
     } catch (error) {
       return getActivityDays();
     }
+  };
+
+  /** One-time toast when a study streak crosses a milestone. */
+  const celebrateStreakMilestones = () => {
+    const streak = getStudyStreak();
+    const labels = {
+      3: "3-day streak — solid start",
+      7: "7-day streak — a full week",
+      14: "2-week streak — strong habit",
+      30: "30-day streak — outstanding",
+    };
+    if (!labels[streak]) return;
+    const key = "pf-streak-milestones";
+    let seen = [];
+    try {
+      const raw = localStorage.getItem(key) || sessionStorage.getItem(key) || "[]";
+      seen = JSON.parse(raw);
+    } catch (error) {
+      seen = [];
+    }
+    if (!Array.isArray(seen)) seen = [];
+    if (seen.includes(streak)) return;
+    seen.push(streak);
+    try {
+      if (canPersistGuestProgress()) writeProgressKey(key, JSON.stringify(seen));
+      else sessionStorage.setItem(key, JSON.stringify(seen));
+    } catch (error) {
+      /* private mode */
+    }
+    showToast(labels[streak], { tone: "success" });
   };
 
   /** Consecutive active days ending today or yesterday. */
@@ -1729,6 +1766,11 @@
       const now = new Date();
       const hour = now.getHours();
       const weekday = now.getDay(); // 0 Sun … 6 Sat
+      const month = now.getMonth(); // 0 Jan … 11 Dec
+      const dayOfMonth = now.getDate();
+      const firstWeekdayOfMonth = weekday === 1 && dayOfMonth <= 7;
+      if (firstWeekdayOfMonth && hour < 12) return "New month energy";
+      if (month === 9 && hour < 12) return "Crisp autumn focus"; // October
       if (weekday === 1 && hour < 12) return "Fresh week ahead";
       if ((weekday === 0 || weekday === 6) && hour < 12) return "Easy weekend morning";
       if ((weekday === 0 || weekday === 6) && hour < 17) return "Weekend pace";
@@ -2006,6 +2048,9 @@
     document.body.appendChild(bar);
     const fill = bar.querySelector(".read-progress__fill");
     const label = bar.querySelector(".read-progress__label");
+    if (onLesson && !document.documentElement.dataset.pfTitleBase) {
+      document.documentElement.dataset.pfTitleBase = document.title;
+    }
     const update = () => {
       const doc = document.documentElement;
       const max = Math.max(doc.scrollHeight - window.innerHeight, 1);
@@ -2017,6 +2062,10 @@
         label.textContent = `${rounded}%`;
         label.hidden = rounded < 4;
         label.classList.toggle("is-near-end", rounded >= 92);
+      }
+      if (onLesson) {
+        const base = document.documentElement.dataset.pfTitleBase || document.title;
+        document.title = rounded >= 4 ? `(${rounded}%) ${base}` : base;
       }
     };
     update();
@@ -2313,7 +2362,7 @@
         <ul class="shortcut-sheet__list">
           <li><kbd>?</kbd> <span>Show or hide this help</span></li>
           <li><kbd>/</kbd> <span>Jump to page search or filter</span></li>
-          <li><kbd>g</kbd> then <kbd>h</kbd> / <kbd>c</kbd> / <kbd>s</kbd> / <kbd>a</kbd> / <kbd>t</kbd> / <kbd>e</kbd> <span>Go Home / Courses / Start Here / Account / Tutorials / Help</span></li>
+          <li><kbd>g</kbd> then <kbd>h</kbd> / <kbd>c</kbd> / <kbd>s</kbd> / <kbd>a</kbd> / <kbd>t</kbd> / <kbd>e</kbd> / <kbd>r</kbd> <span>Go Home / Courses / Start Here / Account / Tutorials / Help / Resume</span></li>
           <li><kbd>[</kbd> / <kbd>]</kbd> <span>Previous / next lesson</span></li>
           <li><kbd>n</kbd> <span>Open the “Up next” module</span></li>
           <li><kbd>j</kbd> / <kbd>k</kbd> <span>Next / previous module in the list</span></li>
@@ -2956,7 +3005,7 @@
     mo.observe(container, { childList: true, subtree: true });
   };
 
-  /** Chord navigation: press g, then h/c/s/a/t/e within ~1s. */
+  /** Chord navigation: press g, then h/c/s/a/t/e/r within ~1s. */
   const wireGoChords = () => {
     if (document.documentElement.dataset.pfGoChords === "1") return;
     document.documentElement.dataset.pfGoChords = "1";
@@ -2969,6 +3018,22 @@
       a: "account.html",
       t: "tutorials.html",
       e: "help.html",
+    };
+    const resumeHref = () => {
+      const last = getLastLesson();
+      const lastQuiz = getLastQuiz();
+      const lessonTs = Number(last?.ts) || 0;
+      const quizTs = Number(lastQuiz?.ts) || 0;
+      if (lastQuiz?.quiz && quizTs >= lessonTs) {
+        return `quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}`;
+      }
+      if (last?.path) {
+        return `course-viewer.html?path=${encodeURIComponent(last.path)}`;
+      }
+      if (lastQuiz?.quiz) {
+        return `quiz-viewer.html?quiz=${encodeURIComponent(lastQuiz.quiz)}`;
+      }
+      return "courses.html";
     };
     const disarm = () => {
       armed = false;
@@ -2995,12 +3060,79 @@
         disarm();
         return;
       }
+      if (key === "r") {
+        disarm();
+        event.preventDefault();
+        window.location.href = resumeHref();
+        return;
+      }
       const href = routes[key];
       disarm();
       if (!href) return;
       event.preventDefault();
       window.location.href = href;
     });
+  };
+
+  /** Quiet offline banner; brief toast when connectivity returns. */
+  const mountConnectivityBanner = () => {
+    if (document.documentElement.dataset.pfConnectivity === "1") return;
+    document.documentElement.dataset.pfConnectivity = "1";
+    let wasOffline = !navigator.onLine;
+    const sync = () => {
+      let el = document.getElementById("pf-connectivity");
+      if (!navigator.onLine) {
+        if (!el) {
+          el = document.createElement("div");
+          el.id = "pf-connectivity";
+          el.className = "connectivity-banner";
+          el.setAttribute("role", "status");
+          el.textContent =
+            "You're offline — progress stays on this device until you're back online.";
+          document.body.appendChild(el);
+        }
+        requestAnimationFrame(() => el.classList.add("is-visible"));
+        wasOffline = true;
+        return;
+      }
+      if (el) el.classList.remove("is-visible");
+      if (wasOffline) {
+        wasOffline = false;
+        showToast("Back online", { tone: "success" });
+      }
+    };
+    sync();
+    window.addEventListener("offline", sync);
+    window.addEventListener("online", sync);
+  };
+
+  /** Gentle once-per-session nudge after a long idle stretch on a lesson. */
+  const wireLessonIdlePresence = () => {
+    if (!document.getElementById("lesson-content")) return;
+    if (document.documentElement.dataset.pfIdlePresence === "1") return;
+    document.documentElement.dataset.pfIdlePresence = "1";
+    const IDLE_MS = 15 * 60 * 1000;
+    let timer = null;
+    let nudged = false;
+    const arm = () => {
+      if (nudged) return;
+      if (timer) window.clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        if (nudged) return;
+        try {
+          if (sessionStorage.getItem("pf-idle-nudged") === "1") return;
+          sessionStorage.setItem("pf-idle-nudged", "1");
+        } catch (error) {
+          /* private mode */
+        }
+        nudged = true;
+        showToast("Still here? Your place in this lesson is saved.", { tone: "info" });
+      }, IDLE_MS);
+    };
+    ["pointerdown", "keydown", "scroll", "touchstart"].forEach((evt) => {
+      window.addEventListener(evt, arm, { passive: true });
+    });
+    arm();
   };
 
   /** Soft same-page anchor scrolling for in-page links. */
@@ -3274,6 +3406,8 @@
     run("matcherFeel", wireMatcherFeel);
     run("quizStrip", mountQuizProgressStrip);
     run("goChords", wireGoChords);
+    run("connectivity", mountConnectivityBanner);
+    run("idlePresence", wireLessonIdlePresence);
     run("inPageAnchors", wireInPageAnchors);
     run("sessionChip", mountStudySessionChip);
     run("finishNudge", mountLessonFinishNudge);
@@ -3366,12 +3500,15 @@
     wireModuleListKeys,
     mountQuizProgressStrip,
     wireGoChords,
+    mountConnectivityBanner,
+    wireLessonIdlePresence,
     wireInPageAnchors,
     mountStudySessionChip,
     mountLessonFinishNudge,
     wireSavedFlash,
     getStudyStreak,
     recordActivityDay,
+    celebrateStreakMilestones,
     formatRelativeTime,
     showToast,
     mountKeyboardShortcuts,
