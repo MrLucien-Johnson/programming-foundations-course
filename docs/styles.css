@@ -4076,7 +4076,7 @@ html.pf-ready body {
 }
 
 html.pf-go-armed body::after {
-  content: "g …";
+  content: "g · h c s a t e r";
   position: fixed;
   bottom: 18px;
   left: 18px;
@@ -4091,6 +4091,29 @@ html.pf-go-armed body::after {
   letter-spacing: 0.04em;
   pointer-events: none;
   box-shadow: var(--shadow-soft, 0 6px 18px rgba(0, 0, 0, 0.2));
+}
+
+.connectivity-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  padding: 8px 14px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink, #1a2028);
+  background: linear-gradient(90deg, rgba(226, 193, 90, 0.92), rgba(232, 210, 140, 0.95));
+  border-bottom: 1px solid rgba(184, 146, 46, 0.45);
+  transform: translateY(-110%);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.connectivity-banner.is-visible {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .btn-primary {
@@ -4208,6 +4231,7 @@ html.pf-go-armed .study-session-chip {
   .resume-cta-pulse,
   .lesson-finish-nudge,
   .saved-flash,
+  .connectivity-banner,
   .breadcrumb a::after {
     transition: none !important;
     animation: none !important;
@@ -4225,6 +4249,7 @@ html.pf-go-armed .study-session-chip {
   .study-session-chip,
   .lesson-finish-nudge,
   .saved-flash,
+  .connectivity-banner,
   html.pf-go-armed body::after {
     display: none !important;
   }
