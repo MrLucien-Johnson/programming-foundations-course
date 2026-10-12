@@ -63,7 +63,7 @@
 
   /** Site maintenance stamp — keep year and month current on each audit. */
   const SITE_YEAR = 2026;
-  const SITE_MAINTAINED_LABEL = "5 October 2026";
+  const SITE_MAINTAINED_LABEL = "12 October 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -1769,7 +1769,9 @@
       const month = now.getMonth(); // 0 Jan … 11 Dec
       const dayOfMonth = now.getDate();
       const firstWeekdayOfMonth = weekday === 1 && dayOfMonth <= 7;
+      const midMonth = dayOfMonth >= 10 && dayOfMonth <= 16;
       if (firstWeekdayOfMonth && hour < 12) return "New month energy";
+      if (midMonth && hour < 12) return "Mid-month momentum";
       if (month === 9 && hour < 12) return "Crisp autumn focus"; // October
       if (weekday === 1 && hour < 12) return "Fresh week ahead";
       if ((weekday === 0 || weekday === 6) && hour < 12) return "Easy weekend morning";
@@ -2018,6 +2020,7 @@
     btn.id = "pf-back-top";
     btn.className = "back-to-top";
     btn.setAttribute("aria-label", "Back to top");
+    btn.title = "Back to top (b)";
     btn.innerHTML = '<span aria-hidden="true">↑</span>';
     btn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
@@ -2028,6 +2031,25 @@
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+  };
+
+  /** Press “b” to jump back to the top when scrolled. */
+  const wireBackToTopHotkey = () => {
+    if (document.documentElement.dataset.pfBackTopKey === "1") return;
+    document.documentElement.dataset.pfBackTopKey = "1";
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "b" && event.key !== "B") return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      if (window.scrollY < 120) return;
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+      const btn = document.getElementById("pf-back-top");
+      if (btn) {
+        btn.classList.add("is-hotkey");
+        window.setTimeout(() => btn.classList.remove("is-hotkey"), 500);
+      }
+    });
   };
 
   /** Thin reading progress bar under the sticky header. */
@@ -2369,6 +2391,7 @@
           <li><kbd>1</kbd>–<kbd>4</kbd> / <kbd>A</kbd>–<kbd>D</kbd> <span>Pick a quiz answer</span></li>
           <li><kbd>Enter</kbd> <span>Check quiz answers or open focused module</span></li>
           <li><kbd>f</kbd> <span>Focus mode (lessons)</span></li>
+          <li><kbd>b</kbd> <span>Back to top</span></li>
           <li><kbd>Ctrl</kbd> + <kbd>Enter</kbd> <span>Run playground (home)</span></li>
           <li><kbd>Esc</kbd> <span>Close dialogs, toast, go-chord, and this sheet</span></li>
         </ul>
@@ -2458,12 +2481,120 @@
       }
       const words = text.split(" ").filter(Boolean).length;
       const minutes = Math.max(1, Math.round(words / 200));
+      const bar = document.getElementById("pf-read-progress");
+      const pct = Number(bar?.getAttribute("aria-valuenow") || 0);
+      const left = Math.max(1, Math.ceil(minutes * (1 - pct / 100)));
       meta.hidden = false;
-      meta.textContent = `About ${minutes} min read · ${words.toLocaleString()} words`;
+      meta.textContent =
+        pct >= 8 && pct < 96
+          ? `About ${minutes} min read · ~${left} min left · ${words.toLocaleString()} words`
+          : `About ${minutes} min read · ${words.toLocaleString()} words`;
     };
     update();
     const mo = new MutationObserver(update);
     mo.observe(content, { childList: true, subtree: true, characterData: true });
+    if (!meta.dataset.pfRemainWired) {
+      meta.dataset.pfRemainWired = "1";
+      window.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", update, { passive: true });
+    }
+  };
+
+  /** Compact in-lesson outline from h2/h3 with scroll-spy highlighting. */
+  const mountLessonOutline = () => {
+    const content = document.getElementById("lesson-content");
+    const title = document.getElementById("lesson-title");
+    if (!content || !title) return;
+    if (content.dataset.pfOutlineWired === "1") return;
+    content.dataset.pfOutlineWired = "1";
+
+    const slugify = (text, used) => {
+      let base = String(text || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")
+        .slice(0, 48) || "section";
+      let id = base;
+      let n = 2;
+      while (used.has(id) || document.getElementById(id)) {
+        id = `${base}-${n}`;
+        n += 1;
+      }
+      used.add(id);
+      return id;
+    };
+
+    const sync = () => {
+      const headings = Array.from(content.querySelectorAll("h2, h3")).filter((h) =>
+        (h.textContent || "").trim()
+      );
+      let nav = document.getElementById("pf-lesson-outline");
+      if (headings.length < 3) {
+        if (nav) nav.remove();
+        return;
+      }
+      const used = new Set();
+      const items = headings.map((heading) => {
+        if (!heading.id) heading.id = slugify(heading.textContent, used);
+        else used.add(heading.id);
+        return {
+          id: heading.id,
+          label: (heading.textContent || "").trim(),
+          level: heading.tagName === "H3" ? 3 : 2,
+        };
+      });
+      if (!nav) {
+        nav = document.createElement("nav");
+        nav.id = "pf-lesson-outline";
+        nav.className = "lesson-outline";
+        nav.setAttribute("aria-label", "On this lesson");
+        const meta = document.getElementById("lesson-reading-meta");
+        if (meta) meta.insertAdjacentElement("afterend", nav);
+        else title.insertAdjacentElement("afterend", nav);
+      }
+      nav.innerHTML = `
+        <p class="lesson-outline__label">On this lesson</p>
+        <ol class="lesson-outline__list">
+          ${items
+            .map(
+              (item) =>
+                `<li class="lesson-outline__item lesson-outline__item--h${item.level}">
+                  <a href="#${escapeHtml(item.id)}">${escapeHtml(item.label)}</a>
+                </li>`
+            )
+            .join("")}
+        </ol>`;
+    };
+
+    const spy = () => {
+      const nav = document.getElementById("pf-lesson-outline");
+      if (!nav) return;
+      const links = Array.from(nav.querySelectorAll("a[href^='#']"));
+      if (!links.length) return;
+      const offset = 96;
+      let activeId = "";
+      links.forEach((link) => {
+        const id = decodeURIComponent((link.getAttribute("href") || "").slice(1));
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (el.getBoundingClientRect().top <= offset) activeId = id;
+      });
+      if (!activeId) activeId = decodeURIComponent((links[0].getAttribute("href") || "").slice(1));
+      links.forEach((link) => {
+        const id = decodeURIComponent((link.getAttribute("href") || "").slice(1));
+        link.classList.toggle("is-active", id === activeId);
+      });
+    };
+
+    sync();
+    spy();
+    const mo = new MutationObserver(() => {
+      sync();
+      spy();
+    });
+    mo.observe(content, { childList: true, subtree: true, characterData: true });
+    window.addEventListener("scroll", spy, { passive: true });
+    window.addEventListener("resize", spy, { passive: true });
   };
 
   /** One-click copy of the current lesson/quiz URL. */
@@ -3393,6 +3524,7 @@
     run("pathNodes", enhancePathNodes);
     run("externalLinks", enhanceExternalLinks);
     run("readingMeta", enhanceLessonReadingMeta);
+    run("lessonOutline", mountLessonOutline);
     run("copyLink", mountCopyLinkButton);
     run("focusMode", mountLessonFocusMode);
     run("scrollMemory", mountLessonScrollMemory);
@@ -3418,6 +3550,7 @@
     run("tutorialFilter", wireTutorialFilter);
     run("quickFind", wireQuickFindShortcut);
     run("backTop", mountBackToTop);
+    run("backTopKey", wireBackToTopHotkey);
     run("readProgress", mountReadingProgress);
     // Lesson/module UIs often hydrate after boot.
     window.setTimeout(() => {
@@ -3435,6 +3568,8 @@
       run("quizStrip:deferred", mountQuizProgressStrip);
       run("finishNudge:deferred", mountLessonFinishNudge);
       run("savedFlash:deferred", wireSavedFlash);
+      run("lessonOutline:deferred", mountLessonOutline);
+      run("readingMeta:deferred", enhanceLessonReadingMeta);
     }, 200);
     window.setTimeout(() => {
       run("nextModules:late", highlightNextModules);
@@ -3506,6 +3641,8 @@
     mountStudySessionChip,
     mountLessonFinishNudge,
     wireSavedFlash,
+    mountLessonOutline,
+    wireBackToTopHotkey,
     getStudyStreak,
     recordActivityDay,
     celebrateStreakMilestones,
