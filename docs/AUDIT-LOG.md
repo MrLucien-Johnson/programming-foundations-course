@@ -600,3 +600,238 @@ Remote main had advanced (accounts API, Support, shared `site.js` header, promo 
 **Revert tip:** restore `docs/site.js`, `docs/styles.css`, advanced HTML hubs, `docs/privacy.html`, viewers, and `scripts/audit_routes.py` from pre-audit commit.
 
 **Route risk:** Low.
+
+---
+
+### 2026-08-10 — Weekly audit + UX modernization (ux40)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed: sitewide UX chrome from 3 Aug (`SITE_MAINTAINED_LABEL`, relative resume times, compact header, back-to-top, reading progress, scroll reveals, toasts, course-tile chips) was absent after premium/DevOps content landed on main.
+2. Privacy had no “Last reviewed” stamp; LICENSE still said 2025.
+3. Help lacked topic filter; Courses lacked live tile filter; Start Here lacked jump CTAs; playground had no keyboard tip.
+4. Quiz / lesson completion feedback was status-text only — easy to miss.
+
+**Changes**
+- Restored UX chrome in `docs/site.js` + `docs/styles.css` with maintenance stamp **10 August 2026**.
+- Relative resume times; footer © meta; compact sticky header; reading progress; back-to-top; scroll reveals; soft toasts; course-tile progress chips (including donor short titles).
+- Help topic filter; Courses tile filter; `/` quick-find shortcut; playground Ctrl/Cmd+Enter hint; Start Here jump CTAs.
+- Lesson-complete + quiz result toasts; Teams audit relative times; privacy reviewed **10 August 2026**; LICENSE → 2026.
+- Path-node alive pulse; focus-visible polish; cache `?v=ux40`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/*.html` (cache + page UX), `LICENSE`, `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux40 commit; or `git checkout HEAD~1 -- docs/ LICENSE` if this is the tip commit.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
+
+---
+
+### 2026-08-24 — Weekly audit + UX modernization (ux41)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed again: weekly UX chrome (`SITE_MAINTAINED_LABEL`, relative resume times, compact header, back-to-top, reading progress, reveals, toasts, filters) was absent on `main` after later content merges — restored from the prior ux40 work.
+2. Maintenance stamp and privacy “Last reviewed” were still **10 August 2026**.
+3. Module lists lacked a clear “up next” cue; tutorials had no live filter; lesson/quiz pages had no one-click share link; no sitewide keyboard-help overlay.
+
+**Changes**
+- Restored ux40 chrome, then refreshed maintenance stamp to **24 August 2026**; privacy reviewed same day.
+- **Up next** badge on the first incomplete module; sticky mini-resume chip when the banner scrolls away.
+- Lesson **reading-time** estimate; **Copy link** on lesson/quiz action rows; keyboard shortcuts sheet via **`?`**.
+- Tutorials live filter (`/` focus); external-link affordance; cache `?v=ux41`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/*.html` (cache + page UX), `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux41 commit on this branch.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
+
+---
+
+### 2026-08-31 — Weekly audit + UX modernization (ux42 → ux43)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed again: weekly UX chrome was absent on `main` after later content merges — restored from the ux41 branch (`cursor/user-experience-modernization-eadd`).
+2. Maintenance stamp and privacy “Last reviewed” were still **24 August 2026**.
+3. Course tiles showed text progress only; lesson pages lacked focus reading, keyboard module hops, and scroll-place memory; Courses had filter but no progress sort.
+
+**Changes**
+- Restored ux41 chrome, then refreshed maintenance stamp to **31 August 2026**; privacy reviewed same day.
+- Course-tile **progress rings** + **In progress first** sort on Courses.
+- Lesson **Focus mode** (`f`), **`[` / `]`** prev/next module keys, **scroll-place restore**, richer welcome-back resume copy.
+- Hardened `getCompletions()` so object-shaped localStorage cannot break site boot; isolated boot steps so one enhancer failure no longer blanks the rest of the chrome.
+- Cache `?v=ux43`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/courses.html`, `docs/privacy.html`, `docs/*.html` (cache), `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux42 commit on this branch.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
+
+---
+
+### 2026-09-07 — Weekly audit + UX modernization (ux44)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed again: weekly UX chrome (`SITE_MAINTAINED_LABEL`, relative resume times, compact header, back-to-top, reading progress, reveals, toasts, filters, focus mode, progress rings) was absent on `main` after later content merges — restored from `cursor/user-experience-modernization-5b0d` (ux43).
+2. Maintenance stamp and privacy “Last reviewed” were still **31 August 2026**.
+3. Course hubs lacked a persistent “modules left / continue” rail; quizzes had no number-key answering; homepage had no momentum summary after progress existed.
+
+**Changes**
+- Restored ux43 chrome, then refreshed maintenance stamp to **7 September 2026**; privacy reviewed same day (LICENSE already 2026).
+- **Course hub progress rail** with meter + Continue CTA; **`n`** opens Up next.
+- Quiz **1–4 / A–D** answer keys + **Enter** to check; on-page keyboard tip.
+- **Learning momentum** chip on Home when progress exists; mark-complete celebration; soft press feedback; print-friendly lesson styles.
+- Cache `?v=ux44`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/privacy.html`, `docs/*.html` (cache), `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux44 commit on this branch.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
+
+---
+
+### 2026-09-14 — Weekly audit + UX modernization (ux45)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed again: weekly UX chrome was absent on `main` after later content merges — restored from `cursor/user-experience-modernization-e04f` (ux44 stack).
+2. Maintenance stamp and privacy “Last reviewed” were still **7 September 2026**.
+3. Momentum lacked streak feedback; module lists had no j/k navigation; hub rails had no time estimate; matcher/playground lacked tactile feedback.
+
+**Changes**
+- Restored ux44 chrome, then refreshed maintenance stamp to **14 September 2026**; privacy reviewed same day (LICENSE already 2026).
+- **Study streak** from activity days (shown in momentum when ≥1 day).
+- Course hub rail **ETA** (~12 min/module); **j/k** module focus + **Enter** to open.
+- Playground run pulse, matcher selected/reveal feel, path-complete toast, soft page-ready entrance, Esc dismisses toast.
+- Cache `?v=ux45`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/privacy.html`, `docs/*.html` (cache), `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux45 commit on this branch.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
+
+---
+
+### 2026-09-21 — Weekly audit + UX modernization (ux46)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed again: weekly UX chrome was absent on `main` after later content merges — restored from `cursor/user-experience-modernization-260a` (ux45 stack).
+2. Maintenance stamp and privacy “Last reviewed” were still **14 September 2026**.
+3. Resume lacked time-of-day greeting; quizzes had no answered-progress strip; lesson reading bar had no % readout; course tiles lacked a “last opened” cue; no `g` chord navigation.
+
+**Changes**
+- Restored ux45 chrome, then refreshed maintenance stamp to **21 September 2026**; privacy reviewed same day (LICENSE already 2026).
+- **Daypart greeting** on resume (“Good morning/afternoon/evening”).
+- **Quiz progress strip** (answered count + jump dots); lesson **reading %** label.
+- Course tile **Last opened** badge; hub **Claim certificate** when complete; Courses empty-filter clear control.
+- **`g` then `h`/`c`/`s`/`a`** chord navigation + shortcuts sheet update; soft primary CTA hover.
+- Cache `?v=ux46`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/privacy.html`, `docs/*.html` (cache), `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux46 commit on this branch.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
+
+---
+
+### 2026-09-28 — Weekly audit + UX modernization (ux47)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed again: weekly UX chrome was absent on `main` after later content merges — restored from `cursor/user-experience-modernization-b591` (ux46 stack).
+2. Maintenance stamp and privacy “Last reviewed” were still **21 September 2026**.
+3. Resume greeting lacked Monday/weekend nuance; go-chords missed Tutorials/Help; lessons had no session timer or near-end complete nudge; mark-complete lacked a clear “saved” flash.
+
+**Changes**
+- Restored ux46 chrome, then refreshed maintenance stamp to **28 September 2026**; privacy reviewed same day (LICENSE already 2026).
+- **Week/weekend-aware resume greetings**; resume primary CTA soft pulse.
+- **Study session chip** on lesson/quiz pages; **near-end finish nudge**; **Saved** flash on mark-complete.
+- Go chords **`t`/`e`** → Tutorials / Help; **Esc** disarms chord; smooth **in-page anchors**; breadcrumb underline motion.
+- Cache `?v=ux47`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/privacy.html`, `docs/*.html` (cache), `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux47 commit on this branch.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
+
+---
+
+### 2026-10-05 — Weekly audit + UX modernization (ux48)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed again: weekly UX chrome was absent on `main` after later content merges — restored from `cursor/user-experience-modernization-89f3` (ux47 stack).
+2. Maintenance stamp and privacy “Last reviewed” were still **28 September 2026**.
+3. Learners lacked streak milestone feedback, offline awareness, a keyboard resume chord, and tab-title reading progress on long lessons.
+
+**Changes**
+- Restored ux47 chrome, then refreshed maintenance stamp to **5 October 2026**; privacy reviewed same day (LICENSE already 2026).
+- **New-month / October** resume greetings; **streak milestone** toasts (3 / 7 / 14 / 30 days).
+- **Offline connectivity banner** + back-online toast; lesson **idle presence** nudge; document **title reading %**.
+- Go chord **`r`** → resume last lesson/quiz; go-armed hint lists chords; shortcuts sheet updated.
+- Cache `?v=ux48`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/privacy.html`, `docs/*.html` (cache), `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux48 commit on this branch.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
+
+---
+
+### 2026-10-12 — Weekly audit + UX modernization (ux49)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed again: weekly UX chrome was absent on `main` after later content merges — restored from `cursor/user-experience-modernization-4d48` (ux48 stack).
+2. Maintenance stamp and privacy “Last reviewed” were still **5 October 2026**.
+3. Long lessons lacked an on-page outline and remaining-time cue; back-to-top had no keyboard path; mid-month resume greeting was missing.
+
+**Changes**
+- Restored ux48 chrome, then refreshed maintenance stamp to **12 October 2026**; privacy reviewed same day (LICENSE already 2026).
+- **Mid-month momentum** resume greeting (days 10–16).
+- Lesson **remaining read time** in reading meta; **On this lesson** outline with scroll-spy for h2/h3.
+- **`b`** back-to-top hotkey + shortcuts sheet; skip-link focus ring polish.
+- Cache `?v=ux49`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/privacy.html`, `docs/*.html` (cache), `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux49 commit on this branch.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
