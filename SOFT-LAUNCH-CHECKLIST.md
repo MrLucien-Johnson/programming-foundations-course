@@ -35,7 +35,7 @@
   - Current: `https://github.com/MrLucien-Johnson/programming-foundations-course`
   - Files to update: See `PLACEHOLDERS-TO-FILL.md`
 - [ ] Replace `[SUPPORT_EMAIL]` with your support email
-- [ ] Replace `[YEAR]` in `LICENSE` with current year (2025)
+- [x] Replace `[YEAR]` in `LICENSE` with current year (2026)
 - [ ] Replace `[COPYRIGHT_HOLDER]` in `LICENSE` with your name/org
 - [ ] Review `PLACEHOLDERS-TO-FILL.md` for any other placeholders
 
