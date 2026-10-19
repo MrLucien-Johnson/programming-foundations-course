@@ -835,3 +835,29 @@ Remote main had advanced (accounts API, Support, shared `site.js` header, promo 
 **Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux49 commit on this branch.
 
 **Route risk:** Low — additive chrome; existing hrefs preserved.
+
+---
+
+### 2026-10-19 — Weekly audit + UX modernization (ux50)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed again: weekly UX chrome was absent on `main` after later content merges — restored from `cursor/user-experience-modernization-457a` (ux49 stack).
+2. Maintenance stamp and privacy “Last reviewed” were still **12 October 2026**.
+3. Late-month resume tone was missing; long outlines could crowd the lesson top; outline had no keyboard jump; internal navigations felt cold without prefetch; code copy buttons lacked press feedback; sticky-header hash jumps needed scroll padding.
+
+**Changes**
+- Restored ux49 chrome, then refreshed maintenance stamp to **19 October 2026**; privacy reviewed same day (LICENSE already 2026).
+- **Late-month push** / **Month-end stretch** resume greetings (days 17–23 / 24+).
+- Lesson outline **section count**, **Show less/all** collapse for long outlines, **`o`** outline hotkey with flash focus; shortcuts sheet updated.
+- **Internal HTML prefetch** on hover/focus; code-button hover/press polish; `scroll-padding-top` for sticky header.
+- Cache `?v=ux50`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/privacy.html`, `docs/*.html` (cache), `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux50 commit on this branch.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
