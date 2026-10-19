@@ -63,7 +63,7 @@
 
   /** Site maintenance stamp — keep year and month current on each audit. */
   const SITE_YEAR = 2026;
-  const SITE_MAINTAINED_LABEL = "12 October 2026";
+  const SITE_MAINTAINED_LABEL = "19 October 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -1770,8 +1770,12 @@
       const dayOfMonth = now.getDate();
       const firstWeekdayOfMonth = weekday === 1 && dayOfMonth <= 7;
       const midMonth = dayOfMonth >= 10 && dayOfMonth <= 16;
+      const lateMonth = dayOfMonth >= 17 && dayOfMonth <= 23;
+      const monthEnd = dayOfMonth >= 24;
       if (firstWeekdayOfMonth && hour < 12) return "New month energy";
       if (midMonth && hour < 12) return "Mid-month momentum";
+      if (lateMonth && hour < 12) return "Late-month push";
+      if (monthEnd && hour < 12) return "Month-end stretch";
       if (month === 9 && hour < 12) return "Crisp autumn focus"; // October
       if (weekday === 1 && hour < 12) return "Fresh week ahead";
       if ((weekday === 0 || weekday === 6) && hour < 12) return "Easy weekend morning";
@@ -2391,6 +2395,7 @@
           <li><kbd>1</kbd>–<kbd>4</kbd> / <kbd>A</kbd>–<kbd>D</kbd> <span>Pick a quiz answer</span></li>
           <li><kbd>Enter</kbd> <span>Check quiz answers or open focused module</span></li>
           <li><kbd>f</kbd> <span>Focus mode (lessons)</span></li>
+          <li><kbd>o</kbd> <span>Jump to lesson outline</span></li>
           <li><kbd>b</kbd> <span>Back to top</span></li>
           <li><kbd>Ctrl</kbd> + <kbd>Enter</kbd> <span>Run playground (home)</span></li>
           <li><kbd>Esc</kbd> <span>Close dialogs, toast, go-chord, and this sheet</span></li>
@@ -2552,8 +2557,19 @@
         if (meta) meta.insertAdjacentElement("afterend", nav);
         else title.insertAdjacentElement("afterend", nav);
       }
+      const wasCollapsed = nav.classList.contains("is-collapsed");
+      const canCollapse = items.length > 6;
       nav.innerHTML = `
-        <p class="lesson-outline__label">On this lesson</p>
+        <div class="lesson-outline__head">
+          <p class="lesson-outline__label">On this lesson · ${items.length} sections</p>
+          ${
+            canCollapse
+              ? `<button type="button" class="lesson-outline__toggle" aria-expanded="${
+                  wasCollapsed ? "false" : "true"
+                }">${wasCollapsed ? "Show all" : "Show less"}</button>`
+              : ""
+          }
+        </div>
         <ol class="lesson-outline__list">
           ${items
             .map(
@@ -2564,6 +2580,16 @@
             )
             .join("")}
         </ol>`;
+      if (canCollapse && wasCollapsed) nav.classList.add("is-collapsed");
+      else nav.classList.remove("is-collapsed");
+      const toggle = nav.querySelector(".lesson-outline__toggle");
+      if (toggle) {
+        toggle.addEventListener("click", () => {
+          const collapsed = nav.classList.toggle("is-collapsed");
+          toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+          toggle.textContent = collapsed ? "Show all" : "Show less";
+        });
+      }
     };
 
     const spy = () => {
@@ -2595,6 +2621,74 @@
     mo.observe(content, { childList: true, subtree: true, characterData: true });
     window.addEventListener("scroll", spy, { passive: true });
     window.addEventListener("resize", spy, { passive: true });
+  };
+
+  /** Press “o” to jump to the lesson outline (when present). */
+  const wireOutlineHotkey = () => {
+    if (document.documentElement.dataset.pfOutlineKey === "1") return;
+    document.documentElement.dataset.pfOutlineKey = "1";
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "o" && event.key !== "O") return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const nav = document.getElementById("pf-lesson-outline");
+      if (!nav) return;
+      event.preventDefault();
+      if (nav.classList.contains("is-collapsed")) {
+        nav.classList.remove("is-collapsed");
+        const toggle = nav.querySelector(".lesson-outline__toggle");
+        if (toggle) {
+          toggle.setAttribute("aria-expanded", "true");
+          toggle.textContent = "Show less";
+        }
+      }
+      nav.scrollIntoView({ block: "start", behavior: prefersReducedMotion() ? "auto" : "smooth" });
+      nav.classList.add("is-flash");
+      window.setTimeout(() => nav.classList.remove("is-flash"), 900);
+      nav.querySelector(".lesson-outline__list a")?.focus({ preventScroll: true });
+    });
+  };
+
+  /** Prefetch internal HTML pages on hover/focus for snappier navigation. */
+  const enhanceInternalPrefetch = () => {
+    if (document.documentElement.dataset.pfPrefetch === "1") return;
+    document.documentElement.dataset.pfPrefetch = "1";
+    const seen = new Set();
+    const prefetch = (href) => {
+      try {
+        const url = new URL(href, window.location.href);
+        if (url.origin !== window.location.origin) return;
+        if (!/\.html?$/i.test(url.pathname)) return;
+        const key = url.pathname + url.search;
+        if (seen.has(key)) return;
+        seen.add(key);
+        const link = document.createElement("link");
+        link.rel = "prefetch";
+        link.href = url.pathname + url.search;
+        link.as = "document";
+        document.head.appendChild(link);
+      } catch (error) {
+        /* ignore bad hrefs */
+      }
+    };
+    document.addEventListener(
+      "pointerenter",
+      (event) => {
+        const a = event.target?.closest?.("a[href]");
+        if (!a) return;
+        prefetch(a.getAttribute("href") || "");
+      },
+      true
+    );
+    document.addEventListener(
+      "focusin",
+      (event) => {
+        const a = event.target?.closest?.("a[href]");
+        if (!a) return;
+        prefetch(a.getAttribute("href") || "");
+      },
+      true
+    );
   };
 
   /** One-click copy of the current lesson/quiz URL. */
@@ -3525,6 +3619,8 @@
     run("externalLinks", enhanceExternalLinks);
     run("readingMeta", enhanceLessonReadingMeta);
     run("lessonOutline", mountLessonOutline);
+    run("outlineKey", wireOutlineHotkey);
+    run("prefetch", enhanceInternalPrefetch);
     run("copyLink", mountCopyLinkButton);
     run("focusMode", mountLessonFocusMode);
     run("scrollMemory", mountLessonScrollMemory);
@@ -3642,6 +3738,8 @@
     mountLessonFinishNudge,
     wireSavedFlash,
     mountLessonOutline,
+    wireOutlineHotkey,
+    enhanceInternalPrefetch,
     wireBackToTopHotkey,
     getStudyStreak,
     recordActivityDay,
