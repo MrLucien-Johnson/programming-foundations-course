@@ -78,6 +78,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 88px;
   background: var(--paper-deep);
 }
 
@@ -1971,11 +1972,20 @@ button.path-node {
   font-weight: 600;
   cursor: pointer;
   font-family: var(--font-body);
+  transition: border-color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease,
+    background 0.18s ease;
 }
 
 .code-button:hover,
 .code-button:focus-visible {
   border-color: var(--gold);
+  background: rgba(226, 193, 90, 0.12);
+  box-shadow: 0 2px 8px rgba(184, 146, 46, 0.18);
+  outline: none;
+}
+
+.code-button:active {
+  transform: translateY(1px);
 }
 
 /* ── Search input ── */
@@ -4233,14 +4243,60 @@ html.pf-go-armed .study-session-chip {
   background:
     linear-gradient(135deg, rgba(226, 193, 90, 0.1), rgba(255, 255, 255, 0.45)),
     rgba(250, 248, 242, 0.65);
+  scroll-margin-top: 88px;
+  transition: box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+}
+
+.lesson-outline.is-flash {
+  border-color: rgba(184, 146, 46, 0.55);
+  box-shadow: 0 0 0 3px rgba(226, 193, 90, 0.28), var(--shadow-soft);
+  background:
+    linear-gradient(135deg, rgba(226, 193, 90, 0.18), rgba(255, 255, 255, 0.55)),
+    rgba(250, 248, 242, 0.8);
+}
+
+.lesson-outline__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
 .lesson-outline__label {
-  margin: 0 0 8px;
+  margin: 0;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(26, 32, 40, 0.62);
+}
+
+.lesson-outline__toggle {
+  border: 1px solid rgba(26, 32, 40, 0.14);
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: rgba(26, 32, 40, 0.78);
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.12s ease;
+}
+
+.lesson-outline__toggle:hover,
+.lesson-outline__toggle:focus-visible {
+  border-color: rgba(184, 146, 46, 0.55);
+  background: rgba(226, 193, 90, 0.16);
+  outline: none;
+}
+
+.lesson-outline__toggle:active {
+  transform: translateY(1px);
+}
+
+.lesson-outline.is-collapsed .lesson-outline__item:nth-child(n + 5) {
+  display: none;
 }
 
 .lesson-outline__list {
@@ -4296,6 +4352,9 @@ html.pf-go-armed .study-session-chip {
   .connectivity-banner,
   .breadcrumb a::after,
   .lesson-outline__item a,
+  .lesson-outline,
+  .lesson-outline__toggle,
+  .code-button,
   .back-to-top {
     transition: none !important;
     animation: none !important;
@@ -4315,6 +4374,7 @@ html.pf-go-armed .study-session-chip {
   .saved-flash,
   .connectivity-banner,
   .lesson-outline,
+  .lesson-outline__toggle,
   html.pf-go-armed body::after {
     display: none !important;
   }
