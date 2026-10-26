@@ -3802,9 +3802,11 @@ body.is-focus-mode .lesson-actions {
 }
 
 .quiz-question.is-keyed {
-  outline: 2px solid rgba(226, 193, 90, 0.55);
+  outline: 2px solid rgba(201, 162, 39, 0.5);
   outline-offset: 4px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md, 12px);
+  box-shadow: 0 0 0 4px rgba(226, 193, 90, 0.14);
+  transition: outline-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 #mark-complete.is-celebrating {
@@ -4337,6 +4339,28 @@ html.pf-go-armed .study-session-chip {
   font-weight: 600;
 }
 
+.lesson-outline__item a.is-passed {
+  opacity: 0.72;
+  border-left-color: rgba(184, 146, 46, 0.35);
+}
+
+.lesson-outline__item a.is-passed::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: rgba(184, 146, 46, 0.55);
+  vertical-align: middle;
+  transform: translateY(-1px);
+}
+
+.lesson-outline__item a.is-active.is-passed::before {
+  background: var(--gold-dark, #b8922e);
+  box-shadow: 0 0 0 3px rgba(226, 193, 90, 0.28);
+}
+
 .back-to-top.is-hotkey {
   transform: translateY(-2px) scale(1.06);
   box-shadow: 0 8px 20px rgba(184, 146, 46, 0.35);
@@ -4355,7 +4379,8 @@ html.pf-go-armed .study-session-chip {
   .lesson-outline,
   .lesson-outline__toggle,
   .code-button,
-  .back-to-top {
+  .back-to-top,
+  .quiz-question.is-keyed {
     transition: none !important;
     animation: none !important;
   }

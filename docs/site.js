@@ -63,7 +63,7 @@
 
   /** Site maintenance stamp — keep year and month current on each audit. */
   const SITE_YEAR = 2026;
-  const SITE_MAINTAINED_LABEL = "19 October 2026";
+  const SITE_MAINTAINED_LABEL = "26 October 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -1772,9 +1772,11 @@
       const midMonth = dayOfMonth >= 10 && dayOfMonth <= 16;
       const lateMonth = dayOfMonth >= 17 && dayOfMonth <= 23;
       const monthEnd = dayOfMonth >= 24;
+      const closingOctober = month === 9 && dayOfMonth >= 26; // late October
       if (firstWeekdayOfMonth && hour < 12) return "New month energy";
       if (midMonth && hour < 12) return "Mid-month momentum";
       if (lateMonth && hour < 12) return "Late-month push";
+      if (closingOctober && hour < 12) return "Closing October strong";
       if (monthEnd && hour < 12) return "Month-end stretch";
       if (month === 9 && hour < 12) return "Crisp autumn focus"; // October
       if (weekday === 1 && hour < 12) return "Fresh week ahead";
@@ -2389,6 +2391,7 @@
           <li><kbd>?</kbd> <span>Show or hide this help</span></li>
           <li><kbd>/</kbd> <span>Jump to page search or filter</span></li>
           <li><kbd>g</kbd> then <kbd>h</kbd> / <kbd>c</kbd> / <kbd>s</kbd> / <kbd>a</kbd> / <kbd>t</kbd> / <kbd>e</kbd> / <kbd>r</kbd> <span>Go Home / Courses / Start Here / Account / Tutorials / Help / Resume</span></li>
+          <li><kbd>g</kbd> then <kbd>g</kbd> <span>Jump to top of page</span></li>
           <li><kbd>[</kbd> / <kbd>]</kbd> <span>Previous / next lesson</span></li>
           <li><kbd>n</kbd> <span>Open the “Up next” module</span></li>
           <li><kbd>j</kbd> / <kbd>k</kbd> <span>Next / previous module in the list</span></li>
@@ -2559,9 +2562,14 @@
       }
       const wasCollapsed = nav.classList.contains("is-collapsed");
       const canCollapse = items.length > 6;
+      const passedCount = Number(nav.dataset.pfPassed || 0);
+      const progressBit =
+        passedCount > 0
+          ? ` · ${Math.min(passedCount, items.length)} of ${items.length} reached`
+          : ` · ${items.length} sections`;
       nav.innerHTML = `
         <div class="lesson-outline__head">
-          <p class="lesson-outline__label">On this lesson · ${items.length} sections</p>
+          <p class="lesson-outline__label">On this lesson${progressBit}</p>
           ${
             canCollapse
               ? `<button type="button" class="lesson-outline__toggle" aria-expanded="${
@@ -2590,6 +2598,21 @@
           toggle.textContent = collapsed ? "Show all" : "Show less";
         });
       }
+      // On narrow viewports, collapse after jumping to a section so the lesson stays in view.
+      nav.querySelectorAll(".lesson-outline__list a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.matchMedia("(max-width: 720px)").matches && canCollapse) {
+            window.setTimeout(() => {
+              nav.classList.add("is-collapsed");
+              const t = nav.querySelector(".lesson-outline__toggle");
+              if (t) {
+                t.setAttribute("aria-expanded", "false");
+                t.textContent = "Show all";
+              }
+            }, 320);
+          }
+        });
+      });
     };
 
     const spy = () => {
@@ -2599,17 +2622,34 @@
       if (!links.length) return;
       const offset = 96;
       let activeId = "";
-      links.forEach((link) => {
+      let activeIndex = -1;
+      links.forEach((link, index) => {
         const id = decodeURIComponent((link.getAttribute("href") || "").slice(1));
         const el = document.getElementById(id);
         if (!el) return;
-        if (el.getBoundingClientRect().top <= offset) activeId = id;
+        if (el.getBoundingClientRect().top <= offset) {
+          activeId = id;
+          activeIndex = index;
+        }
       });
-      if (!activeId) activeId = decodeURIComponent((links[0].getAttribute("href") || "").slice(1));
-      links.forEach((link) => {
+      if (!activeId) {
+        activeId = decodeURIComponent((links[0].getAttribute("href") || "").slice(1));
+        activeIndex = 0;
+      }
+      links.forEach((link, index) => {
         const id = decodeURIComponent((link.getAttribute("href") || "").slice(1));
         link.classList.toggle("is-active", id === activeId);
+        link.classList.toggle("is-passed", index < activeIndex);
       });
+      const passed = Math.max(activeIndex + 1, 0);
+      const prevPassed = Number(nav.dataset.pfPassed || 0);
+      if (passed !== prevPassed) {
+        nav.dataset.pfPassed = String(passed);
+        const label = nav.querySelector(".lesson-outline__label");
+        if (label) {
+          label.textContent = `On this lesson · ${passed} of ${links.length} reached`;
+        }
+      }
     };
 
     sync();
@@ -2950,6 +2990,14 @@
       options[index].focus({ preventScroll: true });
       active.classList.add("is-keyed");
       window.setTimeout(() => active.classList.remove("is-keyed"), 420);
+      const rect = active.getBoundingClientRect();
+      const pad = 96;
+      if (rect.top < pad || rect.bottom > window.innerHeight - 24) {
+        active.scrollIntoView({
+          block: "center",
+          behavior: prefersReducedMotion() ? "auto" : "smooth",
+        });
+      }
     });
   };
 
@@ -3289,6 +3337,20 @@
         disarm();
         event.preventDefault();
         window.location.href = resumeHref();
+        return;
+      }
+      if (key === "g") {
+        disarm();
+        event.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: prefersReducedMotion() ? "auto" : "smooth",
+        });
+        const topBtn = document.getElementById("pf-back-top");
+        if (topBtn) {
+          topBtn.classList.add("is-hotkey");
+          window.setTimeout(() => topBtn.classList.remove("is-hotkey"), 700);
+        }
         return;
       }
       const href = routes[key];
