@@ -861,3 +861,30 @@ Remote main had advanced (accounts API, Support, shared `site.js` header, promo 
 **Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux50 commit on this branch.
 
 **Route risk:** Low — additive chrome; existing hrefs preserved.
+
+---
+
+### 2026-10-26 — Weekly audit + UX modernization (ux51)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed again: weekly UX chrome was absent on `main` after later content merges — restored from `cursor/user-experience-modernization-c853` (ux50 stack: `2520a8c`…`6ef110b`).
+2. Maintenance stamp and privacy “Last reviewed” were still **19 October 2026**.
+3. Outline lacked scroll-progress feedback; go-chord had no top jump; quiz keyboard answers could leave the active question off-screen; late-October resume tone was generic.
+
+**Changes**
+- Restored ux50 chrome, then refreshed maintenance stamp to **26 October 2026**; privacy reviewed same day (LICENSE already 2026).
+- **Closing October strong** resume greeting (26–31 Oct mornings).
+- Lesson outline **reached progress** (“N of M reached”) + **passed-section** ticks; auto-collapse after section jump on narrow screens.
+- **`g` then `g`** jumps to page top (with back-to-top hotkey flash); shortcuts sheet updated.
+- Quiz keyboard answers **scroll the keyed question into view** with a soft focus ring.
+- Cache `?v=ux51`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/privacy.html`, `docs/*.html` (cache), `docs/AUDIT-LOG.md`
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux51 commit on this branch.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
