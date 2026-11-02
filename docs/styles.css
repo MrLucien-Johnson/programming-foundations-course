@@ -4273,6 +4273,23 @@ html.pf-go-armed .study-session-chip {
   color: rgba(26, 32, 40, 0.62);
 }
 
+.lesson-outline__meter {
+  height: 4px;
+  margin: 0 0 10px;
+  border-radius: 999px;
+  background: rgba(26, 32, 40, 0.08);
+  overflow: hidden;
+}
+
+.lesson-outline__meter > span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--gold-dark, #9a7b1a), var(--gold-light, #e2c15a));
+  transition: width 0.28s ease;
+}
+
 .lesson-outline__toggle {
   border: 1px solid rgba(26, 32, 40, 0.14);
   background: rgba(255, 255, 255, 0.65);
@@ -4361,6 +4378,12 @@ html.pf-go-armed .study-session-chip {
   box-shadow: 0 0 0 3px rgba(226, 193, 90, 0.28);
 }
 
+.lesson-outline__item a.is-section-jump {
+  background: rgba(226, 193, 90, 0.28);
+  border-left-color: var(--gold-dark, #b8922e);
+  transform: translateX(2px);
+}
+
 .back-to-top.is-hotkey {
   transform: translateY(-2px) scale(1.06);
   box-shadow: 0 8px 20px rgba(184, 146, 46, 0.35);
@@ -4378,6 +4401,7 @@ html.pf-go-armed .study-session-chip {
   .lesson-outline__item a,
   .lesson-outline,
   .lesson-outline__toggle,
+  .lesson-outline__meter > span,
   .code-button,
   .back-to-top,
   .quiz-question.is-keyed {

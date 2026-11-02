@@ -63,7 +63,7 @@
 
   /** Site maintenance stamp — keep year and month current on each audit. */
   const SITE_YEAR = 2026;
-  const SITE_MAINTAINED_LABEL = "26 October 2026";
+  const SITE_MAINTAINED_LABEL = "2 November 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -1773,11 +1773,14 @@
       const lateMonth = dayOfMonth >= 17 && dayOfMonth <= 23;
       const monthEnd = dayOfMonth >= 24;
       const closingOctober = month === 9 && dayOfMonth >= 26; // late October
+      const earlyNovember = month === 10 && dayOfMonth <= 7; // first week of November
+      if (earlyNovember && hour < 12) return "Fresh November start";
       if (firstWeekdayOfMonth && hour < 12) return "New month energy";
       if (midMonth && hour < 12) return "Mid-month momentum";
       if (lateMonth && hour < 12) return "Late-month push";
       if (closingOctober && hour < 12) return "Closing October strong";
       if (monthEnd && hour < 12) return "Month-end stretch";
+      if (month === 10 && hour < 12) return "Steady November pace"; // November
       if (month === 9 && hour < 12) return "Crisp autumn focus"; // October
       if (weekday === 1 && hour < 12) return "Fresh week ahead";
       if ((weekday === 0 || weekday === 6) && hour < 12) return "Easy weekend morning";
@@ -2253,7 +2256,8 @@
         tile.classList.add("is-last-opened");
         const badge = document.createElement("span");
         badge.className = "course-tile-last";
-        badge.textContent = "Last opened";
+        const when = formatRelativeTime(last?.ts);
+        badge.textContent = when ? `Last opened · ${when}` : "Last opened";
         const titleRow = heading?.parentElement || body;
         if (heading) heading.insertAdjacentElement("afterend", badge);
         else titleRow.prepend(badge);
@@ -2399,6 +2403,8 @@
           <li><kbd>Enter</kbd> <span>Check quiz answers or open focused module</span></li>
           <li><kbd>f</kbd> <span>Focus mode (lessons)</span></li>
           <li><kbd>o</kbd> <span>Jump to lesson outline</span></li>
+          <li><kbd>,</kbd> / <kbd>.</kbd> <span>Previous / next lesson section</span></li>
+          <li><kbd>u</kbd> <span>Next unanswered quiz question</span></li>
           <li><kbd>b</kbd> <span>Back to top</span></li>
           <li><kbd>Ctrl</kbd> + <kbd>Enter</kbd> <span>Run playground (home)</span></li>
           <li><kbd>Esc</kbd> <span>Close dialogs, toast, go-chord, and this sheet</span></li>
@@ -2563,9 +2569,11 @@
       const wasCollapsed = nav.classList.contains("is-collapsed");
       const canCollapse = items.length > 6;
       const passedCount = Number(nav.dataset.pfPassed || 0);
+      const reached = Math.min(Math.max(passedCount, 0), items.length);
+      const meterPct = items.length ? Math.round((reached / items.length) * 100) : 0;
       const progressBit =
         passedCount > 0
-          ? ` · ${Math.min(passedCount, items.length)} of ${items.length} reached`
+          ? ` · ${reached} of ${items.length} reached`
           : ` · ${items.length} sections`;
       nav.innerHTML = `
         <div class="lesson-outline__head">
@@ -2578,6 +2586,7 @@
               : ""
           }
         </div>
+        <div class="lesson-outline__meter" aria-hidden="true"><span style="width:${meterPct}%"></span></div>
         <ol class="lesson-outline__list">
           ${items
             .map(
@@ -2649,6 +2658,11 @@
         if (label) {
           label.textContent = `On this lesson · ${passed} of ${links.length} reached`;
         }
+        const meter = nav.querySelector(".lesson-outline__meter > span");
+        if (meter) {
+          const pct = links.length ? Math.round((passed / links.length) * 100) : 0;
+          meter.style.width = `${pct}%`;
+        }
       }
     };
 
@@ -2686,6 +2700,76 @@
       nav.classList.add("is-flash");
       window.setTimeout(() => nav.classList.remove("is-flash"), 900);
       nav.querySelector(".lesson-outline__list a")?.focus({ preventScroll: true });
+    });
+  };
+
+  /** Press “,” / “.” to jump to the previous / next lesson section via the outline. */
+  const wireOutlineSectionKeys = () => {
+    if (document.documentElement.dataset.pfOutlineSections === "1") return;
+    document.documentElement.dataset.pfOutlineSections = "1";
+    const jumpTo = (delta) => {
+      const nav = document.getElementById("pf-lesson-outline");
+      if (!nav) return false;
+      const links = Array.from(nav.querySelectorAll(".lesson-outline__list a[href^='#']"));
+      if (!links.length) return false;
+      let activeIndex = links.findIndex((link) => link.classList.contains("is-active"));
+      if (activeIndex < 0) activeIndex = 0;
+      const nextIndex = Math.min(Math.max(activeIndex + delta, 0), links.length - 1);
+      if (nextIndex === activeIndex && delta !== 0) return false;
+      const link = links[nextIndex];
+      const id = decodeURIComponent((link.getAttribute("href") || "").slice(1));
+      const target = document.getElementById(id);
+      if (!target) return false;
+      target.scrollIntoView({
+        block: "start",
+        behavior: prefersReducedMotion() ? "auto" : "smooth",
+      });
+      target.classList.add("is-hash-target");
+      window.setTimeout(() => target.classList.remove("is-hash-target"), 1400);
+      link.classList.add("is-section-jump");
+      window.setTimeout(() => link.classList.remove("is-section-jump"), 700);
+      try {
+        history.replaceState(null, "", `#${id}`);
+      } catch {
+        /* ignore */
+      }
+      return true;
+    };
+    document.addEventListener("keydown", (event) => {
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      if (event.key !== "," && event.key !== ".") return;
+      if (!document.getElementById("lesson-content")) return;
+      const moved = jumpTo(event.key === "." ? 1 : -1);
+      if (moved) event.preventDefault();
+    });
+  };
+
+  /** Press “u” to jump to the next unanswered quiz question. */
+  const wireQuizNextUnanswered = () => {
+    if (document.documentElement.dataset.pfQuizNextU === "1") return;
+    document.documentElement.dataset.pfQuizNextU = "1";
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "u" && event.key !== "U") return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const questions = Array.from(document.querySelectorAll(".quiz-question"));
+      if (!questions.length) return;
+      const unanswered = questions.find((q) => !q.querySelector("input[type='radio']:checked"));
+      const target = unanswered || questions[questions.length - 1];
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({
+        block: "center",
+        behavior: prefersReducedMotion() ? "auto" : "smooth",
+      });
+      target.classList.add("is-keyed");
+      window.setTimeout(() => target.classList.remove("is-keyed"), 480);
+      const first = target.querySelector("input[type='radio']");
+      first?.focus({ preventScroll: true });
+      if (!unanswered) {
+        showToast("All questions answered — press Enter to check", { tone: "info" });
+      }
     });
   };
 
@@ -3682,6 +3766,8 @@
     run("readingMeta", enhanceLessonReadingMeta);
     run("lessonOutline", mountLessonOutline);
     run("outlineKey", wireOutlineHotkey);
+    run("outlineSections", wireOutlineSectionKeys);
+    run("quizNextU", wireQuizNextUnanswered);
     run("prefetch", enhanceInternalPrefetch);
     run("copyLink", mountCopyLinkButton);
     run("focusMode", mountLessonFocusMode);
@@ -3801,6 +3887,8 @@
     wireSavedFlash,
     mountLessonOutline,
     wireOutlineHotkey,
+    wireOutlineSectionKeys,
+    wireQuizNextUnanswered,
     enhanceInternalPrefetch,
     wireBackToTopHotkey,
     getStudyStreak,
