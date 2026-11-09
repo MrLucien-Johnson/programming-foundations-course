@@ -63,7 +63,7 @@
 
   /** Site maintenance stamp — keep year and month current on each audit. */
   const SITE_YEAR = 2026;
-  const SITE_MAINTAINED_LABEL = "2 November 2026";
+  const SITE_MAINTAINED_LABEL = "9 November 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -1774,7 +1774,9 @@
       const monthEnd = dayOfMonth >= 24;
       const closingOctober = month === 9 && dayOfMonth >= 26; // late October
       const earlyNovember = month === 10 && dayOfMonth <= 7; // first week of November
+      const midNovember = month === 10 && dayOfMonth >= 8 && dayOfMonth <= 15;
       if (earlyNovember && hour < 12) return "Fresh November start";
+      if (midNovember && hour < 12) return "Mid-November focus";
       if (firstWeekdayOfMonth && hour < 12) return "New month energy";
       if (midMonth && hour < 12) return "Mid-month momentum";
       if (lateMonth && hour < 12) return "Late-month push";
@@ -2265,7 +2267,7 @@
     });
   };
 
-  /** Highlight deep-linked steps (Start Here, Help anchors). */
+  /** Highlight deep-linked steps (Start Here, Help anchors) and sync lesson outline. */
   const enhanceHashTargets = () => {
     const apply = () => {
       document.querySelectorAll(".is-hash-target").forEach((el) => {
@@ -2279,17 +2281,39 @@
       if (!prefersReducedMotion()) {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       }
+      const outline = document.getElementById("pf-lesson-outline");
+      if (outline) {
+        if (outline.classList.contains("is-collapsed")) {
+          outline.classList.remove("is-collapsed");
+          const toggle = outline.querySelector(".lesson-outline__toggle");
+          if (toggle) {
+            toggle.setAttribute("aria-expanded", "true");
+            toggle.textContent = "Show less";
+          }
+        }
+        const link = Array.from(
+          outline.querySelectorAll(".lesson-outline__list a[href^='#']")
+        ).find((a) => decodeURIComponent((a.getAttribute("href") || "").slice(1)) === id);
+        if (link) {
+          link.classList.add("is-section-jump");
+          window.setTimeout(() => link.classList.remove("is-section-jump"), 900);
+        }
+      }
     };
     apply();
     window.addEventListener("hashchange", apply);
+    // Lesson content hydrates after boot — re-apply once headings exist.
+    window.setTimeout(apply, 400);
+    window.setTimeout(apply, 1200);
   };
 
-  /** Live-filter course tiles on the Courses page. */
+  /** Live-filter course tiles on the Courses page (remembers the query for this tab). */
   const wireCourseTileFilter = () => {
     const input = document.getElementById("course-tile-filter");
     const status = document.getElementById("course-tile-filter-status");
     const tiles = Array.from(document.querySelectorAll(".course-tile"));
     if (!input || !tiles.length) return;
+    const storageKey = "pf-course-tile-filter";
     const apply = () => {
       const q = input.value.trim().toLowerCase();
       let shown = 0;
@@ -2299,6 +2323,12 @@
         tile.hidden = !match;
         if (match) shown += 1;
       });
+      try {
+        if (q) sessionStorage.setItem(storageKey, input.value.trim());
+        else sessionStorage.removeItem(storageKey);
+      } catch {
+        /* private mode */
+      }
       if (status) {
         status.textContent = q
           ? shown
@@ -2328,6 +2358,17 @@
       }
     };
     input.addEventListener("input", apply);
+    try {
+      const saved = sessionStorage.getItem(storageKey) || "";
+      if (saved && !input.value) {
+        input.value = saved;
+        input.classList.add("is-restored-filter");
+        window.setTimeout(() => input.classList.remove("is-restored-filter"), 1200);
+      }
+    } catch {
+      /* ignore */
+    }
+    apply();
   };
 
   /** Press "/" to jump to the nearest page search/filter field. */
@@ -2403,6 +2444,7 @@
           <li><kbd>Enter</kbd> <span>Check quiz answers or open focused module</span></li>
           <li><kbd>f</kbd> <span>Focus mode (lessons)</span></li>
           <li><kbd>o</kbd> <span>Jump to lesson outline</span></li>
+          <li><kbd>m</kbd> <span>Jump to module list</span></li>
           <li><kbd>,</kbd> / <kbd>.</kbd> <span>Previous / next lesson section</span></li>
           <li><kbd>u</kbd> <span>Next unanswered quiz question</span></li>
           <li><kbd>b</kbd> <span>Back to top</span></li>
@@ -2701,6 +2743,69 @@
       window.setTimeout(() => nav.classList.remove("is-flash"), 900);
       nav.querySelector(".lesson-outline__list a")?.focus({ preventScroll: true });
     });
+  };
+
+  /** Press “m” to jump to the module list panel (course viewer / hubs). */
+  const wireModuleListHotkey = () => {
+    if (document.documentElement.dataset.pfModuleListKey === "1") return;
+    document.documentElement.dataset.pfModuleListKey = "1";
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "m" && event.key !== "M") return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const panel =
+        document.querySelector(".module-list-panel") ||
+        document.getElementById("module-list") ||
+        document.querySelector(".module-list");
+      if (!panel) return;
+      event.preventDefault();
+      panel.scrollIntoView({ block: "start", behavior: prefersReducedMotion() ? "auto" : "smooth" });
+      panel.classList.add("is-flash");
+      window.setTimeout(() => panel.classList.remove("is-flash"), 900);
+      const next =
+        panel.querySelector(".module-list__item.is-next .module-list__action--lesson") ||
+        panel.querySelector(".module-list__item.is-kbd-focus .module-list__action--lesson") ||
+        panel.querySelector(".module-list__action--lesson");
+      next?.focus({ preventScroll: true });
+    });
+  };
+
+  /** Soft fade before leaving for internal HTML navigations. */
+  const enhanceNavTransitions = () => {
+    if (document.documentElement.dataset.pfNavFade === "1") return;
+    document.documentElement.dataset.pfNavFade = "1";
+    if (prefersReducedMotion()) return;
+    document.addEventListener(
+      "click",
+      (event) => {
+        if (event.defaultPrevented || event.button !== 0) return;
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        const anchor = event.target?.closest?.("a[href]");
+        if (!anchor) return;
+        if (anchor.target && anchor.target !== "_self") return;
+        if (anchor.hasAttribute("download")) return;
+        const href = anchor.getAttribute("href") || "";
+        if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+          return;
+        }
+        let url;
+        try {
+          url = new URL(href, window.location.href);
+        } catch {
+          return;
+        }
+        if (url.origin !== window.location.origin) return;
+        if (!/\.html?$/i.test(url.pathname) && !url.pathname.endsWith("/")) return;
+        if (
+          url.pathname === window.location.pathname &&
+          url.search === window.location.search
+        ) {
+          return;
+        }
+        document.documentElement.classList.add("pf-page-leave");
+      },
+      true
+    );
   };
 
   /** Press “,” / “.” to jump to the previous / next lesson section via the outline. */
@@ -3766,8 +3871,10 @@
     run("readingMeta", enhanceLessonReadingMeta);
     run("lessonOutline", mountLessonOutline);
     run("outlineKey", wireOutlineHotkey);
+    run("moduleListKey", wireModuleListHotkey);
     run("outlineSections", wireOutlineSectionKeys);
     run("quizNextU", wireQuizNextUnanswered);
+    run("navFade", enhanceNavTransitions);
     run("prefetch", enhanceInternalPrefetch);
     run("copyLink", mountCopyLinkButton);
     run("focusMode", mountLessonFocusMode);
@@ -3887,8 +3994,10 @@
     wireSavedFlash,
     mountLessonOutline,
     wireOutlineHotkey,
+    wireModuleListHotkey,
     wireOutlineSectionKeys,
     wireQuizNextUnanswered,
+    enhanceNavTransitions,
     enhanceInternalPrefetch,
     wireBackToTopHotkey,
     getStudyStreak,
