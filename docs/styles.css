@@ -4415,6 +4415,112 @@ html.pf-page-leave body {
   border-color: rgba(184, 146, 46, 0.55);
 }
 
+#lesson-content.is-flash {
+  animation: moduleListFlash 0.9s ease;
+  box-shadow: 0 0 0 2px rgba(226, 193, 90, 0.4);
+  border-radius: var(--radius-md, 10px);
+}
+
+.heading-anchor {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.35em;
+  padding: 0 0.35em;
+  min-width: 1.4em;
+  min-height: 1.4em;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: rgba(154, 123, 26, 0.55);
+  font: inherit;
+  font-size: 0.78em;
+  font-weight: 600;
+  line-height: 1;
+  vertical-align: middle;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-1px);
+  transition: opacity 0.18s ease, color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+h2.has-heading-anchor:hover .heading-anchor,
+h3.has-heading-anchor:hover .heading-anchor,
+h2.has-heading-anchor:focus-within .heading-anchor,
+h3.has-heading-anchor:focus-within .heading-anchor,
+.heading-anchor:focus-visible {
+  opacity: 1;
+}
+
+.heading-anchor:hover,
+.heading-anchor:focus-visible {
+  color: var(--ink, #0e1116);
+  background: rgba(226, 193, 90, 0.22);
+  border-color: rgba(184, 146, 46, 0.45);
+  outline: none;
+}
+
+.quiz-question.is-review-jump {
+  box-shadow: 0 0 0 2px rgba(184, 80, 60, 0.35);
+  border-radius: var(--radius-md, 10px);
+  animation: moduleListFlash 1s ease;
+}
+
+.shortcuts-whisper {
+  position: fixed;
+  right: 18px;
+  bottom: 22px;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: min(360px, calc(100vw - 32px));
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(184, 146, 46, 0.35);
+  background: rgba(247, 241, 230, 0.96);
+  color: var(--ink, #0e1116);
+  box-shadow: var(--shadow-soft, 0 8px 28px rgba(14, 17, 22, 0.08));
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.shortcuts-whisper.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.shortcuts-whisper kbd {
+  font-family: var(--font-body, inherit);
+  font-size: 0.85em;
+  padding: 0.1em 0.4em;
+  border-radius: 5px;
+  border: 1px solid rgba(14, 17, 22, 0.16);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.shortcuts-whisper__close {
+  flex: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: var(--ink, #0e1116);
+  color: var(--paper, #efe7d8);
+  font: inherit;
+  font-size: 0.86em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.shortcuts-whisper__close:hover,
+.shortcuts-whisper__close:focus-visible {
+  background: var(--gold-dark, #9a7b1a);
+  outline: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .read-progress__label,
   .quiz-progress-strip__dot,
@@ -4431,8 +4537,12 @@ html.pf-page-leave body {
   .code-button,
   .back-to-top,
   .quiz-question.is-keyed,
+  .quiz-question.is-review-jump,
   .module-list-panel.is-flash,
-  .module-list.is-flash {
+  .module-list.is-flash,
+  #lesson-content.is-flash,
+  .heading-anchor,
+  .shortcuts-whisper {
     transition: none !important;
     animation: none !important;
   }
@@ -4457,6 +4567,8 @@ html.pf-page-leave body {
   .connectivity-banner,
   .lesson-outline,
   .lesson-outline__toggle,
+  .heading-anchor,
+  .shortcuts-whisper,
   html.pf-go-armed body::after {
     display: none !important;
   }
