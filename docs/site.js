@@ -63,7 +63,7 @@
 
   /** Site maintenance stamp — keep year and month current on each audit. */
   const SITE_YEAR = 2026;
-  const SITE_MAINTAINED_LABEL = "9 November 2026";
+  const SITE_MAINTAINED_LABEL = "16 November 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -1676,6 +1676,24 @@
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
 
+  /** Stable section ids for lesson headings / outline deep links. */
+  const slugify = (text, used = new Set()) => {
+    let base =
+      String(text || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")
+        .slice(0, 48) || "section";
+    let id = base;
+    let n = 2;
+    while (used.has(id) || document.getElementById(id)) {
+      id = `${base}-${n}`;
+      n += 1;
+    }
+    used.add(id);
+    return id;
+  };
+
   /** Human-friendly relative time for resume / activity stamps. */
   const formatRelativeTime = (ts) => {
     const ms = Number(ts) || 0;
@@ -1775,8 +1793,12 @@
       const closingOctober = month === 9 && dayOfMonth >= 26; // late October
       const earlyNovember = month === 10 && dayOfMonth <= 7; // first week of November
       const midNovember = month === 10 && dayOfMonth >= 8 && dayOfMonth <= 15;
+      const lateNovember = month === 10 && dayOfMonth >= 16 && dayOfMonth <= 22;
+      const closingNovember = month === 10 && dayOfMonth >= 23;
       if (earlyNovember && hour < 12) return "Fresh November start";
       if (midNovember && hour < 12) return "Mid-November focus";
+      if (lateNovember && hour < 12) return "Late-November push";
+      if (closingNovember && hour < 12) return "Closing November strong";
       if (firstWeekdayOfMonth && hour < 12) return "New month energy";
       if (midMonth && hour < 12) return "Mid-month momentum";
       if (lateMonth && hour < 12) return "Late-month push";
@@ -2444,6 +2466,7 @@
           <li><kbd>Enter</kbd> <span>Check quiz answers or open focused module</span></li>
           <li><kbd>f</kbd> <span>Focus mode (lessons)</span></li>
           <li><kbd>o</kbd> <span>Jump to lesson outline</span></li>
+          <li><kbd>l</kbd> <span>Jump to lesson content</span></li>
           <li><kbd>m</kbd> <span>Jump to module list</span></li>
           <li><kbd>,</kbd> / <kbd>.</kbd> <span>Previous / next lesson section</span></li>
           <li><kbd>u</kbd> <span>Next unanswered quiz question</span></li>
@@ -2564,22 +2587,6 @@
     if (content.dataset.pfOutlineWired === "1") return;
     content.dataset.pfOutlineWired = "1";
 
-    const slugify = (text, used) => {
-      let base = String(text || "")
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-|-$/g, "")
-        .slice(0, 48) || "section";
-      let id = base;
-      let n = 2;
-      while (used.has(id) || document.getElementById(id)) {
-        id = `${base}-${n}`;
-        n += 1;
-      }
-      used.add(id);
-      return id;
-    };
-
     const sync = () => {
       const headings = Array.from(content.querySelectorAll("h2, h3")).filter((h) =>
         (h.textContent || "").trim()
@@ -2589,13 +2596,26 @@
         if (nav) nav.remove();
         return;
       }
+      const headingLabel = (heading) =>
+        Array.from(heading.childNodes)
+          .filter(
+            (node) =>
+              node.nodeType === Node.TEXT_NODE ||
+              (node.nodeType === Node.ELEMENT_NODE &&
+                !node.classList?.contains("heading-anchor"))
+          )
+          .map((node) => node.textContent || "")
+          .join("")
+          .replace(/\s+/g, " ")
+          .trim();
       const used = new Set();
       const items = headings.map((heading) => {
-        if (!heading.id) heading.id = slugify(heading.textContent, used);
+        const label = headingLabel(heading);
+        if (!heading.id) heading.id = slugify(label, used);
         else used.add(heading.id);
         return {
           id: heading.id,
-          label: (heading.textContent || "").trim(),
+          label,
           level: heading.tagName === "H3" ? 3 : 2,
         };
       });
@@ -2768,6 +2788,221 @@
         panel.querySelector(".module-list__action--lesson");
       next?.focus({ preventScroll: true });
     });
+  };
+
+  /** Press “l” to jump to the main lesson content block. */
+  const wireLessonContentHotkey = () => {
+    if (document.documentElement.dataset.pfLessonContentKey === "1") return;
+    document.documentElement.dataset.pfLessonContentKey = "1";
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "l" && event.key !== "L") return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const content = document.getElementById("lesson-content");
+      if (!content) return;
+      event.preventDefault();
+      content.scrollIntoView({ block: "start", behavior: prefersReducedMotion() ? "auto" : "smooth" });
+      content.classList.add("is-flash");
+      window.setTimeout(() => content.classList.remove("is-flash"), 900);
+      const focusable =
+        content.querySelector("h1, h2, h3, a, button, [tabindex]:not([tabindex='-1'])") || content;
+      if (focusable === content && !content.hasAttribute("tabindex")) {
+        content.setAttribute("tabindex", "-1");
+      }
+      focusable.focus?.({ preventScroll: true });
+    });
+  };
+
+  /** Soft “#” controls on lesson headings to copy a deep link. */
+  const enhanceLessonHeadingLinks = () => {
+    const content = document.getElementById("lesson-content");
+    if (!content) return;
+    const used = new Set(
+      Array.from(content.querySelectorAll("[id]"))
+        .map((el) => el.id)
+        .filter(Boolean)
+    );
+    const sync = () => {
+      const headings = Array.from(content.querySelectorAll("h2, h3")).filter((h) =>
+        (h.textContent || "").trim()
+      );
+      headings.forEach((heading) => {
+        const label = Array.from(heading.childNodes)
+          .filter(
+            (node) =>
+              node.nodeType === Node.TEXT_NODE ||
+              (node.nodeType === Node.ELEMENT_NODE &&
+                !node.classList?.contains("heading-anchor"))
+          )
+          .map((node) => node.textContent || "")
+          .join("")
+          .replace(/\s+/g, " ")
+          .trim();
+        if (!heading.id) heading.id = slugify(label || heading.textContent, used);
+        else used.add(heading.id);
+        if (heading.querySelector(".heading-anchor")) return;
+        heading.classList.add("has-heading-anchor");
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "heading-anchor";
+        btn.setAttribute("aria-label", `Copy link to ${label || "this section"}`);
+        btn.title = "Copy link to this section";
+        btn.textContent = "#";
+        btn.addEventListener("click", async (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          const url = `${window.location.origin}${window.location.pathname}${window.location.search}#${heading.id}`;
+          try {
+            if (navigator.clipboard?.writeText) {
+              await navigator.clipboard.writeText(url);
+            } else {
+              const input = document.createElement("input");
+              input.value = url;
+              document.body.appendChild(input);
+              input.select();
+              document.execCommand("copy");
+              input.remove();
+            }
+            try {
+              history.replaceState(null, "", `#${heading.id}`);
+            } catch {
+              /* ignore */
+            }
+            heading.classList.add("is-hash-target");
+            window.setTimeout(() => heading.classList.remove("is-hash-target"), 1200);
+            showToast("Section link copied", { tone: "success" });
+          } catch {
+            showToast("Could not copy section link", { tone: "info" });
+          }
+        });
+        heading.appendChild(btn);
+      });
+    };
+    sync();
+    const mo = new MutationObserver(() => sync());
+    mo.observe(content, { childList: true, subtree: true, characterData: true });
+  };
+
+  /** After checking a quiz, scroll to the first incorrect answer for review. */
+  const wireQuizReviewJump = () => {
+    if (document.documentElement.dataset.pfQuizReviewJump === "1") return;
+    document.documentElement.dataset.pfQuizReviewJump = "1";
+    const jump = () => {
+      window.setTimeout(() => {
+        const wrong =
+          document.querySelector(".quiz-question .incorrect") ||
+          document.querySelector(".quiz-option.incorrect") ||
+          document.querySelector("label.incorrect");
+        if (!wrong) return;
+        const question = wrong.closest(".quiz-question") || wrong;
+        question.scrollIntoView({
+          block: "center",
+          behavior: prefersReducedMotion() ? "auto" : "smooth",
+        });
+        question.classList.add("is-review-jump");
+        window.setTimeout(() => question.classList.remove("is-review-jump"), 1200);
+        const first = question.querySelector("input[type='radio']");
+        first?.focus({ preventScroll: true });
+      }, 60);
+    };
+    const bind = () => {
+      const check = document.getElementById("check-answers");
+      if (!check || check.dataset.pfReviewBound === "1") return;
+      check.dataset.pfReviewBound = "1";
+      check.addEventListener("click", jump);
+    };
+    bind();
+    const mo = new MutationObserver(bind);
+    mo.observe(document.body, { childList: true, subtree: true });
+  };
+
+  /** One soft tip per tab so keyboard shortcuts stay discoverable. */
+  const mountShortcutsWhisper = () => {
+    if (document.getElementById("pf-shortcuts-whisper")) return;
+    if (prefersReducedMotion()) return;
+    let seen = false;
+    try {
+      seen = sessionStorage.getItem("pf-shortcuts-whisper") === "1";
+    } catch {
+      seen = false;
+    }
+    if (seen) return;
+    const hasLessonOrQuiz =
+      document.getElementById("lesson-content") ||
+      document.getElementById("quiz-container") ||
+      document.getElementById("course-tile-filter");
+    if (!hasLessonOrQuiz) return;
+    const tip = document.createElement("div");
+    tip.id = "pf-shortcuts-whisper";
+    tip.className = "shortcuts-whisper";
+    tip.setAttribute("role", "status");
+    tip.innerHTML =
+      '<span>Tip: press <kbd>?</kbd> for keyboard shortcuts</span>' +
+      '<button type="button" class="shortcuts-whisper__close" aria-label="Dismiss tip">Got it</button>';
+    document.body.appendChild(tip);
+    const dismiss = () => {
+      tip.classList.remove("is-visible");
+      try {
+        sessionStorage.setItem("pf-shortcuts-whisper", "1");
+      } catch {
+        /* ignore */
+      }
+      window.setTimeout(() => tip.remove(), 320);
+    };
+    tip.querySelector(".shortcuts-whisper__close")?.addEventListener("click", dismiss);
+    window.setTimeout(() => tip.classList.add("is-visible"), 900);
+    window.setTimeout(dismiss, 7000);
+    document.addEventListener(
+      "keydown",
+      (event) => {
+        if (event.key === "?" || event.key === "Escape") dismiss();
+      },
+      { once: true }
+    );
+  };
+
+  /** Remember Courses page scroll so returning to the hub feels continuous. */
+  const mountCoursesScrollMemory = () => {
+    if (!document.getElementById("course-tile-filter")) return;
+    const storageKey = "pf-courses-scroll";
+    let restored = false;
+    const save = () => {
+      try {
+        sessionStorage.setItem(
+          storageKey,
+          JSON.stringify({ y: Math.round(window.scrollY), ts: Date.now() })
+        );
+      } catch {
+        /* ignore */
+      }
+    };
+    let timer = null;
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(save, 180);
+      },
+      { passive: true }
+    );
+    window.addEventListener("pagehide", save);
+    const tryRestore = () => {
+      if (restored) return;
+      let saved = null;
+      try {
+        saved = JSON.parse(sessionStorage.getItem(storageKey) || "null");
+      } catch {
+        saved = null;
+      }
+      if (!saved || typeof saved.y !== "number" || saved.y < 160) return;
+      if (Date.now() - (saved.ts || 0) > 45 * 60 * 1000) return;
+      restored = true;
+      window.requestAnimationFrame(() => {
+        window.scrollTo({ top: saved.y, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+      });
+    };
+    window.setTimeout(tryRestore, 120);
+    window.setTimeout(tryRestore, 500);
   };
 
   /** Soft fade before leaving for internal HTML navigations. */
@@ -3872,8 +4107,13 @@
     run("lessonOutline", mountLessonOutline);
     run("outlineKey", wireOutlineHotkey);
     run("moduleListKey", wireModuleListHotkey);
+    run("lessonContentKey", wireLessonContentHotkey);
+    run("headingLinks", enhanceLessonHeadingLinks);
     run("outlineSections", wireOutlineSectionKeys);
     run("quizNextU", wireQuizNextUnanswered);
+    run("quizReviewJump", wireQuizReviewJump);
+    run("shortcutsWhisper", mountShortcutsWhisper);
+    run("coursesScroll", mountCoursesScrollMemory);
     run("navFade", enhanceNavTransitions);
     run("prefetch", enhanceInternalPrefetch);
     run("copyLink", mountCopyLinkButton);
@@ -3920,7 +4160,9 @@
       run("finishNudge:deferred", mountLessonFinishNudge);
       run("savedFlash:deferred", wireSavedFlash);
       run("lessonOutline:deferred", mountLessonOutline);
+      run("headingLinks:deferred", enhanceLessonHeadingLinks);
       run("readingMeta:deferred", enhanceLessonReadingMeta);
+      run("quizReviewJump:deferred", wireQuizReviewJump);
     }, 200);
     window.setTimeout(() => {
       run("nextModules:late", highlightNextModules);
@@ -3995,8 +4237,13 @@
     mountLessonOutline,
     wireOutlineHotkey,
     wireModuleListHotkey,
+    wireLessonContentHotkey,
+    enhanceLessonHeadingLinks,
     wireOutlineSectionKeys,
     wireQuizNextUnanswered,
+    wireQuizReviewJump,
+    mountShortcutsWhisper,
+    mountCoursesScrollMemory,
     enhanceNavTransitions,
     enhanceInternalPrefetch,
     wireBackToTopHotkey,
