@@ -63,7 +63,7 @@
 
   /** Site maintenance stamp — keep year and month current on each audit. */
   const SITE_YEAR = 2026;
-  const SITE_MAINTAINED_LABEL = "16 November 2026";
+  const SITE_MAINTAINED_LABEL = "23 November 2026";
 
   /** Recommended path catalog per persona — used to seed org assignments. */
   const PERSONA_PATHS = {
@@ -1794,7 +1794,11 @@
       const earlyNovember = month === 10 && dayOfMonth <= 7; // first week of November
       const midNovember = month === 10 && dayOfMonth >= 8 && dayOfMonth <= 15;
       const lateNovember = month === 10 && dayOfMonth >= 16 && dayOfMonth <= 22;
-      const closingNovember = month === 10 && dayOfMonth >= 23;
+      const closingNovember = month === 10 && dayOfMonth >= 23 && dayOfMonth <= 26;
+      const decemberHorizon = month === 10 && dayOfMonth >= 27; // last days of November
+      const earlyDecember = month === 11 && dayOfMonth <= 7; // first week of December
+      if (earlyDecember && hour < 12) return "Fresh December start";
+      if (decemberHorizon && hour < 12) return "December on the horizon";
       if (earlyNovember && hour < 12) return "Fresh November start";
       if (midNovember && hour < 12) return "Mid-November focus";
       if (lateNovember && hour < 12) return "Late-November push";
@@ -1804,6 +1808,7 @@
       if (lateMonth && hour < 12) return "Late-month push";
       if (closingOctober && hour < 12) return "Closing October strong";
       if (monthEnd && hour < 12) return "Month-end stretch";
+      if (month === 11 && hour < 12) return "Steady December pace"; // December
       if (month === 10 && hour < 12) return "Steady November pace"; // November
       if (month === 9 && hour < 12) return "Crisp autumn focus"; // October
       if (weekday === 1 && hour < 12) return "Fresh week ahead";
@@ -2468,6 +2473,8 @@
           <li><kbd>o</kbd> <span>Jump to lesson outline</span></li>
           <li><kbd>l</kbd> <span>Jump to lesson content</span></li>
           <li><kbd>m</kbd> <span>Jump to module list</span></li>
+          <li><kbd>q</kbd> <span>Jump to quiz</span></li>
+          <li><kbd>y</kbd> <span>Copy page link</span></li>
           <li><kbd>,</kbd> / <kbd>.</kbd> <span>Previous / next lesson section</span></li>
           <li><kbd>u</kbd> <span>Next unanswered quiz question</span></li>
           <li><kbd>b</kbd> <span>Back to top</span></li>
@@ -2810,6 +2817,66 @@
         content.setAttribute("tabindex", "-1");
       }
       focusable.focus?.({ preventScroll: true });
+    });
+  };
+
+  /** Press “q” to jump to the quiz block or check-answers actions. */
+  const wireQuizJumpHotkey = () => {
+    if (document.documentElement.dataset.pfQuizJumpKey === "1") return;
+    document.documentElement.dataset.pfQuizJumpKey = "1";
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "q" && event.key !== "Q") return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const target =
+        document.getElementById("quiz-container") ||
+        document.getElementById("quiz-actions") ||
+        document.getElementById("check-answers") ||
+        document.querySelector(".quiz-question");
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ block: "start", behavior: prefersReducedMotion() ? "auto" : "smooth" });
+      target.classList.add("is-flash");
+      window.setTimeout(() => target.classList.remove("is-flash"), 900);
+      const focusable =
+        target.querySelector("input[type='radio'], button, a, [tabindex]:not([tabindex='-1'])") ||
+        target;
+      if (focusable === target && !target.hasAttribute("tabindex")) {
+        target.setAttribute("tabindex", "-1");
+      }
+      focusable.focus?.({ preventScroll: true });
+    });
+  };
+
+  /** Press “y” to yank/copy the current page URL. */
+  const wireCopyPageHotkey = () => {
+    if (document.documentElement.dataset.pfCopyPageKey === "1") return;
+    document.documentElement.dataset.pfCopyPageKey = "1";
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "y" && event.key !== "Y") return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      event.preventDefault();
+      const url = window.location.href;
+      const done = () => showToast("Page link copied", { tone: "success" });
+      const fail = () => showToast("Could not copy — copy from the address bar", { tone: "info" });
+      (async () => {
+        try {
+          if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(url);
+          } else {
+            const input = document.createElement("input");
+            input.value = url;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand("copy");
+            input.remove();
+          }
+          done();
+        } catch {
+          fail();
+        }
+      })();
     });
   };
 
@@ -3196,6 +3263,7 @@
     const input = document.getElementById("tutorial-filter");
     const status = document.getElementById("tutorial-filter-status");
     if (!input) return;
+    const storageKey = "pf-tutorial-filter";
     const apply = () => {
       const clips = Array.from(document.querySelectorAll(".promo-clip"));
       if (!clips.length) {
@@ -3210,6 +3278,12 @@
         clip.hidden = !match;
         if (match) shown += 1;
       });
+      try {
+        if (q) sessionStorage.setItem(storageKey, input.value.trim());
+        else sessionStorage.removeItem(storageKey);
+      } catch {
+        /* ignore */
+      }
       if (status) {
         status.textContent = q
           ? shown
@@ -3219,12 +3293,103 @@
       }
     };
     input.addEventListener("input", apply);
+    try {
+      const saved = sessionStorage.getItem(storageKey) || "";
+      if (saved && !input.value) {
+        input.value = saved;
+        input.classList.add("is-restored-filter");
+        window.setTimeout(() => input.classList.remove("is-restored-filter"), 1200);
+      }
+    } catch {
+      /* ignore */
+    }
     const catalog = document.getElementById("tutorial-catalog");
     if (catalog) {
       const mo = new MutationObserver(apply);
       mo.observe(catalog, { childList: true, subtree: true });
     }
     apply();
+  };
+
+  /** Persist Help topic filter for the browser tab (parity with Courses). */
+  const wireHelpFilterPersist = () => {
+    const input = document.getElementById("help-filter");
+    if (!input || input.dataset.pfHelpPersist === "1") return;
+    input.dataset.pfHelpPersist = "1";
+    const storageKey = "pf-help-filter";
+    const persist = () => {
+      try {
+        const q = input.value.trim();
+        if (q) sessionStorage.setItem(storageKey, q);
+        else sessionStorage.removeItem(storageKey);
+      } catch {
+        /* ignore */
+      }
+    };
+    input.addEventListener("input", persist);
+    try {
+      const saved = sessionStorage.getItem(storageKey) || "";
+      if (saved && !input.value) {
+        input.value = saved;
+        input.classList.add("is-restored-filter");
+        window.setTimeout(() => input.classList.remove("is-restored-filter"), 1200);
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+      }
+    } catch {
+      /* ignore */
+    }
+  };
+
+  /** Remember quiz page scroll so review feels continuous. */
+  const mountQuizScrollMemory = () => {
+    const host =
+      document.getElementById("quiz-container") || document.getElementById("check-answers");
+    if (!host) return;
+    const params = new URLSearchParams(window.location.search);
+    const quiz = params.get("quiz") || params.get("path") || window.location.pathname;
+    const storageKey = `pf-quiz-scroll:${quiz}`;
+    let restored = false;
+    const save = () => {
+      try {
+        sessionStorage.setItem(
+          storageKey,
+          JSON.stringify({ y: Math.round(window.scrollY), ts: Date.now() })
+        );
+      } catch {
+        /* ignore */
+      }
+    };
+    let timer = null;
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(save, 180);
+      },
+      { passive: true }
+    );
+    window.addEventListener("pagehide", save);
+    const tryRestore = () => {
+      if (restored) return;
+      let saved = null;
+      try {
+        saved = JSON.parse(sessionStorage.getItem(storageKey) || "null");
+      } catch {
+        saved = null;
+      }
+      if (!saved || typeof saved.y !== "number" || saved.y < 160) return;
+      if (Date.now() - (saved.ts || 0) > 45 * 60 * 1000) return;
+      const questions = document.querySelectorAll(".quiz-question");
+      if (questions.length < 1) return;
+      restored = true;
+      window.requestAnimationFrame(() => {
+        window.scrollTo({ top: saved.y, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+      });
+    };
+    const mo = new MutationObserver(() => tryRestore());
+    mo.observe(document.body, { childList: true, subtree: true });
+    window.setTimeout(tryRestore, 200);
+    window.setTimeout(tryRestore, 800);
   };
 
   /** Clarify links that open a new tab. */
@@ -4108,12 +4273,16 @@
     run("outlineKey", wireOutlineHotkey);
     run("moduleListKey", wireModuleListHotkey);
     run("lessonContentKey", wireLessonContentHotkey);
+    run("quizJumpKey", wireQuizJumpHotkey);
+    run("copyPageKey", wireCopyPageHotkey);
     run("headingLinks", enhanceLessonHeadingLinks);
     run("outlineSections", wireOutlineSectionKeys);
     run("quizNextU", wireQuizNextUnanswered);
     run("quizReviewJump", wireQuizReviewJump);
     run("shortcutsWhisper", mountShortcutsWhisper);
     run("coursesScroll", mountCoursesScrollMemory);
+    run("quizScroll", mountQuizScrollMemory);
+    run("helpFilterPersist", wireHelpFilterPersist);
     run("navFade", enhanceNavTransitions);
     run("prefetch", enhanceInternalPrefetch);
     run("copyLink", mountCopyLinkButton);
@@ -4238,12 +4407,16 @@
     wireOutlineHotkey,
     wireModuleListHotkey,
     wireLessonContentHotkey,
+    wireQuizJumpHotkey,
+    wireCopyPageHotkey,
     enhanceLessonHeadingLinks,
     wireOutlineSectionKeys,
     wireQuizNextUnanswered,
     wireQuizReviewJump,
     mountShortcutsWhisper,
     mountCoursesScrollMemory,
+    mountQuizScrollMemory,
+    wireHelpFilterPersist,
     enhanceNavTransitions,
     enhanceInternalPrefetch,
     wireBackToTopHotkey,

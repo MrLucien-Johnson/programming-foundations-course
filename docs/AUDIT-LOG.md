@@ -972,3 +972,30 @@ Remote main had advanced (accounts API, Support, shared `site.js` header, promo 
 **Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux54 commit on this branch.
 
 **Route risk:** Low — additive chrome; existing hrefs preserved.
+
+### 2026-11-23 — Weekly audit + UX modernization (ux55)
+
+**Routes:** 0 errors / 0 warnings (`python3 scripts/audit_routes.py`).
+**Curriculum:** lint passed (`python3 scripts/curriculum_lint.py`).
+
+**Findings**
+1. Merge hazard confirmed again: weekly UX chrome was absent on `main` after later content merges — restored from `cursor/site-modernization-and-ui-ux-b189` (ux54 stack: `0df31fd`…`b4db4d8`).
+2. Maintenance stamp and privacy “Last reviewed” were still **16 November 2026**.
+3. Closing-November mornings needed a December horizon handoff; Help/Tutorials filters reset every visit; quiz pages had no jump key or scroll memory; page link copy required the mouse; Help empty-filter had no clear control.
+
+**Changes**
+- Restored ux54 chrome, then refreshed maintenance stamp to **23 November 2026**; privacy reviewed same day (LICENSE already 2026).
+- **Closing November strong** (23–26) plus **December on the horizon** / **Fresh December start** / **Steady December pace** resume greetings.
+- **`q`** jumps to the quiz block; **`y`** copies the page link; shortcuts sheet updated.
+- Help + Tutorials filters **persist for the browser tab** with a brief restore cue; Help empty state gains a clear button.
+- Quiz pages **remember scroll** for the browser tab.
+- Learner-facing markdown footers refreshed to **November 2026**.
+- Cache `?v=ux55`.
+
+**Files touched**
+- `docs/site.js`, `docs/styles.css`, `docs/privacy.html`, `docs/help.html`, `docs/*.html` (cache), `docs/AUDIT-LOG.md`, root markdown footers
+
+**Revert tip:** restore `docs/site.js`, `docs/styles.css`, and listed HTML from the pre-ux55 commit on this branch.
+
+**Route risk:** Low — additive chrome; existing hrefs preserved.
+

@@ -264,5 +264,5 @@ You'll know you've succeeded when:
 
 ---
 
-*Last updated: July 2026 | Version: 1.1*
+*Last updated: November 2026 | Version: 1.1*
 

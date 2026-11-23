@@ -185,5 +185,5 @@ cd BeginnersC#
 
 ---
 
-*Last updated: July 2026 | Version: 1.1*
+*Last updated: November 2026 | Version: 1.1*
 

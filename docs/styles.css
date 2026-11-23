@@ -4410,12 +4410,16 @@ html.pf-page-leave body {
   transition: opacity 0.18s ease;
 }
 
-#course-tile-filter.is-restored-filter {
+#course-tile-filter.is-restored-filter,
+#help-filter.is-restored-filter,
+#tutorial-filter.is-restored-filter {
   box-shadow: 0 0 0 3px rgba(226, 193, 90, 0.28);
   border-color: rgba(184, 146, 46, 0.55);
 }
 
-#lesson-content.is-flash {
+#lesson-content.is-flash,
+#quiz-container.is-flash,
+#quiz-actions.is-flash {
   animation: moduleListFlash 0.9s ease;
   box-shadow: 0 0 0 2px rgba(226, 193, 90, 0.4);
   border-radius: var(--radius-md, 10px);
@@ -4541,6 +4545,8 @@ h3.has-heading-anchor:focus-within .heading-anchor,
   .module-list-panel.is-flash,
   .module-list.is-flash,
   #lesson-content.is-flash,
+  #quiz-container.is-flash,
+  #quiz-actions.is-flash,
   .heading-anchor,
   .shortcuts-whisper {
     transition: none !important;

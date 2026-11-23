@@ -54,5 +54,5 @@
 
 ---
 
-*Last updated: July 2026*
+*Last updated: November 2026*
 
