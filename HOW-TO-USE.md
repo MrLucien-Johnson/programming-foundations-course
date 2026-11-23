@@ -326,5 +326,5 @@ Before starting Module 7 (Task Tracker):
 
 ---
 
-*Last updated: July 2026 | Version: 1.1*
+*Last updated: November 2026 | Version: 1.1*
 
